@@ -1,0 +1,77 @@
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+% Template criado por @Guvidaletti    %
+% Utilizando o template da AGES v2.1  %
+% como base                           %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+
+% Configuração do Documento
+\documentclass[
+  a4paper,
+  12pt,
+  oneside,
+  chapter=TITLE,
+  english,
+  brazil]
+  {abntex2}
+
+\usepackage[brazil]{babel}
+
+\usepackage[
+  tmargin=3cm,
+  lmargin=3cm,
+  bmargin=2cm,
+  rmargin=2cm,
+]{geometry}
+
+
+% Para utilizar imagens dentro do LaTeX:
+\usepackage{graphicx}
+
+% \usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage{helvet}             % Usa a fonte Helvetica
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+
+% Para utilizar fontes diferentes:
+\input{util/style.tex}
+
+% Para a lista de abreviaturas:
+\usepackage[printonlyused,withpage]{acronym}
+
+% Se o style=abnt não funcionar, utilize o style=numeric
+\usepackage[style=abnt]{biblatex}
+\usepackage{csquotes}
+\addbibresource{bibliografia/bibliografia.bib}
+
+% Ajuste de ordenação dos arquivos:
+\begin{document}
+  \include{conteudo/0 - pre/0.1 - capa}
+  % Opcional:
+  \include{conteudo/0 - pre/0.2 - dedicatoria}
+  % Opcional:
+  \include{conteudo/0 - pre/0.3 - agradecimentos}
+  % Opcional:
+  \include{conteudo/0 - pre/0.4 - epigrafe}
+  \include{conteudo/0 - pre/0.5 - resumo}
+  \include{conteudo/0 - pre/0.6 - ilustracoes}
+  \include{conteudo/0 - pre/0.7 - tabelas}
+  \include{conteudo/0 - pre/0.8 - siglas}
+  \include{conteudo/0 - pre/0.9 - sumario}
+
+  % Contagem de páginas começa aqui:
+  \textual{}
+  % ajuste pare remover cabeçalho:
+  % verificar se não é melhor com
+  \pagestyle{simple}
+
+  % Capitulos
+  \include{conteudo/1 - apresentacao/apresentacao}
+  \include{conteudo/2 - ages I/index}
+  \include{conteudo/3 - ages II/index}
+  \include{conteudo/4 - ages III/index}
+  \include{conteudo/5 - ages IV/index}
+  \include{conteudo/6 - consideracoes/consideracoes}
+
+  \include{conteudo/7 - pos/referencias}
+
+  \include{conteudo/8 - apendices/apendices}
+\end{document}

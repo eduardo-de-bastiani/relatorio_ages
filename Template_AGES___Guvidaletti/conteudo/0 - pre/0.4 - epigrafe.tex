@@ -1,0 +1,25 @@
+\def\textoEpigrafe{
+  Epígrafe: É um item onde o autor 
+  apresenta a citação de um texto 
+  que seja relacionado com o tema
+  do trabalho, seguido da indicação 
+  de autoria do mesmo.\ (texto iniciando 
+  do meio da página alinhado a direita)
+}
+
+\def\autorEpigrafe{Autor da Epígrafe}
+
+\begin{epigrafe}
+  \vspace*{\fill}
+  \hfill{}
+  \parbox{6cm}{
+    \begin{flushright}
+      % Epígrafe - Inicio
+      \textit{``\textoEpigrafe``}\\
+      \bigbreak\
+      % Epígrafe - Fim
+      \textbf{\autorEpigrafe}
+  
+    \end{flushright}
+  }
+\end{epigrafe}

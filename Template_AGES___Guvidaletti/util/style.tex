@@ -1,0 +1,46 @@
+% Define Sans Serif para todo documento
+\renewcommand{\familydefault}{\sfdefault}
+
+% Deve haver recuo no primeiro paragrafo
+\usepackage{indentfirst}
+
+% Capitulos, secoes e subsecoes devem ter tamanho normal
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+% Capitulos e secoes devem estar negritados
+% https://groups.google.com/g/latex-br/c/ULm17Zfng3w/m/ZbCHIHLi7GAJ
+\renewcommand{\ABNTEXchapterfont}{\normalfont\sffamily\bfseries}
+\renewcommand{\ABNTEXsectionfont}{\normalfont\sffamily\bfseries}
+% Subsecoes nao devem estar negritados
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalfont\sffamily}
+
+% Espacamento vertical entre titulo do capitulo e conteudo deve ser de 24pts
+\setlength\afterchapskip{24pt}
+
+% Define colores para links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+}
+
+% Páginas sem cabeçalho
+\pagestyle{simple}
+
+% Subseção não no sumário: (para ir, trocar para 2)
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+% Captions com negrito
+% \usepackage[font=bf]{caption}
+% Caption pequena, com o "Figura" em negrito
+\usepackage[font=small,labelfont=bf]{caption}
+
+% Posicionamento de Figuras - Importantíssimo
+\usepackage{float}
+
+% Espaçamento de 1,5
+\renewcommand{\baselinestretch}{1.5}

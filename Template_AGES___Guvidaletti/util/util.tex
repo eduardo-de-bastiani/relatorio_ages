@@ -1,0 +1,82 @@
+% Espaço vertical:
+\vspace{1cm}
+
+% Negrito:
+\textbf{texto}
+
+% itálico
+\textit{italico}
+
+% Underline
+\underline{sublinhado}
+
+% Alinhado à direita:
+\begin{flushright}
+  direita
+\end{flushright}
+
+% Alinhado à esquerda:
+\begin{flushleft}
+  esquerda
+\end{flushleft}
+
+% Figuras:
+% \begin{figure}[h!]
+%   \label{figDemo}
+%   \centering
+%   \includegraphics*[width=10cm]{imagefile}
+%   \caption[short]{Título que vai aparecer la}
+% \end{figure}
+
+% Figura nos padrões do relatório da AGES
+\begin{figure}[H] % H é para forçar o posicionamento REAL
+    \label{figDemo}
+    \centering
+    \small
+    \caption{Modelo do Banco de Dados}
+    \includegraphics[width=1\linewidth]{imagefile}
+    Fonte: XXXX
+\end{figure}
+
+% Aí pode utilizar como referencia
+`Adorei a figura\ref{figDemo}`
+
+% Listas (bullet)
+\begin{itemize}
+  \item Teste 1
+  \item Teste 2
+\end{itemize}
+
+% Lista (enumerada)
+\begin{enumerate}
+  \item Teste 1
+  \item Teste 2
+\end{enumerate}
+
+% itens matemáticos, usar $ para englobar.
+% ex:
+$a \rightarrow t + (1 \times 3)$
+
+% Tamanhos de texto
+\tiny texto
+\small texto
+\large texto
+\huge texto
+\scriptsize texto
+\footnotesize texto
+
+% Quote
+\begin{quotation}
+  texto aqui\ldots
+\end{quotation}
+
+% Citação:
+% Na bibliografia.bib, coloque: @book ou @article, @misc
+
+%  aí ja pode utilizar com o \cite
+% \bibliographystyle{plainnat}
+Teste\cite{chave}
+% Com página
+Teste\cite[capítulo, p.~215]{chave}
+% Somente o ano
+Teste\citeyear{chave}
