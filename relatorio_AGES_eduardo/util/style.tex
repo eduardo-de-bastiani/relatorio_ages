@@ -18,6 +18,14 @@
 \setlength{\parindent}{1.25cm}
 \setlength{\parskip}{0pt}
 \OnehalfSpacing
+% NBR 14724:2024 (corrected 2025), 5.1: smaller, uniform pagination.
+% 10pt is the presentation choice. The measured numeral top and right edge
+% are 2cm from the page edges (5.3); only the numeral moves, not the body.
+\newcommand{\memorialpagefont}{\normalfont\fontsize{10}{12}\selectfont}
+\newcommand{\memorialpagenumber}{\memorialpagefont\raisebox{-1.076mm}{\thepage}}
+\makeoddhead{abntchapfirst}{}{}{\memorialpagenumber}
+\makeoddhead{simple}{}{}{\memorialpagenumber}
+\makeevenhead{simple}{\memorialpagenumber}{}{}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 \widowpenalty=10000
