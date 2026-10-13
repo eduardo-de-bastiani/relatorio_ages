@@ -4,7 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 import subprocess
 
-from .common import REPO, safe_relative, sha256, write_json, require_work_branch
+from .common import REPO, git, safe_relative, sha256, write_json, require_work_branch
 
 
 def prepare_visual(pdf: str, *, repo: Path = REPO, dpi: int = 100) -> dict:
@@ -39,6 +39,8 @@ def prepare_visual(pdf: str, *, repo: Path = REPO, dpi: int = 100) -> dict:
         evidence["pdf_links"] = {"status": "pending", "reason": "pypdf unavailable"}
     pages = [{"path": str(p.relative_to(repo)), "sha256": sha256(p)} for p in sorted(output.glob("page-*.png"))]
     report = {"schema_version": 1, "status": "pending_human_review", "pdf": pdf,
+              "commit": git(repo, "rev-parse", "HEAD"),
+              "branch": git(repo, "symbolic-ref", "--short", "HEAD"),
               "pdf_sha256": digest, "pages": pages, "links": links, "tools": evidence,
               "checklist": ["Inspect every rendered page", "Margins and text clipping", "Sprint title continuity",
                             "Caption above and source below", "Reflection border/page continuation",

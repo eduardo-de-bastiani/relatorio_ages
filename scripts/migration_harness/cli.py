@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 import subprocess
 
-from .common import REPO, print_json, protected_findings, read_json, safe_relative, write_json
+from .common import REPO, git, print_json, protected_findings, read_json, safe_relative, sha256, write_json
 from .environment import check_lock, inspect_environment
 from .odf import extract_manifest, verify_manifest
 from .latex import audit_latex
@@ -50,6 +50,12 @@ def parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     config = read_json(REPO / "harness.json")
+    execution = {"commit": git(REPO, "rev-parse", "HEAD"),
+                 "branch": git(REPO, "symbolic-ref", "--short", "HEAD"),
+                 "dirty": bool(git(REPO, "status", "--porcelain")),
+                 "arguments": list(argv if argv is not None else sys.argv[1:]),
+                 "manifest_sha256": sha256(REPO / config["manifest"]),
+                 "toolchain_lock_sha256": sha256(REPO / config["toolchain_lock"])}
     try:
         if args.command == "verify-source":
             findings = protected_findings(REPO)
@@ -92,6 +98,7 @@ def main(argv: list[str] | None = None) -> int:
                 ledger = read_json(safe_relative(REPO, args.ledger, must_exist=True)) if args.ledger else {"schema_version": 1, "units": {}}
                 report = audit_conversion(manifest, ledger, REPO, unit_id=args.unit)
                 report["source_integrity"] = "pass"
+                report["execution"] = execution
                 write_json(REPO / "build/validation" / ((args.unit or "all") + "/report.json"), report)
         elif args.command == "build":
             with resource_locks(["build:" + args.profile, "latex-config", "integration"]):
@@ -110,6 +117,7 @@ def main(argv: list[str] | None = None) -> int:
             report = checkpoint(args.unit)
     except (ValueError, OSError, KeyError, subprocess.SubprocessError) as error:
         report = {"status": "fail", "findings": [{"severity": "error", "code": "HARNESS_ERROR", "message": str(error)}]}
+    report["execution"] = execution
     print_json(report)
     return 0 if report["status"] == "pass" else 3 if report["status"] in {"unconverted", "partial", "pending_human_review", "pending_human_approval"} else 1
 
