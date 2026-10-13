@@ -406552,5 +406552,36 @@
       "XML-depth list metadata is not a claim about displayed list depth.",
       "Figure provenance, missing diagrams and absent bibliography metadata are not invented."
     ]
+  },
+  "migration_overlay": {
+    "schema_version": 1,
+    "tasks": {
+      "ages-i-sprint-0": {
+        "task_id": "pilot-ages-i-sprint-0",
+        "stage": "extracted",
+        "scope": [
+          "ages-i-sprint-0"
+        ],
+        "baseline_commit": "9ad29b909c24dc55072263fd50c7b3d01cdfe658",
+        "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+        "destination": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
+        "heading_id": "text-h-0016",
+        "source_record_ids": [
+          "text-h-0016",
+          "text-p-0413",
+          "text-p-0415",
+          "text-p-0417",
+          "text-p-0419",
+          "text-p-0424",
+          "text-p-0425",
+          "text-p-0426",
+          "text-p-0427",
+          "text-p-0428"
+        ],
+        "evidence": "build/pilot/extraction/ages-i-sprint-0.json",
+        "evidence_sha256": "dd8649c9474dca3df3be69ede0bd897a2b4ab1fad19ea291fed8551d9d8c583f",
+        "authorization_evidence": "migration/approvals/pilot-authorization.json"
+      }
+    }
   }
 }
