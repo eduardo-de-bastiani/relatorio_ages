@@ -15,18 +15,22 @@ import tempfile
 from .common import REPO, git, protected_findings, read_json, require_work_branch, sha256, write_json
 
 
-def changed_paths(repo: Path, base: str) -> list[str]:
+def changed_paths(repo: Path, base: str, end: str | None = None) -> list[str]:
     git(repo, "rev-parse", "--verify", base + "^{commit}")
-    tracked = subprocess.check_output(["git", "-C", str(repo), "diff", "--name-only", "-z", base])
-    untracked = subprocess.check_output(["git", "-C", str(repo), "ls-files", "--others", "--exclude-standard", "-z"])
+    if end:
+        git(repo, "rev-parse", "--verify", end + "^{commit}")
+    tracked = subprocess.check_output(["git", "-C", str(repo), "diff", "--name-only", "-z", base, *([end] if end else [])])
+    untracked = b"" if end else subprocess.check_output(["git", "-C", str(repo), "ls-files", "--others", "--exclude-standard", "-z"])
     return sorted(set(p.decode() for p in (tracked + untracked).split(b"\0") if p))
 
 
-def scope_check(role: str, base: str, *, unit: str | None = None, repo: Path = REPO) -> dict:
+def scope_check(role: str, base: str, *, unit: str | None = None, repo: Path = REPO, end: str | None = None) -> dict:
     config = read_json(repo / "harness.json")
     patterns = list(config["roles"][role]["write"])
     if role == "converter" and not unit:
         raise ValueError("Converter scope requires an assigned unit")
+    if role == "converter" and config["phase"] != "harness" and unit not in config.get("authorized_units", []):
+        raise ValueError("Unit is outside the explicitly authorized phase scope")
     if role == "converter" and unit:
         manifest = read_json(repo / config["manifest"])
         selected = next((u for u in manifest["units"] if u["id"] == unit), None)
@@ -35,7 +39,7 @@ def scope_check(role: str, base: str, *, unit: str | None = None, repo: Path = R
         destination = selected["destination"]
         patterns.append(destination if isinstance(destination, str) else destination["path"])
         patterns.append(f"migration/ledgers/{unit}.json")
-    changed = changed_paths(repo, base)
+    changed = changed_paths(repo, base, end)
     baseline = read_json(repo / "docs/BASELINE.json")
     forbidden = []
     for path in changed:
@@ -50,6 +54,7 @@ def scope_check(role: str, base: str, *, unit: str | None = None, repo: Path = R
             forbidden.append(path)
     return {"status": "fail" if forbidden else "pass", "role": role, "unit": unit,
             "base": git(repo, "rev-parse", base), "changed_paths": changed,
+            "end": git(repo, "rev-parse", end) if end else "working-tree",
             "forbidden_paths": forbidden, "cooperative_only": True}
 
 

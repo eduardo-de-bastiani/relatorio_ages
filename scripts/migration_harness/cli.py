@@ -40,6 +40,7 @@ def parser() -> argparse.ArgumentParser:
         scoped.add_argument("--unit")
         if name == "scope-check":
             scoped.add_argument("--base", default="HEAD")
+            scoped.add_argument("--end", help="Audit a sealed commit interval; exclude unrelated working-tree changes")
         else:
             scoped.add_argument("task_command", nargs=argparse.REMAINDER)
     point = commands.add_parser("checkpoint", help="Create a pending dossier, never an approval")
@@ -74,6 +75,12 @@ def main(argv: list[str] | None = None) -> int:
                         report = {"status": "fail" if differences else "pass", "findings": differences}
                     else:
                         manifest = extract_manifest(source, destination_root=config["destination_root"])
+                        if path.exists():
+                            overlay = read_json(path).get("migration_overlay")
+                            if overlay is not None:
+                                manifest["migration_overlay"] = overlay
+                                if verify_manifest(manifest, source):
+                                    raise ValueError("Existing migration overlay is inconsistent with the source; do not discard it")
                         write_json(path, manifest)
                         report = {"status": "pass", "manifest": config["manifest"],
                                   "records": len(manifest["records"]), "units": len(manifest["units"])}
@@ -107,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
             with resource_locks(["visual"], repo=REPO):
                 report = prepare_visual(args.pdf, dpi=args.dpi)
         elif args.command == "scope-check":
-            report = scope_check(args.role, args.base, unit=args.unit)
+            report = scope_check(args.role, args.base, unit=args.unit, end=args.end)
         elif args.command == "run-task":
             command = args.task_command
             if command and command[0] == "--":

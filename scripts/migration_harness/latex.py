@@ -12,6 +12,8 @@ class Command:
     args: tuple[str, ...]
     start: int
     end: int
+    starred: bool = False
+    optionals: tuple[str, ...] = ()
 
 
 def strip_comments(text: str) -> str:
@@ -74,20 +76,61 @@ def commands(text: str):
     clean = strip_comments(text)
     for match in re.finditer(r"\\([A-Za-z@]+|.)", clean):
         i = match.end()
-        if i < len(clean) and clean[i] == "*":
+        starred = i < len(clean) and clean[i] == "*"
+        if starred:
             i += 1
-        args = []
+        args, optionals = [], []
         while True:
             while i < len(clean) and clean[i].isspace():
                 i += 1
             if i < len(clean) and clean[i] == "[":
-                _, i = _group(clean, i, "[", "]")
+                optional, i = _group(clean, i, "[", "]")
+                optionals.append(optional)
             elif i < len(clean) and clean[i] == "{":
                 arg, i = _group(clean, i, "{", "}")
                 args.append(arg)
             else:
                 break
-        yield Command(match[1], tuple(args), match.start(), i)
+        yield Command(match[1], tuple(args), match.start(), i, starred, tuple(optionals))
+
+
+def macro_definitions(text: str) -> list[dict]:
+    """Find explicit command/environment definitions; never execute their bodies.
+
+    Primitive definitions are recognized sufficiently to keep their bodies out
+    of the operational dependency graph. Argument expansion remains unsupported.
+    """
+    definitions, occupied = [], []
+    clean = strip_comments(text)
+    names = {"newcommand", "renewcommand", "providecommand", "DeclareRobustCommand", "newenvironment", "renewenvironment"}
+    for token in commands(text):
+        if any(start <= token.start < end for start, end in occupied):
+            continue
+        if token.name in names and len(token.args) >= 2:
+            environment = token.name.endswith("environment")
+            name = token.args[0] if environment else token.args[0].removeprefix("\\")
+            arity = int(token.optionals[0]) if token.optionals and token.optionals[0].isdigit() else 0
+            item = dict(name=name, body=token.args[1], arity=arity, start=token.start, end=token.end, environment=environment, primitive=False, optional_default=len(token.optionals) > 1, declaration=token.name)
+            if environment and len(token.args) >= 3:
+                item["end_body"] = token.args[2]
+            definitions.append(item)
+            occupied.append((token.start, token.end))
+        elif token.name in {"def", "edef", "gdef", "xdef"}:
+            match = re.match(r"\s*\\([A-Za-z@]+)([^{}]*)\{", clean[token.start + len(token.name) + 1:])
+            if match:
+                start = token.start + len(token.name) + 1 + match.end() - 1
+                body, end = _group(clean, start, "{", "}")
+                parameters = re.findall(r"#([1-9])", match[2])
+                definitions.append(dict(name=match[1], body=body, arity=max(map(int, parameters), default=0), start=token.start, end=end, environment=False, primitive=True, optional_default=False, declaration=token.name))
+                occupied.append((token.start, end))
+    return definitions
+
+
+MEMORIAL_FIGURE_BODY = r"\begin{figure}[htbp]\caption{#2}\label{#3}\centering\includegraphics[width=#5\linewidth]{#1}\par\small #4\end{figure}"
+
+
+def canonical_macro_body(body: str) -> str:
+    return re.sub(r"\s+", "", strip_comments(body))
 
 
 def bib_keys(text: str) -> tuple[set[str], list[str]]:
@@ -136,7 +179,7 @@ def bib_keys(text: str) -> tuple[set[str], list[str]]:
 def audit_latex(root: Path, entry: Path) -> dict:
     root = root.resolve()
     findings, files, labels, refs, citations = [], [], {}, [], []
-    keys, visited, active = set(), set(), []
+    keys, visited, active, defined = set(), set(), [], {}
     counts = {"labels": 0, "references": 0, "citations": 0, "bibliography_entries": 0, "images": 0}
 
     def report(code, path, line, message, severity="error"):
@@ -155,6 +198,17 @@ def audit_latex(root: Path, entry: Path) -> dict:
             if candidate.is_file():
                 return candidate
         return path
+
+    def has_dependencies(name: str, seen=None) -> bool:
+        seen = set() if seen is None else seen
+        if name in seen or name not in defined:
+            return False
+        seen = seen | {name}
+        body = defined[name]["body"] + defined[name].get("end_body", "")
+        for item in commands(body):
+            if item.name in {"includegraphics", "input", "include", "label", "ref", "pageref", "autoref"} or "cite" in item.name.lower() or has_dependencies(item.name, seen):
+                return True
+        return False
 
     def walk(path: Path):
         path = path.resolve()
@@ -177,6 +231,7 @@ def audit_latex(root: Path, entry: Path) -> dict:
         try:
             text = path.read_text(encoding="utf-8")
             tokens = list(commands(text))
+            definitions = macro_definitions(text)
         except (UnicodeError, ValueError, OSError) as exc:
             report("parse_error", relative, 1, str(exc))
             active.pop()
@@ -186,6 +241,37 @@ def audit_latex(root: Path, entry: Path) -> dict:
         for token in tokens:
             line = text.count("\n", 0, token.start) + 1
             name, args = token.name, token.args
+            definition = next((item for item in definitions if item["start"] == token.start), None)
+            if definition:
+                defined[definition["name"]] = definition
+                continue
+            if any(item["start"] <= token.start < item["end"] for item in definitions):
+                continue  # Dormant bodies are not operational invocations.
+            if name == "memorialfigure":
+                contract = defined.get(name)
+                if contract is None or contract["arity"] != 5 or contract["optional_default"] or canonical_macro_body(contract["body"]) != canonical_macro_body(MEMORIAL_FIGURE_BODY):
+                    report("unverified_figure_macro", relative, line, "memorialfigure definition does not match the audited five-argument contract")
+                    continue
+                if len(args) != 5:
+                    report("invalid_figure_macro", relative, line, "memorialfigure requires file, caption, label, source, width")
+                    continue
+                counts["images"] += 1
+                target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))
+                if target is None or not target.is_file():
+                    report("missing_or_dynamic_asset", relative, line, args[0])
+                if not args[1].strip() or not args[2].strip():
+                    report("missing_figure_caption_or_label", relative, line, "Caption and label must be explicit")
+                counts["labels"] += 1
+                if args[2] in labels:
+                    report("duplicate_label", relative, line, args[2])
+                labels[args[2]] = (relative, line)
+                continue
+            if name in defined and has_dependencies(name):
+                report("unsupported_operational_macro", relative, line, f"Invocation \\{name} contains dependencies/references; expansion is unproven")
+                continue
+            if name == "begin" and args and args[0] in defined and defined[args[0]]["environment"] and has_dependencies(args[0]):
+                report("unsupported_operational_macro", relative, line, f"Environment {args[0]} contains dependencies/references; expansion is unproven")
+                continue
             if name in {"newpage", "clearpage", "cleardoublepage", "pagebreak"}:
                 pending_break = True
                 if sprint_file:

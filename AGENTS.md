@@ -4,6 +4,8 @@
 
 Esta fase prepara governança, inventário e validação. **Nenhuma Sprint nem outro conteúdo do memorial deve ser convertido sem autorização posterior.** O commit-base é `44bc0b95ef5ed06c8efa272de4f754cce1d6e4cb`; o registro verificável está em [docs/BASELINE.json](docs/BASELINE.json). Trabalhe na branch de harness, nunca diretamente na principal.
 
+Atualização de fase: o usuário autorizou explicitamente o projeto-piloto **AGES I / Easy Choose / Sprint 0**, registrado em `migration/approvals/pilot-authorization.json`. Trabalhe na branch `migration/pilot-ages-i-sprint-0`; somente essa unidade e a configuração global necessária podem ser preparados. Auditorias independentes e correções são autorizadas. Nenhuma próxima Sprint está autorizada. O checkpoint de entrega ainda exige revisão do usuário.
+
 Leia [CONTEXT](docs/CONTEXT.md), [plano](docs/MIGRATION_PLAN.md), [estilo](docs/STYLE_GUIDE.md), [gates](docs/QUALITY_GATES.md) e [pendências](docs/PENDENCIAS.md). O `harness.json` define caminhos e escopos executáveis; os documentos explicam sua finalidade. Em divergência, interrompa a tarefa afetada e registre a diferença; não amplie permissões.
 
 Autoridades, nesta ordem: instruções explícitas do usuário; original imutável para conteúdo; normas verificadas para apresentação; decisões aprovadas de apresentação. `relatorio_mariah/` é a métrica de qualidade visual definida pelo usuário, somente para leitura. Não transferir narrativa, projetos, referências, epígrafe ou metadados pessoais da Mariah. O modelo restrito da Biblioteca PUCRS foi dispensado pelo usuário e não é dependência.
@@ -35,3 +37,5 @@ Faça commits pequenos na branch de trabalho somente quando autorizado. Não sob
 Artefatos locais ficam em `build/`, conforme configuração. O inventário rastreado não contém arquivos extraídos de mídia redundantes. Não incluir caches, credenciais, PDFs de teste ou auxiliares na integração. Consultar o plano para rollback por commit e reprodução limpa.
 
 Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar antes do piloto e solicitar autorização.
+
+No piloto autorizado, parar após sua entrega e aguardar aprovação para qualquer próxima Sprint. A frase histórica acima sobre parar antes do piloto descreve o encerramento da fase de harness.

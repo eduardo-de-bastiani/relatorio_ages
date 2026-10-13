@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.migration_harness.latex import audit_latex, bib_keys, commands, strip_comments
+from scripts.migration_harness.latex import audit_latex, bib_keys, commands, strip_comments, MEMORIAL_FIGURE_BODY
 
 
 class LatexTests(unittest.TestCase):
@@ -91,6 +91,38 @@ class LatexTests(unittest.TestCase):
         codes = self.codes(self.audit())
         self.assertIn("undefined_citation", codes)
         self.assertIn("unsupported_include_syntax", codes)
+
+    def test_dormant_macro_body_is_not_a_dynamic_asset_invocation(self):
+        self.write("main.tex", r"\newcommand{\unused}[1]{\includegraphics{#1}\label{#1}}" + "\nTexto.")
+        report = self.audit()
+        self.assertEqual(report["status"], "pass", report)
+        self.assertEqual(report["counts"]["images"], 0)
+        self.assertEqual(report["counts"]["labels"], 0)
+        self.write("main.tex", r"\def\unused#1{\includegraphics{#1}}" + "\nTexto.")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+
+    def test_unknown_invoked_asset_macro_blocks_instead_of_hiding_dependency(self):
+        self.write("main.tex", r"\newcommand{\customfigure}[1]{\includegraphics{#1}}\customfigure{missing.png}")
+        self.assertIn("unsupported_operational_macro", self.codes(self.audit()))
+        self.write("main.tex", r"\newcommand{\alias}[1]{\customfigure{#1}}\newcommand{\customfigure}[1]{\includegraphics{#1}}\alias{missing.png}")
+        self.assertIn("unsupported_operational_macro", self.codes(self.audit()))
+        self.write("main.tex", r"\newenvironment{customfigure}{\includegraphics{missing.png}}{}\begin{customfigure}Texto.\end{customfigure}")
+        self.assertIn("unsupported_operational_macro", self.codes(self.audit()))
+
+    def test_memorialfigure_invocation_checks_actual_asset_label_and_caption(self):
+        definition = r"\newcommand{\memorialfigure}[5]{" + MEMORIAL_FIGURE_BODY + "}"
+        self.write("main.tex", definition + r"\memorialfigure{missing.png}{Legenda}{fig:sample}{Fonte}{0.8}\ref{fig:sample}")
+        self.assertIn("missing_or_dynamic_asset", self.codes(self.audit()))
+        (self.root / "image.png").write_bytes(b"synthetic image")
+        self.write("main.tex", definition + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte}{0.8}\ref{fig:sample}")
+        result = self.audit()
+        self.assertEqual(result["status"], "pass", result)
+        self.assertEqual(result["counts"]["images"], 1)
+        self.assertEqual(result["counts"]["labels"], 1)
+        self.write("main.tex", definition + r"\memorialfigure{image.png}{}{fig:sample}{Fonte}{0.8}")
+        self.assertIn("missing_figure_caption_or_label", self.codes(self.audit()))
+        self.write("main.tex", definition.replace(r"\caption{#2}", r"\caption{Texto inventado}") + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte}{0.8}")
+        self.assertIn("unverified_figure_macro", self.codes(self.audit()))
 
 
 if __name__ == "__main__":

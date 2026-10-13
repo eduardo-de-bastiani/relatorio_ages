@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "user_execution_authorization",
+  "scope": [
+    "ages-i-sprint-0"
+  ],
+  "baseline_commit": "9ad29b909c24dc55072263fd50c7b3d01cdfe658",
+  "source": "User message: MISSÃO: PROJETO-PILOTO DE CONVERSÃO FIEL",
+  "quoted_instruction": "Execute a migração de uma única Sprint representativa, selecionada e aprovada na fase anterior.",
+  "selected_unit": "AGES I / Easy Choose / Sprint 0",
+  "includes": [
+    "Necessary shared macros and integration context",
+    "Independent content and visual audits",
+    "Corrections without editorial revision"
+  ],
+  "next_sprint_authorized": false,
+  "result_approved": false,
+  "notice": "This records the actual user instruction; JSON alone never grants authorization."
+}

@@ -71,9 +71,26 @@ class HarnessTests(unittest.TestCase):
         (self.repo / "RELATORIO_ATUAL.odt").write_bytes(b"changed")
         self.assertIn("RELATORIO_ATUAL.odt", scope_check("orchestrator", "HEAD", repo=self.repo)["forbidden_paths"])
 
+    def test_sealed_scope_does_not_claim_unrelated_work_is_owned(self):
+        base = subprocess.check_output(["git", "-C", str(self.repo), "rev-parse", "HEAD"], text=True).strip()
+        (self.repo / "docs/CONTENT_MANIFEST.json").write_text('{"units": []}')
+        self.run_git("add", "docs/CONTENT_MANIFEST.json")
+        self.run_git("-c", "user.name=Harness test", "-c", "user.email=harness@example.org", "commit", "-m", "extractor inventory")
+        (self.repo / "unrelated.txt").write_text("other task")
+        self.assertEqual(scope_check("extractor", base, repo=self.repo)["status"], "fail")
+        sealed = scope_check("extractor", base, repo=self.repo, end="HEAD")
+        self.assertEqual(sealed["status"], "pass")
+        self.assertEqual(sealed["changed_paths"], ["docs/CONTENT_MANIFEST.json"])
+
     def test_converter_cannot_run_during_harness(self):
         with self.assertRaisesRegex(ValueError, "not authorized"):
             run_task("converter", [sys.executable, "-c", "pass"], unit="u", repo=self.repo)
+
+    def test_pilot_does_not_authorize_another_unit(self):
+        self.config.update(phase="pilot", authorized_units=["u"])
+        (self.repo / "harness.json").write_text(json.dumps(self.config))
+        with self.assertRaisesRegex(ValueError, "authorized phase scope"):
+            scope_check("converter", "HEAD", unit="another", repo=self.repo)
 
     def test_lock_collision(self):
         with resource_locks(["manifest"], repo=self.repo):

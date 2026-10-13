@@ -38,4 +38,10 @@ São fontes institucionais que hospedam textos das normas; não equivalem a conf
 
 ## Verificação
 
+No piloto, o título original `2.3.1 Sprint 0 ` é conservado literalmente em subseção sem prefixo automático duplicado; `refstepcounter{subsection}` mantém a referência `2.3.1`, conferida no `.aux`. A entrada do sumário é derivada do mesmo título. A âncora original do ODT permanece via `hypertarget` com argumento visual vazio. Não generalizar esse tratamento sem auditar a numeração de cada título futuro.
+
+Tabs autorais iniciais usam `originaltab`, com distância `1.251cm` documentada no estilo padrão ODF; espaços explícitos de borda usam `originalspace` e o espaço da fonte. O comparador recupera esses tokens exatamente e exige contrato/hash das definições, sem colapsar o texto original. O piloto usa `noindent` nos quatro parágrafos do corpo e cinco da reflexão, evitando contar o tab duas vezes. A reflexão usa família e tamanho do corpo, conforme decisão aprovada; uma borda é redesenhada para cada segmento natural de página. O construtor remove glue de altura do `vsplit` antes de imprimir; somente a badness da caixa temporária, não impressa, tem limiar local elevado. Diagnósticos horizontais e da saída permanecem ativos. A auditoria visual verifica o resultado real.
+
+Figuras, notas, listas autorais, hyperlinks e citações não existem nesta Sprint. Os ambientes reutilizáveis estão definidos, mas nenhuma figura/placeholder é inserido artificialmente para exercitá-los no memorial. O teste sintético das macros e continuidade fica separado do PDF de revisão.
+
 Aplicar [QUALITY_GATES](QUALITY_GATES.md), auditoria independente do texto e inspeção do PDF completo. Registrar cada desvio com arquivo/localização, evidência, consequência, gravidade, proposta e método de verificação. Falta de norma acessível produz PENDING, nunca uma regra inventada.

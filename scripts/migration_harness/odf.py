@@ -511,5 +511,47 @@ def verify_manifest(manifest: dict, source: Path) -> list[dict]:
         elif actual != wanted:
             differences.append({"code": "manifest-value-mismatch", "path": path,
                                 "expected": wanted, "actual": actual})
-    compare(manifest, expected, "$")
+    inventory = dict(manifest)
+    overlay = inventory.pop("migration_overlay", None)
+    compare(inventory, expected, "$")
+    if overlay is not None:
+        if not isinstance(overlay, dict) or overlay.get("schema_version") != 1 or not isinstance(overlay.get("tasks"), dict):
+            differences.append({"code": "manifest-invalid-overlay", "path": "$.migration_overlay"})
+            return differences
+        allowed_fields = {"schema_version", "tasks"}
+        if set(overlay) - allowed_fields:
+            differences.append({"code": "manifest-invalid-overlay-field", "path": "$.migration_overlay"})
+        units = {u["id"]: u for u in expected["units"]}
+        for uid, task in overlay["tasks"].items():
+            location = "$.migration_overlay.tasks." + uid
+            if uid not in units or not isinstance(task, dict):
+                differences.append({"code": "manifest-unknown-task-unit", "path": location})
+                continue
+            allowed_task_fields = {"task_id", "stage", "scope", "baseline_commit", "source_sha256",
+                                   "destination", "heading_id", "source_record_ids", "evidence", "evidence_sha256",
+                                   "authorization_evidence", "ledger", "ledger_sha256", "target_sha256", "pdf",
+                                   "pdf_sha256", "content_audit", "content_audit_sha256", "visual_audit", "visual_audit_sha256"}
+            if set(task) - allowed_task_fields:
+                differences.append({"code": "manifest-invalid-task-field", "path": location})
+            unit = units[uid]
+            for key, value in {"source_sha256": expected["source"]["sha256"], "scope": [uid],
+                               "destination": unit["destination"], "heading_id": unit["heading_id"],
+                               "source_record_ids": unit["source_record_ids"]}.items():
+                if task.get(key) != value:
+                    differences.append({"code": "manifest-overlay-source-mismatch", "path": location + "." + key})
+            if task.get("stage") not in {"extracted", "converted", "audited", "review-ready"}:
+                differences.append({"code": "manifest-invalid-task-stage", "path": location + ".stage"})
+            for key in {"evidence", "authorization_evidence", "ledger", "pdf", "content_audit", "visual_audit"}:
+                if key not in {"evidence", "authorization_evidence"} and key not in task:
+                    continue
+                value = task.get(key)
+                if not isinstance(value, str) or PurePosixPath(value).is_absolute() or ".." in PurePosixPath(value).parts:
+                    differences.append({"code": "manifest-unsafe-task-path", "path": location + "." + key})
+            for key, length in {"evidence_sha256": 64, "baseline_commit": 40, "ledger_sha256": 64,
+                                "target_sha256": 64, "pdf_sha256": 64, "content_audit_sha256": 64,
+                                "visual_audit_sha256": 64}.items():
+                if key not in {"evidence_sha256", "baseline_commit"} and key not in task:
+                    continue
+                if not isinstance(task.get(key), str) or not re.fullmatch("[0-9a-f]{" + str(length) + "}", task[key]):
+                    differences.append({"code": "manifest-invalid-task-hash", "path": location + "." + key})
     return differences

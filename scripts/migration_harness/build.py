@@ -83,7 +83,7 @@ def compile_profile(profile: str, *, repo: Path = REPO, check_toolchain: bool = 
     # Invalidate every artifact before even preflight: a failed attempt must
     # never leave an old PASS/PDF mistaken for its own result.
     for name in ("main.pdf", "main.log", "main.blg", "main.bbl", "main.toc",
-                 "main.lof", "main.lot", "main.bcf", "report.json", "compiler.txt"):
+                 "main.lof", "main.lot", "main.bcf", "main.aux", "main.out", "main.run.xml", "report.json", "compiler.txt"):
         (output / name).unlink(missing_ok=True)
 
     def preflight_report(status, findings):
@@ -148,7 +148,7 @@ def compile_profile(profile: str, *, repo: Path = REPO, check_toolchain: bool = 
             diagnostics["findings"].append({"severity": "error", "code": "BIBLIOGRAPHY_NOT_PROCESSED",
                                              "message": "No Biber output from clean build"})
             diagnostics["status"] = "fail"
-        for name in ("main.pdf", "main.log", "main.blg", "main.bbl", "main.toc", "main.lof", "main.lot", "main.bcf"):
+        for name in ("main.pdf", "main.log", "main.blg", "main.bbl", "main.toc", "main.lof", "main.lot", "main.bcf", "main.aux", "main.out", "main.run.xml"):
             path = work / name
             if path.exists():
                 shutil.copyfile(path, output / name)

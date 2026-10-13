@@ -8,7 +8,7 @@ Texto rigorosamente preservado; revisão editorial posterior; Sprints sem iníci
 
 | ID | Evidência/localização | Consequência e gravidade | Ação proposta / responsável | Verificação |
 |---|---|---|---|---|
-| P01 | Piloto ainda não autorizado | Conversão prematura; crítica | Autorizar explicitamente AGES I / Easy Choose / Sprint 0; usuário | Mensagem de autorização identificada no checkpoint |
+| P01 | Execução do piloto autorizada pela missão atual; resultado ainda não aprovado | Avanço prematuro para próxima unidade; crítica | Executar somente AGES I / Easy Choose / Sprint 0 e apresentar a revisão ao usuário | Evidência em migration/approvals/pilot-authorization.json; aprovação da entrega permanece pendente |
 | P02 | Recorda: Sprints 2–4 e conclusão vazias no ODT | Memorial incompleto; alta | Conservar a lacuna na migração; complementação posterior pelo autor | Manifesto e relatório de ausências |
 | P03 | Pré-textuais, trajetória, considerações e apêndices contêm instruções de modelo | Exclusão pode violar preservação; alta | Usuário aprova quais elementos remanescentes saem do destino | IDs excluídos e motivo em ledger |
 | P04 | 34 imagens sem fontes explicitamente identificadas na auditoria | Proveniência ausente; alta | Autor fornece origem/autoria; curador registra evidências | Correspondência por ID/hash |

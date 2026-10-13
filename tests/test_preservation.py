@@ -183,6 +183,96 @@ class PreservationTests(unittest.TestCase):
         self.ledger["units"]["sprint-test"]["element_map"][0]["target_file"] = "../unit.tex"
         self.assertIn("invalid_target_evidence", self.codes(self.audit()))
 
+    def whitespace_contract(self):
+        self.write(r"\newcommand{\originaltab}{\noindent\hspace*{1.251cm}}" + "\n" + r"\newcommand{\originalspace}{\hspace*{\fontdimen2\font}}", "macros.tex")
+        return {"path": "macros.tex", "sha256": hashlib.sha256((self.root / "macros.tex").read_bytes()).hexdigest()}
+
+    def whitespace_case(self, original, target):
+        self.manifest["records"][0]["text"] = original
+        self.write(target)
+        self.ledger["macro_contract"] = self.whitespace_contract()
+        mapping = self.mapping("p1", target)
+        mapping["serializations"] = ["original_whitespace"]
+        self.ledger["units"]["sprint-test"]["element_map"] = [mapping]
+
+    def test_verified_original_whitespace_markers_preserve_exact_values(self):
+        for source, target in [("\t Palavra ", r"\originaltab{}\originalspace{}Palavra\originalspace{}"), (" A  B ", r"\originalspace{}A\originalspace{}\originalspace{}B\originalspace{}"), ("\tA B", r"\originaltab{}A B")]:
+            with self.subTest(source=repr(source)):
+                self.whitespace_case(source, target)
+                report = self.audit()
+                self.assertEqual(report["status"], "pass", report)
+                self.assertEqual(report["facts"]["text_records_matched"], 1)
+
+    def test_whitespace_macro_contract_missing_tampered_or_redefined_blocks(self):
+        self.whitespace_case("\tA", r"\originaltab{}A")
+        contract = self.ledger.pop("macro_contract")
+        self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        self.ledger["macro_contract"] = contract
+        self.write(r"\newcommand{\originaltab}{\hspace*{0cm}}" + "\n" + r"\newcommand{\originalspace}{\hspace*{\fontdimen2\font}}", "macros.tex")
+        self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        self.ledger["macro_contract"]["sha256"] = hashlib.sha256((self.root / "macros.tex").read_bytes()).hexdigest()
+        self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        self.ledger["macro_contract"] = self.whitespace_contract()
+        self.write(r"\renewcommand{\originaltab}{Nada}\originaltab{}A")
+        mapping = self.mapping("p1", r"\originaltab{}A")
+        mapping["serializations"] = ["original_whitespace"]
+        self.ledger["units"]["sprint-test"]["element_map"] = [mapping]
+        self.assertIn("whitespace_macro_redefinition", self.codes(self.audit()))
+
+    def test_original_whitespace_policy_never_normalizes_source(self):
+        for source, target in [("\tA", "A"), ("\tA", "\tA"), ("A  B", "A  B"), (" A ", "A"), ("\tA ", r"\originaltab{}A"), ("A\nB", r"A\newline B"), ("A\tB", r"A\originaltab{}B")]:
+            with self.subTest(source=repr(source), target=target):
+                self.whitespace_case(source, target)
+                self.assertEqual(self.audit()["status"], "blocked", self.audit())
+
+    def test_xml_text_cannot_inject_internal_whitespace_markers(self):
+        self.whitespace_case("\tA", "\ue000A\ue001")
+        self.assertEqual(self.audit()["status"], "blocked")
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(r"\originaltab{}A", ["original_whitespace"])
+
+    def toc_case(self, toc_title=r"2.3.1 Sprint 0\originalspace{}", actual_title=None, counter=""):
+        actual_title = actual_title or r"2.3.1 Sprint 0\originalspace{}"
+        source = "2.3.1 Sprint 0 "
+        self.manifest["records"][0].update(type="text:h", text=source)
+        self.whitespace_case(source, counter + "\\subsection*{" + actual_title + "}\n\\addcontentsline{toc}{subsection}{" + toc_title + "}")
+        mapping = self.mapping("p1", actual_title)
+        mapping["serializations"] = ["original_whitespace"]
+        self.ledger["units"]["sprint-test"]["element_map"] = [mapping]
+
+    def test_toc_is_proved_against_source_and_actual_starred_heading(self):
+        self.toc_case()
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        self.toc_case(toc_title="Inventado")
+        self.assertIn("unproved_toc_entry", self.codes(self.audit()))
+        self.toc_case(actual_title=r"2.3.1 Sprint 0\originalspace{}Inventado")
+        self.assertEqual(self.audit()["status"], "blocked")
+
+    def test_counter_step_requires_matching_literal_heading_and_subsection(self):
+        self.toc_case(counter=r"\refstepcounter{subsection}" + "\n")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        self.assertIn("counter_aux_review_required", self.codes(self.audit()))
+        self.toc_case(counter=r"\refstepcounter{chapter}" + "\n")
+        self.assertIn("unproved_counter_step", self.codes(self.audit()))
+
+    def test_bookmark_requires_real_source_pair_exact_name_and_no_text(self):
+        self.toc_case()
+        self.manifest["records"].extend([{"id": "bs", "type": "text:bookmark-start", "parent_id": "p1", "attributes": {"text:name": "original_anchor"}}, {"id": "be", "type": "text:bookmark-end", "parent_id": "p1", "attributes": {"text:name": "original_anchor"}}])
+        old = (self.root / "unit.tex").read_text()
+        self.write(r"\hypertarget{original_anchor}{}" + "\n" + old)
+        unit = self.ledger["units"]["sprint-test"]
+        unit["element_map"] = [self.mapping("p1", r"2.3.1 Sprint 0\originalspace{}")]
+        unit["element_map"][0]["serializations"] = ["original_whitespace"]
+        mapping = self.mapping("p1", r"\hypertarget{original_anchor}{}")
+        mapping.update(source_heading_id="p1", source_name="original_anchor", target_anchor="original_anchor", command="hypertarget", source_start_id="bs", source_end_id="be")
+        unit["bookmark_map"] = [mapping]
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        mapping["target_anchor"] = "invented"
+        self.assertIn("invalid_bookmark_evidence", self.codes(self.audit()))
+        mapping["target_anchor"] = "original_anchor"
+        self.manifest["records"][-1]["attributes"]["text:name"] = "different"
+        self.assertIn("invalid_bookmark_evidence", self.codes(self.audit()))
+
 
 if __name__ == "__main__":
     unittest.main()

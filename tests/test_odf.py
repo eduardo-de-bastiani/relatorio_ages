@@ -156,13 +156,27 @@ class AuditedDocumentTests(unittest.TestCase):
 
     def test_manifest_file_is_reproducible_and_every_xml_node_has_parent(self):
         stored = json.loads((ROOT / "docs/CONTENT_MANIFEST.json").read_text())
-        self.assertEqual(stored, self.manifest)
+        inventory = dict(stored)
+        inventory.pop("migration_overlay", None)
+        self.assertEqual(inventory, self.manifest)
+        self.assertEqual(verify_manifest(stored, self.source), [])
         records = {r["id"]: r for r in stored["records"]}
         self.assertEqual(len(records), 9298)
         for record in records.values():
             if record["parent_id"] is not None:
                 self.assertIn(record["parent_id"], records)
             self.assertEqual(len(record["xml_sha256"]), 64)
+
+    def test_overlay_does_not_hide_source_mutation_or_wrong_scope(self):
+        stored = json.loads((ROOT / "docs/CONTENT_MANIFEST.json").read_text())
+        if "migration_overlay" not in stored:
+            self.skipTest("No migration task registered yet")
+        self.assertEqual(verify_manifest(stored, self.source), [])
+        task = stored["migration_overlay"]["tasks"]["ages-i-sprint-0"]
+        task["scope"] = ["ages-i-sprint-1"]
+        self.assertTrue(any(x["code"] == "manifest-overlay-source-mismatch" for x in verify_manifest(stored, self.source)))
+        stored["records"][0]["xml_sha256"] = "0" * 64
+        self.assertTrue(any(x["code"] == "manifest-value-mismatch" for x in verify_manifest(stored, self.source)))
 
 
 if __name__ == "__main__":

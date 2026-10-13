@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "harness",
+  "phase": "pilot",
   "source": "RELATORIO_ATUAL.odt",
   "manifest": "docs/CONTENT_MANIFEST.json",
   "destination_root": "relatorio_AGES_eduardo",
@@ -10,12 +10,78 @@
   "toolchain_lock": "docs/TOOLCHAIN.lock.json",
   "pilot": "ages-i-sprint-0",
   "roles": {
-    "orchestrator": {"write": ["AGENTS.md", "docs/*", "docs/**", "harness.json", "scripts/*", "scripts/**", "harness/*", "harness/**", "tests/*", "tests/**", ".agent/skills/*/SKILL.md", "build.sh", ".gitignore", "migration/approvals/*.json"], "locks": ["integration", "manifest", "latex-config"]},
-    "extractor": {"write": ["docs/CONTENT_MANIFEST.json"], "locks": ["manifest"]},
-    "latex-maintainer": {"write": ["relatorio_AGES_eduardo/main.tex", "relatorio_AGES_eduardo/util/*", "relatorio_AGES_eduardo/bibliografia/bibliografia.bib"], "locks": ["latex-config"]},
-    "converter": {"write": [], "locks": ["unit:{unit}"]},
-    "reference-curator": {"write": ["migration/evidence/references/*.json"], "locks": ["references"]},
-    "content-auditor": {"write": [], "locks": []},
-    "visual-auditor": {"write": [], "locks": []}
-  }
+    "orchestrator": {
+      "write": [
+        "AGENTS.md",
+        "docs/*",
+        "docs/**",
+        "harness.json",
+        "scripts/*",
+        "scripts/**",
+        "harness/*",
+        "harness/**",
+        "tests/*",
+        "tests/**",
+        ".agent/skills/*/SKILL.md",
+        "build.sh",
+        ".gitignore",
+        "migration/approvals/*.json"
+      ],
+      "locks": [
+        "integration",
+        "manifest",
+        "latex-config"
+      ]
+    },
+    "extractor": {
+      "write": [
+        "docs/CONTENT_MANIFEST.json"
+      ],
+      "locks": [
+        "manifest"
+      ]
+    },
+    "latex-maintainer": {
+      "write": [
+        "relatorio_AGES_eduardo/main.tex",
+        "relatorio_AGES_eduardo/util/*",
+        "relatorio_AGES_eduardo/bibliografia/bibliografia.bib"
+      ],
+      "locks": [
+        "latex-config"
+      ]
+    },
+    "converter": {
+      "write": [],
+      "locks": [
+        "unit:{unit}"
+      ]
+    },
+    "reference-curator": {
+      "write": [
+        "migration/evidence/references/*.json"
+      ],
+      "locks": [
+        "references"
+      ]
+    },
+    "content-auditor": {
+      "write": [
+        "docs/pilot/CONTENT_AUDIT.md",
+        "docs/pilot/CONTENT_AUDIT.json"
+      ],
+      "locks": []
+    },
+    "visual-auditor": {
+      "write": [
+        "docs/pilot/VISUAL_AUDIT.md",
+        "docs/pilot/VISUAL_AUDIT.json"
+      ],
+      "locks": []
+    }
+  },
+  "authorized_units": [
+    "ages-i-sprint-0"
+  ],
+  "authorization_evidence": "migration/approvals/pilot-authorization.json"
 }

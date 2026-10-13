@@ -2,7 +2,9 @@
 
 Ledger schema 1 maps each source record to a UTF-8 byte interval in a file:
 {source_id, target_file, start_byte, end_byte, target_sha256,
- serializations?: ["tex_quotes", "tex_dashes", "canonical_unicode"]}.
+ serializations?: ["tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace"]}.
+original_whitespace requires macro_contract {path, sha256} in the unit ledger
+(or top-level ledger) and the exact audited originaltab/originalspace definitions.
 Intervals are half-open. Text copied into the ledger is never audit evidence.
 Asset maps use {source_id: image occurrence id, target_file: image path}.
 The image occurrence also requires an element_map interval containing exactly
@@ -19,17 +21,57 @@ import hashlib
 import re
 import unicodedata
 from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from .latex import _group, commands, strip_comments
+from .latex import _group, commands, strip_comments, macro_definitions, canonical_macro_body
 
 
 class UnsupportedSerialization(ValueError):
     pass
 
 
-def displayed_text(source: str, serializations=()) -> str:
+@dataclass(frozen=True)
+class _ExplicitWhitespace:
+    value: str
+
+
+def displayed_text(source: str, serializations=(), *, macro_contract_verified=False) -> str:
+    """Decode a conservative token projection; markers cannot be text-injected."""
+    tokens = _display_tokens(source, serializations, macro_contract_verified)
+    blocks = []
+    for token in tokens:
+        if isinstance(token, str) and blocks and isinstance(blocks[-1], str):
+            blocks[-1] += token
+        else:
+            blocks.append(token)
+    pieces = []
+    for index, block in enumerate(blocks):
+        if isinstance(block, _ExplicitWhitespace):
+            pieces.append(block.value)
+            continue
+        folded = re.sub(r"[\t\n\r\f\v ]+", " ", block)
+        if index == 0:
+            folded = folded.lstrip(" ")
+        if index == len(blocks) - 1:
+            folded = folded.rstrip(" ")
+        pieces.append(folded)
+    result = "".join(pieces)
+    if ("``" in result or "''" in result) and "tex_quotes" not in serializations:
+        raise UnsupportedSerialization("TeX quote ligature needs explicit tex_quotes policy")
+    if "--" in result and "tex_dashes" not in serializations:
+        raise UnsupportedSerialization("TeX dash ligature needs explicit tex_dashes policy")
+    if "tex_quotes" in serializations:
+        result = result.replace("``", "“").replace("''", "”")
+    if "tex_dashes" in serializations:
+        result = result.replace("---", "—").replace("--", "–")
+    if "canonical_unicode" in serializations:
+        result = unicodedata.normalize("NFC", result)
+    return result
+
+
+def _display_tokens(source: str, serializations, macro_contract_verified) -> list:
     """Decode only syntax with a known, local displayed-text equivalent.
 
     Ordinary TeX code folding collapses to one visible space. Explicit source
@@ -38,9 +80,11 @@ def displayed_text(source: str, serializations=()) -> str:
     Accents, punctuation, case, numbers and symbols compare exactly.
     No macro expansion, citation expansion or counter-generated text is guessed.
     """
-    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode"}
+    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace"}
     if set(serializations) - allowed:
         raise UnsupportedSerialization("Unrecognized serialization policy")
+    if "original_whitespace" in serializations and not macro_contract_verified:
+        raise UnsupportedSerialization("original_whitespace requires a verified macro contract")
     masked = strip_comments(source)
     # A TeX comment suppresses its newline, rather than inserting a space.
     # Keep the offset-preserving lexer separate from this displayed projection.
@@ -74,6 +118,14 @@ def displayed_text(source: str, serializations=()) -> str:
                 continue
             while i < len(text) and text[i].isspace():
                 i += 1
+            if name in {"originaltab", "originalspace"}:
+                if "original_whitespace" not in serializations or not macro_contract_verified:
+                    raise UnsupportedSerialization("Explicit whitespace macro requires verified original_whitespace policy")
+                if text[i:i + 2] != "{}":
+                    raise UnsupportedSerialization("Whitespace macro must have an explicit empty group")
+                i += 2
+                output.append(_ExplicitWhitespace("\t" if name == "originaltab" else " "))
+                continue
             if name in symbols:
                 output.append(symbols[name])
                 if text[i:i + 2] == "{}":
@@ -97,12 +149,12 @@ def displayed_text(source: str, serializations=()) -> str:
                     if i >= len(text) or text[i] != "{":
                         raise UnsupportedSerialization("Missing href anchor")
                     first, i = _group(text, i, "{", "}")
-                output.append(displayed_text(first, serializations))
+                output.extend(_display_tokens(first, serializations, macro_contract_verified))
                 continue
             raise UnsupportedSerialization(f"Unsupported command \\{name}; rendered equivalence is unproven")
         if char == "{":
             group, i = _group(text, i, "{", "}")
-            output.append(displayed_text(group, serializations))
+            output.extend(_display_tokens(group, serializations, macro_contract_verified))
             continue
         if char == "}" or char in "$&#_^":
             raise UnsupportedSerialization(f"Unescaped special character {char!r}")
@@ -111,18 +163,7 @@ def displayed_text(source: str, serializations=()) -> str:
         else:
             output.append(char)
         i += 1
-    result = "".join(output)
-    if ("``" in result or "''" in result) and "tex_quotes" not in serializations:
-        raise UnsupportedSerialization("TeX quote ligature needs explicit tex_quotes policy")
-    if "--" in result and "tex_dashes" not in serializations:
-        raise UnsupportedSerialization("TeX dash ligature needs explicit tex_dashes policy")
-    if "tex_quotes" in serializations:
-        result = result.replace("``", "“").replace("''", "”")
-    if "tex_dashes" in serializations:
-        result = result.replace("---", "—").replace("--", "–")
-    if "canonical_unicode" in serializations:
-        result = unicodedata.normalize("NFC", result)
-    return _space(result)
+    return output
 
 
 def _space(text: str) -> str:
@@ -130,16 +171,18 @@ def _space(text: str) -> str:
     return re.sub(r"[\t\n\r\f\v ]+", " ", text).strip(" ")
 
 
-def _strict_source(text: str) -> str:
+def _strict_source(text: str, original_whitespace=False) -> str:
     """No source whitespace is silently discarded or collapsed.
 
     XML extraction already distinguishes text:s, text:tab and text:line-break.
     Without a rendered layout proof, these cannot be declared equivalent to an
     ordinary TeX space, even if the converter copies the same raw characters.
     """
-    if any(char in text for char in "\t\n\r\f\v"):
+    if any(char in text for char in "\n\r\f\v") or "\t" in text and not original_whitespace:
         raise UnsupportedSerialization("Explicit source tab/line break requires rendered whitespace review")
-    if "  " in text or text.startswith(" ") or text.endswith(" "):
+    if original_whitespace and "\t" in text and (text.count("\t") != 1 or not text.startswith("\t")):
+        raise UnsupportedSerialization("Audited originaltab contract supports one leading source tab only")
+    if not original_whitespace and ("  " in text or text.startswith(" ") or text.endswith(" ")):
         raise UnsupportedSerialization("Repeated or edge source spaces require rendered whitespace review")
     return text
 
@@ -246,6 +289,29 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         for rid in set(mapping_ids) - allowed_ids:
             report("unknown_or_wrong_unit_mapping", uid, "Mapping does not belong to this source unit", rid)
         by_id = {item.get("source_id"): item for item in mappings}
+        uses_original_whitespace = any("original_whitespace" in item.get("serializations", []) for item in mappings)
+        macro_verified = False
+        if uses_original_whitespace:
+            try:
+                contract = unit_ledger.get("macro_contract", ledger.get("macro_contract"))
+                if not isinstance(contract, dict):
+                    raise ValueError("original_whitespace requires macro_contract {path,sha256}")
+                contract_path = safe_path(contract["path"])
+                contract_data = contract_path.read_bytes()
+                if hashlib.sha256(contract_data).hexdigest() != contract.get("sha256"):
+                    raise ValueError("Missing/stale macro contract SHA-256")
+                contract_text = contract_data.decode("utf-8")
+                definitions = macro_definitions(contract_text)
+                bodies = {"originaltab": r"\noindent\hspace*{1.251cm}", "originalspace": r"\hspace*{\fontdimen2\font}"}
+                for name, body in bodies.items():
+                    found = [item for item in definitions if item["name"] == name]
+                    if len(found) != 1 or found[0]["declaration"] != "newcommand" or found[0]["arity"] != 0 or found[0]["optional_default"] or canonical_macro_body(found[0]["body"]) != canonical_macro_body(body):
+                        raise ValueError(f"Actual {name} definition differs from audited contract")
+                if re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace)\b", strip_comments(contract_text)):
+                    raise ValueError("Whitespace macro is aliased/redefined outside its audited definition")
+                macro_verified = True
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
+                report("invalid_macro_contract", uid, str(exc))
         actual = {}
         for rid, mapping in by_id.items():
             if rid not in allowed_ids:
@@ -279,6 +345,12 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         except (ValueError, OSError, UnicodeError, TypeError) as exc:
             report("invalid_unit_target", uid, str(exc), path=target_entry)
         order_index = {path: i for i, path in enumerate(file_order)}
+        if uses_original_whitespace:
+            for path in file_order:
+                actual_text = path.read_text(encoding="utf-8")
+                if any(item["name"] in {"originaltab", "originalspace"} for item in macro_definitions(actual_text)) or re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace)\b", strip_comments(actual_text)):
+                    report("whitespace_macro_redefinition", uid, "Unit target changes the verified whitespace macros", path=str(path.relative_to(repo)))
+                    macro_verified = False
         # Expansion position supports parent text both before and after an input.
         expansion_positions = {}
         expansion_cursor = 0
@@ -329,16 +401,14 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             text_spans.append((path, start, end, rid))
             serializations = by_id[rid].get("serializations", [])
             original = records[rid]["text"]
-            if "canonical_unicode" in serializations:
-                original = unicodedata.normalize("NFC", original)
             try:
-                expected = _strict_source(original)
+                expected = _strict_source(original, "original_whitespace" in serializations and macro_verified)
             except UnsupportedSerialization as exc:
                 report("explicit_source_whitespace", uid, str(exc), rid, str(path.relative_to(repo)))
                 differences[uid].append({"source_id": rid, "target_file": str(path.relative_to(repo)), "expected": original, "observed": None, "diff": "Whitespace equivalence is unproven; no automatic normalization accepted"})
                 continue
             try:
-                observed = displayed_text(value, serializations)
+                observed = displayed_text(value, serializations, macro_contract_verified=macro_verified)
             except (UnsupportedSerialization, ValueError) as exc:
                 report("unsupported_serialization", uid, str(exc), rid)
                 continue
@@ -382,8 +452,9 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 report("malformed_url", uid, observed_url, rid)
             anchor = token.args[1] if token.name == "href" and len(token.args) >= 2 else token.args[0]
             try:
-                observed_anchor = displayed_text(anchor) if token.name == "href" else _url(anchor)
-                if observed_anchor != _strict_source(record.get("source_text") or ""):
+                policies = by_id[rid].get("serializations", [])
+                observed_anchor = displayed_text(anchor, policies, macro_contract_verified=macro_verified) if token.name == "href" else _url(anchor)
+                if observed_anchor != _strict_source(record.get("source_text") or "", "original_whitespace" in policies and macro_verified):
                     report("link_anchor_changed", uid, "Displayed anchor differs from original", rid)
             except (ValueError, UnsupportedSerialization) as exc:
                 report("unsupported_link_anchor", uid, str(exc), rid)
@@ -422,6 +493,80 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 report("invalid_image_evidence", uid, str(exc), rid)
         for rid in set(asset_ids) - set(expected_images):
             report("unexpected_asset_mapping", uid, "Image occurrence does not belong to the unit", rid)
+        derived_spans = {}
+        toc_counts = Counter()
+        for path in file_order:
+            target_text = path.read_text(encoding="utf-8")
+            target_tokens = list(commands(target_text))
+            headings = []
+            for rid in source_ids:
+                if _kind(records[rid]) != "h" or rid not in actual or actual[rid][0] != path:
+                    continue
+                _, start, end, _ = actual[rid]
+                policies = by_id[rid].get("serializations", [])
+                for token in target_tokens:
+                    token_start = len(target_text[:token.start].encode("utf-8"))
+                    token_end = len(target_text[:token.end].encode("utf-8"))
+                    if token.name != "subsection" or not token.starred or len(token.args) != 1 or not token_start <= start <= end <= token_end:
+                        continue
+                    try:
+                        title = displayed_text(token.args[0], policies, macro_contract_verified=macro_verified)
+                        expected = _strict_source(records[rid]["text"], "original_whitespace" in policies and macro_verified)
+                        if title == expected:
+                            headings.append((rid, expected, policies, token))
+                    except UnsupportedSerialization:
+                        pass  # Existing source/target text findings remain authoritative.
+            for token in target_tokens:
+                if token.name != "addcontentsline":
+                    continue
+                matched = []
+                if len(token.args) == 3 and token.args[:2] == ("toc", "subsection"):
+                    for rid, expected, policies, _ in headings:
+                        try:
+                            if displayed_text(token.args[2], policies, macro_contract_verified=macro_verified) == expected:
+                                matched.append(rid)
+                        except UnsupportedSerialization:
+                            pass
+                if len(matched) != 1:
+                    report("unproved_toc_entry", uid, "TOC entry must equal one original heading and its actual subsection* title", path=str(path.relative_to(repo)))
+                    continue
+                toc_counts[matched[0]] += 1
+                if toc_counts[matched[0]] > 1:
+                    report("duplicate_toc_entry", uid, "Original heading has more than one derived TOC entry", matched[0])
+                    continue
+                derived_spans.setdefault(path, []).append((len(target_text[:token.start].encode("utf-8")), len(target_text[:token.end].encode("utf-8"))))
+            for index, token in enumerate(target_tokens):
+                if token.name != "refstepcounter":
+                    continue
+                next_token = target_tokens[index + 1] if index + 1 < len(target_tokens) else None
+                matches = [(rid, title) for rid, title, _, heading_token in headings if next_token is heading_token and re.match(r"^\d+\.\d+\.\d+\s", title)]
+                gap = strip_comments(target_text[token.end:next_token.start]) if next_token else ""
+                if token.args != ("subsection",) or len(matches) != 1 or gap.strip():
+                    report("unproved_counter_step", uid, "Only a subsection counter step immediately before its original manually numbered subsection* is allowed", path=str(path.relative_to(repo)))
+                    continue
+                derived_spans.setdefault(path, []).append((len(target_text[:token.start].encode("utf-8")), len(target_text[:token.end].encode("utf-8"))))
+                report("counter_aux_review_required", uid, "Counter text is not printed; compare compiled .aux label number against original heading", matches[0][0], severity="warning")
+        for mapping in unit_ledger.get("bookmark_map", []):
+            try:
+                heading_id = mapping["source_heading_id"]
+                if heading_id not in source_ids or _kind(records[heading_id]) != "h":
+                    raise ValueError("Bookmark does not refer to a source heading in this unit")
+                original_start = records[mapping["source_start_id"]]
+                original_end = records[mapping["source_end_id"]]
+                source_name = mapping["source_name"]
+                if _kind(original_start) != "bookmark-start" or _kind(original_end) != "bookmark-end" or original_start.get("attributes", {}).get("text:name") != source_name or original_end.get("attributes", {}).get("text:name") != source_name:
+                    raise ValueError("Source bookmark names/start/end do not match")
+                if original_start.get("parent_id") != heading_id or original_end.get("parent_id") != heading_id:
+                    raise ValueError("Source bookmark is not inside the mapped heading")
+                path, start, end, value = fragment(mapping)
+                bookmarks = list(commands(value))
+                if len(bookmarks) != 1 or bookmarks[0].name != "hypertarget" or bookmarks[0].args != (source_name, "") or mapping.get("target_anchor") != source_name or mapping.get("command") != "hypertarget" or strip_comments(value[:bookmarks[0].start] + value[bookmarks[0].end:]).strip():
+                    raise ValueError("Target bookmark must retain the source name and have zero visible text")
+                if path not in file_order:
+                    raise ValueError("Bookmark target is not included in the unit")
+                derived_spans.setdefault(path, []).append((start, end))
+            except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
+                report("invalid_bookmark_evidence", uid, str(exc))
         # Check the complement of proven intervals so added or duplicated words
         # cannot hide outside the ledger. Only documented nonprinting scaffolding
         # is allowed. Unknown macros/environments need a harness policy change,
@@ -437,6 +582,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if rid in actual and actual[rid][0] == path:
                     _, start, end, _ = actual[rid]
                     data[start:end] = b" " * (end - start)
+            for start, end in derived_spans.get(path, []):
+                data[start:end] = b" " * (end - start)
             try:
                 residue = strip_comments(data.decode("utf-8"))
                 chars = list(residue)
