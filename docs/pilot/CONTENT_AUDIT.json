@@ -1,0 +1,920 @@
+{
+  "schema_version": 1,
+  "role": "independent-content-auditor",
+  "tool": "Codex subagent; not Antigravity",
+  "unit": "ages-i-sprint-0",
+  "commit": "9ad29b909c24dc55072263fd50c7b3d01cdfe658",
+  "branch": "migration/pilot-ages-i-sprint-0",
+  "dirty": true,
+  "status": "FAIL",
+  "gates": {
+    "G0": "PASS",
+    "G1": "FAIL",
+    "G2": "PASS independent / FAIL harness",
+    "G3": "PASS independent / FAIL harness",
+    "G4": "PASS source / PENDING rendered whitespace",
+    "G5": "FAIL",
+    "G6": "PENDING",
+    "G7": "PENDING",
+    "G8": "PENDING delegated normative review",
+    "G9": "PENDING human result approval"
+  },
+  "independent_evidence": {
+    "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "xml_sha256": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28",
+    "start": "text-h-0016",
+    "end_exclusive": "text-h-0017",
+    "heading_level": 3,
+    "authored_records": [
+      {
+        "id": "text-h-0016",
+        "source": "2.3.1 Sprint 0 ",
+        "decoded_actual_tex": "2.3.1 Sprint 0 ",
+        "equal": true,
+        "source_sha256": "ae95e46833275e4b65a4fd480c77cb351db36caf659f8511b25df30475f6baaf",
+        "span": [
+          181,
+          211
+        ]
+      },
+      {
+        "id": "text-p-0413",
+        "source": "\t Com a minha participação na aula de apresentação do projeto pelo professor-orientador Daniel Antônio Callegari e após a leitura do Termo de Abertura do Projeto, fiz várias anotações para perguntar aos stakeholders no nosso primeiro encontro. No dia quatro de março de 2024, tivemos nosso primeiro encontro com os stakeholders, onde esclareci dúvidas e planejei as próximas etapas do projeto.",
+        "decoded_actual_tex": "\t Com a minha participação na aula de apresentação do projeto pelo professor-orientador Daniel Antônio Callegari e após a leitura do Termo de Abertura do Projeto, fiz várias anotações para perguntar aos stakeholders no nosso primeiro encontro. No dia quatro de março de 2024, tivemos nosso primeiro encontro com os stakeholders, onde esclareci dúvidas e planejei as próximas etapas do projeto.",
+        "equal": true,
+        "source_sha256": "d5c7e5beceb928b7df6dc7007f4f10cc081c518d57363fb174054e975b87bd52",
+        "span": [
+          328,
+          761
+        ]
+      },
+      {
+        "id": "text-p-0415",
+        "source": "Durante a Sprint 0, desempenhei um papel importante na criação dos mockups usando Excalidraw e das telas de alta-fidelidade no Figma. Fui responsável pelos primeiros esboços das telas do tablet e, após a aprovação da equipe, começamos a montagem dos protótipos de alta-fidelidade. Como tínhamos que criar 3 interfaces (lojista, tablet, administrador), dividimos o trabalho para fazer os protótipos simultaneamente. Novamente, fui encarregado das telas do tablet.",
+        "decoded_actual_tex": "Durante a Sprint 0, desempenhei um papel importante na criação dos mockups usando Excalidraw e das telas de alta-fidelidade no Figma. Fui responsável pelos primeiros esboços das telas do tablet e, após a aprovação da equipe, começamos a montagem dos protótipos de alta-fidelidade. Como tínhamos que criar 3 interfaces (lojista, tablet, administrador), dividimos o trabalho para fazer os protótipos simultaneamente. Novamente, fui encarregado das telas do tablet.",
+        "equal": true,
+        "source_sha256": "aaa1984071c2b22b06d3e10b08c45849a916e4c0c65178bb0c5d83e0cc09b2c5",
+        "span": [
+          787,
+          1260
+        ]
+      },
+      {
+        "id": "text-p-0417",
+        "source": "Inicialmente, minha equipe e eu desenvolvemos três layouts diferentes para as interfaces devido à falta de identidade visual do projeto. Os stakeholders aprovaram a criação das telas sem seguir um padrão específico. Após algumas telas iniciais do fluxograma, discutimos com o resto da equipe para decidir o caminho de design a seguir. Depois da escolha, produzimos mais telas e finalizamos detalhes para apresentar aos stakeholders.",
+        "decoded_actual_tex": "Inicialmente, minha equipe e eu desenvolvemos três layouts diferentes para as interfaces devido à falta de identidade visual do projeto. Os stakeholders aprovaram a criação das telas sem seguir um padrão específico. Após algumas telas iniciais do fluxograma, discutimos com o resto da equipe para decidir o caminho de design a seguir. Depois da escolha, produzimos mais telas e finalizamos detalhes para apresentar aos stakeholders.",
+        "equal": true,
+        "source_sha256": "d2347299ae3c931ad335694dec9298e0daafc775201be492abb733a0fd11c2a6",
+        "span": [
+          1286,
+          1725
+        ]
+      },
+      {
+        "id": "text-p-0419",
+        "source": "Além disso, ajudei os AGES IV ao final da Sprint 0 ao dividir as User Stories em tarefas no GitLab. Esse passo foi crucial para começarmos a Sprint 1 com prioridades claras. Também destaco meus estudos na biblioteca React do JavaScript e TypeScript, fundamentais para o desenvolvimento das tarefas nas próximas Sprints.",
+        "decoded_actual_tex": "Além disso, ajudei os AGES IV ao final da Sprint 0 ao dividir as User Stories em tarefas no GitLab. Esse passo foi crucial para começarmos a Sprint 1 com prioridades claras. Também destaco meus estudos na biblioteca React do JavaScript e TypeScript, fundamentais para o desenvolvimento das tarefas nas próximas Sprints.",
+        "equal": true,
+        "source_sha256": "9ee46e99625fa657637bb4a9d02b5bdfcf2500e99187363cedfabc91297a6c1c",
+        "span": [
+          1751,
+          2074
+        ]
+      },
+      {
+        "id": "text-p-0424",
+        "source": "\tVisando uma reflexão dos problemas enfrentados e as lições aprendidas durante a Sprint, adicionei minhas percepções atuais nesta caixa de texto. ",
+        "decoded_actual_tex": "\tVisando uma reflexão dos problemas enfrentados e as lições aprendidas durante a Sprint, adicionei minhas percepções atuais nesta caixa de texto. ",
+        "equal": true,
+        "source_sha256": "617bd39d2b2a0b17962e6cc8fd6c805626b0f4e7a32aa73c7ccff432a586826f",
+        "span": [
+          2188,
+          2367
+        ]
+      },
+      {
+        "id": "text-p-0425",
+        "source": "\tNo começo do projeto, tive um pouco de dificuldade em me habituar com todas as ferramentas e processos da AGES, como o Fluxo AGES, relatórios de Sprint, Dailies, retrospectivas, entre outros. Porém, ao longo da Sprint 0, pude entender o real valor desses processos para o time como um todo. Percebi que a cada atividade “não-técnica”, se posso chamá-la assim, nosso objetivo ficava mais claro e a coesão do time aumentava como um todo.",
+        "decoded_actual_tex": "\tNo começo do projeto, tive um pouco de dificuldade em me habituar com todas as ferramentas e processos da AGES, como o Fluxo AGES, relatórios de Sprint, Dailies, retrospectivas, entre outros. Porém, ao longo da Sprint 0, pude entender o real valor desses processos para o time como um todo. Percebi que a cada atividade “não-técnica”, se posso chamá-la assim, nosso objetivo ficava mais claro e a coesão do time aumentava como um todo.",
+        "equal": true,
+        "source_sha256": "4d8fe3f26476b911733e8c575c67a18eb7e391a48c86c069fcde380e15a516d5",
+        "span": [
+          2393,
+          2853
+        ]
+      },
+      {
+        "id": "text-p-0426",
+        "source": "\tPor mais que minha equipe estivesse em uma boa sintonia, havia uma concentração de decisões entre os AGES III e IV, provavelmente por possuírem mais experiência. De qualquer modo, ouvir a opinião dos demais membros do time seria ideal. ",
+        "decoded_actual_tex": "\tPor mais que minha equipe estivesse em uma boa sintonia, havia uma concentração de decisões entre os AGES III e IV, provavelmente por possuírem mais experiência. De qualquer modo, ouvir a opinião dos demais membros do time seria ideal. ",
+        "equal": true,
+        "source_sha256": "54c27996d60ed5945676a343cdb4fc767c4bfd2cd65aea5e607d1e813ab2489e",
+        "span": [
+          2879,
+          3150
+        ]
+      },
+      {
+        "id": "text-p-0427",
+        "source": "\tTambém foi perceptível uma falta de organização geral em relação aos protótipos de alta fidelidade realizados no Figma. Devido à falta de identidade visual e também às poucas referências de telas trazidas pelos stakeholders, diversos layouts foram criados para serem aprovados posteriormente. Porém, nenhum integrante do grupo avisou os demais quando houve alguma mudança nos layouts. Tal situação ocorreu duas vezes, na qual dezenas de telas foram descartadas sem nenhum aviso prévio. Muitas horas de trabalho foram desperdiçadas por falta de comunicação, mesmo tendo um servidor no Discord e um grupo no WhatsApp para nos comunicarmos.",
+        "decoded_actual_tex": "\tTambém foi perceptível uma falta de organização geral em relação aos protótipos de alta fidelidade realizados no Figma. Devido à falta de identidade visual e também às poucas referências de telas trazidas pelos stakeholders, diversos layouts foram criados para serem aprovados posteriormente. Porém, nenhum integrante do grupo avisou os demais quando houve alguma mudança nos layouts. Tal situação ocorreu duas vezes, na qual dezenas de telas foram descartadas sem nenhum aviso prévio. Muitas horas de trabalho foram desperdiçadas por falta de comunicação, mesmo tendo um servidor no Discord e um grupo no WhatsApp para nos comunicarmos.",
+        "equal": true,
+        "source_sha256": "f078af38711570cf32678071064be5cfae41df04f820199db1d0c2fcda06ea5f",
+        "span": [
+          3176,
+          3846
+        ]
+      },
+      {
+        "id": "text-p-0428",
+        "source": "\tApesar dos empecilhos, a experiência de fazer parte de um time de desenvolvimento de software foi muito engrandecedora. Tive de aprender a trabalhar em função de Sprints, participei de reuniões para alinhamento de projeto, além de poder interagir com colegas mais experientes que poderiam agregar muito no meu aprendizado.",
+        "decoded_actual_tex": "\tApesar dos empecilhos, a experiência de fazer parte de um time de desenvolvimento de software foi muito engrandecedora. Tive de aprender a trabalhar em função de Sprints, participei de reuniões para alinhamento de projeto, além de poder interagir com colegas mais experientes que poderiam agregar muito no meu aprendizado.",
+        "equal": true,
+        "source_sha256": "95b15b3bf9ec62f99012fe51a6f45311e8408b9e06e85da93135e34b653ae9f0",
+        "span": [
+          3872,
+          4213
+        ]
+      }
+    ],
+    "classification": [
+      {
+        "id": "text-h-0016",
+        "tag": "text:h",
+        "role": "authored-text",
+        "direct_text": null
+      },
+      {
+        "id": "text-bookmark-start-0016",
+        "tag": "text:bookmark-start",
+        "role": "source-anchor",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0349",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0350",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-bookmark-end-0016",
+        "tag": "text:bookmark-end",
+        "role": "source-anchor",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0412",
+        "tag": "text:p",
+        "role": "whitespace-layout-only",
+        "direct_text": "\t"
+      },
+      {
+        "id": "text-tab-0125",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0413",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "\t Com a minha participação na aula de apresentação do projeto pelo professor-orientador Daniel Antônio Callegari e após a leitura do Termo de Abertura do Projeto, fiz várias anotações para perguntar aos stakeholders no nosso primeiro encontro. No dia quatro de março de 2024, tivemos nosso primeiro encontro com os stakeholders, onde esclareci dúvidas e planejei as próximas etapas do projeto."
+      },
+      {
+        "id": "text-span-0351",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-tab-0126",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0352",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0353",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0414",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0415",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "Durante a Sprint 0, desempenhei um papel importante na criação dos mockups usando Excalidraw e das telas de alta-fidelidade no Figma. Fui responsável pelos primeiros esboços das telas do tablet e, após a aprovação da equipe, começamos a montagem dos protótipos de alta-fidelidade. Como tínhamos que criar 3 interfaces (lojista, tablet, administrador), dividimos o trabalho para fazer os protótipos simultaneamente. Novamente, fui encarregado das telas do tablet."
+      },
+      {
+        "id": "text-p-0416",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0417",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "Inicialmente, minha equipe e eu desenvolvemos três layouts diferentes para as interfaces devido à falta de identidade visual do projeto. Os stakeholders aprovaram a criação das telas sem seguir um padrão específico. Após algumas telas iniciais do fluxograma, discutimos com o resto da equipe para decidir o caminho de design a seguir. Depois da escolha, produzimos mais telas e finalizamos detalhes para apresentar aos stakeholders."
+      },
+      {
+        "id": "text-p-0418",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0419",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "Além disso, ajudei os AGES IV ao final da Sprint 0 ao dividir as User Stories em tarefas no GitLab. Esse passo foi crucial para começarmos a Sprint 1 com prioridades claras. Também destaco meus estudos na biblioteca React do JavaScript e TypeScript, fundamentais para o desenvolvimento das tarefas nas próximas Sprints."
+      },
+      {
+        "id": "text-p-0420",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0421",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0422",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0423",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "draw-frame-0010",
+        "tag": "draw:frame",
+        "role": "reflection-container",
+        "direct_text": null
+      },
+      {
+        "id": "draw-text-box-0006",
+        "tag": "draw:text-box",
+        "role": "reflection-container",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0424",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "\tVisando uma reflexão dos problemas enfrentados e as lições aprendidas durante a Sprint, adicionei minhas percepções atuais nesta caixa de texto. "
+      },
+      {
+        "id": "text-span-0354",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-tab-0127",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0355",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0356",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0425",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "\tNo começo do projeto, tive um pouco de dificuldade em me habituar com todas as ferramentas e processos da AGES, como o Fluxo AGES, relatórios de Sprint, Dailies, retrospectivas, entre outros. Porém, ao longo da Sprint 0, pude entender o real valor desses processos para o time como um todo. Percebi que a cada atividade “não-técnica”, se posso chamá-la assim, nosso objetivo ficava mais claro e a coesão do time aumentava como um todo."
+      },
+      {
+        "id": "text-span-0357",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-tab-0128",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0358",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0359",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0360",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0361",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0362",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0363",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0426",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "\tPor mais que minha equipe estivesse em uma boa sintonia, havia uma concentração de decisões entre os AGES III e IV, provavelmente por possuírem mais experiência. De qualquer modo, ouvir a opinião dos demais membros do time seria ideal. "
+      },
+      {
+        "id": "text-span-0364",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-tab-0129",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0365",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0366",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0367",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0368",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0427",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "\tTambém foi perceptível uma falta de organização geral em relação aos protótipos de alta fidelidade realizados no Figma. Devido à falta de identidade visual e também às poucas referências de telas trazidas pelos stakeholders, diversos layouts foram criados para serem aprovados posteriormente. Porém, nenhum integrante do grupo avisou os demais quando houve alguma mudança nos layouts. Tal situação ocorreu duas vezes, na qual dezenas de telas foram descartadas sem nenhum aviso prévio. Muitas horas de trabalho foram desperdiçadas por falta de comunicação, mesmo tendo um servidor no Discord e um grupo no WhatsApp para nos comunicarmos."
+      },
+      {
+        "id": "text-span-0369",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-tab-0130",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0370",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0371",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0372",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0373",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0374",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0375",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0376",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0377",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0378",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0428",
+        "tag": "text:p",
+        "role": "authored-text",
+        "direct_text": "\tApesar dos empecilhos, a experiência de fazer parte de um time de desenvolvimento de software foi muito engrandecedora. Tive de aprender a trabalhar em função de Sprints, participei de reuniões para alinhamento de projeto, além de poder interagir com colegas mais experientes que poderiam agregar muito no meu aprendizado."
+      },
+      {
+        "id": "text-span-0379",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-tab-0131",
+        "tag": "text:tab",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0380",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0381",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0382",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0383",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-span-0384",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0429",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-span-0385",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0430",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-span-0386",
+        "tag": "text:span",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-soft-page-break-0014",
+        "tag": "text:soft-page-break",
+        "role": "inline-formatting-or-layout",
+        "direct_text": null
+      },
+      {
+        "id": "text-p-0431",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0432",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0433",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0434",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0435",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0436",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0437",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0438",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0439",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0440",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0441",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0442",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0443",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0444",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0445",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0446",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0447",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0448",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0449",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0450",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0451",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0452",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0453",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0454",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0455",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0456",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0457",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0458",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0459",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0460",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0461",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0462",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-p-0463",
+        "tag": "text:p",
+        "role": "blank-or-drawing-container",
+        "direct_text": ""
+      },
+      {
+        "id": "text-list-0041",
+        "tag": "text:list",
+        "role": "boundary-container-for-next-heading",
+        "direct_text": null
+      },
+      {
+        "id": "text-list-item-0039",
+        "tag": "text:list-item",
+        "role": "boundary-container-for-next-heading",
+        "direct_text": null
+      },
+      {
+        "id": "text-list-0042",
+        "tag": "text:list",
+        "role": "boundary-container-for-next-heading",
+        "direct_text": null
+      },
+      {
+        "id": "text-list-item-0040",
+        "tag": "text:list-item",
+        "role": "boundary-container-for-next-heading",
+        "direct_text": null
+      },
+      {
+        "id": "text-list-0043",
+        "tag": "text:list",
+        "role": "boundary-container-for-next-heading",
+        "direct_text": null
+      },
+      {
+        "id": "text-list-header-0006",
+        "tag": "text:list-header",
+        "role": "boundary-container-for-next-heading",
+        "direct_text": null
+      }
+    ],
+    "source_anchors": [
+      "__RefHeading___Toc4743_3118176633"
+    ],
+    "anchors_preserved": [
+      "__RefHeading___Toc4743_3118176633"
+    ],
+    "paragraph_order_equal": true,
+    "unknown_commands": [],
+    "source_counts": {
+      "text:h": 1,
+      "text:bookmark-start": 1,
+      "text:span": 38,
+      "text:bookmark-end": 1,
+      "text:p": 52,
+      "text:tab": 7,
+      "draw:frame": 1,
+      "draw:text-box": 1,
+      "text:soft-page-break": 1,
+      "text:list": 3,
+      "text:list-item": 2,
+      "text:list-header": 1
+    },
+    "used_styles": {
+      "Heading_20_3": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"Heading_20_3\" ns0:display-name=\"Heading 3\" ns0:family=\"paragraph\" ns0:parent-style-name=\"Standard\" ns0:next-style-name=\"Standard\" ns0:default-outline-level=\"3\" ns0:list-style-name=\"WWNum10\" ns0:list-level=\"3\" ns0:class=\"chapter\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:margin-top=\"0.423cm\" ns1:margin-bottom=\"0.106cm\" ns0:contextual-spacing=\"false\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" ns1:keep-with-next=\"always\" /><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns1:font-size=\"12pt\" ns1:language=\"pt\" ns1:country=\"BR\" ns1:font-weight=\"normal\" ns3:rsid=\"008a971d\" ns0:font-size-asian=\"10.5pt\" ns0:font-weight-asian=\"normal\" ns0:font-name-complex=\"Arial1\" ns0:font-family-complex=\"Arial\" ns0:font-family-generic-complex=\"system\" ns0:font-pitch-complex=\"variable\" ns0:font-size-complex=\"12pt\" ns0:font-weight-complex=\"normal\" /></ns0:style>",
+      "P114": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"P114\" ns0:family=\"paragraph\" ns0:parent-style-name=\"List_20_Paragraph\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" /><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns0:font-name=\"Arial\" ns1:font-size=\"12pt\" ns1:language=\"pt\" ns1:country=\"BR\" ns3:rsid=\"001cc9c0\" ns0:font-size-asian=\"12pt\" ns0:font-size-complex=\"12pt\" /></ns0:style>",
+      "P120": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"P120\" ns0:family=\"paragraph\" ns0:parent-style-name=\"List_20_Paragraph\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" /><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns1:language=\"pt\" ns1:country=\"BR\" ns3:paragraph-rsid=\"009f957a\" /></ns0:style>",
+      "P121": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"http://openoffice.org/2009/office\" ns0:name=\"P121\" ns0:family=\"paragraph\" ns0:parent-style-name=\"List_20_Paragraph\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" /><ns0:text-properties ns1:language=\"pt\" ns1:country=\"BR\" ns2:paragraph-rsid=\"009f957a\" /></ns0:style>",
+      "P122": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"P122\" ns0:family=\"paragraph\" ns0:parent-style-name=\"List_20_Paragraph\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" /><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns0:font-name=\"Arial\" ns1:font-size=\"12pt\" ns1:language=\"pt\" ns1:country=\"BR\" ns3:rsid=\"001cc9c0\" ns3:paragraph-rsid=\"009f957a\" ns0:font-size-asian=\"12pt\" ns0:font-size-complex=\"12pt\" /></ns0:style>",
+      "P123": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"P123\" ns0:family=\"paragraph\" ns0:parent-style-name=\"List_20_Paragraph\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:margin-top=\"0cm\" ns1:margin-bottom=\"0cm\" ns0:contextual-spacing=\"true\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" /><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns0:font-name=\"Arial\" ns1:font-size=\"12pt\" ns1:language=\"pt\" ns1:country=\"BR\" ns3:rsid=\"001cc9c0\" ns0:font-size-asian=\"12pt\" ns0:font-size-complex=\"12pt\" /></ns0:style>",
+      "P124": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" ns0:name=\"P124\" ns0:family=\"paragraph\"><ns0:paragraph-properties ns1:text-align=\"justify\" /></ns0:style>",
+      "P91": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" ns0:name=\"P91\" ns0:family=\"paragraph\" ns0:parent-style-name=\"List_20_Paragraph\"><ns0:paragraph-properties ns1:margin-left=\"0cm\" ns1:margin-right=\"0cm\" ns1:text-indent=\"0cm\" ns0:auto-text-indent=\"false\" /><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns1:language=\"pt\" ns1:country=\"BR\" /></ns0:style>",
+      "T4": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" ns0:name=\"T4\" ns0:family=\"text\"><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" /></ns0:style>",
+      "T76": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"http://openoffice.org/2009/office\" ns0:name=\"T76\" ns0:family=\"text\"><ns0:text-properties ns1:font-size=\"12pt\" ns1:font-weight=\"normal\" ns2:rsid=\"00beee58\" ns0:font-size-asian=\"12pt\" ns0:font-weight-asian=\"normal\" ns0:font-size-complex=\"12pt\" ns0:font-weight-complex=\"normal\" /></ns0:style>",
+      "T77": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" ns0:name=\"T77\" ns0:family=\"text\"><ns0:text-properties ns1:font-size=\"12pt\" ns1:font-weight=\"normal\" ns0:font-size-asian=\"12pt\" ns0:font-weight-asian=\"normal\" ns0:font-size-complex=\"12pt\" ns0:font-weight-complex=\"normal\" /></ns0:style>",
+      "T78": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"T78\" ns0:family=\"text\"><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns0:font-name=\"Arial\" ns1:font-size=\"12pt\" ns3:rsid=\"001c34ce\" ns0:font-size-asian=\"12pt\" ns0:font-size-complex=\"12pt\" /></ns0:style>",
+      "T79": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" xmlns:ns2=\"urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0\" xmlns:ns3=\"http://openoffice.org/2009/office\" ns0:name=\"T79\" ns0:family=\"text\"><ns0:text-properties ns1:color=\"#000000\" ns2:opacity=\"100%\" ns0:font-name=\"Arial\" ns1:font-size=\"12pt\" ns3:rsid=\"001cc9c0\" ns0:font-size-asian=\"12pt\" ns0:font-size-complex=\"12pt\" /></ns0:style>",
+      "T80": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" ns0:name=\"T80\" ns0:family=\"text\"><ns0:text-properties ns1:font-size=\"12pt\" ns0:font-size-asian=\"12pt\" ns0:font-size-complex=\"12pt\" /></ns0:style>",
+      "T81": "<ns0:style xmlns:ns0=\"urn:oasis:names:tc:opendocument:xmlns:style:1.0\" xmlns:ns1=\"urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0\" ns0:name=\"T81\" ns0:family=\"text\"><ns0:text-properties ns0:font-name=\"Times New Roman\" ns1:font-size=\"13pt\" ns0:font-size-asian=\"13pt\" ns0:font-size-complex=\"13pt\" /></ns0:style>"
+    },
+    "hashes": {
+      "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex": "beb79f82b6a121454dc7eca815ed7894c831f85345393a7f388ca25234fed3c8",
+      "relatorio_AGES_eduardo/main.tex": "ba5a352222622dbdba3a4a901024dd1b7d4296437180f64e51e78b137d14739e",
+      "relatorio_AGES_eduardo/util/macros.tex": "0e281394a7885326081dfe17865e7b3d5fff6ccdec8abfcb4df95f698ba29a40",
+      "relatorio_AGES_eduardo/util/style.tex": "1d033a1e42768aa8c6bf09aef8bb3bb440ebfff07a0b3b8d3b4678d1c3e50743",
+      "migration/ledgers/ages-i-sprint-0.json": "91386b6000c91896a304a5e961704f48987320cca674f32d876d9786179cee4a",
+      "docs/CONTENT_MANIFEST.json": "6ddd5a5ab6dfe87fab1f535fac1a431fc752be1f5784447318878fb0c37df541"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "scripts/migration.py",
+        "verify-source"
+      ],
+      "exit_code": 0,
+      "output": "build/pilot/content-audit/gate-0.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/migration.py",
+        "validate",
+        "--ledger",
+        "migration/ledgers/ages-i-sprint-0.json",
+        "--unit",
+        "ages-i-sprint-0"
+      ],
+      "exit_code": 1,
+      "output": "build/pilot/content-audit/gate-1.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/migration.py",
+        "audit-latex",
+        "--root",
+        "relatorio_AGES_eduardo",
+        "--entry",
+        "main.tex"
+      ],
+      "exit_code": 1,
+      "output": "build/pilot/content-audit/gate-2.txt"
+    }
+  ],
+  "findings": [
+    {
+      "id": "CA01",
+      "status": "FAIL",
+      "local": "docs/CONTENT_MANIFEST.json / $.migration_overlay",
+      "evidence": "validate exit 1: manifest-unexpected-field",
+      "consequence": "Gate de inventário/cobertura automatizado não executa comparação integral.",
+      "severity": "high",
+      "proposed_fix": "Proprietário harmoniza extensão do manifesto com o validador, mantendo inventário original verificável.",
+      "verification": "Reexecutar validate --ledger migration/ledgers/ages-i-sprint-0.json --unit ages-i-sprint-0."
+    },
+    {
+      "id": "CA02",
+      "status": "FAIL",
+      "local": "relatorio_AGES_eduardo/util/macros.tex:77",
+      "evidence": "audit-latex exit 1: missing_or_dynamic_asset #1 em memorialfigure não invocada.",
+      "consequence": "Gate estrutural ainda falha; não comprova omissão de imagem na unidade (zero imagens no XML).",
+      "severity": "medium",
+      "proposed_fix": "Mantenedor remove macro inutilizada ou responsável pelo harness implementa análise conservadora de invocações de macro.",
+      "verification": "Reexecutar audit-latex e verificar nenhum recurso dinâmico realmente invocado fica sem cobertura."
+    },
+    {
+      "id": "CA03",
+      "status": "PENDING",
+      "local": "build/document/main.pdf; text-p-0413/0424–0428; text-h-0016",
+      "evidence": "PDF real não disponível nesta rodada. Fonte contém seis originaltab e quatro originalspace; definições examinadas diretamente.",
+      "consequence": "Equivalência gráfica de tabs/espaços e saída efetiva dos glifos depende de PDF real.",
+      "severity": "high",
+      "proposed_fix": "Compilar destino limpo e inspecionar PDF/render real.",
+      "verification": "Hash do PDF/log, pdftotext complementar e inspeção visual de todas as páginas."
+    }
+  ],
+  "limits": [
+    "Resultado vinculado a hashes de arquivos da árvore de trabalho, ainda não a commit integrado.",
+    "Este auditor não leu relatório do conversor/extrator; ledger usado somente para localizar bytes candidatos.",
+    "Inventário reconstituído diretamente de content.xml ZIP com ElementTree; decodificação independente exclusivamente originaltab/originalspace e rejeição de outras macros nos spans.",
+    "Nenhuma disponibilidade remota de URL alegada; unidade não contém hyperlinks.",
+    "Aprovação para executar piloto não equivale à aprovação humana do resultado."
+  ]
+}
