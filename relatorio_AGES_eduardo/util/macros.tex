@@ -1,0 +1,80 @@
+% Reflection boxes contain ordinary paragraphs, not floats or nested boxes.
+% The collected vertical list is divided at TeX paragraph/line breakpoints.
+% Each segment receives a border; original wording is never changed to fit.
+\newbox\ReflectionBody
+\newbox\ReflectionSegment
+\newdimen\ReflectionAvailable
+\newdimen\ReflectionWidth
+\newdimen\ReflectionTotal
+% ODF paragraph default: style:tab-stop-distance="1.251cm".
+% Supported only for the pilot's single leading tab. It also cancels the
+% automatic paragraph indent so the original tab is not counted twice.
+\newcommand{\originaltab}{\noindent\hspace*{1.251cm}}
+% Explicit source space survives at paragraph/title edges.
+\newcommand{\originalspace}{\hspace*{\fontdimen2\font}}
+\newcommand{\ReflectionRender}{%
+  \ifvoid\ReflectionBody\else
+    \ReflectionAvailable=\pagegoal
+    \ifdim\ReflectionAvailable>\textheight
+      \ReflectionAvailable=\textheight
+    \fi
+    \advance\ReflectionAvailable by -\pagetotal
+    \advance\ReflectionAvailable by -2\fboxsep
+    \advance\ReflectionAvailable by -2\fboxrule
+    \advance\ReflectionAvailable by -\baselineskip
+    \ifdim\ReflectionAvailable<4\baselineskip
+      \newpage
+      \ReflectionAvailable=\textheight
+      \advance\ReflectionAvailable by -2\fboxsep
+      \advance\ReflectionAvailable by -2\fboxrule
+      \advance\ReflectionAvailable by -\baselineskip
+    \fi
+    \ReflectionTotal=\ht\ReflectionBody
+    \advance\ReflectionTotal by \dp\ReflectionBody
+    \ifdim\ReflectionTotal>\ReflectionAvailable
+      \splittopskip=\topskip
+      \splitmaxdepth=\maxdepth
+      % vsplit's fixed-height glue is immediately discarded by natural-height
+      % reboxing; badness of that temporary target is not a layout defect.
+      % All horizontal/output diagnostics retain their normal thresholds.
+      \vbadness=10000
+      \setbox\ReflectionSegment=\vsplit\ReflectionBody to \ReflectionAvailable
+      \vbadness=1000
+      % Natural-height reboxing removes the target-height stretch.
+      \setbox\ReflectionSegment=\vbox{\unvbox\ReflectionSegment}
+      \noindent\fbox{\box\ReflectionSegment}\par
+      \newpage
+      \expandafter\ReflectionRender
+    \else
+      \noindent\fbox{\box\ReflectionBody}\par
+    \fi
+  \fi
+}
+\newenvironment{reflection}{%
+  \par\begingroup
+  \setlength{\fboxsep}{6pt}\setlength{\fboxrule}{0.4pt}
+  \ReflectionWidth=\linewidth
+  \advance\ReflectionWidth by -2\fboxsep
+  \advance\ReflectionWidth by -2\fboxrule
+  \setbox\ReflectionBody=\vbox\bgroup
+    \hsize=\ReflectionWidth\linewidth=\ReflectionWidth
+    \normalfont\normalsize\sffamily
+}{%
+    \par\egroup
+    \ReflectionRender
+  \endgroup\par
+}
+% No caption/counter/list-of-figures entry: this is visibly provisional.
+\newcommand{\diagramplaceholder}[2]{%
+  \par\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \textbf{Diagrama ausente — placeholder provisório}\par
+    Identificador: #1\par Pendência: #2}}\par
+}
+% Above-image caption, then label; source is supplied verbatim, never guessed.
+\newcommand{\memorialfigure}[5]{%
+  \begin{figure}[htbp]
+    \caption{#2}\label{#3}
+    \centering\includegraphics[width=#5\linewidth]{#1}
+    \par\small #4
+  \end{figure}
+}

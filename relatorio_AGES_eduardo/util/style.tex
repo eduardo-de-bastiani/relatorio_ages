@@ -1,0 +1,35 @@
+% Exclusive global presentation authority for the authorized pilot.
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{indentfirst}
+\usepackage[top=3cm,left=3cm,bottom=2cm,right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXchapterfont}{\normalfont\sffamily\bfseries}
+\renewcommand{\ABNTEXsectionfont}{\normalfont\sffamily\bfseries}
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont\sffamily}
+\setlength{\afterchapskip}{24pt}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\OnehalfSpacing
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\widowpenalty=10000
+\clubpenalty=10000
+% Additional legal interword stretch is attempted before accepting overflow.
+% No tolerance threshold/hfuzz is raised and all layout warnings remain visible.
+\setlength{\emergencystretch}{1em}
+% Tectonic uses XeTeX; active Unicode characters select existing T1 glyphs.
+% Literal source characters remain literal in the unit for traceability.
+\catcode`“=\active \def“{\textquotedblleft}
+\catcode`”=\active \def”{\textquotedblright}
+\catcode`‘=\active \def‘{\textquoteleft}
+\catcode`’=\active \def’{\textquoteright}
+\catcode`–=\active \def–{\textendash}
+\catcode`—=\active \def—{\textemdash}
