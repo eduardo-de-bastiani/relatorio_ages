@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "unit": "ages-i-sprint-0",
+  "reviewer": "Codex independent visual-auditor subagent /root/pilot_visual_final",
+  "review_type": "agent_visual_review_not_human_approval",
+  "commit": "5826ca435bafb1e4d052f9c8bcd310d336825741",
+  "status": "FAIL",
+  "artifacts": [
+    {
+      "path": "build/document/main.pdf",
+      "sha256": "a57e643bd7878e2c2f36c6be20b902aa33a08381694102f2c7b453ea5f33fc93"
+    },
+    {
+      "path": "build/pilot-continuity-test/main.pdf",
+      "sha256": "4c32b7d6e4588c300a2927866ec6ce153cc420e3961ba4907b849106a71e5dac"
+    },
+    {
+      "path": "relatorio_mariah/relatorio_ages-main/extracted/main.pdf",
+      "sha256": "ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420"
+    },
+    {
+      "path": "build/pilot/visual-final/continuity/page-1.png",
+      "sha256": "ad1eab0ef459d01f6a49dc27b5f1f5b7567c45332a9a6cc0852a8464478d87b1"
+    },
+    {
+      "path": "build/pilot/visual-final/continuity/page-2.png",
+      "sha256": "7fe036f69abb745fe228fdb84a6174e760b3f5ad653310a19f3a4547a85fdf4d"
+    },
+    {
+      "path": "build/pilot/visual-final/document/page-1.png",
+      "sha256": "c909bc8a545af1b49cbd77d8f3258cef9b991dfa276a69086c3c59a00a2f13bf"
+    },
+    {
+      "path": "build/pilot/visual-final/document/page-2.png",
+      "sha256": "33453537ab6b42b6fc4c339ec5a3b0d2bd5a588703f7304341777afd750614d0"
+    },
+    {
+      "path": "build/pilot/visual-final/reference/page-17.png",
+      "sha256": "22a2de4e4ea387e21f295520d988d19ba5174137207cd12e07f282fbbd1fa63f"
+    },
+    {
+      "path": "build/pilot/visual-final/reference/page-18.png",
+      "sha256": "0830bf189ae56a91d9249636a19a9a76e9f7c5efe6be8b5288599ecb3a0b04b7"
+    }
+  ],
+  "inspected_pages": {
+    "build/document/main.pdf": [
+      1,
+      2
+    ],
+    "build/pilot-continuity-test/main.pdf": [
+      1,
+      2
+    ],
+    "relatorio_mariah/relatorio_ages-main/extracted/main.pdf": [
+      17,
+      18
+    ]
+  },
+  "render_dpi": 150,
+  "checks": [
+    {
+      "id": "V01",
+      "status": "PASS",
+      "description": "Todas as páginas reais e do teste foram abertas; texto e bordas legíveis, sem clipping, overflow, título órfão ou páginas vazias."
+    },
+    {
+      "id": "V02",
+      "status": "PASS",
+      "description": "Corpo e reflexão usam NimbusSanL-Regu, 11.955168 pt PDF (12 pt TeX); baseline 17.92723 pt, razão 1.5."
+    },
+    {
+      "id": "V03",
+      "status": "PASS",
+      "description": "Reflexão se divide naturalmente entre pp.1–2, preservando borda e fonte. Continuação não duplica título nem inventa conteúdo."
+    },
+    {
+      "id": "V04",
+      "status": "PASS",
+      "description": "Teste sintético mostra contexto anterior e Sprint 0 na p.1; último parágrafo real e título posterior sintético na p.2. Não há conversão de próxima Sprint."
+    },
+    {
+      "id": "V05",
+      "status": "PASS",
+      "description": "A4 595.28×841.89 pt; borda esquerda85.03937 pt=3cm, direita56.69730 pt=2cm; topo p.2≈3cm; nenhuma tinta invade margem inferior mínima2cm."
+    },
+    {
+      "id": "V06",
+      "status": "PENDING",
+      "description": "Limite exato inferior2cm não materializado por tinta nesta unidade curta; configuração nominal2cm é corroborativa, não mensuração integral."
+    },
+    {
+      "id": "V07",
+      "status": "PASS",
+      "description": "Âncora original __RefHeading___Toc4743_3118176633 e destino subsection.2.3.1 presentes no PDF."
+    },
+    {
+      "id": "V08",
+      "status": "NOT_APPLICABLE",
+      "description": "Não há figura, legenda, fonte de figura, placeholder, lista autoral, nota, hyperlink externo, bibliografia ou sumário exibido nesta Sprint."
+    },
+    {
+      "id": "V09",
+      "status": "PENDING",
+      "description": "Conformidade normativa integral e confirmação da vigência das normas permanecem pendentes; esta auditoria mede apresentação sem certificar ABNT integral."
+    },
+    {
+      "id": "V10",
+      "status": "PENDING",
+      "description": "Checkpoint de aprovação humana do piloto permanece pendente."
+    }
+  ],
+  "findings": [
+    {
+      "id": "VIS-001",
+      "status": "FAIL",
+      "severity": "low",
+      "location": "build/document/main.pdf pp.1–2, cabeçalho número de página",
+      "evidence": "p.1 número usa9.96264 pt PDF; p.2 usa11.955168 pt. Diferença confirmada ao abrir os PNGs.",
+      "consequence": "Variação visual entre números de páginas reduz consistência do acabamento.",
+      "proposed_correction": "Mantenedor uniformiza tamanho da paginação global; recompilar e reabrir ambas as páginas.",
+      "verification": "pypdf visitor_text deve medir tamanho igual dos dois números; confirmar renders."
+    }
+  ],
+  "limitations": [
+    "Fonte textual estrita requer auditoria textual independente; extração PDF não prova equivalência integral.",
+    "Referência Mariah consultada somente para acabamento pp.17–18; conteúdo não foi copiado.",
+    "Revisão por subagente Codex; não foi execução Antigravity nem revisão humana.",
+    "pdfplumber/fitz indisponíveis; pypdf e Poppler fornecem medições e renders."
+  ],
+  "commands": [
+    {
+      "command": "pdftoppm -png -r 150 build/document/main.pdf build/pilot/visual-final/document/page",
+      "exit_code": 0
+    },
+    {
+      "command": "pdftoppm -png -r 150 build/pilot-continuity-test/main.pdf build/pilot/visual-final/continuity/page",
+      "exit_code": 0
+    },
+    {
+      "command": "pdftoppm -f 17 -l 18 -png -r 150 relatorio_mariah/relatorio_ages-main/extracted/main.pdf build/pilot/visual-final/reference/page",
+      "exit_code": 0
+    },
+    {
+      "command": "pdfinfo build/document/main.pdf; pdfinfo build/pilot-continuity-test/main.pdf",
+      "exit_code": 0
+    },
+    {
+      "command": "pdffonts build/document/main.pdf",
+      "exit_code": 0
+    },
+    {
+      "command": "pdftotext -bbox-layout build/document/main.pdf build/pilot/visual-final/document/positions.html",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 pypdf visitor_text / ContentStream / SHA256, measurements.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 import fitz",
+      "exit_code": 1
+    },
+    {
+      "command": "python3 import pdfplumber",
+      "exit_code": 1
+    }
+  ],
+  "cli_visual": "Solicitado ao orquestrador por saída fixa build/visual fora da posse; comandos equivalentes executados em caminho atribuído."
+}
