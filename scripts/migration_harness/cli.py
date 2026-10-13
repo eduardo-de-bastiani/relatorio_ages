@@ -51,18 +51,18 @@ def main(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     config = read_json(REPO / "harness.json")
     execution = {"commit": git(REPO, "rev-parse", "HEAD"),
-                 "branch": git(REPO, "symbolic-ref", "--short", "HEAD"),
+                 "branch": git(REPO, "rev-parse", "--abbrev-ref", "HEAD"),
                  "dirty": bool(git(REPO, "status", "--porcelain")),
                  "arguments": list(argv if argv is not None else sys.argv[1:]),
-                 "manifest_sha256": sha256(REPO / config["manifest"]),
-                 "toolchain_lock_sha256": sha256(REPO / config["toolchain_lock"])}
+                 "manifest_sha256": sha256(REPO / config["manifest"]) if (REPO / config["manifest"]).is_file() else None,
+                 "toolchain_lock_sha256": sha256(REPO / config["toolchain_lock"]) if (REPO / config["toolchain_lock"]).is_file() else None}
     try:
         if args.command == "verify-source":
             findings = protected_findings(REPO)
             report = {"status": "fail" if findings else "pass", "findings": findings,
                       "protected_files": len(read_json(REPO / "docs/BASELINE.json")["protected_files"])}
         elif args.command == "inventory":
-            with resource_locks(["manifest"]):
+            with resource_locks(["manifest"], repo=REPO):
                 findings = protected_findings(REPO)
                 if findings:
                     report = {"status": "fail", "findings": findings}
@@ -101,10 +101,10 @@ def main(argv: list[str] | None = None) -> int:
                 report["execution"] = execution
                 write_json(REPO / "build/validation" / ((args.unit or "all") + "/report.json"), report)
         elif args.command == "build":
-            with resource_locks(["build:" + args.profile, "latex-config", "integration"]):
+            with resource_locks(["build:" + args.profile, "latex-config", "integration"], repo=REPO):
                 report = compile_profile(args.profile)
         elif args.command == "visual":
-            with resource_locks(["visual"]):
+            with resource_locks(["visual"], repo=REPO):
                 report = prepare_visual(args.pdf, dpi=args.dpi)
         elif args.command == "scope-check":
             report = scope_check(args.role, args.base, unit=args.unit)

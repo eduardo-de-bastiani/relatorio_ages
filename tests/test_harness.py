@@ -1,15 +1,19 @@
 import json
+import io
+from contextlib import redirect_stdout
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from migration_harness.build import audit_log, _copy_sources, compile_profile
 from migration_harness.common import safe_relative, sha256, require_work_branch
 from migration_harness.coordination import scope_check, resource_locks, run_task, checkpoint
 from migration_harness.environment import check_lock, REQUIRED
+from migration_harness import cli
 
 
 class HarnessTests(unittest.TestCase):
@@ -43,6 +47,18 @@ class HarnessTests(unittest.TestCase):
         self.run_git("branch", "-m", "main")
         with self.assertRaises(ValueError):
             require_work_branch(self.repo)
+
+    def test_missing_manifest_is_a_structured_failure(self):
+        self.config["toolchain_lock"] = "docs/TOOLCHAIN.lock.json"
+        (self.repo / "harness.json").write_text(json.dumps(self.config))
+        (self.repo / "docs/CONTENT_MANIFEST.json").unlink()
+        output = io.StringIO()
+        with patch.object(cli, "REPO", self.repo), redirect_stdout(output):
+            status = cli.main(["inventory", "--check"])
+        report = json.loads(output.getvalue())
+        self.assertEqual(status, 1)
+        self.assertEqual(report["status"], "fail")
+        self.assertIsNone(report["execution"]["manifest_sha256"])
 
     def test_extractor_owns_manifest_even_against_broad_doc_pattern(self):
         (self.repo / "docs/CONTENT_MANIFEST.json").write_text('{"units": []}')
