@@ -40,3 +40,7 @@ Os gates do memorial permanecem pendentes. Resolver por unidade as pendências d
 Piloto recomendado: **AGES I / Easy Choose / Sprint 0**, ID `ages-i-sprint-0`, título original `text-h-0016`, dez registros textuais, destino previsto `relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex`. Exercita texto/listas/reflexão sem dependência de figura complexa. A reflexão terá borda, fonte do corpo e divisão entre páginas, conforme decisão do usuário. A autorização explícita do piloto ainda é necessária.
 
 Detalhes operacionais estão em [HARNESS](HARNESS.md); relatórios locais em `build/`, ignorado pelo Git, com hash/commit e resultado de cada execução. Os diretórios temporários de compilação foram limpos. Artefatos diagnósticos em `build/` ficam disponíveis para revisão e podem ser regenerados.
+
+## Complemento de rastreabilidade
+
+Após a bateria principal acima, os commits `5220180` e `2e9304f` acrescentaram proveniência automática: os relatórios CLI registram commit/branch/estado, argumentos e hashes do manifesto/toolchain; o relatório visual registra também commit/branch. Uma regressão adicional garante que manifesto ausente produz FAIL estruturado, sem impedir diagnóstico ou regeneração por inventário. A suíte integrada passou então com **52 testes**, sobre os mesmos bytes de código posteriormente registrados em `2e9304f`. O build e as fixtures não mudaram nesse complemento; suas duas reproduções e hashes acima continuam sendo evidência da versão identificada nos respectivos relatórios.
