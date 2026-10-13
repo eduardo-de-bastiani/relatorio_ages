@@ -406558,7 +406558,7 @@
     "tasks": {
       "ages-i-sprint-0": {
         "task_id": "pilot-ages-i-sprint-0",
-        "stage": "extracted",
+        "stage": "review-ready",
         "scope": [
           "ages-i-sprint-0"
         ],
@@ -406580,7 +406580,16 @@
         ],
         "evidence": "build/pilot/extraction/ages-i-sprint-0.json",
         "evidence_sha256": "dd8649c9474dca3df3be69ede0bd897a2b4ab1fad19ea291fed8551d9d8c583f",
-        "authorization_evidence": "migration/approvals/pilot-authorization.json"
+        "authorization_evidence": "migration/approvals/pilot-authorization.json",
+        "ledger": "migration/ledgers/ages-i-sprint-0.json",
+        "ledger_sha256": "39656caf6e4aab88b44eb4cbd1673455110f2aac0a6fe3b88b9513f0a7c2757f",
+        "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
+        "pdf": "build/document/main.pdf",
+        "pdf_sha256": "695548198b34270eed8f6da21ebb4af3bb19e1762fd1dba77c04eb23cb611784",
+        "content_audit": "docs/pilot/CONTENT_AUDIT.json",
+        "content_audit_sha256": "385cbc477016dc1e523507c1ac31c71575e9a7fe677f64a7dd68eba87f376055",
+        "visual_audit": "docs/pilot/VISUAL_AUDIT.json",
+        "visual_audit_sha256": "3e281093b9f66a802f4e8a8c10576602ab429fe6e0a5e13bc68d1830d5e73751"
       }
     }
   }
