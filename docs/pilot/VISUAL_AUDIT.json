@@ -3,12 +3,20 @@
   "unit": "ages-i-sprint-0",
   "reviewer": "Codex independent visual-auditor subagent /root/pilot_visual_final",
   "review_type": "agent_visual_review_not_human_approval",
-  "commit": "5826ca435bafb1e4d052f9c8bcd310d336825741",
-  "status": "FAIL",
+  "commit": "f7095af7dce388fa4a366168e748e926be459880",
+  "status": "PASS",
   "artifacts": [
     {
       "path": "build/document/main.pdf",
-      "sha256": "a57e643bd7878e2c2f36c6be20b902aa33a08381694102f2c7b453ea5f33fc93"
+      "sha256": "695548198b34270eed8f6da21ebb4af3bb19e1762fd1dba77c04eb23cb611784"
+    },
+    {
+      "path": "build/document/report.json",
+      "sha256": "721a0202e58529c49488de968ad4e737d6050d2654e098d45adc3c3d869ecad8"
+    },
+    {
+      "path": "build/document/compiler.txt",
+      "sha256": "9dae4eb561a0310088b0fbb56a13a28e2e1c2dcb222160e1c577493092be428d"
     },
     {
       "path": "build/pilot-continuity-test/main.pdf",
@@ -19,20 +27,20 @@
       "sha256": "ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420"
     },
     {
+      "path": "build/pilot/visual-final/695548198b34270e/page-1.png",
+      "sha256": "8a9899cc369045d35050c8e06ea3c90136a2e3b27212d281d626df3a72f24c72"
+    },
+    {
+      "path": "build/pilot/visual-final/695548198b34270e/page-2.png",
+      "sha256": "ad39ac9fc09559e8203148104378d030cb3a1b229958d7c7e2312a32df8fbdcd"
+    },
+    {
       "path": "build/pilot/visual-final/continuity/page-1.png",
       "sha256": "ad1eab0ef459d01f6a49dc27b5f1f5b7567c45332a9a6cc0852a8464478d87b1"
     },
     {
       "path": "build/pilot/visual-final/continuity/page-2.png",
       "sha256": "7fe036f69abb745fe228fdb84a6174e760b3f5ad653310a19f3a4547a85fdf4d"
-    },
-    {
-      "path": "build/pilot/visual-final/document/page-1.png",
-      "sha256": "c909bc8a545af1b49cbd77d8f3258cef9b991dfa276a69086c3c59a00a2f13bf"
-    },
-    {
-      "path": "build/pilot/visual-final/document/page-2.png",
-      "sha256": "33453537ab6b42b6fc4c339ec5a3b0d2bd5a588703f7304341777afd750614d0"
     },
     {
       "path": "build/pilot/visual-final/reference/page-17.png",
@@ -108,18 +116,24 @@
       "id": "V10",
       "status": "PENDING",
       "description": "Checkpoint de aprovação humana do piloto permanece pendente."
+    },
+    {
+      "id": "V11",
+      "status": "PASS",
+      "description": "Paginação uniforme10pt TeX; topo e direita≈2cm medidos em ambas as páginas finais. Corpo/reflexão geometricamente inalterados pela correção."
     }
   ],
   "findings": [
     {
       "id": "VIS-001",
-      "status": "FAIL",
+      "status": "PASS",
       "severity": "low",
       "location": "build/document/main.pdf pp.1–2, cabeçalho número de página",
       "evidence": "p.1 número usa9.96264 pt PDF; p.2 usa11.955168 pt. Diferença confirmada ao abrir os PNGs.",
       "consequence": "Variação visual entre números de páginas reduz consistência do acabamento.",
       "proposed_correction": "Mantenedor uniformiza tamanho da paginação global; recompilar e reabrir ambas as páginas.",
-      "verification": "pypdf visitor_text deve medir tamanho igual dos dois números; confirmar renders."
+      "verification": "pypdf visitor_text deve medir tamanho igual dos dois números; confirmar renders.",
+      "resolution": "Corrigido pelo mantenedor, reauditoria independente de ambas as páginas finais. Ambos números9.96264pt PDF (10pt TeX), bbox idêntica[533.043530,56.693615,538.582758,66.128236]pt: topo2.000025cm/direita2.000153cm. Todos os runs de corpo/reflexão (texto,font,tamanho,x,y) permanecem exatamente iguais ao primeiro PDF auditado."
     }
   ],
   "limitations": [
@@ -164,7 +178,29 @@
     {
       "command": "python3 import pdfplumber",
       "exit_code": 1
+    },
+    {
+      "command": "pdftoppm -png -r 150 build/document/main.pdf build/pilot/visual-final/695548198b34270e/page",
+      "exit_code": 0
+    },
+    {
+      "command": "pdftotext -bbox-layout build/document/main.pdf build/pilot/visual-final/695548198b34270e/positions.html",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 pypdf medir PDF final e assert runs body/reflection iguais baseline; SHA256 artifacts",
+      "exit_code": 0
     }
   ],
-  "cli_visual": "Solicitado ao orquestrador por saída fixa build/visual fora da posse; comandos equivalentes executados em caminho atribuído."
+  "cli_visual": "Solicitado ao orquestrador por saída fixa build/visual fora da posse; comandos equivalentes executados em caminho atribuído.",
+  "history": [
+    {
+      "commit": "5826ca435bafb1e4d052f9c8bcd310d336825741",
+      "pdf_sha256": "a57e643bd7878e2c2f36c6be20b902aa33a08381694102f2c7b453ea5f33fc93",
+      "status": "FAIL",
+      "finding": "VIS-001 pagination font inconsistency, resolved after owner correction"
+    }
+  ],
+  "human_approval": "PENDING",
+  "normative_integral": "PENDING"
 }
