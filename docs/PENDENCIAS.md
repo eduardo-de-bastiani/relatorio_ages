@@ -25,6 +25,12 @@ Texto rigorosamente preservado; revisão editorial posterior; Sprints sem iníci
 
 As pendências de apresentação/conteúdo não autorizam ação editorial. Bloqueiam a unidade ou gate que delas depende; não a implementação do harness. Material ausente não pode ser convertido em referência ou diagrama presumido.
 
+## Resultado do piloto
+
+A unidade `ages-i-sprint-0` foi convertida e auditada isoladamente. P09 foi atendida com o destino `relatorio_AGES_eduardo/`, mantendo o template original somente para leitura. P10 usa profundidade 2 e registro do título preservado; sua aprovação visual pelo usuário permanece pendente. P11 foi resolvida para os caracteres usados neste piloto, com compilação sem avisos; isso não certifica todas as fontes/símbolos futuros. P12/P14 foram resolvidas para seus dez registros por título literal com contador sincronizado e macros de tabs/espaços verificadas, sem normalização da fonte. Não generalizar o resultado para as demais unidades. Os pareceres e pendências específicas estão em [pilot/PILOT_REVIEW.md](pilot/PILOT_REVIEW.md).
+
+Execução autorizada não equivale a aprovação do resultado. Não iniciar a próxima Sprint sem mensagem explícita do usuário.
+
 ## Como registrar nova pendência
 
 Adicionar ID estável, elemento/arquivo afetado, evidência concreta, impacto, gravidade, responsável, decisão necessária e método de verificação. Resolvido exige evidência e data; não apagar o histórico da decisão.
