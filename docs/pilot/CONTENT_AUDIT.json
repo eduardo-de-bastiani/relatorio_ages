@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "status": "PASS_CONTENT_PENDING_REBUILD_VISUAL_AND_HUMAN",
+  "status": "PASS_CONTENT_PENDING_VISUAL_AND_HUMAN",
   "auditor": "Subagente Codex independente; não Antigravity",
   "skill": ".agent/skills/content-preservation-audit/SKILL.md",
   "unit": "ages-i-sprint-0",
-  "commit": "5826ca435bafb1e4d052f9c8bcd310d336825741",
+  "commit": "f7095af7dce388fa4a366168e748e926be459880",
   "branch": "migration/pilot-ages-i-sprint-0",
   "gates": {
     "G0": "PASS",
@@ -13,7 +13,7 @@
     "G3": "PASS",
     "G4": "PASS",
     "G5": "PASS",
-    "G6": "PENDING",
+    "G6": "PASS",
     "G7": "PENDING",
     "G8": "PENDING",
     "G9": "PENDING"
@@ -26,7 +26,7 @@
     "authored_lists": "List wrappers pertencem somente ao heading Sprint 1; zero item autoral de Sprint 0"
   },
   "independent_evidence": {
-    "commit": "5826ca435bafb1e4d052f9c8bcd310d336825741",
+    "commit": "f7095af7dce388fa4a366168e748e926be459880",
     "source_xml_sha256": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28",
     "source_hash_correct": true,
     "boundary": [
@@ -264,15 +264,15 @@
       "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
       "relatorio_AGES_eduardo/main.tex": "ba5a352222622dbdba3a4a901024dd1b7d4296437180f64e51e78b137d14739e",
       "relatorio_AGES_eduardo/util/macros.tex": "0e281394a7885326081dfe17865e7b3d5fff6ccdec8abfcb4df95f698ba29a40",
-      "relatorio_AGES_eduardo/util/style.tex": "e75349de56e224029622f3e747fff5515015f6c7158ba926469857cc3526136b",
+      "relatorio_AGES_eduardo/util/style.tex": "bef1655036992f8c5bc1b0ba80495c625def12932b9435e1cc6361546f213b05",
       "docs/CONTENT_MANIFEST.json": "6ddd5a5ab6dfe87fab1f535fac1a431fc752be1f5784447318878fb0c37df541",
       "migration/ledgers/ages-i-sprint-0.json": "5bc677ee15369bbf064ca840052270efe6fef027cd601bf3dad5b87950771180",
       "scripts/migration.py": "28bb364eb19d04c23034f71a49f2bd336f617477cba5d2ec325d7ca244aa00c5",
-      "build/document/main.pdf": "a57e643bd7878e2c2f36c6be20b902aa33a08381694102f2c7b453ea5f33fc93",
+      "build/document/main.pdf": "695548198b34270eed8f6da21ebb4af3bb19e1762fd1dba77c04eb23cb611784",
       "build/document/main.aux": "395c7a1cc493db768727ae247baf2db69fc588039776fc70e4d650a2c40c090a",
-      "build/document/main.log": "02c1f016051f2122b04acdf4a5b7d5a598699b34b2e2d98fe1f588e986721a3b",
-      "build/document/compiler.txt": "ce88e0c9bd4825f6dda03d21dee600352cb4b42ed7635b08482b597c4c4cd2fb",
-      "build/document/report.json": "a44613872f1cfb4229827f67a83bb0107078fa0c802efa619302742f32154b18"
+      "build/document/main.log": "1e00fbb01b21bd8741a885fea0f7936c1db9acc658ce6d5ea1c8a0d5f6680034",
+      "build/document/compiler.txt": "9dae4eb561a0310088b0fbb56a13a28e2e1c2dcb222160e1c577493092be428d",
+      "build/document/report.json": "721a0202e58529c49488de968ad4e737d6050d2654e098d45adc3c3d869ecad8"
     }
   },
   "commands": [
@@ -379,7 +379,7 @@
       "evidence": "PDF real de duas páginas lido por pdftotext; contém título único, quatro parágrafos de corpo e cinco de reflexão, incluindo continuação de p0426. .aux confirma referência 2.3.1 e toc derivado; log real zero linhas Warning/Overfull/Underfull/Missing character/undefined.",
       "consequence": "Pendência de existência/saída textual real resolvida; inspeção visual de espaços/borda segue gate separado.",
       "severity": "high",
-      "correction": "Build limpo identificado no report.json, commit 5826ca4 e PDF SHA anexos; auditor não recompilou nem alterou memorial.",
+      "correction": "Build limpo identificado no report.json, commit f7095af e PDF SHA anexos; auditor não recompilou nem alterou memorial.",
       "verification": "PDF/texto/aux/log reais examinados; G7 permanece PENDING neste parecer e depende de VISUAL_AUDIT."
     },
     {
@@ -390,7 +390,7 @@
       "consequence": "Não converter aprovação lexical em aprovação de layout, tabs/espaços ou bordas.",
       "severity": "medium",
       "correction": "Auditor visual verifica renders completos do mesmo SHA de PDF.",
-      "verification": "Relatório visual independente vinculado ao PDF a57e643bd7878e2c2f36c6be20b902aa33a08381694102f2c7b453ea5f33fc93."
+      "verification": "Relatório visual independente vinculado ao PDF 695548198b34270eed8f6da21ebb4af3bb19e1762fd1dba77c04eb23cb611784."
     },
     {
       "id": "CA05",
@@ -404,13 +404,14 @@
     },
     {
       "id": "CA06",
-      "status": "PENDING",
+      "status": "PASS",
       "local": "relatorio_AGES_eduardo/util/style.tex / build/document/main.pdf",
-      "evidence": "Verificação final detectou style.tex SHA b99e8231e36abfe69ae2e295f4940c67ab8c617b01db4855614b3ea8db0a82a0 diferente do SHA e75349de56e224029622f3e747fff5515015f6c7158ba926469857cc3526136b no build examinado; alteração de fonte da paginação 10pt.",
-      "consequence": "PDF/G6 auditados ainda vinculam configuração anterior.",
+      "evidence": "Novo build examinado em commit f7095af7dce388fa4a366168e748e926be459880; todos os SHA de source_files e artifacts conferidos contra bytes reais. style.tex SHA bef1655036992f8c5bc1b0ba80495c625def12932b9435e1cc6361546f213b05; PDF SHA 695548198b34270eed8f6da21ebb4af3bb19e1762fd1dba77c04eb23cb611784. Reextração ZIP/XML e comparação física TeX repetida: 10/10 exatos; .aux 2.3.1/toc idênticos, log zero avisos, build exit 0.",
+      "consequence": "Pendência de vínculo entre configuração atual e PDF encerrada. Inspeção visual e aprovação humana continuam gates separados.",
       "severity": "high",
-      "correction": "Mantenedor/orquestrador recompila e auditor revalida artefatos atuais.",
-      "verification": "Igualdade style.tex com report source_files e hashes PDF/aux/log atualizados."
+      "correction": "Mantenedor/orquestrador recompilou; auditor leu novamente style/main/macros/unidade/aux/log/report e PDF atual. Nenhuma escrita em fonte.",
+      "verification": "build/pilot/content-final/independent-evidence.json, gate-0 a gate-5 e checagem SHA de todos os source_files/artifacts do report.json.",
+      "original_status": "PENDING"
     }
   ],
   "history": [
@@ -1342,5 +1343,33 @@
     "Este auditor não leu relatos do conversor/extrator; ledger usado como índice, expectativas exclusivamente ZIP/XML.",
     "G7 pertence ao auditor visual; G8 exige parecer normativo, fora do mandato textual; G9 permanece humano.",
     "Nenhuma próxima Sprint autorizada; nenhum memorial integral declarado migrado."
+  ],
+  "followup_history": [
+    {
+      "commit": "5826ca435bafb1e4d052f9c8bcd310d336825741",
+      "pdf_sha256": "a57e643bd7878e2c2f36c6be20b902aa33a08381694102f2c7b453ea5f33fc93",
+      "gates": {
+        "G0": "PASS",
+        "G1": "PASS",
+        "G2": "PASS",
+        "G3": "PASS",
+        "G4": "PASS",
+        "G5": "PASS",
+        "G6": "PENDING",
+        "G7": "PENDING",
+        "G8": "PENDING",
+        "G9": "PENDING"
+      },
+      "finding": {
+        "id": "CA06",
+        "status": "PENDING",
+        "local": "relatorio_AGES_eduardo/util/style.tex / build/document/main.pdf",
+        "evidence": "Verificação final detectou style.tex SHA b99e8231e36abfe69ae2e295f4940c67ab8c617b01db4855614b3ea8db0a82a0 diferente do SHA e75349de56e224029622f3e747fff5515015f6c7158ba926469857cc3526136b no build examinado; alteração de fonte da paginação 10pt.",
+        "consequence": "PDF/G6 auditados ainda vinculam configuração anterior.",
+        "severity": "high",
+        "correction": "Mantenedor/orquestrador recompila e auditor revalida artefatos atuais.",
+        "verification": "Igualdade style.tex com report source_files e hashes PDF/aux/log atualizados."
+      }
+    }
   ]
 }
