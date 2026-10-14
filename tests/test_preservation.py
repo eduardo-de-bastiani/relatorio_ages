@@ -209,6 +209,8 @@ class PreservationTests(unittest.TestCase):
         self.whitespace_case("\t\tApós ", r"\originaltab{}Após\originalspace{}")
         self.assertEqual(self.audit()["status"], "blocked")
         self.whitespace_case("\tA\tB", r"\originaltab{}A\originaltab{}B")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        self.whitespace_case("\tA\tB", r"\originaltab{}\originaltab{}AB")
         self.assertEqual(self.audit()["status"], "blocked")
 
     def test_whitespace_macro_contract_missing_tampered_or_redefined_blocks(self):
@@ -228,7 +230,7 @@ class PreservationTests(unittest.TestCase):
         self.assertIn("whitespace_macro_redefinition", self.codes(self.audit()))
 
     def test_original_whitespace_policy_never_normalizes_source(self):
-        for source, target in [("\tA", "A"), ("\tA", "\tA"), ("A  B", "A  B"), (" A ", "A"), ("\tA ", r"\originaltab{}A"), ("A\nB", r"A\newline B"), ("A\tB", r"A\originaltab{}B")]:
+        for source, target in [("\tA", "A"), ("\tA", "\tA"), ("A  B", "A  B"), (" A ", "A"), ("\tA ", r"\originaltab{}A"), ("A\nB", r"A\newline B")]:
             with self.subTest(source=repr(source), target=target):
                 self.whitespace_case(source, target)
                 self.assertEqual(self.audit()["status"], "blocked", self.audit())
