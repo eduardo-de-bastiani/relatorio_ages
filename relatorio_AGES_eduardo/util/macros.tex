@@ -51,7 +51,9 @@
   \fi
 }
 \newenvironment{reflection}{%
-  \par\begingroup
+  % Force the page builder to consume preceding paragraph lines before
+  % measuring pagegoal/pagetotal; penalty zero permits, never forces, a break.
+  \par\penalty0\begingroup
   \setlength{\fboxsep}{6pt}\setlength{\fboxrule}{0.4pt}
   \ReflectionWidth=\linewidth
   \advance\ReflectionWidth by -2\fboxsep
