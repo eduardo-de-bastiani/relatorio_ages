@@ -34,3 +34,18 @@ Execução autorizada não equivale a aprovação do resultado. Não iniciar a p
 ## Como registrar nova pendência
 
 Adicionar ID estável, elemento/arquivo afetado, evidência concreta, impacto, gravidade, responsável, decisão necessária e método de verificação. Resolvido exige evidência e data; não apagar o histórico da decisão.
+
+## Execução autorizada da AGES I
+
+O usuário autorizou a edição completa AGES I / Easy Choose e os dois placeholders provisórios. Esse escopo substitui o limite histórico P01; aprovação do resultado permanece PENDING. Outras edições e Hoortech não estão autorizadas. Registro: `migration/approvals/ages-i-authorization.json`.
+
+| ID | Localização e evidência | Consequência / gravidade | Ação e verificação | Estado |
+|---|---|---|---|---|
+| AI01 | Banco de dados, text-h-0009: nenhum diagrama incorporado | Material gráfico ausente; média | Placeholder provisório `ages-i-database`; autor fornecerá material; conferir que não entra na lista de figuras reais | PENDING |
+| AI02 | Arquitetura, text-h-0010: nenhum diagrama incorporado | Material gráfico ausente; média | Placeholder provisório `ages-i-architecture`; autor fornecerá material; conferir que não entra na lista de figuras reais | PENDING |
+| AI03 | Cinco imagens draw-image-0001–0005 sem indicação explícita de autoria/fonte | Proveniência incompleta; alta | Preservar bytes e apresentar fonte pendente; autor identifica origem, curador verifica | PENDING |
+| AI04 | Seis links originais tools.ages.pucrs.br sem acesso atual comprovado; curadoria em migration/evidence/references/ages-i.json | Disponibilidade incerta; média | Usuário autorizou manter URLs literalmente e continuar; conferir 11 âncoras/URLs no total, repetir teste remoto posteriormente | PENDING, execução autorizada |
+| AI05 | Cinco documentações tecnológicas consultadas em 14/10/2026 | Consulta atual não comprova versão ou data histórica; média | Aparato bibliográfico separado com título/URL/data comprovados; nenhuma referência nova dentro da narrativa | Verificação documental concluída; revisão humana PENDING |
+| AI06 | Vigência integral e regras ainda pendentes em P07/P08 | Certificação normativa integral indisponível; alta | Não declarar conformidade normativa total; manter matriz de evidências e revisão posterior | PENDING |
+
+O aceite do resultado deverá identificar PDF, commit e relatórios da edição. A autorização de continuidade dos links não comprova sua disponibilidade nem autoriza completar diagramas ou fontes por inferência.
