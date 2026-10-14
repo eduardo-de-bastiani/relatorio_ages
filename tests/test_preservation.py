@@ -203,6 +203,14 @@ class PreservationTests(unittest.TestCase):
                 self.assertEqual(report["status"], "pass", report)
                 self.assertEqual(report["facts"]["text_records_matched"], 1)
 
+    def test_multiple_leading_tabs_must_all_be_preserved(self):
+        self.whitespace_case("\t\tApós ", r"\originaltab{}\originaltab{}Após\originalspace{}")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        self.whitespace_case("\t\tApós ", r"\originaltab{}Após\originalspace{}")
+        self.assertEqual(self.audit()["status"], "blocked")
+        self.whitespace_case("\tA\tB", r"\originaltab{}A\originaltab{}B")
+        self.assertEqual(self.audit()["status"], "blocked")
+
     def test_whitespace_macro_contract_missing_tampered_or_redefined_blocks(self):
         self.whitespace_case("\tA", r"\originaltab{}A")
         contract = self.ledger.pop("macro_contract")

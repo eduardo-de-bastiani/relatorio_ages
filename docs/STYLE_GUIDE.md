@@ -45,3 +45,7 @@ Tabs autorais iniciais usam `originaltab`, com distância `1.251cm` documentada 
 Figuras, notas, listas autorais, hyperlinks e citações não existem nesta Sprint. Os ambientes reutilizáveis estão definidos, mas nenhuma figura/placeholder é inserido artificialmente para exercitá-los no memorial. O teste sintético das macros e continuidade fica separado do PDF de revisão.
 
 Aplicar [QUALITY_GATES](QUALITY_GATES.md), auditoria independente do texto e inspeção do PDF completo. Registrar cada desvio com arquivo/localização, evidência, consequência, gravidade, proposta e método de verificação. Falta de norma acessível produz PENDING, nunca uma regra inventada.
+
+## Ampliação comprovada para AGES I
+
+O parágrafo `text-p-0473` da Sprint 1 começa com dois `text:tab`. O estilo P124 não declara tabulações próprias; o padrão de `styles.xml` declara distância `1.251cm`. Representar ambos, em sequência, por `originaltab`, sem remover um deles. O validador aceita uma sequência inicial de tabs sob o mesmo contrato e compara sua quantidade exata; tabs internos continuam bloqueados. Teste de regressão inclui perda de um tab e tab interno. Conferir também o recuo efetivamente exibido no PDF; a prova lexical não certifica o layout.

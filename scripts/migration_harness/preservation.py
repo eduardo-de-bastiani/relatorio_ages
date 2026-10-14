@@ -184,8 +184,8 @@ def _strict_source(text: str, original_whitespace=False) -> str:
     """
     if any(char in text for char in "\n\r\f\v") or "\t" in text and not original_whitespace:
         raise UnsupportedSerialization("Explicit source tab/line break requires rendered whitespace review")
-    if original_whitespace and "\t" in text and (text.count("\t") != 1 or not text.startswith("\t")):
-        raise UnsupportedSerialization("Audited originaltab contract supports one leading source tab only")
+    if original_whitespace and "\t" in text.lstrip("\t"):
+        raise UnsupportedSerialization("Audited originaltab contract supports leading source tabs only")
     if not original_whitespace and ("  " in text or text.startswith(" ") or text.endswith(" ")):
         raise UnsupportedSerialization("Repeated or edge source spaces require rendered whitespace review")
     return text
