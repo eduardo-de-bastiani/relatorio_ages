@@ -5,7 +5,7 @@
   "conversion_base_commit": "2952f7f",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
   },
   "units": {
     "chapter-02-text-h-0022": {
@@ -18,7 +18,7 @@
           "start_byte": 208,
           "end_byte": 223,
           "serializations": [],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0637",
@@ -28,7 +28,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0638",
@@ -38,7 +38,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0639",
@@ -48,7 +48,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0640",
@@ -58,7 +58,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0641",
@@ -68,7 +68,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0642",
@@ -78,7 +78,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0643",
@@ -88,23 +88,23 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "draw-image-0005",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
           "start_byte": 4726,
-          "end_byte": 4891,
+          "end_byte": 4900,
           "serializations": [],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_id": "text-p-0650",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
           "start_byte": 4775,
-          "end_byte": 4819,
+          "end_byte": 4828,
           "serializations": [],
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         }
       ],
       "asset_map": [
@@ -124,7 +124,7 @@
           "command": "hypertarget",
           "start_byte": 94,
           "end_byte": 122,
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         },
         {
           "source_heading_id": "text-h-0022",
@@ -136,7 +136,7 @@
           "command": "hypertarget",
           "start_byte": 123,
           "end_byte": 172,
-          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+          "target_sha256": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
         }
       ],
       "structural_dispositions": [
@@ -161,6 +161,6 @@
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
   }
 }
