@@ -157,8 +157,9 @@
         "font": "Reflection serif13 changed to approved body family12; no original italic/bold emphasis in pilot."
       },
       "pending": [
-        "Human approval of this pilot delivery remains PENDING; no next Sprint is authorized.",
-        "Integral normative compliance and confirmation of standards currency remain PENDING (G8)."
+        "G6/G7 current edition integration compilation and visual review PENDING; historical pilot evidence in docs/pilot.",
+        "G8 integral normative compliance PENDING.",
+        "G9 human edition approval PENDING."
       ],
       "layout_disposition": {
         "blank_paragraphs": 43,
@@ -181,69 +182,11 @@
           "source_start_id": "text-bookmark-start-0016",
           "source_end_id": "text-bookmark-end-0016"
         }
-      ],
-      "rendered_pdf": {
-        "path": "build/document/main.pdf",
-        "sha256": "695548198b34270eed8f6da21ebb4af3bb19e1762fd1dba77c04eb23cb611784"
-      },
-      "review_evidence": {
-        "content_audit": {
-          "path": "docs/pilot/CONTENT_AUDIT.json",
-          "sha256": "385cbc477016dc1e523507c1ac31c71575e9a7fe677f64a7dd68eba87f376055",
-          "status": "PASS_CONTENT_PENDING_VISUAL_AND_HUMAN",
-          "technical_gates": {
-            "G0": "PASS",
-            "G1": "PASS",
-            "G2": "PASS",
-            "G3": "PASS",
-            "G4": "PASS",
-            "G5": "PASS",
-            "G6": "PASS"
-          }
-        },
-        "visual_audit": {
-          "path": "docs/pilot/VISUAL_AUDIT.json",
-          "sha256": "3e281093b9f66a802f4e8a8c10576602ab429fe6e0a5e13bc68d1830d5e73751",
-          "status": "PASS",
-          "review_type": "agent_visual_review_not_human_approval"
-        },
-        "compilation": {
-          "path": "build/document/report.json",
-          "sha256": "721a0202e58529c49488de968ad4e737d6050d2654e098d45adc3c3d869ecad8",
-          "compiled_commit": "f7095af7dce388fa4a366168e748e926be459880",
-          "status": "pass",
-          "exit_code": 0,
-          "source_files": {
-            "bibliografia/bibliografia.bib": "0bab307f968a12f6b2f51bba2ad6a7089ddedbd0469e6a5b71e4fc8886cb45ae",
-            "conteudo/migracao/ages-i-sprint-0.tex": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
-            "main.tex": "ba5a352222622dbdba3a4a901024dd1b7d4296437180f64e51e78b137d14739e",
-            "util/macros.tex": "0e281394a7885326081dfe17865e7b3d5fff6ccdec8abfcb4df95f698ba29a40",
-            "util/style.tex": "bef1655036992f8c5bc1b0ba80495c625def12932b9435e1cc6361546f213b05",
-            "util/test_continuity.py": "48bd47dbf3caddbf7d5844709e8100217d503dce9c50d01171d38f1c1ebdde0b",
-            "util/test_macros.py": "6402b36e92b9e5e579d92086a60ad55c1780500e73fef15be27fa8eb49b90f8f"
-          },
-          "source_files_match_current": true,
-          "source_match_checks": {
-            "bibliografia/bibliografia.bib": true,
-            "conteudo/migracao/ages-i-sprint-0.tex": true,
-            "main.tex": true,
-            "util/macros.tex": true,
-            "util/style.tex": true,
-            "util/test_continuity.py": true,
-            "util/test_macros.py": true
-          }
-        },
-        "approval_status": {
-          "human_pilot_delivery": "PENDING",
-          "next_sprint": "NOT_AUTHORIZED",
-          "normative_integral": "PENDING",
-          "reason": "Technical audit evidence does not constitute human approval."
-        }
-      }
+      ]
     }
   },
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "0e281394a7885326081dfe17865e7b3d5fff6ccdec8abfcb4df95f698ba29a40"
+    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
   }
 }
