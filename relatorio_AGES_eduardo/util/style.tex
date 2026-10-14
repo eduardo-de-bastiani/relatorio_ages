@@ -1,4 +1,4 @@
-% Exclusive global presentation authority for the authorized pilot.
+% Exclusive global presentation authority for the authorized AGES I edition.
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
@@ -41,3 +41,22 @@
 \catcode`’=\active \def’{\textquoteright}
 \catcode`–=\active \def–{\textendash}
 \catcode`—=\active \def—{\textemdash}
+
+% Keep URL glyphs in the body family; the frozen cache has no T1 lmtt font.
+\urlstyle{same}
+% ABNT author-date bibliography; metadata is curated separately.
+\usepackage{csquotes}
+\usepackage[backend=biber,style=abnt]{biblatex}
+% The 2018 brazil alias otherwise traverses brazilian twice in biblatex 3.17.
+% Select the canonical ABNT locale explicitly; diagnostics stay enabled.
+\DeclareLanguageMapping{brazil}{brazilian-abnt}
+\addbibresource{bibliografia/bibliografia.bib}
+
+\defbibnote{curationnote}{%
+  Documentação consultada pela curadoria em 14 de outubro de 2026.
+  As versões atuais não comprovam as versões utilizadas no projeto.
+}
+
+% Original figure identifiers run across chapters, starting at Figure 1.
+\counterwithout{figure}{chapter}
+\renewcommand{\thefigure}{\arabic{figure}}

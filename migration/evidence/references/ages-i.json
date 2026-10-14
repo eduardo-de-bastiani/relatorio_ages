@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "role": "reference-curator",
+  "unit": "ages-i",
+  "status": "PENDING",
+  "consultation_date": "2026-10-14",
+  "commit_at_start": "68d159b9b4168f2a913f5c1e4913c30397310437",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "scope": {
+    "owned": [
+      "migration/evidence/references/ages-i.json",
+      "build/ages-i/curation/**"
+    ],
+    "ownership_record": "Parent task assignment and collaboration message before execution",
+    "central_bibliography_edited": false,
+    "authored_text_edited": false,
+    "human_approval": "PENDING"
+  },
+  "count_reconciliation": {
+    "expected_in_assignment": 12,
+    "actual_chapter_2_hyperlinks": 11,
+    "official_documentation": 5,
+    "project_links": 6,
+    "evidence": "Manifest records text-a-0105 through text-a-0115; no seventh project URL identified; do not manufacture a twelfth URL."
+  },
+  "policy": {
+    "original_urls": "Preserve literal href including case, percent encoding and trailing slash state.",
+    "historical_access_dates": "Not supplied by the original; not inferred.",
+    "new_access_dates": "2026-10-14 is this curator consultation, never an access date claimed for the original author.",
+    "authors_and_publication_dates": "Absent from suggestions unless page explicitly attributes authorship/publication date. Copyright holders and copyright ranges are not promoted to author/year.",
+    "current_version": "Current documentation does not prove versions used in the historical project.",
+    "integration": "Only latex-maintainer may integrate these proposals. No body citations or narrative changes are proposed."
+  },
+  "references": [
+    {
+      "evidence_id": "ages-i-text-a-0105",
+      "source_record_id": "text-a-0105",
+      "source_unit": "chapter-02-text-h-0008",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[193]/text:a[1]",
+      "original_anchor": "Repositório EasyChooseAdmin",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0105",
+        "original_url": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.572577+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PENDING",
+      "scope_of_pending": "Current remote availability, metadata and contents not verified.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "URL is not accessible via this tool.",
+        "cached_title": null
+      },
+      "suggested_bibtex": null,
+      "alternatives": [
+        "Preserve original href and mark availability PENDING.",
+        "Obtain legitimate project/wiki export or test authorized authenticated session; do not silently substitute current external material."
+      ]
+    },
+    {
+      "evidence_id": "ages-i-text-a-0106",
+      "source_record_id": "text-a-0106",
+      "source_unit": "chapter-02-text-h-0008",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[196]/text:a[1]",
+      "original_anchor": "Repositório EasyChooseStore",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0106",
+        "original_url": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.573641+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PENDING",
+      "scope_of_pending": "Current remote availability, metadata and contents not verified.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "URL is not accessible via this tool.",
+        "cached_title": null
+      },
+      "suggested_bibtex": null,
+      "alternatives": [
+        "Preserve original href and mark availability PENDING.",
+        "Obtain legitimate project/wiki export or test authorized authenticated session; do not silently substitute current external material."
+      ]
+    },
+    {
+      "evidence_id": "ages-i-text-a-0107",
+      "source_record_id": "text-a-0107",
+      "source_unit": "chapter-02-text-h-0008",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[199]/text:a[1]",
+      "original_anchor": "Repositório EasyChooseApi",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0107",
+        "original_url": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.574243+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PENDING",
+      "scope_of_pending": "Current remote availability, metadata and contents not verified.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+        "observed_url": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+        "http_status": null,
+        "outcome": "Cached EasyChooseApi project page, crawler age 2.3 years; cannot establish current availability.",
+        "cached_title": "Easy Choose / EasyChooseApi · GitLab"
+      },
+      "suggested_bibtex": null,
+      "alternatives": [
+        "Preserve original href and mark availability PENDING.",
+        "Obtain legitimate project/wiki export or test authorized authenticated session; do not silently substitute current external material."
+      ]
+    },
+    {
+      "evidence_id": "ages-i-text-a-0108",
+      "source_record_id": "text-a-0108",
+      "source_unit": "chapter-02-text-h-0009",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[204]/text:a[1]",
+      "original_anchor": "Wiki do Banco de Dados",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0108",
+        "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.574827+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PENDING",
+      "scope_of_pending": "Current remote availability, metadata and contents not verified.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "URL is not accessible via this tool.",
+        "cached_title": null
+      },
+      "suggested_bibtex": null,
+      "alternatives": [
+        "Preserve original href and mark availability PENDING.",
+        "Obtain legitimate project/wiki export or test authorized authenticated session; do not silently substitute current external material."
+      ]
+    },
+    {
+      "evidence_id": "ages-i-text-a-0109",
+      "source_record_id": "text-a-0109",
+      "source_unit": "chapter-02-text-h-0010",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[208]/text:a[1]",
+      "original_anchor": "Wiki da Arquitetura",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0109",
+        "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.575660+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PENDING",
+      "scope_of_pending": "Current remote availability, metadata and contents not verified.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "URL is not accessible via this tool.",
+        "cached_title": null
+      },
+      "suggested_bibtex": null,
+      "alternatives": [
+        "Preserve original href and mark availability PENDING.",
+        "Obtain legitimate project/wiki export or test authorized authenticated session; do not silently substitute current external material."
+      ]
+    },
+    {
+      "evidence_id": "ages-i-text-a-0110",
+      "source_record_id": "text-a-0110",
+      "source_unit": "chapter-02-text-h-0011",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[212]/text:a[1]",
+      "original_anchor": "Wiki dos Protótipos",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0110",
+        "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.576505+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PENDING",
+      "scope_of_pending": "Current remote availability, metadata and contents not verified.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "URL is not accessible via this tool.",
+        "cached_title": null
+      },
+      "suggested_bibtex": null,
+      "alternatives": [
+        "Preserve original href and mark availability PENDING.",
+        "Obtain legitimate project/wiki export or test authorized authenticated session; do not silently substitute current external material."
+      ]
+    },
+    {
+      "evidence_id": "ages-i-text-a-0111",
+      "source_record_id": "text-a-0111",
+      "source_unit": "chapter-02-text-h-0012",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[10]/text:list-item[1]/text:p[4]/text:a[1]",
+      "original_anchor": "Documentação TypeScript",
+      "original_url": "https://www.typescriptlang.org/docs/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0111",
+        "original_url": "https://www.typescriptlang.org/docs/",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.577167+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PASS",
+      "scope_of_pass": "Official URL content/title verified through web retrieval; not historical version/date or live HTTP proof.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://www.typescriptlang.org/docs/",
+        "observed_url": "https://www.typescriptlang.org/docs/",
+        "http_status": null,
+        "page_title": "TypeScript: The starting point for learning TypeScript",
+        "title_evidence": "Heading line 4 in web-main.json"
+      },
+      "documented_organization_context": "TypeScript",
+      "author_suggestion": null,
+      "publication_year_suggestion": null,
+      "author_status": "PENDING: no explicit page author attribution captured",
+      "publication_year_status": "PENDING: no page publication date captured",
+      "suggested_bibtex": {
+        "entry_type": "online",
+        "key": "typescript-docs",
+        "fields": {
+          "title": "TypeScript Documentation",
+          "url": "https://www.typescriptlang.org/docs/",
+          "urldate": "2026-10-14"
+        }
+      },
+      "integration_status": "PENDING: latex-maintainer integration and bibliography rendering check"
+    },
+    {
+      "evidence_id": "ages-i-text-a-0112",
+      "source_record_id": "text-a-0112",
+      "source_unit": "chapter-02-text-h-0012",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[11]/text:list-item[1]/text:p[4]/text:a[1]",
+      "original_anchor": "Documentação React",
+      "original_url": "https://react.dev/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0112",
+        "original_url": "https://react.dev/",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.577771+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PASS",
+      "scope_of_pass": "Official URL content/title verified through web retrieval; not historical version/date or live HTTP proof.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://react.dev/",
+        "observed_url": "https://react.dev/",
+        "http_status": null,
+        "page_title": "React",
+        "title_evidence": "Heading line 6; footer copyright Meta is not a statement of page authorship"
+      },
+      "documented_organization_context": "React",
+      "author_suggestion": null,
+      "publication_year_suggestion": null,
+      "author_status": "PENDING: no explicit page author attribution captured",
+      "publication_year_status": "PENDING: no page publication date captured",
+      "suggested_bibtex": {
+        "entry_type": "online",
+        "key": "react-docs",
+        "fields": {
+          "title": "React",
+          "url": "https://react.dev/",
+          "urldate": "2026-10-14"
+        }
+      },
+      "integration_status": "PENDING: latex-maintainer integration and bibliography rendering check"
+    },
+    {
+      "evidence_id": "ages-i-text-a-0113",
+      "source_record_id": "text-a-0113",
+      "source_unit": "chapter-02-text-h-0012",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[11]/text:list-item[2]/text:p[3]/text:a[1]",
+      "original_anchor": "Documentação Node.js",
+      "original_url": "https://nodejs.org/docs/latest/api/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0113",
+        "original_url": "https://nodejs.org/docs/latest/api/",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.578590+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PASS",
+      "scope_of_pass": "Official URL content/title verified through web retrieval; not historical version/date or live HTTP proof.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://nodejs.org/docs/latest/api/",
+        "observed_url": "https://nodejs.org/docs/latest/api/",
+        "http_status": null,
+        "page_title": "Index | Node.js v26.12.0 Documentation",
+        "title_evidence": "Heading line 1; dynamic latest endpoint; version observed now only"
+      },
+      "documented_organization_context": "Node.js",
+      "author_suggestion": null,
+      "publication_year_suggestion": null,
+      "author_status": "PENDING: no explicit page author attribution captured",
+      "publication_year_status": "PENDING: no page publication date captured",
+      "suggested_bibtex": {
+        "entry_type": "online",
+        "key": "nodejs-docs",
+        "fields": {
+          "title": "Node.js v26.12.0 documentation",
+          "url": "https://nodejs.org/docs/latest/api/",
+          "urldate": "2026-10-14"
+        }
+      },
+      "integration_status": "PENDING: latex-maintainer integration and bibliography rendering check"
+    },
+    {
+      "evidence_id": "ages-i-text-a-0114",
+      "source_record_id": "text-a-0114",
+      "source_unit": "chapter-02-text-h-0012",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[12]/text:list-item[1]/text:p[3]/text:a[1]",
+      "original_anchor": "Documentação Prisma",
+      "original_url": "https://www.prisma.io/docs",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0114",
+        "original_url": "https://www.prisma.io/docs",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.579249+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PASS",
+      "scope_of_pass": "Official URL content/title verified through web retrieval; not historical version/date or live HTTP proof.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://www.prisma.io/docs",
+        "observed_url": "https://www.prisma.io/docs",
+        "http_status": null,
+        "page_title": "Get started with Prisma | Prisma Documentation",
+        "title_evidence": "Heading line 32 in web-official-additional.json"
+      },
+      "documented_organization_context": "Prisma",
+      "author_suggestion": null,
+      "publication_year_suggestion": null,
+      "author_status": "PENDING: no explicit page author attribution captured",
+      "publication_year_status": "PENDING: no page publication date captured",
+      "suggested_bibtex": {
+        "entry_type": "online",
+        "key": "prisma-docs",
+        "fields": {
+          "title": "Get started with Prisma",
+          "url": "https://www.prisma.io/docs",
+          "urldate": "2026-10-14"
+        }
+      },
+      "integration_status": "PENDING: latex-maintainer integration and bibliography rendering check"
+    },
+    {
+      "evidence_id": "ages-i-text-a-0115",
+      "source_record_id": "text-a-0115",
+      "source_unit": "chapter-02-text-h-0012",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[12]/text:list-item[2]/text:p[3]/text:a[1]",
+      "original_anchor": "Documentação PostgreSQL",
+      "original_url": "https://www.postgresql.org/docs/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-14",
+      "http_probe": {
+        "id": "text-a-0115",
+        "original_url": "https://www.postgresql.org/docs/",
+        "command": "urllib.request.urlopen(Request(url, User-Agent=Mozilla/5.0), timeout=20)",
+        "consulted_at": "2026-10-14T19:14:09.580213+00:00",
+        "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+        "error_type": "URLError",
+        "exit_code": 1
+      },
+      "status": "PASS",
+      "scope_of_pass": "Official URL content/title verified through web retrieval; not historical version/date or live HTTP proof.",
+      "web_retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://www.postgresql.org/docs/",
+        "observed_url": "https://www.postgresql.org/docs/",
+        "http_status": null,
+        "page_title": "PostgreSQL: Documentation",
+        "title_evidence": "HTML page title, heading Documentation; copyright group not treated as author"
+      },
+      "documented_organization_context": "PostgreSQL",
+      "author_suggestion": null,
+      "publication_year_suggestion": null,
+      "author_status": "PENDING: no explicit page author attribution captured",
+      "publication_year_status": "PENDING: no page publication date captured",
+      "suggested_bibtex": {
+        "entry_type": "online",
+        "key": "postgresql-docs",
+        "fields": {
+          "title": "PostgreSQL: Documentation",
+          "url": "https://www.postgresql.org/docs/",
+          "urldate": "2026-10-14"
+        }
+      },
+      "integration_status": "PENDING: latex-maintainer integration and bibliography rendering check"
+    }
+  ],
+  "images": [
+    {
+      "record_id": "draw-image-0001",
+      "unit": "chapter-02-text-h-0003",
+      "embedded_path": "Pictures/1000000000000640000004B0558407F4.jpg",
+      "sha256": "c6e5b04c2fd3cc62ddfa15e0f74c8245dbec2822e8816ba6b994614a79b54896",
+      "provenance_status": "PENDING",
+      "author": null,
+      "capture_date": null,
+      "reason": "Original contains image/caption but no documented source or explicit authorship. No attribution invented."
+    },
+    {
+      "record_id": "draw-image-0002",
+      "unit": "chapter-02-text-h-0011",
+      "embedded_path": "Pictures/1000000100000465000002E355606D42.png",
+      "sha256": "9e6ac21913dccf932c1b34fca43a122dd20f964d6f6ac5373ddaa752b6aeec3a",
+      "provenance_status": "PENDING",
+      "author": null,
+      "capture_date": null,
+      "reason": "Original contains image/caption but no documented source or explicit authorship. No attribution invented."
+    },
+    {
+      "record_id": "draw-image-0003",
+      "unit": "chapter-02-text-h-0011",
+      "embedded_path": "Pictures/10000001000004DB00000329586EB8A5.png",
+      "sha256": "25929f41067241299786607690b1604ce70a2fcba9301f8a2902a86d2d5a1563",
+      "provenance_status": "PENDING",
+      "author": null,
+      "capture_date": null,
+      "reason": "Original contains image/caption but no documented source or explicit authorship. No attribution invented."
+    },
+    {
+      "record_id": "draw-image-0004",
+      "unit": "chapter-02-text-h-0011",
+      "embedded_path": "Pictures/10000001000004D600000329EA04C0A0.png",
+      "sha256": "3f17af046c5ab4b20729322fcd2496b0455084c7eca88d9a5305ce6d53368a63",
+      "provenance_status": "PENDING",
+      "author": null,
+      "capture_date": null,
+      "reason": "Original contains image/caption but no documented source or explicit authorship. No attribution invented."
+    },
+    {
+      "record_id": "draw-image-0005",
+      "unit": "chapter-02-text-h-0022",
+      "embedded_path": "Pictures/1000000000000500000003C04A764F79.jpg",
+      "sha256": "13e31ed2e2dccd3f7b370dcacb8025de967b816de4849492939f5f511b01b27d",
+      "provenance_status": "PENDING",
+      "author": null,
+      "capture_date": null,
+      "reason": "Original contains image/caption but no documented source or explicit authorship. No attribution invented."
+    }
+  ],
+  "commands": [
+    {
+      "tool": "exec_command",
+      "command": "python3 scripts/migration.py verify-source",
+      "exit_code": 0
+    },
+    {
+      "tool": "exec_command / Python urllib.request",
+      "command": "Request each original chapter-2 href with User-Agent Mozilla/5.0, timeout=20",
+      "driver_exit_code": 0,
+      "per_request_exit_codes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "result": "Local DNS failure for all requests; not evidence that URLs are broken."
+    },
+    {
+      "tool": "web.run",
+      "command": "open each original chapter-2 href; additional Prisma slash variant opened initially then exact original requested",
+      "exit_code": null,
+      "result": "Five official pages retrieved; five project pages unavailable in tool; API cached page only. Web interface exposes neither HTTP code nor shell exit code."
+    },
+    {
+      "tool": "exec_command / Python",
+      "command": "Parse ODT content.xml chapter 2 independently; compare exact href/anchor ordered pairs; validate evidence fields and counts",
+      "exit_code": 0
+    }
+  ],
+  "examined_files": [
+    "AGENTS.md",
+    "docs/CONTEXT.md",
+    "docs/MIGRATION_PLAN.md",
+    "docs/STYLE_GUIDE.md",
+    "docs/QUALITY_GATES.md",
+    "docs/PENDENCIAS.md",
+    "docs/agents/reference-curator.md",
+    ".agent/skills/reference-curation/SKILL.md",
+    "harness.json",
+    "docs/CONTENT_MANIFEST.json",
+    "RELATORIO_ATUAL.odt"
+  ],
+  "limitations": [
+    "No live HTTP status established because container DNS is unavailable.",
+    "Web retrieval may use cached content; EasyChooseApi crawl is 2.3 years old.",
+    "Project repository/wiki metadata, authorship and contents are not verified.",
+    "No image provenance inferred from project association, caption or copyright.",
+    "No bibliography/body citation changes made by curator."
+  ],
+  "gates": {
+    "G0": "PASS: verify-source exit 0; original SHA-256 preserved",
+    "G4_local_urls": "PASS: original href values recorded literally, including Prisma without final slash",
+    "G4_remote_official_docs": "PASS: primary documentation content retrieved with titles",
+    "G4_remote_project_links": "PENDING: live availability/content unverified",
+    "bibliographic_authors_and_years": "PENDING: omitted from proposed fields rather than guessed",
+    "image_provenance": "PENDING: five embedded images without documented attribution",
+    "G9": "PENDING: no human approval asserted"
+  },
+  "artifacts": [
+    {
+      "path": "build/ages-i/curation/web-main.json",
+      "sha256": "711f842a242da11101006dafb5e2855fb0133cd202715b70be851898c75a2d69"
+    },
+    {
+      "path": "build/ages-i/curation/http-results.json",
+      "sha256": "1b262d75fcc099b7e5d89e986039a27438a2be9e1cf5ce938b5253d97bad1ee0"
+    },
+    {
+      "path": "build/ages-i/curation/web-official-additional.json",
+      "sha256": "1155badbedf23dee9e7cc314af57e67a0ed69d18c859e756a5b8ef332854e15c"
+    }
+  ],
+  "independent_source_check": {
+    "tool": "Python zipfile + ElementTree",
+    "exit_code": 0,
+    "method": "Traverse direct office:text children from chapter heading 2 - until 3 -; enumerate descendant text:a nodes, compare exact href and anchor sequence with evidence.",
+    "hyperlinks": 11,
+    "status": "PASS"
+  }
+}

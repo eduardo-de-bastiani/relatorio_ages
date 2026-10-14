@@ -1,15 +1,33 @@
-% Review context for the sole authorized pilot; no other unit is included.
+% Review edition: only the fifteen authorized AGES I units are included.
 \documentclass[a4paper,12pt,oneside,chapter=TITLE,english,brazil]{abntex2}
 \input{util/style.tex}
 \input{util/macros.tex}
 \begin{document}
+% Generated review apparatus; no original pretextual content is migrated.
+\pretextual
+\tableofcontents*
+\listoffigures*
 \textual
 \pagestyle{simple}
-% Original chapter context: text-h-0002. Earlier chapters are not migrated.
+% Chapter I is outside this edition. The original chapter II remains II.
 \setcounter{chapter}{1}
-\chapter{PROJETO AGES I – EASY CHOOSE}
-% Original section context: text-h-0014. Earlier sections are not migrated.
-\setcounter{section}{2}
-\section{Atividades desempenhadas pelo aluno no projeto}
+\input{conteudo/migracao/chapter-02-text-h-0002.tex}
+\input{conteudo/migracao/chapter-02-text-h-0003.tex}
+\input{conteudo/migracao/chapter-02-text-h-0007.tex}
+\input{conteudo/migracao/chapter-02-text-h-0008.tex}
+\input{conteudo/migracao/chapter-02-text-h-0009.tex}
+\input{conteudo/migracao/chapter-02-text-h-0010.tex}
+\input{conteudo/migracao/chapter-02-text-h-0011.tex}
+\input{conteudo/migracao/chapter-02-text-h-0012.tex}
+\input{conteudo/migracao/chapter-02-text-h-0014.tex}
 \input{conteudo/migracao/ages-i-sprint-0.tex}
+\input{conteudo/migracao/ages-i-sprint-1.tex}
+\input{conteudo/migracao/ages-i-sprint-2.tex}
+\input{conteudo/migracao/ages-i-sprint-3.tex}
+\input{conteudo/migracao/ages-i-sprint-4.tex}
+\input{conteudo/migracao/chapter-02-text-h-0022.tex}
+% Separate curated apparatus; original prose has no added citations.
+\postextual
+\nocite{typescript-docs,react-docs,nodejs-docs,prisma-docs,postgresql-docs}
+\printbibliography[heading=bibintoc,title={Referências documentais verificadas},prenote=curationnote]
 \end{document}

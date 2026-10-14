@@ -70,11 +70,20 @@
     \textbf{Diagrama ausente — placeholder provisório}\par
     Identificador: #1\par Pendência: #2}}\par
 }
-% Above-image caption, then label; source is supplied verbatim, never guessed.
+% Captions already carry the original literal "Figure N:" identifier.
+% caption* prevents an extra generated prefix. The same literal caption feeds
+% the derived list; the counter and label still provide live cross-references.
+% The locked engine is XeTeX. Its native reader with an explicit display width
+% handles original JPEG EXIF zero dimensions without rewriting image bytes.
+% AGES I assets are landscape images; full text width fits the page height.
+% Arguments: intact asset, literal caption, unique label, source apparatus,
+% width as a fraction of linewidth. Unknown sources must be declared pending.
 \newcommand{\memorialfigure}[5]{%
   \begin{figure}[htbp]
-    \caption{#2}\label{#3}
-    \centering\includegraphics[width=#5\linewidth]{#1}
-    \par\small #4
+    \refstepcounter{figure}%
+    \caption*{#2}\label{#3}%
+    \addcontentsline{lof}{figure}{#2}%
+    \centering\XeTeXpicfile "#1" width #5\linewidth\relax
+    \par\small\SingleSpacing #4\par
   \end{figure}
 }
