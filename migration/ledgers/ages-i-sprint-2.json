@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "2952f7f",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+  },
+  "units": {
+    "ages-i-sprint-2": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0018",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 178,
+          "end_byte": 208,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        },
+        {
+          "source_id": "text-p-0509",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 330,
+          "end_byte": 885,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        },
+        {
+          "source_id": "text-p-0510",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 911,
+          "end_byte": 1640,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        },
+        {
+          "source_id": "text-p-0511",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 1666,
+          "end_byte": 2234,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        },
+        {
+          "source_id": "text-p-0521",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 2279,
+          "end_byte": 2771,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        },
+        {
+          "source_id": "text-p-0522",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 2797,
+          "end_byte": 3405,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        },
+        {
+          "source_id": "text-p-0523",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "start_byte": 3431,
+          "end_byte": 3957,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0018",
+          "source_name": "__RefHeading___Toc4747_3118176633",
+          "source_start_id": "text-bookmark-start-0018",
+          "source_end_id": "text-bookmark-end-0018",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+          "target_anchor": "__RefHeading___Toc4747_3118176633",
+          "command": "hypertarget",
+          "start_byte": 87,
+          "end_byte": 136,
+          "target_sha256": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0008",
+          "disposition": "reflection_environment",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0047",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0043",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0048",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0044",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0049",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-header-0008",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        }
+      ],
+      "pending": [
+        "G6/G7 integration compilation and visual review PENDING.",
+        "G8 integral normative compliance PENDING.",
+        "G9 human edition approval PENDING."
+      ],
+      "presentation_serializations": {
+        "heading": "Manual literal numbering and punctuation preserved with starred heading and immediately preceding counter step; derived TOC repeats same literal.",
+        "whitespace": "Original tabs use audited 1.251cm originaltab; edge and repeated spaces use originalspace; ODF source values preserved exactly.",
+        "emphasis": "Original inline italic/bold span properties resolved from original style chain; body and reflection use approved shared typography."
+      }
+    }
+  }
+}
