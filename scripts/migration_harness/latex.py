@@ -126,7 +126,7 @@ def macro_definitions(text: str) -> list[dict]:
     return definitions
 
 
-MEMORIAL_FIGURE_BODY = r"\begin{figure}[htbp]\caption{#2}\label{#3}\centering\includegraphics[width=#5\linewidth]{#1}\par\small #4\end{figure}"
+MEMORIAL_FIGURE_BODY = r'\begin{figure}[htbp]\refstepcounter{figure}\caption*{#2}\label{#3}\addcontentsline{lof}{figure}{#2}\centering\XeTeXpicfile "#1" width #5\linewidth\relax\par\small\SingleSpacing #4\par\end{figure}'
 
 
 def canonical_macro_body(body: str) -> str:
@@ -206,7 +206,7 @@ def audit_latex(root: Path, entry: Path) -> dict:
         seen = seen | {name}
         body = defined[name]["body"] + defined[name].get("end_body", "")
         for item in commands(body):
-            if item.name in {"includegraphics", "input", "include", "label", "ref", "pageref", "autoref"} or "cite" in item.name.lower() or has_dependencies(item.name, seen):
+            if item.name in {"includegraphics", "XeTeXpicfile", "input", "include", "label", "ref", "pageref", "autoref"} or "cite" in item.name.lower() or has_dependencies(item.name, seen):
                 return True
         return False
 
@@ -259,7 +259,9 @@ def audit_latex(root: Path, entry: Path) -> dict:
                 target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))
                 if target is None or not target.is_file():
                     report("missing_or_dynamic_asset", relative, line, args[0])
-                if not args[1].strip() or not args[2].strip():
+                if args[3] != "Fonte: pendente de identificação" or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
+                    report("invalid_figure_apparatus", relative, line, "Source must remain explicitly pending and width must be a fraction in (0,1]")
+                if not args[1].strip() or not re.fullmatch(r"[A-Za-z0-9:._-]+", args[2]):
                     report("missing_figure_caption_or_label", relative, line, "Caption and label must be explicit")
                 counts["labels"] += 1
                 if args[2] in labels:
@@ -319,6 +321,8 @@ def audit_latex(root: Path, entry: Path) -> dict:
                 citations.extend((value.strip(), relative, line) for arg in args for value in arg.split(",") if value.strip() != "*")
             elif "cite" in name.lower() and name not in {"printbibliography", "addbibresource"}:
                 report("unsupported_citation_command", relative, line, f"Cannot resolve \\{name} deterministically", "warning")
+            elif name == "XeTeXpicfile":
+                report("unsupported_native_image", relative, line, "Native picture syntax requires the canonical memorialfigure contract")
             elif name == "includegraphics" and args:
                 counts["images"] += 1
                 target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))

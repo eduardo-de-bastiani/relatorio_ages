@@ -17,6 +17,7 @@ macros fail closed. PDF inspection and human approval are separate gates.
 from __future__ import annotations
 
 import difflib
+import json
 import hashlib
 import re
 import unicodedata
@@ -25,7 +26,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from .latex import _group, commands, strip_comments, macro_definitions, canonical_macro_body
+from .latex import _group, commands, strip_comments, macro_definitions, canonical_macro_body, MEMORIAL_FIGURE_BODY
+
+
+DIAGRAM_PLACEHOLDER_BODY = r"\par\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\textbf{Diagrama ausente — placeholder provisório}\par Identificador: #1\par Pendência: #2}}\par"
 
 
 class UnsupportedSerialization(ValueError):
@@ -263,6 +267,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         data[:start].decode("utf-8")  # Reject offsets inside a UTF-8 code point.
         return path, start, end, data[start:end].decode("utf-8")
 
+    figure_labels = set()
     for uid in selected:
         unit = units[uid]
         state = ledger_units.get(uid, {}).get("state", "unconverted")
@@ -312,6 +317,23 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 macro_verified = True
             except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
                 report("invalid_macro_contract", uid, str(exc))
+        figure_verified = False
+        contract = unit_ledger.get("figure_contract", ledger.get("figure_contract"))
+        if contract is not None:
+            try:
+                if not isinstance(contract, dict) or set(contract) != {"path", "sha256"}:
+                    raise ValueError("Contract requires exactly path and sha256")
+                contract_data = safe_path(contract["path"]).read_bytes()
+                if hashlib.sha256(contract_data).hexdigest() != contract.get("sha256"):
+                    raise ValueError("Missing/stale figure contract SHA-256")
+                found = [item for item in macro_definitions(contract_data.decode()) if item["name"] == "memorialfigure"]
+                if len(found) != 1 or found[0]["declaration"] != "newcommand" or found[0]["arity"] != 5 or found[0]["optional_default"] or canonical_macro_body(found[0]["body"]) != canonical_macro_body(MEMORIAL_FIGURE_BODY):
+                    raise ValueError("memorialfigure differs from audited canonical definition")
+                if re.search(r"\\(?:let|futurelet)\s*\\memorialfigure\b", strip_comments(contract_data.decode())):
+                    raise ValueError("Figure macro alias/redefinition")
+                figure_verified = True
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
+                report("invalid_figure_contract", uid, str(exc))
         actual = {}
         for rid, mapping in by_id.items():
             if rid not in allowed_ids:
@@ -328,9 +350,9 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 raise ValueError("Include cycle in unit target")
             if path in seen:
                 raise ValueError("Target file included more than once")
+            text = path.read_text(encoding="utf-8")
             seen.add(path)
             file_order.append(path)
-            text = path.read_text(encoding="utf-8")
             for token in commands(text):
                 if token.name in {"include", "input"} and token.args:
                     child = (compilation_root / token.args[0]).resolve()
@@ -351,6 +373,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if any(item["name"] in {"originaltab", "originalspace"} for item in macro_definitions(actual_text)) or re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace)\b", strip_comments(actual_text)):
                     report("whitespace_macro_redefinition", uid, "Unit target changes the verified whitespace macros", path=str(path.relative_to(repo)))
                     macro_verified = False
+        for path in file_order:
+            text = path.read_text(encoding="utf-8")
+            if any(item["name"] == "memorialfigure" for item in macro_definitions(text)) or re.search(r"\\(?:let|futurelet)\s*\\memorialfigure\b", strip_comments(text)):
+                report("figure_macro_redefinition", uid, "Unit redefines audited figure macro")
+                figure_verified = False
         # Expansion position supports parent text both before and after an input.
         expansion_positions = {}
         expansion_cursor = 0
@@ -476,10 +503,36 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
                 if digest != asset["sha256"]:
                     report("image_hash_changed", uid, "Actual image differs from embedded original", rid)
-                tokens = [token for token in commands(actual[rid][3]) if token.name == "includegraphics" and token.args]
+                tokens = [token for token in commands(actual[rid][3]) if token.name in {"includegraphics", "memorialfigure"} and token.args]
                 if len(tokens) != 1:
                     raise ValueError("Image interval must contain exactly one includegraphics")
-                if len(tokens[0].args) != 1:
+                token = tokens[0]
+                if token.name == "memorialfigure":
+                    if not figure_verified or len(token.args) != 5 or token.optionals or token.starred:
+                        raise ValueError("memorialfigure requires verified five-argument contract")
+                    if token.args[3] != "Fonte: pendente de identificação":
+                        raise ValueError("Unknown image source must remain explicitly pending")
+                    if not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", token.args[4]) or not 0 < float(token.args[4]) <= 1:
+                        raise ValueError("Invalid figure width fraction")
+                    if not re.fullmatch(r"[A-Za-z0-9:._-]+", token.args[2]) or token.args[2] in figure_labels:
+                        raise ValueError("Missing/invalid/duplicate figure label")
+                    figure_labels.add(token.args[2])
+                    caption_ids = records[rid].get("caption_ids", [])
+                    if len(caption_ids) != 1 or caption_ids[0] not in actual:
+                        raise ValueError("Figure needs its independently mapped source caption")
+                    caption_id = caption_ids[0]
+                    cp, cs, ce, cv = actual[caption_id]
+                    value = actual[rid][3]
+                    cursor = value.index("{", token.start)
+                    _, cursor = _group(value, cursor, "{", "}")
+                    while value[cursor].isspace():
+                        cursor += 1
+                    caption_start = cursor + 1
+                    _, caption_end = _group(value, cursor, "{", "}")
+                    base = actual[rid][1]
+                    if cp != actual[rid][0] or cs != base + len(value[:caption_start].encode()) or ce != base + len(value[:caption_end - 1].encode()) or cv != token.args[1]:
+                        raise ValueError("Caption interval must be exactly figure arg2 associated with this source image")
+                elif len(token.args) != 1:
                     raise ValueError("Image interval contains extra or missing arguments")
                 if strip_comments(actual[rid][3][:tokens[0].start] + actual[rid][3][tokens[0].end:]).strip():
                     raise ValueError("Image interval contains additional unproved content")
@@ -495,6 +548,47 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             report("unexpected_asset_mapping", uid, "Image occurrence does not belong to the unit", rid)
         derived_spans = {}
         toc_counts = Counter()
+        placeholder_specs = {
+            "chapter-02-text-h-0009": ("text-h-0009", "ages-i-database", "Banco de dados utilizado ", "Esquema do banco de dados não incorporado ao ODT; preenchimento posterior."),
+            "chapter-02-text-h-0010": ("text-h-0010", "ages-i-architecture", "Arquitetura utilizada ", "Diagrama de arquitetura não incorporado ao ODT; preenchimento posterior."),
+        }
+        if uid in placeholder_specs and len(unit_ledger.get("approved_apparatus", [])) != 1:
+            report("missing_authorized_placeholder", uid, "Missing-diagram unit requires its one explicitly authorized provisional placeholder")
+        for apparatus in unit_ledger.get("approved_apparatus", []):
+            try:
+                if set(apparatus) != {"kind", "source_heading_id", "placeholder_id", "authorization_evidence", "target_file", "start_byte", "end_byte", "target_sha256"}:
+                    raise ValueError("Unknown/missing apparatus schema fields")
+                contract = unit_ledger.get("macro_contract", ledger.get("macro_contract"))
+                if not isinstance(contract, dict) or set(contract) != {"path", "sha256"}:
+                    raise ValueError("Contract requires exactly path and sha256")
+                contract_data = safe_path(contract["path"]).read_bytes()
+                if hashlib.sha256(contract_data).hexdigest() != contract.get("sha256"):
+                    raise ValueError("Missing/stale placeholder macro contract")
+                found = [item for item in macro_definitions(contract_data.decode()) if item["name"] == "diagramplaceholder"]
+                if len(found) != 1 or found[0]["declaration"] != "newcommand" or found[0]["arity"] != 2 or found[0]["optional_default"] or canonical_macro_body(found[0]["body"]) != canonical_macro_body(DIAGRAM_PLACEHOLDER_BODY):
+                    raise ValueError("Placeholder macro differs from audited provisional body")
+                for target in file_order:
+                    text = target.read_text()
+                    if any(item["name"] == "diagramplaceholder" for item in macro_definitions(text)) or re.search(r"\\(?:let|futurelet)\s*\\diagramplaceholder\b", strip_comments(text)):
+                        raise ValueError("Unit redefines audited placeholder macro")
+                spec = placeholder_specs.get(uid)
+                if spec is None or apparatus.get("kind") != "diagram_placeholder" or apparatus.get("source_heading_id") != spec[0] or apparatus.get("placeholder_id") != spec[1] or spec[0] not in source_ids or records[spec[0]]["text"] != spec[2] or expected_images:
+                    raise ValueError("Placeholder is not bound to the authorized original heading")
+                config = json.loads(safe_path("harness.json").read_text())
+                evidence = "migration/approvals/ages-i-authorization.json"
+                auth = json.loads(safe_path(evidence).read_text())
+                quote = "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente"
+                if apparatus.get("authorization_evidence") != evidence or config.get("phase") != "edition" or config.get("authorization_evidence") != evidence or uid not in config.get("authorized_units", []) or uid not in auth.get("scope", []) or auth.get("kind") != "user_execution_authorization" or auth.get("quoted_instruction") != quote or spec[2].strip() not in auth.get("placeholders_explicitly_authorized", []):
+                    raise ValueError("Missing explicit edition/placeholder user authorization evidence")
+                path, start, end, value = fragment(apparatus)
+                tokens = list(commands(value))
+                if path not in file_order or len(tokens) != 1 or tokens[0].name != "diagramplaceholder" or tokens[0].args != (spec[1], spec[3]) or tokens[0].starred or tokens[0].optionals or strip_comments(value[:tokens[0].start] + value[tokens[0].end:]).strip():
+                    raise ValueError("Placeholder interval differs from authorized provisional apparatus")
+                if len(unit_ledger["approved_apparatus"]) != 1:
+                    raise ValueError("Exactly one authorized placeholder per missing-diagram unit")
+                derived_spans.setdefault(path, []).append((start, end))
+            except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
+                report("invalid_approved_apparatus", uid, str(exc))
         for path in file_order:
             target_text = path.read_text(encoding="utf-8")
             target_tokens = list(commands(target_text))
@@ -507,7 +601,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 for token in target_tokens:
                     token_start = len(target_text[:token.start].encode("utf-8"))
                     token_end = len(target_text[:token.end].encode("utf-8"))
-                    if token.name != "subsection" or not token.starred or len(token.args) != 1 or not token_start <= start <= end <= token_end:
+                    if token.name not in {"chapter", "section", "subsection", "subsubsection"} or len(token.args) != 1 or not token_start <= start <= end <= token_end:
                         continue
                     try:
                         title = displayed_text(token.args[0], policies, macro_contract_verified=macro_verified)
@@ -516,14 +610,29 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                             headings.append((rid, expected, policies, token))
                     except UnsupportedSerialization:
                         pass  # Existing source/target text findings remain authoritative.
+            for rid in source_ids:
+                if _kind(records[rid]) != "h" or rid not in actual or actual[rid][0] != path:
+                    continue
+                found = [item for item in headings if item[0] == rid]
+                if len(found) != 1:
+                    report("invalid_source_heading", uid, "Source heading must map to exactly one actual title argument", rid)
+                    continue
+                _, title, _, heading = found[0]
+                level = records[rid].get("attributes", {}).get("text:outline-level")
+                expected_kind = {"1": "chapter", "2": "section", "3": "subsection"}.get(level)
+                manual = bool(re.match(r"^\d+(?:\.\d+)*[.]?\s", title))
+                if expected_kind is not None and heading.name != expected_kind or manual and not heading.starred:
+                    report("invalid_source_heading", uid, "Heading hierarchy or numbering representation differs from original", rid)
+                if not heading.starred:
+                    report("counter_aux_review_required", uid, "Automatically generated heading number needs separate compiled .aux review", rid, severity="warning")
             for token in target_tokens:
                 if token.name != "addcontentsline":
                     continue
                 matched = []
-                if len(token.args) == 3 and token.args[:2] == ("toc", "subsection"):
-                    for rid, expected, policies, _ in headings:
+                if len(token.args) == 3 and token.args[0] == "toc":
+                    for rid, expected, policies, heading in headings:
                         try:
-                            if displayed_text(token.args[2], policies, macro_contract_verified=macro_verified) == expected:
+                            if heading.starred and token.args[1] == heading.name and displayed_text(token.args[2], policies, macro_contract_verified=macro_verified) == expected:
                                 matched.append(rid)
                         except UnsupportedSerialization:
                             pass
@@ -539,18 +648,21 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if token.name != "refstepcounter":
                     continue
                 next_token = target_tokens[index + 1] if index + 1 < len(target_tokens) else None
-                matches = [(rid, title) for rid, title, _, heading_token in headings if next_token is heading_token and re.match(r"^\d+\.\d+\.\d+\s", title)]
+                matches = [(rid, title) for rid, title, _, heading_token in headings if next_token is heading_token and heading_token.starred and ((heading_token.name == "chapter" and re.match(r"^\d+ - ", title)) or (heading_token.name == "section" and re.match(r"^\d+\.\d+\.?\s", title)) or (heading_token.name == "subsection" and re.match(r"^\d+\.\d+\.\d+\s", title)))]
                 gap = strip_comments(target_text[token.end:next_token.start]) if next_token else ""
-                if token.args != ("subsection",) or len(matches) != 1 or gap.strip():
+                if next_token is None or token.args != (next_token.name,) or len(matches) != 1 or gap.strip():
                     report("unproved_counter_step", uid, "Only a subsection counter step immediately before its original manually numbered subsection* is allowed", path=str(path.relative_to(repo)))
                     continue
                 derived_spans.setdefault(path, []).append((len(target_text[:token.start].encode("utf-8")), len(target_text[:token.end].encode("utf-8"))))
                 report("counter_aux_review_required", uid, "Counter text is not printed; compare compiled .aux label number against original heading", matches[0][0], severity="warning")
+        expected_bookmarks = {(rid, record.get("attributes", {}).get("text:name")) for rid, record in records.items() if _kind(record) == "bookmark-start" and record.get("parent_id") in source_ids and _kind(records[record["parent_id"]]) == "h"}
+        mapped_bookmarks = Counter()
         for mapping in unit_ledger.get("bookmark_map", []):
             try:
                 heading_id = mapping["source_heading_id"]
                 if heading_id not in source_ids or _kind(records[heading_id]) != "h":
                     raise ValueError("Bookmark does not refer to a source heading in this unit")
+                mapped_bookmarks[(mapping["source_start_id"], mapping["source_name"])] += 1
                 original_start = records[mapping["source_start_id"]]
                 original_end = records[mapping["source_end_id"]]
                 source_name = mapping["source_name"]
@@ -567,6 +679,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 derived_spans.setdefault(path, []).append((start, end))
             except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
                 report("invalid_bookmark_evidence", uid, str(exc))
+        if set(mapped_bookmarks) != expected_bookmarks or any(count != 1 for count in mapped_bookmarks.values()):
+            report("missing_or_duplicate_bookmark", uid, "Every original heading bookmark requires exactly one independently verified mapping")
         # Check the complement of proven intervals so added or duplicated words
         # cannot hide outside the ledger. Only documented nonprinting scaffolding
         # is allowed. Unknown macros/environments need a harness policy change,

@@ -2,6 +2,8 @@
 
 ## Estado e limite desta fase
 
+Fase vigente: migração controlada da **AGES I / Easy Choose**, autorizada na mensagem de seleção da edição. Branch `migration/ages-i`, baseline de início `68d159b9b4168f2a913f5c1e4913c30397310437`. O plano específico está em `docs/ages-i/EXECUTION_PLAN.md`. O usuário reiterou placeholders de arquitetura/banco; não criar os diagramas. A próxima edição permanece bloqueada até aprovação humana. As descrições de escopo do piloto abaixo são histórico da fase anterior.
+
 Atualização: fase 1 autorizada pelo usuário na missão “PROJETO-PILOTO DE CONVERSÃO FIEL”. Escopo exclusivo `ages-i-sprint-0`, branch `migration/pilot-ages-i-sprint-0`; o histórico da preparação abaixo permanece registrado. O destino agora contém somente configuração global e piloto, não o memorial integral. A evidência de execução autorizada está em `migration/approvals/pilot-authorization.json`; aprovação do resultado e da próxima Sprint continuam pendentes.
 
 Baseline: `44bc0b95ef5ed06c8efa272de4f754cce1d6e4cb`; branch de preparação `harness/migration`. Original e comparativo permanecem intactos. A configuração em `harness.json`, [BASELINE](BASELINE.json) e [TOOLCHAIN](TOOLCHAIN.lock.json) registra caminhos, versão e hashes. O harness é entregue executável; isso não significa que o memorial já satisfaz os gates.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "pilot",
+  "phase": "edition",
   "source": "RELATORIO_ATUAL.odt",
   "manifest": "docs/CONTENT_MANIFEST.json",
   "destination_root": "relatorio_AGES_eduardo",
@@ -68,20 +68,52 @@
     "content-auditor": {
       "write": [
         "docs/pilot/CONTENT_AUDIT.md",
-        "docs/pilot/CONTENT_AUDIT.json"
+        "docs/pilot/CONTENT_AUDIT.json",
+        "docs/ages-i/CONTENT_AUDIT.md",
+        "docs/ages-i/CONTENT_AUDIT.json"
       ],
       "locks": []
     },
     "visual-auditor": {
       "write": [
         "docs/pilot/VISUAL_AUDIT.md",
-        "docs/pilot/VISUAL_AUDIT.json"
+        "docs/pilot/VISUAL_AUDIT.json",
+        "docs/ages-i/VISUAL_AUDIT.md",
+        "docs/ages-i/VISUAL_AUDIT.json"
       ],
       "locks": []
     }
   },
   "authorized_units": [
-    "ages-i-sprint-0"
+    "chapter-02-text-h-0002",
+    "chapter-02-text-h-0003",
+    "chapter-02-text-h-0007",
+    "chapter-02-text-h-0008",
+    "chapter-02-text-h-0009",
+    "chapter-02-text-h-0010",
+    "chapter-02-text-h-0011",
+    "chapter-02-text-h-0012",
+    "chapter-02-text-h-0014",
+    "ages-i-sprint-0",
+    "ages-i-sprint-1",
+    "ages-i-sprint-2",
+    "ages-i-sprint-3",
+    "ages-i-sprint-4",
+    "chapter-02-text-h-0022"
   ],
-  "authorization_evidence": "migration/approvals/pilot-authorization.json"
+  "authorization_evidence": "migration/approvals/ages-i-authorization.json",
+  "authorized_edition": "ages-i",
+  "asset_ownership": {
+    "chapter-02-text-h-0003": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0012.jpg"
+    ],
+    "chapter-02-text-h-0011": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0024.png",
+      "relatorio_AGES_eduardo/imagens/original/asset-0026.png",
+      "relatorio_AGES_eduardo/imagens/original/asset-0027.png"
+    ],
+    "chapter-02-text-h-0022": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0007.jpg"
+    ]
+  }
 }

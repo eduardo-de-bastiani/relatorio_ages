@@ -111,17 +111,17 @@ class LatexTests(unittest.TestCase):
 
     def test_memorialfigure_invocation_checks_actual_asset_label_and_caption(self):
         definition = r"\newcommand{\memorialfigure}[5]{" + MEMORIAL_FIGURE_BODY + "}"
-        self.write("main.tex", definition + r"\memorialfigure{missing.png}{Legenda}{fig:sample}{Fonte}{0.8}\ref{fig:sample}")
+        self.write("main.tex", definition + r"\memorialfigure{missing.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}\ref{fig:sample}")
         self.assertIn("missing_or_dynamic_asset", self.codes(self.audit()))
         (self.root / "image.png").write_bytes(b"synthetic image")
-        self.write("main.tex", definition + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte}{0.8}\ref{fig:sample}")
+        self.write("main.tex", definition + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}\ref{fig:sample}")
         result = self.audit()
         self.assertEqual(result["status"], "pass", result)
         self.assertEqual(result["counts"]["images"], 1)
         self.assertEqual(result["counts"]["labels"], 1)
-        self.write("main.tex", definition + r"\memorialfigure{image.png}{}{fig:sample}{Fonte}{0.8}")
+        self.write("main.tex", definition + r"\memorialfigure{image.png}{}{fig:sample}{Fonte: pendente de identificação}{0.8}")
         self.assertIn("missing_figure_caption_or_label", self.codes(self.audit()))
-        self.write("main.tex", definition.replace(r"\caption{#2}", r"\caption{Texto inventado}") + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte}{0.8}")
+        self.write("main.tex", definition.replace(r"\caption*{#2}", r"\caption*{Texto inventado}") + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}")
         self.assertIn("unverified_figure_macro", self.codes(self.audit()))
 
 

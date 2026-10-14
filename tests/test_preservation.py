@@ -273,6 +273,103 @@ class PreservationTests(unittest.TestCase):
         self.manifest["records"][-1]["attributes"]["text:name"] = "different"
         self.assertIn("invalid_bookmark_evidence", self.codes(self.audit()))
 
+    def figure_case(self):
+        from scripts.migration_harness.latex import MEMORIAL_FIGURE_BODY
+        self.manifest["records"] = [{"id": "c1", "type": "text:p", "text": "Figure 1: Ação"}, {"id": "i1", "type": "draw:image", "caption_ids": ["c1"]}]
+        self.manifest["units"][0].update(record_ids=["i1", "c1"], source_record_ids=["c1"])
+        image = b"synthetic intact asset"
+        (self.root / "image.png").write_bytes(image)
+        self.manifest["assets"] = [{"id": "asset1", "sha256": hashlib.sha256(image).hexdigest(), "occurrence_ids": ["i1"]}]
+        self.write(r"\newcommand{\memorialfigure}[5]{" + MEMORIAL_FIGURE_BODY + "}", "figures.tex")
+        self.ledger["figure_contract"] = {"path": "figures.tex", "sha256": hashlib.sha256((self.root / "figures.tex").read_bytes()).hexdigest()}
+        value = r"\memorialfigure{image.png}{Figure 1: Ação}{fig:one}{Fonte: pendente de identificação}{0.8}"
+        self.write(value)
+        unit = self.ledger["units"]["sprint-test"]
+        unit["asset_map"] = [{"source_id": "i1", "target_file": "image.png"}]
+        self.figure_maps(value)
+        return value
+
+    def figure_maps(self, value):
+        self.write(value)
+        unit = self.ledger["units"]["sprint-test"]
+        unit["element_map"] = [self.mapping("i1", value), self.mapping("c1", "Figure 1: Ação")]
+
+    def test_figure_contract_literal_caption_source_association_and_bytes(self):
+        value = self.figure_case()
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        self.assertEqual(self.audit()["facts"]["images_checked"], 1)
+        for changed in [value.replace("pendente de identificação", "Autor, 2026"), value.replace("{0.8}", "{1.1}"), value.replace("{0.8}", r"{\input{evil}}"), value.replace("{fig:one}", "{}"), value.replace("\\memorialfigure", "\\memorialfigure[trim=1]")]:
+            with self.subTest(changed=changed):
+                self.figure_maps(changed)
+                self.assertIn("invalid_image_evidence", self.codes(self.audit()))
+        self.figure_maps(value)
+        self.manifest["records"][1]["caption_ids"] = ["other-caption"]
+        self.assertIn("invalid_image_evidence", self.codes(self.audit()))
+        self.manifest["records"][1]["caption_ids"] = ["c1"]
+        (self.root / "image.png").write_bytes(b"changed")
+        self.assertIn("image_hash_changed", self.codes(self.audit()))
+
+    def test_figure_contract_stale_malicious_caption_and_unmatched_media_fail(self):
+        value = self.figure_case()
+        self.ledger["figure_contract"]["sha256"] = "0" * 64
+        self.assertIn("invalid_figure_contract", self.codes(self.audit()))
+        self.figure_case()
+        text = (self.root / "figures.tex").read_text().replace(r"\caption*{#2}", r"\caption*{Inventado}")
+        self.write(text, "figures.tex")
+        self.ledger["figure_contract"]["sha256"] = hashlib.sha256(text.encode()).hexdigest()
+        self.assertIn("invalid_figure_contract", self.codes(self.audit()))
+        self.figure_case()
+        self.figure_maps(value.replace("Figure 1: Ação", "Figure 1: Ação extra"))
+        self.assertIn("invalid_image_evidence", self.codes(self.audit()))
+        self.figure_case()
+        self.ledger["units"]["sprint-test"]["asset_map"] = []
+        self.assertIn("missing_image", self.codes(self.audit()))
+
+    def placeholder_case(self):
+        import json
+        from scripts.migration_harness.preservation import DIAGRAM_PLACEHOLDER_BODY
+        uid = "chapter-02-text-h-0009"
+        heading = "text-h-0009"
+        self.manifest = {"records": [{"id": heading, "type": "text:h", "text": "Banco de dados utilizado "}], "units": [{"id": uid, "record_ids": [heading], "source_record_ids": [heading]}], "assets": []}
+        self.ledger["units"] = {uid: {"state": "converted", "tex_path": "unit.tex"}}
+        macro = self.whitespace_contract()
+        text = (self.root / "macros.tex").read_text() + r"\newcommand{\diagramplaceholder}[2]{" + DIAGRAM_PLACEHOLDER_BODY + "}"
+        self.write(text, "macros.tex")
+        macro["sha256"] = hashlib.sha256(text.encode()).hexdigest()
+        self.ledger["macro_contract"] = macro
+        call = r"\diagramplaceholder{ages-i-database}{Esquema do banco de dados não incorporado ao ODT; preenchimento posterior.}"
+        title = r"Banco de dados utilizado\originalspace{}"
+        self.write(r"\subsection{" + title + "}\n" + call)
+        mapping = self.mapping(heading, title)
+        mapping["serializations"] = ["original_whitespace"]
+        unit = self.ledger["units"][uid]
+        unit["element_map"] = [mapping]
+        apparatus = self.mapping(heading, call)
+        apparatus.pop("source_id")
+        evidence = "migration/approvals/ages-i-authorization.json"
+        apparatus.update(kind="diagram_placeholder", source_heading_id=heading, placeholder_id="ages-i-database", authorization_evidence=evidence)
+        unit["approved_apparatus"] = [apparatus]
+        self.write(json.dumps({"phase": "edition", "authorization_evidence": evidence, "authorized_units": [uid]}), "harness.json")
+        (self.root / "migration/approvals").mkdir(parents=True)
+        self.write(json.dumps({"kind": "user_execution_authorization", "scope": [uid], "quoted_instruction": "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente", "placeholders_explicitly_authorized": ["Banco de dados utilizado"]}), evidence)
+        return unit, apparatus
+
+    def test_placeholder_requires_exact_user_evidence_heading_and_schema(self):
+        unit, apparatus = self.placeholder_case()
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        for key, invalid in [("source_heading_id", "p1"), ("authorization_evidence", "fake.json"), ("placeholder_id", "inventado"), ("kind", "ignore_text")]:
+            original = apparatus[key]
+            apparatus[key] = invalid
+            self.assertIn("invalid_approved_apparatus", self.codes(self.audit()))
+            apparatus[key] = original
+        apparatus["ignore_text"] = True
+        self.assertIn("invalid_approved_apparatus", self.codes(self.audit()))
+        apparatus.pop("ignore_text")
+        self.write("{}", "harness.json")
+        self.assertIn("invalid_approved_apparatus", self.codes(self.audit()))
+        unit["approved_apparatus"] = []
+        self.assertIn("unsupported_target_scaffolding", self.codes(self.audit()))
+
 
 if __name__ == "__main__":
     unittest.main()

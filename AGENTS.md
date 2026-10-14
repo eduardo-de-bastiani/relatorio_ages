@@ -12,6 +12,8 @@ Autoridades, nesta ordem: instruções explícitas do usuário; original imutáv
 
 ## Invariantes
 
+Atualização vigente de escopo: o usuário autorizou a edição completa **AGES I / Easy Choose**, incluindo placeholders provisórios para os diagramas ausentes de arquitetura e banco de dados. A branch de execução é `migration/ages-i`; o conjunto exato de 15 unidades está em `harness.json` e a mensagem de autorização em `migration/approvals/ages-i-authorization.json`. Essa instrução substitui o limite histórico do piloto. Não autoriza AGES II–IV nem a participação como cliente. O resultado da edição exige aprovação humana antes de avançar. Conteúdo já convertido no piloto deve ser revalidado, não duplicado.
+
 - Não revisar português, reformular, expandir, completar ou corrigir fatos nesta fase ou na conversão fiel.
 - Preservar acentos, símbolos, pontuação, sequência, âncoras e URLs. Contagem de palavras não comprova integridade.
 - Nunca modificar `RELATORIO_ATUAL.odt`; SHA-256 esperado: `e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef`.

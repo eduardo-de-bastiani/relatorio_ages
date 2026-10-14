@@ -39,6 +39,7 @@ def scope_check(role: str, base: str, *, unit: str | None = None, repo: Path = R
         destination = selected["destination"]
         patterns.append(destination if isinstance(destination, str) else destination["path"])
         patterns.append(f"migration/ledgers/{unit}.json")
+        patterns.extend(config.get("asset_ownership", {}).get(unit, []))
     changed = changed_paths(repo, base, end)
     baseline = read_json(repo / "docs/BASELINE.json")
     forbidden = []
