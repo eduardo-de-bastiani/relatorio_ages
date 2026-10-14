@@ -210,20 +210,20 @@ def audit_latex(root: Path, entry: Path) -> dict:
                 return True
         return False
 
-    def walk(path: Path):
+    def walk(path: Path, pending_break: bool = False) -> bool:
         path = path.resolve()
         if not path.is_relative_to(root):
             report("unsafe_path", path, 1, "Path escapes compilation root")
-            return
+            return pending_break
         if path in active:
             report("include_cycle", path, 1, " -> ".join(str(p.relative_to(root)) for p in active + [path]))
-            return
+            return pending_break
         if path in visited:
             report("repeated_include", path.relative_to(root), 1, "File is included more than once; counters and text may duplicate")
-            return
+            return pending_break
         if not path.is_file():
             report("missing_file", path, 1, "Required source file does not exist")
-            return
+            return pending_break
         visited.add(path)
         active.append(path)
         relative = path.relative_to(root)
@@ -235,8 +235,7 @@ def audit_latex(root: Path, entry: Path) -> dict:
         except (UnicodeError, ValueError, OSError) as exc:
             report("parse_error", relative, 1, str(exc))
             active.pop()
-            return
-        pending_break = False
+            return pending_break
         sprint_file = "sprint" in path.stem.lower()
         for token in tokens:
             line = text.count("\n", 0, token.start) + 1
@@ -294,7 +293,7 @@ def audit_latex(root: Path, entry: Path) -> dict:
                         report("sprint_include", relative, line, "include forces a page break; use input for Sprints")
                     if pending_break and "sprint" in target.name.lower():
                         report("sprint_page_break", relative, line, "Sprint input follows an explicit page break in its parent")
-                    walk(target)
+                    pending_break = walk(target, pending_break)
             elif name in {"addbibresource", "bibliography"} and args:
                 for raw in args[0].split(","):
                     target = resolve(raw.strip(), (".bib",))
@@ -331,6 +330,7 @@ def audit_latex(root: Path, entry: Path) -> dict:
             elif name in {"href", "url"} and args and re.search(r"(?<!\\)%", args[0]):
                 report("unescaped_url_percent", relative, line, "URL retained for inspection; verify percent handling in the compiler/package", "warning")
         active.pop()
+        return pending_break
 
     walk(entry if entry.is_absolute() else root / entry)
     for value, path, line in refs:

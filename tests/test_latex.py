@@ -66,6 +66,17 @@ class LatexTests(unittest.TestCase):
         self.write("sprint 0.tex", r"\newpage\subsection{Sprint 0} Texto.")
         self.assertIn("sprint_page_break", self.codes(self.audit()))
 
+    def test_break_state_follows_included_headings_without_leaking_from_pretext(self):
+        self.write("main.tex", r"\clearpage\input{chapter}\input{sprint-0}")
+        self.write("chapter.tex", r"\chapter*{Original chapter}Narrative.")
+        self.write("sprint-0.tex", r"\subsection*{Sprint 0}Text.")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        self.write("chapter.tex", "")
+        self.assertIn("sprint_page_break", self.codes(self.audit()))
+        self.write("main.tex", r"\input{chapter}\input{sprint-0}")
+        self.write("chapter.tex", r"\clearpage")
+        self.assertIn("sprint_page_break", self.codes(self.audit()))
+
     def test_unreachable_demo_warns_not_fails(self):
         self.write("main.tex", "Texto.")
         self.write("util/example.tex", r"\cite{invalid-demo}")
