@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "2952f7f",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+  },
+  "units": {
+    "chapter-02-text-h-0022": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0022",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 208,
+          "end_byte": 223,
+          "serializations": [],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0637",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 334,
+          "end_byte": 890,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0638",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 916,
+          "end_byte": 1155,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0639",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 1181,
+          "end_byte": 1724,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0640",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 1750,
+          "end_byte": 2827,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0641",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 2853,
+          "end_byte": 3463,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0642",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 3489,
+          "end_byte": 4051,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0643",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 4077,
+          "end_byte": 4724,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "draw-image-0005",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 4726,
+          "end_byte": 4891,
+          "serializations": [],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_id": "text-p-0650",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "start_byte": 4775,
+          "end_byte": 4819,
+          "serializations": [],
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0005",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0007.jpg"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0022",
+          "source_name": "_Toc45627146",
+          "source_start_id": "text-bookmark-start-0021",
+          "source_end_id": "text-bookmark-end-0021",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "target_anchor": "_Toc45627146",
+          "command": "hypertarget",
+          "start_byte": 94,
+          "end_byte": 122,
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        },
+        {
+          "source_heading_id": "text-h-0022",
+          "source_name": "__RefHeading___Toc4753_3118176633",
+          "source_start_id": "text-bookmark-start-0022",
+          "source_end_id": "text-bookmark-end-0022",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "target_anchor": "__RefHeading___Toc4753_3118176633",
+          "command": "hypertarget",
+          "start_byte": 123,
+          "end_byte": 172,
+          "target_sha256": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0011",
+          "disposition": "figure_container",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        }
+      ],
+      "pending": [
+        "G6/G7 integration compilation and visual review PENDING.",
+        "G8 integral normative compliance PENDING.",
+        "G9 human edition approval PENDING.",
+        "Figure 5 source provenance PENDING; no attribution supplied by original."
+      ],
+      "presentation_serializations": {
+        "heading": "Manual literal numbering and punctuation preserved with starred heading and immediately preceding counter step; derived TOC repeats same literal.",
+        "whitespace": "Original tabs use audited 1.251cm originaltab; edge and repeated spaces use originalspace; ODF source values preserved exactly.",
+        "emphasis": "Original inline italic/bold span properties resolved from original style chain; body and reflection use approved shared typography."
+      }
+    }
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+  }
+}
