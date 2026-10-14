@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "2952f7f",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+  },
+  "units": {
+    "chapter-02-text-h-0014": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0014",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+          "start_byte": 208,
+          "end_byte": 258,
+          "serializations": [],
+          "target_sha256": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0014",
+          "source_name": "__RefHeading___Toc4806_3790000799",
+          "source_start_id": "text-bookmark-start-0014",
+          "source_end_id": "text-bookmark-end-0014",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+          "target_anchor": "__RefHeading___Toc4806_3790000799",
+          "command": "hypertarget",
+          "start_byte": 94,
+          "end_byte": 143,
+          "target_sha256": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c"
+        },
+        {
+          "source_heading_id": "text-h-0014",
+          "source_name": "_Toc45627145",
+          "source_start_id": "text-bookmark-start-0015",
+          "source_end_id": "text-bookmark-end-0015",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+          "target_anchor": "_Toc45627145",
+          "command": "hypertarget",
+          "start_byte": 144,
+          "end_byte": 172,
+          "target_sha256": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0031",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0030",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0032",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0031",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0033",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0032",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0034",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0033",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0035",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0034",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0036",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0035",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0037",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0036",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0038",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0037",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0039",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0038",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0040",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-header-0005",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        }
+      ],
+      "pending": [
+        "G6/G7 integration compilation and visual review PENDING.",
+        "G8 integral normative compliance PENDING.",
+        "G9 human edition approval PENDING."
+      ],
+      "presentation_serializations": {
+        "heading": "Manual literal numbering and punctuation preserved with starred heading and immediately preceding counter step; derived TOC repeats same literal.",
+        "whitespace": "Original tabs use audited 1.251cm originaltab; edge and repeated spaces use originalspace; ODF source values preserved exactly.",
+        "emphasis": "Original inline italic/bold span properties resolved from original style chain; body and reflection use approved shared typography."
+      }
+    }
+  }
+}
