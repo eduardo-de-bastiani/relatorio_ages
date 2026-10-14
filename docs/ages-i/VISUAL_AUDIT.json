@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "status": "FAIL",
+  "phase": "initial_review_awaiting_corrected_pdf",
+  "reviewer": "Codex subagent ages_i_visual_audit, independent visual role; not Antigravity",
+  "commit": "ea4b3ee8cad8b441a04730817a91078bc2b83a2a",
+  "pdf": "build/ages-i/visual-audit/initial-0903a4ec.pdf",
+  "pdf_sha256": "0903a4ecb1cf1486fc05dde3df72a6ec12e11e7e3cc8c7d428c8fd2f0b47b61a",
+  "page_count": 17,
+  "inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "page_evidence": [
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-01.png",
+      "sha256": "b0356380a99d6304bc8c35e1e07932e7468dd3e67ed9b8e1aa3ceb403d85d828"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-02.png",
+      "sha256": "5ca146929313de36153228c347c4c21055a8f8e26b59018e7c128888416988de"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-03.png",
+      "sha256": "a05f6d3012b7397c01555624ea0c233696e86ddbcbd275a4ee8cba4c69ce65cb"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-04.png",
+      "sha256": "353f8f787659a8693a27dec172ba6000babedbd57646e3ebd4d0fcfa5aa21829"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-05.png",
+      "sha256": "5c2bb1149c41fdcc952e4993e983f890a8bd04752d36b058f00e8d591d07b9a5"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-06.png",
+      "sha256": "9d63db920006975daaa46a4da2a40f5d036aa715e882cb11d8b3cf64c765f50e"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-07.png",
+      "sha256": "710441b21f8e64a45255ede28ba02601c5f8003aa51f69d2e7712eddecb4f4de"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-08.png",
+      "sha256": "92af5c889d559447d3bdf6959ff58bf1688b5d915d098c71b8c7631757192d0d"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-09.png",
+      "sha256": "0d6d0657ed5633276a91e1a8a97ee23c7661190c73367a912ad544c82fdc3079"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-10.png",
+      "sha256": "852eb855a7170a75af5f64d6a20053d42856ad9286ca1563d781b1757ac8d040"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-11.png",
+      "sha256": "2c01070aabc297afe587eaaa43466c9977ca5b1a119888a7f19656f737fe176c"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-12.png",
+      "sha256": "b31a3189c0792c2ce9034da4bf6e6bca21b7e3521415fe960163ede6c15a382a"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-13.png",
+      "sha256": "89efe532be3697e07820af7de727452fc0a41c70a2bd4b2441ddefeecd8dafff"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-14.png",
+      "sha256": "7da510cdf3c17fc848b2dcbfc3145323bfed5f894a1c9e1271a9fc51e638db01"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-15.png",
+      "sha256": "edbca81c7883de9663a9dbadf581d724edd5dc715c71029cb19bd49391fa7ed3"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-16.png",
+      "sha256": "107251b89196d695f2767d5dbc607f94030b141c7698a7a781041a2d6ad76223"
+    },
+    {
+      "path": "build/visual/0903a4ecb1cf1486/page-17.png",
+      "sha256": "faab18b280096cc58b9cf59ebe696aedb517ecf79f2f1303272a58d35885bb69"
+    }
+  ],
+  "findings": [
+    {
+      "id": "VAI01",
+      "status": "FAIL",
+      "severity": "alta",
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex; main.tex",
+      "evidence": "Título Tecnologias e bullet React aparecem na p4 antes das Figures 3/4, que ocupam p5; descrição React só começa p6.",
+      "consequence": "Figuras saem do contexto dos protótipos e interrompem o item React.",
+      "proposed_correction": "Mantenedor conter floats antes de Tecnologias; preservar item e primeiro parágrafo juntos.",
+      "verification": "Recompilar e inspecionar páginas de protótipos/tecnologias e sumário atualizado."
+    },
+    {
+      "id": "VAI02",
+      "status": "FAIL",
+      "severity": "alta",
+      "pages": [
+        13,
+        14
+      ],
+      "file": "relatorio_AGES_eduardo/util/macros.tex",
+      "evidence": "p13 contém apenas duas linhas de continuação da Sprint4; reflexão curta inicia na p14, deixando quase toda p13 vazia.",
+      "consequence": "Vazio artificial incompatível com fluxo contínuo e caixa divisível.",
+      "proposed_correction": "Mantenedor corrigir cálculo de espaço após page builder/quebra natural, sem mudar conteúdo.",
+      "verification": "Recompilar, inspecionar Sprint4 e todas reflexões, testar quebra natural no mecanismo."
+    },
+    {
+      "id": "VAI03",
+      "status": "PENDING",
+      "severity": "média",
+      "pages": [
+        3
+      ],
+      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex; chapter-02-text-h-0009.tex; chapter-02-text-h-0010.tex",
+      "source_ids": [
+        "text-p-0303",
+        "text-p-0314",
+        "text-p-0318"
+      ],
+      "evidence": "Tabs internos produzem lacunas visíveis, sobretudo em Arquitetura, sem sobreposição ou cortes.",
+      "consequence": "Avanço fixo1.251cm preserva tokens, mas não reproduz próximos tab stops ODF após recomposição de linhas.",
+      "proposed_correction": "Manter representação fiel documentada e submeter ao checkpoint humano; não normalizar whitespace.",
+      "verification": "Comparador estrito de tokens e inspeção dos três parágrafos na versão final."
+    }
+  ],
+  "measurements": {
+    "page_points": [
+      595.28,
+      841.89
+    ],
+    "pagination_top_points": 56.693615,
+    "pagination_right_points": 56.6972,
+    "body_left_points": 85.039,
+    "body_right_points_approx": 56.683,
+    "body_font": "NimbusSanL-Regu, Helvetica-compatible, embedded",
+    "body_font_points": 12,
+    "pagination_font_points": 10
+  },
+  "pass": [
+    "All 17 page images opened via view_image at150dpi",
+    "No text/image overlap, missing glyph or clipping observed",
+    "Figure1 JPEG with EXIF zero dimensions renders upright and complete",
+    "Literal Figure1–5 captions above; pending-source apparatus below",
+    "Two visibly provisional diagram boxes onp3 excluded from five real-figure list",
+    "Sprint0 reflection divides p7–8 with border redrawn; same body family/size",
+    "Sprints1/2/4 continuous; Sprint3 natural page start",
+    "Documentary references onp17 clearly identify current curation date and deny historical version inference"
+  ],
+  "pending": [
+    "Corrected PDF full visual review",
+    "Five figure sources unknown",
+    "Complete normative certification",
+    "Human approval of AGES I",
+    "Fixed-step internal tabs representation approval"
+  ],
+  "not_applicable": [
+    "No tables or authorial notes in AGES I"
+  ],
+  "commands": [
+    {
+      "command": "python3 scripts/migration.py visual --pdf build/ages-i/visual-audit/initial-0903a4ec.pdf --dpi150 (actual option: --dpi 150)",
+      "returncode": 3,
+      "note": "Rendering succeeds; CLI deliberately awaits human review; internal Poppler commands0."
+    },
+    {
+      "command": "pdffonts build/document/main.pdf",
+      "returncode": 0
+    },
+    {
+      "command": "sha256sum build/document/main.pdf RELATORIO_ATUAL.odt",
+      "returncode": 0
+    },
+    {
+      "command": "pdftotext -bbox initial PDF; XML stdlib bbox extraction",
+      "returncode": 0
+    },
+    {
+      "command": "pdftohtml -xml -hidden -i -stdout initial PDF",
+      "returncode": 0
+    },
+    {
+      "command": "pdftoppm -f12 -l12 -r100 -png -singlefile Mariah readonly PDF",
+      "returncode": 0
+    },
+    {
+      "command": "Python import fitz; Python import lxml",
+      "returncode": 1,
+      "note": "Unavailable; no dependency installed; stdlib XML and Poppler used successfully."
+    }
+  ],
+  "comparison": {
+    "source": "relatorio_mariah/relatorio_ages-main/extracted/main.pdf",
+    "inspected_physical_pages": [
+      12
+    ],
+    "use": "Readonly visual metric: sans-serif hierarchy, text density, indents and spacing; no content transferred."
+  },
+  "limitations": "Initial evidence remains valid only for identified PDF. Build log clean does not override visual FAIL. Main modifications currently underway by maintainer; no final approval inferred."
+}

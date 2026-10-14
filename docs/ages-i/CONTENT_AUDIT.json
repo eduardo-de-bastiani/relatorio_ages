@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "role": "content-auditor",
+  "independence": "Separate Codex subagent; direct ODT extraction and own TeX decoder, not Antigravity. No converter expected text used as proof.",
+  "status": "FAIL",
+  "commit": "ea4b3ee8cad8b441a04730817a91078bc2b83a2a",
+  "branch": "migration/ages-i",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "scope": "Only text-h-0002 through text-h-0023 exclusive; 15 authorized AGES I units.",
+  "ownership": [
+    "docs/ages-i/CONTENT_AUDIT.md",
+    "docs/ages-i/CONTENT_AUDIT.json"
+  ],
+  "counts": {
+    "blocks": 102,
+    "images": 5,
+    "urls": 11,
+    "reflection_boxes": 5
+  },
+  "checks": {
+    "text_102_exact": "PASS",
+    "source_UIDs_vs_manifest": "PASS: 102/102 exact independently extracted values",
+    "order": "PASS",
+    "target_byte_hashes": "PASS",
+    "emphasis": "FAIL: CA-01 only; other body/caption bold, italic and underline positions match",
+    "hierarchy": "PASS: 15 heading levels map chapter/section/subsection, literal prefixes retained without duplicates",
+    "lists": "PASS: 5 technology item labels; 17 constituent paragraphs grouped with respective continuations, no literal ODF container nesting",
+    "reflections": "PASS: 5 reflection environments contain same 17 original paragraphs in source order",
+    "media": "PASS: 5 target hashes equal corresponding ODT members; occurrence order and literal captions match",
+    "URLs": "PASS: exact 11 href/anchor pairs; exact 11 URI annotations independently read from built PDF",
+    "bookmarks": "PASS: each independently extracted bookmark appears once as empty-visual hypertarget",
+    "counter_aux": "PASS: chapter 2; 2.1/2.2/2.2.1–2.2.5/2.3/2.3.1–2.3.5/2.4 and figures 1–5; matching TOC/LOF; placeholders absent from LOF",
+    "placeholders": "PASS: 2 explicitly provisional placeholders, no invented diagram content/source",
+    "bibliography": "PASS: 5 keys match curated evidence title/url/current consultation date; no author/year invented; nocite confined to postextual apparatus",
+    "static_latex": "PASS: own audit-latex invocation exit 0",
+    "compilation": "PASS: inspected clean integrated report/log/aux at audited commit; compiler exit 0; auditor did not claim separate rebuild",
+    "visual": "PENDING: independent visual auditor responsibility",
+    "remote_projects": "PENDING: 6 project URLs availability unproved, preserving as authorized",
+    "image_provenance": "PENDING: 5 images; no authorship inferred",
+    "normative": "PENDING: this content audit does not certify norms",
+    "human_approval": "PENDING"
+  },
+  "findings": [
+    {
+      "id": "CA-01",
+      "status": "FAIL",
+      "severity": "medium",
+      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+      "line": 30,
+      "source_id": "text-p-0650",
+      "evidence": "content.xml paragraph P64 inherits Figure text style: italic on all 42 characters; actual memorialfigure caption argument has no textit; main.lof Figure 5 also lacks textit. Captions 1–4 preserve it.",
+      "consequence": "Loss of original caption emphasis despite exact lexical content.",
+      "proposed_correction": "Converter wraps literal Figure 5 caption in textit and regenerates ledger byte intervals/hash; rebuild.",
+      "verification": "Repeat independent character/style comparison, validate final unit, inspect main.lof and corrected PDF; audit does not change memorial."
+    }
+  ],
+  "commands": [
+    {
+      "command": "python3 scripts/migration.py verify-source",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-i/audit/independent_audit.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-i/audit/compare.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0002.json --unit chapter-02-text-h-0002",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0003.json --unit chapter-02-text-h-0003",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0007.json --unit chapter-02-text-h-0007",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0008.json --unit chapter-02-text-h-0008",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0009.json --unit chapter-02-text-h-0009",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0010.json --unit chapter-02-text-h-0010",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0011.json --unit chapter-02-text-h-0011",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0012.json --unit chapter-02-text-h-0012",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0014.json --unit chapter-02-text-h-0014",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-i-sprint-0.json --unit ages-i-sprint-0",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-i-sprint-1.json --unit ages-i-sprint-1",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-i-sprint-2.json --unit ages-i-sprint-2",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-i-sprint-3.json --unit ages-i-sprint-3",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-i-sprint-4.json --unit ages-i-sprint-4",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0022.json --unit chapter-02-text-h-0022",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py audit-latex --root relatorio_AGES_eduardo --entry main.tex",
+      "exit_code": 0
+    },
+    {
+      "command": "Python pypdf PdfReader: inspect actual PDF URI annotations",
+      "exit_code": 0
+    },
+    {
+      "command": "Python: compare all 102 direct XML texts/UIDs with manifest",
+      "exit_code": 0
+    }
+  ],
+  "examined_files": [
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+    "RELATORIO_ATUAL.odt",
+    "docs/CONTENT_MANIFEST.json",
+    "harness.json",
+    "migration/evidence/references/ages-i.json",
+    "relatorio_AGES_eduardo/main.tex",
+    "relatorio_AGES_eduardo/util/macros.tex",
+    "relatorio_AGES_eduardo/util/style.tex",
+    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "build/document/report.json",
+    "build/document/main.log",
+    "build/document/main.aux",
+    "build/document/main.toc",
+    "build/document/main.lof",
+    "build/document/main.bbl"
+  ],
+  "target_hashes": {
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex": "8355da55c597959d637accccca6686d9c9263807c7219f8e8a9b637442d2d4db",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex": "e939d8abcf70c9a29236592838e86cdac0c9522acaab05bedd6833b9951d5fd5",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex": "7cae50b15765cae6231413799b07df8182d6a1d0e58d961c6aceb6fd48de71be",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex": "32a03cb2377a0a69667c62cd0b23cf4d587ee441d00130888dc03a9bf3782d85",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex": "08b68fcbb751efffaa257df0f838a54c11c7f472f42756788acdbf1a006e667b",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex": "e2ac4c47177402f3fdb80cfa4d6e795bd3a998835a4feeea4e140694eb668390",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex": "1fb90f99ce0ec2b65b6dd19410596dca09e747c9a31b67c6b20540a550f311ce",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex": "c50cfbe0ebdb4fb0746c9cfefff79aeb8cdb330bec5c65b27b8bbadef3eb9e6d",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
+  },
+  "artifacts": {
+    "build/ages-i/audit/source-independent.json": "7096e9e900391d68cd62c887f237bb39dd781b289e2fd91cd3539f42aebca1d8",
+    "build/ages-i/audit/comparison.json": "e376a236e1fe600de78f94811c3810f2cc1443faae1f6b3663438430428c7485",
+    "build/ages-i/audit/pdf-links.json": "565c5483d07569493a88e954a79a9335ae9f9b32b6c5d38f3fe38a85582ee1db",
+    "build/ages-i/audit/audit-latex.json": "38bbace7c64ef4df96c4b61d7828b27cc322880958b8eb60df24c8ebe3018774",
+    "build/document/main.pdf": "0903a4ecb1cf1486fc05dde3df72a6ec12e11e7e3cc8c7d428c8fd2f0b47b61a",
+    "build/document/main.aux": "f08a89951461ead031bcdd90ad5a38721012555b648afca1b402c2cd806ae7cc",
+    "build/document/main.toc": "5069c159778ee7a7bf9bd7e5c8ea29318ef70cb6e6154800ed0d96dc3d36d877",
+    "build/document/main.lof": "a6976ef7533b9608f80e8accd00854bedce45c27693129f7010232e7d06965b3",
+    "build/document/main.bbl": "c3fcfecb6e34996ebfc2f1b900ed3d7976234b2c3f01f5cef166576e30119680"
+  },
+  "limitations": [
+    "Internal original tabs are represented one for one as originaltab, a fixed 1.251 cm advance rather than position-dependent ODF tab stops; lexical identity passes, precise original alignment is not asserted.",
+    "Heading typography is controlled by global section presentation; body/caption emphasis is compared per character independently.",
+    "PDF text extraction is not the sole content proof. URI annotations supplement source-byte proof.",
+    "Failed provisional audit-driver attempts were corrected (namespace handling and excluding image IDs from text decoder); final comparison exit 0 is the evidence.",
+    "PyMuPDF unavailable; PDF links successfully inspected with installed pypdf.",
+    "No approval of next edition or editorial changes."
+  ],
+  "human_approval": "PENDING",
+  "revalidation_required": "After caption fix, recheck corrected commit and PDF hashes before final delivery."
+}
