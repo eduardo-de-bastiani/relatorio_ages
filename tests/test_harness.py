@@ -92,6 +92,21 @@ class HarnessTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "authorized phase scope"):
             scope_check("converter", "HEAD", unit="another", repo=self.repo)
 
+    def test_converter_asset_ownership_does_not_allow_other_unit_media(self):
+        self.config.update(phase="edition", authorized_units=["u"],
+                           asset_ownership={"u": ["destination/imagens/own.png"]})
+        (self.repo / "harness.json").write_text(json.dumps(self.config))
+        self.run_git("add", "harness.json")
+        self.run_git("-c", "user.name=Harness test", "-c", "user.email=harness@example.org", "commit", "-m", "authorize unit assets")
+        images = self.repo / "destination/imagens"
+        images.mkdir(parents=True)
+        (images / "own.png").write_bytes(b"own media")
+        own = scope_check("converter", "HEAD", unit="u", repo=self.repo)
+        self.assertEqual(own["status"], "pass")
+        (images / "other.png").write_bytes(b"other unit media")
+        other = scope_check("converter", "HEAD", unit="u", repo=self.repo)
+        self.assertEqual(other["forbidden_paths"], ["destination/imagens/other.png"])
+
     def test_lock_collision(self):
         with resource_locks(["manifest"], repo=self.repo):
             with self.assertRaisesRegex(ValueError, "already owned"):
