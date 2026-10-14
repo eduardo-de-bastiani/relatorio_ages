@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "2952f7f",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "92230e9d0a32bed56091c6ee397ea7db565a096cb77cb1673e4a409637d65264"
+  },
+  "units": {
+    "ages-i-sprint-4": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0020",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 178,
+          "end_byte": 192,
+          "serializations": [],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        },
+        {
+          "source_id": "text-p-0592",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 298,
+          "end_byte": 742,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        },
+        {
+          "source_id": "text-p-0593",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 768,
+          "end_byte": 1458,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        },
+        {
+          "source_id": "text-p-0594",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 1484,
+          "end_byte": 1846,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        },
+        {
+          "source_id": "text-p-0595",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 1872,
+          "end_byte": 2158,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        },
+        {
+          "source_id": "text-p-0606",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 2203,
+          "end_byte": 2734,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        },
+        {
+          "source_id": "text-p-0607",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "start_byte": 2760,
+          "end_byte": 2968,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0020",
+          "source_name": "__RefHeading___Toc4751_3118176633",
+          "source_start_id": "text-bookmark-start-0020",
+          "source_end_id": "text-bookmark-end-0020",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+          "target_anchor": "__RefHeading___Toc4751_3118176633",
+          "command": "hypertarget",
+          "start_byte": 87,
+          "end_byte": 136,
+          "target_sha256": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0010",
+          "disposition": "reflection_environment",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0053",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-item-0047",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-0054",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        },
+        {
+          "source_id": "text-list-header-0010",
+          "disposition": "boundary-layout-only",
+          "evidence": "XML container retained in source manifest; descendants mapped where belonging to this unit. Heading boundary list wrappers are layout, not authorial list items."
+        }
+      ],
+      "pending": [
+        "G6/G7 integration compilation and visual review PENDING.",
+        "G8 integral normative compliance PENDING.",
+        "G9 human edition approval PENDING."
+      ],
+      "presentation_serializations": {
+        "heading": "Manual literal numbering and punctuation preserved with starred heading and immediately preceding counter step; derived TOC repeats same literal.",
+        "whitespace": "Original tabs use audited 1.251cm originaltab; edge and repeated spaces use originalspace; ODF source values preserved exactly.",
+        "emphasis": "Original inline italic/bold span properties resolved from original style chain; body and reflection use approved shared typography."
+      }
+    }
+  }
+}
