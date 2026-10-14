@@ -49,3 +49,10 @@ O usuário autorizou a edição completa AGES I / Easy Choose e os dois placehol
 | AI06 | Vigência integral e regras ainda pendentes em P07/P08 | Certificação normativa integral indisponível; alta | Não declarar conformidade normativa total; manter matriz de evidências e revisão posterior | PENDING |
 
 O aceite do resultado deverá identificar PDF, commit e relatórios da edição. A autorização de continuidade dos links não comprova sua disponibilidade nem autoriza completar diagramas ou fontes por inferência.
+
+### Ressalvas da entrega AGES I
+
+- **AI07 / VAI03 — PENDING, média:** tabs internos em `text-p-0303`, `text-p-0314`, `text-p-0318` são preservados 1:1 por avanços de 1.251 cm, com lacunas visíveis na página 4. A origem ODF usa tab stops dependentes de posição; a representação LaTeX não é declarada geometricamente idêntica. Conteúdo permanece intacto e legível; decisão de apresentação pertence ao autor, sem normalização silenciosa. Verificar comparador estrito e PDF identificado em `ages-i/EDITION_REVIEW.md`.
+- **AI08 — PENDING, bloqueia avanço:** todas as 15 unidades da AGES I passaram pelos gates técnicos de preservação e revisão visual com ressalvas; nenhuma recebeu aceite humano. Aprovação deve identificar PDF/hash e relatórios finais. Não iniciar outra edição.
+
+Os achados CA-01 (itálico), VAI01 (floats fora de contexto) e VAI02 (página quase vazia) foram corrigidos e reavaliados; histórico e evidências estão nos pareceres da edição.
