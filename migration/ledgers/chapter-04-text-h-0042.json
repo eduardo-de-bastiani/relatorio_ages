@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "1218ced77a1aa3cb65f0c15182b6248ddfb2d048",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
+  },
+  "units": {
+    "chapter-04-text-h-0042": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0042",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 164,
+          "end_byte": 210,
+          "serializations": [],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        },
+        {
+          "source_id": "text-p-0774",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 379,
+          "end_byte": 470,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        },
+        {
+          "source_id": "text-p-0775",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 577,
+          "end_byte": 743,
+          "serializations": [
+            "repository_link_sentence"
+          ],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        },
+        {
+          "source_id": "text-p-0777",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 805,
+          "end_byte": 1132,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        },
+        {
+          "source_id": "text-p-0778",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 1239,
+          "end_byte": 1403,
+          "serializations": [
+            "repository_link_sentence"
+          ],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        },
+        {
+          "source_id": "text-a-0116",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 577,
+          "end_byte": 743,
+          "serializations": [
+            "repository_link_sentence"
+          ],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        },
+        {
+          "source_id": "text-a-0117",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "start_byte": 1239,
+          "end_byte": 1403,
+          "serializations": [
+            "repository_link_sentence"
+          ],
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0042",
+          "source_name": "__RefHeading___Toc4773_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+          "target_anchor": "__RefHeading___Toc4773_3118176633",
+          "command": "hypertarget",
+          "start_byte": 73,
+          "end_byte": 122,
+          "source_start_id": "text-bookmark-start-0039",
+          "source_end_id": "text-bookmark-end-0039",
+          "target_sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0097",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-item-0078",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-0098",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-item-0079",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-0099",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-header-0026",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        }
+      ],
+      "approved_apparatus": [],
+      "pending": [
+        "Independent content audit, integrated compilation, visual audit, ABNT verification and human AGES II approval remain PENDING."
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-ii-presentation-reuse.json",
+        "source_ids": [
+          "text-a-0116",
+          "text-a-0117",
+          "text-p-0775",
+          "text-p-0778"
+        ]
+      }
+    }
+  }
+}
