@@ -136,7 +136,10 @@
 \urlstyle{same}
 % ABNT author-date bibliography; metadata is curated separately.
 \usepackage{csquotes}
-\usepackage[backend=biber,style=abnt]{biblatex}
+\usepackage[backend=biber,style=abnt,repeatfields=true]{biblatex}
+% The bundled ABNT style otherwise abbreviates repeated author/title fields
+% with underscores. Repeat them explicitly, matching the visual reference and
+% keeping distinct edition access dates legible.
 \AtBeginBibliography{%
   \SingleSpacing
   \setlength{\bibitemsep}{\baselineskip}%
@@ -146,8 +149,37 @@
 \DeclareLanguageMapping{brazil}{brazilian-abnt}
 \addbibresource{bibliografia/bibliografia.bib}
 
+% NBR 10520:2023 uses author responsibility in mixed case and, for sources
+% without authorship, the title as the citation label. The bundled 2018 ABNT
+% style uppercases names and adds an ellipsis to every title fallback. Retain
+% the label hyperlink while fixing those two behaviors locally.
+\renewcommand*{\mkbibnamefamily}[1]{#1}
+\renewcommand*{\mkbibnamegiven}[1]{#1}
+\renewcommand*{\mkbibnameprefix}[1]{#1}
+\renewcommand*{\mkbibnamesuffix}[1]{#1}
+\makeatletter
+\DeclareFieldFormat{firstword}{%
+  \normalfont\memorial@citefirstword#1 \@nil}
+\def\memorial@citefirstword#1 #2\@nil{%
+  \FirstWord{#1}%
+  \ifblank{#2}{}{\space[...]}%
+}
+\makeatother
+% The bundled citation macro suppresses punctuation between two separate
+% bibhyperref texts; emit the comma as text before the linked date instead.
+\renewcommand*{\nonameyeardelim}{}
+\renewbibmacro*{cite:labeldate+extradate}{%
+  \iffieldundef{labelyear}{}{%
+    \ifnameundef{labelname}{,\space}{}%
+    \printtext[bibhyperref]{\printlabeldateextra}}}
+
+% The user authorized 2024 as the author-date year for online AGES resources.
+% For RFC entries, preserve their publication date in the bibliography while
+% using the separately recorded 2024 access date only as the citation label.
+\DeclareLabeldate[online]{\field{urldate}\field{date}\field{year}}
+
 \defbibnote{curationnote}{%
-  Documentação consultada pela curadoria em 14 de outubro de 2026.
+  Documentação consultada pela curadoria em outubro de 2026.
   As versões atuais não comprovam as versões utilizadas no projeto.
 }
 

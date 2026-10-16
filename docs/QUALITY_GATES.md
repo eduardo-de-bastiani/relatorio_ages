@@ -11,9 +11,12 @@
 | G2 — Cobertura da unidade | Ledger e fonte extraída independentemente | Todo elemento pertencente à unidade corresponde a destino ou classificação justificada; unidade não convertida é PENDING |
 | G3 — Texto e ordem | `validate --ledger ... --unit ...`; diff por elemento | Acentos, pontuação, símbolos e sequência preservados; não aceitar mero total de palavras |
 | G4 — Mídia e URLs | Hash de arquivo, referência no destino, URL/âncora por elemento | Imagem correta e íntegra; URLs originais iguais e bem formadas; âncoras preservadas; links remotos não testados explicitamente continuam sem declaração de disponibilidade |
+| G4a — Referências tecnológicas | Inspecionar as seções de banco de dados, arquitetura, protótipos e tecnologias contra o `.bib` e a evidência do curador | Cada produto/ferramenta nomeado aponta para uma referência verificada por chamada autor-data clicável; URL original permanece intacta; fonte sem metadados suficientes fica PENDING, sem autoria ou URL inventada |
+| G4b — Forma da chamada | Extrair chamadas renderizadas do PDF e comparar com NBR 10520:2023, itens 6.1.1.1–6.1.1.4 | Fonte sem autoria usa o título no formato normativo: título de uma palavra sem supressão; título com várias palavras com primeira palavra + `[...]`; capitalização e pontuação corretas; sem reticências automáticas fora dos colchetes |
+| G4c — Lista de referências | Inspecionar entradas repetidas para a mesma autoria/título e o PDF renderizado | Campos repetidos permanecem completos e legíveis, sem substituição por traços/sublinhados; opções efetivas do estilo bibliográfico são suportadas pela versão instalada |
 | G5 — Estrutura LaTeX | `audit-latex`, grafo de inclusão e fontes completas | Sem arquivos omitidos, include indevido de Sprint, referências indefinidas, labels duplicados ou chave bibliográfica inexistente |
 | G6 — Compilação | Build limpo, versões, log e relatório | Processador bibliográfico correto; índices resolvidos; sem erros, glifos ausentes, citações/referências indefinidas; overflow exige avaliação explícita |
-| G7 — Visual | PDF identificado por hash, renders e relatório assinado pelo revisor | Todas as páginas legíveis; Sprints contínuas; títulos não órfãos; reflexões divisíveis; figuras/legendas/fontes corretas |
+| G7 — Visual | PDF identificado por hash, renders e relatório assinado pelo revisor | Todas as páginas legíveis; Sprints contínuas; títulos não órfãos; reflexões divisíveis; imagem, legenda e fonte em contexto; linha “Fonte:” centralizada segundo a apresentação aprovada; autoria continua pendente até identificação |
 | G8 — Normativo | Matriz com fonte/edição/seção e medição do PDF | Exigências verificadas cumpridas; norma inacessível ou regra sem prova fica PENDING |
 | G9 — Humano | Mensagem do usuário vinculada a commit/PDF/relatórios | Aprovação explícita após cada edição; piloto e Hoortech com decisão própria conforme plano |
 
@@ -34,6 +37,8 @@ Um parser conservador não é um motor TeX: macro desconhecida, texto oculto ou 
 Regex de LaTeX não prova a saída de macros arbitrárias. Reconhecimento heurístico de reflexão/referência exige conferir IDs e fontes. Detecção de comandos de quebra identifica candidatos; inspeção da página decide se há quebra artificial. A disponibilidade de uma URL exige teste remoto e registro separado, não apenas análise sintática.
 
 Auditor textual lê a origem independentemente do relatório do conversor. Auditor visual lê PDF/render real, não uma lista de avisos. A preparação de renders por `visual` não constitui inspeção humana completa. Relatório obrigatório: página/elemento, evidência, consequência, gravidade, correção proposta e verificação de retorno.
+
+Na revisão dos parágrafos técnicos, cada ocorrência de produto/ferramenta deve manter um link para referência verificada, conforme `STYLE_GUIDE.md`. A data de acesso pertence à entrada bibliográfica online, não é repetida como parte obrigatória de cada chamada autor-data. Um link original cuja fonte ainda não tem metadados continua PENDING e deve permanecer preservado sem uma citação bibliográfica inventada.
 
 ## Checkpoint
 

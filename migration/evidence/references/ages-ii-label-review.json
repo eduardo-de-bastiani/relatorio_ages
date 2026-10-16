@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "role": "reference-curator",
+  "edition": "ages-ii",
+  "scope": "Citation-label and authorship review for the six verified AGES II documentation entries; Graph API Explorer and Docker remain pending.",
+  "status": "COMPLETE_WITH_PENDING_PRESENTATION_DECISION",
+  "consulted_at": "2026-10-16",
+  "reference_pdf": {
+    "path": "build/document/main.pdf",
+    "sha256": "835cf3b35045f4ed2977bb84736dd2b259fd267be8c0362589fd625d6b5ef932",
+    "verified_locally": true,
+    "purpose": "final review PDF; the three citation examples were rechecked in this exact artifact"
+  },
+  "files_inspected_read_only": [
+    "migration/evidence/references/ages-ii.json",
+    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "relatorio_AGES_eduardo/util/style.tex",
+    "build/document/main.bcf",
+    "build/document/main.bbl",
+    "build/document/main.pdf",
+    "/home/eduardo/.cache/tectonic/bundles/data/6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c/abnt.cbx",
+    "/home/eduardo/.cache/tectonic/bundles/data/6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c/authoryear-comp.cbx"
+  ],
+  "rendered_citation_examples": [
+    "(ANGULAR. . . , 2024)",
+    "(DOCUMEN-TAÇÃO. . . , 2024)",
+    "(POSTGRESQL:. . . , 2024)"
+  ],
+  "local_style_cause": {
+    "latex_configuration": "relatorio_AGES_eduardo/util/style.tex configures biblatex with backend=biber and style=abnt.",
+    "abnt_style_version": "The cached abnt.cbx identifies itself as version 3.4 dated 2018-11-17.",
+    "label_name_order": "The local abnt.cbx declares shortauthor, author, holder, shorteditor, editor, and translator as possible label names. The six ages-ii entries currently define none of them.",
+    "fallback": "For an entry without labelname, the local abnt.cbx cite:label prints labeltitle using the firstword field format. That format uppercases the first word and appends \\ldots unconditionally. The current BBL records labeltitlesource=title for these entries.",
+    "shorttitle_effect": "The biblatex manual defines shorttitle as an abridged title, generally omitted from the bibliography and intended primarily for author-title citations. In this local ABNT style, supplying shorttitle would only change labeltitle's input; the same first-word-plus-ellipsis formatter would still run. It does not safely remove the displayed ellipsis.",
+    "shorthand_effect": "The biblatex manual defines shorthand as a special designation replacing the usual citation label. In the local authoryear-comp implementation inherited by abnt.cbx, cite:shorthand prints only shorthand; it suppresses the normal label and year. It therefore does not preserve the current ABNT author-date pattern.",
+    "pdf_interpretation": "The split in DOCUMEN-TAÇÃO is visible line-break hyphenation/extraction in the PDF text and does not establish an altered bibliographic title."
+  },
+  "official_source_findings": [
+    {
+      "entry_key": "ages-ii-angular",
+      "original_url_preserved": "https://v17.angular.io/docs",
+      "official_sources": [
+        {
+          "url": "https://v17.angular.io/docs",
+          "evidence": "The official legacy URL returned a JavaScript-required shell; the retrieval exposed no author or responsible institution."
+        },
+        {
+          "url": "https://angular.dev/docs",
+          "evidence": "The current official Angular documentation says Angular is maintained by a dedicated team at Google."
+        }
+      ],
+      "proves": "The current Angular product is maintained by a team at Google; the v17 host is an Angular documentation host.",
+      "does_not_prove": "It does not explicitly name Google as the author of the cited v17 documentation page or identify authorship of its documentation content.",
+      "safe_citation_author": null,
+      "status": "TITLE_FALLBACK_RECOMMENDED"
+    },
+    {
+      "entry_key": "ages-ii-typescript",
+      "original_url_preserved": "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html",
+      "official_sources": [
+        {
+          "url": "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html",
+          "evidence": "The page title is ‘TypeScript para programadores JavaScript’; it describes the TypeScript docs as an open-source project and has a ‘Contributors to this page’ area with contributor avatars, but no named institutional author in the retrieved page."
+        }
+      ],
+      "proves": "The cited page belongs to the official TypeScript documentation and has contributors.",
+      "does_not_prove": "It does not identify an institution as author of this specific page; the contributor area does not provide named corporate authorship.",
+      "safe_citation_author": null,
+      "status": "TITLE_FALLBACK_RECOMMENDED"
+    },
+    {
+      "entry_key": "ages-ii-python",
+      "original_url_preserved": "https://docs.python.org/pt-br/3/",
+      "official_sources": [
+        {
+          "url": "https://docs.python.org/pt-br/3/",
+          "evidence": "The page identifies itself as official Python 3 documentation and currently displays Python Software Foundation copyright."
+        },
+        {
+          "url": "https://docs.python.org/pt-br/3/about.html",
+          "evidence": "The official ‘About this documentation’ page says many people contributed to the Python documentation and points to the CPython repository for a partial contributor list."
+        },
+        {
+          "url": "https://docs.python.org/pt-br/3/copyright.html",
+          "evidence": "The official copyright page identifies Python Software Foundation as a copyright holder."
+        }
+      ],
+      "proves": "The PSF holds copyright as stated on the current documentation site, and documentation work has many contributors.",
+      "does_not_prove": "Copyright ownership is not explicit authorship; the current rolling /3/ content and its version do not establish the version or authorship of the cited content in 2024.",
+      "safe_citation_author": null,
+      "status": "TITLE_FALLBACK_RECOMMENDED"
+    },
+    {
+      "entry_key": "ages-ii-fastapi",
+      "original_url_preserved": "https://fastapi.tiangolo.com/",
+      "official_sources": [
+        {
+          "url": "https://fastapi.tiangolo.com/",
+          "evidence": "The official homepage identifies FastAPI, its documentation URL, and source repository. It says FastAPI Cloud is built by the same author and team behind FastAPI and that the trademark is owned by @tiangolo."
+        },
+        {
+          "url": "https://github.com/fastapi/fastapi/blob/master/docs/en/docs/help-fastapi.md",
+          "evidence": "The official repository documentation calls Sebastián Ramírez (‘tiangolo’) the author of FastAPI."
+        }
+      ],
+      "proves": "The project has an identified author and the trademark has an identified owner.",
+      "does_not_prove": "The cited homepage or documentation entry itself is authored by that person; software authorship/trademark ownership is not by itself a byline for every documentation page.",
+      "safe_citation_author": null,
+      "status": "TITLE_FALLBACK_RECOMMENDED"
+    },
+    {
+      "entry_key": "ages-ii-sqlalchemy",
+      "original_url_preserved": "https://docs.sqlalchemy.org/en/20/",
+      "official_sources": [
+        {
+          "url": "https://docs.sqlalchemy.org/en/20/",
+          "evidence": "The official page is titled ‘SQLAlchemy Documentation — SQLAlchemy 2.0 Documentation’. Its footer says ‘Website content copyright © by SQLAlchemy authors and contributors.’"
+        }
+      ],
+      "proves": "The site credits a collective of SQLAlchemy authors and contributors as copyright holders for website content.",
+      "does_not_prove": "It does not provide a named institution or individual author for this specific page; the collective copyright wording is not a verified institutional author name for an author-date label.",
+      "safe_citation_author": null,
+      "status": "TITLE_FALLBACK_RECOMMENDED"
+    },
+    {
+      "entry_key": "ages-ii-postgresql",
+      "original_url_preserved": "https://www.postgresql.org/docs/",
+      "official_sources": [
+        {
+          "url": "https://www.postgresql.org/docs/16/",
+          "evidence": "The official versioned manual is titled ‘PostgreSQL 16.15 Documentation’, names ‘The PostgreSQL Global Development Group’ immediately below the title, and states that group's copyright."
+        },
+        {
+          "url": "https://www.postgresql.org/docs/",
+          "evidence": "The original documentation portal lists manuals by version and has a PostgreSQL Global Development Group copyright footer."
+        }
+      ],
+      "proves": "The group is explicitly credited on an official versioned PostgreSQL manual and the official documentation portal.",
+      "does_not_prove": "The current evidence does not establish that the unversioned portal entry in the .bib should be treated as that versioned manual, or that version 16 was the project version. The project-used version remains unverified.",
+      "safe_citation_author": null,
+      "conditional_option": "If the human approves citing the PostgreSQL manual as a group-authored work, the Mantenedor may evaluate author={{PostgreSQL Global Development Group}} while preserving the original portal URL. Do not assign a version or historical year from current page state.",
+      "status": "TITLE_FALLBACK_RECOMMENDED_PENDING_HUMAN_DECISION_ON_GROUP_ATTRIBUTION"
+    }
+  ],
+  "normative_and_technical_basis": [
+    {
+      "url": "https://sibi.ufj.edu.br/apresentacao-de-citacoes-em-documentos-abnt-nbr-105202023/",
+      "type": "University library guidance summarizing ABNT NBR 10520:2023",
+      "finding": "It states that when a source has no authorship or responsibility indication, the title is used in the citation and may be abbreviated by suppression. The full ABNT standard was not consulted directly; this is institutional secondary guidance."
+    },
+    {
+      "url": "https://tug.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf",
+      "type": "Primary biblatex manual",
+      "finding": "Defines shorttitle as an abridged title and shorthand as a special designation replacing the usual label. Local cached ABNT/authoryear-comp macros were inspected to determine their actual rendering in this project."
+    }
+  ],
+  "recommendation": {
+    "conservative": "Keep the six current entries without inferred author, shorttitle, shorthand, or custom label. Preserve the ABNT title fallback and the exact original URLs. The displayed first-word ellipses are produced by the local ABNT style for no-author citations and are not evidence of a broken bibliography entry.",
+    "shorttitle": "Not recommended as a fix: the local ABNT fallback still prints only its first word and appends ellipses.",
+    "shorthand": "Not recommended as a fix: the local author-date style substitutes the shorthand for the normal author/title-year label, omitting the year.",
+    "custom_author_or_label": "Any new corporate/group author or custom citation label changes attribution or presentation. It requires human approval and central integration by the Mantenedor; none was added.",
+    "human_approval_required": true,
+    "approval_scope": "Only if the user wants to depart from the currently evidenced no-author title fallback or specifically approve PostgreSQL group attribution. No action is needed to keep the existing citations as rendered."
+  },
+  "pending_sources": {
+    "graph_api_explorer": {
+      "status": "PENDING",
+      "anchor": "Documentação Graph API",
+      "original_url": "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+      "decision": "Preserve the exact original URL and anchor, continue the edition, and keep this item out of the bibliography while access and metadata remain unverified. Do not replace the URL or infer authorship/title/year."
+    },
+    "docker": {
+      "status": "PENDING",
+      "anchor": "Documentação Docker",
+      "original_url": null,
+      "decision": "The ODT contains this plain-text label with no hyperlink. Do not invent a URL or bibliography entry."
+    }
+  },
+  "validation": {
+    "source_pdf_hash_matched_requested_reference": true,
+    "source_urls_changed": false,
+    "bibliography_edited": false,
+    "memorial_latex_edited": false,
+    "graph_api_url_replaced": false,
+    "docker_url_inferred": false
+  }
+}

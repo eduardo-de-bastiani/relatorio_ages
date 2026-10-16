@@ -1,0 +1,2327 @@
+{
+  "schema_version": 1,
+  "audit": "independent-visual",
+  "edition": "AGES II / Indústria Digital",
+  "overall_status": "PENDING",
+  "summary": "Reauditoria independente do PDF SHA-256 c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d: todas as 40 páginas foram inspecionadas nesta nova renderização. Correções de posição das Figuras 9 e 11–14, prefixo Figura 15 e estilos p.21/p.34/p.37 foram verificadas. Nenhum FAIL visual atual confirmado; permanecem PENDING: citações fragmentadas e Docker sublinhado sem destino (p.24), legibilidade da Figura 10, identificação manual das sete fontes e aceitação humana da página esparsa do sumário, cuja profundidade 2 está aprovada no STYLE_GUIDE e difere da profundidade 1 da Mariah.",
+  "audited_pdf": {
+    "path": "/home/eduardo/facul/relatorio_ages/build/document/main.pdf",
+    "sha256": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d",
+    "generated_from_commit": "339bba68563f739e622246cb3167c8a2532176bf",
+    "source_worktree_dirty_at_audit": true,
+    "pages": 40,
+    "page_size": "A4",
+    "render_directory": "/home/eduardo/facul/relatorio_ages/build/visual/c1ca761350f2ab8d",
+    "render_dpi": 120,
+    "render_manifest": "/home/eduardo/facul/relatorio_ages/build/visual/c1ca761350f2ab8d/report.json",
+    "render_manifest_page_hashes_verified": true
+  },
+  "audit_branch": "audit/ages-ii-visual",
+  "audit_branch_base_commit": "339bba68563f739e622246cb3167c8a2532176bf",
+  "coverage": {
+    "all_40_rendered_pages_inspected": true,
+    "ages_ii_pages": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "context_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "outside_scope": "AGES I pages inspected as global context/layout only, not content-audited.",
+    "modified_pdf": false,
+    "modified_memorial": false,
+    "modified_styles": false,
+    "generated_missing_renders": "Pages 27–40 were rendered from the exact PDF with pdftoppm at 120 dpi; all 40 page hashes match the final render report."
+  },
+  "methods": [
+    {
+      "tool": "sha256sum",
+      "command": "sha256sum build/document/main.pdf",
+      "exit_code": 0,
+      "evidence": "Matched exact assigned hash c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d."
+    },
+    {
+      "tool": "pdfinfo",
+      "command": "pdfinfo build/document/main.pdf",
+      "exit_code": 0,
+      "evidence": "40 pages, A4, PDF 1.5."
+    },
+    {
+      "tool": "pdftoppm",
+      "command": "pdftoppm -f 27 -l 40 -png -r 120 build/document/main.pdf build/visual/c1ca761350f2ab8d/page",
+      "exit_code": 0,
+      "evidence": "Rendered missing pages 27–40 from the exact PDF; all 40 PNG hashes match report.json and each page was visually opened."
+    },
+    {
+      "tool": "pdffonts",
+      "command": "pdffonts -f 19 -l 40 build/document/main.pdf",
+      "exit_code": 0,
+      "evidence": "NimbusSanL regular, bold and italic subsets embedded with Unicode mappings."
+    },
+    {
+      "tool": "pdfimages",
+      "command": "pdfimages -list build/document/main.pdf",
+      "exit_code": 0,
+      "evidence": "Seven AGES II images present on p.20–23/34; pixel dimensions and PPI recorded."
+    },
+    {
+      "tool": "pdftotext",
+      "command": "pdftotext -f 20 -l 24 -layout build/document/main.pdf -; pdftotext -f 36 -l 36 -layout build/document/main.pdf -; pdftotext -f 35 -l 39 -layout build/document/main.pdf -",
+      "exit_code": 0,
+      "evidence": "Checked figure/source text, page transitions, seven list bullets, and memory leak/reflection/conclusion continuity."
+    },
+    {
+      "tool": "pypdf",
+      "command": "Read-only enumeration of URI/GoTo annotations on figure, technology and reference pages",
+      "exit_code": 0,
+      "evidence": "External and internal links present; Docker occurrence lacks URI annotation."
+    },
+    {
+      "tool": "pdftohtml",
+      "command": "pdftohtml -xml -hidden -f 24 -l 24 build/document/main.pdf /tmp/agesii-c1ca-page24.xml",
+      "exit_code": 0,
+      "evidence": "Distinguished linked anchors from plain-text Docker occurrence."
+    },
+    {
+      "tool": "Python standard library",
+      "command": "zipfile and ElementTree read-only inspection of ODT styles/content and render report JSON",
+      "exit_code": 0,
+      "evidence": "Verified nested style cascades for current emphasis retests and image-source lines; render page hashes match JSON manifest."
+    },
+    {
+      "tool": "git",
+      "command": "git rev-parse HEAD; git status --short --branch",
+      "exit_code": 0,
+      "evidence": "HEAD 339bba68563f739e622246cb3167c8a2532176bf; source worktree was dirty, so PDF SHA identifies the exact artifact."
+    }
+  ],
+  "findings": [
+    {
+      "id": "VAII-001",
+      "title": "Posição da Figura 9",
+      "status": "PASS",
+      "initial_status": "FAIL on 16cf08d4…",
+      "severity": "medium",
+      "category": "float-context",
+      "pages": [
+        19,
+        20
+      ],
+      "evidence": "No hash atual, a p.19 contém apenas capítulo e Introdução; a p.20 coloca Figura 9 depois da introdução e antes de 4.2/4.2.1. A imagem não interrompe o parágrafo de repositório e sua legenda/fonte estão visíveis.",
+      "impact": "Contexto e ordem da figura estão corretos nesta renderização.",
+      "action": "Nenhuma correção indicada; manter posicionamento contextual.",
+      "retest_evidence": "Inspeção visual da p.19–20 do hash atual e pdftotext -f 19 -l 24 -layout."
+    },
+    {
+      "id": "VAII-002",
+      "title": "Posição das Figuras 11–14",
+      "status": "PASS",
+      "initial_status": "FAIL on 16cf08d4…",
+      "severity": "medium",
+      "category": "float-context",
+      "pages": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "evidence": "No hash atual, Figuras 11–14 aparecem nas pp.22–23 após “Fotos dos protótipos:” e antes de 4.2.5, que começa na p.24. Fontes das quatro figuras estão visíveis abaixo das imagens.",
+      "impact": "O bloco de protótipos não interrompe tecnologias e mantém sequência contextual.",
+      "action": "Nenhuma correção indicada.",
+      "retest_evidence": "Inspeção visual pp.21–24, pdftotext pp.20–24 e pdfimages -list do PDF atual."
+    },
+    {
+      "id": "VAII-003",
+      "title": "Peso do prefixo Figura 15",
+      "status": "PASS",
+      "initial_status": "FAIL on 16cf08d4…",
+      "severity": "low",
+      "category": "caption-style",
+      "pages": [
+        3,
+        34
+      ],
+      "evidence": "“Figura 15” aparece em negrito na lista de ilustrações p.3 e na legenda p.34, em linha com Figuras 9–14; título permanece regular.",
+      "impact": "A identificação das figuras está consistente.",
+      "action": "Nenhuma correção indicada.",
+      "retest_evidence": "Inspeção visual independente das pp.3 e 34 do hash atual."
+    },
+    {
+      "id": "VAII-004",
+      "title": "Renderização das chamadas de citação tecnológica",
+      "status": "PENDING",
+      "severity": "medium",
+      "category": "citation-presentation",
+      "pages": [
+        24,
+        40
+      ],
+      "evidence": "Na p.24 persistem exemplos “(ANGULAR. . . , 2024)”, “(TYPESCRIPT. . . , 2024)”, “(DOCUMENTA-ÇÃO. . . , 2024)”, “(FASTAPI. . . , 2024)” e “(POSTGRESQL:. . . , 2024)”. Destinos internos chegam à bibliografia na p.40, mas os rótulos continuam visualmente fragmentados.",
+      "impact": "Reduz a legibilidade das chamadas e destoa do acabamento de referência.",
+      "action": "Curador/mantenedor revisam labels e apresentação com metadados comprovados, sem inventar autoria ou alterar redação. Recompilar e rever pp.24/40.",
+      "retest_evidence": "Render p.24 do hash atual e pdftotext -f 20 -l 24; chamadas fragmentadas permanecem."
+    },
+    {
+      "id": "VAII-005",
+      "title": "Documentação Docker sublinhado sem destino de link",
+      "status": "PENDING",
+      "severity": "low",
+      "category": "link-presentation",
+      "pages": [
+        24
+      ],
+      "evidence": "“Documentação Docker” está sublinhado na p.24, porém não possui annotation URI. A ocorrência no ODT é texto simples, sem âncora/href; URL segue ausente.",
+      "impact": "O sublinhado pode sugerir link ativo inexistente.",
+      "action": "Rever apresentação sem inventar URL, preservando o texto; verificar anotações após nova compilação.",
+      "retest_evidence": "Inspeção visual p.24 e contagem read-only de anotações p.24; não existe destino para essa ocorrência."
+    },
+    {
+      "id": "VAII-006",
+      "title": "Legibilidade dos rótulos da Figura 10",
+      "status": "PENDING",
+      "severity": "human-review",
+      "category": "figure-legibility",
+      "pages": [
+        21
+      ],
+      "evidence": "Figura 10 mede cerca de 14,7 × 1,9 cm; raster 1288×165 px (~222 ppi). Os rótulos são muito pequenos à escala de página, embora visíveis quando ampliados.",
+      "impact": "A leitura de componentes/etapas pode exigir ampliação; suficiência em impressão depende de validação humana.",
+      "action": "Usuário confirma legibilidade à escala de impressão; caso insuficiente, fornecer fonte gráfica mais legível ou decidir disposição alternativa, sem reconstrução inferida.",
+      "retest_evidence": "Inspeção visual p.21 do hash atual e dimensões via pdfimages -list."
+    },
+    {
+      "id": "VAII-007",
+      "title": "Fontes das sete imagens aguardam identificação manual",
+      "status": "PENDING",
+      "severity": "human-review",
+      "category": "figure-provenance",
+      "pages": [
+        20,
+        21,
+        22,
+        23,
+        34
+      ],
+      "evidence": "Figuras 9–15 apresentam a linha “Fonte: pendente de identificação” abaixo das imagens; linhas estão visíveis e sem corte.",
+      "impact": "A composição está completa como placeholder, mas não se pode afirmar proveniência sem confirmação factual.",
+      "action": "Usuário identifica fonte/autoria de cada figura manualmente; não inferir atribuição.",
+      "retest_evidence": "Inspeção visual das sete figuras nas pp.20–23 e 34 e pdftotext confirmou as sete linhas."
+    },
+    {
+      "id": "VAII-008",
+      "title": "Ênfase excedente em Angular, FastAPI e PostgreSQL",
+      "status": "PASS",
+      "initial_status": "FAIL on 835cf3…",
+      "severity": "low",
+      "category": "text-format-fidelity",
+      "pages": [
+        21
+      ],
+      "evidence": "No parágrafo ODF `text-p-0785`, os spans T226 internos definem peso normal, prevalecendo sobre Strong externo. Na página 21 do PDF atual, Angular/FastAPI/PostgreSQL aparecem regulares, igual ao estilo efetivo da origem; a marcação `\\textbf` foi removida.",
+      "impact": "O negrito adicional foi removido; a ênfase efetiva corresponde à origem.",
+      "action": "Nenhuma correção indicada nesta unidade.",
+      "retest_evidence": "Inspeção visual p.21 do novo hash; texto TeX da unidade e leitura read-only de content.xml/styles foram confrontados."
+    },
+    {
+      "id": "VAII-009",
+      "title": "Continuidade dos sublinhados nos títulos de etapa",
+      "status": "PASS",
+      "initial_status": "FAIL on 835cf3…",
+      "severity": "low",
+      "category": "text-format-fidelity",
+      "pages": [
+        34
+      ],
+      "evidence": "Os parágrafos ODF p0961/p0969 têm spans T286 contínuos com sublinhado. No PDF atual, “Primeira Etapa: Avaliação Geral da Presença Digital:” e “Segunda Etapa: Verificação de Relevância:” estão sublinhados em trechos contínuos, sem a segmentação com lacunas observada antes.",
+      "impact": "Continuidade visual do estilo original foi restaurada sem mudança de redação.",
+      "action": "Nenhuma correção indicada.",
+      "retest_evidence": "Inspeção visual p.34 do hash atual; legendas e fonte da Figura 15 também conferidas na mesma página."
+    },
+    {
+      "id": "VAII-010",
+      "title": "Página esparsa causada pela profundidade 2 aprovada do sumário",
+      "status": "PENDING",
+      "severity": "low",
+      "category": "page-density",
+      "pages": [
+        2
+      ],
+      "evidence": "A p.2 contém somente “4.4 Conclusão” e “Referências” na faixa superior, com grande área em branco. O STYLE_GUIDE vigente aprova para as próximas edições a profundidade 2 do sumário da prévia AGES I, incluindo subtítulos/Sprints; a referência Mariah usa profundidade 1. O efeito visual foi observado, mas não constitui defeito normativo identificado.",
+      "impact": "A página de continuação fica visualmente esparsa. A composição decorre de uma decisão de apresentação já aprovada, não de erro de conformidade; a aceitação do resultado pode ser confirmada pelo usuário se necessário.",
+      "action": "Não propor compactação nem alteração do estilo aprovado. Manter profundidade 2 conforme STYLE_GUIDE; classificar como PENDING apenas para eventual aceitação humana da página esparsa. Se aceita, encerrar sem mudança de estilo.",
+      "retest_evidence": "Inspeção visual da p.2 no PDF SHA-256 c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d, cotejada com docs/STYLE_GUIDE.md, que registra a profundidade 2 aprovada e a diferença em relação à Mariah."
+    },
+    {
+      "id": "VAII-011",
+      "title": "Espaço da expressão memory leak dentro do itálico",
+      "status": "PASS",
+      "initial_status": "FAIL on 835cf3…",
+      "severity": "low",
+      "category": "text-format-fidelity",
+      "pages": [
+        37
+      ],
+      "evidence": "ODF text-p-0998 aplica T43 itálico contínuo sobre “memory leak”, incluindo o espaço. No PDF atual, as duas palavras e o espaço estão abrangidos por `\\textit{memory leak}`; p.37 mostra a expressão em itálico no fluxo, sem descontinuidade.",
+      "impact": "A extensão do estilo agora corresponde ao original.",
+      "action": "Nenhuma correção indicada.",
+      "retest_evidence": "Inspeção visual p.37 do novo hash e conferência read-only da linha do arquivo ages-ii-sprint-4.tex."
+    }
+  ],
+  "pages_detail": [
+    {
+      "page": 1,
+      "status": "PASS",
+      "scope": "navigation",
+      "evidence": "Sumário apresenta AGES I e AGES II com a hierarquia do capítulo 4 e páginas 19–40 corretamente apontadas."
+    },
+    {
+      "page": 2,
+      "status": "PENDING",
+      "scope": "navigation",
+      "evidence": "Somente “4.4 Conclusão” e “Referências” aparecem na faixa superior; o restante fica em branco. Observação visual PENDING para eventual aceitação humana, não defeito normativo: docs/STYLE_GUIDE.md aprova a profundidade 2 do sumário para as próximas edições, enquanto Mariah usa profundidade 1."
+    },
+    {
+      "page": 3,
+      "status": "PASS",
+      "scope": "navigation",
+      "evidence": "Lista de ilustrações contém Figuras 9–15 e páginas 20, 21, 22, 22, 23, 23 e 34; prefixos estão uniformemente em negrito."
+    },
+    {
+      "page": 4,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; página de abertura, hierarquia e imagem enquadradas, sem defeito contextual observado."
+    },
+    {
+      "page": 5,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; prosa e placeholders de banco/arquitetura enquadrados, sem corte visível."
+    },
+    {
+      "page": 6,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; placeholder de arquitetura, hierarquia e Figura 2 legíveis."
+    },
+    {
+      "page": 7,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; Figuras 3 e 4 e respectivas fontes provisórias aparecem na página."
+    },
+    {
+      "page": 8,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; seção de tecnologias em fluxo, sem corte aparente."
+    },
+    {
+      "page": 9,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; Sprint 0 e início da reflexão na página."
+    },
+    {
+      "page": 10,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; reflexão continua com borda e Sprint 1 começa após o fechamento."
+    },
+    {
+      "page": 11,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; relato de Sprint 1 e caixa de reflexão continuam sem corte."
+    },
+    {
+      "page": 12,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; caixa de Sprint 1 fecha e Sprint 2 começa na página."
+    },
+    {
+      "page": 13,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; reflexão de Sprint 2 dentro da borda."
+    },
+    {
+      "page": 14,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; texto da Sprint 3 em fluxo."
+    },
+    {
+      "page": 15,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; reflexão de Sprint 3 fecha e Sprint 4 inicia com texto."
+    },
+    {
+      "page": 16,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; caixa reflexiva termina antes da conclusão."
+    },
+    {
+      "page": 17,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; conclusão continua em texto justificado dentro das margens."
+    },
+    {
+      "page": 18,
+      "status": "PASS",
+      "scope": "AGES-I-context",
+      "evidence": "AGES I; Figura 5 centralizada, título acima e fonte abaixo."
+    },
+    {
+      "page": 19,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Título do capítulo e Introdução 4.1 ocupam a página; 4.2 não aparece isolado no rodapé."
+    },
+    {
+      "page": 20,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Figura 9 (legenda em negrito acima, imagem centralizada, fonte abaixo) precede 4.2 e 4.2.1; o texto de repositório segue sem interrupção. O início de 4.2.2 aparece ao fim da página e continua na seguinte."
+    },
+    {
+      "page": 21,
+      "status": "PENDING",
+      "scope": "AGES-II",
+      "evidence": "Placeholder ages-ii-database é explicitamente provisório e a arquitetura segue com texto em fluxo. “Angular”, “FastAPI” e “PostgreSQL” aparecem regulares, corrigindo o negrito excedente. Figura 10 tem legenda e fonte visíveis, mas os rótulos permanecem pequenos para decisão de legibilidade em impressão."
+    },
+    {
+      "page": 22,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Figuras 11 e 12 ocupam o bloco de protótipos em sequência; títulos acima, fontes provisórias abaixo, imagens visíveis e sem texto de 4.2.5 intercalado."
+    },
+    {
+      "page": 23,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Figuras 13 e 14 aparecem em sequência após o bloco de protótipos, com títulos acima e fontes abaixo. Ambas as linhas “Fonte” estão visíveis e sem corte."
+    },
+    {
+      "page": 24,
+      "status": "PENDING",
+      "scope": "AGES-II",
+      "evidence": "4.2.5 segue em uma página, sem float no meio. Chamadas de citação mantêm reticências/espaçamento visual fragmentado; “Documentação Docker” continua sublinhado sem destino de link."
+    },
+    {
+      "page": 25,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Seção 4.3 e Sprint 0 aparecem na mesma página com corpo de texto em seguida, sem quebra artificial."
+    },
+    {
+      "page": 26,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Sprint 0 continua e Sprint 1 começa após a caixa reflexiva, com texto subsequente."
+    },
+    {
+      "page": 27,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Continuação de Sprint 1 legível e dentro das margens."
+    },
+    {
+      "page": 28,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Texto de Sprint 1 e caixa reflexiva continuam em fluxo, sem título isolado."
+    },
+    {
+      "page": 29,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Caixa reflexiva fecha e Sprint 2 começa na mesma página."
+    },
+    {
+      "page": 30,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Relato de Sprint 2 continua e a reflexão inicia próxima ao fim da página, com borda visível."
+    },
+    {
+      "page": 31,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Reflexão anterior fecha; Sprint 3 segue com texto e itens numerados. Os títulos “Indexação das colunas mais consultadas” e “Reorganização das tabelas” aparecem sublinhados conforme o estilo efetivo do ODT (T73 interno)."
+    },
+    {
+      "page": 32,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Continuação de Sprint 3 e reflexão dentro das margens; borda visível."
+    },
+    {
+      "page": 33,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "A reflexão da Sprint 3 fecha e Sprint 4 começa na mesma página com texto/lista, sem quebra obrigatória."
+    },
+    {
+      "page": 34,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Legenda Figura 15 tem prefixo em negrito; imagem e fonte provisória aparecem sem corte. Os dois títulos de etapa estão sublinhados em linhas contínuas, sem lacunas entre palavras."
+    },
+    {
+      "page": 35,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Sprint 4 continua após a segunda etapa; listas e parágrafos legíveis e dentro das margens."
+    },
+    {
+      "page": 36,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Lista “Campos da Nova Tabela” exibe os sete marcadores; texto subsequente continua sem corte."
+    },
+    {
+      "page": 37,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "O trecho “memory leak” aparece em itálico incluindo o espaço no span; a caixa reflexiva começa no fim da página e prossegue na p.38 com borda."
+    },
+    {
+      "page": 38,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Caixa reflexiva termina e a conclusão começa abaixo; sem quebra artificial nem corte."
+    },
+    {
+      "page": 39,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Conclusão termina nesta página com espaço inferior; há corpo textual e não se trata de página vazia/quase vazia."
+    },
+    {
+      "page": 40,
+      "status": "PASS",
+      "scope": "AGES-II",
+      "evidence": "Referências e URLs completas legíveis, com espaço inferior; sem recorte ou sobreposição."
+    }
+  ],
+  "additional_checks": [
+    {
+      "name": "chapter-and-sprint-continuity",
+      "status": "PASS",
+      "evidence": "Sprints 0–4 begin pp.25,26,29,31,33 and continue in flow; headings have following text and no forced page break before Sprint."
+    },
+    {
+      "name": "figure-order-and-context",
+      "status": "PASS",
+      "evidence": "Figure 9 precedes 4.2; Figures 11–14 remain in the prototype block before 4.2.5; all seven figures and sources are visible."
+    },
+    {
+      "name": "caption-list-and-source-placement",
+      "status": "PASS_WITH_PENDING",
+      "evidence": "Figure prefixes bold; caption/source placement visible and list page numbers align. Source identities remain PENDING for human input."
+    },
+    {
+      "name": "placeholder",
+      "status": "PASS",
+      "evidence": "Ages II database placeholder on p.21 is visibly provisional, explicitly identified and not presented as a real diagram."
+    },
+    {
+      "name": "odf-style-cascade-fidelity",
+      "status": "PASS",
+      "evidence": "Current PDF matches effective ODF cascades for h0044 T226 normal, Sprint 3 T73 underline, Sprint 4 T286 continuous underline and T43 memory leak italic including space."
+    },
+    {
+      "name": "reflection-boxes-and-lists",
+      "status": "PASS",
+      "evidence": "Reflection borders persist through page continuations; seven list markers on p.36 extracted and visible; no clipped entries."
+    },
+    {
+      "name": "figure-10-legibility",
+      "status": "PENDING",
+      "evidence": "Diagram labels small at print scale; require human assessment."
+    },
+    {
+      "name": "figure-sources",
+      "status": "PENDING",
+      "evidence": "Seven visible source placeholders await manual source identification."
+    },
+    {
+      "name": "citation-and-docker-link-presentation",
+      "status": "PENDING",
+      "evidence": "Citation labels are visibly fragmented; Docker is underlined without a URI destination."
+    },
+    {
+      "name": "table-of-contents-page-density",
+      "status": "PENDING",
+      "evidence": "A p.2 contém apenas as entradas finais “4.4 Conclusão” e “Referências”, com grande área vazia. Isso decorre da profundidade 2 do sumário aprovada no STYLE_GUIDE (inclui subtítulos/Sprints), diferente da profundidade 1 da Mariah. PENDING somente para eventual aceitação humana; não é defeito normativo e não se propõe compactação."
+    },
+    {
+      "name": "margins-clipping-overlap-and-empty-pages",
+      "status": "PASS",
+      "evidence": "No cut-off text, overlap, off-margin content or completely blank page found. P.39 contains conclusion."
+    }
+  ],
+  "limitations": [
+    "This report applies only to the exact PDF SHA above. Another build requires reinspection of affected pages.",
+    "The source worktree was dirty; commit 339bba68563f739e622246cb3167c8a2532176bf alone does not fully identify the source snapshot.",
+    "This is a visual audit, not full ABNT compliance certification or proof of textual fidelity.",
+    "Figure 10 print legibility and image provenance require human validation; the sparse page 2 is caused by the approved depth-2 table of contents and is pending human acceptance only if desired.",
+    "Remote URL reachability and bibliographic metadata accuracy are outside this visual audit."
+  ],
+  "history": {
+    "initial_audit_16cf": {
+      "audited_pdf": {
+        "path": "/home/eduardo/facul/relatorio_ages/build/document/main.pdf",
+        "sha256": "16cf08d4b0622c004252fcacc026b0a5e0108d1e00996ce0c7203d7e27789ea7",
+        "generated_from_commit": "f3df8d2043cbb59b02aed1b76bc86d2c4bf6ae03",
+        "pages": 40,
+        "page_size": "A4",
+        "render_directory": "/home/eduardo/facul/relatorio_ages/build/visual/16cf08d4b0622c00",
+        "render_dpi": 120
+      },
+      "overall_status": "FAIL_WITH_PENDING",
+      "summary": "Todas as 40 páginas foram inspecionadas. Achados FAIL: duas interrupções de fluxo causadas por floats; peso incorreto do prefixo Figura 15 na lista e legenda; reticências/espaçamento ruim nas citações tecnológicas; e texto Docker sublinhado sem hyperlink. PENDING: fonte manual das sete imagens e legibilidade em escala de página dos rótulos da Figura 10.",
+      "findings": [
+        {
+          "id": "VAII-001",
+          "title": "Figura 9 interrompe a subseção de repositórios",
+          "status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            19,
+            20
+          ],
+          "evidence": "A p.19 termina o segundo parágrafo de 4.2.1 em “Também”. A Figura 9 ocupa o topo da p.20, antes da continuação “se encontra as funções de enriquecimento de dados...”. A leitura independente do content.xml situa a Figura 9 depois dos parágrafos de 4.1 e antes do heading 4.2.",
+          "impact": "A foto da introdução aparece no meio da subseção de repositórios e interrompe o fluxo textual.",
+          "action": "O conversor de h-0040 deve manter a figura junto à introdução por ajuste local de float/barreira antes de 4.2. Recompilar e rever pp.19–20; não usar [H] globalmente."
+        },
+        {
+          "id": "VAII-002",
+          "title": "Figuras 11–14 aparecem após o início de 4.2.5",
+          "status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "evidence": "Na p.21 já aparecem o título 4.2.5 e o começo do parágrafo de tecnologias. Figuras 11–14 surgem nas pp.22–23, antes da continuação do parágrafo na p.24. content.xml coloca os quatro frames depois de “Fotos dos protótipos:” e antes de 4.2.5.",
+          "impact": "Os floats dos protótipos atravessam o limite da subseção e quebram a leitura contínua de tecnologias.",
+          "action": "O conversor de h-0044 deve reter as figuras no bloco de protótipos antes de 4.2.5, avaliando barreira local. Recompilar e rever pp.21–24."
+        },
+        {
+          "id": "VAII-003",
+          "title": "Peso inconsistente no prefixo Figura 15",
+          "status": "FAIL",
+          "severity": "low",
+          "category": "caption-style",
+          "pages": [
+            3,
+            34
+          ],
+          "evidence": "Na p.3, Figura 9–14 estão com prefixo em negrito e Figura 15 em regular. Na p.34, Figura 15 também está regular; as legendas 9–14 usam prefixo em negrito e título regular.",
+          "impact": "A identificação de uma figura destoa do padrão aplicado às seis demais.",
+          "action": "O mantenedor LaTeX deve aplicar à Figura 15 o mesmo formato de prefixo já usado nas outras legendas e regenerar a lista de ilustrações; verificar pp.3 e 34."
+        },
+        {
+          "id": "VAII-004",
+          "title": "Citações tecnológicas com reticências e espaçamento quebrados",
+          "status": "FAIL",
+          "severity": "medium",
+          "category": "citation-presentation",
+          "pages": [
+            21,
+            24
+          ],
+          "evidence": "A p.21 mostra “(ANGULAR. . . , 2024)” e “(TYPESCRIPT. . . , 2024)”. A p.24 mostra “(DOCUMEN-TAÇÃO. . . , 2024)”, “(FASTAPI. . . , 2024)” e “(POSTGRESQL:. . . , 2024)”. Destinos internos apontam para a bibliografia na p.40.",
+          "impact": "As chamadas bibliográficas parecem fragmentadas e destoam da referência visual.",
+          "action": "Curador verifica os rótulos contra metadados comprovados; mantenedor ajusta a apresentação tipográfica. Não inferir autores nem reformular conteúdo."
+        },
+        {
+          "id": "VAII-005",
+          "title": "Documentação Docker sublinhado sem destino de link",
+          "status": "FAIL",
+          "severity": "low",
+          "category": "link-presentation",
+          "pages": [
+            24
+          ],
+          "evidence": "Na p.24, “Documentação Docker” está sublinhado, mas não tem annotation URI no PDF. A ocorrência AII correspondente no content.xml é texto simples sem âncora/href; AII04 registra que o ODT não fornece URL.",
+          "impact": "A aparência sugere hyperlink ativo que não existe.",
+          "action": "O conversor de h-0046 deve remover somente o sublinhado, preservar o texto e não criar URL/link. Conferir PDF e ausência de annotation."
+        },
+        {
+          "id": "VAII-006",
+          "title": "Rótulos da Figura 10 pequenos em tamanho de página",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-legibility",
+          "pages": [
+            21
+          ],
+          "evidence": "A Figura 10 ocupa cerca de 14,7 × 1,9 cm; imagem 1288×165 px a 222 ppi. Os rótulos são legíveis quando ampliados, mas muito pequenos na escala de página; estimativa visual de 4,5–5 pt.",
+          "impact": "Leitores podem precisar ampliar a página para ler as etapas do diagrama.",
+          "action": "Usuário confirma legibilidade em impressão/escala de página; se insuficiente, fornecer fonte gráfica mais legível ou aprovar outra disposição, sem inferir conteúdo."
+        },
+        {
+          "id": "VAII-007",
+          "title": "Fonte/autoria das sete imagens pendente",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-provenance",
+          "pages": [
+            20,
+            21,
+            22,
+            23,
+            34
+          ],
+          "evidence": "Figuras 9–15 exibem “Fonte: pendente de identificação” abaixo das imagens; linhas visíveis, sem corte ou deslocamento.",
+          "impact": "A apresentação está padronizada, mas a proveniência factual depende de identificação manual.",
+          "action": "Usuário identifica origem/autoria de cada figura; registrar e verificar separadamente, sem inferências."
+        }
+      ],
+      "pages_detail": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Sumário completo de AGES II do capítulo 4 até 4.4; página inicial do capítulo indicada como 19."
+        },
+        {
+          "page": 2,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Continuação do sumário: 4.4 na p.38 e Referências na p.40; sem linha órfã."
+        },
+        {
+          "page": 3,
+          "status": "FAIL",
+          "scope": "navigation",
+          "evidence": "Lista de ilustrações contém Figuras 9–15 nas páginas 20, 21, 22, 22, 23, 23 e 34. O prefixo Figura 15 está regular, ao contrário dos prefixos 9–14 em negrito."
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito de apresentação observado."
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito de apresentação observado."
+        },
+        {
+          "page": 6,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito de apresentação observado."
+        },
+        {
+          "page": 7,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; imagens e fontes provisórias legíveis."
+        },
+        {
+          "page": 8,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; texto de tecnologias sem corte."
+        },
+        {
+          "page": 9,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Sprint e reflexão visíveis."
+        },
+        {
+          "page": 10,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; reflexão continua com borda."
+        },
+        {
+          "page": 11,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; caixa reflexiva e Sprint seguinte fluem."
+        },
+        {
+          "page": 12,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; continuação reflexiva legível."
+        },
+        {
+          "page": 13,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; caixa fecha antes do conteúdo seguinte."
+        },
+        {
+          "page": 14,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem corte visível."
+        },
+        {
+          "page": 15,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Sprint e reflexão legíveis."
+        },
+        {
+          "page": 16,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; conclusão começa após a reflexão."
+        },
+        {
+          "page": 17,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; texto dentro das margens."
+        },
+        {
+          "page": 18,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Figura 5 centralizada, legenda acima e fonte abaixo."
+        },
+        {
+          "page": 19,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Capítulo 4 começa na p.19; seções 4.1, 4.2 e 4.2.1 seguem o fluxo. A subseção de repositório continua na p.20."
+        },
+        {
+          "page": 20,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figura 9 ocupa o topo da p.20 entre o início e a continuação do segundo parágrafo de 4.2.1, interrompendo o texto de repositório. Placeholder de banco está claramente provisório e integralmente visível."
+        },
+        {
+          "page": 21,
+          "status": "FAIL_WITH_PENDING",
+          "scope": "AGES-II",
+          "evidence": "Figura 10 centralizada com fonte abaixo; rótulos pequenos em escala de página (ver VAII-006). 4.2.5 e o parágrafo de tecnologias começam antes das Figuras 11–14, exibidas nas pp.22–23."
+        },
+        {
+          "page": 22,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figuras 11 e 12 centralizadas, com fontes abaixo; sua posição depois do começo de 4.2.5 interrompe o parágrafo de tecnologias."
+        },
+        {
+          "page": 23,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figuras 13 e 14 centralizadas, com fontes abaixo; o parágrafo de tecnologias só continua na p.24."
+        },
+        {
+          "page": 24,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Links documentais estão clicáveis. Citações têm reticências/espaços visualmente quebrados; Documentação Docker aparece sublinhado sem link PDF, embora a ocorrência AII no ODT seja texto simples."
+        },
+        {
+          "page": 25,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Seção 4.3 e Sprint 0 aparecem na mesma página e são seguidas por texto, sem quebra artificial."
+        },
+        {
+          "page": 26,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão e Sprint 1 seguem no fluxo; sem título de Sprint isolado."
+        },
+        {
+          "page": 27,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Continuação de Sprint 1; texto legível e dentro das margens."
+        },
+        {
+          "page": 28,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 1 começa após o relato, com borda."
+        },
+        {
+          "page": 29,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão fecha com borda e Sprint 2 começa na mesma página."
+        },
+        {
+          "page": 30,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Relato de Sprint 2 legível; caixa reflexiva começa e continua na p.31."
+        },
+        {
+          "page": 31,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 2 continua com borda; Sprint 3 vem em seguida com corpo na página."
+        },
+        {
+          "page": 32,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Texto/lista de Sprint 3 e início da reflexão dentro das margens."
+        },
+        {
+          "page": 33,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 3 fecha; Sprint 4 começa com texto na mesma página."
+        },
+        {
+          "page": 34,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figura 15 está centralizada com fonte abaixo e texto subsequente; prefixo Figura 15 em peso regular, diferente das legendas 9–14."
+        },
+        {
+          "page": 35,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Listas e ênfases do conteúdo estão legíveis, alinhadas e sem corte."
+        },
+        {
+          "page": 36,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Lista numerada e texto de Sprint 4 legíveis."
+        },
+        {
+          "page": 37,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 4 continua; reflexão começa perto do fim e continua na p.38 com borda."
+        },
+        {
+          "page": 38,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Caixa reflexiva termina sem corte; conclusão começa logo abaixo."
+        },
+        {
+          "page": 39,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Conclusão termina deixando espaço branco inferior substancial; há texto na página e referências iniciam na p.40, portanto não é página vazia/quase vazia."
+        },
+        {
+          "page": 40,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Referências legíveis e sem corte; URLs completas com anotações externas clicáveis."
+        }
+      ],
+      "additional_checks": [
+        {
+          "name": "chapter-and-sprint-continuity",
+          "status": "PASS",
+          "evidence": "Sprints 0–4 start on pp.25,26,29,31,33 and continue naturally; conclusion follows reflection."
+        },
+        {
+          "name": "figure-numbering-and-list",
+          "status": "FAIL",
+          "evidence": "List page assignments match caption pages; Figure 15 prefix weight is inconsistent."
+        },
+        {
+          "name": "placeholder",
+          "status": "PASS",
+          "evidence": "Database placeholder on p.20 is provisional, bordered, explicitly names missing diagram and is absent from list of illustrations."
+        },
+        {
+          "name": "figure-sources",
+          "status": "PENDING",
+          "evidence": "All seven provisional source lines are visible; source identity awaits manual user confirmation."
+        },
+        {
+          "name": "hyperlinks-and-references",
+          "status": "PASS_WITH_PENDING",
+          "evidence": "External links and internal citations have PDF annotations; remote availability and Graph API metadata are outside visual audit and remain pending."
+        },
+        {
+          "name": "margins-clipping-and-pages",
+          "status": "PASS",
+          "evidence": "No clipping, overlap or blank page found; p.39 is a short but valid conclusion page."
+        },
+        {
+          "name": "reflection-boxes-and-lists",
+          "status": "PASS",
+          "evidence": "Boxes retain borders through page breaks; authored bullet and numbered lists are legible."
+        },
+        {
+          "name": "comparison-with-mariah",
+          "status": "FAIL_PARTIAL",
+          "evidence": "Main body and figures broadly match approved pattern; citation rendering and Figure 15 prefix differ."
+        }
+      ]
+    },
+    "intermediate_audit_a40deb": {
+      "pdf_sha256": "a40deb808ca1e5763fb5569d7439af55442c5d96ddf656f94cde3cbb0ec887f5",
+      "finding": "4.2 heading preceded Figure 9 at the page transition; corrected in the current 835cf3… render by placing Figure 9 before 4.2.",
+      "status": "RESOLVED"
+    },
+    "current_audit": "This c1ca7613… entry supersedes earlier page-status evidence. All current findings/pages_detail were freshly inspected against the current PDF and page render hashes.",
+    "first_reaudit_835cf3_before_odf_cascade_review": {
+      "overall_status": "FAIL_WITH_PENDING",
+      "summary": "Reauditoria visual do PDF SHA-256 835cf3b35045f4ed2977bb84736dd2b259fd267be8c0362589fd625d6b5ef932: 40 páginas inspecionadas. Posições das Figuras 9 e 11–14 e negrito de Figura 15 corrigidos. Persistem dois achados de formatação textual nas páginas 31/34 (FAIL); citações tecnológicas, sublinhado Docker, legibilidade da Figura 10, fontes das figuras e página 2 esparsa seguem PENDING.",
+      "findings": [
+        {
+          "id": "VAII-001",
+          "title": "Posição da Figura 9 — correção verificada",
+          "status": "PASS",
+          "initial_status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            19,
+            20
+          ],
+          "evidence": "No PDF SHA 16cf08d4… a Figura 9 aparecia entre o início e a continuação do parágrafo de repositório. No PDF atual, p.20 mostra a Figura 9 após a introdução e antes de 4.2 e 4.2.1; p.19 termina sem título 4.2 isolado. A ordem corresponde ao ODT content.xml.",
+          "impact": "A correção restaura o contexto da figura e remove a interrupção do parágrafo de repositório.",
+          "action": "Nenhuma correção adicional nesta unidade; manter o posicionamento contextual e revalidar se houver nova alteração.",
+          "retest_evidence": "Inspeção de p.19–20, render 120 dpi; pdftotext -f 19 -l 24 -layout confirma Figura 9 antes de 4.2."
+        },
+        {
+          "id": "VAII-002",
+          "title": "Posição das Figuras 11–14 — correção verificada",
+          "status": "PASS",
+          "initial_status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "evidence": "Na renderização antiga as figuras atravessavam o início de 4.2.5. Agora p.21 encerra banco/arquitetura; pp.22–23 exibem Figuras 11–14 depois de “Fotos dos protótipos:” e p.24 inicia 4.2.5.",
+          "impact": "O bloco de protótipos não interrompe mais o texto de tecnologias.",
+          "action": "Nenhuma correção adicional nesta unidade; manter a ordem e rever caso o fluxo de floats mude.",
+          "retest_evidence": "Inspeção das pp.21–24 e extração de texto com quebra de página; PDF images list confirma as imagens nas pp.21–23."
+        },
+        {
+          "id": "VAII-003",
+          "title": "Peso do prefixo Figura 15 — correção verificada",
+          "status": "PASS",
+          "initial_status": "FAIL",
+          "severity": "low",
+          "category": "caption-style",
+          "pages": [
+            3,
+            34
+          ],
+          "evidence": "Na versão atual, “Figura 15” está em negrito na lista de ilustrações (p.3) e na legenda acima da imagem (p.34), igual aos prefixos 9–14; o título segue regular.",
+          "impact": "A identificação visual das figuras está consistente.",
+          "action": "Nenhuma correção adicional.",
+          "retest_evidence": "Inspeção visual das pp.3 e 34 da renderização exata."
+        },
+        {
+          "id": "VAII-004",
+          "title": "Renderização das chamadas de citação tecnológica",
+          "status": "PENDING",
+          "initial_status": "FAIL",
+          "severity": "medium",
+          "category": "citation-presentation",
+          "pages": [
+            24,
+            40
+          ],
+          "evidence": "Na p.24, exemplos visíveis incluem “(ANGULAR. . . , 2024)”, “(TYPESCRIPT. . . , 2024)”, “(DOCUMENTA-ÇÃO. . . , 2024)”, “(FASTAPI. . . , 2024)” e “(POSTGRESQL:. . . , 2024)”. Os destinos internos vão à bibliografia da p.40.",
+          "impact": "A apresentação fica visualmente fragmentada e diverge do padrão de chamada autor-data usado como referência.",
+          "action": "Curador e mantenedor devem revisar rótulos e formato com base em metadados comprovados; não inventar autoria nem alterar redação.",
+          "retest_evidence": "Render p.24 e pdftotext do trecho p.19–24 confirmam que o problema permanece neste PDF; link interno não corrige a legibilidade do rótulo."
+        },
+        {
+          "id": "VAII-005",
+          "title": "Texto Docker sublinhado sem hyperlink",
+          "status": "PENDING",
+          "initial_status": "FAIL",
+          "severity": "low",
+          "category": "link-presentation",
+          "pages": [
+            24
+          ],
+          "evidence": "“Documentação Docker” aparece sublinhado na p.24, mas não possui annotation URI no PDF. O ODT mostra texto simples, sem âncora/href; a pendência de URL permanece documentada.",
+          "impact": "O sublinhado pode sugerir ao leitor um link ativo que não existe.",
+          "action": "Revisar a apresentação do texto sem criar URL; preservar conteúdo e decisão autoral.",
+          "retest_evidence": "Inspeção visual p.24 e enumeração read-only de links/anotações; nenhuma annotation correspondente ao texto Docker."
+        },
+        {
+          "id": "VAII-006",
+          "title": "Legibilidade dos rótulos da Figura 10",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-legibility",
+          "pages": [
+            21
+          ],
+          "evidence": "A Figura 10 ocupa aproximadamente 14,7 × 1,9 cm; raster 1288×165 px (~222 ppi). Os rótulos são pequenos à escala de página e legíveis ao ampliar.",
+          "impact": "Leitor pode precisar ampliar a página para ler as etapas do diagrama; suficiência para impressão não pode ser decidida apenas pela renderização de tela.",
+          "action": "Usuário confirmar legibilidade em impressão/escala final; se necessário, fornecer imagem mais legível ou decidir outra disposição, sem reconstruir conteúdo por inferência.",
+          "retest_evidence": "Inspeção visual p.21 na renderização 120 dpi; dimensão/PPI confirmados por pdfimages -list."
+        },
+        {
+          "id": "VAII-007",
+          "title": "Identificação manual das fontes das sete figuras",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-provenance",
+          "pages": [
+            20,
+            21,
+            22,
+            23,
+            34
+          ],
+          "evidence": "Figuras 9–15 mantêm a linha “Fonte: pendente de identificação” visível, abaixo das imagens e sem corte.",
+          "impact": "A composição está visível, mas origem/autoria ainda não pode ser afirmada.",
+          "action": "Usuário identifica manualmente fonte/autoria de cada figura; não inferir atribuições.",
+          "retest_evidence": "Inspeção visual de todas as sete figuras nas pp.20–23 e 34."
+        },
+        {
+          "id": "VAII-008",
+          "title": "Ênfase Strong do ODT convertida como sublinhado ou omitida",
+          "status": "FAIL",
+          "severity": "low",
+          "category": "text-format-fidelity",
+          "pages": [
+            31,
+            34
+          ],
+          "evidence": "ODF `styles.xml` define `Strong_20_Emphasis` com `fo:font-weight=\"bold\"`. Em `content.xml`, esse estilo marca “Indexação das colunas mais consultadas” e “Reorganização das tabelas” (p.31), “Primeira Etapa: Avaliação Geral da Presença Digital:” e “Segunda Etapa: Verificação de Relevância:” (p.34), e “Links Relevantes” (p.34). O PDF exibe os quatro primeiros trechos sublinhados; “Links Relevantes” aparece regular enquanto somente o sinal de dois-pontos está negritado.",
+          "impact": "A ênfase do original não foi preservada: sublinhado substitui negrito e uma expressão perde a ênfase.",
+          "action": "Conversores responsáveis por Sprint 3 e Sprint 4 devem corrigir somente a marcação LaTeX para refletir Strong_20_Emphasis em negrito, preservando texto, pontuação e ordem; não alterar conteúdo. Recompilar e auditar pp.31/34.",
+          "retest_evidence": "Pendente: correção e novo PDF/hash ainda não entregues. Evidência atual: renderização p.31/p.34, content.xml/styles.xml read-only e fontes LaTeX nas linhas 16,19 de ages-ii-sprint-3.tex e 38,45,58 de ages-ii-sprint-4.tex."
+        },
+        {
+          "id": "VAII-009",
+          "title": "Página quase vazia na continuação do sumário",
+          "status": "PENDING",
+          "severity": "low",
+          "category": "page-density",
+          "pages": [
+            2
+          ],
+          "evidence": "A p.2 mostra apenas duas entradas do sumário, posicionadas na faixa superior; a maior parte da página está vazia.",
+          "impact": "Cria uma página de navegação muito esparsa antes da lista de ilustrações. Não foi identificada violação normativa; é ponto de qualidade visual.",
+          "action": "Mantenedor avaliar se o espaçamento/distribuição do sumário pode ser compactado sem alterar hierarquia, paginação nem padrão visual aprovado.",
+          "retest_evidence": "Inspeção visual da página 2, renderização A4 a 120 dpi."
+        }
+      ],
+      "pages_detail": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Sumário de AGES II aponta o capítulo 4 a partir da p.19 e lista conclusão p.38 e referências p.40."
+        },
+        {
+          "page": 2,
+          "status": "PENDING",
+          "scope": "navigation",
+          "evidence": "A página contém somente as entradas “4.4 Conclusão” e “Referências” na faixa superior; o restante está vazio. Avaliar se a composição do sumário pode ser compactada. É observação de qualidade visual, sem conclusão normativa."
+        },
+        {
+          "page": 3,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Lista de ilustrações inclui Figuras 9–15 nas páginas 20, 21, 22, 22, 23, 23 e 34; prefixo Figura 15 agora aparece em negrito como os demais."
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 6,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 7,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 8,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 9,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 10,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 11,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 12,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 13,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 14,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 15,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 16,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 17,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 18,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Figura 5 centralizada, legenda acima e fonte abaixo."
+        },
+        {
+          "page": 19,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Capítulo 4 e introdução ocupam a página; não há título 4.2 isolado no rodapé. A figura da introdução não desloca o começo de 4.2 para esta página."
+        },
+        {
+          "page": 20,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Figura 9 aparece depois da introdução e antes do título 4.2/4.2.1, na ordem do ODT. 4.2.1 segue em texto contínuo; não há float atravessando os parágrafos do repositório."
+        },
+        {
+          "page": 21,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Continua o texto do banco; placeholder ages-ii-database claramente provisório; seção de arquitetura e Figura 10 centralizada. Angular, FastAPI e PostgreSQL aparecem em negrito no PDF apesar de estilo efetivo regular no ODT (VAII-008). A legibilidade de Figura 10 e a fonte continuam pendentes (VAII-006/007)."
+        },
+        {
+          "page": 22,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Figuras 11 e 12 aparecem após “Fotos dos protótipos:”, cada uma com identificação/título acima e fonte provisória abaixo; sem texto de tecnologias intercalado."
+        },
+        {
+          "page": 23,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Figuras 13 e 14 aparecem em sequência no bloco de protótipos, com identificação/título acima e fonte provisória abaixo; não interrompem a subseção 4.2.5."
+        },
+        {
+          "page": 24,
+          "status": "PENDING",
+          "scope": "AGES-II",
+          "evidence": "Subseção 4.2.5 segue em fluxo, mas chamadas tecnológicas aparecem com reticências/espaçamento fragmentados e “Documentação Docker” está sublinhado sem annotation URI. Pendências tipográficas VAII-004/005."
+        },
+        {
+          "page": 25,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Seção 4.3 e Sprint 0 na mesma página, com texto subsequente; nenhuma quebra forçada observada."
+        },
+        {
+          "page": 26,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 1 segue no fluxo com texto e reflexão; título não fica isolado."
+        },
+        {
+          "page": 27,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Continuação de Sprint 1 dentro das margens, sem corte/colisão."
+        },
+        {
+          "page": 28,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 1 aparece com borda e leitura contínua."
+        },
+        {
+          "page": 29,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Caixa reflexiva termina e Sprint 2 começa na mesma página, sem quebra artificial."
+        },
+        {
+          "page": 30,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Relato de Sprint 2 e início da reflexão legíveis; a caixa continua naturalmente na p.31."
+        },
+        {
+          "page": 31,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 3 segue no fluxo; “Indexação das colunas mais consultadas” e “Reorganização das tabelas” aparecem sublinhadas como no estilo efetivo do ODT: spans T73 internos sobrescrevem o Strong externo com peso normal e underline."
+        },
+        {
+          "page": 32,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Lista e início da reflexão de Sprint 3 dentro das margens; sem corte visual."
+        },
+        {
+          "page": 33,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 3 fecha e Sprint 4 começa com texto na mesma página; sem título isolado."
+        },
+        {
+          "page": 34,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Prefixo da Figura 15 corrigido em negrito. “Primeira Etapa: Avaliação Geral da Presença Digital:” e “Segunda Etapa: Verificação de Relevância:” mantêm underline, como na origem, mas o LaTeX os divide em wrappers por palavra e a renderização deixa lacunas entre os sublinhados (VAII-009). “Links Relevantes” regular com apenas dois-pontos em negrito corresponde ao T28 normal interno e ao colon Strong no ODT."
+        },
+        {
+          "page": 35,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Texto e listas de Sprint 4 legíveis e dentro das margens; nenhuma figura fora de contexto."
+        },
+        {
+          "page": 36,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Continuação da lista numerada e do texto de Sprint 4 legível, sem corte."
+        },
+        {
+          "page": 37,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 4 continua; reflexão inicia e prossegue à p.38 com borda."
+        },
+        {
+          "page": 38,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão termina com borda preservada; conclusão começa abaixo, sem espaço artificial observado."
+        },
+        {
+          "page": 39,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Conclusão ocupa a página e deixa espaço inferior; não é página vazia/quase vazia. Referências começam na p.40."
+        },
+        {
+          "page": 40,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Referências legíveis, URLs completas e sem corte; fontes incorporadas no documento."
+        }
+      ],
+      "additional_checks": [
+        {
+          "name": "chapter-and-sprint-continuity",
+          "status": "PASS",
+          "evidence": "Chapter flow; Sprints 0–4 begin on pp.25,26,29,31,33 and continue naturally; no forced new-page break before each Sprint."
+        },
+        {
+          "name": "float-context-and-figure-order",
+          "status": "PASS",
+          "evidence": "Figure 9 precedes 4.2 on p.20; Figures 11–14 occupy pp.22–23 after prototype marker and before 4.2.5 on p.24."
+        },
+        {
+          "name": "caption-numbering-and-list",
+          "status": "PASS",
+          "evidence": "Figure 15 prefix bold in list p.3 and caption p.34; captions above and provisional source lines below, all visible."
+        },
+        {
+          "name": "placeholder",
+          "status": "PASS",
+          "evidence": "Database placeholder on p.21 is clearly marked provisional and identifies ages-ii-database; it is not presented as a completed diagram."
+        },
+        {
+          "name": "reflection-boxes-and-lists",
+          "status": "FAIL",
+          "evidence": "Reflection boxes keep borders across page splits; however, source bold emphasis is underlined/omitted in numbered/list labels at pp.31 and 34 (VAII-008)."
+        },
+        {
+          "name": "figure-sources",
+          "status": "PENDING",
+          "evidence": "All seven source lines remain provisional; manual identification required."
+        },
+        {
+          "name": "figure-10-legibility",
+          "status": "PENDING",
+          "evidence": "Labels are small at page scale; human print legibility decision required."
+        },
+        {
+          "name": "citations-and-docker-link-presentation",
+          "status": "PENDING",
+          "evidence": "Citation labels remain visibly fragmented; Docker text is underlined without a link destination."
+        },
+        {
+          "name": "table-of-contents-page-density",
+          "status": "PENDING",
+          "evidence": "Page 2 contains only two entries and is mostly blank; review density as a visual quality issue, not a normative finding."
+        },
+        {
+          "name": "margins-clipping-and-blank-pages",
+          "status": "PASS",
+          "evidence": "No text clipping, overlap, off-margin content or wholly blank page observed. Page 39 contains conclusion text."
+        }
+      ]
+    },
+    "odf_style_cascade_review": {
+      "date": "2026-10-16",
+      "note": "Revised the first interpretation after resolving nested ODF text-style cascade. The earlier first re-audit had incorrectly treated outer Strong_20_Emphasis as effective bold for T73/T286/T28/T226 spans. Current findings reflect the inner text styles.",
+      "validated": {
+        "T226": "normal weight overrides outer Strong for p.21 architecture terms",
+        "T73": "normal weight plus underline; Sprint 3 phrases match underline in target",
+        "T286": "normal weight plus underline; Sprint 4 phrases should be one continuous underlined span",
+        "T28": "normal weight for “Links Relevantes”; colon is separately Strong and target matches",
+        "T43": "italic normal style spans “memory leak” including its space; target currently splits into two italic commands with space outside."
+      }
+    },
+    "audit_16cf_initial": {
+      "audited_pdf": {
+        "path": "/home/eduardo/facul/relatorio_ages/build/document/main.pdf",
+        "sha256": "16cf08d4b0622c004252fcacc026b0a5e0108d1e00996ce0c7203d7e27789ea7",
+        "generated_from_commit": "f3df8d2043cbb59b02aed1b76bc86d2c4bf6ae03",
+        "pages": 40,
+        "page_size": "A4",
+        "render_directory": "/home/eduardo/facul/relatorio_ages/build/visual/16cf08d4b0622c00",
+        "render_dpi": 120
+      },
+      "overall_status": "FAIL_WITH_PENDING",
+      "summary": "Todas as 40 páginas foram inspecionadas. Achados FAIL: duas interrupções de fluxo causadas por floats; peso incorreto do prefixo Figura 15 na lista e legenda; reticências/espaçamento ruim nas citações tecnológicas; e texto Docker sublinhado sem hyperlink. PENDING: fonte manual das sete imagens e legibilidade em escala de página dos rótulos da Figura 10.",
+      "findings": [
+        {
+          "id": "VAII-001",
+          "title": "Figura 9 interrompe a subseção de repositórios",
+          "status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            19,
+            20
+          ],
+          "evidence": "A p.19 termina o segundo parágrafo de 4.2.1 em “Também”. A Figura 9 ocupa o topo da p.20, antes da continuação “se encontra as funções de enriquecimento de dados...”. A leitura independente do content.xml situa a Figura 9 depois dos parágrafos de 4.1 e antes do heading 4.2.",
+          "impact": "A foto da introdução aparece no meio da subseção de repositórios e interrompe o fluxo textual.",
+          "action": "O conversor de h-0040 deve manter a figura junto à introdução por ajuste local de float/barreira antes de 4.2. Recompilar e rever pp.19–20; não usar [H] globalmente."
+        },
+        {
+          "id": "VAII-002",
+          "title": "Figuras 11–14 aparecem após o início de 4.2.5",
+          "status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "evidence": "Na p.21 já aparecem o título 4.2.5 e o começo do parágrafo de tecnologias. Figuras 11–14 surgem nas pp.22–23, antes da continuação do parágrafo na p.24. content.xml coloca os quatro frames depois de “Fotos dos protótipos:” e antes de 4.2.5.",
+          "impact": "Os floats dos protótipos atravessam o limite da subseção e quebram a leitura contínua de tecnologias.",
+          "action": "O conversor de h-0044 deve reter as figuras no bloco de protótipos antes de 4.2.5, avaliando barreira local. Recompilar e rever pp.21–24."
+        },
+        {
+          "id": "VAII-003",
+          "title": "Peso inconsistente no prefixo Figura 15",
+          "status": "FAIL",
+          "severity": "low",
+          "category": "caption-style",
+          "pages": [
+            3,
+            34
+          ],
+          "evidence": "Na p.3, Figura 9–14 estão com prefixo em negrito e Figura 15 em regular. Na p.34, Figura 15 também está regular; as legendas 9–14 usam prefixo em negrito e título regular.",
+          "impact": "A identificação de uma figura destoa do padrão aplicado às seis demais.",
+          "action": "O mantenedor LaTeX deve aplicar à Figura 15 o mesmo formato de prefixo já usado nas outras legendas e regenerar a lista de ilustrações; verificar pp.3 e 34."
+        },
+        {
+          "id": "VAII-004",
+          "title": "Citações tecnológicas com reticências e espaçamento quebrados",
+          "status": "FAIL",
+          "severity": "medium",
+          "category": "citation-presentation",
+          "pages": [
+            21,
+            24
+          ],
+          "evidence": "A p.21 mostra “(ANGULAR. . . , 2024)” e “(TYPESCRIPT. . . , 2024)”. A p.24 mostra “(DOCUMEN-TAÇÃO. . . , 2024)”, “(FASTAPI. . . , 2024)” e “(POSTGRESQL:. . . , 2024)”. Destinos internos apontam para a bibliografia na p.40.",
+          "impact": "As chamadas bibliográficas parecem fragmentadas e destoam da referência visual.",
+          "action": "Curador verifica os rótulos contra metadados comprovados; mantenedor ajusta a apresentação tipográfica. Não inferir autores nem reformular conteúdo."
+        },
+        {
+          "id": "VAII-005",
+          "title": "Documentação Docker sublinhado sem destino de link",
+          "status": "FAIL",
+          "severity": "low",
+          "category": "link-presentation",
+          "pages": [
+            24
+          ],
+          "evidence": "Na p.24, “Documentação Docker” está sublinhado, mas não tem annotation URI no PDF. A ocorrência AII correspondente no content.xml é texto simples sem âncora/href; AII04 registra que o ODT não fornece URL.",
+          "impact": "A aparência sugere hyperlink ativo que não existe.",
+          "action": "O conversor de h-0046 deve remover somente o sublinhado, preservar o texto e não criar URL/link. Conferir PDF e ausência de annotation."
+        },
+        {
+          "id": "VAII-006",
+          "title": "Rótulos da Figura 10 pequenos em tamanho de página",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-legibility",
+          "pages": [
+            21
+          ],
+          "evidence": "A Figura 10 ocupa cerca de 14,7 × 1,9 cm; imagem 1288×165 px a 222 ppi. Os rótulos são legíveis quando ampliados, mas muito pequenos na escala de página; estimativa visual de 4,5–5 pt.",
+          "impact": "Leitores podem precisar ampliar a página para ler as etapas do diagrama.",
+          "action": "Usuário confirma legibilidade em impressão/escala de página; se insuficiente, fornecer fonte gráfica mais legível ou aprovar outra disposição, sem inferir conteúdo."
+        },
+        {
+          "id": "VAII-007",
+          "title": "Fonte/autoria das sete imagens pendente",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-provenance",
+          "pages": [
+            20,
+            21,
+            22,
+            23,
+            34
+          ],
+          "evidence": "Figuras 9–15 exibem “Fonte: pendente de identificação” abaixo das imagens; linhas visíveis, sem corte ou deslocamento.",
+          "impact": "A apresentação está padronizada, mas a proveniência factual depende de identificação manual.",
+          "action": "Usuário identifica origem/autoria de cada figura; registrar e verificar separadamente, sem inferências."
+        }
+      ],
+      "pages_detail": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Sumário completo de AGES II do capítulo 4 até 4.4; página inicial do capítulo indicada como 19."
+        },
+        {
+          "page": 2,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Continuação do sumário: 4.4 na p.38 e Referências na p.40; sem linha órfã."
+        },
+        {
+          "page": 3,
+          "status": "FAIL",
+          "scope": "navigation",
+          "evidence": "Lista de ilustrações contém Figuras 9–15 nas páginas 20, 21, 22, 22, 23, 23 e 34. O prefixo Figura 15 está regular, ao contrário dos prefixos 9–14 em negrito."
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito de apresentação observado."
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito de apresentação observado."
+        },
+        {
+          "page": 6,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito de apresentação observado."
+        },
+        {
+          "page": 7,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; imagens e fontes provisórias legíveis."
+        },
+        {
+          "page": 8,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; texto de tecnologias sem corte."
+        },
+        {
+          "page": 9,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Sprint e reflexão visíveis."
+        },
+        {
+          "page": 10,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; reflexão continua com borda."
+        },
+        {
+          "page": 11,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; caixa reflexiva e Sprint seguinte fluem."
+        },
+        {
+          "page": 12,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; continuação reflexiva legível."
+        },
+        {
+          "page": 13,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; caixa fecha antes do conteúdo seguinte."
+        },
+        {
+          "page": 14,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem corte visível."
+        },
+        {
+          "page": 15,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Sprint e reflexão legíveis."
+        },
+        {
+          "page": 16,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; conclusão começa após a reflexão."
+        },
+        {
+          "page": 17,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; texto dentro das margens."
+        },
+        {
+          "page": 18,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Figura 5 centralizada, legenda acima e fonte abaixo."
+        },
+        {
+          "page": 19,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Capítulo 4 começa na p.19; seções 4.1, 4.2 e 4.2.1 seguem o fluxo. A subseção de repositório continua na p.20."
+        },
+        {
+          "page": 20,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figura 9 ocupa o topo da p.20 entre o início e a continuação do segundo parágrafo de 4.2.1, interrompendo o texto de repositório. Placeholder de banco está claramente provisório e integralmente visível."
+        },
+        {
+          "page": 21,
+          "status": "FAIL_WITH_PENDING",
+          "scope": "AGES-II",
+          "evidence": "Figura 10 centralizada com fonte abaixo; rótulos pequenos em escala de página (ver VAII-006). 4.2.5 e o parágrafo de tecnologias começam antes das Figuras 11–14, exibidas nas pp.22–23."
+        },
+        {
+          "page": 22,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figuras 11 e 12 centralizadas, com fontes abaixo; sua posição depois do começo de 4.2.5 interrompe o parágrafo de tecnologias."
+        },
+        {
+          "page": 23,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figuras 13 e 14 centralizadas, com fontes abaixo; o parágrafo de tecnologias só continua na p.24."
+        },
+        {
+          "page": 24,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Links documentais estão clicáveis. Citações têm reticências/espaços visualmente quebrados; Documentação Docker aparece sublinhado sem link PDF, embora a ocorrência AII no ODT seja texto simples."
+        },
+        {
+          "page": 25,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Seção 4.3 e Sprint 0 aparecem na mesma página e são seguidas por texto, sem quebra artificial."
+        },
+        {
+          "page": 26,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão e Sprint 1 seguem no fluxo; sem título de Sprint isolado."
+        },
+        {
+          "page": 27,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Continuação de Sprint 1; texto legível e dentro das margens."
+        },
+        {
+          "page": 28,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 1 começa após o relato, com borda."
+        },
+        {
+          "page": 29,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão fecha com borda e Sprint 2 começa na mesma página."
+        },
+        {
+          "page": 30,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Relato de Sprint 2 legível; caixa reflexiva começa e continua na p.31."
+        },
+        {
+          "page": 31,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 2 continua com borda; Sprint 3 vem em seguida com corpo na página."
+        },
+        {
+          "page": 32,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Texto/lista de Sprint 3 e início da reflexão dentro das margens."
+        },
+        {
+          "page": 33,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 3 fecha; Sprint 4 começa com texto na mesma página."
+        },
+        {
+          "page": 34,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Figura 15 está centralizada com fonte abaixo e texto subsequente; prefixo Figura 15 em peso regular, diferente das legendas 9–14."
+        },
+        {
+          "page": 35,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Listas e ênfases do conteúdo estão legíveis, alinhadas e sem corte."
+        },
+        {
+          "page": 36,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Lista numerada e texto de Sprint 4 legíveis."
+        },
+        {
+          "page": 37,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 4 continua; reflexão começa perto do fim e continua na p.38 com borda."
+        },
+        {
+          "page": 38,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Caixa reflexiva termina sem corte; conclusão começa logo abaixo."
+        },
+        {
+          "page": 39,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Conclusão termina deixando espaço branco inferior substancial; há texto na página e referências iniciam na p.40, portanto não é página vazia/quase vazia."
+        },
+        {
+          "page": 40,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Referências legíveis e sem corte; URLs completas com anotações externas clicáveis."
+        }
+      ],
+      "additional_checks": [
+        {
+          "name": "chapter-and-sprint-continuity",
+          "status": "PASS",
+          "evidence": "Sprints 0–4 start on pp.25,26,29,31,33 and continue naturally; conclusion follows reflection."
+        },
+        {
+          "name": "figure-numbering-and-list",
+          "status": "FAIL",
+          "evidence": "List page assignments match caption pages; Figure 15 prefix weight is inconsistent."
+        },
+        {
+          "name": "placeholder",
+          "status": "PASS",
+          "evidence": "Database placeholder on p.20 is provisional, bordered, explicitly names missing diagram and is absent from list of illustrations."
+        },
+        {
+          "name": "figure-sources",
+          "status": "PENDING",
+          "evidence": "All seven provisional source lines are visible; source identity awaits manual user confirmation."
+        },
+        {
+          "name": "hyperlinks-and-references",
+          "status": "PASS_WITH_PENDING",
+          "evidence": "External links and internal citations have PDF annotations; remote availability and Graph API metadata are outside visual audit and remain pending."
+        },
+        {
+          "name": "margins-clipping-and-pages",
+          "status": "PASS",
+          "evidence": "No clipping, overlap or blank page found; p.39 is a short but valid conclusion page."
+        },
+        {
+          "name": "reflection-boxes-and-lists",
+          "status": "PASS",
+          "evidence": "Boxes retain borders through page breaks; authored bullet and numbered lists are legible."
+        },
+        {
+          "name": "comparison-with-mariah",
+          "status": "FAIL_PARTIAL",
+          "evidence": "Main body and figures broadly match approved pattern; citation rendering and Figure 15 prefix differ."
+        }
+      ]
+    },
+    "audit_835cf3_before_style_fixes": {
+      "overall_status": "FAIL_WITH_PENDING",
+      "summary": "Reauditoria visual do PDF SHA-256 835cf3b35045f4ed2977bb84736dd2b259fd267be8c0362589fd625d6b5ef932: 40 páginas inspecionadas. Posições das Figuras 9 e 11–14 e negrito de Figura 15 corrigidos. Persistem dois achados de formatação textual nas páginas 31/34 (FAIL); citações tecnológicas, sublinhado Docker, legibilidade da Figura 10, fontes das figuras e página 2 esparsa seguem PENDING.",
+      "findings": [
+        {
+          "id": "VAII-001",
+          "title": "Posição da Figura 9 — correção verificada",
+          "status": "PASS",
+          "initial_status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            19,
+            20
+          ],
+          "evidence": "No PDF SHA 16cf08d4… a Figura 9 aparecia entre o início e a continuação do parágrafo de repositório. No PDF atual, p.20 mostra a Figura 9 após a introdução e antes de 4.2 e 4.2.1; p.19 termina sem título 4.2 isolado. A ordem corresponde ao ODT content.xml.",
+          "impact": "A correção restaura o contexto da figura e remove a interrupção do parágrafo de repositório.",
+          "action": "Nenhuma correção adicional nesta unidade; manter o posicionamento contextual e revalidar se houver nova alteração.",
+          "retest_evidence": "Inspeção de p.19–20, render 120 dpi; pdftotext -f 19 -l 24 -layout confirma Figura 9 antes de 4.2."
+        },
+        {
+          "id": "VAII-002",
+          "title": "Posição das Figuras 11–14 — correção verificada",
+          "status": "PASS",
+          "initial_status": "FAIL",
+          "severity": "medium",
+          "category": "float-context",
+          "pages": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "evidence": "Na renderização antiga as figuras atravessavam o início de 4.2.5. Agora p.21 encerra banco/arquitetura; pp.22–23 exibem Figuras 11–14 depois de “Fotos dos protótipos:” e p.24 inicia 4.2.5.",
+          "impact": "O bloco de protótipos não interrompe mais o texto de tecnologias.",
+          "action": "Nenhuma correção adicional nesta unidade; manter a ordem e rever caso o fluxo de floats mude.",
+          "retest_evidence": "Inspeção das pp.21–24 e extração de texto com quebra de página; PDF images list confirma as imagens nas pp.21–23."
+        },
+        {
+          "id": "VAII-003",
+          "title": "Peso do prefixo Figura 15 — correção verificada",
+          "status": "PASS",
+          "initial_status": "FAIL",
+          "severity": "low",
+          "category": "caption-style",
+          "pages": [
+            3,
+            34
+          ],
+          "evidence": "Na versão atual, “Figura 15” está em negrito na lista de ilustrações (p.3) e na legenda acima da imagem (p.34), igual aos prefixos 9–14; o título segue regular.",
+          "impact": "A identificação visual das figuras está consistente.",
+          "action": "Nenhuma correção adicional.",
+          "retest_evidence": "Inspeção visual das pp.3 e 34 da renderização exata."
+        },
+        {
+          "id": "VAII-004",
+          "title": "Renderização das chamadas de citação tecnológica",
+          "status": "PENDING",
+          "initial_status": "FAIL",
+          "severity": "medium",
+          "category": "citation-presentation",
+          "pages": [
+            24,
+            40
+          ],
+          "evidence": "Na p.24, exemplos visíveis incluem “(ANGULAR. . . , 2024)”, “(TYPESCRIPT. . . , 2024)”, “(DOCUMENTA-ÇÃO. . . , 2024)”, “(FASTAPI. . . , 2024)” e “(POSTGRESQL:. . . , 2024)”. Os destinos internos vão à bibliografia da p.40.",
+          "impact": "A apresentação fica visualmente fragmentada e diverge do padrão de chamada autor-data usado como referência.",
+          "action": "Curador e mantenedor devem revisar rótulos e formato com base em metadados comprovados; não inventar autoria nem alterar redação.",
+          "retest_evidence": "Render p.24 e pdftotext do trecho p.19–24 confirmam que o problema permanece neste PDF; link interno não corrige a legibilidade do rótulo."
+        },
+        {
+          "id": "VAII-005",
+          "title": "Texto Docker sublinhado sem hyperlink",
+          "status": "PENDING",
+          "initial_status": "FAIL",
+          "severity": "low",
+          "category": "link-presentation",
+          "pages": [
+            24
+          ],
+          "evidence": "“Documentação Docker” aparece sublinhado na p.24, mas não possui annotation URI no PDF. O ODT mostra texto simples, sem âncora/href; a pendência de URL permanece documentada.",
+          "impact": "O sublinhado pode sugerir ao leitor um link ativo que não existe.",
+          "action": "Revisar a apresentação do texto sem criar URL; preservar conteúdo e decisão autoral.",
+          "retest_evidence": "Inspeção visual p.24 e enumeração read-only de links/anotações; nenhuma annotation correspondente ao texto Docker."
+        },
+        {
+          "id": "VAII-006",
+          "title": "Legibilidade dos rótulos da Figura 10",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-legibility",
+          "pages": [
+            21
+          ],
+          "evidence": "A Figura 10 ocupa aproximadamente 14,7 × 1,9 cm; raster 1288×165 px (~222 ppi). Os rótulos são pequenos à escala de página e legíveis ao ampliar.",
+          "impact": "Leitor pode precisar ampliar a página para ler as etapas do diagrama; suficiência para impressão não pode ser decidida apenas pela renderização de tela.",
+          "action": "Usuário confirmar legibilidade em impressão/escala final; se necessário, fornecer imagem mais legível ou decidir outra disposição, sem reconstruir conteúdo por inferência.",
+          "retest_evidence": "Inspeção visual p.21 na renderização 120 dpi; dimensão/PPI confirmados por pdfimages -list."
+        },
+        {
+          "id": "VAII-007",
+          "title": "Identificação manual das fontes das sete figuras",
+          "status": "PENDING",
+          "severity": "human-review",
+          "category": "figure-provenance",
+          "pages": [
+            20,
+            21,
+            22,
+            23,
+            34
+          ],
+          "evidence": "Figuras 9–15 mantêm a linha “Fonte: pendente de identificação” visível, abaixo das imagens e sem corte.",
+          "impact": "A composição está visível, mas origem/autoria ainda não pode ser afirmada.",
+          "action": "Usuário identifica manualmente fonte/autoria de cada figura; não inferir atribuições.",
+          "retest_evidence": "Inspeção visual de todas as sete figuras nas pp.20–23 e 34."
+        },
+        {
+          "id": "VAII-008",
+          "title": "Ênfase Strong do ODT convertida como sublinhado ou omitida",
+          "status": "FAIL",
+          "severity": "low",
+          "category": "text-format-fidelity",
+          "pages": [
+            31,
+            34
+          ],
+          "evidence": "ODF `styles.xml` define `Strong_20_Emphasis` com `fo:font-weight=\"bold\"`. Em `content.xml`, esse estilo marca “Indexação das colunas mais consultadas” e “Reorganização das tabelas” (p.31), “Primeira Etapa: Avaliação Geral da Presença Digital:” e “Segunda Etapa: Verificação de Relevância:” (p.34), e “Links Relevantes” (p.34). O PDF exibe os quatro primeiros trechos sublinhados; “Links Relevantes” aparece regular enquanto somente o sinal de dois-pontos está negritado.",
+          "impact": "A ênfase do original não foi preservada: sublinhado substitui negrito e uma expressão perde a ênfase.",
+          "action": "Conversores responsáveis por Sprint 3 e Sprint 4 devem corrigir somente a marcação LaTeX para refletir Strong_20_Emphasis em negrito, preservando texto, pontuação e ordem; não alterar conteúdo. Recompilar e auditar pp.31/34.",
+          "retest_evidence": "Pendente: correção e novo PDF/hash ainda não entregues. Evidência atual: renderização p.31/p.34, content.xml/styles.xml read-only e fontes LaTeX nas linhas 16,19 de ages-ii-sprint-3.tex e 38,45,58 de ages-ii-sprint-4.tex."
+        },
+        {
+          "id": "VAII-009",
+          "title": "Página quase vazia na continuação do sumário",
+          "status": "PENDING",
+          "severity": "low",
+          "category": "page-density",
+          "pages": [
+            2
+          ],
+          "evidence": "A p.2 mostra apenas duas entradas do sumário, posicionadas na faixa superior; a maior parte da página está vazia.",
+          "impact": "Cria uma página de navegação muito esparsa antes da lista de ilustrações. Não foi identificada violação normativa; é ponto de qualidade visual.",
+          "action": "Mantenedor avaliar se o espaçamento/distribuição do sumário pode ser compactado sem alterar hierarquia, paginação nem padrão visual aprovado.",
+          "retest_evidence": "Inspeção visual da página 2, renderização A4 a 120 dpi."
+        }
+      ],
+      "pages_detail": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Sumário de AGES II aponta o capítulo 4 a partir da p.19 e lista conclusão p.38 e referências p.40."
+        },
+        {
+          "page": 2,
+          "status": "PENDING",
+          "scope": "navigation",
+          "evidence": "A página contém somente as entradas “4.4 Conclusão” e “Referências” na faixa superior; o restante está vazio. Avaliar se a composição do sumário pode ser compactada. É observação de qualidade visual, sem conclusão normativa."
+        },
+        {
+          "page": 3,
+          "status": "PASS",
+          "scope": "navigation",
+          "evidence": "Lista de ilustrações inclui Figuras 9–15 nas páginas 20, 21, 22, 22, 23, 23 e 34; prefixo Figura 15 agora aparece em negrito como os demais."
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 6,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 7,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 8,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 9,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 10,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 11,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 12,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 13,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 14,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 15,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 16,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 17,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; sem defeito visual observado."
+        },
+        {
+          "page": 18,
+          "status": "PASS",
+          "scope": "AGES-I-context",
+          "evidence": "AGES I, contexto global; Figura 5 centralizada, legenda acima e fonte abaixo."
+        },
+        {
+          "page": 19,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Capítulo 4 e introdução ocupam a página; não há título 4.2 isolado no rodapé. A figura da introdução não desloca o começo de 4.2 para esta página."
+        },
+        {
+          "page": 20,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Figura 9 aparece depois da introdução e antes do título 4.2/4.2.1, na ordem do ODT. 4.2.1 segue em texto contínuo; não há float atravessando os parágrafos do repositório."
+        },
+        {
+          "page": 21,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Continua o texto do banco; placeholder ages-ii-database claramente provisório; seção de arquitetura e Figura 10 centralizada. Angular, FastAPI e PostgreSQL aparecem em negrito no PDF apesar de estilo efetivo regular no ODT (VAII-008). A legibilidade de Figura 10 e a fonte continuam pendentes (VAII-006/007)."
+        },
+        {
+          "page": 22,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Figuras 11 e 12 aparecem após “Fotos dos protótipos:”, cada uma com identificação/título acima e fonte provisória abaixo; sem texto de tecnologias intercalado."
+        },
+        {
+          "page": 23,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Figuras 13 e 14 aparecem em sequência no bloco de protótipos, com identificação/título acima e fonte provisória abaixo; não interrompem a subseção 4.2.5."
+        },
+        {
+          "page": 24,
+          "status": "PENDING",
+          "scope": "AGES-II",
+          "evidence": "Subseção 4.2.5 segue em fluxo, mas chamadas tecnológicas aparecem com reticências/espaçamento fragmentados e “Documentação Docker” está sublinhado sem annotation URI. Pendências tipográficas VAII-004/005."
+        },
+        {
+          "page": 25,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Seção 4.3 e Sprint 0 na mesma página, com texto subsequente; nenhuma quebra forçada observada."
+        },
+        {
+          "page": 26,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 1 segue no fluxo com texto e reflexão; título não fica isolado."
+        },
+        {
+          "page": 27,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Continuação de Sprint 1 dentro das margens, sem corte/colisão."
+        },
+        {
+          "page": 28,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 1 aparece com borda e leitura contínua."
+        },
+        {
+          "page": 29,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Caixa reflexiva termina e Sprint 2 começa na mesma página, sem quebra artificial."
+        },
+        {
+          "page": 30,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Relato de Sprint 2 e início da reflexão legíveis; a caixa continua naturalmente na p.31."
+        },
+        {
+          "page": 31,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 3 segue no fluxo; “Indexação das colunas mais consultadas” e “Reorganização das tabelas” aparecem sublinhadas como no estilo efetivo do ODT: spans T73 internos sobrescrevem o Strong externo com peso normal e underline."
+        },
+        {
+          "page": 32,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Lista e início da reflexão de Sprint 3 dentro das margens; sem corte visual."
+        },
+        {
+          "page": 33,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão de Sprint 3 fecha e Sprint 4 começa com texto na mesma página; sem título isolado."
+        },
+        {
+          "page": 34,
+          "status": "FAIL",
+          "scope": "AGES-II",
+          "evidence": "Prefixo da Figura 15 corrigido em negrito. “Primeira Etapa: Avaliação Geral da Presença Digital:” e “Segunda Etapa: Verificação de Relevância:” mantêm underline, como na origem, mas o LaTeX os divide em wrappers por palavra e a renderização deixa lacunas entre os sublinhados (VAII-009). “Links Relevantes” regular com apenas dois-pontos em negrito corresponde ao T28 normal interno e ao colon Strong no ODT."
+        },
+        {
+          "page": 35,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Texto e listas de Sprint 4 legíveis e dentro das margens; nenhuma figura fora de contexto."
+        },
+        {
+          "page": 36,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Continuação da lista numerada e do texto de Sprint 4 legível, sem corte."
+        },
+        {
+          "page": 37,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Sprint 4 continua; reflexão inicia e prossegue à p.38 com borda."
+        },
+        {
+          "page": 38,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Reflexão termina com borda preservada; conclusão começa abaixo, sem espaço artificial observado."
+        },
+        {
+          "page": 39,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Conclusão ocupa a página e deixa espaço inferior; não é página vazia/quase vazia. Referências começam na p.40."
+        },
+        {
+          "page": 40,
+          "status": "PASS",
+          "scope": "AGES-II",
+          "evidence": "Referências legíveis, URLs completas e sem corte; fontes incorporadas no documento."
+        }
+      ],
+      "additional_checks": [
+        {
+          "name": "chapter-and-sprint-continuity",
+          "status": "PASS",
+          "evidence": "Chapter flow; Sprints 0–4 begin on pp.25,26,29,31,33 and continue naturally; no forced new-page break before each Sprint."
+        },
+        {
+          "name": "float-context-and-figure-order",
+          "status": "PASS",
+          "evidence": "Figure 9 precedes 4.2 on p.20; Figures 11–14 occupy pp.22–23 after prototype marker and before 4.2.5 on p.24."
+        },
+        {
+          "name": "caption-numbering-and-list",
+          "status": "PASS",
+          "evidence": "Figure 15 prefix bold in list p.3 and caption p.34; captions above and provisional source lines below, all visible."
+        },
+        {
+          "name": "placeholder",
+          "status": "PASS",
+          "evidence": "Database placeholder on p.21 is clearly marked provisional and identifies ages-ii-database; it is not presented as a completed diagram."
+        },
+        {
+          "name": "reflection-boxes-and-lists",
+          "status": "FAIL",
+          "evidence": "Reflection boxes keep borders across page splits; however, source bold emphasis is underlined/omitted in numbered/list labels at pp.31 and 34 (VAII-008)."
+        },
+        {
+          "name": "figure-sources",
+          "status": "PENDING",
+          "evidence": "All seven source lines remain provisional; manual identification required."
+        },
+        {
+          "name": "figure-10-legibility",
+          "status": "PENDING",
+          "evidence": "Labels are small at page scale; human print legibility decision required."
+        },
+        {
+          "name": "citations-and-docker-link-presentation",
+          "status": "PENDING",
+          "evidence": "Citation labels remain visibly fragmented; Docker text is underlined without a link destination."
+        },
+        {
+          "name": "table-of-contents-page-density",
+          "status": "PENDING",
+          "evidence": "Page 2 contains only two entries and is mostly blank; review density as a visual quality issue, not a normative finding."
+        },
+        {
+          "name": "margins-clipping-and-blank-pages",
+          "status": "PASS",
+          "evidence": "No text clipping, overlap, off-margin content or wholly blank page observed. Page 39 contains conclusion text."
+        }
+      ]
+    },
+    "audit_835cf3_cascade_review": {
+      "date": "2026-10-16",
+      "note": "Revised the first interpretation after resolving nested ODF text-style cascade. The earlier first re-audit had incorrectly treated outer Strong_20_Emphasis as effective bold for T73/T286/T28/T226 spans. Current findings reflect the inner text styles.",
+      "validated": {
+        "T226": "normal weight overrides outer Strong for p.21 architecture terms",
+        "T73": "normal weight plus underline; Sprint 3 phrases match underline in target",
+        "T286": "normal weight plus underline; Sprint 4 phrases should be one continuous underlined span",
+        "T28": "normal weight for “Links Relevantes”; colon is separately Strong and target matches",
+        "T43": "italic normal style spans “memory leak” including its space; target currently splits into two italic commands with space outside."
+      }
+    }
+  }
+}

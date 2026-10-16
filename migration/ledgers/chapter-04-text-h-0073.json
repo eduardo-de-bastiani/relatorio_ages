@@ -18,7 +18,7 @@
           "start_byte": 108,
           "end_byte": 123,
           "serializations": [],
-          "target_sha256": "766f886a67284abaf36dbee9eaa6759ad92ac0ed1ac6a779a22aa33bbcb351d7"
+          "target_sha256": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
         },
         {
           "source_id": "text-p-1017",
@@ -26,7 +26,7 @@
           "start_byte": 223,
           "end_byte": 820,
           "serializations": [],
-          "target_sha256": "766f886a67284abaf36dbee9eaa6759ad92ac0ed1ac6a779a22aa33bbcb351d7"
+          "target_sha256": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
         },
         {
           "source_id": "text-p-1018",
@@ -34,7 +34,7 @@
           "start_byte": 847,
           "end_byte": 1353,
           "serializations": [],
-          "target_sha256": "766f886a67284abaf36dbee9eaa6759ad92ac0ed1ac6a779a22aa33bbcb351d7"
+          "target_sha256": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
         },
         {
           "source_id": "text-p-1019",
@@ -42,15 +42,15 @@
           "start_byte": 1380,
           "end_byte": 1913,
           "serializations": [],
-          "target_sha256": "766f886a67284abaf36dbee9eaa6759ad92ac0ed1ac6a779a22aa33bbcb351d7"
+          "target_sha256": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
         },
         {
           "source_id": "text-p-1020",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex",
           "start_byte": 1940,
-          "end_byte": 2347,
+          "end_byte": 2356,
           "serializations": [],
-          "target_sha256": "766f886a67284abaf36dbee9eaa6759ad92ac0ed1ac6a779a22aa33bbcb351d7"
+          "target_sha256": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
         }
       ],
       "asset_map": [],
@@ -68,7 +68,32 @@
       },
       "pending": [],
       "layout_disposition": "Native section heading and four body paragraphs.",
-      "bookmark_map": []
+      "bookmark_map": [],
+      "emphasis_coalescence_evidence": [
+        {
+          "source_paragraph_id": "text-p-1020",
+          "source_spans": [
+            {
+              "id": "text-span-1266",
+              "visible_text": "POC ",
+              "style": "T175",
+              "style_source": "content.xml"
+            },
+            {
+              "id": "text-span-1267",
+              "visible_text": "(Proof of Concept)",
+              "style": "T306",
+              "style_source": "content.xml"
+            }
+          ],
+          "effective_properties": {
+            "fo:font-style": "italic"
+          },
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex",
+          "target_serialization": "\\textit{POC (Proof of Concept)}",
+          "disposition": "Both adjacent visible fragments resolve to italic; a single contiguous LaTeX wrapper covers both without changing visible text."
+        }
+      ]
     }
   }
 }

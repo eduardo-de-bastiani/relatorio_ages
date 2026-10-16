@@ -4,13 +4,15 @@
 
 Fase vigente: migração controlada de **AGES II / Indústria Digital**, autorizada pelo usuário e registrada em `migration/approvals/ages-ii-authorization.json`. Trabalhe na branch `migration/ages-ii`, somente nas 15 unidades do capítulo 4 listadas em `harness.json`. AGES I foi revisada; seu padrão visual foi aprovado para reutilização e está em `docs/STYLE_GUIDE.md`. Não converta Hoortech, AGES III, AGES IV ou qualquer outra unidade nesta fase. Após a entrega da AGES II, aguarde aprovação humana.
 
+**Exceção autorizada pelo usuário em 16/10/2026:** aplicar somente correções de apresentação/citações nos quatro trechos técnicos `chapter-02-text-h-0009`–`0011` (AGES I) e `chapter-04-text-h-0043`–`0046` (AGES II), além da macro global de fonte de figuras, conforme `harness.json` e `migration/approvals/ages-i-ii-formatting-authorization.json`. Esta exceção inclui os textos-âncora descritivos aprovados, citações tecnológicas rastreáveis e centralização da fonte das figuras. Ela não autoriza outra unidade nem a próxima edição. As convenções aprovadas ficam documentadas em `docs/STYLE_GUIDE.md` e `docs/QUALITY_GATES.md` para AGES futuras; isso autoriza reutilizar o padrão quando uma edição vier a ser autorizada, sem autorizar migração antecipada.
+
 Leia [CONTEXT](docs/CONTEXT.md), [plano](docs/MIGRATION_PLAN.md), [estilo](docs/STYLE_GUIDE.md), [gates](docs/QUALITY_GATES.md) e [pendências](docs/PENDENCIAS.md). O `harness.json` define caminhos e escopos executáveis; os documentos explicam sua finalidade. Em divergência, interrompa a tarefa afetada e registre a diferença; não amplie permissões.
 
 Autoridades, nesta ordem: instruções explícitas do usuário; original imutável para conteúdo; normas verificadas para apresentação; decisões aprovadas de apresentação. `relatorio_mariah/` é a métrica de qualidade visual definida pelo usuário, somente para leitura. Não transferir narrativa, projetos, referências, epígrafe ou metadados pessoais da Mariah. O modelo restrito da Biblioteca PUCRS foi dispensado pelo usuário e não é dependência.
 
 ## Invariantes
 
-Atualização vigente de escopo: somente o capítulo **4 - PROJETO AGES II – INDÚSTRIA DIGITAL**, IDs `chapter-04-text-h-0039` a `chapter-04-text-h-0047`, Sprints `ages-ii-sprint-0` a `ages-ii-sprint-4` e conclusão `chapter-04-text-h-0073`, conforme lista fechada de `harness.json`. A aprovação do padrão visual da AGES I não autoriza por si só outras unidades. O documento completo da AGES II exige aprovação humana antes de qualquer próxima edição.
+Atualização vigente de escopo: a edição em curso continua sendo **AGES II / Indústria Digital**, IDs `chapter-04-text-h-0039` a `chapter-04-text-h-0047`, Sprints `ages-ii-sprint-0` a `ages-ii-sprint-4` e conclusão `chapter-04-text-h-0073`. Soma-se a exceção de correção listada acima para os três trechos técnicos da AGES I e as quatro seções técnicas da AGES II. A lista executável está em `harness.json`; nenhum outro trecho da AGES I ou de outra edição pode ser convertido nesta tarefa. O documento completo da AGES II exige aprovação humana antes de qualquer próxima edição.
 
 - Não revisar português, reformular, expandir, completar ou corrigir fatos nesta fase ou na conversão fiel.
 - Preservar acentos, símbolos, pontuação, sequência, âncoras e URLs. Contagem de palavras não comprova integridade.

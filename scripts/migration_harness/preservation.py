@@ -195,6 +195,84 @@ PRESENTATION_OVERRIDES_BY_UNIT.update({
     "chapter-04-text-h-0073": {"text-h-0073"},
 })
 
+# Narrow evidence-based additions authorized on 2026-10-16 for six wiki links
+# and technology citations in the database/architecture/prototype passages.
+AGES_I_II_FORMATTING_AUTHORIZATION = "migration/approvals/ages-i-ii-formatting-authorization.json"
+AGES_I_II_WIKI_SENTENCES = {
+    "text-p-0315": {
+        "source_id": "text-a-0108", "source_anchor": "Wiki do Banco de Dados",
+        "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+        "prefix": "Mais detalhes podem ser encontrados aqui: ", "anchor": "Banco de Dados", "suffix": "", "leading_tabs": 1,
+    },
+    "text-p-0319": {
+        "source_id": "text-a-0109", "source_anchor": "Wiki da Arquitetura",
+        "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+        "prefix": "Mais informações sobre a arquitetura estão disponíveis em: ", "anchor": "Arquitetura", "suffix": "", "leading_tabs": 1,
+    },
+    "text-p-0323": {
+        "source_id": "text-a-0110", "source_anchor": "Wiki dos Protótipos",
+        "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+        "prefix": "Os mockups de cada tela podem ser visualizados no seguinte link: ", "anchor": "Protótipo das Telas", "suffix": "", "leading_tabs": 0,
+    },
+    "text-p-0782": {
+        "source_id": "text-a-0118", "source_anchor": "Wiki do Banco de Dados",
+        "href": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados",
+        "prefix": "Mais detalhes podem ser encontrados aqui: ", "anchor": "Banco de Dados", "suffix": "", "leading_tabs": 0,
+    },
+    "text-p-0789": {
+        "source_id": "text-a-0120", "source_anchor": "Wiki da Arquitetura",
+        "href": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+        "prefix": "Mais informações sobre a arquitetura estão disponíveis em: ", "anchor": "Arquitetura", "suffix": "", "leading_tabs": 0,
+    },
+    "text-p-0793": {
+        "source_id": "text-a-0121", "source_anchor": "Wiki dos Protótipos",
+        "href": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups",
+        "prefix": "Os mockups de cada tela podem ser visualizados no seguinte link: ", "anchor": "Protótipo das Telas", "suffix": "", "leading_tabs": 0,
+    },
+}
+AGES_I_II_FORMATTING_UNITS = {
+    "chapter-02-text-h-0009", "chapter-02-text-h-0010", "chapter-02-text-h-0011",
+    "chapter-04-text-h-0043", "chapter-04-text-h-0044", "chapter-04-text-h-0045",
+    "chapter-04-text-h-0046",
+}
+AGES_I_II_WIKI_UNITS = {
+    "chapter-02-text-h-0009": {"text-p-0315", "text-a-0108"},
+    "chapter-02-text-h-0010": {"text-p-0319", "text-a-0109"},
+    "chapter-02-text-h-0011": {"text-p-0323", "text-a-0110"},
+    "chapter-04-text-h-0043": {"text-p-0782", "text-a-0118"},
+    "chapter-04-text-h-0044": {"text-p-0789", "text-a-0120"},
+    "chapter-04-text-h-0045": {"text-p-0793", "text-a-0121"},
+}
+AGES_I_II_TECHNICAL_CITATIONS = {
+    "chapter-02-text-h-0009": {"text-p-0314": ["postgresql-docs", "prisma-docs"]},
+    "chapter-02-text-h-0011": {"text-p-0322": ["ages-i-excalidraw", "ages-i-figma"]},
+    "chapter-04-text-h-0043": {"text-p-0781": ["ages-ii-postgresql", "ages-ii-sqlalchemy"]},
+    "chapter-04-text-h-0044": {"text-p-0785": [
+        "ages-ii-angular", "ages-ii-http-rfc9110", "ages-ii-fastapi", "ages-ii-fastapi",
+        "ages-ii-postgresql", "ages-ii-postgresql", "ages-ii-json-rfc8259", "ages-ii-angular",
+    ]},
+    "chapter-04-text-h-0045": {"text-p-0791": ["ages-ii-figma"]},
+    "chapter-04-text-h-0046": {
+        "text-p-0812": ["ages-ii-angular", "ages-ii-typescript"],
+        "text-p-0813": ["ages-ii-typescript", "ages-ii-angular", "ages-ii-http-rfc9110", "ages-ii-json-rfc8259"],
+        "text-p-0817": ["ages-ii-python"],
+        "text-p-0818": ["ages-ii-graph-api", "ages-ii-python", "ages-ii-fastapi"],
+        "text-p-0821": ["ages-ii-fastapi"],
+        "text-p-0822": ["ages-ii-angular", "ages-ii-postgresql"],
+        "text-p-0825": ["ages-ii-graph-api"],
+        "text-p-0829": ["ages-ii-sqlalchemy"],
+        "text-p-0830": ["ages-ii-postgresql", "ages-ii-python"],
+        "text-p-0833": ["ages-ii-postgresql"],
+        "text-p-0834": ["ages-ii-fastapi", "ages-ii-sqlalchemy"],
+        "text-p-0837": ["ages-ii-docker"],
+        "text-p-0838": ["ages-ii-postgresql"],
+    },
+}
+AGES_I_II_TECHNICAL_CITATION_KEYS = {
+    key for per_unit in AGES_I_II_TECHNICAL_CITATIONS.values()
+    for keys in per_unit.values() for key in keys
+}
+
 
 def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
     if unit_id in AGES_II_UNITS:
@@ -275,15 +353,47 @@ def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> 
             or authorization.get("manual_pending") != ["Identifying the source/provenance of each of the five real images"]
             or not isinstance(changes, dict)
             or set(changes) != {"figure_caption_labels", "section_numbering", "figure_cross_references", "list_markers"}
-            or changes.get("section_numbering") != {rid: new for rid, (_, new) in PRESENTATION_HEADINGS.items()}
+            or changes.get("section_numbering") != {
+                rid: PRESENTATION_HEADINGS[rid][1] for rid in ("text-h-0002", "text-h-0022")
+            }
             or changes.get("figure_cross_references") != PRESENTATION_CROSS_REFERENCES
             or changes.get("list_markers") != PRESENTATION_LIST_MARKERS
             or authorization.get("list_marker_instruction") != PRESENTATION_LIST_MARKER_INSTRUCTION
-            or authorization.get("repository_links") != PRESENTATION_REPOSITORY_LINKS):
+            or authorization.get("repository_links") != {
+                rid: PRESENTATION_REPOSITORY_LINKS[rid]
+                for rid in ("text-a-0105", "text-a-0106", "text-a-0107")
+            }):
         raise ValueError("Presentation authorization is missing, stale, or exceeds the explicit AGES I scope")
     captions = changes.get("figure_caption_labels")
-    if not isinstance(captions, dict) or set(captions) != set(PRESENTATION_CAPTIONS):
+    ages_i_caption_ids = {"text-p-0293", "text-p-0328", "text-p-0356", "text-p-0372", "text-p-0650"}
+    if not isinstance(captions, dict) or set(captions) != ages_i_caption_ids:
         raise ValueError("Caption localization authorization does not cover exactly the five AGES I captions")
+    return authorization
+
+
+def _load_ages_i_ii_formatting_authorization(repo: Path, unit_id: str | None = None) -> dict | None:
+    """Load the exact 2026-10-16 scope extension for the six wiki links/citations."""
+    if unit_id not in AGES_I_II_FORMATTING_UNITS:
+        return None
+    authorization = json.loads((repo / AGES_I_II_FORMATTING_AUTHORIZATION).read_text(encoding="utf-8"))
+    scope = authorization.get("scope", {})
+    expected_units = sorted(AGES_I_II_FORMATTING_UNITS)
+    expected_wikis = {
+        paragraph_id: {**rule, "leading_tabs": rule["leading_tabs"]}
+        for paragraph_id, rule in AGES_I_II_WIKI_SENTENCES.items()
+    }
+    expected_citations = AGES_I_II_TECHNICAL_CITATIONS
+    if (authorization.get("schema_version") != 1
+            or authorization.get("record_type") != "user_authorized_scope_extension"
+            or authorization.get("date") != "2026-10-16"
+            or authorization.get("branch") != "migration/ages-ii"
+            or authorization.get("approval_status") != "scope_extension_authorized; revised PDFs and reports still require user review"
+            or scope.get("units") != expected_units
+            or scope.get("harness_validation") != ["scripts/migration_harness/preservation.py", "tests/test_preservation.py"]
+            or authorization.get("approved_wiki_link_sentences") != expected_wikis
+            or authorization.get("approved_technical_citations_by_unit") != expected_citations
+            or "Do not modify RELATORIO_ATUAL.odt or relatorio_mariah/." not in authorization.get("explicit_limits", [])):
+        raise ValueError("The AGES I/II formatting authorization is missing, stale, or outside its exact scope")
     return authorization
 
 
@@ -323,6 +433,32 @@ AGES_II_TECHNOLOGY_REFERENCE_KEYS = {
     "text-a-0125": "ages-ii-fastapi",
     "text-a-0127": "ages-ii-sqlalchemy",
     "text-a-0128": "ages-ii-postgresql",
+}
+AGES_II_ADDITIONAL_REFERENCE_RECORDS = {
+    "ages-ii-figma": {
+        "source_record_id": "text-p-1582", "source_author": "FIGMA", "author": "Figma",
+        "title": "Figma: the collaborative interface design tool", "url": "https://www.figma.com",
+    },
+    "ages-ii-docker": {
+        "source_record_id": "text-p-1574", "source_author": "DOCKER", "author": "Docker",
+        "title": "Enterprise Application Container Platform | Docker", "url": "https://www.docker.com/",
+    },
+    "ages-ii-graph-api": {
+        "source_record_id": "text-p-1591", "author": None,
+        "title": "Graph API - Documentation", "url": "https://developers.facebook.com/docs/graph-api/",
+    },
+}
+AGES_II_RFC_REFERENCE_FIELDS = {
+    "ages-ii-http-rfc9110": {
+        "title": "RFC 9110: HTTP Semantics", "editor": "Roy T. Fielding and Mark Nottingham and Julian Reschke",
+        "date": "2022-06", "organization": "Internet Engineering Task Force", "number": "9110",
+        "url": "https://www.rfc-editor.org/info/rfc9110/",
+    },
+    "ages-ii-json-rfc8259": {
+        "title": "RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format", "editor": "Tim Bray",
+        "date": "2017-12", "organization": "Internet Engineering Task Force", "number": "8259",
+        "url": "https://www.rfc-editor.org/info/rfc8259/",
+    },
 }
 AGES_II_TECHNOLOGY_TEXT_IDS = (
     "text-p-0812", "text-p-0813", "text-p-0814", "text-p-0815",
@@ -486,18 +622,12 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         raise ValueError("The approved technology paragraph still contains list structure")
 
     citation_keys = [token.args[0] for token in commands(raw) if token.name == "cite" and token.args]
-    expected_citation_keys = list(AGES_II_TECHNOLOGY_REFERENCE_KEYS.values())
+    expected_citation_keys = [
+        key for source_id in AGES_II_TECHNOLOGY_TEXT_IDS
+        for key in AGES_I_II_TECHNICAL_CITATIONS.get("chapter-04-text-h-0046", {}).get(source_id, [])
+    ]
     if citation_keys != expected_citation_keys:
-        raise ValueError("The six verified technology citations are missing, duplicated, or out of order")
-    for source_id, keys in AGES_II_TECHNOLOGY_CITATIONS_AFTER.items():
-        mapping = mappings[source_id]
-        relative_end = mapping["end_byte"] - first["start_byte"]
-        suffix = raw.encode("utf-8")[relative_end:].decode("utf-8")
-        source_text = records.get(source_id, {}).get("text", "")
-        citation_gap = "" if source_text.endswith((" ", "\t")) else r"\space"
-        expected = "".join(citation_gap + r"\cite{" + key + "}" for key in keys)
-        if not suffix.startswith(expected):
-            raise ValueError(f"Citation spacing or attachment differs from the exact source-ending whitespace for {source_id}")
+        raise ValueError("Technical citations across AGES II database/architecture/prototype/technology passages are missing, duplicated, or out of order")
 
     curated = {item.get("source_record_id"): item for item in reference_evidence.get("references", [])}
     assigned_date = authorization.get("technology_reference_convention", {}).get("access_date")
@@ -526,16 +656,53 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         if re.search(r"(?mi)^\s*(?:author|editor|organization|institution)\s*=", entry):
             raise ValueError(f"Bibliography entry {key} asserts authorship not established by the curator")
 
+    for key, expected in AGES_II_ADDITIONAL_REFERENCE_RECORDS.items():
+        source_record = records.get(expected["source_record_id"], {})
+        source_text = source_record.get("source_text") or source_record.get("text") or ""
+        if (expected["title"] not in source_text or expected["url"] not in source_text
+                or (expected.get("source_author") and not source_text.startswith(expected["source_author"] + "."))):
+            raise ValueError(f"Original ODT bibliography record for {key} differs from the frozen manifest evidence")
+        match = re.search(rf"(?ms)^@online\{{{re.escape(key)},(?P<entry>.*?)^\}}", bibliography)
+        if not match:
+            raise ValueError(f"Bibliography entry {key} is missing")
+        entry = match["entry"]
+        fields = {
+            "title": "{" + expected["title"] + "}", "url": "{" + expected["url"] + "}",
+            "year": "{2024}", "urldate": "{" + assigned_date + "}",
+        }
+        for field, value in fields.items():
+            if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
+                raise ValueError(f"Bibliography field {field} for {key} differs from the original ODT or assigned date convention")
+        author_field = re.search(r"(?m)^\s*author\s*=\s*(.*?)\s*,?\s*$", entry)
+        if expected["author"] is None:
+            if author_field:
+                raise ValueError(f"Bibliography entry {key} infers authorship absent from the original ODT")
+        elif author_field is None or author_field.group(1) != "{{" + expected["author"] + "}}":
+            raise ValueError(f"Bibliography author for {key} differs from the original ODT")
+
+    for key, expected in AGES_II_RFC_REFERENCE_FIELDS.items():
+        match = re.search(rf"(?ms)^@online\{{{re.escape(key)},(?P<entry>.*?)^\}}", bibliography)
+        if not match:
+            raise ValueError(f"Verified official RFC entry {key} is missing")
+        entry = match["entry"]
+        for field, value in expected.items():
+            if not re.search(rf"(?m)^\s*{field}\s*=\s*\{{{re.escape(value)}\}}\s*,?\s*$", entry):
+                raise ValueError(f"Verified RFC field {field} for {key} differs from its curation evidence")
+        if not re.search(rf"(?m)^\s*urldate\s*=\s*\{{{re.escape(assigned_date)}\}}\s*,?\s*$", entry):
+            raise ValueError(f"Assigned AGES II access date for {key} differs from user instruction")
+
     pending = curated.get("text-a-0126", {})
     if pending.get("status") != "PENDING" or pending.get("original_url") != records["text-a-0126"].get("href"):
         raise ValueError("Graph API reference must remain pending with the exact original URL")
-    if re.search(r"(?mi)^@\w+\{ages-ii-(?:graph-api|docker)\s*,", bibliography):
-        raise ValueError("Pending/unlinked sources must not receive inferred bibliography entries")
     expected_links = [
         (item["original_url"], item["original_anchor"])
         for item in reference_evidence.get("references", [])
         if item.get("source_record_id") in set(AGES_II_TECHNOLOGY_REFERENCE_KEYS) | {"text-a-0126"}
     ]
+    docker_reference = records.get("text-a-0171", {})
+    if docker_reference.get("href") != "https://www.docker.com/" or docker_reference.get("source_text") != "https://www.docker.com/":
+        raise ValueError("The Docker citation target must come from its original ODT bibliography hyperlink")
+    expected_links.append((docker_reference["href"], "Documentação Docker"))
     observed_links = [(token.args[0], displayed_text(token.args[1])) for token in commands(raw) if token.name == "href" and len(token.args) == 2]
     if observed_links != expected_links:
         raise ValueError("Original technology documentation URLs/anchors differ from verified source order")
@@ -555,7 +722,36 @@ def _reference_suffix(value: str) -> str:
     return value.replace("~", " ")
 
 
-def _project_approved_presentation(source_id, expected, observed, serializations, authorization):
+def _project_approved_presentation(source_id, expected, observed, serializations, authorization, formatting_authorization=None):
+    if "wiki_reference_sentence" in serializations:
+        paragraph_id = source_id if source_id in AGES_I_II_WIKI_SENTENCES else next(
+            (pid for pid, candidate in AGES_I_II_WIKI_SENTENCES.items() if candidate["source_id"] == source_id),
+            None,
+        )
+        rule = AGES_I_II_WIKI_SENTENCES.get(paragraph_id)
+        if (rule is None or formatting_authorization is None
+                or formatting_authorization.get("approved_wiki_link_sentences", {}).get(paragraph_id) != rule):
+            raise UnsupportedSerialization("Wiki reference sentence is outside the exact AGES I/II authorization")
+        if source_id == paragraph_id:
+            leading = "\t" * rule["leading_tabs"]
+            if expected != leading + rule["source_anchor"]:
+                raise UnsupportedSerialization("Original wiki anchor or its source leading tabs changed")
+            target = leading + rule["prefix"] + rule["anchor"] + rule["suffix"]
+        elif source_id == rule["source_id"]:
+            if expected != rule["source_anchor"]:
+                raise UnsupportedSerialization("Original wiki hyperlink anchor changed")
+            target = rule["anchor"]
+        else:
+            raise UnsupportedSerialization("Wiki reference mapping is not the authorized paragraph or hyperlink")
+        if observed != target:
+            raise UnsupportedSerialization("Wiki prose or linked anchor differs from the exact user-approved form")
+        return expected, {
+            "source_id": source_id,
+            "kind": "wiki_link_sentence" if source_id == paragraph_id else "wiki_link_anchor",
+            "source": expected,
+            "displayed": target,
+            "href": rule["href"],
+        }
     used = set(serializations) & set(PRESENTATION_SERIALIZATIONS)
     if not used:
         return observed, None
@@ -603,6 +799,21 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             raise UnsupportedSerialization("Figure callout is missing, altered, or contains unapproved words")
         return expected, {"source_id": source_id, "kind": "figure_cross_reference", "source": expected, "displayed": expected_target}
     raise UnsupportedSerialization("Unrecognized presentation transformation")
+
+
+def _citation_keys_in_fragment(value):
+    r"""Return ordered cite keys from the narrow supported \cite{key[,key]} form."""
+    observed = []
+    for token in commands(strip_comments(value)):
+        if token.name != "cite":
+            continue
+        if token.starred or token.optionals or len(token.args) != 1:
+            raise UnsupportedSerialization(r"Only unstarred \cite{key[,key]} is supported in technical citations")
+        keys = [part.strip() for part in token.args[0].split(",")]
+        if not keys or any(not re.fullmatch(r"[A-Za-z0-9:_-]+", key) for key in keys):
+            raise UnsupportedSerialization("Malformed author-date citation key")
+        observed.extend(keys)
+    return observed
 
 DIAGRAM_PLACEHOLDER_BODY = r"\par\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\textbf{Diagrama ausente — placeholder provisório}\par Identificador: #1\par Pendência: #2}}\par"
 
@@ -661,7 +872,7 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
     Accents, punctuation, case, numbers and symbols compare exactly.
     No macro expansion, citation expansion or counter-generated text is guessed.
     """
-    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence"}
+    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation"}
     if set(serializations) - allowed:
         raise UnsupportedSerialization("Unrecognized serialization policy")
     if "original_whitespace" in serializations and not macro_contract_verified:
@@ -723,7 +934,23 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
                 if text[i:i + 2] == "{}":
                     i += 2
                 continue
+            if name == "cite":
+                if "technology_citation" not in serializations:
+                    raise UnsupportedSerialization("A citation requires the exact verified technology_citation policy")
+                if i >= len(text) or text[i] != "{":
+                    raise UnsupportedSerialization("Only a single braced cite-key group is supported")
+                keys, i = _group(text, i, "{", "}")
+                parts = [key.strip() for key in keys.split(",")]
+                if not parts or any(not re.fullmatch(r"[A-Za-z0-9:_-]+", key) for key in parts):
+                    raise UnsupportedSerialization("Citation keys are malformed")
+                # Exact authorized key identity/order is checked against the
+                # per-source ledger before this parser is called.
+                continue
             if name == "space":
+                if "technology_citation" in serializations and text[i:].startswith(r"\cite{"):
+                    # TeX spacing inserted only before the citation is part of
+                    # that citation apparatus, not source wording.
+                    continue
                 if "original_whitespace" not in serializations or not macro_contract_verified:
                     raise UnsupportedSerialization("TeX space requires verified original_whitespace policy")
                 output.append(_ExplicitWhitespace(" "))
@@ -981,7 +1208,21 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
             presentation_authorization = None
             presentation_authorization_error = str(exc)
+        try:
+            formatting_authorization = _load_ages_i_ii_formatting_authorization(repo, uid)
+            formatting_authorization_error = None
+        except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
+            formatting_authorization = None
+            formatting_authorization_error = str(exc)
         unit = units[uid]
+        authorized_formatting_ids = (
+            set(AGES_I_II_TECHNICAL_CITATIONS.get(uid, {}))
+            | AGES_I_II_WIKI_UNITS.get(uid, set())
+        )
+        formatting_scope_present = (
+            uid in AGES_I_II_FORMATTING_UNITS
+            and bool(set(unit.get("record_ids", [])) & authorized_formatting_ids)
+        )
         state = ledger_units.get(uid, {}).get("state", "unconverted")
         unit_ledger = ledger_units.get(uid, {})
         technology_paragraph_verified = False
@@ -1035,11 +1276,14 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                             "source_id": "text-list-0109",
                             "kind": "single_paragraph_with_verified_author_date_citations",
                             "source_lists": [f"text-list-0{number}" for number in range(109, 116)],
-                            "citation_keys": list(AGES_II_TECHNOLOGY_REFERENCE_KEYS.values()),
+                            "citation_keys": [
+                                key for source_id in AGES_II_TECHNOLOGY_TEXT_IDS
+                                for key in AGES_I_II_TECHNICAL_CITATIONS.get(uid, {}).get(source_id, [])
+                            ],
                             "pending_sources": ["text-a-0126", "text-p-0839"],
                             "assigned_access_date": "2024-10-15",
                         })
-                        report("approved_technology_paragraph_review_required", uid, "Seven source technology entries remain in order as one paragraph; original URLs are preserved; six citations use only curated, authorless metadata; Graph API and Docker bibliography details remain pending. Human presentation review remains required", source_id="text-list-0109", severity="warning")
+                        report("approved_technology_paragraph_review_required", uid, "Seven source technology entries remain in order as one paragraph; all 22 authorized technology citations are linked to bibliography entries. The exact Graph API Explorer page and the Docker homepage's technical adequacy remain pending. Human presentation review remains required", source_id="text-list-0109", severity="warning")
                 else:
                     _verify_markerless_list("text-list-0025", source_text, disposition, presentation_authorization)
                     report("approved_list_marker_review_required", uid, "The five source list items remain in order; only their visible bullet glyphs are suppressed under explicit user presentation authorization. Human visual approval remains pending", source_id="text-list-0025", severity="warning")
@@ -1053,6 +1297,59 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         for rid in set(mapping_ids) - allowed_ids:
             report("unknown_or_wrong_unit_mapping", uid, "Mapping does not belong to this source unit", rid)
         by_id = {item.get("source_id"): item for item in mappings}
+        expected_citations = AGES_I_II_TECHNICAL_CITATIONS.get(uid, {}) if formatting_scope_present else {}
+        citation_policy = unit_ledger.get("technology_citations")
+        if expected_citations:
+            expected_policy = {
+                "authorization_evidence": AGES_I_II_FORMATTING_AUTHORIZATION,
+                "source_text_changed": False,
+                "source_id_to_keys": expected_citations,
+            }
+            try:
+                if formatting_authorization is None:
+                    raise ValueError(formatting_authorization_error or "Missing formatting authorization")
+                if citation_policy != expected_policy:
+                    raise ValueError("Citation ledger must exactly match the approved source ID/key map")
+                bibliography = safe_path("relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+                bibliography_keys = set(re.findall(r"(?m)^@\w+\{([^,]+),", bibliography))
+                for rid, expected_keys in expected_citations.items():
+                    mapping = by_id.get(rid)
+                    if mapping is None or "technology_citation" not in mapping.get("serializations", []):
+                        raise ValueError(f"{rid} requires the technology_citation serialization")
+                    if _citation_keys_in_fragment(fragment(mapping)[3]) != expected_keys:
+                        raise ValueError(f"Citations on {rid} differ from the approved ordered keys")
+                    if any(key not in bibliography_keys for key in expected_keys):
+                        raise ValueError(f"A verified citation on {rid} has no integrated bibliography entry")
+                for rid, mapping in by_id.items():
+                    if "technology_citation" in mapping.get("serializations", []) and rid not in expected_citations:
+                        raise ValueError(f"Unapproved technology_citation serialization on {rid}")
+                facts.setdefault("technical_citations_verified", 0)
+                facts["technical_citations_verified"] += sum(map(len, expected_citations.values()))
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError, UnsupportedSerialization) as exc:
+                report("invalid_technology_citation_apparatus", uid, str(exc))
+        elif citation_policy is not None or any("technology_citation" in item.get("serializations", []) for item in mappings):
+            report("invalid_technology_citation_apparatus", uid, "Technology citation apparatus is outside the exact approved source IDs")
+        expected_wiki_ids = AGES_I_II_WIKI_UNITS.get(uid, set()) if formatting_scope_present else set()
+        wiki_override_ids = {
+            rid for rid, mapping in by_id.items()
+            if "wiki_reference_sentence" in mapping.get("serializations", [])
+        }
+        wiki_policy = unit_ledger.get("wiki_link_overrides")
+        if expected_wiki_ids:
+            expected_wiki_policy = {
+                "authorization_evidence": AGES_I_II_FORMATTING_AUTHORIZATION,
+                "source_ids": sorted(expected_wiki_ids),
+            }
+            expected_wiki_serializations = {rid for rid in expected_wiki_ids}
+            try:
+                if formatting_authorization is None:
+                    raise ValueError(formatting_authorization_error or "Missing formatting authorization")
+                if wiki_policy != expected_wiki_policy or wiki_override_ids != expected_wiki_serializations:
+                    raise ValueError("Wiki-link overlay ledger must exactly match its authorized paragraph/anchor IDs")
+            except (ValueError, TypeError) as exc:
+                report("invalid_wiki_link_presentation", uid, str(exc))
+        elif wiki_policy is not None or wiki_override_ids:
+            report("invalid_wiki_link_presentation", uid, "Wiki-link prose is outside the exact approved source IDs")
         presentation_override_ids = {rid for rid, mapping in by_id.items() if set(mapping.get("serializations", [])) & set(PRESENTATION_SERIALIZATIONS)}
         repository_link_style_verified = False
         if presentation_override_ids or "approved_presentation_overrides" in unit_ledger:
@@ -1374,7 +1671,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                                 projected += token
                 observed = displayed_text(value, serializations, macro_contract_verified=macro_verified, inline_layout_verified=inline_verified, reference_layout_verified=reference_verified)
                 observed, presentation_transform = _project_approved_presentation(
-                    rid, expected, observed, serializations, presentation_authorization
+                    rid, expected, observed, serializations, presentation_authorization, formatting_authorization
                 )
                 if presentation_transform is not None:
                     facts["approved_presentation_transformations"].append(presentation_transform)
@@ -1432,8 +1729,59 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             try:
                 policies = by_id[rid].get("serializations", [])
                 observed_anchor = displayed_text(anchor, policies, macro_contract_verified=macro_verified) if token.name == "href" else _url(anchor)
+                wiki_rule = next((rule for rule in AGES_I_II_WIKI_SENTENCES.values() if rule["source_id"] == rid), None)
                 repository_rule = PRESENTATION_REPOSITORY_LINKS.get(rid)
-                if repository_rule is not None:
+                if wiki_rule is not None:
+                    paragraph_id = next(
+                        paragraph_id for paragraph_id, rule in AGES_I_II_WIKI_SENTENCES.items()
+                        if rule["source_id"] == rid
+                    )
+                    paragraph_mapping = by_id.get(paragraph_id)
+                    if paragraph_mapping is None:
+                        report("invalid_wiki_link_sentence", uid, "The linked wiki anchor has no independently mapped containing paragraph", rid)
+                        continue
+                    paragraph_path, _, _, paragraph_value = fragment(paragraph_mapping)
+                    paragraph_serializations = paragraph_mapping.get("serializations", [])
+                    paragraph_display = displayed_text(
+                        paragraph_value, paragraph_serializations,
+                        macro_contract_verified=macro_verified,
+                        inline_layout_verified=inline_verified,
+                        reference_layout_verified=reference_verified,
+                    )
+                    expected_paragraph_display = (
+                        "\t" * wiki_rule["leading_tabs"] + wiki_rule["prefix"]
+                        + wiki_rule["anchor"] + wiki_rule["suffix"]
+                    )
+                    paragraph_links = [candidate for candidate in commands(paragraph_value) if candidate.name == "href" and len(candidate.args) == 2]
+                    hyperlink_only = not strip_comments(value[:token.start] + value[token.end:]).strip()
+                    if (formatting_authorization is None
+                            or formatting_authorization.get("approved_wiki_link_sentences", {}).get(paragraph_id) != wiki_rule
+                            or "wiki_reference_sentence" not in policies
+                            or "wiki_reference_sentence" not in paragraph_serializations
+                            or record.get("href") != wiki_rule["href"]
+                            or record.get("source_text") != wiki_rule["source_anchor"]
+                            or observed_url != wiki_rule["href"]
+                            or observed_anchor != wiki_rule["anchor"]
+                            or not hyperlink_only
+                            or paragraph_path != path
+                            or paragraph_display != expected_paragraph_display
+                            or len(paragraph_links) != 1
+                            or _url(paragraph_links[0].args[0]) != wiki_rule["href"]
+                            or displayed_text(
+                                paragraph_links[0].args[1], paragraph_serializations,
+                                macro_contract_verified=macro_verified,
+                                inline_layout_verified=inline_verified,
+                                reference_layout_verified=reference_verified,
+                            ) != wiki_rule["anchor"]):
+                        report("invalid_wiki_link_sentence", uid, "Wiki sentence, linked anchor, or preserved original URL differs from the exact user-approved form", rid)
+                    else:
+                        facts["approved_presentation_transformations"].append({
+                            "source_id": rid, "kind": "wiki_link_in_prose",
+                            "source": wiki_rule["source_anchor"],
+                            "displayed": paragraph_display,
+                            "href": observed_url,
+                        })
+                elif repository_rule is not None:
                     prefix = value[:token.start]
                     suffix = value[token.end:]
                     if (not repository_link_style_verified
@@ -1570,7 +1918,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     quote = "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente"
                     valid_edition_evidence = (
                         config.get("phase") == "edition"
-                        and config.get("authorization_evidence") == evidence
+                        and uid in config.get("authorized_units", [])
                         and uid in auth.get("scope", [])
                         and auth.get("kind") == "user_execution_authorization"
                         and auth.get("quoted_instruction") == quote

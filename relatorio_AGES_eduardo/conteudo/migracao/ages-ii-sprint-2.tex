@@ -6,10 +6,10 @@
 \addcontentsline{toc}{subsection}{4.3.3 Sprint 2}
 
 % text-p-0906
-\indent Para a Sprint 2, me foquei em tornar o banco de dados o mais utilizável possível para o squad que estava começando a desenvolver endpoints no back-end. Meu objetivo principal foi garantir que o banco estivesse pronto para uso imediato, facilitando o progresso das demais equipes.\par
+\indent Para a Sprint 2, me foquei em tornar o banco de dados o mais utilizável possível para o \textit{squad} que estava começando a desenvolver \textit{endpoints} no back-end. Meu objetivo principal foi garantir que o banco estivesse pronto para uso imediato, facilitando o progresso das demais equipes.\par
 
 % text-p-0907
-\indent Na Sprint anterior, eu estava trabalhando em scripts SQL para tratar o banco de dados da Receita Federal, chamado de sampled. Para incluir os demais dados necessários, convidei o Lucas, AGES I, para realizarmos os últimos tratamentos, auxiliando-o durante a codificação dos scripts SQL.\par
+\indent Na Sprint anterior, eu estava trabalhando em scripts SQL para tratar o banco de dados da Receita Federal, chamado de \textit{sampled}. Para incluir os demais dados necessários, convidei o Lucas, AGES I, para realizarmos os últimos tratamentos, auxiliando-o durante a codificação dos scripts SQL.\par
 
 % text-p-0908
 \indent Ao discutir com nosso AGES 4, Pedro Carlucci, percebemos que o banco de dados existente da Receita Federal possuía dados pobremente estruturados. Executar tratamentos diretamente sobre eles consumiria muito tempo e geraria vários problemas. Pedro sugeriu a criação de um novo banco de dados com as colunas e tipos de dados já definidos. Essa estrutura serviu como um “esqueleto” do que desejávamos para o banco, e a partir disso, desenvolvemos um script para popular o novo banco de dados com os dados já existentes. A criação desse script foi facilitada pelo uso da ORM SQLAlchemy, em colaboração com meus colegas Bruno Panizzi, Enzo Vivian (AGES I) e Eduardo Wolf (AGES II).\par
@@ -21,13 +21,13 @@
 \indent Um dos desafios que enfrentamos foi a transferência dos dados da tabela associativa. A chave primária da tabela estabelecimentos era composta por cnpj, id, dv e matriz. No novo modelo, transformamos essas chaves compostas em um uid único, que deveria ser conectado com as antigas chaves para manter a integridade da tabela associativa estabelecimento\_cnaes. Esse processo de vincular as chaves compostas com a nova chave única causou alguns transtornos, mas foi superado.\par
 
 % text-p-0911
-\indent Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado "public". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.\par
+\indent Também realizei um \textit{hot} \textit{fix} na \textit{branch} \textit{develop}, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado "public". Esse \textit{hot}\textit{ fix} foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na \textit{develop}.\par
 
 % text-p-0912
 \indent Adicionalmente, iniciei a preparação do Docker e do ambiente de desenvolvimento para a criação do script de geocodificação. O objetivo era transformar os endereços dos estabelecimentos em coordenadas de latitude e longitude, para posterior uso no mapa do front-end. Durante testes iniciais com a biblioteca GeoPy, que utilizava a API Nominatim, encontramos alguns problemas. Primeiro, não tínhamos um campo de endereço diretamente no banco, sendo necessário concatenar vários outros campos, alguns dos quais estavam nulos para certas empresas, quebrando o script. Além disso, a limitação de uma requisição por segundo tornava o processo de popular o banco muito lento.\par
 
 % text-p-0913
-\indent Consideramos, então, uma abordagem em que a geolocalização seria calculada dinamicamente à medida que as empresas fossem encontradas pelos endpoints. Embora essa solução funcionasse, ela prejudicaria a pesquisa por distância no front-end, já que as primeiras buscas não trariam resultados completos. Essa abordagem foi posteriormente descartada, e, ao final da Sprint 2, começamos a considerar o uso da Brasil API, o que se concretizou no início da Sprint 3.\par
+\indent Consideramos, então, uma abordagem em que a geolocalização seria calculada dinamicamente à medida que as empresas fossem encontradas pelos \textit{endpoints}. Embora essa solução funcionasse, ela prejudicaria a pesquisa por distância no front-end, já que as primeiras buscas não trariam resultados completos. Essa abordagem foi posteriormente descartada, e, ao final da Sprint 2, começamos a considerar o uso da Brasil API, o que se concretizou no início da Sprint 3.\par
 
 \begin{reflection}
 % text-p-0915

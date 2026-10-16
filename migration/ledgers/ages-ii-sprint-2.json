@@ -22,104 +22,104 @@
           "start_byte": 173,
           "end_byte": 187,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0906",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
           "start_byte": 292,
-          "end_byte": 574,
+          "end_byte": 592,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0907",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 602,
-          "end_byte": 892,
+          "start_byte": 620,
+          "end_byte": 919,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0908",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 920,
-          "end_byte": 1611,
+          "start_byte": 947,
+          "end_byte": 1638,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0909",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 1639,
-          "end_byte": 1910,
+          "start_byte": 1666,
+          "end_byte": 1937,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0910",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 1938,
-          "end_byte": 2414,
+          "start_byte": 1965,
+          "end_byte": 2441,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0911",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 2442,
-          "end_byte": 2766,
+          "start_byte": 2469,
+          "end_byte": 2856,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0912",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 2794,
-          "end_byte": 3479,
+          "start_byte": 2884,
+          "end_byte": 3569,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0913",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 3507,
-          "end_byte": 3976,
+          "start_byte": 3597,
+          "end_byte": 4075,
           "serializations": [],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0915",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 4023,
-          "end_byte": 4374,
+          "start_byte": 4122,
+          "end_byte": 4473,
           "serializations": [
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0916",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 4402,
-          "end_byte": 5038,
+          "start_byte": 4501,
+          "end_byte": 5137,
           "serializations": [
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         },
         {
           "source_id": "text-p-0917",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
-          "start_byte": 5066,
-          "end_byte": 5537,
+          "start_byte": 5165,
+          "end_byte": 5636,
           "serializations": [
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         }
       ],
       "asset_map": [],
@@ -193,7 +193,7 @@
           "start_byte": 82,
           "end_byte": 131,
           "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text.",
-          "target_sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
         }
       ],
       "reference_paragraph_layout": {
@@ -203,7 +203,37 @@
           "text-p-0916",
           "text-p-0917"
         ]
-      }
+      },
+      "emphasis_coalescence_evidence": [
+        {
+          "source_paragraph_id": "text-p-0907",
+          "source_spans": [
+            {
+              "id": "text-span-1082",
+              "visible_text": "sample",
+              "style": "Emphasis",
+              "style_source": "styles.xml"
+            },
+            {
+              "id": "text-span-1084",
+              "visible_text": "d",
+              "style": "T280",
+              "style_source": "content.xml",
+              "ancestor_span": {
+                "id": "text-span-1083",
+                "style": "Emphasis",
+                "style_source": "styles.xml"
+              }
+            }
+          ],
+          "effective_properties": {
+            "fo:font-style": "italic"
+          },
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+          "target_serialization": "\\textit{sampled}",
+          "disposition": "Both adjacent visible fragments resolve to italic; a single contiguous LaTeX wrapper covers both without changing visible text."
+        }
+      ]
     }
   }
 }

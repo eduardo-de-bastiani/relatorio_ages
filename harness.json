@@ -90,6 +90,9 @@
     }
   },
   "authorized_units": [
+    "chapter-02-text-h-0009",
+    "chapter-02-text-h-0010",
+    "chapter-02-text-h-0011",
     "chapter-04-text-h-0039",
     "chapter-04-text-h-0040",
     "chapter-04-text-h-0041",
@@ -107,6 +110,7 @@
     "chapter-04-text-h-0073"
   ],
   "authorization_evidence": "migration/approvals/ages-ii-authorization.json",
+  "additional_authorization_evidence": "migration/approvals/ages-i-ii-formatting-authorization.json",
   "authorized_edition": "ages-ii",
   "asset_ownership": {
     "chapter-02-text-h-0003": [

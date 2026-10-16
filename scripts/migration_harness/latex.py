@@ -126,7 +126,7 @@ def macro_definitions(text: str) -> list[dict]:
     return definitions
 
 
-MEMORIAL_FIGURE_BODY = r'\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape #2}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\XeTeXpicfile "#1" width #5\linewidth\relax}\par\small\SingleSpacing #4\par\end{figure}'
+MEMORIAL_FIGURE_BODY = r'\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape #2}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\XeTeXpicfile "#1" width #5\linewidth\relax}\par\begingroup\centering\small\SingleSpacing #4\par\endgroup\end{figure}'
 
 
 def canonical_macro_body(body: str) -> str:

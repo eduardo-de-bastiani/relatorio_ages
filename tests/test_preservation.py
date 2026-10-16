@@ -25,6 +25,8 @@ from scripts.migration_harness.preservation import (
     _verify_ages_ii_technology_paragraph,
     _load_presentation_authorization,
     AGES_II_TECHNOLOGY_REFERENCE_KEYS,
+    AGES_II_ADDITIONAL_REFERENCE_RECORDS,
+    AGES_II_RFC_REFERENCE_FIELDS,
     AGES_II_TECHNOLOGY_TEXT_IDS,
     AGES_II_TECHNOLOGY_CITATIONS_AFTER,
     AGES_II_INLINE_TAB_COUNTS,
@@ -32,6 +34,11 @@ from scripts.migration_harness.preservation import (
     AGES_II_LEADING_SPACE_COUNTS,
     AGES_II_LEADING_LINE_BREAK_COUNTS,
     AGES_II_PRESENTATION_AUTHORIZATION,
+    AGES_I_II_WIKI_SENTENCES,
+    AGES_I_II_TECHNICAL_CITATIONS,
+    AGES_I_II_TECHNICAL_CITATION_KEYS,
+    _load_ages_i_ii_formatting_authorization,
+    _citation_keys_in_fragment,
     _is_source_heading,
     _leading_tab_paragraph_ids,
     _source_whitespace_verified,
@@ -78,12 +85,33 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(PRESENTATION_OVERRIDES_BY_UNIT["ages-ii-sprint-4"], {"text-p-0962"})
         self.assertNotIn("chapter-05-text-h-0074", authorization["scope"])
 
+    def test_ages_i_presentation_authorization_remains_scoped_after_ages_ii_rules_are_added(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-02-text-h-0011")
+        self.assertEqual(authorization["scope"], "AGES I / Easy Choose only")
+        self.assertEqual(set(authorization["repository_links"]), {"text-a-0105", "text-a-0106", "text-a-0107"})
+        self.assertEqual(
+            set(authorization["approved_presentation_changes"]["section_numbering"]),
+            {"text-h-0002", "text-h-0022"},
+        )
+
     def test_ages_ii_authorized_citation_keys_exist_in_integrated_bibliography(self):
         repo = Path(__file__).resolve().parents[1]
         bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
         for key in AGES_II_TECHNOLOGY_REFERENCE_KEYS.values():
             with self.subTest(key=key):
                 self.assertIn(f"@online{{{key},", bibliography)
+
+    def test_brand_authors_use_mixed_case_in_parenthetical_citations(self):
+        repo = Path(__file__).resolve().parents[1]
+        bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+        style = (repo / "relatorio_AGES_eduardo/util/style.tex").read_text(encoding="utf-8")
+        self.assertIn("author = {{Figma}}", bibliography)
+        self.assertIn("author = {{Docker}}", bibliography)
+        self.assertNotIn("author = {{FIGMA}}", bibliography)
+        self.assertNotIn("author = {{DOCKER}}", bibliography)
+        self.assertIn(r"style=abnt,repeatfields=true", style)
+        self.assertNotIn(r"\ExecuteBibliographyOptions{dashed=false}", style)
 
     def test_ages_ii_prefix_tokens_project_exactly_and_are_scope_gated(self):
         repo = Path(__file__).resolve().parents[1]
@@ -192,7 +220,7 @@ class PreservationTests(unittest.TestCase):
             parts.append(fragment)
             offset += len(encoded)
             citation_gap = "" if records[rid].get("text", "").endswith((" ", "\t")) else r"\space"
-            for key in AGES_II_TECHNOLOGY_CITATIONS_AFTER.get(rid, []):
+            for key in AGES_I_II_TECHNICAL_CITATIONS["chapter-04-text-h-0046"].get(rid, []):
                 suffix = citation_gap + r"\cite{" + key + "}"
                 parts.append(suffix)
                 offset += len(suffix.encode())
@@ -203,6 +231,7 @@ class PreservationTests(unittest.TestCase):
                 offset += len(link.encode())
             parts.append(" ")
             offset += 1
+        parts.append(r"\href{https://www.docker.com/}{Documentação Docker} ")
         parts.append(r"\par")
         source = "".join(parts)
         bibliography = []
@@ -215,6 +244,20 @@ class PreservationTests(unittest.TestCase):
                 "  year = {2024},\n"
                 "  urldate = {2024-10-15},\n"
                 "}\n"
+            )
+        for key, expected in AGES_II_ADDITIONAL_REFERENCE_RECORDS.items():
+            author = f"  author = {{{{{expected['author']}}}}},\n" if expected["author"] else ""
+            bibliography.append(
+                f"@online{{{key},\n" + author
+                + f"  title = {{{expected['title']}}},\n"
+                + f"  url = {{{expected['url']}}},\n"
+                + "  year = {2024},\n  urldate = {2024-10-15},\n}\n"
+            )
+        for key, expected in AGES_II_RFC_REFERENCE_FIELDS.items():
+            additional = "".join(f"  {field} = {{{value}}},\n" for field, value in expected.items())
+            bibliography.append(
+                f"@online{{{key},\n" + additional
+                + "  urldate = {2024-10-15},\n}\n"
             )
         disposition = {
             "source_id": "text-list-0109",
@@ -326,6 +369,46 @@ class PreservationTests(unittest.TestCase):
             _project_approved_presentation(
                 source_id, source, target + " Alterado", ["repository_link_sentence"], {},
             )
+
+    def test_ages_i_ii_wiki_sentence_overlay_is_exact_and_keeps_the_odt_url(self):
+        repo = Path(__file__).resolve().parents[1]
+        auth = _load_ages_i_ii_formatting_authorization(repo, "chapter-02-text-h-0009")
+        for paragraph_id, rule in AGES_I_II_WIKI_SENTENCES.items():
+            with self.subTest(paragraph_id=paragraph_id):
+                leading = "\t" * rule["leading_tabs"]
+                expected = leading + rule["source_anchor"]
+                displayed = leading + rule["prefix"] + rule["anchor"] + rule["suffix"]
+                projected, evidence = _project_approved_presentation(
+                    paragraph_id, expected, displayed, ["wiki_reference_sentence"], None, auth,
+                )
+                self.assertEqual(projected, expected)
+                self.assertEqual(evidence["href"], rule["href"])
+                linked, link_evidence = _project_approved_presentation(
+                    rule["source_id"], rule["source_anchor"], rule["anchor"],
+                    ["wiki_reference_sentence"], None, auth,
+                )
+                self.assertEqual(linked, rule["source_anchor"])
+                self.assertEqual(link_evidence["displayed"], rule["anchor"])
+                with self.assertRaises(UnsupportedSerialization):
+                    _project_approved_presentation(
+                        paragraph_id, expected, displayed + " inventado",
+                        ["wiki_reference_sentence"], None, auth,
+                    )
+
+    def test_technology_citation_serialization_is_removed_only_as_verified_apparatus(self):
+        value = r"TypeScript\space\cite{ages-ii-typescript}"
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(value)
+        self.assertEqual(displayed_text(value, ["technology_citation"]), "TypeScript")
+        self.assertEqual(
+            _citation_keys_in_fragment(value),
+            ["ages-ii-typescript"],
+        )
+        self.assertEqual(
+            set(key for values in AGES_I_II_TECHNICAL_CITATIONS["chapter-04-text-h-0046"].values() for key in values)
+            - AGES_I_II_TECHNICAL_CITATION_KEYS,
+            set(),
+        )
 
     def test_authorized_cross_reference_overlay_has_exact_source_ids(self):
         source_id = "text-p-0325"

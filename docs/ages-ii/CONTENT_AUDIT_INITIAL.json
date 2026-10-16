@@ -1,0 +1,2721 @@
+{
+  "schema_version": 1,
+  "audit_type": "independent-content-audit",
+  "status": "FAIL",
+  "snapshot": {
+    "base_commit": "1fdeefeda92c574e42b3ffd539db24346f8a00b7",
+    "branch": "migration/ages-ii-content-audit",
+    "source_file_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "odt_content_xml_sha256": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28",
+    "target_unit_file_hashes": [
+      {
+        "unit_id": "chapter-04-text-h-0039",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex",
+        "sha256": "e75b0ad5c6932b4884573cf1130ceaa79887d3b9fd0360352c6815d74cc900f1"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0040",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex",
+        "sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0041",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0041.tex",
+        "sha256": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0042",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+        "sha256": "275bb7d8d1e04074a972d7bc0335b0ea87379eec2d97a7571d49be4ebd9de86b"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0043",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex",
+        "sha256": "ffd329883dcc66ae8790019d7b6290e67c56a232c58787e56e0fd2e178fd5aa4"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0044",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+        "sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0045",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex",
+        "sha256": "39c9968773503b12afb5a5dd934d02183ec0cad960c33f3f2ebb46108b5450b4"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0046",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+        "sha256": "e7b80fd43c350f0466e3c4e866b185e5929ec9f9f539a33f68bf7ca4436bdfba"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0047",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0047.tex",
+        "sha256": "15b40313c28bff9f372231e9b27ca5e3a69e2d27a5f4eb253eed7827a1338d8e"
+      },
+      {
+        "unit_id": "ages-ii-sprint-0",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+        "sha256": "d165a5e3c5b588e6d4a79546802fb90f1c3d9c01bb58f33b71e4034be6937ea9"
+      },
+      {
+        "unit_id": "ages-ii-sprint-1",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+        "sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+      },
+      {
+        "unit_id": "ages-ii-sprint-2",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+        "sha256": "0957754a6793b2c30eac3c7ae396bbda587d64196e288c13355645e6055aedee"
+      },
+      {
+        "unit_id": "ages-ii-sprint-3",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-3.tex",
+        "sha256": "722be729407954f7886fea721af0995b560c7366d1486a6895a378b2b754461d"
+      },
+      {
+        "unit_id": "ages-ii-sprint-4",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+        "sha256": "dd164cb9f29eaeb8b8a585c6c2135352d0cf1e7dab6ccb6b66871986c883202f"
+      },
+      {
+        "unit_id": "chapter-04-text-h-0073",
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex",
+        "sha256": "766f886a67284abaf36dbee9eaa6759ad92ac0ed1ac6a779a22aa33bbcb351d7"
+      }
+    ],
+    "audit_timestamp_local": "2026-10-16T15:43:44-03:00"
+  },
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "part": "content.xml",
+    "raw_xml_sha256": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28",
+    "chapter_boundary_body_child_indices": [
+      642,
+      879
+    ],
+    "chapter_title": "4 - PROJETO AGES II – INDÚSTRIA DIGITAL",
+    "stop_before": "5 - PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID"
+  },
+  "scope": [
+    "chapter-04-text-h-0039",
+    "chapter-04-text-h-0040",
+    "chapter-04-text-h-0041",
+    "chapter-04-text-h-0042",
+    "chapter-04-text-h-0043",
+    "chapter-04-text-h-0044",
+    "chapter-04-text-h-0045",
+    "chapter-04-text-h-0046",
+    "chapter-04-text-h-0047",
+    "ages-ii-sprint-0",
+    "ages-ii-sprint-1",
+    "ages-ii-sprint-2",
+    "ages-ii-sprint-3",
+    "ages-ii-sprint-4",
+    "chapter-04-text-h-0073"
+  ],
+  "source_counts": {
+    "body_scope_children": 237,
+    "text_p": 260,
+    "text_h": 35,
+    "text_list": 68,
+    "text_list_item": 64,
+    "draw_frame": 19,
+    "draw_text_box": 12,
+    "draw_image": 7,
+    "text_a": 13,
+    "tables": 0,
+    "notes": 0,
+    "objects": 0,
+    "formulas": 0,
+    "charts": 0
+  },
+  "target_counts": {
+    "unit_files": 15,
+    "heading_commands": 15,
+    "figures": 7,
+    "placeholders": 1,
+    "reflection_environments": 5,
+    "list_environments": 9,
+    "items": 23
+  },
+  "checks": [
+    {
+      "id": "source_hash",
+      "status": "PASS",
+      "evidence": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+    },
+    {
+      "id": "authorized_units",
+      "status": "PASS",
+      "evidence": {
+        "authorized": [
+          "chapter-04-text-h-0039",
+          "chapter-04-text-h-0040",
+          "chapter-04-text-h-0041",
+          "chapter-04-text-h-0042",
+          "chapter-04-text-h-0043",
+          "chapter-04-text-h-0044",
+          "chapter-04-text-h-0045",
+          "chapter-04-text-h-0046",
+          "chapter-04-text-h-0047",
+          "ages-ii-sprint-0",
+          "ages-ii-sprint-1",
+          "ages-ii-sprint-2",
+          "ages-ii-sprint-3",
+          "ages-ii-sprint-4",
+          "chapter-04-text-h-0073"
+        ],
+        "converted_files": 15,
+        "missing_files": []
+      }
+    },
+    {
+      "id": "source_xpath_resolution",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "id": "text_presence_order",
+      "status": "PASS",
+      "evidence": {
+        "unresolved_differences": [],
+        "approved_repository_sentence_adaptation": [
+          {
+            "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+            "source_anchor": "Repositório Indústria Digital Frontend",
+            "target_anchor": "Indústria Digital Frontend",
+            "approved_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Frontend."
+          },
+          {
+            "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+            "source_anchor": "Repositório Indústria Digital Backend",
+            "target_anchor": "Indústria Digital Backend",
+            "approved_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Backend."
+          }
+        ]
+      }
+    },
+    {
+      "id": "heading_hierarchy_titles",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "id": "original_hyperlinks",
+      "status": "PASS",
+      "evidence": {
+        "source_count": 13,
+        "target_count": 13,
+        "source_urls": [
+          "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+          "https://docs.python.org/pt-br/3/",
+          "https://docs.sqlalchemy.org/en/20/",
+          "https://fastapi.tiangolo.com/",
+          "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+          "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups",
+          "https://v17.angular.io/docs",
+          "https://www.postgresql.org/docs/",
+          "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html"
+        ],
+        "target_urls": [
+          "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+          "https://docs.python.org/pt-br/3/",
+          "https://docs.sqlalchemy.org/en/20/",
+          "https://fastapi.tiangolo.com/",
+          "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+          "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados",
+          "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups",
+          "https://v17.angular.io/docs",
+          "https://www.postgresql.org/docs/",
+          "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html"
+        ],
+        "missing_urls": [],
+        "extra_urls": [],
+        "approved_anchor_sentence_changes": [
+          {
+            "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+            "source_anchor": "Repositório Indústria Digital Frontend",
+            "target_anchor": "Indústria Digital Frontend",
+            "approved_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Frontend."
+          },
+          {
+            "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+            "source_anchor": "Repositório Indústria Digital Backend",
+            "target_anchor": "Indústria Digital Backend",
+            "approved_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Backend."
+          }
+        ]
+      }
+    },
+    {
+      "id": "image_presence_order_hash",
+      "status": "PASS",
+      "evidence": {
+        "source_images": [
+          {
+            "occurrence_id": "draw-image-0009",
+            "unit_id": "chapter-04-text-h-0040",
+            "href": "Pictures/1000000000000FC000000BD0A1701859.jpg",
+            "asset_id": "asset-0018",
+            "source_sha256": "e72fefda1ff42e6892d4baaf060c368f88d9e7b5839c75c4e7d2f2c44a2949ff",
+            "source_size": 1481857
+          },
+          {
+            "occurrence_id": "draw-image-0010",
+            "unit_id": "chapter-04-text-h-0044",
+            "href": "Pictures/1000000000000508000000A57BE2D817.png",
+            "asset_id": "asset-0008",
+            "source_sha256": "17d98d72ab9a0d49427a6b318a7b57fadbbd2443f9e1f40fb3db285e9b51e35e",
+            "source_size": 24270
+          },
+          {
+            "occurrence_id": "draw-image-0011",
+            "unit_id": "chapter-04-text-h-0045",
+            "href": "Pictures/10000001000003F50000023C0EC79B82.png",
+            "asset_id": "asset-0020",
+            "source_sha256": "07edbb01f49f214603297d772bf61774b67fbdfa7c3d2dcb90300718cc109e30",
+            "source_size": 35694
+          },
+          {
+            "occurrence_id": "draw-image-0012",
+            "unit_id": "chapter-04-text-h-0045",
+            "href": "Pictures/10000001000003F50000023C87C0702C.png",
+            "asset_id": "asset-0022",
+            "source_sha256": "c3dcc3f66ab7db5f22e6b5e33c52d10881ba6bcc1e6448124dac731fcaa41962",
+            "source_size": 63087
+          },
+          {
+            "occurrence_id": "draw-image-0013",
+            "unit_id": "chapter-04-text-h-0045",
+            "href": "Pictures/10000001000003F50000023C6CDB69B2.png",
+            "asset_id": "asset-0021",
+            "source_sha256": "51285b445604b4f618d56aff677dfabc86e51afc51b328c13514eabd62228fd6",
+            "source_size": 189238
+          },
+          {
+            "occurrence_id": "draw-image-0014",
+            "unit_id": "chapter-04-text-h-0045",
+            "href": "Pictures/10000001000003F50000023CA09C645F.png",
+            "asset_id": "asset-0023",
+            "source_sha256": "83c21f098a170ec931eeda44cd0d32cf79928605502892ae2a99816cb018b0d5",
+            "source_size": 51501
+          },
+          {
+            "occurrence_id": "draw-image-0015",
+            "unit_id": "ages-ii-sprint-4",
+            "href": "Pictures/10000001000004D0000002BCC1C29F70.png",
+            "asset_id": "asset-0025",
+            "source_sha256": "4c17f14fb04490efc3d6ba20df9e5dbe0cce9e200c247253b698b22de2fa3f42",
+            "source_size": 104469
+          }
+        ],
+        "target_figures": [
+          {
+            "unit_id": "chapter-04-text-h-0040",
+            "path": "imagens/original/asset-0018.jpg",
+            "caption": "Figura 9 – Foto do Time - AGES II",
+            "label": "ages-ii:draw-image-0009",
+            "target_sha256": "e72fefda1ff42e6892d4baaf060c368f88d9e7b5839c75c4e7d2f2c44a2949ff",
+            "target_size": 1481857
+          },
+          {
+            "unit_id": "chapter-04-text-h-0044",
+            "path": "imagens/original/asset-0008.png",
+            "caption": "Figura 10 – Arquitetura da Aplicação - AGES II",
+            "label": "ages-ii:draw-image-0010",
+            "target_sha256": "17d98d72ab9a0d49427a6b318a7b57fadbbd2443f9e1f40fb3db285e9b51e35e",
+            "target_size": 24270
+          },
+          {
+            "unit_id": "chapter-04-text-h-0045",
+            "path": "imagens/original/asset-0020.png",
+            "caption": "Figura 11 – Landing Page - AGES II",
+            "label": "ages-ii:draw-image-0011",
+            "target_sha256": "07edbb01f49f214603297d772bf61774b67fbdfa7c3d2dcb90300718cc109e30",
+            "target_size": 35694
+          },
+          {
+            "unit_id": "chapter-04-text-h-0045",
+            "path": "imagens/original/asset-0022.png",
+            "caption": "Figura 12 – Tela de Dashboard - AGES II",
+            "label": "ages-ii:draw-image-0012",
+            "target_sha256": "c3dcc3f66ab7db5f22e6b5e33c52d10881ba6bcc1e6448124dac731fcaa41962",
+            "target_size": 63087
+          },
+          {
+            "unit_id": "chapter-04-text-h-0045",
+            "path": "imagens/original/asset-0021.png",
+            "caption": "Figura 13 – Tela do Mapa - AGES II",
+            "label": "ages-ii:draw-image-0013",
+            "target_sha256": "51285b445604b4f618d56aff677dfabc86e51afc51b328c13514eabd62228fd6",
+            "target_size": 189238
+          },
+          {
+            "unit_id": "chapter-04-text-h-0045",
+            "path": "imagens/original/asset-0023.png",
+            "caption": "Figura 14 – Tela das Empresas - AGES II",
+            "label": "ages-ii:draw-image-0014",
+            "target_sha256": "83c21f098a170ec931eeda44cd0d32cf79928605502892ae2a99816cb018b0d5",
+            "target_size": 51501
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "path": "imagens/original/asset-0025.png",
+            "caption": "Figura 15 – Fluxo de Processamento de Presença Digital - AGES II",
+            "label": "fig:ages-ii-sprint-4-presenca-digital",
+            "target_sha256": "4c17f14fb04490efc3d6ba20df9e5dbe0cce9e200c247253b698b22de2fa3f42",
+            "target_size": 104469
+          }
+        ],
+        "missing_hashes": [],
+        "extra_hashes": []
+      }
+    },
+    {
+      "id": "reflection_text",
+      "status": "PASS",
+      "evidence": {
+        "source_count": 5,
+        "target_count": 5,
+        "differences": [],
+        "source_ids": [
+          "draw-text-box-0021",
+          "draw-text-box-0022",
+          "draw-text-box-0023",
+          "draw-text-box-0024",
+          "draw-text-box-0026"
+        ]
+      }
+    },
+    {
+      "id": "authored_lists",
+      "status": "PASS",
+      "evidence": {
+        "source_groups": [
+          {
+            "unit_id": "ages-ii-sprint-3",
+            "id": "text-list-0130",
+            "items": [
+              "Indexação das colunas mais consultadas: nome fantasia, data de início de atividade e indexação composta para as colunas de CNPJ, ID e DV são alguns exemplos.",
+              "Reorganização das tabelas: O campo UF foi movido para a tabela de municípios, permitindo que o front-end aplique filtros por estado e exiba apenas os municípios correspondentes, diminuindo a carga nas queries e melhorando a experiência do usuário."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0146",
+            "items": [
+              "name_similarity: Este algoritmo utiliza técnicas de n-gramas para medir a similaridade entre o nome do estabelecimento e os títulos das páginas retornadas.",
+              "similaridade_link: Analisa a correspondência entre o nome do estabelecimento e os links obtidos nas buscas.",
+              "verify_snippet: Extrai e verifica informações diretamente dos snippets das páginas, como CEP, Cidade e Logradouro.",
+              "normalize_string: Padroniza as strings, removendo caracteres especiais e ajustando formatações."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0147",
+            "items": [
+              "Links Relevantes: Cada link com similaridade de nome acima de 0,1 contribui com 0,1 ponto. Se todos os links forem válidos, o máximo possível nesta categoria é de 1 ponto.",
+              "CEP: Um link que contenha o CEP correto no snippet soma 2 pontos. Cada link adicional com o CEP correto acrescenta 0,1 ponto, com um total de até 3 pontos.",
+              "Cidade: Se a cidade do estabelecimento for encontrada em um snippet, são adicionados 2 pontos. Links adicionais com essa informação somam 0,1 ponto cada, totalizando até 3 pontos.",
+              "Logradouro: Encontrar o logradouro no snippet adiciona 2 pontos. Cada ocorrência adicional soma 0,1 ponto, também com um máximo de 3 pontos."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0148",
+            "items": [
+              "Client: Foram criados clientes dedicados para Google, Instagram e LinkedIn. Todas as funções foram transformadas em assíncronas, garantindo que as consultas às APIs externas ocorressem de forma independente e simultânea."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0149",
+            "items": [
+              "Service: A lógica central do arquivo DigitalPresenceService foi simplificada, centralizando tanto a busca quanto o cálculo da presença digital, o que tornou o fluxo mais direto e eficiente."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0150",
+            "items": [
+              "Router: O endpoint foi ajustado para ser mais conciso e direto, removendo redundâncias desnecessárias e melhorando a clareza do código."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0151",
+            "items": [
+              "DigitalPresence: Os algoritmos anteriormente descritos foram otimizados, aumentando a precisão na comparação de nomes e na análise dos snippets retornados pelas buscas."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0152",
+            "items": [
+              "Google: Verifica informações como CEP e logradouro nos snippets, dada a relevância desses dados nas buscas de websites.",
+              "Instagram e LinkedIn: Possuem fluxos ajustados, porém sem incluir verificações de CEP nos snippets, visto que esses dados não são relevantes nessas plataformas."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "id": "text-list-0153",
+            "items": [
+              "Link mais relevante do Google (website).",
+              "Link mais relevante do Instagram (perfil).",
+              "Link mais relevante do LinkedIn (página).",
+              "Nível de confiança para o link do Google.",
+              "Nível de confiança para o link do Instagram.",
+              "Nível de confiança para o link do LinkedIn.",
+              "Nível de presença digital total."
+            ]
+          }
+        ],
+        "target_groups": [
+          {
+            "unit_id": "ages-ii-sprint-3",
+            "environment": "enumerate",
+            "items": [
+              "Indexação das colunas mais consultadas: nome fantasia, data de início de atividade e indexação composta para as colunas de CNPJ, ID e DV são alguns exemplos.",
+              "Reorganização das tabelas: O campo UF foi movido para a tabela de municípios, permitindo que o front-end aplique filtros por estado e exiba apenas os municípios correspondentes, diminuindo a carga nas queries e melhorando a experiência do usuário."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "name_similarity: Este algoritmo utiliza técnicas de n-gramas para medir a similaridade entre o nome do estabelecimento e os títulos das páginas retornadas.",
+              "similaridade_link: Analisa a correspondência entre o nome do estabelecimento e os links obtidos nas buscas.",
+              "verify_snippet: Extrai e verifica informações diretamente dos snippets das páginas, como CEP, Cidade e Logradouro.",
+              "normalize_string: Padroniza as strings, removendo caracteres especiais e ajustando formatações."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "Links Relevantes: Cada link com similaridade de nome acima de 0,1 contribui com 0,1 ponto. Se todos os links forem válidos, o máximo possível nesta categoria é de 1 ponto.",
+              "CEP: Um link que contenha o CEP correto no snippet soma 2 pontos. Cada link adicional com o CEP correto acrescenta 0,1 ponto, com um total de até 3 pontos.",
+              "Cidade: Se a cidade do estabelecimento for encontrada em um snippet, são adicionados 2 pontos. Links adicionais com essa informação somam 0,1 ponto cada, totalizando até 3 pontos.",
+              "Logradouro: Encontrar o logradouro no snippet adiciona 2 pontos. Cada ocorrência adicional soma 0,1 ponto, também com um máximo de 3 pontos."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "Client: Foram criados clientes dedicados para Google, Instagram e LinkedIn. Todas as funções foram transformadas em assíncronas, garantindo que as consultas às APIs externas ocorressem de forma independente e simultânea."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "Service: A lógica central do arquivo DigitalPresenceService foi simplificada, centralizando tanto a busca quanto o cálculo da presença digital, o que tornou o fluxo mais direto e eficiente."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "Router: O endpoint foi ajustado para ser mais conciso e direto, removendo redundâncias desnecessárias e melhorando a clareza do código."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "DigitalPresence: Os algoritmos anteriormente descritos foram otimizados, aumentando a precisão na comparação de nomes e na análise dos snippets retornados pelas buscas."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "Google: Verifica informações como CEP e logradouro nos snippets, dada a relevância desses dados nas buscas de websites.",
+              "Instagram e LinkedIn: Possuem fluxos ajustados, porém sem incluir verificações de CEP nos snippets, visto que esses dados não são relevantes nessas plataformas."
+            ]
+          },
+          {
+            "unit_id": "ages-ii-sprint-4",
+            "environment": "itemize",
+            "items": [
+              "Link mais relevante do Google (website).",
+              "Link mais relevante do Instagram (perfil).",
+              "Link mais relevante do LinkedIn (página).",
+              "Nível de confiança para o link do Google.",
+              "Nível de confiança para o link do Instagram.",
+              "Nível de confiança para o link do LinkedIn.",
+              "Nível de presença digital total."
+            ]
+          }
+        ],
+        "group_item_count_mismatches": {},
+        "note": "Listas de numeração estrutural de títulos ODF foram excluídas; os tópicos de tecnologia e parágrafos de repositório seguem a apresentação corrida aprovada pelo usuário."
+      }
+    },
+    {
+      "id": "tables_notes_embedded_objects",
+      "status": "PASS",
+      "evidence": {
+        "body_scope_children": 237,
+        "text_p": 260,
+        "text_h": 35,
+        "text_list": 68,
+        "text_list_item": 64,
+        "draw_frame": 19,
+        "draw_text_box": 12,
+        "draw_image": 7,
+        "text_a": 13,
+        "tables": 0,
+        "notes": 0,
+        "objects": 0,
+        "formulas": 0,
+        "charts": 0
+      }
+    },
+    {
+      "id": "source_element_traceability",
+      "status": "PASS",
+      "evidence": {
+        "records_with_unit_destination": 182,
+        "total_records": 182,
+        "unmapped_records": [],
+        "note": "The manifest maps each source record to its authorized unit destination; source comments are supplementary rather than the sole traceability proof."
+      }
+    },
+    {
+      "id": "no_cross_edition_content",
+      "status": "PASS",
+      "evidence": "O escopo de origem foi delimitado do cabeçalho 4 - PROJETO AGES II até o cabeçalho seguinte 5 - PROJETOS AGES III; arquivos alvo limitados às 15 unidades autorizadas."
+    },
+    {
+      "id": "unsupported_latex_commands",
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "id": "inline_emphasis_preservation",
+      "status": "FAIL",
+      "evidence": {
+        "confirmed_missing_occurrences": 30,
+        "affected_units": [
+          "ages-ii-sprint-0",
+          "ages-ii-sprint-1",
+          "ages-ii-sprint-2",
+          "ages-ii-sprint-3",
+          "chapter-04-text-h-0042",
+          "chapter-04-text-h-0046",
+          "chapter-04-text-h-0073"
+        ],
+        "occurrences": [
+          {
+            "audit_occurrence_id": "ages-ii-emph-0001",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0042",
+            "source_paragraph_record_id": "text-p-0774",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[611]/text:span[3]",
+            "source_span_text": "landing,",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P216",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "none",
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "00962725"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T215",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+                  "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "00962725",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "style:text-underline-style": "none",
+              "fo:color": "#000000",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+            "target_block_excerpt": "Repositório referente às páginas de landing, dashboard, mapa e empresas.",
+            "target_text_offset_reported_by_comparator": 36,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0002",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0042",
+            "source_paragraph_record_id": "text-p-0774",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[611]/text:span[4]",
+            "source_span_text": "dashboard,",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P216",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "none",
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "00962725"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T216",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+                  "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "0098cd53",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "style:text-underline-style": "none",
+              "fo:color": "#000000",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+            "target_block_excerpt": "Repositório referente às páginas de landing, dashboard, mapa e empresas.",
+            "target_text_offset_reported_by_comparator": 45,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0003",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0046",
+            "source_paragraph_record_id": "text-p-0813",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[40]/text:list-item[1]/text:p[2]/text:span[2]",
+            "source_span_text": "landing page",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P234",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+                  "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{http://openoffice.org/2009/office}rsid": "00314d0c",
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "00a14b9d",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:color": "#000000",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+            "target_block_excerpt": "*4.2.5 Tecnologias utilizadas tocsubsection4.2.5 Tecnologias utilizadas Para o desenvolvimento do projeto, utilizamos as seguintes tecnologias: Angular (com TypeScript): Utilizado para o Front-end da aplicação, desenvolvido em TypeScript, responsável por renderizar a interface de usuário, que inclui a landing page, a tela de dashboards, a visualização de mapa e a página das empresas. Angular envia requisições HTTP para o Back-end e recebe dados em formato JSON, atualizando a interface do usuário",
+            "target_text_offset_reported_by_comparator": 303,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0004",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0046",
+            "source_paragraph_record_id": "text-p-0813",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[40]/text:list-item[1]/text:p[2]/text:span[3]",
+            "source_span_text": "dashboards",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P234",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+                  "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{http://openoffice.org/2009/office}rsid": "00314d0c",
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "00a14b9d",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:color": "#000000",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+            "target_block_excerpt": "*4.2.5 Tecnologias utilizadas tocsubsection4.2.5 Tecnologias utilizadas Para o desenvolvimento do projeto, utilizamos as seguintes tecnologias: Angular (com TypeScript): Utilizado para o Front-end da aplicação, desenvolvido em TypeScript, responsável por renderizar a interface de usuário, que inclui a landing page, a tela de dashboards, a visualização de mapa e a página das empresas. Angular envia requisições HTTP para o Back-end e recebe dados em formato JSON, atualizando a interface do usuário",
+            "target_text_offset_reported_by_comparator": 327,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0005",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0046",
+            "source_paragraph_record_id": "text-p-0830",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[44]/text:list-item[1]/text:p[2]/text:span[1]",
+            "source_span_text": "Object-Relational Mapping",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P243",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{http://openoffice.org/2009/office}rsid": "00a14b9d",
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "00a14b9d",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+            "target_block_excerpt": "*4.2.5 Tecnologias utilizadas tocsubsection4.2.5 Tecnologias utilizadas Para o desenvolvimento do projeto, utilizamos as seguintes tecnologias: Angular (com TypeScript): Utilizado para o Front-end da aplicação, desenvolvido em TypeScript, responsável por renderizar a interface de usuário, que inclui a landing page, a tela de dashboards, a visualização de mapa e a página das empresas. Angular envia requisições HTTP para o Back-end e recebe dados em formato JSON, atualizando a interface do usuário",
+            "target_text_offset_reported_by_comparator": 1378,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0006",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0046",
+            "source_paragraph_record_id": "text-p-0841",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[656]/text:span[1]",
+            "source_span_text": "dashboards",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P250",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+                  "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "none",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+                  "{http://openoffice.org/2009/office}rsid": "003d366a",
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "00a14b9d",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:color": "#000000",
+              "style:text-underline-style": "none",
+              "fo:font-weight": "normal",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+            "target_block_excerpt": "*4.2.5 Tecnologias utilizadas tocsubsection4.2.5 Tecnologias utilizadas Para o desenvolvimento do projeto, utilizamos as seguintes tecnologias: Angular (com TypeScript): Utilizado para o Front-end da aplicação, desenvolvido em TypeScript, responsável por renderizar a interface de usuário, que inclui a landing page, a tela de dashboards, a visualização de mapa e a página das empresas. Angular envia requisições HTTP para o Back-end e recebe dados em formato JSON, atualizando a interface do usuário",
+            "target_text_offset_reported_by_comparator": 327,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0007",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-0",
+            "source_paragraph_record_id": "text-p-0844",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[659]/text:span[5]",
+            "source_span_text": "web scraping",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P252",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "008fa3ae"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T258",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+                  "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+                  "{http://openoffice.org/2009/office}rsid": "008fa3ae",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "10.5pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:color": "#000000",
+              "fo:font-style": "italic",
+              "fo:font-weight": "normal"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+            "target_block_excerpt": "Na Sprint 0, iniciei os trabalhos com um foco voltado ao estudo de conceitos básicos de web scraping, uma tecnologia que poderia ser útil para a obtenção de dados provenientes das redes sociais. No entanto, à medida que aprofundei os estudos, percebi que essa prática enfrenta diversas barreiras. Muitas plataformas impõem restrições significativas ao web scraping, tornando essa estratégia não apenas complexa e de difícil escalabilidade, mas também possivelmente ilegal. Diante disso, optamos por d",
+            "target_text_offset_reported_by_comparator": 88,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0008",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-0",
+            "source_paragraph_record_id": "text-p-0844",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[659]/text:span[20]",
+            "source_span_text": "web scraping",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P252",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "008fa3ae"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T260",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "008fa3ae",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+            "target_block_excerpt": "Na Sprint 0, iniciei os trabalhos com um foco voltado ao estudo de conceitos básicos de web scraping, uma tecnologia que poderia ser útil para a obtenção de dados provenientes das redes sociais. No entanto, à medida que aprofundei os estudos, percebi que essa prática enfrenta diversas barreiras. Muitas plataformas impõem restrições significativas ao web scraping, tornando essa estratégia não apenas complexa e de difícil escalabilidade, mas também possivelmente ilegal. Diante disso, optamos por d",
+            "target_text_offset_reported_by_comparator": 88,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0009",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-0",
+            "source_paragraph_record_id": "text-p-0848",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[663]/text:span[10]",
+            "source_span_text": "database",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P225",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "008a971d"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T269",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "00a9f688",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+            "target_block_excerpt": "Como o Banco de Dados precisava ser definido o quanto antes, devido a sua importância para o andamento do projeto, decidi iniciar a modelagem conceitual ainda durante a Sprint 0. Sabíamos que todo o desenvolvimento posterior dependeria dessa modelagem, pois ela determinaria como os dados seriam estruturados e relacionados. No entanto, o cliente só enviou a amostra do banco de dados da Receita Federal no final da Sprint 0, o que limitou a profundidade do trabalho inicial. A modelagem que fiz foi,",
+            "target_text_offset_reported_by_comparator": 636,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0010",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-0",
+            "source_paragraph_record_id": "text-p-0848",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[663]/text:span[12]",
+            "source_span_text": "sample",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "P225",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{http://openoffice.org/2009/office}paragraph-rsid": "008a971d"
+                }
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T270",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "00909df6",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+            "target_block_excerpt": "Como o Banco de Dados precisava ser definido o quanto antes, devido a sua importância para o andamento do projeto, decidi iniciar a modelagem conceitual ainda durante a Sprint 0. Sabíamos que todo o desenvolvimento posterior dependeria dessa modelagem, pois ela determinaria como os dados seriam estruturados e relacionados. No entanto, o cliente só enviou a amostra do banco de dados da Receita Federal no final da Sprint 0, o que limitou a profundidade do trabalho inicial. A modelagem que fiz foi,",
+            "target_text_offset_reported_by_comparator": 645,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0011",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-0",
+            "source_paragraph_record_id": "text-p-0851",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[665]/draw:frame[1]/draw:text-box[1]/text:p[1]/text:span[3]",
+            "source_span_text": "CRUD",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "P124",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T122",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "13pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+            "target_block_excerpt": "A primeira Sprint foi inteiramente dedicada aos estudos, principalmente de APIs e Banco de Dados. Nosso projeto é muito complexo e fora do comum. Não é apenas um CRUD (Create, Read, Update, Delete) básico. Devido a isso, investi muito tempo estudando a viabilidade de certas ferramentas e estratégias para dar vida ao projeto. Confesso que não colocar a “mão na massa” na Sprint 0 foi um pouco desanimador, mas compreendo que nosso projeto necessita de muita pesquisa para criarmos um software funcio",
+            "target_text_offset_reported_by_comparator": 162,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0012",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-0",
+            "source_paragraph_record_id": "text-p-0851",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[665]/draw:frame[1]/draw:text-box[1]/text:p[1]/text:span[5]",
+            "source_span_text": "Create, Read, Update, Delete",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "P124",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T122",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "13pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+            "target_block_excerpt": "A primeira Sprint foi inteiramente dedicada aos estudos, principalmente de APIs e Banco de Dados. Nosso projeto é muito complexo e fora do comum. Não é apenas um CRUD (Create, Read, Update, Delete) básico. Devido a isso, investi muito tempo estudando a viabilidade de certas ferramentas e estratégias para dar vida ao projeto. Confesso que não colocar a “mão na massa” na Sprint 0 foi um pouco desanimador, mas compreendo que nosso projeto necessita de muita pesquisa para criarmos um software funcio",
+            "target_text_offset_reported_by_comparator": 168,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0013",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-1",
+            "source_paragraph_record_id": "text-p-0870",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[683]/text:span[4]/text:span[1]",
+            "source_span_text": "joins",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P254",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T43",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic",
+              "fo:font-weight": "normal"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+            "target_block_excerpt": "Além disso, conduzi uma análise minuciosa das tabelas do banco de dados da Receita Federal, categorizando todas as colunas presentes. Registrei as colunas que seriam úteis e identifiquei aquelas que não seriam utilizadas no projeto. Muitas dessas colunas continham termos codificados, então também realizei a categorização e a tradução de todos os códigos, facilitando a compreensão dos dados. Defini regras claras para a criação de novas colunas, incluindo joins necessários para integrar os dados d",
+            "target_text_offset_reported_by_comparator": 458,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0014",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-1",
+            "source_paragraph_record_id": "text-p-0876",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[688]/draw:frame[1]/draw:text-box[1]/text:p[1]/text:span[3]",
+            "source_span_text": "tasks",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "P124",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T122",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "13pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "13pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+            "target_block_excerpt": "O time iniciou a sprint um tanto desnorteado. As tasks ainda estavam em fase de definição e careciam de clareza, especialmente devido às várias incertezas do projeto, como a dificuldade de obtenção de dados das redes sociais. Devido a isso, observei muitos momentos de ociosidade por parte de alguns colegas, que se viam perdidos no andamento do trabalho. Embora eu tenha prestado auxílio pontual a alguns, deveria ter oferecido um suporte mais robusto e orientado melhor a equipe, dissipando a ‘nebl",
+            "target_text_offset_reported_by_comparator": 49,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0015",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0906",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[714]/text:span[6]",
+            "source_span_text": "squad",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Para a Sprint 2, me foquei em tornar o banco de dados o mais utilizável possível para o squad que estava começando a desenvolver endpoints no back-end. Meu objetivo principal foi garantir que o banco estivesse pronto para uso imediato, facilitando o progresso das demais equipes.",
+            "target_text_offset_reported_by_comparator": 88,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0016",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0906",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[714]/text:span[7]",
+            "source_span_text": "endpoints",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Para a Sprint 2, me foquei em tornar o banco de dados o mais utilizável possível para o squad que estava começando a desenvolver endpoints no back-end. Meu objetivo principal foi garantir que o banco estivesse pronto para uso imediato, facilitando o progresso das demais equipes.",
+            "target_text_offset_reported_by_comparator": 129,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0017",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0907",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[715]/text:span[1]",
+            "source_span_text": "sample",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "Emphasis",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Na Sprint anterior, eu estava trabalhando em scripts SQL para tratar o banco de dados da Receita Federal, chamado de sampled. Para incluir os demais dados necessários, convidei o Lucas, AGES I, para realizarmos os últimos tratamentos, auxiliando-o durante a codificação dos scripts SQL.",
+            "target_text_offset_reported_by_comparator": 117,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0018",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0907",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[715]/text:span[2]/text:span[1]",
+            "source_span_text": "d",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T280",
+                "family": "text",
+                "declared_text_properties": {
+                  "{http://openoffice.org/2009/office}rsid": "00c5d606"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Na Sprint anterior, eu estava trabalhando em scripts SQL para tratar o banco de dados da Receita Federal, chamado de sampled. Para incluir os demais dados necessários, convidei o Lucas, AGES I, para realizarmos os últimos tratamentos, auxiliando-o durante a codificação dos scripts SQL.",
+            "target_text_offset_reported_by_comparator": 39,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0019",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[1]",
+            "source_span_text": "hot",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T281",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "00c678e3",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 19,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0020",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[3]",
+            "source_span_text": "fix",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "Emphasis",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 23,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0021",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[4]",
+            "source_span_text": "branch",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "Emphasis",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 30,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0022",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[5]",
+            "source_span_text": "develop",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 37,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0023",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[7]",
+            "source_span_text": "hot",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T281",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "00c678e3",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 19,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0024",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[8]",
+            "source_span_text": "fix",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "Emphasis",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 23,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0025",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0911",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[719]/text:span[9]",
+            "source_span_text": "develop",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "Emphasis",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado \"public\". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.",
+            "target_text_offset_reported_by_comparator": 37,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0026",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-2",
+            "source_paragraph_record_id": "text-p-0913",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[721]/text:span[1]",
+            "source_span_text": "endpoints",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "Emphasis",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+            "target_block_excerpt": "Consideramos, então, uma abordagem em que a geolocalização seria calculada dinamicamente à medida que as empresas fossem encontradas pelos endpoints. Embora essa solução funcionasse, ela prejudicaria a pesquisa por distância no front-end, já que as primeiras buscas não trariam resultados completos. Essa abordagem foi posteriormente descartada, e, ao final da Sprint 2, começamos a considerar o uso da Brasil API, o que se concretizou no início da Sprint 3.",
+            "target_text_offset_reported_by_comparator": 139,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0027",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-3",
+            "source_paragraph_record_id": "text-p-0936",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[52]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+            "source_span_text": "Indexação das colunas mais consultadas",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P262",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T73",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "solid",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-width": "auto",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-color": "font-color",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "normal",
+              "style:text-underline-style": "solid",
+              "fo:font-weight": "normal"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": false,
+              "underline": true
+            },
+            "expected_latex_commands": [
+              "\\underline{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-3.tex",
+            "target_block_excerpt": "Indexação das colunas mais consultadas: nome fantasia, data de início de atividade e indexação composta para as colunas de CNPJ, ID e DV são alguns exemplos.",
+            "target_text_offset_reported_by_comparator": 0,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0028",
+            "status": "FAIL",
+            "source_unit_id": "ages-ii-sprint-3",
+            "source_paragraph_record_id": "text-p-0937",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[52]/text:list-item[2]/text:p[1]/text:span[1]/text:span[1]",
+            "source_span_text": "Reorganização das tabelas",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P262",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T286",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "solid",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-width": "auto",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-color": "font-color",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "style:text-underline-style": "solid",
+              "fo:font-weight": "normal"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": false,
+              "underline": true
+            },
+            "expected_latex_commands": [
+              "\\underline{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-3.tex",
+            "target_block_excerpt": "Reorganização das tabelas: O campo UF foi movido para a tabela de municípios, permitindo que o front-end aplique filtros por estado e exiba apenas os municípios correspondentes, diminuindo a carga nas queries e melhorando a experiência do usuário.",
+            "target_text_offset_reported_by_comparator": 0,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0029",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0073",
+            "source_paragraph_record_id": "text-p-1020",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[796]/text:span[1]",
+            "source_span_text": "POC",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T175",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex",
+            "target_block_excerpt": "Em resumo, embora o projeto tenha sido desafiador, com altos e baixos, sou muito feliz com o resultado alcançado. Acredito que essa POC (Proof of Concept) serviu como um excelente ponto de partida para que o projeto continue a ser desenvolvido, refinado e aprimorado. E, mais importante, conseguimos comprovar que era possível criar algo tão complexo e inovador, o que, para mim, é uma grande conquista.",
+            "target_text_offset_reported_by_comparator": 132,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          },
+          {
+            "audit_occurrence_id": "ages-ii-emph-0030",
+            "status": "FAIL",
+            "source_unit_id": "chapter-04-text-h-0073",
+            "source_paragraph_record_id": "text-p-1020",
+            "source_span_id": "none-in-manifest; occurrence ID generated for this audit",
+            "source_span_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[796]/text:span[2]",
+            "source_span_text": "(Proof of Concept)",
+            "odf_paragraph_style_chain": [
+              {
+                "name": "Standard",
+                "family": "paragraph",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+                }
+              },
+              {
+                "name": "Text_20_body",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              },
+              {
+                "name": "P51",
+                "family": "paragraph",
+                "declared_text_properties": {}
+              }
+            ],
+            "odf_character_style_chain": [
+              {
+                "name": "T306",
+                "family": "text",
+                "declared_text_properties": {
+                  "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+                  "{http://openoffice.org/2009/office}rsid": "00de226d",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+                  "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+                }
+              }
+            ],
+            "odf_effective_relevant_text_properties": {
+              "fo:font-size": "12pt",
+              "fo:font-style": "italic"
+            },
+            "source_emphasis_flags": {
+              "textbf": false,
+              "textit": true,
+              "underline": false
+            },
+            "expected_latex_commands": [
+              "\\textit{…}"
+            ],
+            "observed_latex_commands": [],
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex",
+            "target_block_excerpt": "Em resumo, embora o projeto tenha sido desafiador, com altos e baixos, sou muito feliz com o resultado alcançado. Acredito que essa POC (Proof of Concept) serviu como um excelente ponto de partida para que o projeto continue a ser desenvolvido, refinado e aprimorado. E, mais importante, conseguimos comprovar que era possível criar algo tão complexo e inovador, o que, para mim, é uma grande conquista.",
+            "target_text_offset_reported_by_comparator": 136,
+            "reason": "O estilo efetivo do ODF marca o trecho com ênfase; no bloco TeX associado ao parágrafo, o comparador não encontrou o comando correspondente. Esta ocorrência foi confirmada contra content.xml/styles.xml e o arquivo-alvo, sem usar relatório do conversor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "paragraph_style_emphasis",
+      "status": "FAIL",
+      "evidence": {
+        "audit_occurrence_id": "ages-ii-emph-0031",
+        "status": "FAIL",
+        "source_unit_id": "chapter-04-text-h-0046",
+        "source_record_id": "text-p-0839",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[46]/text:list-item[1]/text:p[3]",
+        "source_text": "Documentação Docker",
+        "odf_paragraph_style_chain": [
+          {
+            "name": "Standard",
+            "family": "paragraph",
+            "declared_text_properties": {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+            }
+          },
+          {
+            "name": "P249",
+            "family": "paragraph",
+            "declared_text_properties": {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#2a6099",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "solid",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-width": "auto",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-color": "font-color",
+              "{http://openoffice.org/2009/office}rsid": "00a6d7fe",
+              "{http://openoffice.org/2009/office}paragraph-rsid": "00a6d7fe",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+            }
+          }
+        ],
+        "odf_effective_relevant_text_properties": {
+          "fo:font-size": "12pt",
+          "fo:color": "#2a6099",
+          "style:text-underline-style": "solid"
+        },
+        "expected_latex_command": "\\underline{Documentação Docker}",
+        "observed_latex_command": null,
+        "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+        "target_location": {
+          "line": 45,
+          "text": "Documentação Docker"
+        },
+        "reason": "P249 aplica text-underline-style=solid ao parágrafo simples. O conteúdo não é hyperlink, portanto não se aplica a decisão aprovada de retirar o sublinhado visual das âncoras; a linha TeX do alvo não contém \\underline."
+      }
+    },
+    {
+      "id": "paragraph_style_false_positive_review",
+      "status": "PASS",
+      "evidence": {
+        "id": "text-h-0068",
+        "status": "PASS",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[56]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]",
+        "source_style": "P270",
+        "style_chain": [
+          {
+            "name": "Standard",
+            "family": "paragraph",
+            "declared_text_properties": {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt"
+            }
+          },
+          {
+            "name": "Heading_20_2",
+            "family": "paragraph",
+            "declared_text_properties": {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}color": "#000000",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}opacity": "100%",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "BR",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "bold",
+              "{http://openoffice.org/2009/office}rsid": "00e95c50",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}letter-kerning": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "10.5pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "bold",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-complex": "Arial1",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-complex": "Arial",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic-complex": "system",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch-complex": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "bold"
+            }
+          },
+          {
+            "name": "P270",
+            "family": "paragraph",
+            "declared_text_properties": {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+              "{http://openoffice.org/2009/office}rsid": "00d5eea9",
+              "{http://openoffice.org/2009/office}paragraph-rsid": "00d5eea9",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "10.5pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal"
+            }
+          }
+        ],
+        "effective_relevant_text_properties": {
+          "fo:font-size": "12pt",
+          "fo:color": "#000000",
+          "fo:font-style": "normal",
+          "fo:font-weight": "normal"
+        },
+        "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+        "finding": "P270 declara explicitamente font-style=normal e font-weight=normal, cancelando os valores herdados de Heading_20_2; não há ênfase autoral a preservar neste parágrafo. Excluído da contagem de falhas."
+      }
+    },
+    {
+      "id": "hyperlink_style_policy",
+      "status": "PASS",
+      "evidence": {
+        "policy_source": "docs/STYLE_GUIDE.md:18",
+        "rule": "âncoras de links renderizam pretas, regulares e sem itálico",
+        "audit_treatment": "sublinhado, cor e itálico decorrentes exclusivamente do estilo ODF de hyperlink não são contados como ênfase autoral ausente; URLs e âncoras são comparadas separadamente"
+      }
+    },
+    {
+      "id": "figure_source_attribution",
+      "status": "PENDING",
+      "evidence": {
+        "source_figure_count": 7,
+        "target_figure_count": 7,
+        "detail": "As sete figuras estão preservadas com SHA-256 idêntico, mas o campo de fonte permanece “pendente de identificação” conforme revisão manual da usuária; este auditor não inferiu autoria/fonte."
+      }
+    },
+    {
+      "id": "bibliography_metadata_for_technology_citations",
+      "status": "PENDING",
+      "evidence": {
+        "keys": [
+          "ages-ii-angular",
+          "ages-ii-typescript",
+          "ages-ii-python",
+          "ages-ii-fastapi",
+          "ages-ii-sqlalchemy",
+          "ages-ii-postgresql"
+        ],
+        "detail": "As chaves de citação aparecem no alvo. Metadados, proveniência e validade bibliográfica devem ser examinados pelo curador de referências; não foram usados como prova de equivalência textual."
+      }
+    },
+    {
+      "id": "source_visual_render",
+      "status": "PENDING",
+      "evidence": {
+        "command": "libreoffice -env:UserInstallation=file:///tmp/agesii-lo-profile2 --headless --convert-to pdf --outdir /tmp/agesii-odt-render ./RELATORIO_ATUAL.odt",
+        "exit_code": 1,
+        "detail": "A conversão visual do ODT falhou e nenhum PDF foi produzido; houve aviso dconf de filesystem somente leitura. Portanto não se fez inspeção visual de estruturas não textuais por PDF."
+      }
+    },
+    {
+      "id": "target_visual_layout",
+      "status": "NOT_APPLICABLE",
+      "evidence": "Auditoria independente de conteúdo; revisão visual foi atribuída em tarefa separada. Nenhuma conclusão de layout é feita neste relatório."
+    }
+  ],
+  "summary": {
+    "confirmed_emphasis_omissions": 31,
+    "inline_span_emphasis_omissions": 30,
+    "paragraph_style_emphasis_omissions": 1,
+    "affected_units": [
+      "ages-ii-sprint-0",
+      "ages-ii-sprint-1",
+      "ages-ii-sprint-2",
+      "ages-ii-sprint-3",
+      "chapter-04-text-h-0042",
+      "chapter-04-text-h-0046",
+      "chapter-04-text-h-0073"
+    ],
+    "text_content_integrity": "PASS after approved repository sentence adaptation",
+    "other_content_checks": "PASS except explicit PENDING items",
+    "overall": "FAIL because explicit source emphasis was not fully represented in the current target snapshot."
+  },
+  "limitations": [
+    "Source visual PDF export failed; visual correspondence of source ODF frames not established here.",
+    "Technology bibliography metadata/provenance is delegated to reference curation and remains pending.",
+    "Figure source attribution requires the user’s manual identification.",
+    "Target snapshot is identified by base commit and 15 unit hashes; any later edit invalidates these findings for the changed file and requires re-audit.",
+    "This report does not replace the separate visual audit or compilation gate."
+  ]
+}

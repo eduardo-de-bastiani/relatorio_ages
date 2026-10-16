@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "record_type": "ages_i_ii_formatting_reaudit",
+  "date": "2026-10-16",
+  "branch": "migration/ages-ii",
+  "commit_base": "339bba68563f739e622246cb3167c8a2532176bf",
+  "worktree_dirty": true,
+  "scope": {
+    "authorized_units": [
+      "chapter-02-text-h-0009",
+      "chapter-02-text-h-0010",
+      "chapter-02-text-h-0011",
+      "chapter-04-text-h-0043",
+      "chapter-04-text-h-0044",
+      "chapter-04-text-h-0045",
+      "chapter-04-text-h-0046"
+    ],
+    "future_editions_authorized": false
+  },
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "modified": false
+  },
+  "pdf": {
+    "path": "build/document/main.pdf",
+    "sha256": "b1b914c5ca16815ab5753795ea297cabbe5d49099594884266829126bbe2fa61",
+    "pages": 41,
+    "profile": "document-review",
+    "official_document_gate": "NOT_RUN",
+    "human_approval": "PENDING"
+  },
+  "changes": {
+    "wiki_descriptions": {
+      "status": "PASS",
+      "visible_rewrites": 6,
+      "original_urls_preserved": true,
+      "empty_source_anchor": "PASS: mapped to source text-p-0784/text-a-0119 and retained"
+    },
+    "figure_source_alignment": {
+      "status": "PASS",
+      "figures": [1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15],
+      "human_source_identification": "PENDING"
+    },
+    "author_date_citations": {
+      "status": "PASS_STRUCTURAL",
+      "calls_total": 37,
+      "ages_i_calls": 4,
+      "ages_ii_calls": 33,
+      "keys_resolve": true,
+      "access_date_repeated_in_call": false,
+      "access_date_in_online_reference": true,
+      "assigned_2024_date_provenance": "user-authorized convention, not recovered history"
+    },
+    "title_based_labels": {
+      "status": "PASS",
+      "one_word_title_suppression": false,
+      "multiword_title_suppression": "first word plus [...] where applicable",
+      "legacy_malformed_ellipsis_output": "removed"
+    },
+    "repeated_bibliography_fields": {
+      "status": "PASS",
+      "biblatex_abnt_option": "repeatfields=true",
+      "verified_in_cached_abnt_bbx": true
+    }
+  },
+  "independent_audits": {
+    "content": {
+      "status": "PASS_WITH_PENDING_REFERENCES",
+      "method": "independent ODT content.xml extraction and direct target comparison; converter report not used as correctness evidence",
+      "units_checked": 7,
+      "text_coverage": "100% for each unit validation",
+      "no_unapproved_project_content_found": true,
+      "pending": ["AI09", "AII10", "AII11", "AII12", "image source attribution"]
+    },
+    "visual": {
+      "status": "PASS_WITH_HUMAN_PENDING",
+      "pages_inspected": 41,
+      "empty_pages": 0,
+      "isolated_sprint_titles": 0,
+      "body_text_clipping_observed": false,
+      "figure_source_lines_centered": true,
+      "pending": ["AII08", "AII13", "AII14", "image source attribution", "external site availability"]
+    }
+  },
+  "validation": {
+    "unittest": {"command": "python3 -m unittest discover -s tests -q", "exit_code": 0, "tests_passed": 113},
+    "verify_source": {"command": "python3 scripts/migration.py verify-source", "exit_code": 0, "status": "pass"},
+    "audit_latex": {
+      "command": "python3 scripts/migration.py audit-latex --root relatorio_AGES_eduardo --entry main.tex",
+      "exit_code": 0,
+      "status": "pass_with_warning",
+      "warning": "Static parser cannot resolve custom macro \\memorial@citefirstword deterministically; compiled TeX output was verified."
+    },
+    "unit_validation": {"count": 7, "all_exit_codes": 0, "coverage_percent": 100},
+    "build": {
+      "command": "python3 scripts/migration.py build --profile document-review",
+      "exit_code": 0,
+      "status": "pass_with_overfull_warning",
+      "warning": "chapter-04-text-h-0043.tex:8: Overfull \\hbox 4.74695pt (about 1.67mm)"
+    }
+    ,
+    "visual_preflight": {
+      "command": "python3 scripts/migration.py visual --pdf build/document/main.pdf",
+      "exit_code": 3,
+      "status": "pending_human_review",
+      "note": "Expected gate result; 41 page renders were inspected separately by the independent visual auditor."
+    }
+  },
+  "tool_versions": {
+    "tectonic": "0.17.0",
+    "biber": "2.17",
+    "python": "3.12.8",
+    "poppler_pdftotext": "26.01.0",
+    "pytest": "not installed; not installed during this task"
+  },
+  "open_issues": [
+    {"id": "AI09", "status": "PENDING", "issue": "No verified source for Router-Controller-Service-Repository combined pattern."},
+    {"id": "AI10", "status": "RESOLVED", "issue": "Original asset asset-0026.png contains the same bottom crop; the PDF adds no crop."},
+    {"id": "AII10", "status": "PENDING", "issue": "Graph API Explorer source URL differs from cited generic Graph API documentation entry."},
+    {"id": "AII11", "status": "PENDING", "issue": "Python 3.15.0 title/version is not established by the general Python URL or project evidence."},
+    {"id": "AII12", "status": "PENDING", "issue": "Docker homepage does not alone substantiate the technical claim about local testing environments."},
+    {"id": "AII08", "status": "PENDING", "issue": "Figure 10 printed label legibility needs user review."},
+    {"id": "AII13", "status": "PENDING", "issue": "Sparse contents page 2 and single-reference page 41 need human acceptance."},
+    {"id": "AII14", "status": "PENDING", "issue": "One 4.74695pt overfull hbox warning needs review."},
+    {"id": "AI03/AII05", "status": "PENDING", "issue": "Image source identification is manual."},
+    {"id": "G9", "status": "PENDING", "issue": "Human approval of the PDF and reports is required."}
+  ],
+  "limitations": [
+    "External site availability was not tested as part of this re-audit.",
+    "The 2024 access dates were assigned by user instruction and are not historical browsing records.",
+    "No official-document profile build or final human approval was recorded.",
+    "No commit was made; work remains on the authorized branch."
+  ]
+}

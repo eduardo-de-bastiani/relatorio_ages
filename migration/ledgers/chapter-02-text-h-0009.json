@@ -5,11 +5,11 @@
   "conversion_base_commit": "2952f7f",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "units": {
     "chapter-02-text-h-0009": {
@@ -24,40 +24,43 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "3ab31b6e7df90c494b1a363bfe42dde3822bb549a1c2d332640154bfacd8316d"
+          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
         },
         {
           "source_id": "text-p-0314",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
           "start_byte": 213,
-          "end_byte": 617,
+          "end_byte": 669,
           "serializations": [
             "original_whitespace",
             "inline_tab_layout",
-            "reference_paragraph_layout"
+            "reference_paragraph_layout",
+            "technology_citation"
           ],
-          "target_sha256": "3ab31b6e7df90c494b1a363bfe42dde3822bb549a1c2d332640154bfacd8316d"
+          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
         },
         {
           "source_id": "text-p-0315",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
-          "start_byte": 633,
-          "end_byte": 751,
+          "start_byte": 685,
+          "end_byte": 837,
           "serializations": [
             "original_whitespace",
-            "reference_paragraph_layout"
+            "reference_paragraph_layout",
+            "wiki_reference_sentence"
           ],
-          "target_sha256": "3ab31b6e7df90c494b1a363bfe42dde3822bb549a1c2d332640154bfacd8316d"
+          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
         },
         {
           "source_id": "text-a-0108",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
-          "start_byte": 647,
-          "end_byte": 751,
+          "start_byte": 741,
+          "end_byte": 837,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "wiki_reference_sentence"
           ],
-          "target_sha256": "3ab31b6e7df90c494b1a363bfe42dde3822bb549a1c2d332640154bfacd8316d"
+          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
         }
       ],
       "asset_map": [],
@@ -72,7 +75,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0010",
           "source_end_id": "text-bookmark-end-0010",
-          "target_sha256": "3ab31b6e7df90c494b1a363bfe42dde3822bb549a1c2d332640154bfacd8316d"
+          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
         }
       ],
       "structural_dispositions": [
@@ -114,9 +117,9 @@
           "placeholder_id": "ages-i-database",
           "authorization_evidence": "migration/approvals/ages-i-authorization.json",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
-          "start_byte": 757,
-          "end_byte": 870,
-          "target_sha256": "3ab31b6e7df90c494b1a363bfe42dde3822bb549a1c2d332640154bfacd8316d"
+          "start_byte": 843,
+          "end_byte": 956,
+          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
         }
       ],
       "pending": [
@@ -132,6 +135,23 @@
         "authorization_evidence": "migration/approvals/ages-i-mariah-style.json",
         "source_ids": [
           "text-p-0314",
+          "text-p-0315"
+        ]
+      },
+      "technology_citations": {
+        "authorization_evidence": "migration/approvals/ages-i-ii-formatting-authorization.json",
+        "source_text_changed": false,
+        "source_id_to_keys": {
+          "text-p-0314": [
+            "postgresql-docs",
+            "prisma-docs"
+          ]
+        }
+      },
+      "wiki_link_overrides": {
+        "authorization_evidence": "migration/approvals/ages-i-ii-formatting-authorization.json",
+        "source_ids": [
+          "text-a-0108",
           "text-p-0315"
         ]
       }

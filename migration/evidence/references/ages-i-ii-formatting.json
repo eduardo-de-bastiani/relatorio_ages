@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "role": "reference-curator",
+  "evidence_id": "ages-i-ii-formatting",
+  "unit": "AGES I and AGES II reference follow-up",
+  "status": "PARTIAL",
+  "consultation_date": "2026-10-16",
+  "commit_at_start": "339bba68563f739e622246cb3167c8a2532176bf",
+  "branch_at_start": "migration/ages-ii",
+  "immutable_source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "expected_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "verified_sha256_after_adendum": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "scope": {
+    "owned_path": "migration/evidence/references/ages-i-ii-formatting.json",
+    "central_bibliography_edited": false,
+    "memorial_content_edited": false,
+    "original_odt_edited": false,
+    "reference_dates_or_years_integrated": false,
+    "ownership_basis": "Parent task assignment",
+    "human_approval": "PENDING"
+  },
+  "policy": {
+    "official_sources_only_for_technical_claims": true,
+    "original_urls": "A candidate current documentation URL does not replace a URL present in the ODT; preserve the historical URL unless a separate integration decision is made.",
+    "missing_original_url": "A current official documentation endpoint is only a candidate, not a recovered historical URL.",
+    "authorship": "Do not infer authorship from site branding, organization name, community copyright, or copyright notice.",
+    "access_dates_and_years": {
+      "authorized_convention": "The user authorized 2024 as the citation/access-year convention for AGES I and AGES II references.",
+      "historical_status": "Assigned convention only; no claim that the author actually visited a page on those dates or that a page was published in 2024.",
+      "ages_i_example_assigned_date": "2024-04-10",
+      "ages_ii_example_assigned_date": "2024-10-15",
+      "integration_status": "Do not integrate these dates through this evidence file; they require the central maintainer's bibliographic integration."
+    },
+    "this_consultation": "Web retrieval on 2026-10-16 verifies current displayed pages only, not the versions or destinations used during project work."
+  },
+  "sources": [
+    {
+      "evidence_id": "ages-i-ii-figma-prototyping-guide",
+      "technologies_or_terms": [
+        "Figma",
+        "prototyping",
+        "prototype flows",
+        "interactions"
+      ],
+      "project_mentions": [
+        {
+          "unit": "chapter-02-text-h-0011",
+          "excerpt": "Os mockups foram desenvolvidos na plataforma Excalidraw e os protótipos de alta-fidelidade foram construídos no Figma."
+        },
+        {
+          "unit": "ages-i-sprint-0",
+          "excerpt": "mentions mockups using Excalidraw and high-fidelity screens in Figma"
+        },
+        {
+          "unit": "chapter-04-text-h-0045",
+          "excerpt": "Os protótipos de alta-fidelidade foram construídos no Figma, ferramenta web de prototipagem e design."
+        }
+      ],
+      "official_documentation": {
+        "requested_url": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma",
+        "observed_url": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma",
+        "retrieval_status": "PASS",
+        "retrieval_tool": "web.run open",
+        "http_status": null,
+        "browser_title": "Guide to prototyping in Figma – Figma Learn - Help Center",
+        "visible_heading": "Guide to prototyping in Figma",
+        "site_context": "Figma Learn / Help Center",
+        "explicit_individual_author": null,
+        "author_status": "NOT_ATTRIBUTED_ON_PAGE",
+        "publication_date_status": "NOT_FOUND_ON_PAGE",
+        "consulted_at": "2026-10-16",
+        "evidence": [
+          {
+            "location": "page heading",
+            "text": "Guide to prototyping in Figma"
+          },
+          {
+            "location": "body",
+            "text": "Figma’s prototyping features allow you to create interactive flows that explore how a user may interact with your designs."
+          },
+          {
+            "location": "sections",
+            "text": "The page documents flows and starting points, connections, interactions and animations, and prototype settings."
+          }
+        ],
+        "supports": [
+          "The page is official Figma Help Center documentation.",
+          "General Figma prototyping concepts and operations."
+        ],
+        "does_not_support": [
+          "Historical use or version of Figma in AGES I or AGES II.",
+          "Authorship of a particular project prototype or the content shown in its screenshots."
+        ]
+      },
+      "original_reference_context": {
+        "original_bibliography_title_text": "FIGMA. Figma: the collaborative interface design tool.",
+        "original_bibliography_url": "https://www.figma.com",
+        "note": "The consulted Help Center page is an additional current documentation endpoint; it is not the ODT's original homepage URL."
+      },
+      "title_based_citation_assessment": {
+        "usable_as_title_based_source": "YES",
+        "basis": "The official page has a specific displayed title and no explicit individual author.",
+        "title_for_reference_review": "Guide to prototyping in Figma",
+        "author_to_assign": null,
+        "limitation": "The current page does not establish its 2024 publication/access history."
+      },
+      "suggested_bibtex": null,
+      "status": "PASS_WITH_METADATA_LIMITS"
+    },
+    {
+      "evidence_id": "ages-i-excalidraw-developer-docs",
+      "technologies_or_terms": [
+        "Excalidraw",
+        "mockups",
+        "prototyping"
+      ],
+      "project_mentions": [
+        {
+          "unit": "chapter-02-text-h-0011",
+          "excerpt": "Os mockups foram desenvolvidos na plataforma Excalidraw..."
+        },
+        {
+          "unit": "ages-i-sprint-0",
+          "excerpt": "mentions creating mockups using Excalidraw"
+        }
+      ],
+      "official_documentation": {
+        "requested_url": "https://docs.excalidraw.com/docs",
+        "observed_url": "https://docs.excalidraw.com/docs",
+        "retrieval_status": "PASS",
+        "retrieval_tool": "web.run open",
+        "http_status": null,
+        "browser_title": "Introduction | Excalidraw developer docs",
+        "visible_heading": "Introduction",
+        "site_context": "Excalidraw developer docs",
+        "explicit_individual_author": null,
+        "author_status": "NOT_ATTRIBUTED_ON_PAGE",
+        "visible_copyright": "Copyright © 2023 Excalidraw community",
+        "copyright_is_not_author": true,
+        "publication_date_status": "NOT_VERIFIED_BY_COPYRIGHT",
+        "consulted_at": "2026-10-16",
+        "evidence": [
+          {
+            "location": "page heading",
+            "text": "Introduction"
+          },
+          {
+            "location": "body",
+            "text": "These docs are focused on developers..."
+          },
+          {
+            "location": "body",
+            "text": "The docs describe the @excalidraw/excalidraw package and related developer documentation."
+          }
+        ],
+        "supports": [
+          "The page is official Excalidraw developer documentation.",
+          "The documentation site concerns developer integration and the Excalidraw package."
+        ],
+        "does_not_support": [
+          "Historical use or version of Excalidraw in AGES I.",
+          "Authorship of the AGES I mockups."
+        ]
+      },
+      "original_reference_context": {
+        "original_bibliography_title_text": "Excalidraw.",
+        "original_bibliography_url": "https://excalidraw.com/",
+        "note": "The official developer-docs page is not the original cited product homepage. Preserve the ODT URL; treat this documentation URL as a separate candidate."
+      },
+      "title_based_citation_assessment": {
+        "usable_as_title_based_source": "YES_WITH_TITLE_DISAMBIGUATION",
+        "basis": "No individual author is attributed; the browser title includes both the generic page heading and documentation-site name.",
+        "visible_page_heading": "Introduction",
+        "browser_title": "Introduction | Excalidraw developer docs",
+        "author_to_assign": null,
+        "caution": "If this page is selected as the cited work, the reference record must retain enough title/container information to distinguish it. Do not promote 'Excalidraw community' from the footer to author.",
+        "alternative": "The ODT already lists the Excalidraw product homepage under the title text 'Excalidraw'; the maintainer should decide whether that original source or the developer-docs page is the intended citation target."
+      },
+      "suggested_bibtex": null,
+      "status": "PASS_WITH_METADATA_LIMITS"
+    },
+    {
+      "evidence_id": "ages-ii-docker-original-reference",
+      "source_record_id": "text-p-0839",
+      "unit": "chapter-04-text-h-0046",
+      "original_anchor": "Documentação Docker",
+      "original_inline_url": null,
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[46]/text:list-item[1]/text:p[3]",
+      "source_xml_sha256": "45e0c5afaba90af7c0c3e94aa7e54e09bbf1ec02872b0f0d57fd6d4ac9b6f6c6",
+      "inline_link_status": "NO_HREF_ON_THIS_LABEL_IN_ODT",
+      "project_context": "Docker is described as being used to create local test environments, especially for PostgreSQL.",
+      "resolved_bibliographic_reference": {
+        "bib_key": "ages-ii-docker",
+        "target_url": "https://www.docker.com/",
+        "mapping_status": "VERIFIED_FROM_ORIGINAL_BIBLIOGRAPHY",
+        "original_bibliography_record": {
+          "manifest_record_id": "text-p-1574",
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[1252]",
+          "source_text": "DOCKER. Enterprise Application Container Platform | Docker. Disponível em: https://www.docker.com/. ",
+          "source_xml_sha256": "043ffec66110c7281d074c42eb82ec70ea4e9759eedc9fa1290e1840b9568dad"
+        },
+        "original_url_record": {
+          "manifest_record_id": "text-a-0171",
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[1252]/text:a[1]",
+          "source_text": "https://www.docker.com/",
+          "href": "https://www.docker.com/",
+          "source_xml_sha256": "b5f92bcb47fd7a900e13f44e809f567a29998e852e6d81f70108888a519314ee"
+        },
+        "odt_direct_xml_check": {
+          "archive_member": "content.xml",
+          "paragraph_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[1252]",
+          "paragraph_text_observed": "DOCKER. Enterprise Application Container Platform | Docker. Disponível em: https://www.docker.com/.",
+          "embedded_href_observed": "https://www.docker.com/",
+          "status": "PASS"
+        },
+        "scope_note": "This is the original Docker product homepage reference from the bibliography; it is not Docker technical documentation and does not independently support the technical claim about local test environments."
+      },
+      "unselected_docker_docs_portal_observation": {
+        "url": "https://docs.docker.com/",
+        "observed_url": "https://docs.docker.com/",
+        "retrieval_status": "PASS",
+        "retrieval_tool": "web.run open",
+        "http_status": null,
+        "browser_title": "Docker Docs",
+        "visible_h1": "How can we help?",
+        "site_context": "Official Docker documentation portal",
+        "explicit_individual_author": null,
+        "author_status": "NOT_ATTRIBUTED_ON_PAGE",
+        "visible_copyright": "Copyright © 2013-2026 Docker Inc. All rights reserved.",
+        "copyright_is_not_author": true,
+        "publication_date_status": "NOT_APPLICABLE_TO_LIVE_PORTAL",
+        "consulted_at": "2026-10-16",
+        "evidence": [
+          {
+            "location": "page title",
+            "text": "Docker Docs"
+          },
+          {
+            "location": "portal links",
+            "text": "Get started, Guides, Manuals, and Reference"
+          },
+          {
+            "location": "footer",
+            "text": "Copyright © 2013-2026 Docker Inc. All rights reserved."
+          }
+        ],
+        "supports": [
+          "This is the official Docker documentation portal.",
+          "The portal links to Docker guides, product manuals and CLI/API references."
+        ],
+        "does_not_support": [
+          "Which Docker feature or version was used by the AGES II project.",
+          "Whether Compose or any specific container setup was used.",
+          "The missing historical URL or the author's historical access date."
+        ],
+        "selection_status": "NOT_SELECTED_AS_THE_REFERENCE_TARGET_FOR_DOCUMENTAÇÃO_DOCKER",
+        "note": "This current documentation portal must not replace the original bibliography URL or be described as the URL recovered from the ODT."
+      },
+      "citation_assessment": {
+        "original_reference_title": "Enterprise Application Container Platform | Docker",
+        "reference_key_to_use_for_the_existing_label": "ages-ii-docker",
+        "author_to_assign": null,
+        "organization_as_author": null,
+        "existing_bibliography_metadata_action": "Preserve the already integrated ages-ii-docker entry; this curation proposes no author-field change.",
+        "note": "Do not infer authorship from Docker Inc. copyright or characterize https://www.docker.com/ as technical documentation."
+      },
+      "integration_recommendation": "For the existing 'Documentação Docker' label, use the already existing bibliography reference key ages-ii-docker, whose original URL is https://www.docker.com/. Preserve that original reference. Technical adequacy/provenance remains PENDING because the original citation is a product homepage, not technical documentation; do not replace it with docs.docker.com without a separate decision.",
+      "suggested_bibtex": null,
+      "status": "REFERENCE_TARGET_VERIFIED_TECHNICAL_PROVENANCE_PENDING"
+    },
+    {
+      "evidence_id": "ages-i-router-controller-service-repository",
+      "source_record_id": "ages-i-text-a-0109",
+      "unit": "chapter-02-text-h-0010",
+      "original_anchor": "Wiki da Arquitetura",
+      "original_url": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+      "claim_in_original": "Nosso projeto adota o padrão Router-Controller-Service-Repository...",
+      "claim_source_status": "Original project wiki currently remains unverified per migration/evidence/references/ages-i.json.",
+      "verification_question": "Is there official primary documentation that directly names or defines this combined Router-Controller-Service-Repository pattern?",
+      "official_source_search": {
+        "retrieval_tool": "web.run search_query",
+        "consulted_at": "2026-10-16",
+        "queries": [
+          "\"Router-Controller-Service-Repository\" official documentation",
+          "site:expressjs.com routing controllers services repository architecture",
+          "site:learn.microsoft.com architecture repository pattern service layer controller routing"
+        ],
+        "direct_match_found": false,
+        "partial_match_reviewed": [
+          {
+            "url": "https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs",
+            "title": "Validating with a Service Layer (C#)",
+            "explicit_author": "Stephen Walther",
+            "evidence": "The Microsoft Learn article describes a service layer, a repository layer, and controllers using the repository layer.",
+            "limitation": "It is a legacy ASP.NET MVC tutorial and does not define the combined Router-Controller-Service-Repository pattern or a Router layer."
+          },
+          {
+            "url": "https://learn.microsoft.com/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures",
+            "title": "Common web application architectures",
+            "explicit_author": null,
+            "evidence": "Official .NET architecture documentation discusses controllers, services, and the Repository pattern.",
+            "limitation": "It does not establish the exact combined label and does not document the AGES I project architecture."
+          }
+        ],
+        "result": "No single official source directly matching the combined label was verified; component-level documentation is not evidence that AGES I implemented this exact pattern."
+      },
+      "status": "PENDING_DIRECT_SOURCE",
+      "integration_recommendation": "Preserve the original wording and URL. Do not invent a citation or relabel the architecture. A project wiki export, source-code evidence, or explicit human-provided documentation may resolve the project-specific architecture; those would not substitute for a verified general pattern source unless the intended claim is changed in a later editorial phase."
+    },
+    {
+      "evidence_id": "ages-ii-http-rfc9110",
+      "term": "HTTP (GET, POST, PUT, DELETE)",
+      "unit": "chapter-04-text-h-0044",
+      "official_source": {
+        "url": "https://www.rfc-editor.org/info/rfc9110/",
+        "title": "RFC 9110: HTTP Semantics",
+        "publisher_or_series": "Internet Engineering Task Force (IETF) RFC Series / RFC Editor",
+        "authors_explicitly_listed": [
+          "Roy T. Fielding (editor)",
+          "Mark Nottingham (editor)",
+          "Julian Reschke (editor)"
+        ],
+        "publication_date": "June 2022",
+        "retrieval_status": "PASS",
+        "retrieval_tool": "web.run search_query",
+        "http_status": null,
+        "consulted_at": "2026-10-16",
+        "direct_support": "RFC 9110 defines HTTP semantics and sections 9.3.1, 9.3.3, 9.3.4, and 9.3.5 define GET, POST, PUT, and DELETE.",
+        "limitation": "Supports the protocol and method names, not the AGES II endpoint implementation or observed request behavior."
+      },
+      "year_convention_note": "The publication date 2022 is explicitly verified for RFC 9110. If the user-authorized 2024 citation-year convention is applied to this item, record 2024 as an assigned convention, not as publication metadata."
+    },
+    {
+      "evidence_id": "ages-ii-sql-postgresql-docs",
+      "term": "SQL in queries sent to PostgreSQL",
+      "unit": "chapter-04-text-h-0044",
+      "official_source": {
+        "url": "https://www.postgresql.org/docs/current/sql.html",
+        "title": "Part II. The SQL Language",
+        "edition_or_version_observed": "PostgreSQL 18.6 Documentation (current at consultation)",
+        "retrieval_status": "PASS",
+        "retrieval_tool": "web.run open",
+        "http_status": null,
+        "consulted_at": "2026-10-16",
+        "direct_support": "The page says this part describes use of SQL in PostgreSQL, including syntax, commands, data definition, data manipulation, and queries.",
+        "explicit_individual_author": null,
+        "visible_copyright_holder": "The PostgreSQL Global Development Group",
+        "copyright_is_not_author": true,
+        "limitation": "Current documentation is not evidence that the project used PostgreSQL 18 or consulted this page during 2024."
+      },
+      "integration_recommendation": "The existing PostgreSQL documentation reference may be sufficient as the target for the SQL mention if the maintainer links that term to the already verified PostgreSQL entry; do not infer a separate SQL author or standard."
+    },
+    {
+      "evidence_id": "ages-ii-json-rfc8259",
+      "term": "JSON data format",
+      "unit": "chapter-04-text-h-0044",
+      "official_source": {
+        "url": "https://www.rfc-editor.org/info/rfc8259/",
+        "title": "RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format",
+        "authors_explicitly_listed": [
+          "Tim Bray (editor)"
+        ],
+        "publisher_or_series": "Internet Engineering Task Force (IETF) RFC Series / RFC Editor",
+        "publication_date": "December 2017",
+        "retrieval_status": "PASS",
+        "retrieval_tool": "web.run open",
+        "http_status": null,
+        "consulted_at": "2026-10-16",
+        "direct_support": "RFC 8259 defines JSON as a text-based data-interchange format and specifies its representation rules.",
+        "limitation": "Supports the generic format term, not the AGES II application's actual response payloads."
+      },
+      "year_convention_note": "The publication date 2017 is explicitly verified for RFC 8259. If the user-authorized 2024 citation-year convention is applied to this item, record 2024 as an assigned convention, not as publication metadata."
+    }
+  ],
+  "global_integration_notes": [
+    "Figma and Excalidraw can be sourced with title-based citations because the official current pages do not explicitly attribute an individual author; do not assign Figma or Excalidraw community as author solely from branding/copyright.",
+    "For Excalidraw, choose deliberately between the original product homepage reference and the developer-docs page; the latter's displayed page heading is generic (Introduction).",
+    "AGES II's 'Documentação Docker' prose label has no inline href in the ODT, but it maps to the original bibliography reference ages-ii-docker at https://www.docker.com/ (manifest text-p-1574 and text-a-0171; direct content.xml check). This preserves the user's source. The homepage is not technical documentation, so technical support remains PENDING; the docs.docker.com portal is not selected and must not replace it.",
+    "HTTP and JSON have directly matching IETF RFC sources; SQL has a directly matching PostgreSQL documentation section for SQL in PostgreSQL. These sources support technical definitions only, not project-specific implementation claims.",
+    "The exact Router-Controller-Service-Repository label has no verified direct official source in the search performed; keep it PENDING and do not invent authorship."
+  ],
+  "commands_executed": [
+    {
+      "command": "cat docs/agents/reference-curator.md && cat AGENTS.md",
+      "exit_code": 0
+    },
+    {
+      "command": "git branch --show-current && git rev-parse HEAD && git status --short",
+      "exit_code": 0,
+      "result": "Branch migration/ages-ii; commit 339bba68563f739e622246cb3167c8a2532176bf; worktree already contained unrelated ongoing edits."
+    },
+    {
+      "command": "rg --files migration/evidence/references docs | sort | rg '(references/.*\\\\.json|MIGRATION_PLAN|QUALITY_GATES|STYLE_GUIDE|CONTENT_MANIFEST)'",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 - <<'PY' (read-only json.load inspection of ages-i.json and ages-ii.json)",
+      "exit_code": 0,
+      "purpose": "Read existing reference records, titles, URLs, and pending-link metadata."
+    },
+    {
+      "command": "rg -n -i 'figma|excalidraw|router.?controller.?service.?repository|banco de dados|protótipo|arquitetura' docs/CONTENT_MANIFEST.json docs/ages-ii migration/evidence/references relatorio_AGES_eduardo 2>/dev/null",
+      "exit_code": 0,
+      "purpose": "Locate source and destination mentions without modifying them."
+    },
+    {
+      "command": "rg -n -i 'Docker|HTTP|SQL|JSON|Figma|Excalidraw' relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+      "exit_code": 0,
+      "purpose": "Inspect AGES II technology and architecture passages."
+    },
+    {
+      "tool": "web.run open/search_query",
+      "result": "Official Figma, Excalidraw, Docker, RFC Editor, PostgreSQL, and Microsoft Learn pages/search results were retrieved and inspected; see per-source evidence above.",
+      "http_status_available": false
+    },
+    {
+      "command": "python3 -m json.tool migration/evidence/references/ages-i-ii-formatting.json >/dev/null",
+      "exit_code": 0,
+      "purpose": "Validate the created evidence JSON."
+    },
+    {
+      "command": "python3 read-only byte check for trailing whitespace in migration/evidence/references/ages-i-ii-formatting.json",
+      "exit_code": 0,
+      "result": "0 trailing-whitespace lines."
+    },
+    {
+      "command": "git diff --no-index --check /dev/null migration/evidence/references/ages-i-ii-formatting.json",
+      "exit_code": 1,
+      "result": "No whitespace diagnostics; exit 1 is expected because the newly created file differs from /dev/null."
+    },
+    {
+      "command": "python3 -c 'import json; d=json.load(open(\"docs/CONTENT_MANIFEST.json\")); wanted={\"text-p-1574\",\"text-a-0171\",\"text-p-0839\"}; print(*[json.dumps({k:x.get(k) for k in (\"id\",\"xpath\",\"unit_id\",\"semantic_type\",\"source_text\",\"href\",\"xml_sha256\")},ensure_ascii=False) for x in d[\"records\"] if x[\"id\"] in wanted],sep=\"\\n\")'",
+      "exit_code": 0,
+      "result": "Confirmed text-p-1574 as the original bibliography entry; text-a-0171 carries href https://www.docker.com/; text-p-0839 is the AGES II label and has no href."
+    },
+    {
+      "command": "python3 - <<'PY' (attempted import lxml.etree for exact ODT XPath check)",
+      "exit_code": 1,
+      "result": "ModuleNotFoundError: No module named 'lxml'; no package was installed, and the check was repeated with the standard-library XML parser."
+    },
+    {
+      "command": "python3 -c 'import zipfile,xml.etree.ElementTree as E; ns={\"office\":\"urn:oasis:names:tc:opendocument:xmlns:office:1.0\",\"text\":\"urn:oasis:names:tc:opendocument:xmlns:text:1.0\",\"xlink\":\"http://www.w3.org/1999/xlink\"}; root=E.fromstring(zipfile.ZipFile(\"RELATORIO_ATUAL.odt\").read(\"content.xml\")); p=root.find(\"./office:body/office:text/text:p[1252]\",ns); print(\"TEXT\",repr(\"\".join(p.itertext()))); a=p.find(\"text:a\",ns); print(\"HREF\",a.get(\"{http://www.w3.org/1999/xlink}href\"))'",
+      "exit_code": 0,
+      "result": "Direct ODT XML returned the exact Docker bibliography text and embedded xlink:href https://www.docker.com/."
+    },
+    {
+      "command": "rg -n 'ages-ii-docker|DOCKER|https://www.docker.com/' relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+      "exit_code": 0,
+      "result": "Read-only confirmation that the existing bibliography key ages-ii-docker retains URL https://www.docker.com/."
+    },
+    {
+      "command": "sha256sum RELATORIO_ATUAL.odt",
+      "exit_code": 0,
+      "result": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef  RELATORIO_ATUAL.odt"
+    }
+  ],
+  "limits": [
+    "The web retrieval tool does not expose an HTTP status code in the returned page records; PASS means content was retrieved and inspected through web.run only.",
+    "Current page availability and titles do not prove historical access, publication year (unless a specific publication date is explicitly shown), or the version used in the project.",
+    "The project architecture wiki original URL is preserved but its current content was not retrieved; no exact official source for the combined pattern was found.",
+    "The proposed Docker docs URL is an official current portal only; it cannot recover the original missing hyperlink.",
+    "No bibliographic entries, content, citations, anchors, or source URLs were edited."
+  ],
+  "review": {
+    "integrity_status": "PENDING parent review",
+    "human_approval": "PENDING"
+  }
+}

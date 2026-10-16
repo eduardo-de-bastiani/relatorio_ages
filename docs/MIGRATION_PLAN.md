@@ -4,11 +4,13 @@
 
 Fase vigente: migração controlada da **AGES II / Indústria Digital**, autorizada na mensagem atual do usuário. A apresentação da AGES I foi aceita para reutilização e registrada em `migration/approvals/ages-i-presentation-accepted.json`; os padrões concretos estão em `docs/STYLE_GUIDE.md`. A branch de integração é `migration/ages-ii`; o conjunto fechado de 15 unidades e a posse de assets estão em `harness.json` e `migration/approvals/ages-ii-authorization.json`. Não incluir a participação como cliente Hoortech nem AGES III–IV. A entrega desta edição exige revisão humana.
 
+Correção de apresentação solicitada em 16/10/2026: antes da entrega, estão autorizadas somente as alterações dos três trechos de banco/arquitetura/protótipos da AGES I e dos quatro trechos de banco/arquitetura/protótipos/tecnologias da AGES II, além das macros e documentação necessárias, conforme `migration/approvals/ages-i-ii-formatting-authorization.json`. Esta correção não reabre a conversão da AGES I nem autoriza conteúdo de outras unidades. Após corrigir, revalidar as unidades afetadas e recompilar/auditar o documento integrado; somente então apresentar a versão revista da AGES II para aprovação.
+
 Fases do piloto e da AGES I são históricas e mantêm seus registros. A mensagem atual autoriza a AGES II, após o usuário aprovar a apresentação da prévia AGES I e solicitar que o padrão fosse documentado. Pendências de fonte de imagem, diagrama ausente, disponibilidade remota de links e confirmação normativa permanecem abertas; os arquivos de autorização explicitam como preservá-las.
 
 Baseline: `44bc0b95ef5ed06c8efa272de4f754cce1d6e4cb`; branch de preparação `harness/migration`. Original e comparativo permanecem intactos. A configuração em `harness.json`, [BASELINE](BASELINE.json) e [TOOLCHAIN](TOOLCHAIN.lock.json) registra caminhos, versão e hashes. O harness é entregue executável; isso não significa que o memorial já satisfaz os gates.
 
-O destino editável é `relatorio_AGES_eduardo/`; AGES I já está convertida e somente as unidades autorizadas de AGES II serão adicionadas nesta fase. `Template_AGES___Guvidaletti/` permanece como referência somente leitura. O perfil `template` compila material demonstrativo; o perfil `fixture` testa conteúdo sintético; nenhum deles conta como unidade migrada.
+O destino editável é `relatorio_AGES_eduardo/`; AGES I já está convertida e somente as unidades autorizadas de AGES II serão adicionadas nesta fase. A exceção acima permite corrigir a apresentação dos três trechos técnicos já convertidos da AGES I. `Template_AGES___Guvidaletti/` permanece como referência somente leitura. O perfil `template` compila material demonstrativo; o perfil `fixture` testa conteúdo sintético; nenhum deles conta como unidade migrada.
 
 ## Fases
 

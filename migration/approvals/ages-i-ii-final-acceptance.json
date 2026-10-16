@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "record_type": "human_edition_acceptance",
+  "date": "2026-10-16",
+  "edition": ["AGES I", "AGES II"],
+  "user_evidence": {
+    "message": "Ótimo, está aprovado. Vamos para a edição AGES III. Siga essas instruções:",
+    "artifact": "build/document/main.pdf",
+    "artifact_sha256": "b1b914c5ca16815ab5753795ea297cabbe5d49099594884266829126bbe2fa61",
+    "review_report": "docs/ages-i-ii/FORMATTING_REAUDIT.md"
+  },
+  "decision": "accepted_by_user",
+  "limitations": "This records the user's acceptance of the identified review candidate. It does not mark unresolved factual/reference/visual items as PASS, does not imply official-profile build or full normative certification, and does not authorize edits outside the newly authorized AGES III scope."
+}
