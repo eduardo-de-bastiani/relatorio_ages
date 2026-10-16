@@ -153,8 +153,9 @@ class PreservationTests(unittest.TestCase):
             mappings.append({"source_id": rid, "target_file": "technology.tex", "start_byte": offset, "end_byte": offset + len(encoded)})
             parts.append(fragment)
             offset += len(encoded)
+            citation_gap = "" if records[rid].get("text", "").endswith((" ", "\t")) else r"\space"
             for key in AGES_II_TECHNOLOGY_CITATIONS_AFTER.get(rid, []):
-                suffix = r"\space\cite{" + key + "}"
+                suffix = citation_gap + r"\cite{" + key + "}"
                 parts.append(suffix)
                 offset += len(suffix.encode())
             if rid in link_parents:

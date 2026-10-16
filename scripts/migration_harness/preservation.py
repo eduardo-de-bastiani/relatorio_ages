@@ -492,9 +492,11 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         mapping = mappings[source_id]
         relative_end = mapping["end_byte"] - first["start_byte"]
         suffix = raw.encode("utf-8")[relative_end:].decode("utf-8")
-        expected = "".join(r"\space\cite{" + key + "}" for key in keys)
+        source_text = records.get(source_id, {}).get("text", "")
+        citation_gap = "" if source_text.endswith((" ", "\t")) else r"\space"
+        expected = "".join(citation_gap + r"\cite{" + key + "}" for key in keys)
         if not suffix.startswith(expected):
-            raise ValueError(f"Citations are detached from the source technology label {source_id}")
+            raise ValueError(f"Citation spacing or attachment differs from the exact source-ending whitespace for {source_id}")
 
     curated = {item.get("source_record_id"): item for item in reference_evidence.get("references", [])}
     assigned_date = authorization.get("technology_reference_convention", {}).get("access_date")
