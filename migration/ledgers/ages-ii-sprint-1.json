@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "c3a1a3b18b4edfd5aaf68b43cf82346211b19a25",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
+  },
+  "units": {
+    "ages-ii-sprint-1": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0049",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 173,
+          "end_byte": 187,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0869",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 292,
+          "end_byte": 724,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0870",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 752,
+          "end_byte": 1287,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0871",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 1315,
+          "end_byte": 1839,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0872",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 1867,
+          "end_byte": 2397,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0873",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 2425,
+          "end_byte": 2895,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0874",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 2923,
+          "end_byte": 3406,
+          "serializations": [],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0876",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 3453,
+          "end_byte": 4021,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0877",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 4049,
+          "end_byte": 4514,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0878",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 4542,
+          "end_byte": 4701,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0879",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 4729,
+          "end_byte": 5336,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        },
+        {
+          "source_id": "text-p-0880",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "start_byte": 5364,
+          "end_byte": 6020,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        }
+      ],
+      "asset_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0022",
+          "disposition": "represented-as-reflection",
+          "evidence": "ODF text box is the parent wrapper of the mapped introspective paragraphs; target wraps those paragraphs in the existing reflection environment in source order."
+        },
+        {
+          "source_id": "text-list-0124",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0050; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-item-0098",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0050; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-0125",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0050; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-item-0099",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0050; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-0126",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0050; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-header-0033",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0050; excluded to prevent cross-unit content attribution."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 6,
+        "reflection_paragraphs": 5,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "draw-text-box-0022",
+          "text-list-0124",
+          "text-list-item-0098",
+          "text-list-0125",
+          "text-list-item-0099",
+          "text-list-0126",
+          "text-list-header-0033"
+        ]
+      },
+      "pending": [],
+      "layout_disposition": "Sprint heading and paragraphs flow naturally in document order with no forced page break; introspective paragraphs use the shared divisible reflection environment.",
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0049",
+          "source_name": "__RefHeading___Toc4787_3118176633",
+          "source_start_id": "text-bookmark-start-0046",
+          "source_end_id": "text-bookmark-end-0046",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+          "target_anchor": "__RefHeading___Toc4787_3118176633",
+          "command": "hypertarget",
+          "start_byte": 82,
+          "end_byte": 131,
+          "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text.",
+          "target_sha256": "c43e6227fe32801f9509af2ef5686eb81f81d498150641cb1c9e1b336ceeb5b2"
+        }
+      ],
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-ii-presentation-reuse.json",
+        "source_ids": [
+          "text-p-0876",
+          "text-p-0877",
+          "text-p-0878",
+          "text-p-0879",
+          "text-p-0880"
+        ]
+      }
+    }
+  }
+}

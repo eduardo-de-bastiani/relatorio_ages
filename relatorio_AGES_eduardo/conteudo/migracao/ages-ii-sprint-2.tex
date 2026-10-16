@@ -1,0 +1,42 @@
+% Faithful conversion of ages-ii-sprint-2; source wording and XML order retained.
+\hypertarget{__RefHeading___Toc4789_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{4.3.3 Sprint 2}
+\label{unit:ages-ii-sprint-2}
+\addcontentsline{toc}{subsection}{4.3.3 Sprint 2}
+
+% text-p-0906
+\indent Para a Sprint 2, me foquei em tornar o banco de dados o mais utilizável possível para o squad que estava começando a desenvolver endpoints no back-end. Meu objetivo principal foi garantir que o banco estivesse pronto para uso imediato, facilitando o progresso das demais equipes.\par
+
+% text-p-0907
+\indent Na Sprint anterior, eu estava trabalhando em scripts SQL para tratar o banco de dados da Receita Federal, chamado de sampled. Para incluir os demais dados necessários, convidei o Lucas, AGES I, para realizarmos os últimos tratamentos, auxiliando-o durante a codificação dos scripts SQL.\par
+
+% text-p-0908
+\indent Ao discutir com nosso AGES 4, Pedro Carlucci, percebemos que o banco de dados existente da Receita Federal possuía dados pobremente estruturados. Executar tratamentos diretamente sobre eles consumiria muito tempo e geraria vários problemas. Pedro sugeriu a criação de um novo banco de dados com as colunas e tipos de dados já definidos. Essa estrutura serviu como um “esqueleto” do que desejávamos para o banco, e a partir disso, desenvolvemos um script para popular o novo banco de dados com os dados já existentes. A criação desse script foi facilitada pelo uso da ORM SQLAlchemy, em colaboração com meus colegas Bruno Panizzi, Enzo Vivian (AGES I) e Eduardo Wolf (AGES II).\par
+
+% text-p-0909
+\indent Esse novo banco de dados nos deu maior segurança, pois os dados já seriam tratados durante a transferência, eliminando a necessidade dos scripts SQL anteriores. Embora esses scripts não tenham sido utilizados, o processo de escrevê-los foi valioso como experiência.\par
+
+% text-p-0910
+\indent Um dos desafios que enfrentamos foi a transferência dos dados da tabela associativa. A chave primária da tabela estabelecimentos era composta por cnpj, id, dv e matriz. No novo modelo, transformamos essas chaves compostas em um uid único, que deveria ser conectado com as antigas chaves para manter a integridade da tabela associativa estabelecimento\_cnaes. Esse processo de vincular as chaves compostas com a nova chave única causou alguns transtornos, mas foi superado.\par
+
+% text-p-0911
+\indent Também realizei um hot fix na branch develop, com o auxílio do meu colega AGES II, Stefano Carraro, corrigindo pequenos erros de digitação e tipos de dados no esquema do novo banco de dados, chamado "public". Esse hot fix foi um alerta importante, pois esses erros passaram despercebidos até que já estavam na develop.\par
+
+% text-p-0912
+\indent Adicionalmente, iniciei a preparação do Docker e do ambiente de desenvolvimento para a criação do script de geocodificação. O objetivo era transformar os endereços dos estabelecimentos em coordenadas de latitude e longitude, para posterior uso no mapa do front-end. Durante testes iniciais com a biblioteca GeoPy, que utilizava a API Nominatim, encontramos alguns problemas. Primeiro, não tínhamos um campo de endereço diretamente no banco, sendo necessário concatenar vários outros campos, alguns dos quais estavam nulos para certas empresas, quebrando o script. Além disso, a limitação de uma requisição por segundo tornava o processo de popular o banco muito lento.\par
+
+% text-p-0913
+\indent Consideramos, então, uma abordagem em que a geolocalização seria calculada dinamicamente à medida que as empresas fossem encontradas pelos endpoints. Embora essa solução funcionasse, ela prejudicaria a pesquisa por distância no front-end, já que as primeiras buscas não trariam resultados completos. Essa abordagem foi posteriormente descartada, e, ao final da Sprint 2, começamos a considerar o uso da Brasil API, o que se concretizou no início da Sprint 3.\par
+
+\begin{reflection}
+% text-p-0915
+\indent \originaltab{}Sinto que a Sprint 2 foi a melhor que realizamos até o momento. Apesar da complexidade elevada do projeto, especialmente no que diz respeito ao banco de dados, a organização da equipe em squads foi essencial para atacarmos as diferentes frentes. Essa divisão permitiu que nos estruturássemos bem e produzíssemos de forma eficiente.\par
+
+% text-p-0916
+\indent \originaltab{}Durante a retrospectiva da Sprint anterior, havia recebido parabenizações e destaque por parte do time, o que foi um sinal positivo de que estava seguindo no caminho certo. Isso me motivou ainda mais a seguir nesse ritmo e a continuar me empenhando no projeto. Na retrospectiva da Sprint 1, eu havia comentado sobre o "monopólio" de tarefas que acabei realizando. Isso me fez refletir e, para a Sprint 2, decidi envolver mais meus colegas, tanto na idealização quanto na execução das tarefas. Acredito que consegui chamar mais pessoas para colaborar comigo e, com isso, o trabalho foi mais colaborativo e eficiente.\par
+
+% text-p-0917
+\indent \originaltab{}Outro aspecto positivo dessa Sprint foi a experiência que ganhei em relação à conteinerização, conteúdo de extrema importância quando tratamos de baco de dados. Fiquei muito satisfeito ao aprender mais sobre configurações do Docker com meu colega Bruno Panizzi. Isso aumentou minha confiança em trabalhar com contêineres, algo que não explorei tanto em minha participação anterior da AGES, mas que agora me sinto mais preparado para utilizar.\par
+
+\end{reflection}
