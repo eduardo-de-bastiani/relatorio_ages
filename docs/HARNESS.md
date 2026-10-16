@@ -1,6 +1,17 @@
 # Operação do harness
 
-Esta entrega prepara a migração. Não contém conversor executável nem memorial migrado. O destino de produção é `relatorio_AGES_eduardo/`, ainda ausente. Consulte [plano](MIGRATION_PLAN.md), [gates](QUALITY_GATES.md) e [pendências](PENDENCIAS.md).
+O harness controla a conversão e a validação do memorial. A apresentação da AGES I foi aprovada como padrão visual reutilizável; a única edição autorizada em execução é AGES II / Indústria Digital. Consulte [plano](MIGRATION_PLAN.md), [estilo](STYLE_GUIDE.md), [gates](QUALITY_GATES.md) e [pendências](PENDENCIAS.md).
+
+## Organização do projeto
+
+- `RELATORIO_ATUAL.odt` é a origem imutável, verificada pelo hash em `docs/BASELINE.json`.
+- `Template_AGES___Guvidaletti/` é a cópia de referência do template e não é o destino editável.
+- `relatorio_mariah/` é referência visual somente para leitura; não recebe conteúdo do memorial atual.
+- `relatorio_AGES_eduardo/` contém o destino: `conteudo/migracao/` para unidades LaTeX, `imagens/original/` para mídia preservada, `bibliografia/` para referências e `util/` para estilo e macros compartilhadas.
+- `migration/` guarda autorizações, ledgers e evidências; `docs/` guarda governança e relatórios revisáveis; `scripts/migration_harness/` centraliza extração, validação, compilação e inspeção visual; `tests/` contém testes do harness.
+- `build/` é ignorado pelo Git e contém apenas resultados reproduzíveis. A saída atual fica em `build/document/`; experimentos e evidências históricas estão separados por etapa em `build/ages-i/`, `build/pilot/`, `build/validation/` e `build/visual/`. Não mover fontes para `build/` nem integrar artefatos gerados.
+
+Os `main.pdf` rastreados na raiz e no template são arquivos de referência históricos. A prévia atual é `build/document/main.pdf`; o `report.json` informa se ela veio de compilação de revisão ou de produção.
 
 ## Entradas e rastreabilidade
 
@@ -44,9 +55,11 @@ Somente políticas opcionais `tex_quotes`, `tex_dashes` e `canonical_unicode` es
 
 ## Compilação e reprodução
 
-`./build.sh --profile fixture` testa material sintético com `memoir`, Helvetica, `biblatex-abnt` e Biber. O perfil isola o processamento bibliográfico dos defaults de idioma do `abntex2`; não representa aprovação ABNT de um memorial. `--profile template` compila o template original, incluindo `abntex2`, e expõe seus defeitos atuais. O perfil padrão `document` aponta para o futuro memorial.
+`./build.sh --profile fixture` testa material sintético com `memoir`, Helvetica, `biblatex-abnt` e Biber. O perfil isola o processamento bibliográfico dos defaults de idioma do `abntex2`; não representa aprovação ABNT de um memorial. `--profile template` compila o template original, incluindo `abntex2`, e expõe seus defeitos atuais.
 
-Cada tentativa invalida PDFs/auxiliares anteriores, verifica fontes protegidas, versões, recursos do cache e grafo LaTeX. Copia fontes sem auxiliares para um diretório temporário, copia o cache existente, fixa `SOURCE_DATE_EPOCH`/UTC e executa Tectonic `--only-cached --untrusted --keep-intermediates --keep-logs`. Tectonic invoca Biber e faz os passes necessários. Não há download de pacote ou instalação automática. O perfil de produção exige commit limpo.
+`./build.sh --profile document-review` compila o estado atual de `relatorio_AGES_eduardo/` para revisão humana e disponibiliza o PDF em `build/document/main.pdf`, mesmo com alterações ainda não commitadas. O relatório marca `review_only: true` e `official_document_gate: NOT_RUN`; compilação não aprova conteúdo nem libera outra edição. `./build.sh --profile document` é o build de produção e exige checkout limpo com as alterações congeladas em commit.
+
+Cada tentativa invalida PDFs/auxiliares anteriores, verifica fontes protegidas, versões, recursos do cache e grafo LaTeX. Copia fontes sem auxiliares para um diretório temporário, usa o cache existente, fixa `SOURCE_DATE_EPOCH`/UTC e executa Tectonic `--only-cached --untrusted --keep-intermediates --keep-logs`. Tectonic invoca Biber e faz os passes necessários. Não há download de pacote ou instalação automática.
 
 Resultados, logs, BBL/BCF, índices e hashes ficam em `build/<perfil>/`; diretório temporário é limpo ao sair. Qualquer aviso não revisado bloqueia aceitação. Um PDF disponível pode ser somente diagnóstico. Alteração de versão/cache exige atualização explícita do lock e nova reprodução; o lock não deve ser regenerado silenciosamente para esconder drift.
 

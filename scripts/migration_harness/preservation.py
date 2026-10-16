@@ -2,9 +2,16 @@
 
 Ledger schema 1 maps each source record to a UTF-8 byte interval in a file:
 {source_id, target_file, start_byte, end_byte, target_sha256,
- serializations?: ["tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace"]}.
+ serializations?: ["tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout"]}.
 original_whitespace requires macro_contract {path, sha256} in the unit ledger
 (or top-level ledger) and the exact audited originaltab/originalspace definitions.
+inline_tab_layout is a narrowly authorized formatting correction for three AGES I
+records: its originalinlinetab projects back to the original tab token while the
+verified macro prints ordinary word spacing. This proves source-token position
+and count, not literal PDF whitespace equivalence or approval for other projects.
+reference_paragraph_layout requires the exact original 82 body paragraphs in the
+15 authorized units, the user request evidence, and zero-width leading metadata
+macros. It preserves source tokens without claiming PDF whitespace equivalence.
 Intervals are half-open. Text copied into the ledger is never audit evidence.
 Asset maps use {source_id: image occurrence id, target_file: image path}.
 The image occurrence also requires an element_map interval containing exactly
@@ -29,6 +36,306 @@ from urllib.parse import urlsplit
 from .latex import _group, commands, strip_comments, macro_definitions, canonical_macro_body, MEMORIAL_FIGURE_BODY
 
 
+INLINE_TAB_COUNTS = {"text-p-0303": 1, "text-p-0314": 4, "text-p-0318": 4}
+INLINE_TAB_AUTHORIZATION = "migration/approvals/ages-i-format-correction.json"
+INLINE_TAB_USER_INSTRUCTION = "Você cometeu alguns erros de formatação. Precisamos corrigir esses erros, validar novamente e, depois que eu aprovar, registrar essas mudanças como algo permanente para os demais projetos da AGES"
+
+
+REFERENCE_LAYOUT_AUTHORIZATION = "migration/approvals/ages-i-mariah-style.json"
+REFERENCE_LAYOUT_USER_INSTRUCTION = 'Batendo com o relatório da Mariah, estamos utilizando a mesma formatação? Eu gostaria de usar a mesma formatação que ela'
+REFERENCE_LAYOUT_BASELINE = 'e5a367d438fe865223879ed4742d52379e563335'
+REFERENCE_LAYOUT_UNITS = (
+    'chapter-02-text-h-0002', 'chapter-02-text-h-0003', 'chapter-02-text-h-0007', 'chapter-02-text-h-0008',
+    'chapter-02-text-h-0009', 'chapter-02-text-h-0010', 'chapter-02-text-h-0011', 'chapter-02-text-h-0012',
+    'chapter-02-text-h-0014', 'ages-i-sprint-0', 'ages-i-sprint-1', 'ages-i-sprint-2',
+    'ages-i-sprint-3', 'ages-i-sprint-4', 'chapter-02-text-h-0022',
+)
+REFERENCE_LAYOUT_PARAGRAPHS = (
+    'text-p-0288', 'text-p-0289', 'text-p-0290', 'text-p-0303',
+    'text-p-0304', 'text-p-0306', 'text-p-0307', 'text-p-0309',
+    'text-p-0310', 'text-p-0314', 'text-p-0315', 'text-p-0318',
+    'text-p-0319', 'text-p-0322', 'text-p-0323', 'text-p-0325',
+    'text-p-0376', 'text-p-0378', 'text-p-0379', 'text-p-0380',
+    'text-p-0381', 'text-p-0385', 'text-p-0386', 'text-p-0387',
+    'text-p-0388', 'text-p-0390', 'text-p-0391', 'text-p-0392',
+    'text-p-0394', 'text-p-0395', 'text-p-0396', 'text-p-0398',
+    'text-p-0399', 'text-p-0400', 'text-p-0402', 'text-p-0413',
+    'text-p-0415', 'text-p-0417', 'text-p-0419', 'text-p-0424',
+    'text-p-0425', 'text-p-0426', 'text-p-0427', 'text-p-0428',
+    'text-p-0465', 'text-p-0466', 'text-p-0467', 'text-p-0468',
+    'text-p-0469', 'text-p-0470', 'text-p-0472', 'text-p-0473',
+    'text-p-0474', 'text-p-0475', 'text-p-0476', 'text-p-0509',
+    'text-p-0510', 'text-p-0511', 'text-p-0521', 'text-p-0522',
+    'text-p-0523', 'text-p-0557', 'text-p-0558', 'text-p-0559',
+    'text-p-0560', 'text-p-0561', 'text-p-0562', 'text-p-0565',
+    'text-p-0566', 'text-p-0592', 'text-p-0593', 'text-p-0594',
+    'text-p-0595', 'text-p-0606', 'text-p-0607', 'text-p-0637',
+    'text-p-0638', 'text-p-0639', 'text-p-0640', 'text-p-0641',
+    'text-p-0642', 'text-p-0643',
+)
+
+PRESENTATION_AUTHORIZATION = "migration/approvals/ages-i-presentation-corrections.json"
+PRESENTATION_USER_INSTRUCTION = (
+    'Sobre as alterações que você pontuou, pode aplicar todas, exceto aquelas que nós precisamos validar manualmente cada uma, '
+    'como por exemplo a identificação da fonte de cada uma das imagens, e isso eu vou fazer manualmente. Sobre os links dos '
+    'repositórios, nós temos que fazer da mesma maneira que a Mariah fez, que é colocar como forma de texto, por exemplo: '
+    '"mais informações podem ser encontradas no repositório Easy Choose API" (com um link direto para o repositório, com já existe). '
+    'Então esses pontos nós precisamos fazer muito similar à Mariah, nessa questão de estrutura. E mais pra frente, depois que '
+    'fizermos toda a estruturação de todas as edições da AGES, nós vamos começar a melhorar questões como conteúdo do relatório.'
+)
+PRESENTATION_LIST_MARKER_INSTRUCTION = (
+    "You're are not following Mariah's practices of formatting. You must follow the same pattern as she is. I have uploaded some printscreens of her memorial so you can use it as a reference. Not only that, you are also using useless spacings, italic in links and picture descriptions and bullet points. This goes totally against ABNT practices. Do it again, but YOU MUST USE Mariah's memorial as reference. Her structure is the goal"
+)
+PRESENTATION_LIST_MARKERS = {
+    "text-list-0025": {
+        "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+        "item_count": 5,
+        "tex_environment": r"\begin{itemize}[label={},leftmargin=0pt,labelsep=0pt]",
+        "visible_marker": "suppressed",
+    }
+}
+PRESENTATION_CAPTIONS = {
+    "text-p-0293": ("Figure 1: ", "Figura 1 – "),
+    "text-p-0328": ("Figure 2: ", "Figura 2 – "),
+    "text-p-0356": ("Figure 3: ", "Figura 3 – "),
+    "text-p-0372": ("Figure 4: ", "Figura 4 – "),
+    "text-p-0650": ("Figure 5: ", "Figura 5 – "),
+}
+PRESENTATION_HEADINGS = {
+    "text-h-0002": ("2 - PROJETO AGES I – EASY CHOOSE", "2 PROJETO AGES I – EASY CHOOSE"),
+    "text-h-0022": ("2.4. Conclusão", "2.4 Conclusão"),
+}
+PRESENTATION_CROSS_REFERENCES = {
+    "text-p-0290": {"suffix": " A equipe está retratada na Figura~\\ref{ages-i:draw-image-0001}."},
+    "text-p-0325": {"replace_suffix": {"from": ":", "to": " (Figuras~\\ref{ages-i:draw-image-0002} a~\\ref{ages-i:draw-image-0004}):"}},
+    "text-p-0642": {"suffix": " O registro do projeto selecionado está na Figura\\hspace{0.6em}\\hyperref[fig:ages-i-projeto-destaque]{\\ref*{fig:ages-i-projeto-destaque}}."},
+}
+PRESENTATION_REPOSITORY_LINKS = {
+    "text-a-0105": {"href": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin", "source_anchor": "Repositório EasyChooseAdmin", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Easy Choose Admin", "suffix": "."},
+    "text-a-0106": {"href": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista", "source_anchor": "Repositório EasyChooseStore", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Easy Choose Store", "suffix": "."},
+    "text-a-0107": {"href": "https://tools.ages.pucrs.br/easy-choose/easychooseapi", "source_anchor": "Repositório EasyChooseApi", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Easy Choose API", "suffix": "."},
+}
+PRESENTATION_REPOSITORY_PARAGRAPHS = {
+    "text-p-0304": "text-a-0105",
+    "text-p-0307": "text-a-0106",
+    "text-p-0310": "text-a-0107",
+}
+PRESENTATION_SERIALIZATIONS = {
+    "abnt_figure_caption": set(PRESENTATION_CAPTIONS),
+    "abnt_section_numbering": set(PRESENTATION_HEADINGS),
+    "approved_figure_cross_reference": set(PRESENTATION_CROSS_REFERENCES),
+    "repository_link_sentence": set(PRESENTATION_REPOSITORY_LINKS) | set(PRESENTATION_REPOSITORY_PARAGRAPHS),
+}
+PRESENTATION_OVERRIDES_BY_UNIT = {
+    "chapter-02-text-h-0002": {"text-h-0002"},
+    "chapter-02-text-h-0003": {"text-p-0290", "text-p-0293"},
+    "chapter-02-text-h-0008": set(PRESENTATION_REPOSITORY_LINKS) | set(PRESENTATION_REPOSITORY_PARAGRAPHS),
+    "chapter-02-text-h-0011": {"text-p-0325", "text-p-0328", "text-p-0356", "text-p-0372"},
+    "chapter-02-text-h-0022": {"text-h-0022", "text-p-0642", "text-p-0650"},
+}
+
+
+def _load_presentation_authorization(repo: Path) -> dict:
+    path = repo / PRESENTATION_AUTHORIZATION
+    authorization = json.loads(path.read_text(encoding="utf-8"))
+    changes = authorization.get("approved_presentation_changes")
+    if (authorization.get("schema_version") != 1
+            or authorization.get("kind") != "user_presentation_correction_authorization"
+            or authorization.get("status") != "authorized_for_execution_pending_human_review"
+            or authorization.get("quoted_instruction") != PRESENTATION_USER_INSTRUCTION
+            or authorization.get("scope") != "AGES I / Easy Choose only"
+            or authorization.get("execution_authorized") is not True
+            or authorization.get("human_approval") is not None
+            or authorization.get("future_projects_approved") is not False
+            or authorization.get("manual_pending") != ["Identifying the source/provenance of each of the five real images"]
+            or not isinstance(changes, dict)
+            or set(changes) != {"figure_caption_labels", "section_numbering", "figure_cross_references", "list_markers"}
+            or changes.get("section_numbering") != {rid: new for rid, (_, new) in PRESENTATION_HEADINGS.items()}
+            or changes.get("figure_cross_references") != PRESENTATION_CROSS_REFERENCES
+            or changes.get("list_markers") != PRESENTATION_LIST_MARKERS
+            or authorization.get("list_marker_instruction") != PRESENTATION_LIST_MARKER_INSTRUCTION
+            or authorization.get("repository_links") != PRESENTATION_REPOSITORY_LINKS):
+        raise ValueError("Presentation authorization is missing, stale, or exceeds the explicit AGES I scope")
+    captions = changes.get("figure_caption_labels")
+    if not isinstance(captions, dict) or set(captions) != set(PRESENTATION_CAPTIONS):
+        raise ValueError("Caption localization authorization does not cover exactly the five AGES I captions")
+    return authorization
+
+
+def _verify_markerless_list(source_id, source, disposition, authorization):
+    """Prove the one approved list keeps its five items and omits glyph markers."""
+    rule = PRESENTATION_LIST_MARKERS.get(source_id)
+    if not rule or authorization is None:
+        raise ValueError("List marker change is outside the authorized source list")
+    changes = authorization.get("approved_presentation_changes", {})
+    if (authorization.get("list_marker_instruction") != PRESENTATION_LIST_MARKER_INSTRUCTION
+            or changes.get("list_markers") != PRESENTATION_LIST_MARKERS
+            or disposition.get("disposition") != "approved-markerless-list-preserving-items"
+            or disposition.get("presentation_override") != {
+                "authorization_evidence": PRESENTATION_AUTHORIZATION,
+                "source_marker": "bullet",
+                "target_marker": "none",
+                "item_count": rule["item_count"],
+            }
+            or source.count(rule["tex_environment"]) != 1
+            or len(re.findall(r"(?m)^\\item(?:\s|$)", source)) != rule["item_count"]):
+        raise ValueError("Markerless list differs from the exact authorized five-item presentation")
+    return True
+
+
+TECHNOLOGY_PARAGRAPH_AUTHORIZATION = "migration/approvals/ages-i-technologies-paragraph.json"
+TECHNOLOGY_PARAGRAPH_RECORDS = (
+    {"source_id": "text-a-0111", "citation_key": "typescript-docs", "label": "TypeScript", "url": "https://www.typescriptlang.org/docs/", "date": "2024-04-10"},
+    {"source_id": "text-a-0112", "citation_key": "react-docs", "label": "React", "url": "https://react.dev/", "date": "2024-04-10"},
+    {"source_id": "text-a-0113", "citation_key": "nodejs-docs", "label": "Node.js", "url": "https://nodejs.org/docs/latest/api/", "date": "2024-04-10"},
+    {"source_id": "text-a-0114", "citation_key": "prisma-docs", "label": "Prisma", "url": "https://www.prisma.io/docs", "date": "2024-04-10"},
+    {"source_id": "text-a-0115", "citation_key": "postgresql-docs", "label": "PostgreSQL", "url": "https://www.postgresql.org/docs/", "date": "2024-04-10"},
+)
+
+
+def _verify_technology_paragraph(source, bibliography, disposition, authorization):
+    """Verify the narrowly authorized AGES I technology paragraph and citations."""
+    if (disposition.get("source_id") != "text-list-0025"
+            or disposition.get("disposition") != "approved-single-paragraph-technology-list"
+            or disposition.get("presentation_override") != {
+                "authorization_evidence": TECHNOLOGY_PARAGRAPH_AUTHORIZATION,
+                "source_marker": "bullet list",
+                "target_structure": "one continuous prose paragraph",
+                "item_count": 5,
+            }):
+        raise ValueError("Technology-list disposition differs from the exact AGES I paragraph approval")
+    expected_authorization = {
+        "schema_version": 1,
+        "kind": "user_authorized_technology_presentation_and_citation",
+        "status": "authorized_for_execution_pending_human_review",
+        "scope": "AGES I / Easy Choose / subseção Tecnologias utilizadas / text-h-0012",
+        "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+        "promoted_to_reusable_policy": False,
+        "human_approval_of_result": None,
+    }
+    if any(authorization.get(key) != value for key, value in expected_authorization.items()):
+        raise ValueError("Technology-paragraph authorization is missing, stale, or outside the reviewed AGES I scope")
+    if authorization.get("assigned_references") != [
+        {
+            "source_id": item["source_id"], "citation_key": item["citation_key"],
+            "citation_author_label": item["label"], "year": 2024,
+            "access_date": item["date"], "url": item["url"],
+        }
+        for item in TECHNOLOGY_PARAGRAPH_RECORDS
+    ]:
+        raise ValueError("Assigned citation/access-date records differ from the authorized five technology links")
+    if authorization.get("user_decisions", {}).get("author_date_year") != "Use the access year as the publication/citation year, following Mariah's pattern.":
+        raise ValueError("Author-date year convention differs from the user's explicit decision")
+
+    marker = r"\label{ages-i:text-h-0012}"
+    if marker not in source:
+        raise ValueError("Technology subsection label is missing")
+    body = source.split(marker, 1)[1]
+    if body.count(r"\par") != 1 or not body.rstrip().endswith(r"\par"):
+        raise ValueError("All technology text must form exactly one paragraph")
+    if re.search(r"\\(?:begin\s*\{(?:itemize|enumerate)\}|item\b)", body):
+        raise ValueError("The technology list still has visible list structure")
+
+    citation_tokens = [token.args[0] for token in commands(body) if token.name == "cite" and token.args]
+    if citation_tokens != [item["citation_key"] for item in TECHNOLOGY_PARAGRAPH_RECORDS]:
+        raise ValueError("The five author-date citations are missing, duplicated, or out of order")
+    for item in TECHNOLOGY_PARAGRAPH_RECORDS:
+        expected_prefix = f'{item["label"]}:\\space\\cite{{{item["citation_key"]}}}'
+        if expected_prefix not in body:
+            raise ValueError(f"The {item['label']} citation is detached from its technology label")
+    hrefs = [token.args for token in commands(body) if token.name == "href" and len(token.args) == 2]
+    expected_hrefs = [
+        (item["url"], f"Documentação {item['label']}")
+        for item in TECHNOLOGY_PARAGRAPH_RECORDS
+    ]
+    if hrefs != expected_hrefs:
+        raise ValueError("The five original documentation URLs/anchors must remain in source order")
+    href_tokens = [token for token in commands(body) if token.name == "href" and len(token.args) == 2]
+    separators = [body[token.end:token.end + 1] for token in href_tokens]
+    if separators != [";", ";", ";", ";", "."]:
+        raise ValueError("Technology group separators must be the four approved semicolons and final period")
+
+    for item in TECHNOLOGY_PARAGRAPH_RECORDS:
+        match = re.search(
+            rf"(?ms)^@online\{{{re.escape(item['citation_key'])},(?P<entry>.*?)^\}}",
+            bibliography,
+        )
+        if not match:
+            raise ValueError(f"Bibliography entry {item['citation_key']} is missing")
+        entry = match["entry"]
+        fields = {
+            "author": "{{" + item["label"] + "}}",
+            "year": "{2024}",
+            "urldate": "{" + item["date"] + "}",
+            "url": "{" + item["url"] + "}",
+        }
+        for field, value in fields.items():
+            if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
+                raise ValueError(f"Bibliography field {field} for {item['citation_key']} differs from its approval")
+    return True
+
+
+def _reference_suffix(value: str) -> str:
+    value = value.replace(r"\nobreakspace{}", " ")
+    value = value.replace(r"\hspace{0.6em}", " ")
+    value = re.sub(
+        r"\\hyperref\[([A-Za-z0-9:_-]+)\]\{\\ref\*\{([A-Za-z0-9:_-]+)\}\}",
+        lambda match: f"⟪ref:{match[1]}⟫" if match[1] == match[2] else match[0],
+        value,
+    )
+    value = re.sub(r"\\ref\{([A-Za-z0-9:_-]+)\}", r"⟪ref:\1⟫", value)
+    return value.replace("~", " ")
+
+
+def _project_approved_presentation(source_id, expected, observed, serializations, authorization):
+    used = set(serializations) & set(PRESENTATION_SERIALIZATIONS)
+    if not used:
+        return observed, None
+    if authorization is None:
+        raise UnsupportedSerialization("Presentation override requires the explicit current user authorization")
+    for kind in used:
+        if source_id not in PRESENTATION_SERIALIZATIONS[kind]:
+            raise UnsupportedSerialization(f"{kind} is not authorized for {source_id}")
+    if "abnt_figure_caption" in used:
+        old_prefix, new_prefix = PRESENTATION_CAPTIONS[source_id]
+        if not expected.startswith(old_prefix):
+            raise UnsupportedSerialization("Source caption no longer matches the audited Figure label")
+        target = authorization["approved_presentation_changes"]["figure_caption_labels"][source_id]
+        expected_target = new_prefix + expected[len(old_prefix):]
+        if target != expected_target or observed != expected_target:
+            raise UnsupportedSerialization("Figure caption changes exceed the authorized Portuguese label and ABNT dash")
+        return expected, {"source_id": source_id, "kind": "abnt_figure_caption_label", "source": expected, "displayed": expected_target}
+    if "abnt_section_numbering" in used:
+        source, target = PRESENTATION_HEADINGS[source_id]
+        if expected != source or authorization["approved_presentation_changes"]["section_numbering"][source_id] != target or observed != target:
+            raise UnsupportedSerialization("Section indicator differs from the narrowly authorized ABNT punctuation adjustment")
+        return expected, {"source_id": source_id, "kind": "abnt_section_numbering", "source": source, "displayed": target}
+    if "repository_link_sentence" in used:
+        link_id = PRESENTATION_REPOSITORY_PARAGRAPHS.get(source_id, source_id)
+        rule = PRESENTATION_REPOSITORY_LINKS.get(link_id)
+        if rule is None or expected != rule["source_anchor"]:
+            raise UnsupportedSerialization("Repository prose is not attached to an original authorized anchor")
+        target = rule["prefix"] + rule["anchor"] + rule["suffix"]
+        if observed != target:
+            raise UnsupportedSerialization("Repository prose or visible anchor differs from the exact user-approved sentence")
+        return expected, {"source_id": source_id, "kind": "repository_link_in_prose", "source": expected, "displayed": target, "href": rule["href"]}
+    if "approved_figure_cross_reference" in used:
+        rule = PRESENTATION_CROSS_REFERENCES[source_id]
+        policy = authorization["approved_presentation_changes"]["figure_cross_references"][source_id]
+        if rule != policy:
+            raise UnsupportedSerialization("Figure cross-reference differs from the authorized structural wording")
+        if "suffix" in rule:
+            expected_target = expected + _reference_suffix(rule["suffix"])
+        else:
+            replacement = rule["replace_suffix"]
+            if not expected.endswith(replacement["from"]):
+                raise UnsupportedSerialization("Source paragraph punctuation differs from the authorized figure callout")
+            expected_target = expected[:-len(replacement["from"])] + _reference_suffix(replacement["to"])
+        if observed != expected_target:
+            raise UnsupportedSerialization("Figure callout is missing, altered, or contains unapproved words")
+        return expected, {"source_id": source_id, "kind": "figure_cross_reference", "source": expected, "displayed": expected_target}
+    raise UnsupportedSerialization("Unrecognized presentation transformation")
+
 DIAGRAM_PLACEHOLDER_BODY = r"\par\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\textbf{Diagrama ausente — placeholder provisório}\par Identificador: #1\par Pendência: #2}}\par"
 
 
@@ -39,11 +346,13 @@ class UnsupportedSerialization(ValueError):
 @dataclass(frozen=True)
 class _ExplicitWhitespace:
     value: str
+    inline_layout: bool = False
+    leading_layout: bool = False
 
 
-def displayed_text(source: str, serializations=(), *, macro_contract_verified=False) -> str:
+def displayed_text(source: str, serializations=(), *, macro_contract_verified=False, inline_layout_verified=False, reference_layout_verified=False) -> str:
     """Decode a conservative token projection; markers cannot be text-injected."""
-    tokens = _display_tokens(source, serializations, macro_contract_verified)
+    tokens = _display_tokens(source, serializations, macro_contract_verified, inline_layout_verified, reference_layout_verified)
     blocks = []
     for token in tokens:
         if isinstance(token, str) and blocks and isinstance(blocks[-1], str):
@@ -75,7 +384,7 @@ def displayed_text(source: str, serializations=(), *, macro_contract_verified=Fa
     return result
 
 
-def _display_tokens(source: str, serializations, macro_contract_verified) -> list:
+def _display_tokens(source: str, serializations, macro_contract_verified, inline_layout_verified=False, reference_layout_verified=False) -> list:
     """Decode only syntax with a known, local displayed-text equivalent.
 
     Ordinary TeX code folding collapses to one visible space. Explicit source
@@ -84,11 +393,15 @@ def _display_tokens(source: str, serializations, macro_contract_verified) -> lis
     Accents, punctuation, case, numbers and symbols compare exactly.
     No macro expansion, citation expansion or counter-generated text is guessed.
     """
-    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace"}
+    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence"}
     if set(serializations) - allowed:
         raise UnsupportedSerialization("Unrecognized serialization policy")
     if "original_whitespace" in serializations and not macro_contract_verified:
         raise UnsupportedSerialization("original_whitespace requires a verified macro contract")
+    if "inline_tab_layout" in serializations and (not inline_layout_verified or "original_whitespace" not in serializations):
+        raise UnsupportedSerialization("inline_tab_layout requires authorized source scope and original_whitespace")
+    if "reference_paragraph_layout" in serializations and not reference_layout_verified:
+        raise UnsupportedSerialization("reference_paragraph_layout requires verified explicit user authorization")
     masked = strip_comments(source)
     # A TeX comment suppresses its newline, rather than inserting a space.
     # Keep the offset-preserving lexer separate from this displayed projection.
@@ -122,21 +435,72 @@ def _display_tokens(source: str, serializations, macro_contract_verified) -> lis
                 continue
             while i < len(text) and text[i].isspace():
                 i += 1
-            if name in {"originaltab", "originalspace"}:
+            if name in {"originaltab", "originalspace", "originalinlinetab", "originalleadingspace"}:
                 if "original_whitespace" not in serializations or not macro_contract_verified:
                     raise UnsupportedSerialization("Explicit whitespace macro requires verified original_whitespace policy")
                 if text[i:i + 2] != "{}":
                     raise UnsupportedSerialization("Whitespace macro must have an explicit empty group")
                 i += 2
-                output.append(_ExplicitWhitespace("\t" if name == "originaltab" else " "))
+                if name == "originalinlinetab" and ("inline_tab_layout" not in serializations or not inline_layout_verified):
+                    raise UnsupportedSerialization("Inline tab layout requires verified explicit authorization")
+                if name == "originalleadingspace" and ("reference_paragraph_layout" not in serializations or not reference_layout_verified):
+                    raise UnsupportedSerialization("Leading space metadata requires authorized paragraph layout")
+                output.append(_ExplicitWhitespace(" " if name in {"originalspace", "originalleadingspace"} else "\t", name == "originalinlinetab", name == "originalleadingspace"))
                 continue
             if name in symbols:
                 output.append(symbols[name])
                 if text[i:i + 2] == "{}":
                     i += 2
                 continue
+            if name == "space":
+                if "original_whitespace" not in serializations or not macro_contract_verified:
+                    raise UnsupportedSerialization("TeX space requires verified original_whitespace policy")
+                output.append(_ExplicitWhitespace(" "))
+                continue
+            if name == "nobreakspace":
+                if "approved_figure_cross_reference" not in serializations:
+                    raise UnsupportedSerialization("A nonbreaking reference space requires its exact approved figure-callout mapping")
+                if text[i:i + 2] != "{}":
+                    raise UnsupportedSerialization("nobreakspace must use an explicit empty group")
+                output.append(" ")
+                i += 2
+                continue
+            if name == "hspace":
+                if "approved_figure_cross_reference" not in serializations:
+                    raise UnsupportedSerialization("A fixed reference gap requires its exact approved figure-callout mapping")
+                if i >= len(text) or text[i] != "{":
+                    raise UnsupportedSerialization("Missing argument of hspace")
+                dimension, i = _group(text, i, "{", "}")
+                if dimension != "0.6em":
+                    raise UnsupportedSerialization("Only the approved figure-reference gap is supported")
+                output.append(" ")
+                continue
             if name in {"newline", "linebreak", "\\"}:
                 raise UnsupportedSerialization("Explicit target line break requires rendered/source whitespace review")
+            if name == "ref":
+                if "approved_figure_cross_reference" not in serializations:
+                    raise UnsupportedSerialization("A generated reference requires its exact authorized figure-callout mapping")
+                if i >= len(text) or text[i] != "{":
+                    raise UnsupportedSerialization("Missing argument of ref")
+                label, i = _group(text, i, "{", "}")
+                if not re.fullmatch(r"[A-Za-z0-9:_-]+", label):
+                    raise UnsupportedSerialization("Unsupported reference label")
+                output.append(f"⟪ref:{label}⟫")
+                continue
+            if name == "hyperref":
+                if "approved_figure_cross_reference" not in serializations:
+                    raise UnsupportedSerialization("A linked starred reference requires its exact approved figure-callout mapping")
+                if i >= len(text) or text[i] != "[":
+                    raise UnsupportedSerialization("Missing destination of hyperref")
+                destination, i = _group(text, i, "[", "]")
+                if i >= len(text) or text[i] != "{":
+                    raise UnsupportedSerialization("Missing text of hyperref")
+                linked_text, i = _group(text, i, "{", "}")
+                match = re.fullmatch(r"\\ref\*\{([A-Za-z0-9:_-]+)\}", linked_text)
+                if not match or match[1] != destination:
+                    raise UnsupportedSerialization("Only a live, matching starred figure reference may be linked")
+                output.append(f"⟪ref:{destination}⟫")
+                continue
             if name in wrappers | {"href", "url"}:
                 if i >= len(text) or text[i] != "{":
                     raise UnsupportedSerialization(f"Missing argument of {name}")
@@ -153,12 +517,12 @@ def _display_tokens(source: str, serializations, macro_contract_verified) -> lis
                     if i >= len(text) or text[i] != "{":
                         raise UnsupportedSerialization("Missing href anchor")
                     first, i = _group(text, i, "{", "}")
-                output.extend(_display_tokens(first, serializations, macro_contract_verified))
+                output.extend(_display_tokens(first, serializations, macro_contract_verified, inline_layout_verified, reference_layout_verified))
                 continue
             raise UnsupportedSerialization(f"Unsupported command \\{name}; rendered equivalence is unproven")
         if char == "{":
             group, i = _group(text, i, "{", "}")
-            output.extend(_display_tokens(group, serializations, macro_contract_verified))
+            output.extend(_display_tokens(group, serializations, macro_contract_verified, inline_layout_verified, reference_layout_verified))
             continue
         if char == "}" or char in "$&#_^":
             raise UnsupportedSerialization(f"Unescaped special character {char!r}")
@@ -219,7 +583,7 @@ def _valid_url(value: str) -> bool:
 
 def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | None = None) -> dict:
     repo = repo.resolve()
-    findings, differences, facts = [], {}, {"scope": unit_id or "all", "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution", "text_records_checked": 0, "text_records_matched": 0, "links_checked": 0, "images_checked": 0, "converted_units": 0, "source_text_records": 0, "coverage_percent": 0.0}
+    findings, differences, facts = [], {}, {"scope": unit_id or "all", "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution", "text_records_checked": 0, "text_records_matched": 0, "inline_tab_layout_records_matched": 0, "reference_paragraph_layout_records_matched": 0, "links_checked": 0, "images_checked": 0, "converted_units": 0, "source_text_records": 0, "coverage_percent": 0.0, "approved_presentation_transformations": []}
 
     def report(code, uid, message, source_id=None, path=None, severity="error"):
         findings.append({"severity": severity, "code": code, "unit_id": uid, "source_id": source_id, "path": path, "message": message})
@@ -250,6 +614,12 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         report("unsafe_compilation_root", None, str(exc))
         return {"status": "blocked", "findings": findings, "facts": facts, "differences": differences}
     target_cache = {}
+    presentation_authorization = None
+    presentation_authorization_error = None
+    try:
+        presentation_authorization = _load_presentation_authorization(repo)
+    except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
+        presentation_authorization_error = str(exc)
 
     def fragment(mapping):
         path = safe_path(mapping.get("target_file"))
@@ -270,6 +640,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         unit = units[uid]
         state = ledger_units.get(uid, {}).get("state", "unconverted")
         unit_ledger = ledger_units.get(uid, {})
+        technology_paragraph_verified = False
         differences[uid] = []
         source_ids = unit.get("source_record_ids")
         if source_ids is None:
@@ -284,6 +655,31 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             continue
         facts["converted_units"] += 1
         mappings = unit_ledger.get("element_map", [])
+        if uid == "chapter-02-text-h-0012":
+            try:
+                source_path = safe_path(unit_ledger.get("tex_path"))
+                source_text = source_path.read_text(encoding="utf-8")
+                disposition = next(
+                    item for item in unit_ledger.get("structural_dispositions", [])
+                    if item.get("source_id") == "text-list-0025"
+                )
+                if disposition.get("disposition") == "approved-single-paragraph-technology-list":
+                    technology_approval = json.loads(safe_path(TECHNOLOGY_PARAGRAPH_AUTHORIZATION).read_text(encoding="utf-8"))
+                    bibliography = safe_path("relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+                    _verify_technology_paragraph(source_text, bibliography, disposition, technology_approval)
+                    technology_paragraph_verified = True
+                    facts["approved_presentation_transformations"].append({
+                        "source_id": "text-list-0025",
+                        "kind": "single_paragraph_with_author_date_citations",
+                        "citation_keys": [item["citation_key"] for item in TECHNOLOGY_PARAGRAPH_RECORDS],
+                        "access_dates_assigned_under_user_instruction": [item["date"] for item in TECHNOLOGY_PARAGRAPH_RECORDS],
+                    })
+                    report("approved_technology_paragraph_review_required", uid, "The five source technology entries form one paragraph; labels, descriptions, original documentation links and ordered author-date citations are verified. Assigned 2024 dates remain user-directed metadata, and human review is pending", source_id="text-list-0025", severity="warning")
+                else:
+                    _verify_markerless_list("text-list-0025", source_text, disposition, presentation_authorization)
+                    report("approved_list_marker_review_required", uid, "The five source list items remain in order; only their visible bullet glyphs are suppressed under explicit user presentation authorization. Human visual approval remains pending", source_id="text-list-0025", severity="warning")
+            except (ValueError, OSError, KeyError, StopIteration, UnicodeError, TypeError) as exc:
+                report("invalid_technology_list_presentation", uid, str(exc), source_id="text-list-0025")
         mapping_ids = [item.get("source_id") for item in mappings]
         duplicate_ids = [rid for rid, count in Counter(mapping_ids).items() if count > 1]
         for rid in duplicate_ids:
@@ -292,9 +688,83 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         for rid in set(mapping_ids) - allowed_ids:
             report("unknown_or_wrong_unit_mapping", uid, "Mapping does not belong to this source unit", rid)
         by_id = {item.get("source_id"): item for item in mappings}
+        presentation_override_ids = {rid for rid, mapping in by_id.items() if set(mapping.get("serializations", [])) & set(PRESENTATION_SERIALIZATIONS)}
+        repository_link_style_verified = False
+        if presentation_override_ids or "approved_presentation_overrides" in unit_ledger:
+            try:
+                expected_override_ids = PRESENTATION_OVERRIDES_BY_UNIT.get(uid, set())
+                policy = unit_ledger.get("approved_presentation_overrides")
+                if (uid != "chapter-02-text-h-0008"
+                        and uid not in PRESENTATION_OVERRIDES_BY_UNIT):
+                    raise ValueError("Presentation overrides are outside the specifically authorized AGES I units")
+                if (policy != {"authorization_evidence": PRESENTATION_AUTHORIZATION, "source_ids": sorted(expected_override_ids)}
+                        or presentation_override_ids != expected_override_ids):
+                    raise ValueError("Presentation override ledger must cover exactly the user-authorized elements in this unit")
+                if presentation_authorization is None:
+                    raise ValueError(presentation_authorization_error or "Missing user authorization")
+                repository_link_style_verified = True
+                report("approved_presentation_review_required", uid, "Presentation overlays are narrowly authorized and source-linked; human presentation approval remains pending", severity="warning")
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
+                report("invalid_repository_link_style", uid, str(exc))
         uses_original_whitespace = any("original_whitespace" in item.get("serializations", []) for item in mappings)
+        inline_ids = {item.get("source_id") for item in mappings if "inline_tab_layout" in item.get("serializations", [])}
+        inline_verified = False
+        if inline_ids:
+            try:
+                policy = unit_ledger.get("inline_tab_layout")
+                if not isinstance(policy, dict) or set(policy) != {"authorization_evidence", "source_ids"}:
+                    raise ValueError("Inline tab layout requires exact authorization_evidence/source_ids policy")
+                if policy["authorization_evidence"] != INLINE_TAB_AUTHORIZATION or not isinstance(policy["source_ids"], list) or len(policy["source_ids"]) != len(inline_ids) or set(policy["source_ids"]) != inline_ids or not inline_ids <= INLINE_TAB_COUNTS.keys():
+                    raise ValueError("Inline tab policy differs from the three explicitly scoped source IDs")
+                authorization = json.loads(safe_path(INLINE_TAB_AUTHORIZATION).read_text(encoding="utf-8"))
+                if (authorization.get("kind") != "user_format_correction_authorization"
+                        or not isinstance(authorization.get("scope"), list)
+                        or uid not in authorization["scope"]
+                        or authorization.get("quoted_instruction") != INLINE_TAB_USER_INSTRUCTION
+                        or authorization.get("execution_authorized") is not True
+                        or authorization.get("layout_source_ids") != list(INLINE_TAB_COUNTS)
+                        or authorization.get("promoted_to_reusable_policy") is not False
+                        or authorization.get("status") != "proposed_for_review"
+                        or authorization.get("future_projects_approved") is not False):
+                    raise ValueError("Missing explicit user formatting authorization or review/future-project boundary")
+                inline_verified = True
+                report("inline_tab_layout_review_required", uid, "Explicit user formatting correction: original internal tab tokens project exactly while the verified macro prints word spacing; PDF layout and human presentation approval remain separate", severity="warning")
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
+                report("invalid_inline_tab_layout", uid, str(exc))
+        reference_ids = {item.get("source_id") for item in mappings if "reference_paragraph_layout" in item.get("serializations", [])}
+        reference_verified = False
+        if reference_ids or "reference_paragraph_layout" in unit_ledger:
+            try:
+                policy = unit_ledger.get("reference_paragraph_layout")
+                if not isinstance(policy, dict) or set(policy) != {"authorization_evidence", "source_ids"}:
+                    raise ValueError("Reference paragraph layout requires exact authorization_evidence/source_ids policy")
+                paragraph_ids = [rid for rid in source_ids if _kind(records[rid]) == "p" and records[rid].get("semantic_type") == "paragraph" and records[rid].get("text")]
+                if (uid not in REFERENCE_LAYOUT_UNITS
+                        or policy["authorization_evidence"] != REFERENCE_LAYOUT_AUTHORIZATION
+                        or policy["source_ids"] != paragraph_ids
+                        or reference_ids != set(paragraph_ids)
+                        or not set(paragraph_ids) <= set(REFERENCE_LAYOUT_PARAGRAPHS)
+                        or any(records[rid].get("unit_id", uid) != uid for rid in paragraph_ids)):
+                    raise ValueError("Reference layout policy must match exactly this authorized unit's original body paragraphs")
+                authorization = json.loads(safe_path(REFERENCE_LAYOUT_AUTHORIZATION).read_text(encoding="utf-8"))
+                if (authorization.get("kind") != "user_reference_style_request"
+                        or authorization.get("scope") != list(REFERENCE_LAYOUT_UNITS)
+                        or authorization.get("paragraph_source_ids") != list(REFERENCE_LAYOUT_PARAGRAPHS)
+                        or authorization.get("baseline_commit") != REFERENCE_LAYOUT_BASELINE
+                        or authorization.get("quoted_instruction") != REFERENCE_LAYOUT_USER_INSTRUCTION
+                        or authorization.get("execution_authorized") is not True
+                        or authorization.get("status") != "proposed_for_review"
+                        or authorization.get("future_projects_approved") is not False
+                        or authorization.get("promoted_to_reusable_policy") is not False
+                        or "human_presentation_approval" not in authorization
+                        or authorization["human_presentation_approval"] is not None):
+                    raise ValueError("Missing explicit reference-style request or original scope/review/future-project boundary")
+                reference_verified = True
+                report("reference_paragraph_layout_review_required", uid, "Original whitespace tokens project exactly; verified zero-width leading markers implement the requested reference paragraph layout. PDF review and human presentation approval remain separate", severity="warning")
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
+                report("invalid_reference_paragraph_layout", uid, str(exc))
         macro_verified = False
-        if uses_original_whitespace:
+        if uses_original_whitespace or inline_ids or reference_verified:
             try:
                 contract = unit_ledger.get("macro_contract", ledger.get("macro_contract"))
                 if not isinstance(contract, dict):
@@ -306,11 +776,16 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 contract_text = contract_data.decode("utf-8")
                 definitions = macro_definitions(contract_text)
                 bodies = {"originaltab": r"\noindent\hspace*{1.251cm}", "originalspace": r"\hspace*{\fontdimen2\font}"}
+                if reference_verified:
+                    bodies["originaltab"] = r"\hspace*{0pt}"
+                    bodies["originalleadingspace"] = r"\hspace*{0pt}"
+                if inline_ids:
+                    bodies["originalinlinetab"] = r"\unskip\space"
                 for name, body in bodies.items():
                     found = [item for item in definitions if item["name"] == name]
                     if len(found) != 1 or found[0]["declaration"] != "newcommand" or found[0]["arity"] != 0 or found[0]["optional_default"] or canonical_macro_body(found[0]["body"]) != canonical_macro_body(body):
                         raise ValueError(f"Actual {name} definition differs from audited contract")
-                if re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace)\b", strip_comments(contract_text)):
+                if re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace|originalinlinetab|originalleadingspace)\b", strip_comments(contract_text)):
                     raise ValueError("Whitespace macro is aliased/redefined outside its audited definition")
                 macro_verified = True
             except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
@@ -368,7 +843,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         if uses_original_whitespace:
             for path in file_order:
                 actual_text = path.read_text(encoding="utf-8")
-                if any(item["name"] in {"originaltab", "originalspace"} for item in macro_definitions(actual_text)) or re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace)\b", strip_comments(actual_text)):
+                if any(item["name"] in {"originaltab", "originalspace", "originalinlinetab", "originalleadingspace"} for item in macro_definitions(actual_text)) or re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace|originalinlinetab|originalleadingspace)\b", strip_comments(actual_text)):
                     report("whitespace_macro_redefinition", uid, "Unit target changes the verified whitespace macros", path=str(path.relative_to(repo)))
                     macro_verified = False
         for path in file_order:
@@ -433,9 +908,52 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 differences[uid].append({"source_id": rid, "target_file": str(path.relative_to(repo)), "expected": original, "observed": None, "diff": "Whitespace equivalence is unproven; no automatic normalization accepted"})
                 continue
             try:
-                observed = displayed_text(value, serializations, macro_contract_verified=macro_verified)
+                inline_policy = "inline_tab_layout" in serializations
+                if inline_policy:
+                    if not inline_verified or rid not in INLINE_TAB_COUNTS:
+                        raise UnsupportedSerialization("Inline tab layout is outside explicitly authorized source scope")
+                    tokens = _display_tokens(value, serializations, macro_verified, inline_verified, reference_verified)
+                    tabs = [token for token in tokens if isinstance(token, _ExplicitWhitespace) and token.value == "\t"]
+                    tab_positions = [index for index, char in enumerate(original) if char == "\t"]
+                    expected_layout = [bool(original[:index].strip()) for index in tab_positions]
+                    if sum(expected_layout) != INLINE_TAB_COUNTS[rid] or [token.inline_layout for token in tabs] != expected_layout:
+                        raise UnsupportedSerialization("Inline tab layout must preserve every leading tab and every authorized internal tab in exact order")
+                if reference_verified:
+                    tokens = _display_tokens(value, serializations, macro_verified, inline_verified, reference_verified)
+                    prefix_end = len(original) - len(original.lstrip(" \t"))
+                    whitespace = [token for token in tokens if isinstance(token, _ExplicitWhitespace)]
+                    # The exact text comparison below also checks marker positions.
+                    # Here distinguish zero-width source metadata from visible spaces.
+                    if any(token.value == "\t" and not token.inline_layout for token in whitespace) and "original_whitespace" not in serializations:
+                        raise UnsupportedSerialization("Leading tab metadata requires original_whitespace")
+                    if "\t" in original[prefix_end:] and not inline_policy:
+                        raise UnsupportedSerialization("Internal tabs require their separate authorized inline policy")
+                    if sum(token.value == "\t" and not token.inline_layout for token in whitespace) != original[:prefix_end].count("\t"):
+                        raise UnsupportedSerialization("Zero-width tab markers must preserve only the original leading tabs")
+                    if any(token.leading_layout for token in whitespace):
+                        if rid != "text-p-0413" or "reference_paragraph_layout" not in serializations:
+                            raise UnsupportedSerialization("Leading space metadata is restricted to the scoped original paragraph")
+                    if "reference_paragraph_layout" in serializations:
+                        if sum(token.leading_layout for token in whitespace) != original[:prefix_end].count(" "):
+                            raise UnsupportedSerialization("Leading spaces must preserve original prefix count as source metadata")
+                        # A leading-layout marker cannot replace an internal or trailing space.
+                        projected = ""
+                        for token in tokens:
+                            if isinstance(token, _ExplicitWhitespace):
+                                if token.leading_layout and projected.strip(" \t"):
+                                    raise UnsupportedSerialization("Leading space metadata cannot occur inside text")
+                                projected += token.value
+                            else:
+                                projected += token
+                observed = displayed_text(value, serializations, macro_contract_verified=macro_verified, inline_layout_verified=inline_verified, reference_layout_verified=reference_verified)
+                observed, presentation_transform = _project_approved_presentation(
+                    rid, expected, observed, serializations, presentation_authorization
+                )
+                if presentation_transform is not None:
+                    facts["approved_presentation_transformations"].append(presentation_transform)
             except (UnsupportedSerialization, ValueError) as exc:
-                report("unsupported_serialization", uid, str(exc), rid)
+                code = "invalid_presentation_serialization" if set(serializations) & set(PRESENTATION_SERIALIZATIONS) else "unsupported_serialization"
+                report(code, uid, str(exc), rid)
                 continue
             facts["text_records_checked"] += 1
             if expected != observed:
@@ -444,6 +962,10 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 report("text_changed", uid, "Text differs in actual target bytes", rid, str(path.relative_to(repo)))
             else:
                 facts["text_records_matched"] += 1
+                if "inline_tab_layout" in serializations:
+                    facts["inline_tab_layout_records_matched"] += 1
+                if "reference_paragraph_layout" in serializations:
+                    facts["reference_paragraph_layout_records_matched"] += 1
         if [pos for _, pos in positions] != sorted(pos for _, pos in positions):
             report("element_order_changed", uid, "Source elements appear in a different target expansion order")
         for index, (path, start, end, rid) in enumerate(text_spans):
@@ -466,8 +988,6 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             token = links[0]
             if len(token.args) != (2 if token.name == "href" else 1):
                 report("invalid_hyperlink_evidence", uid, "Hyperlink has extra or missing arguments", rid)
-            if strip_comments(value[:token.start] + value[token.end:]).strip():
-                report("unmapped_link_span_content", uid, "Link interval contains additional unproved content", rid)
             observed_url = _url(token.args[0])
             expected_url = record["href"]
             facts["links_checked"] += 1
@@ -479,8 +999,26 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             try:
                 policies = by_id[rid].get("serializations", [])
                 observed_anchor = displayed_text(anchor, policies, macro_contract_verified=macro_verified) if token.name == "href" else _url(anchor)
-                if observed_anchor != _strict_source(record.get("source_text") or "", "original_whitespace" in policies and macro_verified):
-                    report("link_anchor_changed", uid, "Displayed anchor differs from original", rid)
+                repository_rule = PRESENTATION_REPOSITORY_LINKS.get(rid)
+                if repository_rule is not None:
+                    prefix = value[:token.start]
+                    suffix = value[token.end:]
+                    if (not repository_link_style_verified
+                            or "repository_link_sentence" not in policies
+                            or record.get("href") != repository_rule["href"]
+                            or record.get("source_text") != repository_rule["source_anchor"]
+                            or observed_url != repository_rule["href"]
+                            or observed_anchor != repository_rule["anchor"]
+                            or prefix != repository_rule["prefix"]
+                            or suffix != repository_rule["suffix"]):
+                        report("invalid_repository_link_sentence", uid, "Repository link sentence, visible anchor, or original direct URL differs from the exact user-approved form", rid)
+                    else:
+                        facts["approved_presentation_transformations"].append({"source_id": rid, "kind": "repository_link_in_prose", "source": repository_rule["source_anchor"], "displayed": prefix + observed_anchor + suffix, "href": observed_url})
+                else:
+                    if strip_comments(value[:token.start] + value[token.end:]).strip():
+                        report("unmapped_link_span_content", uid, "Link interval contains additional unproved content", rid)
+                    if observed_anchor != _strict_source(record.get("source_text") or "", "original_whitespace" in policies and macro_verified):
+                        report("link_anchor_changed", uid, "Displayed anchor differs from original", rid)
             except (ValueError, UnsupportedSerialization) as exc:
                 report("unsupported_link_anchor", uid, str(exc), rid)
 
@@ -604,6 +1142,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     try:
                         title = displayed_text(token.args[0], policies, macro_contract_verified=macro_verified)
                         expected = _strict_source(records[rid]["text"], "original_whitespace" in policies and macro_verified)
+                        title, _ = _project_approved_presentation(rid, expected, title, policies, presentation_authorization)
                         if title == expected:
                             headings.append((rid, expected, policies, token))
                     except UnsupportedSerialization:
@@ -630,7 +1169,9 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if len(token.args) == 3 and token.args[0] == "toc":
                     for rid, expected, policies, heading in headings:
                         try:
-                            if heading.starred and token.args[1] == heading.name and displayed_text(token.args[2], policies, macro_contract_verified=macro_verified) == expected:
+                            entry = displayed_text(token.args[2], policies, macro_contract_verified=macro_verified)
+                            entry, _ = _project_approved_presentation(rid, expected, entry, policies, presentation_authorization)
+                            if heading.starred and token.args[1] == heading.name and entry == expected:
                                 matched.append(rid)
                         except UnsupportedSerialization:
                             pass
@@ -685,7 +1226,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         # not a converter's assertion that they are harmless.
         structural_commands = {"label", "input", "include"}
         wrapper_commands = {"chapter", "section", "subsection", "subsubsection", "paragraph", "caption", "textbf", "textit", "emph", "texttt", "textrm", "textsf", "textnormal", "underline", "mbox"}
-        declarations = {"centering", "raggedright", "raggedleft", "small", "footnotesize", "normalsize", "bfseries", "itshape", "normalfont", "noindent", "par", "newline", "item"}
+        declarations = {"centering", "raggedright", "raggedleft", "small", "footnotesize", "normalsize", "bfseries", "itshape", "normalfont", "noindent", "indent", "par", "newline", "item"}
         environments = {"figure", "figure*", "center", "flushleft", "flushright", "itemize", "enumerate", "description", "reflection", "reflexao", "introspection"}
         printable_ids = set(source_ids) | {rid for rid in allowed_ids if _kind(records.get(rid, {})) == "a"} | set(expected_images)
         for path in file_order:
@@ -700,7 +1241,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 residue = strip_comments(data.decode("utf-8"))
                 chars = list(residue)
                 for token in commands(residue):
-                    if token.name in structural_commands:
+                    if token.name in structural_commands or (technology_paragraph_verified and token.name in {"cite", "space"}):
                         chars[token.start:token.end] = " " * (token.end - token.start)
                     elif token.name in {"begin", "end"} and token.args and token.args[0] in environments:
                         chars[token.start:token.end] = " " * (token.end - token.start)
@@ -713,6 +1254,10 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         report("unsupported_target_scaffolding", uid, f"Unproved command \\{token.name} outside source mappings", path=str(path.relative_to(repo)))
                 remainder = "".join(chars)
                 remainder = re.sub(r"[{}\s]", "", remainder)
+                if technology_paragraph_verified and uid == "chapter-02-text-h-0012":
+                    if remainder != ";;;;.":
+                        report("unmapped_visible_content", uid, "Technology paragraph contains unapproved visible punctuation outside the source mappings: " + remainder[:160], path=str(path.relative_to(repo)))
+                    remainder = ""
                 if remainder:
                     report("unmapped_visible_content", uid, "Target contains content outside proven mappings: " + remainder[:160], path=str(path.relative_to(repo)))
             except (ValueError, UnicodeError) as exc:

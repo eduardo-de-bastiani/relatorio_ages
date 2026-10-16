@@ -2,7 +2,7 @@
 
 ## Acordos concluídos
 
-Texto rigorosamente preservado; revisão editorial posterior; Sprints sem início artificial de página; placeholders visuais para diagramas ausentes; aprovação após cada edição; reflexões com borda e mesma fonte do corpo, divisíveis. O usuário dispensou o modelo restrito da Biblioteca PUCRS e definiu Mariah como métrica visual. Não reabrir essas decisões sem novo motivo ou instrução.
+Texto rigorosamente preservado; revisão editorial posterior; Sprints sem início artificial de página; placeholders visuais para diagramas ausentes; aprovação após cada edição; reflexões com borda e mesma fonte do corpo, divisíveis. O usuário dispensou o modelo restrito da Biblioteca PUCRS e definiu Mariah como métrica visual. Em 16/10/2026, aprovou o padrão visual aplicado à prévia AGES I e autorizou reutilizá-lo; os parâmetros estão agora em [STYLE_GUIDE](STYLE_GUIDE.md), vinculados à aprovação em `migration/approvals/ages-i-presentation-accepted.json`. Essa aprovação da apresentação não comprova fontes de imagens nem certificação integral ABNT.
 
 ## Pendências para a fase de migração
 
@@ -35,9 +35,9 @@ Execução autorizada não equivale a aprovação do resultado. Não iniciar a p
 
 Adicionar ID estável, elemento/arquivo afetado, evidência concreta, impacto, gravidade, responsável, decisão necessária e método de verificação. Resolvido exige evidência e data; não apagar o histórico da decisão.
 
-## Execução autorizada da AGES I
+## Execução anterior da AGES I
 
-O usuário autorizou a edição completa AGES I / Easy Choose e os dois placeholders provisórios. Esse escopo substitui o limite histórico P01; aprovação do resultado permanece PENDING. Outras edições e Hoortech não estão autorizadas. Registro: `migration/approvals/ages-i-authorization.json`.
+O usuário autorizou a edição completa AGES I / Easy Choose e os dois placeholders provisórios. A aprovação da apresentação visual da prévia de 18 páginas e a autorização de prosseguir para AGES II estão registradas em `migration/approvals/ages-i-presentation-accepted.json` e `migration/approvals/ages-ii-authorization.json`. Fontes das figuras, diagramas reais, disponibilidade remota de links e confirmação normativa continuam pendentes. O PDF identificado na aprovação e o escopo do aceite estão detalhados em `docs/ages-i/CURRENT_REVIEW.md`.
 
 | ID | Localização e evidência | Consequência / gravidade | Ação e verificação | Estado |
 |---|---|---|---|---|
@@ -52,7 +52,19 @@ O aceite do resultado deverá identificar PDF, commit e relatórios da edição.
 
 ### Ressalvas da entrega AGES I
 
-- **AI07 / VAI03 — PENDING, média:** tabs internos em `text-p-0303`, `text-p-0314`, `text-p-0318` são preservados 1:1 por avanços de 1.251 cm, com lacunas visíveis na página 4. A origem ODF usa tab stops dependentes de posição; a representação LaTeX não é declarada geometricamente idêntica. Conteúdo permanece intacto e legível; decisão de apresentação pertence ao autor, sem normalização silenciosa. Verificar comparador estrito e PDF identificado em `ages-i/EDITION_REVIEW.md`.
-- **AI08 — PENDING, bloqueia avanço:** todas as 15 unidades da AGES I passaram pelos gates técnicos de preservação e revisão visual com ressalvas; nenhuma recebeu aceite humano. Aprovação deve identificar PDF/hash e relatórios finais. Não iniciar outra edição.
+- **AI07 / VAI03 — RESOLVIDA neste candidato, média:** nove tabs internos em `text-p-0303`, `text-p-0314` e `text-p-0318` continuam rastreados no ODF/manifesto e são exibidos como espaços normais de composição, decisão de apresentação autorizada pelo usuário. Comparação de conteúdo passou; PDF atual e reauditoria visual estão identificados em `ages-i/POST_FORMAT_REVIEW.md`. Esta resolução é apenas desta AGES I e não é regra permanente para outras edições sem aprovação posterior.
+- **AI08 — aceite de avanço registrado:** as 15 unidades passaram pelos gates técnicos; o usuário aprovou a apresentação da prévia identificada e autorizou a AGES II, mantendo explícitas as pendências factuais/normativas acima. Esse aceite não substitui a identificação manual das fontes nem a futura aprovação da edição integrada.
 
 Os achados CA-01 (itálico), VAI01 (floats fora de contexto) e VAI02 (página quase vazia) foram corrigidos e reavaliados; histórico e evidências estão nos pareceres da edição.
+
+### Correção solicitada após revisão humana da AGES I
+
+A proposta histórica de 17 páginas e a revisão de 19 páginas foram sucedidas pela alteração do parágrafo de tecnologias. A prévia atual tem 18 páginas e SHA-256 `e4822c8d8056433af08104b0a9e8edd0f21828350cc9fcb9d2f335ec4a1d0a98`; a compilação e os testes técnicos passaram. O usuário aprovou sua apresentação e autorizou reutilizar o padrão. Fontes de imagens, diagramas reais e conformidade normativa integral continuam **PENDING**. Consulte [a revisão atual](ages-i/CURRENT_REVIEW.md); os relatórios `POST_FORMAT` preservam avaliações históricas de PDFs anteriores.
+
+### Preferência de formatação da Mariah
+
+O usuário aprovou a apresentação da prévia e pediu que o padrão da Mariah seja aplicado às próximas edições. As cinco tecnologias da AGES I aparecem em um parágrafo com citações autor-data, links e referências; 2024 e 10/04/2024 foram atribuídos por instrução explícita, não recuperados de histórico de navegação. A regra reutilizável e suas limitações constam do [STYLE_GUIDE](STYLE_GUIDE.md). A autorização ativa agora é somente AGES II, registrada em `migration/approvals/ages-ii-authorization.json`.
+
+## Execução autorizada da AGES II
+
+O usuário autorizou migrar somente AGES II / Indústria Digital, capítulo 4 do ODT, em 15 unidades listadas em `harness.json`. A autorização está em `migration/approvals/ages-ii-authorization.json`. Sete imagens estão incorporadas e recebem fonte pendente até identificação; o diagrama de banco de dados ausente recebe placeholder provisório. Os links originais serão preservados sem alterações; a disponibilidade remota será registrada separadamente. Para referências tecnológicas, usar 2024 e uma data de acesso atribuída dentro da janela agosto–novembro de 2024, conforme instrução prévia do usuário, e manter essa proveniência explícita.

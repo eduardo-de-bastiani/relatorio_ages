@@ -12,7 +12,7 @@ from .odf import extract_manifest, verify_manifest
 from .latex import audit_latex
 from .preservation import audit_conversion
 from .coordination import checkpoint, resource_locks, run_task, scope_check
-from .build import compile_profile
+from .build import BUILD_PROFILES, compile_profile
 from .visual import prepare_visual
 
 
@@ -30,7 +30,7 @@ def parser() -> argparse.ArgumentParser:
     validate.add_argument("--ledger")
     validate.add_argument("--unit")
     build = commands.add_parser("build")
-    build.add_argument("--profile", choices=["fixture", "template", "document"], default="document")
+    build.add_argument("--profile", choices=sorted(BUILD_PROFILES), default="document")
     visual = commands.add_parser("visual")
     visual.add_argument("--pdf", required=True)
     visual.add_argument("--dpi", type=int, default=100)

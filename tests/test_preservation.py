@@ -4,7 +4,23 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.migration_harness.preservation import audit_conversion, displayed_text, UnsupportedSerialization
+from scripts.migration_harness.preservation import (
+    audit_conversion,
+    displayed_text,
+    UnsupportedSerialization,
+    _project_approved_presentation,
+    PRESENTATION_HEADINGS,
+    PRESENTATION_CAPTIONS,
+    PRESENTATION_REPOSITORY_PARAGRAPHS,
+    PRESENTATION_REPOSITORY_LINKS,
+    PRESENTATION_CROSS_REFERENCES,
+    PRESENTATION_LIST_MARKERS,
+    PRESENTATION_LIST_MARKER_INSTRUCTION,
+    _verify_markerless_list,
+    TECHNOLOGY_PARAGRAPH_AUTHORIZATION,
+    TECHNOLOGY_PARAGRAPH_RECORDS,
+    _verify_technology_paragraph,
+)
 
 
 class PreservationTests(unittest.TestCase):
@@ -44,6 +60,201 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(report["status"], "pass", report)
         self.assertEqual(report["facts"]["coverage_percent"], 100)
         self.assertIn("pdf_evidence_pending", self.codes(report))
+
+    def test_figure_references_require_explicit_serialization_and_keep_label(self):
+        token = r"A Figura~\ref{ages-i:draw-image-0001}."
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(token)
+        self.assertEqual(
+            displayed_text(token, ["approved_figure_cross_reference"]),
+            "A Figura ⟪ref:ages-i:draw-image-0001⟫.",
+        )
+
+    def test_explicit_nonbreaking_space_before_figure_reference_is_visible(self):
+        token = r"Figura\nobreakspace{}\ref{fig:ages-i-projeto-destaque}."
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(token)
+        self.assertEqual(
+            displayed_text(token, ["approved_figure_cross_reference"]),
+            "Figura ⟪ref:fig:ages-i-projeto-destaque⟫.",
+        )
+
+    def test_linked_starred_figure_reference_preserves_explicit_gap(self):
+        token = r"Figura\hspace{0.6em}\hyperref[fig:ages-i-projeto-destaque]{\ref*{fig:ages-i-projeto-destaque}}."
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(token)
+        self.assertEqual(
+            displayed_text(token, ["approved_figure_cross_reference"]),
+            "Figura ⟪ref:fig:ages-i-projeto-destaque⟫.",
+        )
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(token.replace("0.6em", "0.5em"), ["approved_figure_cross_reference"])
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(token.replace("fig:ages-i-projeto-destaque}}", "fig:other}}"), ["approved_figure_cross_reference"])
+
+    def test_abnt_caption_and_heading_overlays_are_exact_and_scoped(self):
+        authorization = {
+            "approved_presentation_changes": {
+                "figure_caption_labels": {"text-p-0293": "Figura 1 – Foto do time – AGES I"},
+                "section_numbering": {rid: target for rid, (_, target) in PRESENTATION_HEADINGS.items()},
+            }
+        }
+        old_caption = "Figure 1: Foto do time – AGES I"
+        projected, evidence = _project_approved_presentation(
+            "text-p-0293", old_caption, "Figura 1 – Foto do time – AGES I",
+            ["abnt_figure_caption"], authorization,
+        )
+        self.assertEqual(projected, old_caption)
+        self.assertEqual(evidence["displayed"], "Figura 1 – Foto do time – AGES I")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-0293", old_caption, "Figura 1 – Foto do time alterado – AGES I",
+                ["abnt_figure_caption"], authorization,
+            )
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-0303", "qualquer texto", "qualquer texto",
+                ["abnt_figure_caption"], authorization,
+            )
+
+    def test_repository_sentence_overlay_only_accepts_original_anchors(self):
+        source_id = "text-p-0310"
+        link_id = PRESENTATION_REPOSITORY_PARAGRAPHS[source_id]
+        rule = PRESENTATION_REPOSITORY_LINKS[link_id]
+        source = rule["source_anchor"]
+        target = rule["prefix"] + rule["anchor"] + rule["suffix"]
+        projected, evidence = _project_approved_presentation(
+            source_id, source, target, ["repository_link_sentence"], {},
+        )
+        self.assertEqual(projected, source)
+        self.assertEqual(evidence["href"], rule["href"])
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                source_id, source, target + " Alterado", ["repository_link_sentence"], {},
+            )
+
+    def test_authorized_cross_reference_overlay_has_exact_source_ids(self):
+        source_id = "text-p-0325"
+        rule = PRESENTATION_CROSS_REFERENCES[source_id]
+        auth = {"approved_presentation_changes": {"figure_cross_references": PRESENTATION_CROSS_REFERENCES}}
+        source = "Fotos dos protótipos:"
+        target = "Fotos dos protótipos (Figuras ⟪ref:ages-i:draw-image-0002⟫ a ⟪ref:ages-i:draw-image-0004⟫):"
+        projected, evidence = _project_approved_presentation(
+            source_id, source, target, ["approved_figure_cross_reference"], auth,
+        )
+        self.assertEqual(projected, source)
+        self.assertEqual(evidence["kind"], "figure_cross_reference")
+
+    def test_authorized_final_figure_callout_has_space_and_exact_words(self):
+        source_id = "text-p-0642"
+        rule = PRESENTATION_CROSS_REFERENCES[source_id]
+        auth = {"approved_presentation_changes": {"figure_cross_references": PRESENTATION_CROSS_REFERENCES}}
+        source = "Original paragraph."
+        target = r"Original paragraph. O registro do projeto selecionado está na Figura ⟪ref:fig:ages-i-projeto-destaque⟫."
+        projected, evidence = _project_approved_presentation(
+            source_id, source, target, ["approved_figure_cross_reference"], auth,
+        )
+        self.assertEqual(projected, source)
+        self.assertEqual(evidence["kind"], "figure_cross_reference")
+
+    def test_approved_technology_list_suppresses_only_markers_and_keeps_five_items(self):
+        source_id, rule = next(iter(PRESENTATION_LIST_MARKERS.items()))
+        auth = {
+            "list_marker_instruction": PRESENTATION_LIST_MARKER_INSTRUCTION,
+            "approved_presentation_changes": {"list_markers": PRESENTATION_LIST_MARKERS},
+        }
+        disposition = {
+            "disposition": "approved-markerless-list-preserving-items",
+            "presentation_override": {
+                "authorization_evidence": "migration/approvals/ages-i-presentation-corrections.json",
+                "source_marker": "bullet",
+                "target_marker": "none",
+                "item_count": 5,
+            },
+        }
+        source = rule["tex_environment"] + "\n" + "\\item\n" * 5 + "\\end{itemize}"
+        self.assertTrue(_verify_markerless_list(source_id, source, disposition, auth))
+        with self.assertRaises(ValueError):
+            _verify_markerless_list(source_id, source.replace(rule["tex_environment"], r"\begin{itemize}"), disposition, auth)
+        with self.assertRaises(ValueError):
+            _verify_markerless_list(source_id, source.replace("\\item\n", "", 1), disposition, auth)
+
+    def technology_paragraph_fixture(self):
+        references = [
+            {
+                "source_id": item["source_id"],
+                "citation_key": item["citation_key"],
+                "citation_author_label": item["label"],
+                "year": 2024,
+                "access_date": item["date"],
+                "url": item["url"],
+            }
+            for item in TECHNOLOGY_PARAGRAPH_RECORDS
+        ]
+        authorization = {
+            "schema_version": 1,
+            "kind": "user_authorized_technology_presentation_and_citation",
+            "status": "authorized_for_execution_pending_human_review",
+            "scope": "AGES I / Easy Choose / subseção Tecnologias utilizadas / text-h-0012",
+            "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+            "user_decisions": {
+                "author_date_year": "Use the access year as the publication/citation year, following Mariah's pattern."
+            },
+            "assigned_references": references,
+            "human_approval_of_result": None,
+            "promoted_to_reusable_policy": False,
+        }
+        sections = []
+        entries = []
+        for index, item in enumerate(TECHNOLOGY_PARAGRAPH_RECORDS):
+            label = item["label"]
+            key = item["citation_key"]
+            sections.append(
+                f"{label}:\\space\\cite{{{key}}} descrição "
+                f"\\href{{{item['url']}}}{{Documentação {label}}}"
+                f"{' ;'.strip() if index < 4 else '.'}"
+            )
+            entries.append(
+                f"@online{{{key},\n"
+                f"  author = {{{{{label}}}}},\n"
+                "  title = {Documentação},\n"
+                f"  url = {{{item['url']}}},\n"
+                "  year = {2024},\n"
+                f"  urldate = {{{item['date']}}},\n"
+                "}\n"
+            )
+        source = (
+            r"\label{ages-i:text-h-0012}" + "\n"
+            + " ".join(sections) + " Integração final.\\par"
+        )
+        disposition = {
+            "source_id": "text-list-0025",
+            "disposition": "approved-single-paragraph-technology-list",
+            "presentation_override": {
+                "authorization_evidence": TECHNOLOGY_PARAGRAPH_AUTHORIZATION,
+                "source_marker": "bullet list",
+                "target_structure": "one continuous prose paragraph",
+                "item_count": 5,
+            },
+        }
+        return source, "\n".join(entries), disposition, authorization
+
+    def test_authorized_technology_paragraph_keeps_citations_urls_and_assigned_dates(self):
+        source, bibliography, disposition, authorization = self.technology_paragraph_fixture()
+        self.assertTrue(_verify_technology_paragraph(source, bibliography, disposition, authorization))
+
+    def test_authorized_technology_paragraph_rejects_split_text_or_missing_link(self):
+        source, bibliography, disposition, authorization = self.technology_paragraph_fixture()
+        with self.assertRaises(ValueError):
+            _verify_technology_paragraph(source.replace(" Integração final.", r"\\par Integração final."), bibliography, disposition, authorization)
+        with self.assertRaises(ValueError):
+            _verify_technology_paragraph(source.replace("Documentação React", "React docs"), bibliography, disposition, authorization)
+
+    def test_authorized_technology_paragraph_rejects_unapproved_access_date(self):
+        source, bibliography, disposition, authorization = self.technology_paragraph_fixture()
+        authorization["assigned_references"][0]["access_date"] = "2024-09-15"
+        with self.assertRaises(ValueError):
+            _verify_technology_paragraph(source, bibliography, disposition, authorization)
 
     def test_unconverted_never_claims_integrity(self):
         self.ledger["units"]["sprint-test"]["state"] = "unconverted"
@@ -203,6 +414,14 @@ class PreservationTests(unittest.TestCase):
                 self.assertEqual(report["status"], "pass", report)
                 self.assertEqual(report["facts"]["text_records_matched"], 1)
 
+    def test_breakable_space_macro_preserves_authorized_trailing_source_space(self):
+        self.assertEqual(
+            displayed_text(r"TypeScript:\space", ["original_whitespace"], macro_contract_verified=True),
+            "TypeScript: ",
+        )
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(r"TypeScript:\space", ["original_whitespace"])
+
     def test_multiple_leading_tabs_must_all_be_preserved(self):
         self.whitespace_case("\t\tApós ", r"\originaltab{}\originaltab{}Após\originalspace{}")
         self.assertEqual(self.audit()["status"], "pass", self.audit())
@@ -240,6 +459,209 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(self.audit()["status"], "blocked")
         with self.assertRaises(UnsupportedSerialization):
             displayed_text(r"\originaltab{}A", ["original_whitespace"])
+
+    def inline_case(self, rid="text-p-0303", source=None, target=None):
+        import json
+        from scripts.migration_harness.preservation import INLINE_TAB_COUNTS, INLINE_TAB_AUTHORIZATION, INLINE_TAB_USER_INSTRUCTION
+        count = INLINE_TAB_COUNTS.get(rid, 1)
+        source = source if source is not None else "\t" + "A\t" * count + "Fim."
+        target = target if target is not None else r"\originaltab{}" + r"A\originalinlinetab{}" * count + "Fim."
+        self.whitespace_case(source, target)
+        self.manifest["records"][0]["id"] = rid
+        self.manifest["units"][0].update(record_ids=[rid], source_record_ids=[rid])
+        unit = self.ledger["units"]["sprint-test"]
+        unit["element_map"][0].update(source_id=rid, serializations=["original_whitespace", "inline_tab_layout"])
+        unit["inline_tab_layout"] = {"authorization_evidence": INLINE_TAB_AUTHORIZATION, "source_ids": [rid]}
+        macros = (self.root / "macros.tex").read_text() + "\n" + r"\newcommand{\originalinlinetab}{\unskip\space}"
+        self.write(macros, "macros.tex")
+        self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
+        (self.root / "migration/approvals").mkdir(parents=True, exist_ok=True)
+        authorization = {"kind": "user_format_correction_authorization", "scope": ["sprint-test"], "quoted_instruction": INLINE_TAB_USER_INSTRUCTION, "status": "proposed_for_review", "future_projects_approved": False, "execution_authorized": True, "layout_source_ids": list(INLINE_TAB_COUNTS), "promoted_to_reusable_policy": False}
+        self.write(json.dumps(authorization), INLINE_TAB_AUTHORIZATION)
+        return unit
+
+    def test_authorized_inline_layout_projects_all_three_original_token_sequences(self):
+        for rid in ["text-p-0303", "text-p-0314", "text-p-0318"]:
+            with self.subTest(rid=rid):
+                self.inline_case(rid)
+                self.assertEqual(self.audit()["status"], "pass", self.audit())
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(r"A\originalinlinetab{}B", ["original_whitespace", "inline_tab_layout"], macro_contract_verified=True)
+
+    def test_inline_layout_rejects_wrong_scope_leading_tabs_and_changed_content(self):
+        for rid, source, target in [
+            ("p1", "A\tB", r"A\originalinlinetab{}B"),
+            ("text-p-0303", "\tA\tB", r"\originalinlinetab{}A\originaltab{}B"),
+            ("text-p-0303", "A\tB", r"A\originaltab{}B"),
+            ("text-p-0303", "A\tB.", r"A\originalinlinetab{}B!"),
+            ("text-p-0303", "A\tB", r"\originalinlinetab{}AB"),
+            ("text-p-0303", "A\tB", "A B"),
+            ("text-p-0303", "A\tB", r"A\originalinlinetab{}\originalinlinetab{}B"),
+            ("text-p-0303", "A\tB\tC", r"A\originalinlinetab{}B\originalinlinetab{}C"),
+        ]:
+            with self.subTest(rid=rid, source=source, target=target):
+                self.inline_case(rid, source, target)
+                self.assertEqual(self.audit()["status"], "blocked", self.audit())
+
+    def test_inline_layout_requires_exact_user_authorization_and_policy(self):
+        import json
+        from scripts.migration_harness.preservation import INLINE_TAB_AUTHORIZATION
+        for key, value in [("quoted_instruction", ""), ("quoted_instruction", "Autorizado"), ("kind", "approved"), ("scope", []), ("execution_authorized", False), ("future_projects_approved", True), ("layout_source_ids", []), ("promoted_to_reusable_policy", True), ("status", "approved")]:
+            with self.subTest(key=key):
+                self.inline_case()
+                path = self.root / INLINE_TAB_AUTHORIZATION
+                data = json.loads(path.read_text())
+                data[key] = value
+                self.write(json.dumps(data), INLINE_TAB_AUTHORIZATION)
+                self.assertIn("invalid_inline_tab_layout", self.codes(self.audit()))
+        self.inline_case()
+        (self.root / INLINE_TAB_AUTHORIZATION).unlink()
+        self.assertIn("invalid_inline_tab_layout", self.codes(self.audit()))
+        unit = self.inline_case()
+        unit.pop("inline_tab_layout")
+        self.assertIn("invalid_inline_tab_layout", self.codes(self.audit()))
+        unit = self.inline_case()
+        unit["inline_tab_layout"]["source_ids"].append("text-p-0314")
+        self.assertIn("invalid_inline_tab_layout", self.codes(self.audit()))
+
+    def test_inline_layout_contract_rejects_stale_body_alias_and_unit_redefinition(self):
+        self.inline_case()
+        self.ledger["macro_contract"]["sha256"] = "0" * 64
+        self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        for change in [r"\newcommand{\originalinlinetab}{\hspace{1cm}}", r"\newcommand{\originalinlinetab}{\unskip\space}\let\originalinlinetab\relax"]:
+            self.inline_case()
+            macros = (self.root / "macros.tex").read_text().replace(r"\newcommand{\originalinlinetab}{\unskip\space}", change)
+            self.write(macros, "macros.tex")
+            self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
+            self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        for redef in [r"\renewcommand{\originalinlinetab}{X}", r"\let\originalinlinetab\relax"]:
+            unit = self.inline_case()
+            value = (self.root / "unit.tex").read_text()
+            self.write(redef + value)
+            unit["element_map"] = [self.mapping("text-p-0303", value)]
+            unit["element_map"][0]["serializations"] = ["original_whitespace", "inline_tab_layout"]
+            self.assertIn("whitespace_macro_redefinition", self.codes(self.audit()))
+
+    def reference_case(self, source="\tAção.", target=r"\originaltab{}Ação.", rid="text-p-0288", uid="chapter-02-text-h-0003"):
+        import json
+        from scripts.migration_harness.preservation import (REFERENCE_LAYOUT_AUTHORIZATION, REFERENCE_LAYOUT_USER_INSTRUCTION, REFERENCE_LAYOUT_BASELINE, REFERENCE_LAYOUT_UNITS, REFERENCE_LAYOUT_PARAGRAPHS)
+        self.manifest = {"records": [{"id": "p1", "type": "text:p"}], "units": [{"id": "sprint-test"}], "assets": []}
+        self.ledger = {"schema_version": 1, "units": {"sprint-test": {"state": "converted", "tex_path": "unit.tex", "element_map": []}}}
+        self.whitespace_case(source, target)
+        self.manifest["records"][0].update(id=rid, unit_id=uid, semantic_type="paragraph")
+        self.manifest["units"][0].update(id=uid, record_ids=[rid], source_record_ids=[rid])
+        unit = self.ledger["units"].pop("sprint-test", next(iter(self.ledger["units"].values())))
+        self.ledger["units"] = {uid: unit}
+        unit["element_map"][0].update(source_id=rid, serializations=["original_whitespace", "reference_paragraph_layout"])
+        unit["reference_paragraph_layout"] = {"authorization_evidence": REFERENCE_LAYOUT_AUTHORIZATION, "source_ids": [rid]}
+        macros = (self.root / "macros.tex").read_text().replace(r"\noindent\hspace*{1.251cm}", r"\hspace*{0pt}") + "\n" + r"\newcommand{\originalleadingspace}{\hspace*{0pt}}"
+        self.write(macros, "macros.tex")
+        self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
+        (self.root / "migration/approvals").mkdir(parents=True, exist_ok=True)
+        authorization = {"kind": "user_reference_style_request", "scope": list(REFERENCE_LAYOUT_UNITS), "paragraph_source_ids": list(REFERENCE_LAYOUT_PARAGRAPHS), "quoted_instruction": REFERENCE_LAYOUT_USER_INSTRUCTION, "baseline_commit": REFERENCE_LAYOUT_BASELINE, "status": "proposed_for_review", "future_projects_approved": False, "execution_authorized": True, "promoted_to_reusable_policy": False, "human_presentation_approval": None}
+        self.write(json.dumps(authorization), REFERENCE_LAYOUT_AUTHORIZATION)
+        return unit
+
+    def test_reference_layout_preserves_double_tabs_leading_space_and_emphasis(self):
+        for source, target, rid, uid in [
+            ("\tAção.", r"\originaltab{}\emph{Ação}.", "text-p-0288", "chapter-02-text-h-0003"),
+            ("\t\tAção.", r"\originaltab{}\originaltab{}Ação.", "text-p-0473", "ages-i-sprint-1"),
+            ("\t Ação.", r"\originaltab{}\originalleadingspace{}Ação.", "text-p-0413", "ages-i-sprint-0"),
+        ]:
+            with self.subTest(rid=rid):
+                self.reference_case(source, target, rid, uid)
+                self.assertEqual(self.audit()["status"], "pass", self.audit())
+
+    def test_reference_layout_preserves_inline_tab_authorization_simultaneously(self):
+        import json
+        from scripts.migration_harness.preservation import INLINE_TAB_AUTHORIZATION, INLINE_TAB_USER_INSTRUCTION, INLINE_TAB_COUNTS
+        uid = "chapter-02-text-h-0008"
+        unit = self.reference_case("\tA\tFim.", r"\originaltab{}A\originalinlinetab{}Fim.", "text-p-0303", uid)
+        unit["element_map"][0]["serializations"].append("inline_tab_layout")
+        unit["inline_tab_layout"] = {"authorization_evidence": INLINE_TAB_AUTHORIZATION, "source_ids": ["text-p-0303"]}
+        auth = {"kind": "user_format_correction_authorization", "scope": [uid], "quoted_instruction": INLINE_TAB_USER_INSTRUCTION, "status": "proposed_for_review", "future_projects_approved": False, "execution_authorized": True, "layout_source_ids": list(INLINE_TAB_COUNTS), "promoted_to_reusable_policy": False}
+        self.write(json.dumps(auth), INLINE_TAB_AUTHORIZATION)
+        macros = (self.root / "macros.tex").read_text() + "\n" + r"\newcommand{\originalinlinetab}{\unskip\space}"
+        self.write(macros, "macros.tex")
+        self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+
+    def test_reference_layout_requires_exact_request_review_boundary_and_scope(self):
+        import json
+        from scripts.migration_harness.preservation import REFERENCE_LAYOUT_AUTHORIZATION
+        for key, value in [("quoted_instruction", "Autorizado"), ("kind", "approved"), ("scope", []), ("paragraph_source_ids", []), ("execution_authorized", False), ("baseline_commit", "0" * 40), ("future_projects_approved", True), ("promoted_to_reusable_policy", True), ("human_presentation_approval", "approved"), ("status", "approved")]:
+            with self.subTest(key=key):
+                self.reference_case()
+                data = json.loads((self.root / REFERENCE_LAYOUT_AUTHORIZATION).read_text())
+                data[key] = value
+                self.write(json.dumps(data), REFERENCE_LAYOUT_AUTHORIZATION)
+                self.assertIn("invalid_reference_paragraph_layout", self.codes(self.audit()))
+        self.reference_case()
+        (self.root / REFERENCE_LAYOUT_AUTHORIZATION).unlink()
+        self.assertIn("invalid_reference_paragraph_layout", self.codes(self.audit()))
+
+    def test_reference_layout_rejects_incomplete_or_wrong_record_policy(self):
+        for mutation in ["missing_policy", "missing_flag", "extra_id", "wrong_id", "caption", "heading"]:
+            with self.subTest(mutation=mutation):
+                unit = self.reference_case()
+                if mutation == "missing_policy":
+                    unit.pop("reference_paragraph_layout")
+                elif mutation == "missing_flag":
+                    unit["element_map"][0]["serializations"].remove("reference_paragraph_layout")
+                elif mutation == "extra_id":
+                    unit["reference_paragraph_layout"]["source_ids"].append("text-p-0289")
+                elif mutation == "wrong_id":
+                    unit["reference_paragraph_layout"]["source_ids"] = ["text-p-0413"]
+                elif mutation == "caption":
+                    self.manifest["records"][0]["semantic_type"] = "caption"
+                else:
+                    self.manifest["records"][0]["type"] = "text:h"
+                self.assertIn("invalid_reference_paragraph_layout", self.codes(self.audit()))
+        self.reference_case(uid="ages-ii-sprint-0")
+        self.assertIn("invalid_reference_paragraph_layout", self.codes(self.audit()))
+
+    def test_reference_layout_rejects_missing_shifted_internal_markers_and_punctuation(self):
+        for source, target, rid in [
+            ("\t\tAção.", r"\originaltab{}Ação.", "text-p-0473"),
+            ("\tAção.", r"\originaltab{}Ação!", "text-p-0288"),
+            ("\t Ação.", r"\originaltab{}Ação.", "text-p-0413"),
+            ("\t Ação.", r"\originaltab{}Ação.\originalleadingspace{}", "text-p-0413"),
+            ("A B", r"A\originalleadingspace{}B", "text-p-0413"),
+            (" Ação.", r"\originalleadingspace{}Ação.", "text-p-0288"),
+            ("A\tB", r"A\originaltab{}B", "text-p-0288"),
+        ]:
+            with self.subTest(source=source, target=target):
+                self.reference_case(source, target, rid)
+                self.assertEqual(self.audit()["status"], "blocked", self.audit())
+
+    def test_reference_layout_contract_and_new_macro_redefinition_fail_closed(self):
+        self.reference_case()
+        self.ledger["macro_contract"]["sha256"] = "0" * 64
+        self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        for replacement in [r"\newcommand{\originalleadingspace}{\hspace*{1pt}}", r"\newcommand{\originalleadingspace}{\hspace*{0pt}}\let\originalleadingspace\relax"]:
+            self.reference_case()
+            macros = (self.root / "macros.tex").read_text().replace(r"\newcommand{\originalleadingspace}{\hspace*{0pt}}", replacement)
+            self.write(macros, "macros.tex")
+            self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
+            self.assertIn("invalid_macro_contract", self.codes(self.audit()))
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(r"\originalleadingspace{}A", ["original_whitespace"], macro_contract_verified=True)
+
+    def test_reference_structural_unit_can_verify_contract_without_body_policy_flags(self):
+        unit = self.reference_case("Título", "Título", "text-h-0002", "chapter-02-text-h-0002")
+        self.manifest["records"][0].update(type="text:h", semantic_type="heading")
+        unit["reference_paragraph_layout"]["source_ids"] = []
+        self.write(r"\section*{Título}")
+        unit["element_map"][0].update(self.mapping("text-h-0002", "Título"))
+        unit["element_map"][0]["serializations"] = ["original_whitespace"]
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+
+    def test_reference_indent_declaration_outside_source_span_is_structural(self):
+        unit = self.reference_case()
+        value = (self.root / "unit.tex").read_text()
+        self.write(r"\indent " + value)
+        unit["element_map"][0].update(self.mapping("text-p-0288", value))
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
 
     def toc_case(self, toc_title=r"2.3.1 Sprint 0\originalspace{}", actual_title=None, counter=""):
         actual_title = actual_title or r"2.3.1 Sprint 0\originalspace{}"
@@ -324,7 +746,10 @@ class PreservationTests(unittest.TestCase):
         self.ledger["figure_contract"]["sha256"] = "0" * 64
         self.assertIn("invalid_figure_contract", self.codes(self.audit()))
         self.figure_case()
-        text = (self.root / "figures.tex").read_text().replace(r"\caption*{#2}", r"\caption*{Inventado}")
+        text = (self.root / "figures.tex").read_text().replace(
+            r"\caption*{{\normalfont\upshape #2}}",
+            r"\caption*{{\normalfont\upshape Inventado}}",
+        )
         self.write(text, "figures.tex")
         self.ledger["figure_contract"]["sha256"] = hashlib.sha256(text.encode()).hexdigest()
         self.assertIn("invalid_figure_contract", self.codes(self.audit()))
@@ -334,6 +759,12 @@ class PreservationTests(unittest.TestCase):
         self.figure_case()
         self.ledger["units"]["sprint-test"]["asset_map"] = []
         self.assertIn("missing_image", self.codes(self.audit()))
+
+    def test_canonical_figure_caption_and_list_entry_are_upright(self):
+        from scripts.migration_harness.latex import MEMORIAL_FIGURE_BODY
+        self.assertIn(r"\caption*{{\normalfont\upshape #2}}", MEMORIAL_FIGURE_BODY)
+        self.assertIn(r"\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}", MEMORIAL_FIGURE_BODY)
+        self.assertNotIn(r"\textit", MEMORIAL_FIGURE_BODY)
 
     def placeholder_case(self):
         import json

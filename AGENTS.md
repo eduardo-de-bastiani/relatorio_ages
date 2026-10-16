@@ -2,9 +2,7 @@
 
 ## Escopo e autoridades
 
-Esta fase prepara governança, inventário e validação. **Nenhuma Sprint nem outro conteúdo do memorial deve ser convertido sem autorização posterior.** O commit-base é `44bc0b95ef5ed06c8efa272de4f754cce1d6e4cb`; o registro verificável está em [docs/BASELINE.json](docs/BASELINE.json). Trabalhe na branch de harness, nunca diretamente na principal.
-
-Atualização de fase: o usuário autorizou explicitamente o projeto-piloto **AGES I / Easy Choose / Sprint 0**, registrado em `migration/approvals/pilot-authorization.json`. Trabalhe na branch `migration/pilot-ages-i-sprint-0`; somente essa unidade e a configuração global necessária podem ser preparados. Auditorias independentes e correções são autorizadas. Nenhuma próxima Sprint está autorizada. O checkpoint de entrega ainda exige revisão do usuário.
+Fase vigente: migração controlada de **AGES II / Indústria Digital**, autorizada pelo usuário e registrada em `migration/approvals/ages-ii-authorization.json`. Trabalhe na branch `migration/ages-ii`, somente nas 15 unidades do capítulo 4 listadas em `harness.json`. AGES I foi revisada; seu padrão visual foi aprovado para reutilização e está em `docs/STYLE_GUIDE.md`. Não converta Hoortech, AGES III, AGES IV ou qualquer outra unidade nesta fase. Após a entrega da AGES II, aguarde aprovação humana.
 
 Leia [CONTEXT](docs/CONTEXT.md), [plano](docs/MIGRATION_PLAN.md), [estilo](docs/STYLE_GUIDE.md), [gates](docs/QUALITY_GATES.md) e [pendências](docs/PENDENCIAS.md). O `harness.json` define caminhos e escopos executáveis; os documentos explicam sua finalidade. Em divergência, interrompa a tarefa afetada e registre a diferença; não amplie permissões.
 
@@ -12,7 +10,7 @@ Autoridades, nesta ordem: instruções explícitas do usuário; original imutáv
 
 ## Invariantes
 
-Atualização vigente de escopo: o usuário autorizou a edição completa **AGES I / Easy Choose**, incluindo placeholders provisórios para os diagramas ausentes de arquitetura e banco de dados. A branch de execução é `migration/ages-i`; o conjunto exato de 15 unidades está em `harness.json` e a mensagem de autorização em `migration/approvals/ages-i-authorization.json`. Essa instrução substitui o limite histórico do piloto. Não autoriza AGES II–IV nem a participação como cliente. O resultado da edição exige aprovação humana antes de avançar. Conteúdo já convertido no piloto deve ser revalidado, não duplicado.
+Atualização vigente de escopo: somente o capítulo **4 - PROJETO AGES II – INDÚSTRIA DIGITAL**, IDs `chapter-04-text-h-0039` a `chapter-04-text-h-0047`, Sprints `ages-ii-sprint-0` a `ages-ii-sprint-4` e conclusão `chapter-04-text-h-0073`, conforme lista fechada de `harness.json`. A aprovação do padrão visual da AGES I não autoriza por si só outras unidades. O documento completo da AGES II exige aprovação humana antes de qualquer próxima edição.
 
 - Não revisar português, reformular, expandir, completar ou corrigir fatos nesta fase ou na conversão fiel.
 - Preservar acentos, símbolos, pontuação, sequência, âncoras e URLs. Contagem de palavras não comprova integridade.
@@ -21,6 +19,8 @@ Atualização vigente de escopo: o usuário autorizou a edição completa **AGES
 - Sprints continuam o fluxo: `\input` e título de subseção; nenhuma quebra obrigatória antes do título.
 - Diagramas ausentes recebem, na fase autorizada, placeholders visuais claramente provisórios; não inventar seus conteúdos nem suas fontes.
 - Reflexões conservam texto e borda, usam a mesma fonte do corpo e admitem divisão entre páginas.
+- Aplicar o padrão visual aprovado em `docs/STYLE_GUIDE.md`, distinguindo decisões do usuário, escolhas da referência Mariah, boas práticas técnicas e requisitos normativos verificados.
+- Para referências tecnológicas da AGES I/II, usar a janela 2024 e a convenção de ano/data de acesso explicitamente autorizada; registrar datas escolhidas como atribuídas, não como histórico recuperado.
 - Revisão editorial e complementações são outra fase.
 - Exigir aprovação humana após cada edição AGES. Recomenda-se também um checkpoint próprio para a participação Cliente Hoortech. Aprovação de harness não autoriza o piloto.
 
@@ -38,6 +38,4 @@ Faça commits pequenos na branch de trabalho somente quando autorizado. Não sob
 
 Artefatos locais ficam em `build/`, conforme configuração. O inventário rastreado não contém arquivos extraídos de mídia redundantes. Não incluir caches, credenciais, PDFs de teste ou auxiliares na integração. Consultar o plano para rollback por commit e reprodução limpa.
 
-Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar antes do piloto e solicitar autorização.
-
-No piloto autorizado, parar após sua entrega e aguardar aprovação para qualquer próxima Sprint. A frase histórica acima sobre parar antes do piloto descreve o encerramento da fase de harness.
+Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar após a entrega AGES II e aguardar aprovação; não iniciar outra edição.

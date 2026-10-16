@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "authorized": true,
+  "date": "2026-10-16",
+  "source": "explicit_user_message_in_conversation",
+  "source_message": "MISSÃO: MIGRAÇÃO CONTROLADA DE UMA EDIÇÃO DA AGES. Edição-alvo: AGES II. Execute somente a edição indicada, utilizando o harness previamente aprovado.",
+  "presentation_prerequisite": "The user approved the AGES I presentation pattern for reuse; see migration/approvals/ages-i-presentation-accepted.json and docs/STYLE_GUIDE.md.",
+  "edition": "ages-ii",
+  "project": "Indústria Digital",
+  "source_chapter": 4,
+  "branch": "migration/ages-ii",
+  "source": "RELATORIO_ATUAL.odt",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "authorized_units": [
+    "chapter-04-text-h-0039",
+    "chapter-04-text-h-0040",
+    "chapter-04-text-h-0041",
+    "chapter-04-text-h-0042",
+    "chapter-04-text-h-0043",
+    "chapter-04-text-h-0044",
+    "chapter-04-text-h-0045",
+    "chapter-04-text-h-0046",
+    "chapter-04-text-h-0047",
+    "ages-ii-sprint-0",
+    "ages-ii-sprint-1",
+    "ages-ii-sprint-2",
+    "ages-ii-sprint-3",
+    "ages-ii-sprint-4",
+    "chapter-04-text-h-0073"
+  ],
+  "date_window": "2024-08 through 2024-11",
+  "technology_reference_convention": {
+    "publication_year": 2024,
+    "access_date": "2024-10-15",
+    "basis": "The user authorized choosing access dates inside each AGES period and instructed that the access year be used as the publication year, following Mariah's convention.",
+    "historical_access_warning": "The assigned access date is a user-approved bibliographic convention and is not recovered browser history or proof that the page was visited on that exact date.",
+    "versions_used_in_project": "Do not infer or claim versions without source evidence."
+  },
+  "missing_material": [
+    {
+      "element": "database diagram",
+      "action": "Insert the approved visibly provisional placeholder; do not invent diagram content or source."
+    },
+    {
+      "element": "image source statements",
+      "action": "Keep provenance pending for the seven embedded original images until the user identifies each source."
+    }
+  ],
+  "constraints": [
+    "Do not convert any unit outside this chapter.",
+    "Preserve the source text, order, punctuation, anchors, URLs and original media bytes.",
+    "Do not revise Portuguese, add facts, or fill missing content by inference.",
+    "Use the approved visual rules in docs/STYLE_GUIDE.md.",
+    "Stop after AGES II delivery and await human approval; do not begin AGES III, AGES IV or the Hoortech client participation."
+  ],
+  "human_review_after_delivery": true
+}

@@ -6,6 +6,24 @@ O destino segue ABNT padrão. A Biblioteca PUCRS restrita não constitui requisi
 
 Preservação textual é obrigatória. Reflexões: borda, fonte igual ao corpo e ambiente divisível entre páginas. Sprints: continuidade, sem `\include`, `\newpage`, `\clearpage` ou quebra equivalente na entrada. Diagramas ausentes: placeholders posteriores, visualmente provisórios. Estes são requisitos do usuário, não alegadas prescrições ABNT.
 
+## Padrão visual aprovado para as edições AGES
+
+Em 16/10/2026, o usuário aprovou a apresentação da prévia AGES I identificada em `docs/ages-i/CURRENT_REVIEW.md` e autorizou reutilizar o padrão nas edições seguintes. O registro está em `migration/approvals/ages-i-presentation-accepted.json`. O PDF aprovado como referência visual tinha SHA-256 `e4822c8d8056433af08104b0a9e8edd0f21828350cc9fcb9d2f335ec4a1d0a98`. Isto aprova a apresentação observada e seu uso futuro; não certifica por si só ABNT integral nem resolve fontes de imagens, diagramas ou links pendentes.
+
+Aplicar os seguintes parâmetros, comparados com o PDF da Mariah e medidos no PDF AGES I:
+
+- A4; margens superior/esquerda de 3 cm e inferior/direita de 2 cm; corpo em família Helvetica compatível, 12 pt; avanço entre linhas de aproximadamente 21,669 pt; recuo de primeira linha de aproximadamente 0,62 cm; espaço entre parágrafos `0pt plus 1pt`.
+- Títulos de capítulo à esquerda e em negrito; seções no tamanho do corpo, com negrito onde usado na referência; subseções no tamanho do corpo sem negrito. A hierarquia e numeração de cada edição vêm do ODT e devem ser conferidas individualmente.
+- Sumário acompanha a profundidade visual da referência (capítulos e seções); Sprints permanecem no corpo e na rastreabilidade, sem iniciar página artificialmente. Quebra natural por falta de espaço continua permitida.
+- Links são pretos, em fonte regular e com texto âncora descritivo; repositórios são apresentados em frases corridas, com o nome do repositório clicável. Não usar itálico em links nem em descrições de figuras. Não acrescentar listas com marcadores onde a referência e a decisão aprovada pedem texto corrido.
+- A seção de tecnologias fica em um único parágrafo contínuo, seguindo a organização aprovada na AGES I: tecnologias agrupadas por finalidade, citações autor-data clicáveis diretamente para documentação oficial e entradas bibliográficas correspondentes. Preservar o texto e a ordem da origem; a conversão de itens em uma frase contínua é uma decisão de apresentação aprovada, não uma autorização para resumir ou reescrever.
+- Para as referências de tecnologias, o usuário autorizou datas de acesso escolhidas dentro da janela temporal da edição e determinou usar o ano dessa data como ano na citação, como na referência visual. Aplicar AGES I/II dentro de 2024 e AGES III/IV dentro de 2026. Registrar em evidência que as datas foram atribuídas por decisão do usuário e não recuperadas de histórico real; não inventar versão usada no projeto nem outros metadados sem evidência.
+- Identificação e título de figura em português (“Figura”), título acima e fonte abaixo; centralizar a imagem e manter `\label` após `\caption`. A autoria/fonte da imagem é um dado factual: usar “pendente de identificação” até confirmação do usuário. Posicionar cada figura conforme contexto e tamanho, sem aplicar `[H]` a todas.
+- Reflexões mantêm borda e fonte/tamanho do corpo, podendo continuar entre páginas. Placeholders de conteúdo ausente são visualmente provisórios, distinguíveis de figuras reais e ausentes da lista de ilustrações.
+- Números de página ficam menores que o corpo e uniformes no documento. Espaços pré-textuais e de capítulos são avaliados segundo sua função; remover somente espaços artificiais comprovados.
+
+Estes itens misturam decisões do usuário e medidas de referência. Eles não devem ser descritos como exigências da ABNT. Se uma regra normativa verificada exigir apresentação diferente, registrar o conflito e pedir decisão em vez de alterar silenciosamente o padrão aprovado.
+
 ## Fontes normativas e status
 
 | Fonte | Uso | Status e origem |
@@ -30,7 +48,7 @@ São fontes institucionais que hospedam textos das normas; não equivalem a conf
 - Escolher posicionamento pelo tamanho e contexto. `[H]` não é obrigatório nem deve ser copiado mecanicamente; verificar espaços e proximidade da chamada no texto.
 - Não converter quadros textuais em tabelas numéricas por aparência. Classificação e orientação IBGE dependem do conteúdo.
 - Listas devem representar itens e níveis efetivos, não todos os contêineres ODF. A nesting XML do original chega a dez níveis e não pode ser transcrita literalmente.
-- Regenerar sumário, lista de ilustrações e referências cruzadas. Profundidade que inclua Sprints é proposta técnica; aprovação final está pendente.
+- Regenerar sumário, lista de ilustrações e referências cruzadas. Para as próximas edições, usar a profundidade 2 da prévia AGES I aprovada, registrando que a Mariah usa profundidade 1.
 - Pré-textuais: medir espaços legítimos de composição separadamente dos vazios artificiais. Não copiar capa, epígrafe, autoria ou ano da Mariah.
 - Bibliografia: preservar os 36 registros originais; metadados documentados podem ser sugeridos separadamente, sem completar silenciosamente. Datas de acesso ausentes não serão inventadas.
 - `abntex2`/`biblatex-abnt` instalados são antigos; validade da saída atual não decorre do nome do pacote. O mantenedor integra eventual ajuste bibliográfico, e a curadoria fornece evidência.

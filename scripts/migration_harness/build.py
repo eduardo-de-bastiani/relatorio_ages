@@ -1,6 +1,7 @@
 """Compile in an isolated copy; never write auxiliary files into sources."""
 from __future__ import annotations
 
+from dataclasses import dataclass
 import os
 from pathlib import Path
 import re
@@ -12,9 +13,25 @@ from .common import REPO, git, read_json, require_work_branch, sha256, write_jso
 from .environment import check_lock, inspect_environment, tectonic_cache
 from .latex import audit_latex
 
-PROFILE_ROOTS = {"template": "Template_AGES___Guvidaletti",
-                 "fixture": "harness/fixtures/latex",
-                 "document": "relatorio_AGES_eduardo"}
+@dataclass(frozen=True)
+class BuildProfile:
+    source_root: str
+    output_root: str
+    is_document: bool = False
+    review_only: bool = False
+    requires_clean_tree: bool = False
+
+
+BUILD_PROFILES = {
+    "template": BuildProfile("Template_AGES___Guvidaletti", "build/template"),
+    "fixture": BuildProfile("harness/fixtures/latex", "build/fixture"),
+    "document": BuildProfile("relatorio_AGES_eduardo", "build/document",
+                              is_document=True, requires_clean_tree=True),
+    # Human-review preview of the current working tree. It deliberately shares
+    # the IDE's stable build/document/main.pdf path, but never claims a release.
+    "document-review": BuildProfile("relatorio_AGES_eduardo", "build/document",
+                                    is_document=True, review_only=True),
+}
 GENERATED = {".aux", ".bbl", ".bcf", ".blg", ".log", ".toc", ".lof", ".lot",
              ".out", ".xdv", ".synctex", ".fls", ".fdb_latexmk"}
 
@@ -77,8 +94,11 @@ def _copy_sources(source: Path, destination: Path) -> None:
 
 def compile_profile(profile: str, *, repo: Path = REPO, check_toolchain: bool = True,
                     timeout: int = 180) -> dict:
+    if profile not in BUILD_PROFILES:
+        raise ValueError(f"Unknown build profile: {profile}")
+    spec = BUILD_PROFILES[profile]
     branch = require_work_branch(repo)
-    output = repo / "build" / profile
+    output = repo / spec.output_root
     output.mkdir(parents=True, exist_ok=True)
     # Invalidate every artifact before even preflight: a failed attempt must
     # never leave an old PASS/PDF mistaken for its own result.
@@ -90,18 +110,22 @@ def compile_profile(profile: str, *, repo: Path = REPO, check_toolchain: bool = 
         report = {"schema_version": 1, "status": status, "profile": profile,
                   "findings": findings, "pdf": None, "pdf_sha256": None,
                   "commit": git(repo, "rev-parse", "HEAD"), "branch": branch,
-                  "memorial_migrated": False, "is_document_profile": profile == "document"}
+                  "memorial_migrated": False, "is_document_profile": spec.is_document,
+                  "review_only": spec.review_only,
+                  "dirty": bool(git(repo, "status", "--porcelain"))}
+        if spec.review_only:
+            report["official_document_gate"] = "NOT_RUN: review-only build"
         write_json(output / "report.json", report, repo=repo)
         return report
 
     protected = protected_findings(repo)
     if protected:
         return preflight_report("fail", protected)
-    source = repo / PROFILE_ROOTS[profile]
+    source = repo / spec.source_root
     if not (source / "main.tex").is_file():
         return preflight_report("unconverted", [{"severity": "error", "code": "DOCUMENT_NOT_CREATED",
                                                   "message": "No memorial has been migrated"}])
-    if profile == "document" and git(repo, "status", "--porcelain"):
+    if spec.requires_clean_tree and git(repo, "status", "--porcelain"):
         return preflight_report("fail", [{"severity": "error", "code": "UNCOMMITTED_DOCUMENT",
                                            "message": "Freeze the document/ledger in a task commit before a production build"}])
     actual = inspect_environment()
@@ -156,13 +180,17 @@ def compile_profile(profile: str, *, repo: Path = REPO, check_toolchain: bool = 
     report = {**diagnostics, "schema_version": 1, "profile": profile,
               "commit": git(repo, "rev-parse", "HEAD"), "branch": branch,
               "dirty": bool(git(repo, "status", "--porcelain")),
-              "memorial_migrated": False, "is_document_profile": profile == "document", "returncode": returncode,
+              "memorial_migrated": False, "is_document_profile": spec.is_document,
+              "review_only": spec.review_only,
+              "returncode": returncode,
               "command": command, "source_files": fingerprints,
               "source_date_epoch": read_json(repo / "docs/BASELINE.json")["source_date_epoch"],
               "toolchain_lock_sha256": sha256(repo / "docs/TOOLCHAIN.lock.json"),
               "pdf": str((output / "main.pdf").relative_to(repo)) if (output / "main.pdf").exists() else None,
               "pdf_sha256": sha256(output / "main.pdf") if (output / "main.pdf").exists() else None,
               "visual_review": "pending_human_review"}
+    if spec.review_only:
+        report["official_document_gate"] = "NOT_RUN: review-only build"
     report["artifacts"] = {p.name: sha256(p) for p in sorted(output.iterdir()) if p.is_file()}
     after = protected_findings(repo)
     report["findings"].extend(after)

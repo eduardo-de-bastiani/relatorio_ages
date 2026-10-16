@@ -31,7 +31,11 @@ class HarnessTests(unittest.TestCase):
                                  "converter": {"write": [], "locks": ["unit:{unit}"]}}}
         (self.repo / "harness.json").write_text(json.dumps(self.config))
         (self.repo / "docs/CONTENT_MANIFEST.json").write_text(json.dumps({"units": [{"id": "u", "destination": "destination/u.tex"}]}))
-        (self.repo / "docs/BASELINE.json").write_text(json.dumps({"protected_files": {"RELATORIO_ATUAL.odt": sha256(self.repo / "RELATORIO_ATUAL.odt")}}))
+        (self.repo / "docs/BASELINE.json").write_text(json.dumps({
+            "protected_files": {"RELATORIO_ATUAL.odt": sha256(self.repo / "RELATORIO_ATUAL.odt")},
+            "source_date_epoch": 1700000000,
+        }))
+        (self.repo / "docs/TOOLCHAIN.lock.json").write_text("{}")
         self.run_git("add", ".")
         self.run_git("-c", "user.name=Harness test", "-c", "user.email=harness@example.org", "commit", "-m", "test baseline")
 
@@ -143,6 +147,38 @@ class HarnessTests(unittest.TestCase):
         report = compile_profile("document", repo=self.repo)
         self.assertEqual(report["status"], "fail")
         self.assertEqual(report["findings"][0]["code"], "UNCOMMITTED_DOCUMENT")
+
+    def test_review_build_compiles_dirty_tree_and_marks_official_gate_unrun(self):
+        from types import SimpleNamespace
+        real_run = subprocess.run
+
+        source = self.repo / "relatorio_AGES_eduardo"
+        source.mkdir()
+        (source / "main.tex").write_text("synthetic review source")
+        cache = self.repo / "tectonic-cache"
+        cache.mkdir()
+        (cache / "seed").write_text("fixture")
+
+        def fake_compile(command, *, cwd=None, **kwargs):
+            if command[0] == "git":
+                return real_run(command, cwd=cwd, **kwargs)
+            work = Path(cwd)
+            (work / "main.pdf").write_bytes(b"%PDF-1.4\n%%EOF\n")
+            (work / "main.log").write_text("", encoding="utf-8")
+            return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+        with patch("migration_harness.build.inspect_environment", return_value={"findings": []}), \
+             patch("migration_harness.build.tectonic_cache", return_value=cache), \
+             patch("migration_harness.build.audit_latex", return_value={"status": "pass", "findings": []}), \
+             patch("migration_harness.build.subprocess.run", side_effect=fake_compile):
+            report = compile_profile("document-review", repo=self.repo, check_toolchain=False)
+
+        self.assertEqual(report["status"], "pass")
+        self.assertTrue(report["review_only"])
+        self.assertTrue(report["dirty"])
+        self.assertEqual(report["official_document_gate"], "NOT_RUN: review-only build")
+        self.assertEqual(report["pdf"], "build/document/main.pdf")
+        self.assertTrue((self.repo / "build/document/main.pdf").is_file())
 
     def test_child_cli_can_use_parent_owned_lock(self):
         module_root = str(Path(__file__).resolve().parents[1] / "scripts")

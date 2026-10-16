@@ -132,7 +132,11 @@ class LatexTests(unittest.TestCase):
         self.assertEqual(result["counts"]["labels"], 1)
         self.write("main.tex", definition + r"\memorialfigure{image.png}{}{fig:sample}{Fonte: pendente de identificação}{0.8}")
         self.assertIn("missing_figure_caption_or_label", self.codes(self.audit()))
-        self.write("main.tex", definition.replace(r"\caption*{#2}", r"\caption*{Texto inventado}") + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}")
+        altered = definition.replace(
+            r"\caption*{{\normalfont\upshape #2}}",
+            r"\caption*{{\normalfont\upshape Texto inventado}}",
+        )
+        self.write("main.tex", altered + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}")
         self.assertIn("unverified_figure_macro", self.codes(self.audit()))
 
 
