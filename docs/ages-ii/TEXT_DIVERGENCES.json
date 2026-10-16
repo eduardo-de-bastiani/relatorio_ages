@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "report_type": "text-divergences-post-repair",
+  "status": "PASS",
+  "snapshot_commit": "f3df8d2043cbb59b02aed1b76bc86d2c4bf6ae03",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "target_unit_file_hashes": [
+    {
+      "unit_id": "chapter-04-text-h-0039",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex",
+      "sha256": "e75b0ad5c6932b4884573cf1130ceaa79887d3b9fd0360352c6815d74cc900f1"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0040",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex",
+      "sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0041",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0041.tex",
+      "sha256": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+      "sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0043",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex",
+      "sha256": "ffd329883dcc66ae8790019d7b6290e67c56a232c58787e56e0fd2e178fd5aa4"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0044",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+      "sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0045",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex",
+      "sha256": "39c9968773503b12afb5a5dd934d02183ec0cad960c33f3f2ebb46108b5450b4"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0046",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+      "sha256": "c2c97797f41308925f78a1d6ff13699dd57cb829bffbee928d0041c6f76192d5"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0047",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0047.tex",
+      "sha256": "15b40313c28bff9f372231e9b27ca5e3a69e2d27a5f4eb253eed7827a1338d8e"
+    },
+    {
+      "unit_id": "ages-ii-sprint-0",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+      "sha256": "a7cf7188686faffdfb439b482c8b8f4169c663efea6057ef63a04b5acfe1c131"
+    },
+    {
+      "unit_id": "ages-ii-sprint-1",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex",
+      "sha256": "2cbd6ab9f4a7725d4bdad08b31a45ffec90c78a2b0d6f81d6ba1ceb01dad5ecb"
+    },
+    {
+      "unit_id": "ages-ii-sprint-2",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
+      "sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+    },
+    {
+      "unit_id": "ages-ii-sprint-3",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-3.tex",
+      "sha256": "f3e5e09517b23a27a13c7491d49ba8e5ac8b6c466690e89b2b6d0055b3d90db9"
+    },
+    {
+      "unit_id": "ages-ii-sprint-4",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+      "sha256": "dd164cb9f29eaeb8b8a585c6c2135352d0cf1e7dab6ccb6b66871986c883202f"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0073",
+      "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex",
+      "sha256": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
+    }
+  ],
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "runs collapsed",
+    "preserved": "accents, punctuation, symbols and sequence",
+    "removed_for_comparison": "LaTeX serialization wrappers; approved citation metadata macros"
+  },
+  "approved_transformations": [
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+      "source_anchor": "Repositório Indústria Digital Frontend",
+      "target_anchor": "Indústria Digital Frontend",
+      "target_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Frontend.",
+      "authorization": "explicit user instruction"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+      "source_anchor": "Repositório Indústria Digital Backend",
+      "target_anchor": "Indústria Digital Backend",
+      "target_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Backend.",
+      "authorization": "explicit user instruction"
+    },
+    {
+      "unit_id": "AGES II image captions",
+      "transformation": "Figure n: → Figura n –",
+      "authorization": "approved presentation standard; image order/caption wording retained"
+    }
+  ],
+  "raw_comparator_output": [
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "source_characters": 493,
+      "target_characters": 579,
+      "hunks": [
+        {
+          "op": "replace",
+          "source": "às páginas de landing, dashboard, mapa e empresas. Repositório Indústria Digital Frontend Repositório referente ao Back-end, que",
+          "target": "às páginas de landing, dashboard, mapa e empresas. Mais informações podem ser encontradas no repositório Indústria Digital Frontend. Repositório referente ao Back-end, que"
+        },
+        {
+          "op": "replace",
+          "source": "landing, dashboard, mapa e empresas. Repositório Indústria Digital Frontend Repositório referente ao Back-end, que contem o Banco",
+          "target": "informações podem ser encontradas no repositório Indústria Digital Frontend. Repositório referente ao Back-end, que contem o Banco"
+        },
+        {
+          "op": "replace",
+          "source": "e as operações de comunicação com o Front-end. Repositório Indústria Digital Backend",
+          "target": "e as operações de comunicação com o Front-end. Mais informações podem ser encontradas no repositório Indústria Digital Backend."
+        },
+        {
+          "op": "replace",
+          "source": "de comunicação com o Front-end. Repositório Indústria Digital Backend",
+          "target": "informações podem ser encontradas no repositório Indústria Digital Backend."
+        }
+      ]
+    }
+  ],
+  "unresolved_differences": [],
+  "notes": [
+    "Full unit text/order comparison passed.",
+    "The comparator emitted overlapping replacement hunks for the two authorized link sentences; both complete substitutions are explicitly listed above.",
+    "Independent emphasis comparison also required full source paragraph equality and mapped original character offsets; see CONTENT_AUDIT.json."
+  ]
+}
