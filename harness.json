@@ -73,7 +73,10 @@
         "docs/ages-i/CONTENT_AUDIT.json",
         "docs/ages-ii/CONTENT_AUDIT.md",
         "docs/ages-ii/CONTENT_AUDIT.json",
-        "docs/ages-ii/TEXT_DIVERGENCES.json"
+        "docs/ages-ii/TEXT_DIVERGENCES.json",
+        "docs/ages-iii/CONTENT_AUDIT.md",
+        "docs/ages-iii/CONTENT_AUDIT.json",
+        "docs/ages-iii/TEXT_DIVERGENCES.json"
       ],
       "locks": []
     },
@@ -84,60 +87,48 @@
         "docs/ages-i/VISUAL_AUDIT.md",
         "docs/ages-i/VISUAL_AUDIT.json",
         "docs/ages-ii/VISUAL_AUDIT.md",
-        "docs/ages-ii/VISUAL_AUDIT.json"
+        "docs/ages-ii/VISUAL_AUDIT.json",
+        "docs/ages-iii/VISUAL_AUDIT.md",
+        "docs/ages-iii/VISUAL_AUDIT.json"
       ],
       "locks": []
     }
   },
   "authorized_units": [
-    "chapter-02-text-h-0009",
-    "chapter-02-text-h-0010",
-    "chapter-02-text-h-0011",
-    "chapter-04-text-h-0039",
-    "chapter-04-text-h-0040",
-    "chapter-04-text-h-0041",
-    "chapter-04-text-h-0042",
-    "chapter-04-text-h-0043",
-    "chapter-04-text-h-0044",
-    "chapter-04-text-h-0045",
-    "chapter-04-text-h-0046",
-    "chapter-04-text-h-0047",
-    "ages-ii-sprint-0",
-    "ages-ii-sprint-1",
-    "ages-ii-sprint-2",
-    "ages-ii-sprint-3",
-    "ages-ii-sprint-4",
-    "chapter-04-text-h-0073"
+    "chapter-05-text-h-0074",
+    "chapter-05-text-h-0075",
+    "chapter-05-text-h-0076",
+    "chapter-05-text-h-0077",
+    "chapter-05-text-h-0078",
+    "chapter-05-text-h-0079",
+    "chapter-05-text-h-0080",
+    "chapter-05-text-h-0085",
+    "chapter-05-text-h-0086",
+    "ages-iii-sprint-0",
+    "ages-iii-sprint-1",
+    "ages-iii-sprint-2",
+    "ages-iii-sprint-3",
+    "ages-iii-sprint-4",
+    "chapter-05-text-h-0097"
   ],
-  "authorization_evidence": "migration/approvals/ages-ii-authorization.json",
-  "additional_authorization_evidence": "migration/approvals/ages-i-ii-formatting-authorization.json",
-  "authorized_edition": "ages-ii",
+  "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+  "authorized_edition": "ages-iii",
   "asset_ownership": {
-    "chapter-02-text-h-0003": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0012.jpg"
+    "chapter-05-text-h-0075": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0015.jpg"
     ],
-    "chapter-02-text-h-0011": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0024.png",
-      "relatorio_AGES_eduardo/imagens/original/asset-0026.png",
-      "relatorio_AGES_eduardo/imagens/original/asset-0027.png"
+    "chapter-05-text-h-0078": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0014.png"
     ],
-    "chapter-02-text-h-0022": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0007.jpg"
+    "chapter-05-text-h-0079": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0004.png"
     ],
-    "chapter-04-text-h-0040": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0018.jpg"
-    ],
-    "chapter-04-text-h-0044": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0008.png"
-    ],
-    "chapter-04-text-h-0045": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0020.png",
-      "relatorio_AGES_eduardo/imagens/original/asset-0021.png",
-      "relatorio_AGES_eduardo/imagens/original/asset-0022.png",
-      "relatorio_AGES_eduardo/imagens/original/asset-0023.png"
-    ],
-    "ages-ii-sprint-4": [
-      "relatorio_AGES_eduardo/imagens/original/asset-0025.png"
+    "chapter-05-text-h-0080": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0028.png",
+      "relatorio_AGES_eduardo/imagens/original/asset-0029.png",
+      "relatorio_AGES_eduardo/imagens/original/asset-0030.png",
+      "relatorio_AGES_eduardo/imagens/original/asset-0031.png",
+      "relatorio_AGES_eduardo/imagens/original/asset-0032.png"
     ]
   }
 }

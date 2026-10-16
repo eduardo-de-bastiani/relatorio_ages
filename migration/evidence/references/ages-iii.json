@@ -1,0 +1,741 @@
+{
+  "schema_version": 1,
+  "role": "reference-curator",
+  "unit": "ages-iii",
+  "edition": "AGES III — Sistema de Controle Inteligente de Estacionamento com RFID",
+  "status": "PENDING",
+  "consultation_date": "2026-10-16",
+  "consulted_at_utc": "2026-10-16T23:43:03Z",
+  "commit_at_start": "abe761cba29a653e19db234b497fffd957a944b6",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "scope": {
+    "owned": [
+      "migration/evidence/references/ages-iii.json"
+    ],
+    "authorization": "migration/approvals/ages-iii-authorization.json",
+    "manifest": "docs/CONTENT_MANIFEST.json",
+    "manifest_link_scope": "text-a-0129–text-a-0145",
+    "project_and_wiki_links": "text-a-0129–text-a-0132",
+    "official_technology_links": "text-a-0133–text-a-0145",
+    "central_bibliography_edited": false,
+    "latex_or_memorial_content_edited": false,
+    "manifest_or_pending_docs_edited": false,
+    "human_approval_created": false
+  },
+  "policy": {
+    "original_urls": "All 17 original hrefs are recorded verbatim; no substitute or alternate URL was inserted.",
+    "access_date": "Actual consultation date 2026-10-16; no backdating.",
+    "user_citation_year_preference": "Treat the prior preference for using the access year as a citation-label convention, separate from factual publication year. Do not represent access date 2026 as publication metadata. Where publication year is not evidenced and a standards-compliant reference cannot be reconciled with the visual convention, keep the bibliography decision PENDING; no BibTeX suggestions or entries are created.",
+    "evidence_threshold": "Direct page content/title and stated metadata only. Current product versions, dated news items, copyright years, and access dates are not project versions or page publication dates."
+  },
+  "verification_method": {
+    "official_page_tool": "web__run open on exact source URLs; statuses are based on retrieved page text or explicit redirect/tool failure. The web tool did not expose HTTP status codes, so http_status is null, not inferred.",
+    "supplementary_command": "python3 urllib.request HEAD attempt for four tools.ages.pucrs.br URLs and support.impinj.com; all failed before HTTP with [Errno -3] Temporary failure in name resolution. This is a local network/DNS limitation and does not establish the servers return an HTTP error.",
+    "metadata_search": "web__run find for publication/update/copyright evidence on accessible pages. Search did not find page publication dates except EF Core explicit “Last updated on 2024-11-12”; current news dates/copyright notices are recorded separately and not treated as publication dates.",
+    "manifest_reconciliation": "Loaded IDs, href, anchor, XPath, source hash, unit ID and parent paragraph from docs/CONTENT_MANIFEST.json."
+  },
+  "count_reconciliation": {
+    "expected_project_wiki": 4,
+    "actual_project_wiki": 4,
+    "expected_official_technical": 13,
+    "actual_official_technical": 13,
+    "manifest_ids": "text-a-0129 through text-a-0145 inclusive",
+    "units_dependent": [
+      "chapter-05-text-h-0077",
+      "chapter-05-text-h-0078",
+      "chapter-05-text-h-0085"
+    ]
+  },
+  "references": [
+    {
+      "evidence_id": "ages-iii-text-a-0129",
+      "source_record_id": "text-a-0129",
+      "source_unit": "chapter-05-text-h-0077",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[805]/text:a[1]",
+      "source_xml_sha256": "41fecd5593bd32a0156cd6150ab250ec22ffb9ffa841b99886f59f075b97211a",
+      "original_anchor": "Repositório RFID Frontend",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+      "source_category": "project_repository",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web retornou Cache miss; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "Repositório referente à interface de Administrador + Dashboard e Interface de Clientes.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo, autoria, data, versão e correspondência atual do repositório não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0077",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir repositório, autoria, versão nem estado de acesso a partir do rótulo. Preservar literalmente a URL original."
+      ],
+      "linked_paragraph_id": "text-p-1030",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0130",
+      "source_record_id": "text-a-0130",
+      "source_unit": "chapter-05-text-h-0077",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[808]/text:a[1]",
+      "source_xml_sha256": "76ff7be5501b6db442ff1d3e6f363734234c4dcf5c30bc8a4714a1fabd1abf71",
+      "original_anchor": "Repositório RFID Backend",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+      "source_category": "project_repository",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web retornou Cache miss; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "O ODT descreve este repositório como responsável pela lógica de negócio, endpoints, autenticação, regras operacionais, persistência e integração entre serviços, com execução serverless via AWS Lambda.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo, autoria, data, versão e correspondência atual do repositório não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0077",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir repositório, autoria, versão nem estado de acesso a partir do rótulo. Preservar literalmente a URL original."
+      ],
+      "linked_paragraph_id": "text-p-1033",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0131",
+      "source_record_id": "text-a-0131",
+      "source_unit": "chapter-05-text-h-0077",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[811]/text:a[1]",
+      "source_xml_sha256": "293cce0fb469759b9da3b84b6b96f8de1a54812db5ab686d0922efdc8429184f",
+      "original_anchor": "Repositório RFID Gateway",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+      "source_category": "project_repository",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web informou URL não acessível por esta ferramenta; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "O ODT descreve este repositório como serviço local que comunica leitor RFID e aplicação em nuvem, usa API RESTful, processa eventos e os encaminha ao backend.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo, autoria, data, versão e correspondência atual do repositório não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0077",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir repositório, autoria, versão nem estado de acesso a partir do rótulo. Preservar literalmente a URL original."
+      ],
+      "linked_paragraph_id": "text-p-1036",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0132",
+      "source_record_id": "text-a-0132",
+      "source_unit": "chapter-05-text-h-0078",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[817]/text:a[1]",
+      "source_xml_sha256": "7b1ba69f6efdda66b1d57de462985a50df4d2d0893ce15d1067a498049824635",
+      "original_anchor": "Wiki do Banco de Dados",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+      "source_category": "project_wiki",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web informou URL não acessível por esta ferramenta; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "Link identificado no ODT como Wiki do Banco de Dados, na unidade sobre o banco de dados utilizado.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo da wiki, autoria, data, versão e correspondência atual não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0078",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir o conteúdo da wiki nem substituir a URL. Preservar literalmente o endereço codificado no ODT."
+      ],
+      "linked_paragraph_id": "text-p-1043",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0133",
+      "source_record_id": "text-a-0133",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[76]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "0737095e8b08be7da605ba607e63dda417dec5490c126d27717a8aac47c4e97c",
+      "original_anchor": "Documentação C#",
+      "original_url": "https://learn.microsoft.com/dotnet/csharp/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://learn.microsoft.com/dotnet/csharp/",
+      "observed_url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://learn.microsoft.com/dotnet/csharp/",
+        "observed_url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada; redirecionamento de localização observado de /dotnet/csharp/ para /en-us/dotnet/csharp/."
+      },
+      "observed_title": "C# Guide - .NET managed language - C# | Microsoft Learn",
+      "responsible_author_or_publisher": "Microsoft Learn é o site editorial observado; nenhum autor pessoal/byline foi identificado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null,
+        "note": "A página explica que o guia inclui artigos, tutoriais, exemplos e referência da linguagem C#; nenhuma data de publicação/atualização foi encontrada na página consultada."
+      },
+      "original_context": "C#: Linguagem utilizada no desenvolvimento do backend e gateway, escolhida por sua maturidade, produtividade e integração nativa com o ecossistema .NET.",
+      "what_source_supports": "Confirma que o destino é o guia/documentação oficial da linguagem C# e associa a linguagem ao ecossistema .NET. Não comprova por si só que o projeto usou C# nem as razões de escolha relatadas no ODT.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "A data/ano factual de publicação não está estabelecida; não usar 2026 como ano factual com base apenas na data de acesso."
+      ],
+      "linked_paragraph_id": "text-p-1067",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0134",
+      "source_record_id": "text-a-0134",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[835]/text:a[1]",
+      "source_xml_sha256": "6bdd2ad2f7bfae5162e77d7801558e02841e6679b619aa3314b4a748f8a87d09",
+      "original_anchor": "Documentação .NET",
+      "original_url": "https://dotnet.microsoft.com/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://dotnet.microsoft.com/",
+      "observed_url": "https://dotnet.microsoft.com/en-us/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://dotnet.microsoft.com/",
+        "observed_url": "https://dotnet.microsoft.com/en-us/",
+        "http_status": null,
+        "outcome": "Página oficial do produto recuperada; redirecionamento da raiz para /en-us/."
+      },
+      "observed_title": ".NET - Build modern apps and powerful cloud services",
+      "responsible_author_or_publisher": "Site oficial .NET da Microsoft; nenhum autor pessoal/byline foi identificado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null,
+        "note": "A página mostra menção contemporânea a .NET Conf 2026 e .NET 11 RC, que não é data de publicação da página nem versão usada no projeto."
+      },
+      "original_context": ".NET: Framework principal utilizado no desenvolvimento do backend e também no gateway RFID, oferecendo robustez, performance e boa integração com serviços em nuvem.",
+      "what_source_supports": "A página identifica .NET como framework gratuito, open-source, multiplataforma para aplicações e serviços de nuvem. Não comprova uso ou versão no projeto nem as qualidades avaliativas descritas no ODT.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Link original leva à página inicial de produto, não a uma página técnica versionada. Ano factual da página ausente."
+      ],
+      "linked_paragraph_id": "text-p-1070",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0135",
+      "source_record_id": "text-a-0135",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[837]/text:a[1]",
+      "source_xml_sha256": "a823f570e9f83f8b7c1b52c953c666212865afec896f6bf4ee28849b7336a7d1",
+      "original_anchor": "Documentação React",
+      "original_url": "https://react.dev/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://react.dev/",
+      "observed_url": "https://react.dev/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://react.dev/",
+        "observed_url": "https://react.dev/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "React",
+      "responsible_author_or_publisher": "A página apresenta copyright Meta Platforms, Inc.; nenhum autor pessoal nem data de autoria foi identificado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": "A página exibe link para React 19.3; não prova versão usada pelo projeto.",
+        "dated_page_item": "Notícia sobre React 19.3 datada de 2026-09-09, não é data de publicação da página."
+      },
+      "original_context": "React: Biblioteca utilizada no desenvolvimento da interface web do sistema, responsável pela construção das telas administrativas e de clientes por meio de componentes reutilizáveis.",
+      "what_source_supports": "A página identifica React como biblioteca de interfaces web e nativas e descreve construção de interfaces com componentes; sustenta a caracterização geral, não o uso/versionamento específico no projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano de publicação da página não identificado. Não transformar a data da notícia nem o link de versão em ano de publicação ou versão do projeto."
+      ],
+      "linked_paragraph_id": "text-p-1074",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0136",
+      "source_record_id": "text-a-0136",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[840]/text:a[1]",
+      "source_xml_sha256": "9e14a274d919779dc1577cb09ccb68a2cf60e08e64b0d0904895dfcd8b4b2c14",
+      "original_anchor": "Documentação Typescript",
+      "original_url": "https://www.typescriptlang.org/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://www.typescriptlang.org/",
+      "observed_url": "https://www.typescriptlang.org/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://www.typescriptlang.org/",
+        "observed_url": "https://www.typescriptlang.org/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "TypeScript: JavaScript With Syntax For Types.",
+      "responsible_author_or_publisher": "Nenhum autor ou entidade editora formal/byline ficou identificável no conteúdo consultado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": "A página apresenta link para TypeScript 7.0; não estabelece versão usada pelo projeto."
+      },
+      "original_context": "TypeScript: Utilizado no frontend para adicionar tipagem estática ao JavaScript, aumentando a segurança do código e facilitando a manutenção do projeto.",
+      "what_source_supports": "A página define TypeScript como linguagem fortemente tipada baseada em JavaScript e explica seu suporte de tipos/tooling. Não prova adoção nem versão no projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano de publicação e autoria formal não identificados; não atribuir 2026 como data factual."
+      ],
+      "linked_paragraph_id": "text-p-1078",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0137",
+      "source_record_id": "text-a-0137",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[842]/text:a[1]",
+      "source_xml_sha256": "a12d329b2147d77251a1ebf6663a93320e9db8ff8320c69f455c25634d1fbb76",
+      "original_anchor": "Documentação API Impinj R700",
+      "original_url": "https://support.impinj.com/hc/en-us",
+      "source_category": "official_technical_source",
+      "verification_status": "PENDING",
+      "requested_url": "https://support.impinj.com/hc/en-us",
+      "observed_url": "https://support.impinj.com/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://support.impinj.com/hc/en-us",
+        "observed_url": "https://support.impinj.com/",
+        "http_status": null,
+        "outcome": "O link original foi redirecionado para a raiz de suporte da Impinj; a ferramenta apresentou o título Welcome to LWC Communities! e nenhum conteúdo (0 linhas), sem página técnica/API legível."
+      },
+      "observed_title": "Welcome to LWC Communities!",
+      "responsible_author_or_publisher": "A raiz pertence ao domínio support.impinj.com; autoria/editor formal não pode ser confirmada a partir do conteúdo vazio.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Impinj R700 REST API: API utilizada para comunicação entre o gateway e o leitor RFID físico, permitindo configuração e captura de eventos do equipamento.",
+      "what_source_supports": "Não sustenta as afirmações específicas sobre API REST, configuração ou captura de eventos, pois o destino não apresentou documentação técnica recuperável.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não procurar, inventar nem substituir por URL alternativa sem autorização. A unidade de tecnologias depende de referência técnica verificável para esta afirmação."
+      ],
+      "linked_paragraph_id": "text-p-1081",
+      "availability_status": "URL de origem redireciona para raiz de suporte acessível, mas página técnica/API não foi recuperada.",
+      "claim_support_status": "PENDING"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0138",
+      "source_record_id": "text-a-0138",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[845]/text:a[1]",
+      "source_xml_sha256": "bec710c4feef9cf393066ae32097bd32762d5a7dbb87a098fb3fc64906e35c9a",
+      "original_anchor": "Documentação Entity Framework",
+      "original_url": "https://learn.microsoft.com/ef/core/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://learn.microsoft.com/ef/core/",
+      "observed_url": "https://learn.microsoft.com/en-us/ef/core/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://learn.microsoft.com/ef/core/",
+        "observed_url": "https://learn.microsoft.com/en-us/ef/core/",
+        "http_status": null,
+        "outcome": "Página recuperada; redirecionamento de localização observado de /ef/core/ para /en-us/ef/core/. A interface também exibe aviso de autorização, embora o texto do artigo esteja renderizado."
+      },
+      "observed_title": "Overview of Entity Framework Core - EF Core | Microsoft Learn",
+      "responsible_author_or_publisher": "Microsoft Learn / .NET; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": "2024-11-12",
+        "version": null,
+        "note": "A página declara “Last updated on 2024-11-12”; isso é data de atualização, não prova de publicação original nem versão usada no projeto."
+      },
+      "original_context": "Entity Framework Core (ORM): Framework ORM utilizado no backend em .NET para mapear entidades para tabelas relacionais; usado para models, migrations, relações, constraints e consultas tipadas.",
+      "what_source_supports": "A documentação explica que EF Core pode servir como O/RM, permite trabalhar com banco de dados por objetos .NET e documenta modelos, consultas, gravação e migrations.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não atribuir 2024 como ano de publicação apenas com base na data Last updated; separar data de atualização da publicação."
+      ],
+      "linked_paragraph_id": "text-p-1085",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0139",
+      "source_record_id": "text-a-0139",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[847]/text:a[1]",
+      "source_xml_sha256": "52b76e775658d5a68da3e5b02aba3944145d33abdf383d8b4430b393e5add866",
+      "original_anchor": "Documentação AWS Lambda",
+      "original_url": "https://aws.amazon.com/lambda/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/lambda/",
+      "observed_url": "https://aws.amazon.com/lambda/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/lambda/",
+        "observed_url": "https://aws.amazon.com/lambda/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; o conteúdo é uma página de produto e não a documentação de referência técnica."
+      },
+      "observed_title": "Serverless Computing - AWS Lambda - Amazon Web Services",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "AWS Lambda: Serviço serverless utilizado para hospedagem e execução do backend, permitindo escalabilidade sob demanda e menor custo operacional.",
+      "what_source_supports": "A página identifica Lambda como computação serverless e associa seu funcionamento a execução sem gerenciamento de infraestrutura e cobrança por uso. É uma página de produto; não comprova uso, implementação, escala ou custo do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano factual de publicação ausente; endereço original é página comercial de produto, não documentação detalhada."
+      ],
+      "linked_paragraph_id": "text-p-1088",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0140",
+      "source_record_id": "text-a-0140",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[84]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "301f29dd4019ee12f3c19ec222480883bbc73c7304cee6d8ee80180657d6ff8e",
+      "original_anchor": "Documentação AWS S3",
+      "original_url": "https://aws.amazon.com/s3/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/s3/",
+      "observed_url": "https://aws.amazon.com/s3/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/s3/",
+        "observed_url": "https://aws.amazon.com/s3/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; a página contém visão geral e remete à user guide."
+      },
+      "observed_title": "Cloud Object Storage – Amazon S3 – Amazon Web Services",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Amazon S3: Utilizado para hospedagem dos arquivos estáticos do frontend da aplicação web.",
+      "what_source_supports": "A página define S3 como serviço gerenciado de armazenamento de objetos e de guardar/recuperar dados. A página consultada não demonstrou diretamente hospedagem de arquivos estáticos de frontend; o uso concreto permanece fato autoral do relatório.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Página de produto, não guia técnico; ano factual ausente; suporte direto à afirmação sobre hosting estático não localizado no texto consultado."
+      ],
+      "linked_paragraph_id": "text-p-1091",
+      "availability_status": "Página oficial recuperada; identidade do produto confirmada.",
+      "claim_support_status": "PARTIAL"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0141",
+      "source_record_id": "text-a-0141",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[85]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "88761721445be20d689a2089696fb3c15caa542d8fb40586d8620474b7dc3ed3",
+      "original_anchor": "Documentação AWS Cloudfront",
+      "original_url": "https://aws.amazon.com/cloudfront/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/cloudfront/",
+      "observed_url": "https://aws.amazon.com/cloudfront/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/cloudfront/",
+        "observed_url": "https://aws.amazon.com/cloudfront/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; possui descrição e guia/tutorial ligados."
+      },
+      "observed_title": "Low-Latency Content Delivery Network (CDN) - Amazon CloudFront - Amazon Web Services",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Amazon CloudFront: responsável pela distribuição de conteúdo do frontend com melhor desempenho e menor latência de acesso.",
+      "what_source_supports": "A página caracteriza CloudFront como CDN de entrega de conteúdo e declara redução de latência; sustenta a função geral, não comprova a configuração/uso específico pelo projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano factual de publicação ausente; página comercial de produto."
+      ],
+      "linked_paragraph_id": "text-p-1094",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0142",
+      "source_record_id": "text-a-0142",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[851]/text:a[1]",
+      "source_xml_sha256": "e6c364a46c1618df05a43cb00e7a3557296b70ccc7535b9705b671446fd44ffe",
+      "original_anchor": "Documentação AWS RDS",
+      "original_url": "https://aws.amazon.com/rds/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/rds/",
+      "observed_url": "https://aws.amazon.com/rds/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/rds/",
+        "observed_url": "https://aws.amazon.com/rds/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; descreve RDS e remete ao user guide."
+      },
+      "observed_title": "Fully Managed Relational Database – Amazon RDS – AWS",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Amazon RDS: Serviço gerenciado utilizado para hospedagem do banco de dados PostgreSQL da aplicação.",
+      "what_source_supports": "A página identifica RDS como serviço gerenciado de banco relacional e declara suporte a PostgreSQL; sustenta função geral, não prova deployment específico do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano factual de publicação ausente; página de produto, não registro de implantação do projeto."
+      ],
+      "linked_paragraph_id": "text-p-1097",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0143",
+      "source_record_id": "text-a-0143",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[87]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "4688e00497a0b48551a058aec597505488dc5adc9ade8588719c30649cb0756b",
+      "original_anchor": "Documentação PostgreSQL",
+      "original_url": "https://www.postgresql.org/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://www.postgresql.org/",
+      "observed_url": "https://www.postgresql.org/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://www.postgresql.org/",
+        "observed_url": "https://www.postgresql.org/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "PostgreSQL: The World's Most Advanced Open Source Relational Database",
+      "responsible_author_or_publisher": "Site oficial PostgreSQL; a página atribui a notícia de lançamento ao PostgreSQL Global Development Group, mas não estabelece byline para a página inicial.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "dated_page_item": "Notícia de lançamento PostgreSQL 19 RC 1 em 2026-10-15; versão não deve ser confundida com a utilizada no projeto.",
+        "release_list": "A página lista versões/releases correntes, mas não informa versão usada pelo projeto."
+      },
+      "original_context": "PostgreSQL: banco de dados relacional utilizado para armazenamento estruturado das informações do sistema.",
+      "what_source_supports": "A página apresenta PostgreSQL como sistema de banco de dados objeto-relacional, open-source; sustenta a caracterização geral, não o uso/versão específicos do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "A notícia datada de 2026-10-15 não é data de publicação da página inicial; não inferir versão do projeto."
+      ],
+      "linked_paragraph_id": "text-p-1100",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0144",
+      "source_record_id": "text-a-0144",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[88]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "5e65d1c667e01fda4b39c7409e4b7b85c6e19fee4cb249b6fb7af159e10aecc0",
+      "original_anchor": "Documentação Docker",
+      "original_url": "https://www.docker.com/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://www.docker.com/",
+      "observed_url": "https://www.docker.com/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://www.docker.com/",
+        "observed_url": "https://www.docker.com/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado. Página atual orientada a Docker para agentes e produtos; liga à documentação, mas o link original é a página inicial comercial."
+      },
+      "observed_title": "Docker | Secure Sandboxes for AI Agents",
+      "responsible_author_or_publisher": "A página apresenta copyright © 2026 Docker Inc.; isso identifica o detentor do copyright, não necessariamente autoria individual ou data de publicação.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null,
+        "copyright_notice": "© 2026 Docker Inc. All rights reserved; não é ano de publicação."
+      },
+      "original_context": "Docker: utilizado para padronização de ambientes locais de desenvolvimento, execução de dependências e apoio em testes automatizados.",
+      "what_source_supports": "A página identifica os produtos Docker e menciona Docker Desktop/containers, mas não é documentação técnica e não sustenta diretamente todos os usos específicos descritos no ODT.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Página inicial/marketing atual; ano de publicação ausente. Não confundir o aviso de copyright com data de publicação; a documentação técnica não foi substituída ao verificar o link."
+      ],
+      "linked_paragraph_id": "text-p-1103",
+      "availability_status": "Página oficial recuperada; identidade do produto confirmada.",
+      "claim_support_status": "PARTIAL"
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0145",
+      "source_record_id": "text-a-0145",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[89]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "59db113b97ed3d7da42e5c9fea65538fe620f69c5d5927f775d1acffa957d196",
+      "original_anchor": "Documentação GitHub Actions",
+      "original_url": "https://github.com/features/actions",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://github.com/features/actions",
+      "observed_url": "https://github.com/features/actions",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://github.com/features/actions",
+        "observed_url": "https://github.com/features/actions",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "GitHub Actions · CI/CD and automations · Agentic Workflows · Workflows · GitHub",
+      "responsible_author_or_publisher": "GitHub indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "GitHub Actions: utilizado para automação de pipelines de CI/CD, validação de qualidade do código e sincronização entre repositórios GitHub e GitLab.",
+      "what_source_supports": "A página descreve automação de workflows, build, teste e deploy via GitHub e CI/CD; não comprova sincronização específica GitHub/GitLab nem a configuração do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Nenhuma data/versionamento do produto foi mostrada; página de recurso, não documentação técnica detalhada."
+      ],
+      "linked_paragraph_id": "text-p-1106",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO"
+    }
+  ],
+  "aggregate_blockers": [
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0077",
+        "chapter-05-text-h-0078"
+      ],
+      "reason": "The three original repository URLs and the database wiki URL could not be loaded. Their status is indeterminate, not confirmed down/404; contents/authorship/version/history cannot be verified."
+    },
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0085"
+      ],
+      "reason": "Original Impinj R700 API URL redirects to support homepage, with no technical content recovered; API-specific claims are unsupported by this linked page."
+    },
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0085"
+      ],
+      "reason": "Most accessible source pages provide no factual publication year. The verified access date is 2026-10-16; do not convert it to factual publication metadata. Human/editorial decision about citation treatment and bibliography is required if style convention conflicts."
+    },
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0085"
+      ],
+      "reason": "The S3 product homepage establishes object-storage identity but the retrieved text did not directly substantiate the specific static-frontend-hosting claim; Docker link is a current product/marketing homepage rather than technical docs. Do not silently change the original URLs."
+    }
+  ],
+  "consultation_log": [
+    "git rev-parse HEAD → abe761cba29a653e19db234b497fffd957a944b6",
+    "sha256sum RELATORIO_ATUAL.odt → e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "jq on docs/CONTENT_MANIFEST.json → reconciled text-a-0129–0145, unit IDs, original anchors, hrefs, XPaths and source hashes",
+    "web__run open: exact URLs text-a-0129–0145; pages and redirects recorded per source",
+    "web__run find: publication/update/copyright patterns on C#, .NET, React, TypeScript; no general page publication date; EF page exposes Last updated 2024-11-12",
+    "python3 urllib.request HEAD on 4 project/wiki URLs and Impinj support URL → all pre-HTTP DNS failures [Errno -3] Temporary failure in name resolution; not an HTTP response"
+  ]
+}

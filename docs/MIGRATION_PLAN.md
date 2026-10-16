@@ -2,15 +2,15 @@
 
 ## Estado e limite desta fase
 
-Fase vigente: migração controlada da **AGES II / Indústria Digital**, autorizada na mensagem atual do usuário. A apresentação da AGES I foi aceita para reutilização e registrada em `migration/approvals/ages-i-presentation-accepted.json`; os padrões concretos estão em `docs/STYLE_GUIDE.md`. A branch de integração é `migration/ages-ii`; o conjunto fechado de 15 unidades e a posse de assets estão em `harness.json` e `migration/approvals/ages-ii-authorization.json`. Não incluir a participação como cliente Hoortech nem AGES III–IV. A entrega desta edição exige revisão humana.
+Fase vigente: migração controlada da **AGES III / Sistema de Controle Inteligente de Estacionamento com RFID**, autorizada pela mensagem do usuário em 16/10/2026. O usuário aprovou a entrega de AGES I/II, vinculada ao checkpoint `abe761c` e a `migration/approvals/ages-i-ii-final-acceptance.json`. Os padrões de apresentação reutilizáveis estão em `docs/STYLE_GUIDE.md`. A branch ativa é `migration/ages-iii`; o conjunto exato de 15 unidades e a posse de assets estão em `harness.json` e `migration/approvals/ages-iii-authorization.json`. Não incluir Hoortech nem AGES IV. A entrega exige revisão humana.
 
 Correção de apresentação solicitada em 16/10/2026: antes da entrega, estão autorizadas somente as alterações dos três trechos de banco/arquitetura/protótipos da AGES I e dos quatro trechos de banco/arquitetura/protótipos/tecnologias da AGES II, além das macros e documentação necessárias, conforme `migration/approvals/ages-i-ii-formatting-authorization.json`. Esta correção não reabre a conversão da AGES I nem autoriza conteúdo de outras unidades. Após corrigir, revalidar as unidades afetadas e recompilar/auditar o documento integrado; somente então apresentar a versão revista da AGES II para aprovação.
 
-Fases do piloto e da AGES I são históricas e mantêm seus registros. A mensagem atual autoriza a AGES II, após o usuário aprovar a apresentação da prévia AGES I e solicitar que o padrão fosse documentado. Pendências de fonte de imagem, diagrama ausente, disponibilidade remota de links e confirmação normativa permanecem abertas; os arquivos de autorização explicitam como preservá-las.
+Fases do piloto e das AGES I/II são históricas e mantêm seus registros. A autorização vigente é AGES III; ela não apaga pendências de fontes, referências ou confirmação normativa anteriores. Os arquivos de autorização identificam e limitam o escopo desta execução.
 
 Baseline: `44bc0b95ef5ed06c8efa272de4f754cce1d6e4cb`; branch de preparação `harness/migration`. Original e comparativo permanecem intactos. A configuração em `harness.json`, [BASELINE](BASELINE.json) e [TOOLCHAIN](TOOLCHAIN.lock.json) registra caminhos, versão e hashes. O harness é entregue executável; isso não significa que o memorial já satisfaz os gates.
 
-O destino editável é `relatorio_AGES_eduardo/`; AGES I já está convertida e somente as unidades autorizadas de AGES II serão adicionadas nesta fase. A exceção acima permite corrigir a apresentação dos três trechos técnicos já convertidos da AGES I. `Template_AGES___Guvidaletti/` permanece como referência somente leitura. O perfil `template` compila material demonstrativo; o perfil `fixture` testa conteúdo sintético; nenhum deles conta como unidade migrada.
+O destino editável é `relatorio_AGES_eduardo/`; AGES I e II já estão convertidas e aprovadas, e somente as unidades AGES III explicitamente listadas nesta fase serão adicionadas. A apresentação técnica de AGES I/II já foi corrigida no checkpoint aprovado. `Template_AGES___Guvidaletti/` permanece como referência somente leitura. O perfil `template` compila material demonstrativo; o perfil `fixture` testa conteúdo sintético; nenhum deles conta como unidade migrada.
 
 ## Fases
 
@@ -20,13 +20,13 @@ O destino editável é `relatorio_AGES_eduardo/`; AGES I já está convertida e 
 | 1 — Piloto autorizado | AGES I / Easy Choose / Sprint 0 | Concluído e revalidado na edição completa |
 | 2 — AGES I | Introdução/desenvolvimento, Sprints 0–4 e conclusão | Convertida; apresentação aceita para reutilização, com pendências factuais/normativas mantidas |
 | 3 — Cliente Hoortech | Introdução, apresentação aos alunos, Sprints 0–4, conclusão; sem caixas presumidas | Checkpoint próprio recomendado |
-| 4 — AGES II | Somente capítulo 4 / Indústria Digital, 15 unidades detalhadas abaixo | **Fase ativa:** entrega, auditorias, PDF e aprovação humana |
-| 5 — AGES III | Introdução/desenvolvimento, Sprints 0–4 e conclusão; corrigir interpretação estrutural das caixas, sem alterar texto | Aprovação humana da edição |
+| 4 — AGES II | Somente capítulo 4 / Indústria Digital, 15 unidades detalhadas abaixo | Concluída e aprovada pelo usuário em 16/10/2026; pendências factuais permanecem registradas |
+| 5 — AGES III | Capítulo 5 / RFID: introdução, desenvolvimento, cinco Sprints e conclusão; conferir caixas de reflexão aninhadas e parágrafo vazio de Sprint 2, sem alterar texto | **Fase ativa:** conversão, auditorias, PDF e aprovação humana |
 | 6 — AGES IV | Introdução/desenvolvimento/artefatos de gerenciamento, Sprints 0–4 e conclusão; registrar lacunas de 2–4/conclusão | Aprovação humana da edição |
 | 7 — Integração | Pré-textuais, trajetória, considerações, referências e apêndices conforme decisões; regenerar índices | Texto integral, normas e PDF completo verificados; aprovação final |
 | 8 — Editorial | Somente por autorização específica posterior | Revisão/complementação separada e rastreável |
 
-A ordem documental é trajetória → Easy Choose → Hoortech → Indústria Digital → RFID → Recorda → considerações → pós-textuais. Esta missão escolhe apenas Indústria Digital, embora Hoortech seja anterior no original. Nenhum outro capítulo recebe conteúdo ou é convertido nesta fase.
+A ordem documental é trajetória → Easy Choose → Hoortech → Indústria Digital → RFID → Recorda → considerações → pós-textuais. Esta missão escolhe somente AGES III / RFID; os outros capítulos permanecem como já convertidos ou fora de escopo, sem novas alterações.
 
 ## Plano de unidades AGES II
 
@@ -51,6 +51,21 @@ Conversor A recebe oito arquivos/ledgers e as seis imagens de Introdução, Arqu
 Pendências durante a execução: diagrama de banco de dados ausente → placeholder visual provisório, sem conteúdo inventado; fonte/autoria das sete imagens → “pendente de identificação” até resposta manual do usuário; disponibilidade atual dos links de repositórios/wikis → preservar URLs originais e registrar o resultado do teste separadamente. Os sete links de documentação tecnológica são Angular, TypeScript, Python, FastAPI, Graph API Explorer, SQLAlchemy e PostgreSQL. Curadoria verifica URL oficial, título e entidade responsável; não afirma versão efetivamente usada.
 
 O usuário informou que a atuação AGES II ocorreu entre agosto e novembro de 2024 e autorizou atribuir datas de acesso nessa janela. Para esta edição foi selecionada 15/10/2024 para as documentações tecnológicas, com ano bibliográfico 2024, seguindo sua instrução. Essa data é uma convenção atribuída, não histórico real de navegação. Se a evidência de uma documentação oficial não sustentar o registro, parar essa referência e registrar a pendência antes de integrar a bibliografia.
+
+## Plano de unidades AGES III
+
+O conjunto fechado contém 15 unidades: `chapter-05-text-h-0074`–`chapter-05-text-h-0080`, `chapter-05-text-h-0085`, `chapter-05-text-h-0086`, `ages-iii-sprint-0`–`ages-iii-sprint-4` e `chapter-05-text-h-0097`. O manifesto rastreia 286 IDs únicos: 106 parágrafos, 16 títulos, 63 contêineres de lista, 44 itens, 19 cabeçalhos de lista, 17 hyperlinks, 13 caixas de texto e oito imagens. Não há tabelas. Cinco caixas são reflexões (12 parágrafos não vazios e um vazio em Sprint 2); oito caixas restantes são legendas em quadros. As caixas devem ser lidas pela ordem lógica dos descendentes, e o parágrafo vazio deve permanecer rastreado até validação visual. A origem incorpora diagramas de banco e arquitetura, portanto não há placeholder previsto para esses diagramas.
+
+| Grupo | Unidades | Arquivos/escopo | Responsabilidade |
+|---|---|---|---|
+| A | `chapter-05-text-h-0074`–`chapter-05-text-h-0080`, `chapter-05-text-h-0085` | título, introdução, desenvolvimento, repositórios, banco, arquitetura, protótipos e tecnologias; oito unidades de conteúdo e oito imagens | Conversor A; somente seus arquivos LaTeX, assets atribuídos e ledgers |
+| B | `chapter-05-text-h-0086`, `ages-iii-sprint-0`–`ages-iii-sprint-4`, `chapter-05-text-h-0097` | título de atividades, cinco Sprints e conclusão; sete unidades, sem mídia | Conversor B; somente seus arquivos LaTeX e ledgers |
+
+Assets exclusivos: `chapter-05-text-h-0075` recebe `asset-0015.jpg` (foto da equipe); `chapter-05-text-h-0078` recebe `asset-0014.png` (diagrama do banco); `chapter-05-text-h-0079` recebe `asset-0004.png` (diagrama de arquitetura); `chapter-05-text-h-0080` recebe `asset-0028.png`–`asset-0032.png` (cinco protótipos). Os oito têm bytes e hashes no manifesto. Fontes/autoria não comprovadas serão indicadas como pendentes, sem inferência.
+
+O ODT tem três links de repositório, uma wiki de banco de dados e 13 links de documentação tecnológica (C#, .NET, React, TypeScript, Impinj R700 API, Entity Framework Core, AWS Lambda, S3, CloudFront, RDS, PostgreSQL, Docker e GitHub Actions). O curador compara URLs e âncoras ao manifesto, registra evidência e a data real de acesso; metadados não comprovados permanecem PENDING. Em 16/10/2026, o usuário autorizou continuar com os links originais preservados e pendências explícitas; ver `migration/approvals/ages-iii-pending-references-acceptance.json`. Não inventar nem retrodatá-las, nem criar autores, versões, publicações, citações ou URLs sem evidência. As unidades podem ser convertidas fielmente, mas os gates bibliográficos permanecem PENDING até a evidência ou decisão humana pertinente.
+
+Conversores podem trabalhar em paralelo somente nas worktrees `migration/ages-iii-converter-a` e `migration/ages-iii-converter-b`, criadas a partir do checkpoint limpo desta branch. A integração de `main.tex`, macros e bibliografia é serial e pertence ao MANTENEDOR LATEX. Curadoria escreve somente evidência separada até a integração central.
 
 ## Unidade e dependências
 
@@ -99,4 +114,4 @@ Códigos de saída: `0` = PASS; `1` = FAIL/bloqueio; `3` = não convertido, parc
 
 ## Gate e decisão
 
-Consolidar comandos, resultados, diff por unidade, hashes do PDF/log, auditoria textual e visual. Checkpoint humano registra edição/unidade, commit, artefatos, pendências aceitas e evidência da mensagem do usuário. Logs ou booleanos gerados por agentes não substituem aprovação. Ao fim desta fase, parar e aguardar aprovação da AGES II; não iniciar Hoortech nem AGES III–IV.
+Consolidar comandos, resultados, diff por unidade, hashes do PDF/log, auditoria textual e visual. Checkpoint humano registra edição/unidade, commit, artefatos, pendências aceitas e evidência da mensagem do usuário. Logs ou booleanos gerados por agentes não substituem aprovação. Ao fim desta fase, parar e aguardar aprovação da AGES III; não iniciar AGES IV nem Hoortech.

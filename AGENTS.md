@@ -2,9 +2,9 @@
 
 ## Escopo e autoridades
 
-Fase vigente: migração controlada de **AGES II / Indústria Digital**, autorizada pelo usuário e registrada em `migration/approvals/ages-ii-authorization.json`. Trabalhe na branch `migration/ages-ii`, somente nas 15 unidades do capítulo 4 listadas em `harness.json`. AGES I foi revisada; seu padrão visual foi aprovado para reutilização e está em `docs/STYLE_GUIDE.md`. Não converta Hoortech, AGES III, AGES IV ou qualquer outra unidade nesta fase. Após a entrega da AGES II, aguarde aprovação humana.
+Fase vigente: migração controlada de **AGES III / Sistema de Controle Inteligente de Estacionamento com RFID**, autorizada pela mensagem do usuário em 16/10/2026 e registrada em `migration/approvals/ages-iii-authorization.json`. O usuário aprovou a entrega identificada de AGES I/II; checkpoint `abe761c`. Trabalhe na branch `migration/ages-iii`, somente nas 15 unidades do capítulo 5 listadas em `harness.json`. Reutilize as decisões visuais aprovadas em `docs/STYLE_GUIDE.md`. Não converta Hoortech, AGES IV ou qualquer outra unidade nesta fase. Após a entrega de AGES III, aguarde aprovação humana.
 
-**Exceção autorizada pelo usuário em 16/10/2026:** aplicar somente correções de apresentação/citações nos quatro trechos técnicos `chapter-02-text-h-0009`–`0011` (AGES I) e `chapter-04-text-h-0043`–`0046` (AGES II), além da macro global de fonte de figuras, conforme `harness.json` e `migration/approvals/ages-i-ii-formatting-authorization.json`. Esta exceção inclui os textos-âncora descritivos aprovados, citações tecnológicas rastreáveis e centralização da fonte das figuras. Ela não autoriza outra unidade nem a próxima edição. As convenções aprovadas ficam documentadas em `docs/STYLE_GUIDE.md` e `docs/QUALITY_GATES.md` para AGES futuras; isso autoriza reutilizar o padrão quando uma edição vier a ser autorizada, sem autorizar migração antecipada.
+Registro histórico: em 16/10/2026, o usuário autorizou correções de apresentação/citações nos trechos técnicos `chapter-02-text-h-0009`–`0011` (AGES I) e `chapter-04-text-h-0043`–`0046` (AGES II), além da macro global de fonte de figuras, registradas em `migration/approvals/ages-i-ii-formatting-authorization.json`. Essas alterações estão concluídas no checkpoint aprovado `abe761c`; as convenções são reutilizáveis conforme `docs/STYLE_GUIDE.md` e `docs/QUALITY_GATES.md`. O escopo de execução vigente é definido pelo parágrafo acima e por `harness.json`.
 
 Leia [CONTEXT](docs/CONTEXT.md), [plano](docs/MIGRATION_PLAN.md), [estilo](docs/STYLE_GUIDE.md), [gates](docs/QUALITY_GATES.md) e [pendências](docs/PENDENCIAS.md). O `harness.json` define caminhos e escopos executáveis; os documentos explicam sua finalidade. Em divergência, interrompa a tarefa afetada e registre a diferença; não amplie permissões.
 
@@ -12,7 +12,7 @@ Autoridades, nesta ordem: instruções explícitas do usuário; original imutáv
 
 ## Invariantes
 
-Atualização vigente de escopo: a edição em curso continua sendo **AGES II / Indústria Digital**, IDs `chapter-04-text-h-0039` a `chapter-04-text-h-0047`, Sprints `ages-ii-sprint-0` a `ages-ii-sprint-4` e conclusão `chapter-04-text-h-0073`. Soma-se a exceção de correção listada acima para os três trechos técnicos da AGES I e as quatro seções técnicas da AGES II. A lista executável está em `harness.json`; nenhum outro trecho da AGES I ou de outra edição pode ser convertido nesta tarefa. O documento completo da AGES II exige aprovação humana antes de qualquer próxima edição.
+Atualização vigente de escopo: o usuário autorizou exatamente as 15 unidades AGES III enumeradas em `harness.json` e `migration/approvals/ages-iii-authorization.json`: `chapter-05-text-h-0074`–`0080`, `chapter-05-text-h-0085`, `chapter-05-text-h-0086`, Sprints `ages-iii-sprint-0`–`ages-iii-sprint-4` e conclusão `chapter-05-text-h-0097`. A posse dos oito assets também consta nesses arquivos. A aceitação humana anterior de AGES I/II está vinculada ao PDF no registro `migration/approvals/ages-i-ii-final-acceptance.json`; não apaga pendências factuais. Nenhuma unidade de AGES IV ou da participação Cliente Hoortech está autorizada. A entrega AGES III exige aprovação humana antes de qualquer próxima edição.
 
 - Não revisar português, reformular, expandir, completar ou corrigir fatos nesta fase ou na conversão fiel.
 - Preservar acentos, símbolos, pontuação, sequência, âncoras e URLs. Contagem de palavras não comprova integridade.
@@ -22,7 +22,7 @@ Atualização vigente de escopo: a edição em curso continua sendo **AGES II / 
 - Diagramas ausentes recebem, na fase autorizada, placeholders visuais claramente provisórios; não inventar seus conteúdos nem suas fontes.
 - Reflexões conservam texto e borda, usam a mesma fonte do corpo e admitem divisão entre páginas.
 - Aplicar o padrão visual aprovado em `docs/STYLE_GUIDE.md`, distinguindo decisões do usuário, escolhas da referência Mariah, boas práticas técnicas e requisitos normativos verificados.
-- Para referências tecnológicas da AGES I/II, usar a janela 2024 e a convenção de ano/data de acesso explicitamente autorizada; registrar datas escolhidas como atribuídas, não como histórico recuperado.
+- Para AGES III, não inventar nem retrodatá-las: a data de acesso de cada fonte deve ser a data real da curadoria. A decisão anterior do usuário permite usar o ano de acesso como rótulo autor-data; isso não prova nem substitui a data factual de publicação. Não inventar autores, versões ou URLs. Fontes AGES III não verificadas ficam PENDING; por decisão explícita de 16/10/2026 registrada em `migration/approvals/ages-iii-pending-references-acceptance.json`, a conversão fiel pode prosseguir preservando URLs e sem criar metadados. Os gates de referência das unidades afetadas continuam PENDING, não PASS.
 - Revisão editorial e complementações são outra fase.
 - Exigir aprovação humana após cada edição AGES. Recomenda-se também um checkpoint próprio para a participação Cliente Hoortech. Aprovação de harness não autoriza o piloto.
 
@@ -40,4 +40,4 @@ Faça commits pequenos na branch de trabalho somente quando autorizado. Não sob
 
 Artefatos locais ficam em `build/`, conforme configuração. O inventário rastreado não contém arquivos extraídos de mídia redundantes. Não incluir caches, credenciais, PDFs de teste ou auxiliares na integração. Consultar o plano para rollback por commit e reprodução limpa.
 
-Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar após a entrega AGES II e aguardar aprovação; não iniciar outra edição.
+Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar após a entrega AGES III e aguardar aprovação; não iniciar AGES IV nem Hoortech.
