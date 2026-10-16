@@ -34,6 +34,8 @@ from scripts.migration_harness.preservation import (
     AGES_II_PRESENTATION_AUTHORIZATION,
     _is_source_heading,
     _leading_tab_paragraph_ids,
+    _source_whitespace_verified,
+    _strict_source,
 )
 
 
@@ -109,6 +111,20 @@ class PreservationTests(unittest.TestCase):
         self.assertTrue(_is_source_heading(records["text-h-0067"]))
         self.assertFalse(_is_source_heading(records["text-h-0068"]))
         self.assertEqual(records["text-h-0068"]["semantic_type"], "paragraph")
+
+    def test_verified_reference_layout_projects_only_authorized_source_whitespace(self):
+        serialization = ["reference_paragraph_layout"]
+        self.assertFalse(_source_whitespace_verified(serialization, True, False))
+        self.assertTrue(_source_whitespace_verified(serialization, True, True))
+        self.assertFalse(_source_whitespace_verified(serialization, False, True))
+        verified = _source_whitespace_verified(serialization, True, True)
+        self.assertEqual(_strict_source("\nEtapa", verified, allowed_leading_line_breaks=1), "\nEtapa")
+        with self.assertRaises(UnsupportedSerialization):
+            _strict_source("\nEtapa", verified)
+        with self.assertRaises(UnsupportedSerialization):
+            _strict_source("\n\nEtapa", verified, allowed_leading_line_breaks=1)
+        with self.assertRaises(UnsupportedSerialization):
+            _strict_source("Etapa\nseguinte", verified, allowed_leading_line_breaks=1)
         source_tokens = [
             (("\\originalleadingspace{}" * 4) + "Na Sprint 4", "    Na Sprint 4"),
             (r"\originalleadbreak{}Primeira Etapa", "\nPrimeira Etapa"),

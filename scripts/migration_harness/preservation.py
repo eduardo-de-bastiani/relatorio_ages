@@ -810,18 +810,32 @@ def _space(text: str) -> str:
     return re.sub(r"[\t\n\r\f\v ]+", " ", text).strip(" ")
 
 
-def _strict_source(text: str, original_whitespace=False) -> str:
+def _strict_source(text: str, original_whitespace=False, allowed_leading_line_breaks=0) -> str:
     """No source whitespace is silently discarded or collapsed.
 
     XML extraction already distinguishes text:s, text:tab and text:line-break.
     Without a rendered layout proof, these cannot be declared equivalent to an
     ordinary TeX space, even if the converter copies the same raw characters.
     """
-    if any(char in text for char in "\n\r\f\v") or "\t" in text and not original_whitespace:
+    if allowed_leading_line_breaks:
+        leading_line_breaks = len(text) - len(text.lstrip("\n"))
+        if leading_line_breaks != allowed_leading_line_breaks:
+            raise UnsupportedSerialization("Source line breaks differ from the exact authorized leading count")
+        text_without_authorized_breaks = text[leading_line_breaks:]
+    else:
+        text_without_authorized_breaks = text
+    if any(char in text_without_authorized_breaks for char in "\n\r\f\v") or "\t" in text and not original_whitespace:
         raise UnsupportedSerialization("Explicit source tab/line break requires rendered whitespace review")
     if not original_whitespace and ("  " in text or text.startswith(" ") or text.endswith(" ")):
         raise UnsupportedSerialization("Repeated or edge source spaces require rendered whitespace review")
     return text
+
+
+def _source_whitespace_verified(serializations, macro_contract_verified, reference_layout_verified=False):
+    return macro_contract_verified and (
+        "original_whitespace" in serializations
+        or ("reference_paragraph_layout" in serializations and reference_layout_verified)
+    )
 
 
 def _index(records):
@@ -1301,7 +1315,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             serializations = by_id[rid].get("serializations", [])
             original = records[rid]["text"]
             try:
-                expected = _strict_source(original, "original_whitespace" in serializations and macro_verified)
+                expected = _strict_source(
+                    original,
+                    _source_whitespace_verified(serializations, macro_verified, reference_verified),
+                    expected_ages_ii_line_breaks.get(rid, 0) if reference_verified and "reference_paragraph_layout" in serializations else 0,
+                )
             except UnsupportedSerialization as exc:
                 report("explicit_source_whitespace", uid, str(exc), rid, str(path.relative_to(repo)))
                 differences[uid].append({"source_id": rid, "target_file": str(path.relative_to(repo)), "expected": original, "observed": None, "diff": "Whitespace equivalence is unproven; no automatic normalization accepted"})
@@ -1432,7 +1450,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 else:
                     if strip_comments(value[:token.start] + value[token.end:]).strip():
                         report("unmapped_link_span_content", uid, "Link interval contains additional unproved content", rid)
-                    if observed_anchor != _strict_source(record.get("source_text") or "", "original_whitespace" in policies and macro_verified):
+                    if observed_anchor != _strict_source(
+                        record.get("source_text") or "",
+                        _source_whitespace_verified(policies, macro_verified, reference_verified),
+                        expected_ages_ii_line_breaks.get(rid, 0) if reference_verified and "reference_paragraph_layout" in policies else 0,
+                    ):
                         report("link_anchor_changed", uid, "Displayed anchor differs from original", rid)
             except (ValueError, UnsupportedSerialization) as exc:
                 report("unsupported_link_anchor", uid, str(exc), rid)
@@ -1586,7 +1608,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                             inline_layout_verified=inline_verified,
                             reference_layout_verified=reference_verified,
                         )
-                        expected = _strict_source(records[rid]["text"], "original_whitespace" in policies and macro_verified)
+                        expected = _strict_source(
+                            records[rid]["text"],
+                            _source_whitespace_verified(policies, macro_verified, reference_verified),
+                            expected_ages_ii_line_breaks.get(rid, 0) if reference_verified and "reference_paragraph_layout" in policies else 0,
+                        )
                         title, _ = _project_approved_presentation(rid, expected, title, policies, presentation_authorization)
                         if title == expected:
                             headings.append((rid, expected, policies, token))
