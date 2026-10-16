@@ -146,6 +146,17 @@
       "text-p-0975": 2,
       "text-p-0976": 2,
       "text-p-0977": 2
+    },
+    "leading_space_source_counts": {
+      "ages-ii-sprint-4": {
+        "text-h-0068": 4
+      }
+    },
+    "leading_line_break_source_counts": {
+      "ages-ii-sprint-4": {
+        "text-p-0961": 1,
+        "text-p-0969": 1
+      }
     }
   },
   "technology_reference_convention": {

@@ -28,6 +28,8 @@ from scripts.migration_harness.preservation import (
     AGES_II_TECHNOLOGY_CITATIONS_AFTER,
     AGES_II_INLINE_TAB_COUNTS,
     AGES_II_LEADING_TAB_COUNTS,
+    AGES_II_LEADING_SPACE_COUNTS,
+    AGES_II_LEADING_LINE_BREAK_COUNTS,
     AGES_II_PRESENTATION_AUTHORIZATION,
 )
 
@@ -65,8 +67,31 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(authorization["edition"], "ages-ii")
         self.assertEqual(len(authorization["scope"]), 15)
         self.assertEqual(authorization["approved_presentation_changes"]["inline_tab_source_counts"], AGES_II_INLINE_TAB_COUNTS)
+        self.assertEqual(authorization["approved_presentation_changes"]["leading_space_source_counts"], AGES_II_LEADING_SPACE_COUNTS)
+        self.assertEqual(authorization["approved_presentation_changes"]["leading_line_break_source_counts"], AGES_II_LEADING_LINE_BREAK_COUNTS)
         self.assertIn("ages-ii-sprint-4", authorization["scope"])
         self.assertNotIn("chapter-05-text-h-0074", authorization["scope"])
+
+    def test_ages_ii_prefix_tokens_project_exactly_and_are_scope_gated(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        self.assertTrue(records["text-h-0068"]["text"].startswith(" " * 4))
+        self.assertEqual(len(records["text-h-0068"]["text"]) - len(records["text-h-0068"]["text"].lstrip(" ")), 4)
+        self.assertEqual(records["text-p-0961"]["text"][:1], "\n")
+        self.assertEqual(records["text-p-0969"]["text"][:1], "\n")
+        source_tokens = [
+            (("\\originalleadingspace{}" * 4) + "Na Sprint 4", "    Na Sprint 4"),
+            (r"\originalleadbreak{}Primeira Etapa", "\nPrimeira Etapa"),
+        ]
+        for target, expected in source_tokens:
+            with self.subTest(target=target):
+                self.assertEqual(
+                    displayed_text(target, ["original_whitespace", "reference_paragraph_layout"], macro_contract_verified=True, reference_layout_verified=True),
+                    expected,
+                )
+        with self.assertRaises(UnsupportedSerialization):
+            displayed_text(r"\originalleadbreak{}Primeira Etapa", ["original_whitespace"], macro_contract_verified=True)
 
     def test_ages_ii_caption_heading_and_repository_overlays_are_exact(self):
         repo = Path(__file__).resolve().parents[1]
