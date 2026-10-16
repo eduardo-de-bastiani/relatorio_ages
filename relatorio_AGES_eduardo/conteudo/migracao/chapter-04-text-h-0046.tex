@@ -1,0 +1,47 @@
+% Conversão fiel de chapter-04-text-h-0046; origem RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4781_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{4.2.5 Tecnologias utilizadas}
+\label{ages-ii:text-h-0046}
+\addcontentsline{toc}{subsection}{4.2.5 Tecnologias utilizadas}
+
+\indent Para o desenvolvimento do projeto, utilizamos as seguintes tecnologias:\par
+
+% SERIALIZATION text-p-0814 original_whitespace
+% SERIALIZATION text-p-0814 reference_paragraph_layout
+% SERIALIZATION text-p-0814 inline_tab_layout
+% SERIALIZATION text-p-0815 original_whitespace
+% SERIALIZATION text-p-0815 reference_paragraph_layout
+% SERIALIZATION text-p-0817 original_whitespace
+% SERIALIZATION text-p-0819 original_whitespace
+% SERIALIZATION text-p-0819 reference_paragraph_layout
+% SERIALIZATION text-p-0821 original_whitespace
+% SERIALIZATION text-p-0823 original_whitespace
+% SERIALIZATION text-p-0823 reference_paragraph_layout
+% SERIALIZATION text-p-0831 original_whitespace
+% SERIALIZATION text-p-0831 reference_paragraph_layout
+% SERIALIZATION text-p-0833 original_whitespace
+\indent Angular (com TypeScript):\space\cite{ages-ii-angular}\space\cite{ages-ii-typescript}
+Utilizado para o Front-end da aplicação, desenvolvido em TypeScript, responsável por renderizar a interface de usuário, que inclui a landing page, a tela de dashboards, a visualização de mapa e a página das empresas. Angular envia requisições HTTP para o Back-end e recebe dados em formato JSON, atualizando a interface do usuário em tempo real.
+\originaltab{}\href{https://v17.angular.io/docs}{Documentação Angular}\originalinlinetab{}%
+\originaltab{}\href{https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html}{Documentação TypeScript}
+Python:\originalspace{}\space\cite{ages-ii-python}
+Utilizado no Back-end para realizar as requisições web à Graph API, obtendo dados de usuários das redes sociais. Python também é responsável pela criação de lógicas de enriquecimento de dados, pelo algoritmo de presença digital e pela comunicação com o Front-end via FastAPI.
+\originaltab{}\originaltab{}\href{https://docs.python.org/pt-br/3/}{Documentação Python}
+FastAPI:\originalspace{}\space\cite{ages-ii-fastapi}
+Utilizado para construir a API que serve como interface de comunicação entre o Front-end Angular e o banco de dados PostgreSQL, gerenciando a lógica de negócios e facilitando a troca de dados entre os componentes do sistema.
+\originaltab{}\originaltab{}\href{https://fastapi.tiangolo.com/}{Documentação FastAPI}
+Graph API:
+Utilizada para fazer requisições e obter dados de perfis de usuários nas redes sociais, que são integrados ao sistema e utilizados no enriquecimento de dados e no cálculo de presença digital.
+\href{https://developers.facebook.com/docs/graph-api/guides/explorer/}{Documentação Graph API}
+SQLAlchemy:\space\cite{ages-ii-sqlalchemy}
+Utilizado como ORM (Object-Relational Mapping), facilitando o mapeamento entre as entidades do sistema e as tabelas no banco de dados PostgreSQL, simplificando a manipulação de dados e consultas via Python.
+\originaltab{}\href{https://docs.sqlalchemy.org/en/20/}{Documentação SQLAlchemy}
+PostgreSQL:\originalspace{}\space\cite{ages-ii-postgresql}
+Banco de dados relacional utilizado para armazenar as informações das empresas presentes no banco de dados da Receita Federal, bem como os dados capturados dos perfis das redes sociais. As consultas são feitas via FastAPI e SQLAlchemy para obter os dados necessários.
+\href{https://www.postgresql.org/docs/}{Documentação PostgreSQL}
+Docker
+Utilizado para criar ambientes de testes locais, especialmente para o banco de dados PostgreSQL, garantindo a consistência e confiabilidade dos testes em desenvolvimento.
+Documentação Docker
+Essas tecnologias foram integradas com o objetivo de oferecer uma experiência completa e otimizada para os usuários finais. Com isso, é possível pesquisar empresas com base em seu CNAE (Classificação Nacional de Atividades Econômicas) e/ou região geográfica, obtendo como resultado um mapa interativo com a localização dessas empresas. Além disso, o sistema retorna informações valiosas, como dados de redes sociais, informações de contato e dashboards detalhados sobre a presença digital de cada empresa encontrada, incluindo níveis de visibilidade e engajamento online. Tudo isso facilita o acesso a dados essenciais para tomadas de decisão.
+\par
