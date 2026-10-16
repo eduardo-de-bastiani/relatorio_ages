@@ -1,0 +1,39 @@
+% Faithful conversion of ages-ii-sprint-3; source wording and XML order retained.
+\hypertarget{__RefHeading___Toc4791_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{4.3.4 Sprint 3}
+\label{unit:ages-ii-sprint-3}
+\addcontentsline{toc}{subsection}{4.3.4 Sprint 3}
+
+% text-p-0934
+\indent Na Sprint 3, foquei meus esforços na otimização e implementação de melhorias importantes no sistema, com destaque para a geolocalização dos estabelecimentos e otimização do banco de dados, juntamente de alguns colegas AGES I e II. Utilizamos a API de geolocalização fornecida pelo governo, que permite consultas ilimitadas, ajustando nosso script para processar blocos de 100 estabelecimentos, o que possibilitou a rápida inserção dos dados no banco. Esse processo levou cerca de 35 minutos para aproximadamente 1 milhão de estabelecimentos, um ganho substancial comparado à API da Nominatim, que utilizava a biblioteca GeoPy e limitava a uma requisição por segundo.\par
+
+% text-p-0935
+\indent Depois de populado, disponibilizei o dump do banco atualizado para que o time pudesse testar seus endpoints. Optamos por não utilizar um dump inicial, pois implementamos melhorias no mapeamento objeto-relacional, como:\par
+
+\begin{enumerate}
+% text-p-0936
+\item Indexação das colunas mais consultadas: nome fantasia, data de início de atividade e indexação composta para as colunas de CNPJ, ID e DV são alguns exemplos.\par
+
+% text-p-0937
+\item Reorganização das tabelas: O campo UF foi movido para a tabela de municípios, permitindo que o front-end aplique filtros por estado e exiba apenas os municípios correspondentes, diminuindo a carga nas queries e melhorando a experiência do usuário.\par
+
+\end{enumerate}
+
+% text-p-0938
+\indent Com o banco de dados temporariamente pronto, dediquei-me a outras tarefas importantes. Auxiliei a equipe de front-end no desenvolvimento de um componente de listagem de estabelecimentos, implementado com Angular. Além disso, contribuí para a Wiki do projeto, documentando a gerência, o cronograma e as retrospectivas realizadas, algo que frequentemente é deixado de lado nos projetos da AGES.\par
+
+% text-p-0939
+\indent Nesta Sprint, toda a equipe também participou de uma aula de infraestrutura ministrada por nosso colega AGES III, Guilherme, que abordou conceitos de AWS, containerização e escalonamento. A aula visava capacitar membros de todos os níveis para que pudessem atuar em questões de infraestrutura sem depender exclusivamente dos AGES III.\par
+
+% text-p-0940
+\indent Ao final da Sprint, iniciei o desenvolvimento de um container Docker contendo um serviço de API para o novo repositório "Indústria Digital Service", o qual centraliza a lógica de pesquisa e avaliação da presença digital dos estabelecimentos.\par
+
+\begin{reflection}
+% text-p-0942
+\indent \originaltab{}Durante essa terceira sprint, ao olhar para trás, vi como a equipe realmente se uniu e superou os diversos desafios que o projeto apresentou. Caminhamos a um ritmo firme e coeso, o que resultou em entregas sólidas e em uma sensação de progresso contínuo. A aula ministrada pelo AGES III sobre infraestrutura foi especialmente valiosa, pois já me preparou para atuar como AGES III futuramente, oferecendo uma visão mais ampla sobre AWS, containerização e escalonamento. Também me impressionou a facilidade e eficiência na integração da API de geolocalização do governo, cuja aplicação no projeto foi uma experiência extremamente gratificante. Persistir esses dados em nosso banco foi um marco importante, especialmente diante dos obstáculos que surgiram com o novo mapeamento objeto-relacional, que exigiu ajustes na modelagem para garantir desempenho e usabilidade.\par
+
+% text-p-0943
+\indent \originaltab{}Reconheço que, até a terceira sprint, foquei quase exclusivamente no banco de dados, algo que, apesar de necessário, fez com que eu pouco explorasse outras áreas do projeto. Esse foco, porém, foi essencial para alcançar a qualidade que tivemos na manipulação, transformação e inserção de dados. Ao final da sprint, tive a oportunidade de me aproximar do front-end e aprender sobre Angular, além de contar com a ajuda dos colegas Pedro Carlucci (AGES IV) e Bruno Panizzi (AGES I) para desenvolver o container Docker do novo repositório de presença digital. Essa experiência final foi enriquecedora, me permitindo avançar em conhecimentos fundamentais para o desenvolvimento de projetos futuros.\par
+
+\end{reflection}
