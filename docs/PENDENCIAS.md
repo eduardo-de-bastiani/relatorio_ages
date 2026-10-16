@@ -68,3 +68,7 @@ O usuário aprovou a apresentação da prévia e pediu que o padrão da Mariah s
 ## Execução autorizada da AGES II
 
 O usuário autorizou migrar somente AGES II / Indústria Digital, capítulo 4 do ODT, em 15 unidades listadas em `harness.json`. A autorização está em `migration/approvals/ages-ii-authorization.json`. Sete imagens estão incorporadas e recebem fonte pendente até identificação; o diagrama de banco de dados ausente recebe placeholder provisório. Os links originais serão preservados sem alterações; a disponibilidade remota será registrada separadamente. Para referências tecnológicas, usar 2024 e uma data de acesso atribuída dentro da janela agosto–novembro de 2024, conforme instrução prévia do usuário, e manter essa proveniência explícita.
+
+| ID | Localização e evidência | Consequência / gravidade | Ação e verificação | Estado |
+|---|---|---|---|---|
+| AII01 | `chapter-04-text-h-0046`, `text-a-0126`: https://developers.facebook.com/docs/graph-api/guides/explorer/; a página oficial não foi acessível na auditoria de 16/10/2026 | Metadados bibliográficos atuais não confirmados; média | Por decisão explícita do usuário, preservar URL e âncora originais e continuar a edição. Não inferir/substituir metadados nem criar entrada bibliográfica até haver evidência; conferir URL textual/hash e presença da pendência no relatório | PENDING, continuação autorizada em `migration/approvals/ages-ii-reference-decision.json` |
