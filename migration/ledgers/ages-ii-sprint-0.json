@@ -5,7 +5,7 @@
   "conversion_base_commit": "3d3641ea404e672bec55099fbf71a5a5cf48b87c",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
+    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
   },
   "style_contract": {
     "path": "relatorio_AGES_eduardo/util/style.tex",
