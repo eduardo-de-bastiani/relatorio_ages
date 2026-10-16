@@ -17,6 +17,7 @@ from scripts.migration_harness.preservation import (
     PRESENTATION_CROSS_REFERENCES,
     PRESENTATION_LIST_MARKERS,
     PRESENTATION_LIST_MARKER_INSTRUCTION,
+    PRESENTATION_OVERRIDES_BY_UNIT,
     _verify_markerless_list,
     TECHNOLOGY_PARAGRAPH_AUTHORIZATION,
     TECHNOLOGY_PARAGRAPH_RECORDS,
@@ -70,6 +71,7 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(authorization["approved_presentation_changes"]["leading_space_source_counts"], AGES_II_LEADING_SPACE_COUNTS)
         self.assertEqual(authorization["approved_presentation_changes"]["leading_line_break_source_counts"], AGES_II_LEADING_LINE_BREAK_COUNTS)
         self.assertIn("ages-ii-sprint-4", authorization["scope"])
+        self.assertEqual(PRESENTATION_OVERRIDES_BY_UNIT["ages-ii-sprint-4"], {"text-p-0962"})
         self.assertNotIn("chapter-05-text-h-0074", authorization["scope"])
 
     def test_ages_ii_authorized_citation_keys_exist_in_integrated_bibliography(self):
