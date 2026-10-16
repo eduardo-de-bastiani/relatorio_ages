@@ -1,5 +1,6 @@
 """Adversarial synthetic fixtures; no memorial content is converted."""
 import hashlib
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -20,6 +21,14 @@ from scripts.migration_harness.preservation import (
     TECHNOLOGY_PARAGRAPH_AUTHORIZATION,
     TECHNOLOGY_PARAGRAPH_RECORDS,
     _verify_technology_paragraph,
+    _verify_ages_ii_technology_paragraph,
+    _load_presentation_authorization,
+    AGES_II_TECHNOLOGY_REFERENCE_KEYS,
+    AGES_II_TECHNOLOGY_TEXT_IDS,
+    AGES_II_TECHNOLOGY_CITATIONS_AFTER,
+    AGES_II_INLINE_TAB_COUNTS,
+    AGES_II_LEADING_TAB_COUNTS,
+    AGES_II_PRESENTATION_AUTHORIZATION,
 )
 
 
@@ -49,6 +58,120 @@ class PreservationTests(unittest.TestCase):
 
     def codes(self, report):
         return {item["code"] for item in report["findings"]}
+
+    def test_ages_ii_presentation_reuse_authorization_is_current_and_edition_scoped(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-04-text-h-0040")
+        self.assertEqual(authorization["edition"], "ages-ii")
+        self.assertEqual(len(authorization["scope"]), 15)
+        self.assertEqual(authorization["approved_presentation_changes"]["inline_tab_source_counts"], AGES_II_INLINE_TAB_COUNTS)
+        self.assertIn("ages-ii-sprint-4", authorization["scope"])
+        self.assertNotIn("chapter-05-text-h-0074", authorization["scope"])
+
+    def test_ages_ii_caption_heading_and_repository_overlays_are_exact(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-04-text-h-0040")
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        rid = "text-p-0767"
+        source = records[rid]["text"]
+        target = authorization["approved_presentation_changes"]["figure_caption_labels"][rid]
+        projected, evidence = _project_approved_presentation(rid, source, target, ["abnt_figure_caption"], authorization)
+        self.assertEqual(projected, source)
+        self.assertEqual(evidence["displayed"], target)
+        rid = "text-h-0039"
+        source = records[rid]["text"]
+        target = authorization["approved_presentation_changes"]["section_numbering"][rid]
+        projected, _ = _project_approved_presentation(rid, source, target, ["abnt_section_numbering"], authorization)
+        self.assertEqual(projected, source)
+        rid = "text-p-0775"
+        link_id = PRESENTATION_REPOSITORY_PARAGRAPHS[rid]
+        rule = PRESENTATION_REPOSITORY_LINKS[link_id]
+        projected, evidence = _project_approved_presentation(
+            rid, rule["source_anchor"], rule["prefix"] + rule["anchor"] + rule["suffix"],
+            ["repository_link_sentence"], authorization,
+        )
+        self.assertEqual(projected, rule["source_anchor"])
+        self.assertEqual(evidence["href"], rule["href"])
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(rid, rule["source_anchor"], "Texto alterado", ["repository_link_sentence"], authorization)
+
+    def ages_ii_technology_fixture(self, split_before_summary=False):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        unit = next(item for item in manifest["units"] if item["id"] == "chapter-04-text-h-0046")
+        curation = json.loads((repo / "migration/evidence/references/ages-ii.json").read_text(encoding="utf-8"))
+        curated = {item["source_record_id"]: item for item in curation["references"]}
+        link_parents = {
+            "text-p-0814": "text-a-0122", "text-p-0815": "text-a-0123",
+            "text-p-0819": "text-a-0124", "text-p-0823": "text-a-0125",
+            "text-p-0827": "text-a-0126", "text-p-0831": "text-a-0127",
+            "text-p-0835": "text-a-0128",
+        }
+        parts = []
+        mappings = []
+        offset = 0
+        for rid in AGES_II_TECHNOLOGY_TEXT_IDS:
+            if split_before_summary and rid == "text-p-0841":
+                parts.append(r"\par ")
+                offset += len(r"\par ".encode())
+            fragment = f"[{rid}]"
+            encoded = fragment.encode("utf-8")
+            mappings.append({"source_id": rid, "target_file": "technology.tex", "start_byte": offset, "end_byte": offset + len(encoded)})
+            parts.append(fragment)
+            offset += len(encoded)
+            for key in AGES_II_TECHNOLOGY_CITATIONS_AFTER.get(rid, []):
+                suffix = r"\space\cite{" + key + "}"
+                parts.append(suffix)
+                offset += len(suffix.encode())
+            if rid in link_parents:
+                evidence = curated[link_parents[rid]]
+                link = r"\href{" + evidence["original_url"] + "}{" + evidence["original_anchor"] + "}"
+                parts.append(link)
+                offset += len(link.encode())
+            parts.append(" ")
+            offset += 1
+        parts.append(r"\par")
+        source = "".join(parts)
+        bibliography = []
+        for source_id, key in AGES_II_TECHNOLOGY_REFERENCE_KEYS.items():
+            evidence = curated[source_id]
+            bibliography.append(
+                f"@online{{{key},\n"
+                f"  title = {{{evidence['metadata']['title']}}},\n"
+                f"  url = {{{evidence['original_url']}}},\n"
+                "  year = {2024},\n"
+                "  urldate = {2024-10-15},\n"
+                "}\n"
+            )
+        disposition = {
+            "source_id": "text-list-0109",
+            "disposition": "approved-single-paragraph-technology-list",
+            "presentation_override": {
+                "authorization_evidence": AGES_II_PRESENTATION_AUTHORIZATION,
+                "source_list_ids": [f"text-list-0{number}" for number in range(109, 116)],
+                "target_structure": "one continuous paragraph retaining source text, links and order",
+                "item_count": 7,
+            },
+        }
+        authorization = _load_presentation_authorization(repo, "chapter-04-text-h-0046")
+        ledger = {"tex_path": "technology.tex", "element_map": mappings}
+        return source, "".join(bibliography), disposition, authorization, ledger, unit, records, curation
+
+    def test_ages_ii_technology_paragraph_keeps_verified_and_pending_sources_separate(self):
+        fixture = self.ages_ii_technology_fixture()
+        self.assertTrue(_verify_ages_ii_technology_paragraph(*fixture))
+
+    def test_ages_ii_technology_paragraph_rejects_split_paragraph_and_authorship_inference(self):
+        fixture = self.ages_ii_technology_fixture(split_before_summary=True)
+        with self.assertRaises(ValueError):
+            _verify_ages_ii_technology_paragraph(*fixture)
+        fixture = self.ages_ii_technology_fixture()
+        fixture = list(fixture)
+        fixture[1] = fixture[1].replace("title = {Angular},", "author = {{Angular}},\n  title = {Angular},")
+        with self.assertRaises(ValueError):
+            _verify_ages_ii_technology_paragraph(*fixture)
 
     def valid_text(self):
         self.write(r"Ação: 20\% — \emph{café!}")
