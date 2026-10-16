@@ -72,6 +72,13 @@ class PreservationTests(unittest.TestCase):
         self.assertIn("ages-ii-sprint-4", authorization["scope"])
         self.assertNotIn("chapter-05-text-h-0074", authorization["scope"])
 
+    def test_ages_ii_authorized_citation_keys_exist_in_integrated_bibliography(self):
+        repo = Path(__file__).resolve().parents[1]
+        bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+        for key in AGES_II_TECHNOLOGY_REFERENCE_KEYS.values():
+            with self.subTest(key=key):
+                self.assertIn(f"@online{{{key},", bibliography)
+
     def test_ages_ii_prefix_tokens_project_exactly_and_are_scope_gated(self):
         repo = Path(__file__).resolve().parents[1]
         manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
