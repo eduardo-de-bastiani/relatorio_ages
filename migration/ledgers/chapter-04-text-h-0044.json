@@ -26,59 +26,59 @@
           "start_byte": 164,
           "end_byte": 191,
           "serializations": [],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         },
         {
           "source_id": "text-p-0785",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
-          "start_byte": 422,
-          "end_byte": 1429,
+          "start_byte": 428,
+          "end_byte": 1435,
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         },
         {
           "source_id": "text-p-0788",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
-          "start_byte": 1532,
-          "end_byte": 1591,
+          "start_byte": 1538,
+          "end_byte": 1597,
           "serializations": [
             "abnt_figure_caption"
           ],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         },
         {
           "source_id": "text-p-0789",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
-          "start_byte": 1708,
-          "end_byte": 1806,
+          "start_byte": 1714,
+          "end_byte": 1812,
           "serializations": [],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         },
         {
           "source_id": "text-a-0119",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
-          "start_byte": 285,
-          "end_byte": 364,
+          "start_byte": 340,
+          "end_byte": 426,
           "serializations": [],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         },
         {
           "source_id": "text-a-0120",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
-          "start_byte": 1708,
-          "end_byte": 1806,
+          "start_byte": 1714,
+          "end_byte": 1812,
           "serializations": [],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         },
         {
           "source_id": "draw-image-0010",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
-          "start_byte": 1483,
-          "end_byte": 1659,
+          "start_byte": 1489,
+          "end_byte": 1665,
           "serializations": [],
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         }
       ],
       "asset_map": [
@@ -100,7 +100,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0041",
           "source_end_id": "text-bookmark-end-0041",
-          "target_sha256": "c188292ab58e6e08ff3b2a44ebfc0312910c1d12a37f1d7fc4550949b25675c0"
+          "target_sha256": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519"
         }
       ],
       "structural_dispositions": [
