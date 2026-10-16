@@ -39,6 +39,13 @@ from .latex import _group, commands, strip_comments, macro_definitions, canonica
 INLINE_TAB_COUNTS = {"text-p-0303": 1, "text-p-0314": 4, "text-p-0318": 4}
 INLINE_TAB_AUTHORIZATION = "migration/approvals/ages-i-format-correction.json"
 INLINE_TAB_USER_INSTRUCTION = "Você cometeu alguns erros de formatação. Precisamos corrigir esses erros, validar novamente e, depois que eu aprovar, registrar essas mudanças como algo permanente para os demais projetos da AGES"
+AGES_II_INLINE_TAB_COUNTS = {
+    "text-p-0814": 1,
+    "text-p-0975": 2,
+    "text-p-0976": 2,
+    "text-p-0977": 2,
+}
+AGES_II_INLINE_TAB_AUTHORIZATION = "migration/approvals/ages-ii-presentation-reuse.json"
 
 
 REFERENCE_LAYOUT_AUTHORIZATION = "migration/approvals/ages-i-mariah-style.json"
@@ -73,6 +80,26 @@ REFERENCE_LAYOUT_PARAGRAPHS = (
     'text-p-0638', 'text-p-0639', 'text-p-0640', 'text-p-0641',
     'text-p-0642', 'text-p-0643',
 )
+AGES_II_UNITS = (
+    "chapter-04-text-h-0039", "chapter-04-text-h-0040", "chapter-04-text-h-0041",
+    "chapter-04-text-h-0042", "chapter-04-text-h-0043", "chapter-04-text-h-0044",
+    "chapter-04-text-h-0045", "chapter-04-text-h-0046", "chapter-04-text-h-0047",
+    "ages-ii-sprint-0", "ages-ii-sprint-1", "ages-ii-sprint-2", "ages-ii-sprint-3",
+    "ages-ii-sprint-4", "chapter-04-text-h-0073",
+)
+AGES_II_LEADING_TAB_COUNTS = {
+    "chapter-04-text-h-0040": {"text-p-0763": 1, "text-p-0764": 1, "text-p-0765": 1},
+    "chapter-04-text-h-0046": {
+        "text-p-0814": 1, "text-p-0815": 1, "text-p-0819": 2,
+        "text-p-0823": 2, "text-p-0831": 1,
+    },
+    "ages-ii-sprint-0": {rid: 1 for rid in ("text-p-0844", "text-p-0845", "text-p-0846", "text-p-0847", "text-p-0848", "text-p-0851", "text-p-0852")},
+    "ages-ii-sprint-1": {rid: 1 for rid in ("text-p-0876", "text-p-0877", "text-p-0878", "text-p-0879", "text-p-0880")},
+    "ages-ii-sprint-2": {rid: 1 for rid in ("text-p-0915", "text-p-0916", "text-p-0917")},
+    "ages-ii-sprint-3": {rid: 1 for rid in ("text-p-0942", "text-p-0943")},
+    "ages-ii-sprint-4": {rid: 1 for rid in ("text-p-0971", "text-p-0973", "text-p-0979", "text-p-0983", "text-p-0984", "text-p-0998", "text-p-1004", "text-p-1005", "text-p-1006")},
+}
+AGES_II_PRESENTATION_AUTHORIZATION = "migration/approvals/ages-ii-presentation-reuse.json"
 
 PRESENTATION_AUTHORIZATION = "migration/approvals/ages-i-presentation-corrections.json"
 PRESENTATION_USER_INSTRUCTION = (
@@ -100,10 +127,19 @@ PRESENTATION_CAPTIONS = {
     "text-p-0356": ("Figure 3: ", "Figura 3 – "),
     "text-p-0372": ("Figure 4: ", "Figura 4 – "),
     "text-p-0650": ("Figure 5: ", "Figura 5 – "),
+    "text-p-0767": ("Figure 9: ", "Figura 9 – "),
+    "text-p-0788": ("Figure 10: ", "Figura 10 – "),
+    "text-p-0797": ("Figure 11: ", "Figura 11 – "),
+    "text-p-0800": ("Figure 12: ", "Figura 12 – "),
+    "text-p-0802": ("Figure 13: ", "Figura 13 – "),
+    "text-p-0804": ("Figure 14: ", "Figura 14 – "),
+    "text-p-0962": ("Figure 15: ", "Figura 15 – "),
 }
 PRESENTATION_HEADINGS = {
     "text-h-0002": ("2 - PROJETO AGES I – EASY CHOOSE", "2 PROJETO AGES I – EASY CHOOSE"),
     "text-h-0022": ("2.4. Conclusão", "2.4 Conclusão"),
+    "text-h-0039": ("4 - PROJETO AGES II – INDÚSTRIA DIGITAL", "4 PROJETO AGES II – INDÚSTRIA DIGITAL"),
+    "text-h-0073": ("4.4. Conclusão", "4.4 Conclusão"),
 }
 PRESENTATION_CROSS_REFERENCES = {
     "text-p-0290": {"suffix": " A equipe está retratada na Figura~\\ref{ages-i:draw-image-0001}."},
@@ -114,11 +150,19 @@ PRESENTATION_REPOSITORY_LINKS = {
     "text-a-0105": {"href": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin", "source_anchor": "Repositório EasyChooseAdmin", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Easy Choose Admin", "suffix": "."},
     "text-a-0106": {"href": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista", "source_anchor": "Repositório EasyChooseStore", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Easy Choose Store", "suffix": "."},
     "text-a-0107": {"href": "https://tools.ages.pucrs.br/easy-choose/easychooseapi", "source_anchor": "Repositório EasyChooseApi", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Easy Choose API", "suffix": "."},
+    "text-a-0116": {"href": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend", "source_anchor": "Repositório Indústria Digital Frontend", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Indústria Digital Frontend", "suffix": "."},
+    "text-a-0117": {"href": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend", "source_anchor": "Repositório Indústria Digital Backend", "prefix": "Mais informações podem ser encontradas no repositório ", "anchor": "Indústria Digital Backend", "suffix": "."},
 }
 PRESENTATION_REPOSITORY_PARAGRAPHS = {
     "text-p-0304": "text-a-0105",
     "text-p-0307": "text-a-0106",
     "text-p-0310": "text-a-0107",
+    "text-p-0775": "text-a-0116",
+    "text-p-0778": "text-a-0117",
+}
+PRESENTATION_AUTHORIZATION_BY_UNIT = {
+    **{uid: PRESENTATION_AUTHORIZATION for uid in REFERENCE_LAYOUT_UNITS},
+    **{uid: AGES_II_PRESENTATION_AUTHORIZATION for uid in AGES_II_UNITS},
 }
 PRESENTATION_SERIALIZATIONS = {
     "abnt_figure_caption": set(PRESENTATION_CAPTIONS),
@@ -133,9 +177,79 @@ PRESENTATION_OVERRIDES_BY_UNIT = {
     "chapter-02-text-h-0011": {"text-p-0325", "text-p-0328", "text-p-0356", "text-p-0372"},
     "chapter-02-text-h-0022": {"text-h-0022", "text-p-0642", "text-p-0650"},
 }
+PRESENTATION_OVERRIDES_BY_UNIT.update({
+    "chapter-04-text-h-0039": {"text-h-0039"},
+    "chapter-04-text-h-0040": {"text-p-0767"},
+    "chapter-04-text-h-0042": {"text-p-0775", "text-p-0778", "text-a-0116", "text-a-0117"},
+    "chapter-04-text-h-0044": {"text-p-0788"},
+    "chapter-04-text-h-0045": {"text-p-0797", "text-p-0800", "text-p-0802", "text-p-0804"},
+    "chapter-04-text-h-0073": {"text-h-0073"},
+})
 
 
-def _load_presentation_authorization(repo: Path) -> dict:
+def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
+    if unit_id in AGES_II_UNITS:
+        path = repo / AGES_II_PRESENTATION_AUTHORIZATION
+        authorization = json.loads(path.read_text(encoding="utf-8"))
+        changes = authorization.get("approved_presentation_changes")
+        expected_caption_ids = {rid for rid in PRESENTATION_CAPTIONS if rid in {"text-p-0767", "text-p-0788", "text-p-0797", "text-p-0800", "text-p-0802", "text-p-0804", "text-p-0962"}}
+        expected_caption_targets = {}
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = _index(manifest.get("records", []))
+        for rid in expected_caption_ids:
+            old_prefix, new_prefix = PRESENTATION_CAPTIONS[rid]
+            original = records.get(rid, {}).get("text")
+            if not isinstance(original, str) or not original.startswith(old_prefix):
+                raise ValueError("AGES II source caption differs from its audited Figure prefix")
+            expected_caption_targets[rid] = new_prefix + original[len(old_prefix):]
+        technology = {
+            "source_list_ids": [f"text-list-0{number}" for number in range(109, 116)],
+            "heading_numbering_wrapper_ids": ["text-list-0116", "text-list-0117"],
+            "item_count": 7,
+            "target_structure": "one continuous paragraph retaining all source text, original hyperlink anchors and order; add only the approved author-date citation apparatus for verified sources",
+            "citation_keys": ["ages-ii-angular", "ages-ii-typescript", "ages-ii-python", "ages-ii-fastapi", "ages-ii-sqlalchemy", "ages-ii-postgresql"],
+            "pending_sources": ["text-a-0126", "text-p-0839"],
+        }
+        expected_changes = {
+            "figure_caption_labels": expected_caption_targets,
+            "section_numbering": {rid: target for rid, (_, target) in PRESENTATION_HEADINGS.items() if rid in {"text-h-0039", "text-h-0073"}},
+            "repository_links": {rid: PRESENTATION_REPOSITORY_LINKS[rid] for rid in ("text-a-0116", "text-a-0117")},
+            "technology_paragraph": technology,
+            "leading_tab_source_ids_by_unit": AGES_II_LEADING_TAB_COUNTS,
+            "inline_tab_source_counts": AGES_II_INLINE_TAB_COUNTS,
+        }
+        edition_authorization = json.loads((repo / "migration/approvals/ages-ii-authorization.json").read_text(encoding="utf-8"))
+        if (authorization.get("schema_version") != 1
+                or authorization.get("kind") != "user_authorized_ages_ii_presentation_reuse"
+                or authorization.get("status") != "authorized_for_execution_pending_human_review"
+                or authorization.get("edition") != "ages-ii"
+                or authorization.get("scope") != list(AGES_II_UNITS)
+                or authorization.get("source") != {"path": "RELATORIO_ATUAL.odt", "sha256": edition_authorization.get("source_sha256")}
+                or authorization.get("user_instruction") != "Gostaria de utilizar a mesma estrutura que a Mariah. Para as datas de acesso, vamos fazer o seguinte: Todos os projetos AGES I e AGES II tiveram data de acesso em 2024. Q3: utilize o ano de acesso como o ano de publicação, assim como a Mariah fez."
+                or authorization.get("style_basis") != {
+                    "accepted_decision": "migration/approvals/ages-i-presentation-accepted.json",
+                    "style_guide": "docs/STYLE_GUIDE.md",
+                    "approved_reference_pattern": "Mariah memorial, used only for presentation",
+                    "content_from_reference_project_allowed": False,
+                }
+                or authorization.get("approved_presentation_changes") != expected_changes
+                or authorization.get("technology_reference_convention") != {
+                    "publication_year": 2024,
+                    "access_date": "2024-10-15",
+                    "provenance": "User-authorized assigned date within AGES II's August-November 2024 period; not browser history and not a verified publication date.",
+                    "use_current_documentation_version_as_project_version": False,
+                    "infer_missing_author": False,
+                    "human_review_after_edition": True,
+                }
+                or authorization.get("human_approval_of_result") is not None
+                or authorization.get("promoted_to_reusable_policy") is not False
+                or authorization.get("future_editions_authorized") is not False
+                or edition_authorization.get("authorized") is not True
+                or edition_authorization.get("edition") != "ages-ii"
+                or edition_authorization.get("source_sha256") != authorization.get("source", {}).get("sha256")):
+            raise ValueError("AGES II presentation reuse evidence is missing, stale, or exceeds the authorized edition scope")
+        return authorization
+
     path = repo / PRESENTATION_AUTHORIZATION
     authorization = json.loads(path.read_text(encoding="utf-8"))
     changes = authorization.get("approved_presentation_changes")
@@ -191,6 +305,29 @@ TECHNOLOGY_PARAGRAPH_RECORDS = (
     {"source_id": "text-a-0114", "citation_key": "prisma-docs", "label": "Prisma", "url": "https://www.prisma.io/docs", "date": "2024-04-10"},
     {"source_id": "text-a-0115", "citation_key": "postgresql-docs", "label": "PostgreSQL", "url": "https://www.postgresql.org/docs/", "date": "2024-04-10"},
 )
+AGES_II_TECHNOLOGY_REFERENCE_KEYS = {
+    "text-a-0122": "ages-ii-angular",
+    "text-a-0123": "ages-ii-typescript",
+    "text-a-0124": "ages-ii-python",
+    "text-a-0125": "ages-ii-fastapi",
+    "text-a-0127": "ages-ii-sqlalchemy",
+    "text-a-0128": "ages-ii-postgresql",
+}
+AGES_II_TECHNOLOGY_TEXT_IDS = (
+    "text-p-0812", "text-p-0813", "text-p-0814", "text-p-0815",
+    "text-p-0817", "text-p-0818", "text-p-0819", "text-p-0821",
+    "text-p-0822", "text-p-0823", "text-p-0825", "text-p-0826",
+    "text-p-0827", "text-p-0829", "text-p-0830", "text-p-0831",
+    "text-p-0833", "text-p-0834", "text-p-0835", "text-p-0837",
+    "text-p-0838", "text-p-0839", "text-p-0841",
+)
+AGES_II_TECHNOLOGY_CITATIONS_AFTER = {
+    "text-p-0812": ["ages-ii-angular", "ages-ii-typescript"],
+    "text-p-0817": ["ages-ii-python"],
+    "text-p-0821": ["ages-ii-fastapi"],
+    "text-p-0829": ["ages-ii-sqlalchemy"],
+    "text-p-0833": ["ages-ii-postgresql"],
+}
 
 
 def _verify_technology_paragraph(source, bibliography, disposition, authorization):
@@ -272,6 +409,124 @@ def _verify_technology_paragraph(source, bibliography, disposition, authorizatio
         for field, value in fields.items():
             if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
                 raise ValueError(f"Bibliography field {field} for {item['citation_key']} differs from its approval")
+    return True
+
+
+def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, authorization, unit_ledger, unit, records, reference_evidence):
+    """Verify AGES II's one-paragraph technology presentation from source-linked evidence."""
+    auth_path = AGES_II_PRESENTATION_AUTHORIZATION
+    technology_rule = authorization.get("approved_presentation_changes", {}).get("technology_paragraph")
+    expected_lists = [f"text-list-0{number}" for number in range(109, 116)]
+    if (disposition.get("source_id") != "text-list-0109"
+            or disposition.get("disposition") != "approved-single-paragraph-technology-list"
+            or disposition.get("presentation_override") != {
+                "authorization_evidence": auth_path,
+                "source_list_ids": expected_lists,
+                "target_structure": "one continuous paragraph retaining source text, links and order",
+                "item_count": 7,
+            }
+            or technology_rule is None
+            or technology_rule.get("source_list_ids") != expected_lists
+            or technology_rule.get("item_count") != 7):
+        raise ValueError("Technology-list disposition differs from the exact AGES II presentation authorization")
+
+    source_lists = [
+        rid for rid in unit.get("record_ids", [])
+        if rid in records and records[rid].get("type") == "text:list"
+        and records[rid].get("parent_id") == "office-text-0001"
+    ]
+    heading_wrappers = technology_rule.get("heading_numbering_wrapper_ids")
+    if source_lists != expected_lists + ["text-list-0116"] or heading_wrappers != ["text-list-0116", "text-list-0117"]:
+        raise ValueError("The seven source technology lists differ from the frozen manifest scope")
+    for list_id in heading_wrappers:
+        if list_id not in unit.get("record_ids", []) or records.get(list_id, {}).get("type") != "text:list":
+            raise ValueError("An expected ODF heading-numbering wrapper is absent")
+        visible_descendants = [
+            item for item in records.values()
+            if list_id in item.get("context_ids", []) and isinstance(item.get("text"), str) and item["text"].strip()
+        ]
+        if [item.get("id") for item in visible_descendants] != ["text-h-0047"] or visible_descendants[0].get("unit_id") != "chapter-04-text-h-0047":
+            raise ValueError(f"Heading-numbering wrapper {list_id} contains unexpected visible source text")
+
+    element_map = unit_ledger.get("element_map", [])
+    mappings = {item.get("source_id"): item for item in element_map}
+    if any(rid not in mappings for rid in AGES_II_TECHNOLOGY_TEXT_IDS):
+        raise ValueError("A source paragraph in the technology presentation is not mapped")
+    expected_text_order = [rid for rid in unit.get("source_record_ids", []) if rid in AGES_II_TECHNOLOGY_TEXT_IDS]
+    if expected_text_order != list(AGES_II_TECHNOLOGY_TEXT_IDS):
+        raise ValueError("The source technology paragraphs differ from the audited source order")
+    tex_path = unit_ledger.get("tex_path")
+    if any(mappings[rid].get("target_file") != tex_path for rid in AGES_II_TECHNOLOGY_TEXT_IDS):
+        raise ValueError("The approved technology paragraph must stay in its assigned unit file")
+    first = mappings[AGES_II_TECHNOLOGY_TEXT_IDS[0]]
+    last = mappings[AGES_II_TECHNOLOGY_TEXT_IDS[-1]]
+    if (type(first.get("start_byte")) is not int or type(last.get("end_byte")) is not int
+            or first["start_byte"] > last["end_byte"] or last["end_byte"] > len(source.encode("utf-8"))):
+        raise ValueError("Technology paragraph byte interval is invalid")
+    tail = source.encode("utf-8")[first["start_byte"]:].decode("utf-8")
+    paragraph_end = next((token for token in commands(tail) if token.name == "par"), None)
+    paragraph_end_byte = len(tail[:paragraph_end.start].encode("utf-8")) if paragraph_end is not None else None
+    if paragraph_end is None or last["end_byte"] - first["start_byte"] > paragraph_end_byte:
+        raise ValueError("All seven technology entries and the closing integration paragraph must form one paragraph")
+    raw = tail[:paragraph_end.end]
+    if sum(token.name == "par" for token in commands(raw)) != 1:
+        raise ValueError("Technology content contains an additional paragraph break")
+    if any(token.name == "item" or token.name in {"begin", "end"} and token.args and token.args[0] in {"itemize", "enumerate"} for token in commands(raw)):
+        raise ValueError("The approved technology paragraph still contains list structure")
+
+    citation_keys = [token.args[0] for token in commands(raw) if token.name == "cite" and token.args]
+    expected_citation_keys = list(AGES_II_TECHNOLOGY_REFERENCE_KEYS.values())
+    if citation_keys != expected_citation_keys:
+        raise ValueError("The six verified technology citations are missing, duplicated, or out of order")
+    for source_id, keys in AGES_II_TECHNOLOGY_CITATIONS_AFTER.items():
+        mapping = mappings[source_id]
+        relative_end = mapping["end_byte"] - first["start_byte"]
+        suffix = raw.encode("utf-8")[relative_end:].decode("utf-8")
+        expected = "".join(r"\space\cite{" + key + "}" for key in keys)
+        if not suffix.startswith(expected):
+            raise ValueError(f"Citations are detached from the source technology label {source_id}")
+
+    curated = {item.get("source_record_id"): item for item in reference_evidence.get("references", [])}
+    assigned_date = authorization.get("technology_reference_convention", {}).get("access_date")
+    assigned_year = authorization.get("technology_reference_convention", {}).get("publication_year")
+    for source_id, key in AGES_II_TECHNOLOGY_REFERENCE_KEYS.items():
+        evidence = curated.get(source_id)
+        if (not evidence or evidence.get("metadata", {}).get("status") != "VERIFIED"
+                or evidence.get("metadata", {}).get("author") is not None
+                or evidence.get("metadata", {}).get("title") is None
+                or evidence.get("original_url") != records[source_id].get("href")
+                or evidence.get("original_anchor") != records[source_id].get("source_text")):
+            raise ValueError(f"Curator evidence does not verify title, original URL and anchor for {source_id}")
+        match = re.search(rf"(?ms)^@online\{{{re.escape(key)},(?P<entry>.*?)^\}}", bibliography)
+        if not match:
+            raise ValueError(f"Bibliography entry {key} is missing")
+        entry = match["entry"]
+        fields = {
+            "title": "{" + evidence["metadata"]["title"] + "}",
+            "url": "{" + evidence["original_url"] + "}",
+            "year": "{" + str(assigned_year) + "}",
+            "urldate": "{" + assigned_date + "}",
+        }
+        for field, value in fields.items():
+            if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
+                raise ValueError(f"Bibliography field {field} for {key} differs from verified/assigned metadata")
+        if re.search(r"(?mi)^\s*(?:author|editor|organization|institution)\s*=", entry):
+            raise ValueError(f"Bibliography entry {key} asserts authorship not established by the curator")
+
+    pending = curated.get("text-a-0126", {})
+    if pending.get("status") != "PENDING" or pending.get("original_url") != records["text-a-0126"].get("href"):
+        raise ValueError("Graph API reference must remain pending with the exact original URL")
+    if re.search(r"(?mi)^@\w+\{ages-ii-(?:graph-api|docker)\s*,", bibliography):
+        raise ValueError("Pending/unlinked sources must not receive inferred bibliography entries")
+    expected_links = [
+        (item["original_url"], item["original_anchor"])
+        for item in reference_evidence.get("references", [])
+        if item.get("source_record_id") in set(AGES_II_TECHNOLOGY_REFERENCE_KEYS) | {"text-a-0126"}
+    ]
+    observed_links = [(token.args[0], displayed_text(token.args[1])) for token in commands(raw) if token.name == "href" and len(token.args) == 2]
+    if observed_links != expected_links:
+        raise ValueError("Original technology documentation URLs/anchors differ from verified source order")
+
     return True
 
 
@@ -616,10 +871,6 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
     target_cache = {}
     presentation_authorization = None
     presentation_authorization_error = None
-    try:
-        presentation_authorization = _load_presentation_authorization(repo)
-    except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
-        presentation_authorization_error = str(exc)
 
     def fragment(mapping):
         path = safe_path(mapping.get("target_file"))
@@ -637,6 +888,12 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
 
     figure_labels = set()
     for uid in selected:
+        try:
+            presentation_authorization = _load_presentation_authorization(repo, uid)
+            presentation_authorization_error = None
+        except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
+            presentation_authorization = None
+            presentation_authorization_error = str(exc)
         unit = units[uid]
         state = ledger_units.get(uid, {}).get("state", "unconverted")
         unit_ledger = ledger_units.get(uid, {})
@@ -655,26 +912,47 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             continue
         facts["converted_units"] += 1
         mappings = unit_ledger.get("element_map", [])
-        if uid == "chapter-02-text-h-0012":
+        if uid in {"chapter-02-text-h-0012", "chapter-04-text-h-0046"}:
             try:
                 source_path = safe_path(unit_ledger.get("tex_path"))
                 source_text = source_path.read_text(encoding="utf-8")
+                technology_list_id = "text-list-0025" if uid == "chapter-02-text-h-0012" else "text-list-0109"
                 disposition = next(
                     item for item in unit_ledger.get("structural_dispositions", [])
-                    if item.get("source_id") == "text-list-0025"
+                    if item.get("source_id") == technology_list_id
                 )
                 if disposition.get("disposition") == "approved-single-paragraph-technology-list":
-                    technology_approval = json.loads(safe_path(TECHNOLOGY_PARAGRAPH_AUTHORIZATION).read_text(encoding="utf-8"))
                     bibliography = safe_path("relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
-                    _verify_technology_paragraph(source_text, bibliography, disposition, technology_approval)
+                    if uid == "chapter-02-text-h-0012":
+                        technology_approval = json.loads(safe_path(TECHNOLOGY_PARAGRAPH_AUTHORIZATION).read_text(encoding="utf-8"))
+                        _verify_technology_paragraph(source_text, bibliography, disposition, technology_approval)
+                    else:
+                        if presentation_authorization is None:
+                            raise ValueError(presentation_authorization_error or "Missing AGES II presentation authorization")
+                        reference_evidence = json.loads(safe_path("migration/evidence/references/ages-ii.json").read_text(encoding="utf-8"))
+                        _verify_ages_ii_technology_paragraph(
+                            source_text, bibliography, disposition, presentation_authorization,
+                            unit_ledger, unit, records, reference_evidence,
+                        )
                     technology_paragraph_verified = True
-                    facts["approved_presentation_transformations"].append({
-                        "source_id": "text-list-0025",
-                        "kind": "single_paragraph_with_author_date_citations",
-                        "citation_keys": [item["citation_key"] for item in TECHNOLOGY_PARAGRAPH_RECORDS],
-                        "access_dates_assigned_under_user_instruction": [item["date"] for item in TECHNOLOGY_PARAGRAPH_RECORDS],
-                    })
-                    report("approved_technology_paragraph_review_required", uid, "The five source technology entries form one paragraph; labels, descriptions, original documentation links and ordered author-date citations are verified. Assigned 2024 dates remain user-directed metadata, and human review is pending", source_id="text-list-0025", severity="warning")
+                    if uid == "chapter-02-text-h-0012":
+                        facts["approved_presentation_transformations"].append({
+                            "source_id": "text-list-0025",
+                            "kind": "single_paragraph_with_author_date_citations",
+                            "citation_keys": [item["citation_key"] for item in TECHNOLOGY_PARAGRAPH_RECORDS],
+                            "access_dates_assigned_under_user_instruction": [item["date"] for item in TECHNOLOGY_PARAGRAPH_RECORDS],
+                        })
+                        report("approved_technology_paragraph_review_required", uid, "The five source technology entries form one paragraph; labels, descriptions, original documentation links and ordered author-date citations are verified. Assigned 2024 dates remain user-directed metadata, and human review is pending", source_id="text-list-0025", severity="warning")
+                    else:
+                        facts["approved_presentation_transformations"].append({
+                            "source_id": "text-list-0109",
+                            "kind": "single_paragraph_with_verified_author_date_citations",
+                            "source_lists": [f"text-list-0{number}" for number in range(109, 116)],
+                            "citation_keys": list(AGES_II_TECHNOLOGY_REFERENCE_KEYS.values()),
+                            "pending_sources": ["text-a-0126", "text-p-0839"],
+                            "assigned_access_date": "2024-10-15",
+                        })
+                        report("approved_technology_paragraph_review_required", uid, "Seven source technology entries remain in order as one paragraph; original URLs are preserved; six citations use only curated, authorless metadata; Graph API and Docker bibliography details remain pending. Human presentation review remains required", source_id="text-list-0109", severity="warning")
                 else:
                     _verify_markerless_list("text-list-0025", source_text, disposition, presentation_authorization)
                     report("approved_list_marker_review_required", uid, "The five source list items remain in order; only their visible bullet glyphs are suppressed under explicit user presentation authorization. Human visual approval remains pending", source_id="text-list-0025", severity="warning")
@@ -694,10 +972,10 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             try:
                 expected_override_ids = PRESENTATION_OVERRIDES_BY_UNIT.get(uid, set())
                 policy = unit_ledger.get("approved_presentation_overrides")
-                if (uid != "chapter-02-text-h-0008"
-                        and uid not in PRESENTATION_OVERRIDES_BY_UNIT):
-                    raise ValueError("Presentation overrides are outside the specifically authorized AGES I units")
-                if (policy != {"authorization_evidence": PRESENTATION_AUTHORIZATION, "source_ids": sorted(expected_override_ids)}
+                evidence_path = PRESENTATION_AUTHORIZATION_BY_UNIT.get(uid)
+                if evidence_path is None:
+                    raise ValueError("Presentation overrides are outside the specifically authorized edition units")
+                if (policy != {"authorization_evidence": evidence_path, "source_ids": sorted(expected_override_ids)}
                         or presentation_override_ids != expected_override_ids):
                     raise ValueError("Presentation override ledger must cover exactly the user-authorized elements in this unit")
                 if presentation_authorization is None:
@@ -708,16 +986,29 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 report("invalid_repository_link_style", uid, str(exc))
         uses_original_whitespace = any("original_whitespace" in item.get("serializations", []) for item in mappings)
         inline_ids = {item.get("source_id") for item in mappings if "inline_tab_layout" in item.get("serializations", [])}
+        unit_inline_counts = AGES_II_INLINE_TAB_COUNTS if uid in AGES_II_UNITS else INLINE_TAB_COUNTS
         inline_verified = False
         if inline_ids:
             try:
                 policy = unit_ledger.get("inline_tab_layout")
                 if not isinstance(policy, dict) or set(policy) != {"authorization_evidence", "source_ids"}:
                     raise ValueError("Inline tab layout requires exact authorization_evidence/source_ids policy")
-                if policy["authorization_evidence"] != INLINE_TAB_AUTHORIZATION or not isinstance(policy["source_ids"], list) or len(policy["source_ids"]) != len(inline_ids) or set(policy["source_ids"]) != inline_ids or not inline_ids <= INLINE_TAB_COUNTS.keys():
-                    raise ValueError("Inline tab policy differs from the three explicitly scoped source IDs")
-                authorization = json.loads(safe_path(INLINE_TAB_AUTHORIZATION).read_text(encoding="utf-8"))
-                if (authorization.get("kind") != "user_format_correction_authorization"
+                ages_ii_inline = uid in AGES_II_UNITS
+                allowed_counts = AGES_II_INLINE_TAB_COUNTS if ages_ii_inline else INLINE_TAB_COUNTS
+                evidence_path = AGES_II_INLINE_TAB_AUTHORIZATION if ages_ii_inline else INLINE_TAB_AUTHORIZATION
+                expected_source_order = [rid for rid in source_ids if rid in allowed_counts]
+                if (policy["authorization_evidence"] != evidence_path
+                        or not isinstance(policy["source_ids"], list)
+                        or policy["source_ids"] != expected_source_order
+                        or set(policy["source_ids"]) != inline_ids
+                        or not inline_ids <= allowed_counts.keys()):
+                    raise ValueError("Inline tab policy differs from the exact source IDs authorized for this edition")
+                authorization = presentation_authorization if ages_ii_inline else json.loads(safe_path(INLINE_TAB_AUTHORIZATION).read_text(encoding="utf-8"))
+                if ages_ii_inline:
+                    change_counts = (authorization or {}).get("approved_presentation_changes", {}).get("inline_tab_source_counts")
+                    if change_counts != AGES_II_INLINE_TAB_COUNTS or uid not in (authorization or {}).get("scope", []):
+                        raise ValueError("AGES II inline tab presentation evidence is incomplete or outside scope")
+                elif (authorization.get("kind") != "user_format_correction_authorization"
                         or not isinstance(authorization.get("scope"), list)
                         or uid not in authorization["scope"]
                         or authorization.get("quoted_instruction") != INLINE_TAB_USER_INSTRUCTION
@@ -738,27 +1029,45 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 policy = unit_ledger.get("reference_paragraph_layout")
                 if not isinstance(policy, dict) or set(policy) != {"authorization_evidence", "source_ids"}:
                     raise ValueError("Reference paragraph layout requires exact authorization_evidence/source_ids policy")
-                paragraph_ids = [rid for rid in source_ids if _kind(records[rid]) == "p" and records[rid].get("semantic_type") == "paragraph" and records[rid].get("text")]
-                if (uid not in REFERENCE_LAYOUT_UNITS
-                        or policy["authorization_evidence"] != REFERENCE_LAYOUT_AUTHORIZATION
-                        or policy["source_ids"] != paragraph_ids
-                        or reference_ids != set(paragraph_ids)
-                        or not set(paragraph_ids) <= set(REFERENCE_LAYOUT_PARAGRAPHS)
-                        or any(records[rid].get("unit_id", uid) != uid for rid in paragraph_ids)):
-                    raise ValueError("Reference layout policy must match exactly this authorized unit's original body paragraphs")
-                authorization = json.loads(safe_path(REFERENCE_LAYOUT_AUTHORIZATION).read_text(encoding="utf-8"))
-                if (authorization.get("kind") != "user_reference_style_request"
-                        or authorization.get("scope") != list(REFERENCE_LAYOUT_UNITS)
-                        or authorization.get("paragraph_source_ids") != list(REFERENCE_LAYOUT_PARAGRAPHS)
-                        or authorization.get("baseline_commit") != REFERENCE_LAYOUT_BASELINE
-                        or authorization.get("quoted_instruction") != REFERENCE_LAYOUT_USER_INSTRUCTION
-                        or authorization.get("execution_authorized") is not True
-                        or authorization.get("status") != "proposed_for_review"
-                        or authorization.get("future_projects_approved") is not False
-                        or authorization.get("promoted_to_reusable_policy") is not False
-                        or "human_presentation_approval" not in authorization
-                        or authorization["human_presentation_approval"] is not None):
-                    raise ValueError("Missing explicit reference-style request or original scope/review/future-project boundary")
+                if uid in AGES_II_UNITS:
+                    expected_tabs = AGES_II_LEADING_TAB_COUNTS.get(uid, {})
+                    tab_paragraph_ids = [rid for rid in source_ids if rid in records and _kind(records[rid]) == "p" and isinstance(records[rid].get("text"), str) and "\t" in records[rid]["text"]]
+                    if (policy["authorization_evidence"] != AGES_II_PRESENTATION_AUTHORIZATION
+                            or policy["source_ids"] != [rid for rid in source_ids if rid in expected_tabs]
+                            or reference_ids != set(expected_tabs)
+                            or tab_paragraph_ids != [rid for rid in source_ids if rid in expected_tabs]
+                            or set(tab_paragraph_ids) != set(expected_tabs)):
+                        raise ValueError("AGES II zero-width tab policy must cover exactly this unit's explicitly authorized paragraphs")
+                    for rid, count in expected_tabs.items():
+                        original_text = records[rid]["text"]
+                        leading_tabs = len(original_text) - len(original_text.lstrip("\t"))
+                        if leading_tabs != count:
+                            raise ValueError(f"Original tab count for {rid} differs from the frozen AGES II presentation evidence")
+                    if (presentation_authorization is None
+                            or presentation_authorization.get("approved_presentation_changes", {}).get("leading_tab_source_ids_by_unit") != AGES_II_LEADING_TAB_COUNTS):
+                        raise ValueError("Missing approved AGES II presentation reuse evidence for leading tabs")
+                else:
+                    paragraph_ids = [rid for rid in source_ids if _kind(records[rid]) == "p" and records[rid].get("semantic_type") == "paragraph" and records[rid].get("text")]
+                    if (uid not in REFERENCE_LAYOUT_UNITS
+                            or policy["authorization_evidence"] != REFERENCE_LAYOUT_AUTHORIZATION
+                            or policy["source_ids"] != paragraph_ids
+                            or reference_ids != set(paragraph_ids)
+                            or not set(paragraph_ids) <= set(REFERENCE_LAYOUT_PARAGRAPHS)
+                            or any(records[rid].get("unit_id", uid) != uid for rid in paragraph_ids)):
+                        raise ValueError("Reference layout policy must match exactly this authorized unit's original body paragraphs")
+                    authorization = json.loads(safe_path(REFERENCE_LAYOUT_AUTHORIZATION).read_text(encoding="utf-8"))
+                    if (authorization.get("kind") != "user_reference_style_request"
+                            or authorization.get("scope") != list(REFERENCE_LAYOUT_UNITS)
+                            or authorization.get("paragraph_source_ids") != list(REFERENCE_LAYOUT_PARAGRAPHS)
+                            or authorization.get("baseline_commit") != REFERENCE_LAYOUT_BASELINE
+                            or authorization.get("quoted_instruction") != REFERENCE_LAYOUT_USER_INSTRUCTION
+                            or authorization.get("execution_authorized") is not True
+                            or authorization.get("status") != "proposed_for_review"
+                            or authorization.get("future_projects_approved") is not False
+                            or authorization.get("promoted_to_reusable_policy") is not False
+                            or "human_presentation_approval" not in authorization
+                            or authorization["human_presentation_approval"] is not None):
+                        raise ValueError("Missing explicit reference-style request or original scope/review/future-project boundary")
                 reference_verified = True
                 report("reference_paragraph_layout_review_required", uid, "Original whitespace tokens project exactly; verified zero-width leading markers implement the requested reference paragraph layout. PDF review and human presentation approval remain separate", severity="warning")
             except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
@@ -910,13 +1219,13 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             try:
                 inline_policy = "inline_tab_layout" in serializations
                 if inline_policy:
-                    if not inline_verified or rid not in INLINE_TAB_COUNTS:
+                    if not inline_verified or rid not in unit_inline_counts:
                         raise UnsupportedSerialization("Inline tab layout is outside explicitly authorized source scope")
                     tokens = _display_tokens(value, serializations, macro_verified, inline_verified, reference_verified)
                     tabs = [token for token in tokens if isinstance(token, _ExplicitWhitespace) and token.value == "\t"]
                     tab_positions = [index for index, char in enumerate(original) if char == "\t"]
                     expected_layout = [bool(original[:index].strip()) for index in tab_positions]
-                    if sum(expected_layout) != INLINE_TAB_COUNTS[rid] or [token.inline_layout for token in tabs] != expected_layout:
+                    if sum(expected_layout) != unit_inline_counts[rid] or [token.inline_layout for token in tabs] != expected_layout:
                         raise UnsupportedSerialization("Inline tab layout must preserve every leading tab and every authorized internal tab in exact order")
                 if reference_verified:
                     tokens = _display_tokens(value, serializations, macro_verified, inline_verified, reference_verified)
@@ -1087,6 +1396,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         placeholder_specs = {
             "chapter-02-text-h-0009": ("text-h-0009", "ages-i-database", "Banco de dados utilizado ", "Esquema do banco de dados não incorporado ao ODT; preenchimento posterior."),
             "chapter-02-text-h-0010": ("text-h-0010", "ages-i-architecture", "Arquitetura utilizada ", "Diagrama de arquitetura não incorporado ao ODT; preenchimento posterior."),
+            "chapter-04-text-h-0043": ("text-h-0043", "ages-ii-database", "4.2.2 Banco de dados utilizado", "Diagrama do banco de dados ausente no ODT; preenchimento posterior."),
         }
         if uid in placeholder_specs and len(unit_ledger.get("approved_apparatus", [])) != 1:
             report("missing_authorized_placeholder", uid, "Missing-diagram unit requires its one explicitly authorized provisional placeholder")
@@ -1111,10 +1421,34 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if spec is None or apparatus.get("kind") != "diagram_placeholder" or apparatus.get("source_heading_id") != spec[0] or apparatus.get("placeholder_id") != spec[1] or spec[0] not in source_ids or records[spec[0]]["text"] != spec[2] or expected_images:
                     raise ValueError("Placeholder is not bound to the authorized original heading")
                 config = json.loads(safe_path("harness.json").read_text())
-                evidence = "migration/approvals/ages-i-authorization.json"
-                auth = json.loads(safe_path(evidence).read_text())
-                quote = "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente"
-                if apparatus.get("authorization_evidence") != evidence or config.get("phase") != "edition" or config.get("authorization_evidence") != evidence or uid not in config.get("authorized_units", []) or uid not in auth.get("scope", []) or auth.get("kind") != "user_execution_authorization" or auth.get("quoted_instruction") != quote or spec[2].strip() not in auth.get("placeholders_explicitly_authorized", []):
+                if uid == "chapter-04-text-h-0043":
+                    evidence = "migration/approvals/ages-ii-authorization.json"
+                    auth = json.loads(safe_path(evidence).read_text())
+                    placeholder_decision = any(
+                        item.get("element") == "database diagram"
+                        and "placeholder" in item.get("action", "").lower()
+                        for item in auth.get("missing_material", [])
+                    )
+                    valid_edition_evidence = (
+                        config.get("authorization_evidence") == evidence
+                        and config.get("authorized_edition") == "ages-ii"
+                        and uid in auth.get("authorized_units", [])
+                        and auth.get("authorized") is True
+                        and placeholder_decision
+                    )
+                else:
+                    evidence = "migration/approvals/ages-i-authorization.json"
+                    auth = json.loads(safe_path(evidence).read_text())
+                    quote = "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente"
+                    valid_edition_evidence = (
+                        config.get("phase") == "edition"
+                        and config.get("authorization_evidence") == evidence
+                        and uid in auth.get("scope", [])
+                        and auth.get("kind") == "user_execution_authorization"
+                        and auth.get("quoted_instruction") == quote
+                        and spec[2].strip() in auth.get("placeholders_explicitly_authorized", [])
+                    )
+                if apparatus.get("authorization_evidence") != evidence or not valid_edition_evidence:
                     raise ValueError("Missing explicit edition/placeholder user authorization evidence")
                 path, start, end, value = fragment(apparatus)
                 tokens = list(commands(value))
@@ -1257,6 +1591,10 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if technology_paragraph_verified and uid == "chapter-02-text-h-0012":
                     if remainder != ";;;;.":
                         report("unmapped_visible_content", uid, "Technology paragraph contains unapproved visible punctuation outside the source mappings: " + remainder[:160], path=str(path.relative_to(repo)))
+                    remainder = ""
+                elif technology_paragraph_verified and uid == "chapter-04-text-h-0046":
+                    if remainder:
+                        report("unmapped_visible_content", uid, "AGES II technology paragraph contains visible content outside its element mappings: " + remainder[:160], path=str(path.relative_to(repo)))
                     remainder = ""
                 if remainder:
                     report("unmapped_visible_content", uid, "Target contains content outside proven mappings: " + remainder[:160], path=str(path.relative_to(repo)))
