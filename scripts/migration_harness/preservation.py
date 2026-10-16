@@ -12,6 +12,10 @@ and count, not literal PDF whitespace equivalence or approval for other projects
 reference_paragraph_layout requires the exact original 82 body paragraphs in the
 15 authorized units, the user request evidence, and zero-width leading metadata
 macros. It preserves source tokens without claiming PDF whitespace equivalence.
+AGES II uses the same narrowly scoped token contract for its audited leading
+tabs and the Sprint 4 heading/line-break prefixes; those IDs and counts are
+frozen in its presentation authorization. The leading line-break marker has
+zero width because the target paragraph/figure boundary carries the layout.
 Intervals are half-open. Text copied into the ledger is never audit evidence.
 Asset maps use {source_id: image occurrence id, target_file: image path}.
 The image occurrence also requires an element_map interval containing exactly
@@ -98,6 +102,10 @@ AGES_II_LEADING_TAB_COUNTS = {
     "ages-ii-sprint-2": {rid: 1 for rid in ("text-p-0915", "text-p-0916", "text-p-0917")},
     "ages-ii-sprint-3": {rid: 1 for rid in ("text-p-0942", "text-p-0943")},
     "ages-ii-sprint-4": {rid: 1 for rid in ("text-p-0971", "text-p-0973", "text-p-0979", "text-p-0983", "text-p-0984", "text-p-0998", "text-p-1004", "text-p-1005", "text-p-1006")},
+}
+AGES_II_LEADING_SPACE_COUNTS = {"ages-ii-sprint-4": {"text-h-0068": 4}}
+AGES_II_LEADING_LINE_BREAK_COUNTS = {
+    "ages-ii-sprint-4": {"text-p-0961": 1, "text-p-0969": 1},
 }
 AGES_II_PRESENTATION_AUTHORIZATION = "migration/approvals/ages-ii-presentation-reuse.json"
 
@@ -217,6 +225,8 @@ def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> 
             "technology_paragraph": technology,
             "leading_tab_source_ids_by_unit": AGES_II_LEADING_TAB_COUNTS,
             "inline_tab_source_counts": AGES_II_INLINE_TAB_COUNTS,
+            "leading_space_source_counts": AGES_II_LEADING_SPACE_COUNTS,
+            "leading_line_break_source_counts": AGES_II_LEADING_LINE_BREAK_COUNTS,
         }
         edition_authorization = json.loads((repo / "migration/approvals/ages-ii-authorization.json").read_text(encoding="utf-8"))
         if (authorization.get("schema_version") != 1
@@ -690,7 +700,7 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
                 continue
             while i < len(text) and text[i].isspace():
                 i += 1
-            if name in {"originaltab", "originalspace", "originalinlinetab", "originalleadingspace"}:
+            if name in {"originaltab", "originalspace", "originalinlinetab", "originalleadingspace", "originalleadbreak"}:
                 if "original_whitespace" not in serializations or not macro_contract_verified:
                     raise UnsupportedSerialization("Explicit whitespace macro requires verified original_whitespace policy")
                 if text[i:i + 2] != "{}":
@@ -700,7 +710,10 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
                     raise UnsupportedSerialization("Inline tab layout requires verified explicit authorization")
                 if name == "originalleadingspace" and ("reference_paragraph_layout" not in serializations or not reference_layout_verified):
                     raise UnsupportedSerialization("Leading space metadata requires authorized paragraph layout")
-                output.append(_ExplicitWhitespace(" " if name in {"originalspace", "originalleadingspace"} else "\t", name == "originalinlinetab", name == "originalleadingspace"))
+                if name == "originalleadbreak" and ("reference_paragraph_layout" not in serializations or not reference_layout_verified):
+                    raise UnsupportedSerialization("Leading line-break metadata requires authorized paragraph layout")
+                whitespace_value = "\n" if name == "originalleadbreak" else " " if name in {"originalspace", "originalleadingspace"} else "\t"
+                output.append(_ExplicitWhitespace(whitespace_value, name == "originalinlinetab", name in {"originalleadingspace", "originalleadbreak"}))
                 continue
             if name in symbols:
                 output.append(symbols[name])
@@ -1024,6 +1037,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 report("invalid_inline_tab_layout", uid, str(exc))
         reference_ids = {item.get("source_id") for item in mappings if "reference_paragraph_layout" in item.get("serializations", [])}
         reference_verified = False
+        expected_ages_ii_spaces = AGES_II_LEADING_SPACE_COUNTS.get(uid, {})
+        expected_ages_ii_line_breaks = AGES_II_LEADING_LINE_BREAK_COUNTS.get(uid, {})
         if reference_ids or "reference_paragraph_layout" in unit_ledger:
             try:
                 policy = unit_ledger.get("reference_paragraph_layout")
@@ -1031,20 +1046,33 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     raise ValueError("Reference paragraph layout requires exact authorization_evidence/source_ids policy")
                 if uid in AGES_II_UNITS:
                     expected_tabs = AGES_II_LEADING_TAB_COUNTS.get(uid, {})
+                    expected_layout_records = {**expected_tabs, **expected_ages_ii_spaces, **expected_ages_ii_line_breaks}
                     tab_paragraph_ids = [rid for rid in source_ids if rid in records and _kind(records[rid]) == "p" and isinstance(records[rid].get("text"), str) and "\t" in records[rid]["text"]]
                     if (policy["authorization_evidence"] != AGES_II_PRESENTATION_AUTHORIZATION
-                            or policy["source_ids"] != [rid for rid in source_ids if rid in expected_tabs]
-                            or reference_ids != set(expected_tabs)
+                            or policy["source_ids"] != [rid for rid in source_ids if rid in expected_layout_records]
+                            or reference_ids != set(expected_layout_records)
                             or tab_paragraph_ids != [rid for rid in source_ids if rid in expected_tabs]
                             or set(tab_paragraph_ids) != set(expected_tabs)):
-                        raise ValueError("AGES II zero-width tab policy must cover exactly this unit's explicitly authorized paragraphs")
+                        raise ValueError("AGES II zero-width prefix policy must cover exactly the explicitly authorized source records")
                     for rid, count in expected_tabs.items():
                         original_text = records[rid]["text"]
                         leading_tabs = len(original_text) - len(original_text.lstrip("\t"))
                         if leading_tabs != count:
                             raise ValueError(f"Original tab count for {rid} differs from the frozen AGES II presentation evidence")
+                    for rid, count in expected_ages_ii_spaces.items():
+                        original_text = records[rid]["text"]
+                        leading_spaces = len(original_text) - len(original_text.lstrip(" "))
+                        if leading_spaces != count or _kind(records[rid]) != "h":
+                            raise ValueError(f"Original leading-space count or heading type for {rid} differs from the frozen AGES II evidence")
+                    for rid, count in expected_ages_ii_line_breaks.items():
+                        original_text = records[rid]["text"]
+                        leading_line_breaks = len(original_text) - len(original_text.lstrip("\n"))
+                        if leading_line_breaks != count or _kind(records[rid]) != "p":
+                            raise ValueError(f"Original leading line-break count or paragraph type for {rid} differs from the frozen AGES II evidence")
                     if (presentation_authorization is None
-                            or presentation_authorization.get("approved_presentation_changes", {}).get("leading_tab_source_ids_by_unit") != AGES_II_LEADING_TAB_COUNTS):
+                            or presentation_authorization.get("approved_presentation_changes", {}).get("leading_tab_source_ids_by_unit") != AGES_II_LEADING_TAB_COUNTS
+                            or presentation_authorization.get("approved_presentation_changes", {}).get("leading_space_source_counts") != AGES_II_LEADING_SPACE_COUNTS
+                            or presentation_authorization.get("approved_presentation_changes", {}).get("leading_line_break_source_counts") != AGES_II_LEADING_LINE_BREAK_COUNTS):
                         raise ValueError("Missing approved AGES II presentation reuse evidence for leading tabs")
                 else:
                     paragraph_ids = [rid for rid in source_ids if _kind(records[rid]) == "p" and records[rid].get("semantic_type") == "paragraph" and records[rid].get("text")]
@@ -1085,16 +1113,18 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 contract_text = contract_data.decode("utf-8")
                 definitions = macro_definitions(contract_text)
                 bodies = {"originaltab": r"\noindent\hspace*{1.251cm}", "originalspace": r"\hspace*{\fontdimen2\font}"}
-                if reference_verified:
+                if reference_verified or uid in AGES_II_UNITS:
                     bodies["originaltab"] = r"\hspace*{0pt}"
                     bodies["originalleadingspace"] = r"\hspace*{0pt}"
+                    if expected_ages_ii_line_breaks:
+                        bodies["originalleadbreak"] = r"\hspace*{0pt}"
                 if inline_ids:
                     bodies["originalinlinetab"] = r"\unskip\space"
                 for name, body in bodies.items():
                     found = [item for item in definitions if item["name"] == name]
                     if len(found) != 1 or found[0]["declaration"] != "newcommand" or found[0]["arity"] != 0 or found[0]["optional_default"] or canonical_macro_body(found[0]["body"]) != canonical_macro_body(body):
                         raise ValueError(f"Actual {name} definition differs from audited contract")
-                if re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace|originalinlinetab|originalleadingspace)\b", strip_comments(contract_text)):
+                if re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace|originalinlinetab|originalleadingspace|originalleadbreak)\b", strip_comments(contract_text)):
                     raise ValueError("Whitespace macro is aliased/redefined outside its audited definition")
                 macro_verified = True
             except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
@@ -1152,7 +1182,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         if uses_original_whitespace:
             for path in file_order:
                 actual_text = path.read_text(encoding="utf-8")
-                if any(item["name"] in {"originaltab", "originalspace", "originalinlinetab", "originalleadingspace"} for item in macro_definitions(actual_text)) or re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace|originalinlinetab|originalleadingspace)\b", strip_comments(actual_text)):
+                if any(item["name"] in {"originaltab", "originalspace", "originalinlinetab", "originalleadingspace", "originalleadbreak"} for item in macro_definitions(actual_text)) or re.search(r"\\(?:let|futurelet)\s*\\(?:originaltab|originalspace|originalinlinetab|originalleadingspace|originalleadbreak)\b", strip_comments(actual_text)):
                     report("whitespace_macro_redefinition", uid, "Unit target changes the verified whitespace macros", path=str(path.relative_to(repo)))
                     macro_verified = False
         for path in file_order:
@@ -1240,16 +1270,26 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     if sum(token.value == "\t" and not token.inline_layout for token in whitespace) != original[:prefix_end].count("\t"):
                         raise UnsupportedSerialization("Zero-width tab markers must preserve only the original leading tabs")
                     if any(token.leading_layout for token in whitespace):
-                        if rid != "text-p-0413" or "reference_paragraph_layout" not in serializations:
+                        allowed_leading_layout = (rid == "text-p-0413" and "reference_paragraph_layout" in serializations)
+                        allowed_leading_layout = allowed_leading_layout or (uid in AGES_II_UNITS and rid in expected_ages_ii_spaces | expected_ages_ii_line_breaks and "reference_paragraph_layout" in serializations)
+                        if not allowed_leading_layout:
                             raise UnsupportedSerialization("Leading space metadata is restricted to the scoped original paragraph")
                     if "reference_paragraph_layout" in serializations:
-                        if sum(token.leading_layout for token in whitespace) != original[:prefix_end].count(" "):
+                        leading_spaces = sum(token.value == " " and token.leading_layout for token in whitespace)
+                        source_leading_spaces = original[:prefix_end].count(" ")
+                        if rid in expected_ages_ii_spaces:
+                            source_leading_spaces = expected_ages_ii_spaces[rid]
+                        if leading_spaces != source_leading_spaces:
                             raise UnsupportedSerialization("Leading spaces must preserve original prefix count as source metadata")
+                        leading_line_breaks = sum(token.value == "\n" and token.leading_layout for token in whitespace)
+                        source_leading_line_breaks = len(original) - len(original.lstrip("\n")) if rid in expected_ages_ii_line_breaks else 0
+                        if leading_line_breaks != source_leading_line_breaks:
+                            raise UnsupportedSerialization("Leading line breaks must preserve the exact authorized source prefix count")
                         # A leading-layout marker cannot replace an internal or trailing space.
                         projected = ""
                         for token in tokens:
                             if isinstance(token, _ExplicitWhitespace):
-                                if token.leading_layout and projected.strip(" \t"):
+                                if token.leading_layout and projected.strip(" \t\n"):
                                     raise UnsupportedSerialization("Leading space metadata cannot occur inside text")
                                 projected += token.value
                             else:
