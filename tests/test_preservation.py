@@ -457,6 +457,35 @@ class PreservationTests(unittest.TestCase):
         self.ledger["units"]["sprint-test"]["element_map"] = [self.mapping("p1", "Primeiro."), self.mapping("p2", "Segundo.")]
         self.assertIn("element_order_changed", self.codes(self.audit()))
 
+    def test_ages_ii_nested_textbox_order_uses_inline_odf_segments(self):
+        parent_id, frame_id, box_id, caption_id = "text-p-0961", "draw-frame-0039", "draw-text-box-0025", "text-p-0962"
+        self.manifest["records"] = [
+            {"id": parent_id, "type": "text:p", "text": "Rótulo.", "inline_segments": [
+                {"kind": "embedded-block", "record_id": frame_id}, {"kind": "text", "text": "Rótulo."},
+            ]},
+            {"id": frame_id, "type": "draw:frame", "parent_id": parent_id},
+            {"id": box_id, "type": "draw:text-box", "parent_id": frame_id},
+            {"id": caption_id, "type": "text:p", "text": "Legenda.", "parent_id": box_id},
+        ]
+        self.manifest["units"] = [{"id": "ages-ii-sprint-4", "record_ids": [parent_id, frame_id, box_id, caption_id], "source_record_ids": [parent_id, caption_id]}]
+        self.ledger["units"] = {"ages-ii-sprint-4": {"state": "converted", "tex_path": "unit.tex", "element_map": []}}
+        self.write("Legenda.\nRótulo.")
+        unit = self.ledger["units"]["ages-ii-sprint-4"]
+        unit["element_map"] = [self.mapping(caption_id, "Legenda."), self.mapping(parent_id, "Rótulo.")]
+        self.assertNotIn("element_order_changed", self.codes(self.audit()))
+
+    def test_ages_ii_nested_textbox_order_still_rejects_reversed_target(self):
+        self.test_ages_ii_nested_textbox_order_uses_inline_odf_segments()
+        self.write("Rótulo.\nLegenda.")
+        unit = self.ledger["units"]["ages-ii-sprint-4"]
+        unit["element_map"] = [self.mapping("text-p-0961", "Rótulo."), self.mapping("text-p-0962", "Legenda.")]
+        self.assertIn("element_order_changed", self.codes(self.audit()))
+
+    def test_ages_ii_nested_textbox_order_fails_closed_when_odf_structure_changes(self):
+        self.test_ages_ii_nested_textbox_order_uses_inline_odf_segments()
+        next(record for record in self.manifest["records"] if record["id"] == "draw-text-box-0025")["parent_id"] = "unexpected-frame"
+        self.assertIn("unverified_embedded_source_order", self.codes(self.audit()))
+
     def test_parent_child_parent_expansion_order(self):
         texts = ["Antes.", "Dentro.", "Depois."]
         self.manifest["records"] = [{"id": f"p{i}", "type": "text:p", "text": text} for i, text in enumerate(texts, 1)]

@@ -834,6 +834,49 @@ def _kind(record):
     return str(record.get("type", "")).split("}")[-1].split(":")[-1]
 
 
+def _project_source_text_order(unit_id, source_ids, records):
+    """Project the audited AGES II Sprint 4 text-box flow onto text records.
+
+    In the ODF source, the caption text is nested in a draw frame embedded at
+    the start of text-p-0961, before that paragraph's visible text. The flat
+    source_record_ids list records the parent paragraph first, so this exact,
+    structure-checked projection corrects only that ordering comparison.
+    """
+    if unit_id != "ages-ii-sprint-4":
+        return list(source_ids), None
+
+    parent_id = "text-p-0961"
+    frame_id = "draw-frame-0039"
+    textbox_id = "draw-text-box-0025"
+    nested_text_id = "text-p-0962"
+    positions = {rid: index for index, rid in enumerate(source_ids)}
+    parent = records.get(parent_id, {})
+    frame = records.get(frame_id, {})
+    textbox = records.get(textbox_id, {})
+    nested_text = records.get(nested_text_id, {})
+    segments = parent.get("inline_segments")
+    structure_matches = (
+        source_ids.count(parent_id) == 1
+        and source_ids.count(nested_text_id) == 1
+        and positions.get(nested_text_id) == positions.get(parent_id, -2) + 1
+        and isinstance(segments, list)
+        and bool(segments)
+        and segments[0] == {"kind": "embedded-block", "record_id": frame_id}
+        and not any(segment.get("kind") == "embedded-block" for segment in segments[1:])
+        and any(segment.get("kind") == "text" and segment.get("text") for segment in segments[1:])
+        and frame.get("parent_id") == parent_id
+        and textbox.get("parent_id") == frame_id
+        and nested_text.get("parent_id") == textbox_id
+    )
+    if not structure_matches:
+        return list(source_ids), "Sprint 4 embedded-caption order no longer matches its audited ODF IDs and inline segments"
+
+    projected = list(source_ids)
+    parent_position = positions[parent_id]
+    projected[parent_position], projected[parent_position + 1] = nested_text_id, parent_id
+    return projected, None
+
+
 def _url(raw: str) -> str:
     # No percent-unquoting, URL case changes, redirect resolution or trailing-slash normalization.
     return re.sub(r"\\([%_#$&{}])", r"\1", raw)
@@ -1318,8 +1361,14 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     facts["inline_tab_layout_records_matched"] += 1
                 if "reference_paragraph_layout" in serializations:
                     facts["reference_paragraph_layout_records_matched"] += 1
-        if [pos for _, pos in positions] != sorted(pos for _, pos in positions):
-            report("element_order_changed", uid, "Source elements appear in a different target expansion order")
+        projected_source_order, source_order_error = _project_source_text_order(uid, source_ids, records)
+        if source_order_error:
+            report("unverified_embedded_source_order", uid, source_order_error, "text-p-0961")
+        else:
+            position_by_id = dict(positions)
+            projected_positions = [position_by_id[rid] for rid in projected_source_order if rid in position_by_id]
+            if len(projected_positions) == len(positions) and projected_positions != sorted(projected_positions):
+                report("element_order_changed", uid, "Source elements appear in a different target expansion order")
         for index, (path, start, end, rid) in enumerate(text_spans):
             for other_path, other_start, other_end, other_rid in text_spans[index + 1:]:
                 if path == other_path and max(start, other_start) < min(end, other_end):
