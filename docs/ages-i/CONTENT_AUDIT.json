@@ -1,15 +1,21 @@
 {
   "schema_version": 1,
   "role": "content-auditor",
-  "independence": "Separate Codex subagent; direct ODT extraction and own TeX decoder, not Antigravity. No converter expected text used as proof.",
+  "independence": "Separate Codex subagent; direct zipfile/XML extraction and independent conservative TeX decoder. Not Antigravity. Ledger supplies candidate byte ranges only; no converter expected-text proof.",
   "status": "PASS",
-  "commit": "25319d941aa0c7c227dd80094b0b25f582be68b6",
+  "status_scope": "Preservation of source wording, emphasis, order, structural content and explicitly authorized presentation-token transformations; no visual/human approval.",
+  "overall_delivery": "PENDING",
+  "commit": "e5a367d438fe865223879ed4742d52379e563335",
+  "candidate_state": "dirty working tree relative to e5a367d; new Mariah reference-style proposal; exact source/configuration/PDF hashes bind result",
   "branch": "migration/ages-i",
+  "temporary_candidate_commit": "e1019ac9d7ecd3cb8a97388c4b50a4805732c074",
+  "candidate_commit_in_original_repository": false,
   "source": {
     "path": "RELATORIO_ATUAL.odt",
-    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "content_xml_sha256": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28"
   },
-  "scope": "Only text-h-0002 through text-h-0023 exclusive; 15 authorized AGES I units.",
+  "scope": "15 authorized AGES I units; no AGES II–IV or Hoortech",
   "ownership": [
     "docs/ages-i/CONTENT_AUDIT.md",
     "docs/ages-i/CONTENT_AUDIT.json"
@@ -18,31 +24,38 @@
     "blocks": 102,
     "images": 5,
     "urls": 11,
-    "reflection_boxes": 5
+    "reflection_boxes": 5,
+    "headings": 15,
+    "body_paragraphs": 82,
+    "caption_paragraphs": 5,
+    "reflection_paragraphs": 17,
+    "internal_tab_transformations": 9,
+    "body_indent_declarations_changed": 59
   },
   "checks": {
-    "text_102_exact": "PASS",
-    "source_UIDs_vs_manifest": "PASS: 102/102 exact independently extracted values",
-    "order": "PASS",
-    "target_byte_hashes": "PASS",
-    "emphasis": "PASS: all body/caption bold, italic and underline positions match independent XML; CA-01 corrected",
-    "hierarchy": "PASS: 15 heading levels map chapter/section/subsection, literal prefixes retained without duplicates",
-    "lists": "PASS: 5 technology item labels; 17 constituent paragraphs grouped with respective continuations, no literal ODF container nesting",
-    "reflections": "PASS: 5 reflection environments contain same 17 original paragraphs in source order",
-    "media": "PASS: 5 target hashes equal corresponding ODT members; occurrence order and literal captions match",
-    "URLs": "PASS: 11 exact href/anchor pairs; final PDF has same 11 original URI annotations plus 5 curated bibliography links",
-    "bookmarks": "PASS: each independently extracted bookmark appears once as empty-visual hypertarget",
-    "counter_aux": "PASS: final build labels/TOC/LOF, 15 original headings, 5 literal captions all italic, figures 1–5, 2 placeholders absent from LOF",
-    "placeholders": "PASS: 2 explicitly provisional placeholders, no invented diagram content/source",
-    "bibliography": "PASS: 5 keys match curated evidence title/url/current consultation date; no author/year invented; nocite confined to postextual apparatus",
-    "static_latex": "PASS: own audit-latex invocation exit 0",
-    "compilation": "PASS: inspected clean integrated report/log/aux at audited commit; compiler exit 0; auditor did not claim separate rebuild",
-    "visual": "PENDING: independent visual auditor responsibility",
-    "remote_projects": "PENDING: 6 project URLs availability unproved, preserving as authorized",
-    "image_provenance": "PENDING: 5 images; no authorship inferred",
-    "normative": "PENDING: this content audit does not certify norms",
-    "human_approval": "PENDING",
-    "tab_alignment_and_layout_gaps": "PENDING: explicit tabs compare token for token; fixed advances do not prove original tab-stop alignment. Final layout gaps require separate visual/user review."
+    "source_immutable": "PASS: own verify-source exit 0 and independent ZIP/XML extraction",
+    "wording_102_blocks": "PASS: strict per-character own source-token decoder, not word counts or ledger expected text",
+    "emphasis": "PASS: body/caption bold italic underline exact character positions; heading presentation external",
+    "order_coverage": "PASS: same 102 ordered blocks, 15 headings, 82 body paragraphs, 5 captions",
+    "unit_validation": "PASS: own 15 validate calls exit 0",
+    "whole_tex_reversibility": "PASS: all 15 full TeX files match e5a367d exactly after reversing only 59 indent declarations, 9 inline-tab macro names and one leading-space macro name",
+    "layout_scope": "PASS: all 82 and only 82 requested paragraph mappings flag reference_paragraph_layout",
+    "source_whitespace_projection": "PASS: source tabs and spaces reconstructed exactly; visible PDF whitespace intentionally uses new presentation",
+    "media": "PASS: all 5 destination files equal ODT ZIP member hashes",
+    "URLs_bookmarks": "PASS: original 11 ordered anchors/URLs exact; bookmarks occur once; PDF has same 11 plus 5 curated bibliography URLs",
+    "reflections_lists": "PASS: 5 environments preserve 17 original paragraphs; structural lists unchanged via complete-byte reversibility",
+    "headings_counters": "PASS: all 15 body headings/counters retained; source level maps checked in aux",
+    "toc": "PASS: 16 raw entries retain 15 source headings plus bibliography; depth 1 intentionally displays chapter/sections only; subsection body content retained",
+    "captions_lof": "PASS: five exact original captions in italic; neither provisional diagram added to LOF",
+    "bibliography": "PASS: five exact curated entries; no authored narrative additions; no invented source or date",
+    "static_latex": "PASS: own audit-latex exit 0",
+    "compilation": "PASS: inspected root isolated clean build artifacts and matching source hashes; auditor did not compile",
+    "G7_visual": "PENDING: separate visual audit and user acceptance",
+    "G8_normative": "PENDING: content audit does not certify complete norms",
+    "G9_human": "PENDING",
+    "remote_URLs": "PENDING: no availability claim",
+    "image_provenance": "PENDING",
+    "permanent_policy": "NOT_APPLICABLE: future projects not approved"
   },
   "findings": [
     {
@@ -59,13 +72,18 @@
       "resolution": "RESOLVED in final bytes: text-p-0650 is textit on all 42 characters; final .lof also textit; character/style comparison and all 15 ledger checks pass.",
       "resolved_at_commit": "25319d941aa0c7c227dd80094b0b25f582be68b6",
       "verification_pdf_sha256": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f"
+    },
+    {
+      "id": "CA-FORMAT-01",
+      "status": "PENDING",
+      "severity": "high",
+      "evidence": "User rejected original TOC and 3 internal-tab paragraph gaps in PDF c9621f…; previous G7 result/qualification was inadequate for magnitude of these errors.",
+      "consequence": "Automated content PASS cannot represent presentation acceptance.",
+      "correction": "Scoped originalinlinetab transformation and aligned numberline proposal; awaiting actual visual/human acceptance.",
+      "verification": "Current content passes; G7 separate, G9 pending. No reuse promoted."
     }
   ],
   "commands": [
-    {
-      "command": "python3 build/ages-i/audit/compare.py (direct XML extraction + independent TeX decoder + 15 validate subprocesses)",
-      "exit_code": 0
-    },
     {
       "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-02-text-h-0002.json --unit chapter-02-text-h-0002",
       "exit_code": 0
@@ -135,82 +153,44 @@
       "exit_code": 0
     },
     {
-      "command": "python3 build/ages-i/audit/final_checks.py (source/manifest UID text; actual PDF URIs; .aux counters; .toc/.lof; .bbl; curated fields)",
+      "command": "python3 build/ages-i/mariah-style/content-audit/compare.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-i/mariah-style/content-audit/details.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-i/mariah-style/content-audit/final_checks.py build/ages-i/mariah-style/candidate/document 9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-i/mariah-style/content-audit/index_checks.py build/ages-i/mariah-style/candidate/document build/ages-i/mariah-style/candidate/document/report.json",
       "exit_code": 0
     }
   ],
-  "examined_files": [
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
-    "RELATORIO_ATUAL.odt",
-    "docs/CONTENT_MANIFEST.json",
-    "harness.json",
-    "migration/evidence/references/ages-i.json",
-    "relatorio_AGES_eduardo/main.tex",
-    "relatorio_AGES_eduardo/util/macros.tex",
-    "relatorio_AGES_eduardo/util/style.tex",
-    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
-    "build/document/report.json",
-    "build/document/main.log",
-    "build/document/main.aux",
-    "build/document/main.toc",
-    "build/document/main.lof",
-    "build/document/main.bbl"
-  ],
   "target_hashes": {
     "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex": "8355da55c597959d637accccca6686d9c9263807c7219f8e8a9b637442d2d4db",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex": "ff14332bfb2e97c2627c5e75098dfa8722c42896393bb6678dba3dc867cffd2f",
     "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex": "e939d8abcf70c9a29236592838e86cdac0c9522acaab05bedd6833b9951d5fd5",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex": "7cae50b15765cae6231413799b07df8182d6a1d0e58d961c6aceb6fd48de71be",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex": "32a03cb2377a0a69667c62cd0b23cf4d587ee441d00130888dc03a9bf3782d85",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex": "08b68fcbb751efffaa257df0f838a54c11c7f472f42756788acdbf1a006e667b",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex": "e2ac4c47177402f3fdb80cfa4d6e795bd3a998835a4feeea4e140694eb668390",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex": "e12ed7b7277d98de6bbe2f2e594c383a165cd9444d0c1abd9e0576ab2bc3e450",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex": "e5de08009e652e5ed413c287ec78561be57ef07a27335208c9b7af24bfbdf4ed",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex": "1becf7cc8576a84a8893a958e10f19831327dbd35f4d07066c2a7ee4c53864df",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex": "73038fcf8f4aa7c0fa2e0c7fc379968a5cc6ca4b606f2bebd2fab511fd028fd8",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex": "f8f11540ad3aa58bc919d13e0ef17ba8883f6ae48614c82797f8f0d7069f08c3",
     "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex": "1fb90f99ce0ec2b65b6dd19410596dca09e747c9a31b67c6b20540a550f311ce",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex": "c50cfbe0ebdb4fb0746c9cfefff79aeb8cdb330bec5c65b27b8bbadef3eb9e6d",
-    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104",
-    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex": "90384da584aa4d2c6f6fe1f72c25f9a6ac39f8cbfbac5960812053ab2d1893c2",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex": "209162e7d6be9ff828cc5692d4c68a7a7ffa7f74e59f551e89200b82ba9fbc79",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex": "0e2b276d80904773be064fd1071e091ded5f89cd8cd023736073c76b5eda7467",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex": "c04f1e204d96d387a6a181c606281a3707ee720920ce01506b643e1299523cc0",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex": "57be2025adf99b97de0cbf39cdcbf86ea0ca50c4177cf4680dffff7189bbea35"
   },
-  "artifacts": {
-    "build/ages-i/audit/source-independent.json": "7096e9e900391d68cd62c887f237bb39dd781b289e2fd91cd3539f42aebca1d8",
-    "build/ages-i/audit/comparison.json": "3494d077f5df3842cbad528f3493dc271a85c9d1bdc02cf7ae7d9128661ed77d",
-    "build/ages-i/audit/final-checks.json": "6b2a03480a51ecdeac1521c00c9f1458997bddedefa1879c747d9bad29c8ba1a",
-    "build/ages-i/audit/audit-latex-final.json": "12995c981ddd7c4b15411cc03e3a2807ac024731a6641e8b08949d57b459112d",
-    "build/ages-i/audit/verify-source-final.json": "9f82ff18b48686d25738460e443f5da6eb4f7ba80a0482c0118429a8f06a3a5d",
-    "build/document/report.json": "a657ef03a2c1d51e70f8ef1ca9bb156ef0031ce0d862b473c7b6c0cfb8c4a0dc",
-    "build/document/main.pdf": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f",
-    "build/document/main.aux": "c3891d4cbb1d48ffa29df267169f8910010e2f36c9527272ed38d61b3ff24706",
-    "build/document/main.toc": "cfeacc6d9a8b5a19714332f489dbc0e094276c0d857b6506313e0d40b7f7d2a4",
-    "build/document/main.lof": "fafca899d4eabe2c129c55cbcee01a6a1fa2f6c7f8d328fb8479cf7acbb0dc8c",
-    "build/document/main.bbl": "c3fcfecb6e34996ebfc2f1b900ed3d7976234b2c3f01f5cef166576e30119680",
-    "build/document/main.log": "d8360bd7a833d83c5766eb5b76075db62b912f865b66753bd585669698745683"
+  "global_hashes": {
+    "style.tex": "0cc5717a271e90029f9eece3bdaf841945e87fb72c416994318996a5b7fcb24f",
+    "macros.tex": "811761e2b49067cfda51438c243ae40bf816c8d5375fad229a43cdc70306c28f"
   },
-  "limitations": [
-    "Internal original tabs are represented one for one as originaltab, a fixed 1.251 cm advance rather than position-dependent ODF tab stops; lexical identity passes, precise original alignment is not asserted.",
-    "Heading typography is controlled by global section presentation; body/caption emphasis is compared per character independently.",
-    "PDF text extraction is not the sole content proof. URI annotations supplement source-byte proof.",
-    "Failed provisional audit-driver attempts were corrected (namespace handling and excluding image IDs from text decoder); final comparison exit 0 is the evidence.",
-    "PyMuPDF unavailable; PDF links successfully inspected with installed pypdf.",
-    "No approval of next edition or editorial changes."
-  ],
-  "human_approval": "PENDING",
-  "revalidation_required": "Any later content/style/macro or PDF change requires audit of its effects; current final bytes are verified.",
+  "pdf_sha256": "9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
   "audit_history": [
     {
       "commit": "ea4b3ee8cad8b441a04730817a91078bc2b83a2a",
@@ -247,17 +227,101 @@
         "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104",
         "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex": "d59e9476f4b872866083bbe286fb79b67ba3fece098de13e67692ea284e5aa4b"
       }
+    },
+    {
+      "commit": "25319d941aa0c7c227dd80094b0b25f582be68b6",
+      "status": "PASS_CONTENT_ONLY",
+      "pdf_sha256": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f",
+      "human_delivery_acceptance": "REJECTED by user for TOC and internal-tab layout errors; earlier automated PASS did not approve visual quality",
+      "findings": [
+        {
+          "id": "CA-01",
+          "status": "PASS",
+          "severity": "medium",
+          "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+          "line": 30,
+          "source_id": "text-p-0650",
+          "evidence": "content.xml paragraph P64 inherits Figure text style: italic on all 42 characters; actual memorialfigure caption argument has no textit; main.lof Figure 5 also lacks textit. Captions 1–4 preserve it.",
+          "consequence": "Loss of original caption emphasis despite exact lexical content.",
+          "proposed_correction": "Converter wraps literal Figure 5 caption in textit and regenerates ledger byte intervals/hash; rebuild.",
+          "verification": "Repeat independent character/style comparison, validate final unit, inspect main.lof and corrected PDF; audit does not change memorial.",
+          "resolution": "RESOLVED in final bytes: text-p-0650 is textit on all 42 characters; final .lof also textit; character/style comparison and all 15 ledger checks pass.",
+          "resolved_at_commit": "25319d941aa0c7c227dd80094b0b25f582be68b6",
+          "verification_pdf_sha256": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f"
+        }
+      ],
+      "checks": {
+        "text_102_exact": "PASS",
+        "source_UIDs_vs_manifest": "PASS: 102/102 exact independently extracted values",
+        "order": "PASS",
+        "target_byte_hashes": "PASS",
+        "emphasis": "PASS: all body/caption bold, italic and underline positions match independent XML; CA-01 corrected",
+        "hierarchy": "PASS: 15 heading levels map chapter/section/subsection, literal prefixes retained without duplicates",
+        "lists": "PASS: 5 technology item labels; 17 constituent paragraphs grouped with respective continuations, no literal ODF container nesting",
+        "reflections": "PASS: 5 reflection environments contain same 17 original paragraphs in source order",
+        "media": "PASS: 5 target hashes equal corresponding ODT members; occurrence order and literal captions match",
+        "URLs": "PASS: 11 exact href/anchor pairs; final PDF has same 11 original URI annotations plus 5 curated bibliography links",
+        "bookmarks": "PASS: each independently extracted bookmark appears once as empty-visual hypertarget",
+        "counter_aux": "PASS: final build labels/TOC/LOF, 15 original headings, 5 literal captions all italic, figures 1–5, 2 placeholders absent from LOF",
+        "placeholders": "PASS: 2 explicitly provisional placeholders, no invented diagram content/source",
+        "bibliography": "PASS: 5 keys match curated evidence title/url/current consultation date; no author/year invented; nocite confined to postextual apparatus",
+        "static_latex": "PASS: own audit-latex invocation exit 0",
+        "compilation": "PASS: inspected clean integrated report/log/aux at audited commit; compiler exit 0; auditor did not claim separate rebuild",
+        "visual": "PENDING: independent visual auditor responsibility",
+        "remote_projects": "PENDING: 6 project URLs availability unproved, preserving as authorized",
+        "image_provenance": "PENDING: 5 images; no authorship inferred",
+        "normative": "PENDING: this content audit does not certify norms",
+        "human_approval": "PENDING",
+        "tab_alignment_and_layout_gaps": "PENDING: explicit tabs compare token for token; fixed advances do not prove original tab-stop alignment. Final layout gaps require separate visual/user review."
+      },
+      "target_hashes": {
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex": "8355da55c597959d637accccca6686d9c9263807c7219f8e8a9b637442d2d4db",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex": "e939d8abcf70c9a29236592838e86cdac0c9522acaab05bedd6833b9951d5fd5",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex": "7cae50b15765cae6231413799b07df8182d6a1d0e58d961c6aceb6fd48de71be",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex": "32a03cb2377a0a69667c62cd0b23cf4d587ee441d00130888dc03a9bf3782d85",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex": "08b68fcbb751efffaa257df0f838a54c11c7f472f42756788acdbf1a006e667b",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex": "e2ac4c47177402f3fdb80cfa4d6e795bd3a998835a4feeea4e140694eb668390",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex": "1fb90f99ce0ec2b65b6dd19410596dca09e747c9a31b67c6b20540a550f311ce",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex": "eb621438e087fc5fc566845cdf5da2523e63448f697b38f23897650ae0149a69",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex": "c50cfbe0ebdb4fb0746c9cfefff79aeb8cdb330bec5c65b27b8bbadef3eb9e6d",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex": "11264d2e48c8703d865607df7fc0c091f1541302858798af31e1611bdb70f104",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex": "e81086238773581fdf9182c117ac0eef949462d217ca47ec3e389be8fac41b7d"
+      }
+    },
+    {
+      "status": "PASS_CONTENT_ONLY",
+      "pdf_sha256": "b51646a946163dde694f1dcbbaac8c85298c18f92721d1552658bd9802b8e568",
+      "temporary_candidate_commit": "79793d57b345fb8b20deae6829f994765f233db4",
+      "state": "Previous format-correction proposal, before request for same formatting as Mariah; no human approval; complete snapshot runtime historical-report.json"
     }
   ],
-  "status_scope": "Independent content preservation, including corrected caption emphasis; delivery acceptance remains PENDING.",
-  "overall_delivery": "PENDING",
-  "pdf_sha256": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f",
-  "snapshot_directory": "build/ages-i/review/c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f",
+  "human_approval": "PENDING",
+  "future_projects_approved": false,
+  "promoted_to_reusable_policy": false,
+  "limitations": [
+    "Source-token projection is reversible but deliberately changes visual advances: leading source tabs/space become 0pt; internal tabs become word spaces. No literal whitespace equality of PDF is claimed.",
+    "TOC depth1 intentionally hides subsection entries in rendered TOC; all original body headings and raw entries remain.",
+    "No copied Mariah narrative, metadata, projects, references or epigraph; only visual formatting is proposed.",
+    "No claim of independent Antigravity execution; separate Codex content-auditor subagent.",
+    "Visual acceptance, final normative certification and human approval remain pending; no permanent promotion or next edition authorized."
+  ],
+  "revalidation_required": "Any further source/configuration/PDF change requires checking its effects; human approval must identify exact candidate.",
+  "pages": 19,
+  "current_evidence": {
+    "comparison": "build/ages-i/mariah-style/content-audit/comparison.json",
+    "details": "build/ages-i/mariah-style/content-audit/details.json",
+    "final": "build/ages-i/mariah-style/content-audit/final-checks.json",
+    "indexes": "build/ages-i/mariah-style/content-audit/index-checks.json"
+  },
   "final_checks": {
     "status": "PASS",
-    "commit": "25319d941aa0c7c227dd80094b0b25f582be68b6",
-    "pdf_sha256": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f",
-    "pages": 17,
+    "commit": "e5a367d438fe865223879ed4742d52379e563335",
+    "pdf_sha256": "9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
+    "pages": 19,
     "counter_labels": {
       "ages-i:text-h-0002": "2",
       "ages-i:text-h-0003": "2.1",
@@ -325,27 +389,27 @@
         "url": "https://www.prisma.io/docs"
       },
       {
-        "page": 7,
+        "page": 8,
         "url": "https://www.postgresql.org/docs/"
       },
       {
-        "page": 17,
+        "page": 19,
         "url": "https://www.prisma.io/docs"
       },
       {
-        "page": 17,
+        "page": 19,
         "url": "https://nodejs.org/docs/latest/api/"
       },
       {
-        "page": 17,
+        "page": 19,
         "url": "https://www.postgresql.org/docs/"
       },
       {
-        "page": 17,
+        "page": 19,
         "url": "https://react.dev/"
       },
       {
-        "page": 17,
+        "page": 19,
         "url": "https://www.typescriptlang.org/docs/"
       }
     ],
@@ -353,5 +417,1154 @@
     "source_manifest_102_exact": true,
     "lexical_emphasis_hashes_102_exact": true,
     "source_original_hash": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "index_checks": {
+    "status": "PASS",
+    "toc_heading_correspondences": [
+      {
+        "source_id": "text-h-0002",
+        "numberline": "2 -",
+        "text_exact": true,
+        "source_title": "2 - PROJETO AGES I – EASY CHOOSE",
+        "target_anchor": "chapter*.3"
+      },
+      {
+        "source_id": "text-h-0003",
+        "numberline": "2.1",
+        "text_exact": true,
+        "source_title": "Introdução",
+        "target_anchor": "section.2.1"
+      },
+      {
+        "source_id": "text-h-0007",
+        "numberline": "2.2",
+        "text_exact": true,
+        "source_title": "Desenvolvimento do Projeto",
+        "target_anchor": "section.2.2"
+      },
+      {
+        "source_id": "text-h-0008",
+        "numberline": "2.2.1",
+        "text_exact": true,
+        "source_title": "Repositório do código Fonte do Projeto ",
+        "target_anchor": "subsection.2.2.1"
+      },
+      {
+        "source_id": "text-h-0009",
+        "numberline": "2.2.2",
+        "text_exact": true,
+        "source_title": "Banco de dados utilizado ",
+        "target_anchor": "subsection.2.2.2"
+      },
+      {
+        "source_id": "text-h-0010",
+        "numberline": "2.2.3",
+        "text_exact": true,
+        "source_title": "Arquitetura utilizada ",
+        "target_anchor": "subsection.2.2.3"
+      },
+      {
+        "source_id": "text-h-0011",
+        "numberline": "2.2.4",
+        "text_exact": true,
+        "source_title": "Protótipos das telas desenvolvidas ",
+        "target_anchor": "subsection.2.2.4"
+      },
+      {
+        "source_id": "text-h-0012",
+        "numberline": "2.2.5",
+        "text_exact": true,
+        "source_title": "Tecnologias utilizadas",
+        "target_anchor": "subsection.2.2.5"
+      },
+      {
+        "source_id": "text-h-0014",
+        "numberline": "2.3",
+        "text_exact": true,
+        "source_title": "2.3 Atividades desempenhadas pelo aluno no projeto",
+        "target_anchor": "section*.8"
+      },
+      {
+        "source_id": "text-h-0016",
+        "numberline": "2.3.1",
+        "text_exact": true,
+        "source_title": "2.3.1 Sprint 0 ",
+        "target_anchor": "section*.9"
+      },
+      {
+        "source_id": "text-h-0017",
+        "numberline": "2.3.2",
+        "text_exact": true,
+        "source_title": "2.3.2 Sprint 1",
+        "target_anchor": "section*.10"
+      },
+      {
+        "source_id": "text-h-0018",
+        "numberline": "2.3.3",
+        "text_exact": true,
+        "source_title": "2.3.3 Sprint 2 ",
+        "target_anchor": "section*.11"
+      },
+      {
+        "source_id": "text-h-0019",
+        "numberline": "2.3.4",
+        "text_exact": true,
+        "source_title": "2.3.4 Sprint 3",
+        "target_anchor": "section*.12"
+      },
+      {
+        "source_id": "text-h-0020",
+        "numberline": "2.3.5",
+        "text_exact": true,
+        "source_title": "2.3.5 Sprint 4",
+        "target_anchor": "section*.13"
+      },
+      {
+        "source_id": "text-h-0022",
+        "numberline": "2.4.",
+        "text_exact": true,
+        "source_title": "2.4. Conclusão",
+        "target_anchor": "section*.14"
+      }
+    ],
+    "manual_prefixes_retained_in_numberline": true,
+    "all_5_caption_texts_exact_in_lof": true,
+    "en_dash_following_spaces_retained_in_indexes": true,
+    "candidate_source_files_match_working_tree": true,
+    "candidate_pdf_sha256": "9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
+    "temporary_candidate_commit": "e1019ac9d7ecd3cb8a97388c4b50a4805732c074"
+  },
+  "presentation_transformation": {
+    "status": "PASS",
+    "tex_files": [
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex",
+        "sha256": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex",
+        "sha256": "ff14332bfb2e97c2627c5e75098dfa8722c42896393bb6678dba3dc867cffd2f",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex",
+        "sha256": "e939d8abcf70c9a29236592838e86cdac0c9522acaab05bedd6833b9951d5fd5",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex",
+        "sha256": "e12ed7b7277d98de6bbe2f2e594c383a165cd9444d0c1abd9e0576ab2bc3e450",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+        "sha256": "e5de08009e652e5ed413c287ec78561be57ef07a27335208c9b7af24bfbdf4ed",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
+        "sha256": "1becf7cc8576a84a8893a958e10f19831327dbd35f4d07066c2a7ee4c53864df",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+        "sha256": "73038fcf8f4aa7c0fa2e0c7fc379968a5cc6ca4b606f2bebd2fab511fd028fd8",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+        "sha256": "f8f11540ad3aa58bc919d13e0ef17ba8883f6ae48614c82797f8f0d7069f08c3",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+        "sha256": "5788b513c84ce4a50b04a7da605b4fa21c737757c57e47b9412f9a6aec2e657c",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
+        "sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex",
+        "sha256": "90384da584aa4d2c6f6fe1f72c25f9a6ac39f8cbfbac5960812053ab2d1893c2",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+        "sha256": "209162e7d6be9ff828cc5692d4c68a7a7ffa7f74e59f551e89200b82ba9fbc79",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex",
+        "sha256": "0e2b276d80904773be064fd1071e091ded5f89cd8cd023736073c76b5eda7467",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+        "sha256": "c04f1e204d96d387a6a181c606281a3707ee720920ce01506b643e1299523cc0",
+        "reverse_changes_match_baseline_exact": true
+      },
+      {
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+        "sha256": "57be2025adf99b97de0cbf39cdcbf86ea0ca50c4177cf4680dffff7189bbea35",
+        "reverse_changes_match_baseline_exact": true
+      }
+    ],
+    "paragraph_policy": [
+      {
+        "id": "text-p-0288",
+        "prefix": "indent",
+        "source_text_sha256": "fe0bf69d6c2ffba9269509b528499764b287327173929335c1c3c664b3ea0c48"
+      },
+      {
+        "id": "text-p-0289",
+        "prefix": "indent",
+        "source_text_sha256": "0ea1c9a95e9656a0d076291be9aa38d4b58d3080066ef9132a919d19a8ba9c5c"
+      },
+      {
+        "id": "text-p-0290",
+        "prefix": "indent",
+        "source_text_sha256": "80d9b51d85dc3cb88bfca6c08db5923335f376ebfa2edddb30c6e9e821cf6ddc"
+      },
+      {
+        "id": "text-p-0303",
+        "prefix": "indent",
+        "source_text_sha256": "aac9d76527c8107ddd22f320944f224bc20edce01b690bf964e346a02c9ed4a0"
+      },
+      {
+        "id": "text-p-0304",
+        "prefix": "noindent",
+        "source_text_sha256": "eeac18c043bfe28f30357e1ce9a232f0d4003687cecbc5b49c44c9f7079cecb6"
+      },
+      {
+        "id": "text-p-0306",
+        "prefix": "indent",
+        "source_text_sha256": "b7c198a194df32c22787524dab43d0c4249d32782399b6b9899558b237d633bc"
+      },
+      {
+        "id": "text-p-0307",
+        "prefix": "noindent",
+        "source_text_sha256": "63110f3b63063ba56c21f586dcb6df38b95338af92962f5a82e58a7271435313"
+      },
+      {
+        "id": "text-p-0309",
+        "prefix": "indent",
+        "source_text_sha256": "ca55b292a28a8407fabc034ea8d123eccbecd654687e9cb31b3921aaae9a8791"
+      },
+      {
+        "id": "text-p-0310",
+        "prefix": "noindent",
+        "source_text_sha256": "7e7f8535c3e9642ed7c89bc7d692a9001c178c8a5b3ddbabf86f2ffda10e72b5"
+      },
+      {
+        "id": "text-p-0314",
+        "prefix": "indent",
+        "source_text_sha256": "e68682464562a3a95de14134e45bd3eab56a1a6f1f729d274b88d05b4379e3f0"
+      },
+      {
+        "id": "text-p-0315",
+        "prefix": "noindent",
+        "source_text_sha256": "915212f8c6af088a49b5b525de5f0cf001c6f90b6883666ccacd4bd9f3f64967"
+      },
+      {
+        "id": "text-p-0318",
+        "prefix": "indent",
+        "source_text_sha256": "26403ca5dda3a15c615dc4a5fb95fb8b57fbe56a9c24ce5c144bb22a3aed38a4"
+      },
+      {
+        "id": "text-p-0319",
+        "prefix": "noindent",
+        "source_text_sha256": "6c43d3f061cdf0759f490d96d41cb21524bc85eb67cc9e1d56a22b430503dc83"
+      },
+      {
+        "id": "text-p-0322",
+        "prefix": "indent",
+        "source_text_sha256": "d72d6699232f37c1c24cef20b56e668d767e7ceefab1b768c3865243c815962c"
+      },
+      {
+        "id": "text-p-0323",
+        "prefix": "noindent",
+        "source_text_sha256": "18ade2de23e15a2333a4740441ba06fd744f4d081112f4291271b843325ae557"
+      },
+      {
+        "id": "text-p-0325",
+        "prefix": "indent",
+        "source_text_sha256": "3d4dd735655281fa0949c4c120d231362ae91bdc17e3e099a6e784e0a0734796"
+      },
+      {
+        "id": "text-p-0376",
+        "prefix": "indent",
+        "source_text_sha256": "249101e4dec7e72bbf05335ce18cb68f625b7ebe039f1ce0670117a632d00c26"
+      },
+      {
+        "id": "text-p-0378",
+        "prefix": "noindent",
+        "source_text_sha256": "77e3ab91065c0c1e5726d57653cef72c14a180f92a954655223fdc5427cadd24"
+      },
+      {
+        "id": "text-p-0379",
+        "prefix": "noindent",
+        "source_text_sha256": "4e53c024064ca122706864fe67b38277b53d935fb8b52a3f034fba9d6ff4b141"
+      },
+      {
+        "id": "text-p-0380",
+        "prefix": "noindent",
+        "source_text_sha256": "36031e93a6a0d133623b74f3edf6baa8c3bb9fde7d8eebd920b176187a2ae72a"
+      },
+      {
+        "id": "text-p-0381",
+        "prefix": "noindent",
+        "source_text_sha256": "f9d92ff79f5a89aa502d38dcfd92ee0830289b339aa67d39a8aea6ea509d7d58"
+      },
+      {
+        "id": "text-p-0385",
+        "prefix": "noindent",
+        "source_text_sha256": "777f36c1517609236669ebbc20e4b2d04b909fecb61d58a57917179d3942be3d"
+      },
+      {
+        "id": "text-p-0386",
+        "prefix": "noindent",
+        "source_text_sha256": "c2ee64709660fe81fe8b9075fcf5182ac7861f3d7b2dc73711caa56b1a4ebac9"
+      },
+      {
+        "id": "text-p-0387",
+        "prefix": "noindent",
+        "source_text_sha256": "138b6f08e45d980d5f12efb5d44b31a5a3b2a41aaade251864e054b70bd0c094"
+      },
+      {
+        "id": "text-p-0388",
+        "prefix": "noindent",
+        "source_text_sha256": "f4dde4abafb85862375d6bed60c3b2dde0dea57e38171b2da939c79dd7568ce8"
+      },
+      {
+        "id": "text-p-0390",
+        "prefix": "noindent",
+        "source_text_sha256": "4d79b7ef281fe95c8adf504927a05fc530b945793cc03a91d9b2a57c451e7aa2"
+      },
+      {
+        "id": "text-p-0391",
+        "prefix": "noindent",
+        "source_text_sha256": "fc246098f3e6e856dd7788047fe9e926feeb7b60e7e5077f1d6b5ad7e14d99a1"
+      },
+      {
+        "id": "text-p-0392",
+        "prefix": "noindent",
+        "source_text_sha256": "2e19635ac5ae78580e452eaf76a91f7fec2683f60ad8585fecd77b65ae1758cb"
+      },
+      {
+        "id": "text-p-0394",
+        "prefix": "noindent",
+        "source_text_sha256": "29f12ed4ed8f7f7a8f476599dc4b73c999a58d99c431bc4894f3c00b337b5f71"
+      },
+      {
+        "id": "text-p-0395",
+        "prefix": "noindent",
+        "source_text_sha256": "3e10e7af80f0f91df512c5478af1d63f2730eb39e9ccf10bfa3c28fd1f4055b2"
+      },
+      {
+        "id": "text-p-0396",
+        "prefix": "noindent",
+        "source_text_sha256": "7c2074053125a7617f6887a515003ce7bd17f803de4e7f2935b4be5782014231"
+      },
+      {
+        "id": "text-p-0398",
+        "prefix": "noindent",
+        "source_text_sha256": "a510a36b65e87de80d9957def0274bdf729f771bfaad027c14e72f0b1697510b"
+      },
+      {
+        "id": "text-p-0399",
+        "prefix": "noindent",
+        "source_text_sha256": "f0962a6ee99f9d495157b01a07c13872c8d803c636a8c6fa3667db3806ea8b9e"
+      },
+      {
+        "id": "text-p-0400",
+        "prefix": "noindent",
+        "source_text_sha256": "214351bf650e0e71394135f39c67e319cf1c05f40c1fa9c77f65cdf0ba968190"
+      },
+      {
+        "id": "text-p-0402",
+        "prefix": "indent",
+        "source_text_sha256": "012d4de0c1aff39ab1696f1a32b58a11ad1bbaf22eceeaba7359ca51a69db9df"
+      },
+      {
+        "id": "text-p-0413",
+        "prefix": "indent",
+        "source_text_sha256": "d5c7e5beceb928b7df6dc7007f4f10cc081c518d57363fb174054e975b87bd52"
+      },
+      {
+        "id": "text-p-0415",
+        "prefix": "indent",
+        "source_text_sha256": "aaa1984071c2b22b06d3e10b08c45849a916e4c0c65178bb0c5d83e0cc09b2c5"
+      },
+      {
+        "id": "text-p-0417",
+        "prefix": "indent",
+        "source_text_sha256": "d2347299ae3c931ad335694dec9298e0daafc775201be492abb733a0fd11c2a6"
+      },
+      {
+        "id": "text-p-0419",
+        "prefix": "indent",
+        "source_text_sha256": "9ee46e99625fa657637bb4a9d02b5bdfcf2500e99187363cedfabc91297a6c1c"
+      },
+      {
+        "id": "text-p-0424",
+        "prefix": "indent",
+        "source_text_sha256": "617bd39d2b2a0b17962e6cc8fd6c805626b0f4e7a32aa73c7ccff432a586826f"
+      },
+      {
+        "id": "text-p-0425",
+        "prefix": "indent",
+        "source_text_sha256": "4d8fe3f26476b911733e8c575c67a18eb7e391a48c86c069fcde380e15a516d5"
+      },
+      {
+        "id": "text-p-0426",
+        "prefix": "indent",
+        "source_text_sha256": "54c27996d60ed5945676a343cdb4fc767c4bfd2cd65aea5e607d1e813ab2489e"
+      },
+      {
+        "id": "text-p-0427",
+        "prefix": "indent",
+        "source_text_sha256": "f078af38711570cf32678071064be5cfae41df04f820199db1d0c2fcda06ea5f"
+      },
+      {
+        "id": "text-p-0428",
+        "prefix": "indent",
+        "source_text_sha256": "95b15b3bf9ec62f99012fe51a6f45311e8408b9e06e85da93135e34b653ae9f0"
+      },
+      {
+        "id": "text-p-0465",
+        "prefix": "indent",
+        "source_text_sha256": "7dff6dd6f2a2748d7388d75681fea0adfeb9a15eeebbf5796c4441995e152d56"
+      },
+      {
+        "id": "text-p-0466",
+        "prefix": "indent",
+        "source_text_sha256": "69f4b0af34d5fc28f8adf75a7236dda9a1093cbdb32d351658f1c5f412ca00a0"
+      },
+      {
+        "id": "text-p-0467",
+        "prefix": "indent",
+        "source_text_sha256": "e14cb9e830b32b03be9328ddaaa87c8eed6674ba6968095f0eb71039eb56c67b"
+      },
+      {
+        "id": "text-p-0468",
+        "prefix": "indent",
+        "source_text_sha256": "016bc938fc705a9ade0c44b79f5d3c18f9743a22cc84588b1978160754659b5f"
+      },
+      {
+        "id": "text-p-0469",
+        "prefix": "indent",
+        "source_text_sha256": "82e176a089a59a5fd5f411298a85d4be6a2e0506ff1e144393fed32f1938ac61"
+      },
+      {
+        "id": "text-p-0470",
+        "prefix": "indent",
+        "source_text_sha256": "f3038871a013978228c2645753ce62cd6344245757426551da489836ad0d35be"
+      },
+      {
+        "id": "text-p-0472",
+        "prefix": "indent",
+        "source_text_sha256": "6af010027b5d3014bbd941f01b2b2ece0db730fbc3d0a73eafdeb734b3b948f9"
+      },
+      {
+        "id": "text-p-0473",
+        "prefix": "indent",
+        "source_text_sha256": "726ee8d5122eec28091a58c7aca194c19294b6649332ba60741e9079dec99c88"
+      },
+      {
+        "id": "text-p-0474",
+        "prefix": "indent",
+        "source_text_sha256": "8a9cbe5d9cbc1862eb4ee45e1dd97d905ac8e31dc85de6258ac6fc1088528df8"
+      },
+      {
+        "id": "text-p-0475",
+        "prefix": "indent",
+        "source_text_sha256": "117e34da78fc21fc1b22d172e3f6e77d878e0d02395440d5b46596a4bcadb040"
+      },
+      {
+        "id": "text-p-0476",
+        "prefix": "indent",
+        "source_text_sha256": "5015ad333a2c8c121d6ec5d052ac20a55c525ed03228b06c807eb863bc2de408"
+      },
+      {
+        "id": "text-p-0509",
+        "prefix": "indent",
+        "source_text_sha256": "4ef9562268f9d368cf5d38beb997ed9c586b1e094f0acf09e25786c071a76605"
+      },
+      {
+        "id": "text-p-0510",
+        "prefix": "indent",
+        "source_text_sha256": "31fa9df06f9916f3ca295bd9bcc9e371dcf7ab40759d8e2adf80b72c59dd5b8e"
+      },
+      {
+        "id": "text-p-0511",
+        "prefix": "indent",
+        "source_text_sha256": "53b3016f94542f2fb58c8d0fa5377ded9b53602f56e7f6192b2efe46f16cd08f"
+      },
+      {
+        "id": "text-p-0521",
+        "prefix": "indent",
+        "source_text_sha256": "509219626e869ca147484f51da52bcd040fcd08fee005cf8a2ba895b63d65b6e"
+      },
+      {
+        "id": "text-p-0522",
+        "prefix": "indent",
+        "source_text_sha256": "99093bf60c19d40f49d3fedc4a17c3f72408a142f86ef9a3bda12405309379d9"
+      },
+      {
+        "id": "text-p-0523",
+        "prefix": "indent",
+        "source_text_sha256": "660fe375abf39a2a370545f31163f2b310dd486d25863c90a5c7fd1c69e73005"
+      },
+      {
+        "id": "text-p-0557",
+        "prefix": "indent",
+        "source_text_sha256": "186382c54da12529d32c9bb3fa7c58ea8e5168ffac22625e0a0b1a48b7738ecb"
+      },
+      {
+        "id": "text-p-0558",
+        "prefix": "indent",
+        "source_text_sha256": "9ea9822ab6796378303ecb06dd4b911349d6943bfcf3cc3f44c924052b223e86"
+      },
+      {
+        "id": "text-p-0559",
+        "prefix": "indent",
+        "source_text_sha256": "25138d0a6853e7b12d8b1d5cc9626d20e8a103cdc304033c1467bd42616865f7"
+      },
+      {
+        "id": "text-p-0560",
+        "prefix": "indent",
+        "source_text_sha256": "1f2323985a714859ff8e827390f51630ee51f61570d34fd915733af40f22a8ce"
+      },
+      {
+        "id": "text-p-0561",
+        "prefix": "indent",
+        "source_text_sha256": "1c403b0066e76bc4fbeed5ddcd194aed7bea138144e57a795104d2cbe208bd7f"
+      },
+      {
+        "id": "text-p-0562",
+        "prefix": "indent",
+        "source_text_sha256": "d840a57f2aa03ed7124a4180efa4246fa23032b50fcb941660e9912d73bbda23"
+      },
+      {
+        "id": "text-p-0565",
+        "prefix": "indent",
+        "source_text_sha256": "b2dcf7cf8913fcb5172a690a9a45e692e509b172e74aba7df18e3afa7dd03f6e"
+      },
+      {
+        "id": "text-p-0566",
+        "prefix": "indent",
+        "source_text_sha256": "20a81eff102297902fbf4ec3d4f54571a5ee9769854254b96004a8c9308c8482"
+      },
+      {
+        "id": "text-p-0592",
+        "prefix": "indent",
+        "source_text_sha256": "19f5009be1004a61d716c83a543da42b2da64faea32bceb3e14e91dc16eb0081"
+      },
+      {
+        "id": "text-p-0593",
+        "prefix": "indent",
+        "source_text_sha256": "3f4fabc45f975e1f363f8471957586202e80342bf8125b2c969e2b1dc1529638"
+      },
+      {
+        "id": "text-p-0594",
+        "prefix": "indent",
+        "source_text_sha256": "518a0ebcfaaf8e518f1b97d18d64606c3d4a34342828602d88b79dc0e085329d"
+      },
+      {
+        "id": "text-p-0595",
+        "prefix": "indent",
+        "source_text_sha256": "92ea1aae3c786e556e93a4ea6b475e2f8f403b0143c9b2aa721bf4d28d190376"
+      },
+      {
+        "id": "text-p-0606",
+        "prefix": "indent",
+        "source_text_sha256": "dca7976a2ed5dbdeb093d7bca112c858a9ae9594435093bd1e91fc446e9b5817"
+      },
+      {
+        "id": "text-p-0607",
+        "prefix": "indent",
+        "source_text_sha256": "67263bbb683f64b2c9ac5c0b20b6c878ce6758947e53402b1deb94e47867e32b"
+      },
+      {
+        "id": "text-p-0637",
+        "prefix": "indent",
+        "source_text_sha256": "8e6026900fd922d9e8df54b44f1b35241a244d7bac97bab9935aa1504f3389e8"
+      },
+      {
+        "id": "text-p-0638",
+        "prefix": "indent",
+        "source_text_sha256": "0ccc4102e2050c7b42fa4d54c7ee9695b94abbdfda71e6abc7cd1e5cbb647792"
+      },
+      {
+        "id": "text-p-0639",
+        "prefix": "indent",
+        "source_text_sha256": "08d6eaac933f8f9289dbad382dd9c8c77427200774fcdd8044639109c5fac0a2"
+      },
+      {
+        "id": "text-p-0640",
+        "prefix": "indent",
+        "source_text_sha256": "20f3f79e26a9258c89a06e7e8b4f10eab39e9cafdc3906eff3c882f8988a0ad4"
+      },
+      {
+        "id": "text-p-0641",
+        "prefix": "indent",
+        "source_text_sha256": "f9268dfff5b2920cd8e8be4ecaa89d10ce7c5873ecd681a9b1ff42095742ef74"
+      },
+      {
+        "id": "text-p-0642",
+        "prefix": "indent",
+        "source_text_sha256": "6c15c302cfb36460d67de146ed4180c821f06bd145d02ba99880959823170582"
+      },
+      {
+        "id": "text-p-0643",
+        "prefix": "indent",
+        "source_text_sha256": "702c7baaf4cb608e3dcca37a833eb6e930e9c8a08eadafe1f48b6960fd20ee94"
+      }
+    ],
+    "changed_noindent_to_indent": 59,
+    "tab_positions": [
+      {
+        "id": "text-p-0288",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0289",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0290",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0303",
+        "source_positions": [
+          0,
+          69
+        ],
+        "macros": [
+          "originaltab",
+          "originalinlinetab"
+        ]
+      },
+      {
+        "id": "text-p-0314",
+        "source_positions": [
+          0,
+          74,
+          145,
+          219,
+          283
+        ],
+        "macros": [
+          "originaltab",
+          "originalinlinetab",
+          "originalinlinetab",
+          "originalinlinetab",
+          "originalinlinetab"
+        ]
+      },
+      {
+        "id": "text-p-0315",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0318",
+        "source_positions": [
+          71,
+          147,
+          221,
+          289
+        ],
+        "macros": [
+          "originalinlinetab",
+          "originalinlinetab",
+          "originalinlinetab",
+          "originalinlinetab"
+        ]
+      },
+      {
+        "id": "text-p-0319",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0376",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0413",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0424",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0425",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0426",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0427",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0428",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0465",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0466",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0467",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0468",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0469",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0470",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0472",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0473",
+        "source_positions": [
+          0,
+          1
+        ],
+        "macros": [
+          "originaltab",
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0474",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0475",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0476",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0509",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0510",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0511",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0521",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0522",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0523",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0557",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0558",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0559",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0560",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0561",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0562",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0565",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0566",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0592",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0593",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0594",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0595",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0606",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0607",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0637",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0638",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0639",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0640",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0641",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0642",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      },
+      {
+        "id": "text-p-0643",
+        "source_positions": [
+          0
+        ],
+        "macros": [
+          "originaltab"
+        ]
+      }
+    ],
+    "originalleadingspace": "exactly text-p-0413 source leading space; other explicit spaces unchanged",
+    "global_hashes": {
+      "style.tex": "0cc5717a271e90029f9eece3bdaf841945e87fb72c416994318996a5b7fcb24f",
+      "macros.tex": "811761e2b49067cfda51438c243ae40bf816c8d5375fad229a43cdc70306c28f"
+    },
+    "semantics": "Independent strict source-token projection preserves original text; leading tokens intentionally have zero visual advance and internal tabs print word spaces. No equality of literal PDF whitespace is asserted."
+  },
+  "examined_files": [
+    "RELATORIO_ATUAL.odt",
+    "harness.json",
+    "migration/approvals/ages-i-mariah-style.json",
+    "migration/approvals/ages-i-format-correction.json",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0003.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0007.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0014.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-4.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+    "relatorio_AGES_eduardo/util/style.tex",
+    "relatorio_AGES_eduardo/util/macros.tex"
+  ],
+  "snapshot_directory": "build/ages-i/mariah-style/content-audit",
+  "execution_notes": [
+    "Initial final_checks invocation preceded completion of comparison.json and exited 1; repeated after dependency completion.",
+    "Initial index driver report path was wrong and exited 1; corrected to candidate/document/report.json and final run passed. No source modification resulted."
+  ],
+  "artifacts": {
+    "main.pdf": "9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
+    "main.aux": "9ecee9a5dcd151c19b90d2427b734e3d9fac89c4882d1634011c16b64dfdb5db",
+    "main.toc": "cee371d2466f2bcc7e5b96d0f5be6d54dd7e069fba56f750198fdc35290be6f1",
+    "main.lof": "1693da1c2aaa534aee8f6373669fa89c241d0e6c3024a39ec5575beae1d0f682",
+    "main.bbl": "c3fcfecb6e34996ebfc2f1b900ed3d7976234b2c3f01f5cef166576e30119680",
+    "main.log": "718178fe2b4cf9f10da979f573db4a1d60ec82bb20db5ba5d34d1a2478e5838f",
+    "report.json": "1528fe80baa7d42d5eb2b896fda85daab50e9e83247cbeaa553e7d31933f0406"
   }
 }

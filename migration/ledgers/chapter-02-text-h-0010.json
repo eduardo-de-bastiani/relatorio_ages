@@ -5,11 +5,11 @@
   "conversion_base_commit": "2952f7f",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
+    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
+    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
   },
   "units": {
     "chapter-02-text-h-0010": {
@@ -24,37 +24,40 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b"
+          "target_sha256": "20a9b3dc43d06c3d56d6bd439e3b29e4596ff6ddd182be99faab9a79a0fedacc"
         },
         {
           "source_id": "text-p-0318",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
-          "start_byte": 212,
-          "end_byte": 576,
+          "start_byte": 210,
+          "end_byte": 598,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "inline_tab_layout",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b"
+          "target_sha256": "20a9b3dc43d06c3d56d6bd439e3b29e4596ff6ddd182be99faab9a79a0fedacc"
         },
         {
           "source_id": "text-p-0319",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
-          "start_byte": 592,
-          "end_byte": 710,
+          "start_byte": 614,
+          "end_byte": 720,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b"
+          "target_sha256": "20a9b3dc43d06c3d56d6bd439e3b29e4596ff6ddd182be99faab9a79a0fedacc"
         },
         {
           "source_id": "text-a-0109",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
-          "start_byte": 606,
-          "end_byte": 710,
+          "start_byte": 628,
+          "end_byte": 720,
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b"
+          "target_sha256": "20a9b3dc43d06c3d56d6bd439e3b29e4596ff6ddd182be99faab9a79a0fedacc"
         }
       ],
       "asset_map": [],
@@ -69,7 +72,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0011",
           "source_end_id": "text-bookmark-end-0011",
-          "target_sha256": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b"
+          "target_sha256": "20a9b3dc43d06c3d56d6bd439e3b29e4596ff6ddd182be99faab9a79a0fedacc"
         }
       ],
       "structural_dispositions": [
@@ -111,14 +114,31 @@
           "placeholder_id": "ages-i-architecture",
           "authorization_evidence": "migration/approvals/ages-i-authorization.json",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
-          "start_byte": 716,
-          "end_byte": 831,
-          "target_sha256": "7e001ce23bf124be0ec619c701c2bcbf23f7351e1f96a1406823247e501c405b"
+          "start_byte": 726,
+          "end_byte": 841,
+          "target_sha256": "20a9b3dc43d06c3d56d6bd439e3b29e4596ff6ddd182be99faab9a79a0fedacc"
         }
       ],
       "pending": [
         "Independent content and visual audit, compiled counter verification, normative compliance and human edition approval remain PENDING."
-      ]
+      ],
+      "inline_tab_layout": {
+        "authorization_evidence": "migration/approvals/ages-i-format-correction.json",
+        "source_ids": [
+          "text-p-0318"
+        ]
+      },
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-i-mariah-style.json",
+        "source_ids": [
+          "text-p-0318",
+          "text-p-0319"
+        ]
+      }
     }
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
   }
 }

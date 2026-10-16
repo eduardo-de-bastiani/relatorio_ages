@@ -6,10 +6,16 @@
 \newdimen\ReflectionAvailable
 \newdimen\ReflectionWidth
 \newdimen\ReflectionTotal
-% ODF paragraph default: style:tab-stop-distance="1.251cm".
-% Supported only for the pilot's single leading tab. It also cancels the
-% automatic paragraph indent so the original tab is not counted twice.
-\newcommand{\originaltab}{\noindent\hspace*{1.251cm}}
+% Source leading tabs are retained as reconstructible tokens. The approved
+% reference layout uses one paragraph indent independently of their count.
+\newcommand{\originaltab}{\hspace*{0pt}}
+% Leading source spaces likewise remain explicit without adding a second
+% indentation beside the paragraph indent. Interior/trailing spaces keep
+% originalspace below and retain their ordinary visible width.
+\newcommand{\originalleadingspace}{\hspace*{0pt}}
+% Authorized formatting correction: an internal source tab remains explicit
+% in the unit while rendering as one normal interword space.
+\newcommand{\originalinlinetab}{\unskip\space}
 % Explicit source space survives at paragraph/title edges.
 \newcommand{\originalspace}{\hspace*{\fontdimen2\font}}
 \newcommand{\ReflectionRender}{%
@@ -73,8 +79,11 @@
     Identificador: #1\par Pendência: #2}}\par
 }
 % Captions already carry the original literal "Figure N:" identifier.
-% caption* prevents an extra generated prefix. The same literal caption feeds
-% the derived list; the counter and label still provide live cross-references.
+% caption* prevents an extra generated prefix. ODF paragraph styles P64/P95
+% inherit italics through Figure -> Caption; graphic styles T50/T51/T71/T141
+% add no italic override. The requested output explicitly uses upright shape
+% for the caption and LoF entry while preserving the caption wording.
+% The counter and label still provide live cross-references.
 % The locked engine is XeTeX. Its native reader with an explicit display width
 % handles original JPEG EXIF zero dimensions without rewriting image bytes.
 % AGES I assets are landscape images; full text width fits the page height.
@@ -83,9 +92,9 @@
 \newcommand{\memorialfigure}[5]{%
   \begin{figure}[htbp]
     \refstepcounter{figure}%
-    \caption*{#2}\label{#3}%
-    \addcontentsline{lof}{figure}{#2}%
-    \centering\XeTeXpicfile "#1" width #5\linewidth\relax
+    \caption*{{\normalfont\upshape #2}}\label{#3}%
+    \addcontentsline{lof}{figure}{{\normalfont\upshape #2}}%
+    \noindent\makebox[\linewidth][c]{\XeTeXpicfile "#1" width #5\linewidth\relax}%
     \par\small\SingleSpacing #4\par
   \end{figure}
 }

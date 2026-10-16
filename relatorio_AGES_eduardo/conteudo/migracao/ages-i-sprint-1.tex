@@ -6,37 +6,37 @@
 \addcontentsline{toc}{subsection}{2.3.2 Sprint 1}
 
 % text-p-0465
-\noindent \originaltab{}Após a finalização da Sprint 0, diversos ajustes que haviam sido apontados pelos stakeholder tiveram de ser realizados. Prontamente, eu e outro integrante do time redesenhamos a identidade visual do projeto, alterando todos os protótipos de alta-fidelidade do tablet.\originalspace{}
+\indent \originaltab{}Após a finalização da Sprint 0, diversos ajustes que haviam sido apontados pelos stakeholder tiveram de ser realizados. Prontamente, eu e outro integrante do time redesenhamos a identidade visual do projeto, alterando todos os protótipos de alta-fidelidade do tablet.\originalspace{}
 
 % text-p-0466
-\noindent \originaltab{}Em seguida, separamos o time em dois Squads. O Squad 1 seria responsável pelo desenvolvimento das telas dos tablets, e o Squad 2 pela criação da interface de lojista e administrador. Por estarmos trabalhando com React, uma biblioteca baseada em modularização, ou seja, componentização para reutilização e otimização do trabalho, priorizamos as tasks de criação de componentes que seriam usados na maioria das telas, como Checkboxes, Sliders, Steppers e Carrocéis.\originalspace{}
+\indent \originaltab{}Em seguida, separamos o time em dois Squads. O Squad 1 seria responsável pelo desenvolvimento das telas dos tablets, e o Squad 2 pela criação da interface de lojista e administrador. Por estarmos trabalhando com React, uma biblioteca baseada em modularização, ou seja, componentização para reutilização e otimização do trabalho, priorizamos as tasks de criação de componentes que seriam usados na maioria das telas, como Checkboxes, Sliders, Steppers e Carrocéis.\originalspace{}
 
 % text-p-0467
-\noindent \originaltab{}Antes de iniciarmos a programar de fato, nos autodelegamos as tasks. Eu decidi realizar a task Slider em conjunto com meu colega de time Caio. Começamos criando uma branch para o desenvolvimento da task. Após isso, criamos o componente Slider. Este componente deveria seguir alguns padrões, como identificar o valor numérico em que está localizado, possuir as cores definidas nos protótipos de alta-fidelidade e se adequar às proporções e necessidades de um componente presente em uma tela touch de um tablet.
+\indent \originaltab{}Antes de iniciarmos a programar de fato, nos autodelegamos as tasks. Eu decidi realizar a task Slider em conjunto com meu colega de time Caio. Começamos criando uma branch para o desenvolvimento da task. Após isso, criamos o componente Slider. Este componente deveria seguir alguns padrões, como identificar o valor numérico em que está localizado, possuir as cores definidas nos protótipos de alta-fidelidade e se adequar às proporções e necessidades de um componente presente em uma tela touch de um tablet.
 
 % text-p-0468
-\noindent \originaltab{}Assim sendo, eu e Caio criamos o componente através de um modelo de Slider do Materials UI. Tivemos de modificar as cores do Slider, bem como fixar o tooltip permanentemente. Além disso, para armazenar o valor da posição em que o Thumb do Slider estava localizado, criamos um prop OnChange, para que quando o slider fosse utilizado, o output do Slider fosse recebido pelo Back-end.
+\indent \originaltab{}Assim sendo, eu e Caio criamos o componente através de um modelo de Slider do Materials UI. Tivemos de modificar as cores do Slider, bem como fixar o tooltip permanentemente. Além disso, para armazenar o valor da posição em que o Thumb do Slider estava localizado, criamos um prop OnChange, para que quando o slider fosse utilizado, o output do Slider fosse recebido pelo Back-end.
 
 % text-p-0469
-\noindent \originaltab{}Finalizada a task, enviamos para os AGES III e IV fazerem a Review e aprovarem o merge request. Algumas alterações tiveram de ser feitas para se adequarem aos padrões e boas práticas estabelecidadas no início do projeto. Após isso, o merge com a branch develop foi aprovado.
+\indent \originaltab{}Finalizada a task, enviamos para os AGES III e IV fazerem a Review e aprovarem o merge request. Algumas alterações tiveram de ser feitas para se adequarem aos padrões e boas práticas estabelecidadas no início do projeto. Após isso, o merge com a branch develop foi aprovado.
 
 % text-p-0470
-\noindent \originaltab{}Decidimos então escolher outra task para realizar. Eu e Caio ficamos responsáveis por cria o componente de etapa, que mostra ao usuário qual etapa do fluxograma ele está realizando. Haviam três etapas: Perguntas Pessoais, Questões Gerais e Suplementos. Para realizar a troca de etapas, criamos uma animação em que o componente da etapa em vigor aumentava de tamanho, mudava de cor e transformava o texto em bold. Além disso, tivemos de criar os props setActiveStep e activeStep, responsáveis por realizar a transição de etapas e informar a mesma para o Back-end respectivamente.\originalspace{}
+\indent \originaltab{}Decidimos então escolher outra task para realizar. Eu e Caio ficamos responsáveis por cria o componente de etapa, que mostra ao usuário qual etapa do fluxograma ele está realizando. Haviam três etapas: Perguntas Pessoais, Questões Gerais e Suplementos. Para realizar a troca de etapas, criamos uma animação em que o componente da etapa em vigor aumentava de tamanho, mudava de cor e transformava o texto em bold. Além disso, tivemos de criar os props setActiveStep e activeStep, responsáveis por realizar a transição de etapas e informar a mesma para o Back-end respectivamente.\originalspace{}
 
 \begin{reflection}
 % text-p-0472
-\noindent \originaltab{}Na Sprint 1, tive certa dificuldade com o entendimento dos diretórios do nosso projeto e as regras definidas pelos AGES III e IV. Acredito que tenha tido uma falta de informação em relação aos padrões que deveriam ser seguidos para a construção dos componentes em React.\originalspace{}
+\indent \originaltab{}Na Sprint 1, tive certa dificuldade com o entendimento dos diretórios do nosso projeto e as regras definidas pelos AGES III e IV. Acredito que tenha tido uma falta de informação em relação aos padrões que deveriam ser seguidos para a construção dos componentes em React.\originalspace{}
 
 % text-p-0473
-\noindent \originaltab{}\originaltab{}Após a entrega do nosso primeiro componente, diversos ajustes tiveram de ser feitos, justamente por não haver nenhum documento que tivesse as regras e boas práticas do projeto escritas. Houve sim uma comunicação, porém foi algo apenas verbal.\originalspace{}
+\indent \originaltab{}\originaltab{}Após a entrega do nosso primeiro componente, diversos ajustes tiveram de ser feitos, justamente por não haver nenhum documento que tivesse as regras e boas práticas do projeto escritas. Houve sim uma comunicação, porém foi algo apenas verbal.\originalspace{}
 
 % text-p-0474
-\noindent \originaltab{}Outra situação que incomodou mais ao Caio do que a mim em um primeiro momento, foi o fato de alterações serem feitas sem aviso prévio em nosso componente quando fizemos o Merge Request. Após refletir, compreendi que tal atitude não foi correta por parte do membro da equipe que fez a Review da task. Estávamos dentro do prazo e qualquer alteração necessária poderia ter sido feita por nossa parte. O Review é realizado justamente para aprovar o código caso esteja de acordo com a task, ou recusar e enviar de volta aos responsáveis para que as alterações sejam feitas.\originalspace{}
+\indent \originaltab{}Outra situação que incomodou mais ao Caio do que a mim em um primeiro momento, foi o fato de alterações serem feitas sem aviso prévio em nosso componente quando fizemos o Merge Request. Após refletir, compreendi que tal atitude não foi correta por parte do membro da equipe que fez a Review da task. Estávamos dentro do prazo e qualquer alteração necessária poderia ter sido feita por nossa parte. O Review é realizado justamente para aprovar o código caso esteja de acordo com a task, ou recusar e enviar de volta aos responsáveis para que as alterações sejam feitas.\originalspace{}
 
 % text-p-0475
-\noindent \originaltab{}Faço também um autojulgamento. A task já havia sido retornada para nós\originalspace{}\originalspace{}para que algumas alterações fossem feitas. Mesmo assim, por falta de atenção, deixamos algumas mudanças pendentes. Acredito que, vendo nossa situação, o membro da equipe que realizou a Review decidiu nos poupar de retornar a task novamente e a finalizou por conta própria.
+\indent \originaltab{}Faço também um autojulgamento. A task já havia sido retornada para nós\originalspace{}\originalspace{}para que algumas alterações fossem feitas. Mesmo assim, por falta de atenção, deixamos algumas mudanças pendentes. Acredito que, vendo nossa situação, o membro da equipe que realizou a Review decidiu nos poupar de retornar a task novamente e a finalizou por conta própria.
 
 % text-p-0476
-\noindent \originaltab{}Esse e outros problemas que o time enfrentou durante a Sprint 1 foram comentados na retrospectiva. Acredito que todos compreenderam seus erros e estavam dispostos a realizar um trabalho ainda melhor na Sprint seguinte.
+\indent \originaltab{}Esse e outros problemas que o time enfrentou durante a Sprint 1 foram comentados na retrospectiva. Acredito que todos compreenderam seus erros e estavam dispostos a realizar um trabalho ainda melhor na Sprint seguinte.
 
 \end{reflection}

@@ -1,3 +1,7 @@
+> **Histórico substituído:** este parecer trata de um PDF anterior. A revisão vigente, o aceite visual do usuário e a autorização para AGES II estão em [CURRENT_REVIEW.md](CURRENT_REVIEW.md). Os parâmetros reutilizáveis constam de [STYLE_GUIDE.md](../STYLE_GUIDE.md).
+
+> **Registro histórico:** a revisão foi reaberta e corrigida depois do candidato descrito abaixo. A situação vigente consta em [CURRENT_REVIEW.md](CURRENT_REVIEW.md); o aceite visual e a reutilização do padrão foram registrados em `migration/approvals/ages-i-presentation-accepted.json`.
+
 # AGES I / Easy Choose — entrega para revisão humana
 
 Resultado: **15 unidades convertidas e auditadas; aprovação humana PENDING**. PDF de 17 páginas, SHA-256 `c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f`. O commit que produziu os fontes/PDF auditados é `25319d941aa0c7c227dd80094b0b25f582be68b6`. Os commits posteriores de documentação/manifesto não alteram esses fontes. A branch de trabalho é `migration/ages-i`; nenhuma outra participação foi migrada.

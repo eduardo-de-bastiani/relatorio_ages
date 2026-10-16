@@ -33,9 +33,12 @@ def main():
     decoded[entry["heading_id"]] = title.group(1).replace(r"\originalspace{}", " ")
     for match in re.finditer(r"^% (text-p-\d+)\n([^\n]+)", tex, re.M):
         value = match.group(2)
-        assert value.startswith(r"\noindent "), "Unexpected paragraph wrapper"
-        value = value[len(r"\noindent "):]
-        value = value.replace(r"\originaltab{}", "\t").replace(r"\originalspace{}", " ")
+        wrapper = re.match(r"\\(?:indent|noindent)\s+", value)
+        assert wrapper, "Unexpected paragraph wrapper"
+        value = value[wrapper.end():]
+        value = (value.replace(r"\originaltab{}", "\t")
+                      .replace(r"\originalleadingspace{}", " ")
+                      .replace(r"\originalspace{}", " "))
         decoded[match.group(1)] = value
     assert set(decoded) == set(entry["source_record_ids"])
     for record_id in entry["source_record_ids"]:

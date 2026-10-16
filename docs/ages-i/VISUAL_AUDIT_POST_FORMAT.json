@@ -1,0 +1,141 @@
+{
+  "audit": "visual-post-format",
+  "edition": "AGES I / Easy Choose",
+  "pdf": "build/document/main.pdf",
+  "pdf_sha256": "3543f768de00b24de46fc09a615eec241ffe22197040e0a55e118ecba848e7f4",
+  "pages": 19,
+  "page_size": "A4",
+  "overall_status": "PASS_WITH_PENDING",
+  "summary": "All 19 pages visually inspected. Page 2 has no visible pretextual page number; page 7 shows all five technology items, their descriptions and documentation lines in order without bullets; page 17 shows the requested degree symbol and the callout reads 'Figura 5', with the number linked to page 18. Figure 5 on page 18 is horizontally centered. No confirmed visual defects remain. Manual identification of all five image sources remains pending.",
+  "auditor_scope": {
+    "modified_memorial": false,
+    "modified_global_styles": false,
+    "inspected_every_page": true,
+    "render_directory": "/tmp/ages-i-postformat/final-3543f7"
+  },
+  "checks": [
+    {
+      "name": "pdf_hash_and_metadata",
+      "status": "PASS",
+      "command": "sha256sum build/document/main.pdf && pdfinfo build/document/main.pdf",
+      "exit_code": 0,
+      "evidence": "SHA-256 matches pdf_sha256; 19 A4 pages."
+    },
+    {
+      "name": "render_all_pages",
+      "status": "PASS",
+      "command": "pdftoppm -png -r 90 build/document/main.pdf /tmp/ages-i-postformat/final-3543f7/page",
+      "exit_code": 0,
+      "evidence": "Generated page-01.png through page-19.png."
+    },
+    {
+      "name": "text_extraction_and_pagination",
+      "status": "PASS",
+      "command": "pdftotext -layout build/document/main.pdf /tmp/ages-i-postformat/final-3543f7/main.txt",
+      "exit_code": 0,
+      "evidence": "TOC hierarchy and page assignments align with rendered pages."
+    },
+    {
+      "name": "pdf_link_annotations",
+      "status": "PASS",
+      "command": "python3 script using pypdf to enumerate /Annots and /URI destinations",
+      "exit_code": 0,
+      "evidence": "Repository destinations, documentary reference destinations, TOC links, and figure links are present."
+    },
+    {
+      "name": "xml_link_text_inspection",
+      "status": "PASS",
+      "command": "pdftohtml -xml -hidden build/document/main.pdf /tmp/ages-i-postformat/final-3543f7/current.xml",
+      "exit_code": 0,
+      "evidence": "Repository and reference annotations correspond to URLs; the Figure 5 callout reads 'Figura 5' and the numeric anchor targets page 18: 'Figura <a href=\"current.html#18\">5.</a>'."
+    },
+    {
+      "name": "figure_5_vertical_placement",
+      "status": "PASS",
+      "command": "pdftohtml -xml -hidden build/document/main.pdf /tmp/ages-i-postformat/final-3543f7/current.xml",
+      "exit_code": 0,
+      "evidence": "The final float is vertically balanced on page 18: page height 1262 px; caption y=400; image y=429–863; source y=892."
+    },
+    {
+      "name": "previous_to_current_raster_comparison",
+      "status": "PASS",
+      "command": "Python SHA-256 comparison of page-01.png through page-19.png against prior render",
+      "exit_code": 0,
+      "evidence": "Pages 7 and 8 changed after marker removal; pages 1–6 and 9–19 are raster-identical."
+    },
+    {
+      "name": "manual_visual_review",
+      "status": "PASS",
+      "command": "Direct inspection of all 19 PNG renders",
+      "exit_code": null,
+      "evidence": "No clipping, overlap, blank page, isolated Sprint title, or centering defect. The page 17 callout visibly reads 'Figura 5' with the number linked to page 18."
+    },
+    {
+      "name": "technology_list_without_markers",
+      "status": "PASS",
+      "command": "pdftotext -f 7 -l 7 -layout build/document/main.pdf - and direct inspection of page-07.png",
+      "exit_code": 0,
+      "evidence": "TypeScript, React, Node.js, Prisma, and PostgreSQL each occur once, in that order, with descriptions and documentation lines; the bullet glyph `•` occurs zero times. The render is legible and does not clip text."
+    }
+  ],
+  "findings": [
+    {
+      "id": "VF-001",
+      "title": "Manual identification of figure sources",
+      "status": "PENDING",
+      "severity": "human-review",
+      "pages": [3, 5, 6, 18],
+      "evidence": "All five figure source lines visibly state that identification is pending. The user reserved source identification for manual review.",
+      "action": "User identifies and supplies verified sources for Figures 1–5; no source was inferred during this audit."
+    },
+    {
+      "id": "VF-002",
+      "title": "Figure 5 occupies a dedicated float page",
+      "status": "PASS",
+      "severity": "none",
+      "pages": [17, 18],
+      "evidence": "On page 18 (1262 px tall in pdftohtml XML), caption begins at y=400, image spans y=429–863, and source is at y=892. The block has about 400 px of whitespace above and 355 px below; it is vertically balanced. The substantial image and its caption/source occupy about 40% of page height, and page 17 contains a direct Figure 5 callout.",
+      "impact": "The final float consumes a page by itself; it does not create a nearly empty or visibly unbalanced page.",
+      "classification": "Acceptable consequence of the final float; no composition correction recommended from this PDF."
+    },
+    {
+      "id": "VF-003",
+      "title": "Figure 5 callout spacing and link boundary",
+      "status": "PASS",
+      "severity": "none",
+      "pages": [17],
+      "evidence": "The visual rendering and pdftotext show 'O registro do projeto selecionado está na Figura 5.' The pdftohtml XML shows 'Figura <a href=\"current.html#18\">5.</a>'; the word is intact, the space is visible, and the number points to page 18.",
+      "impact": "No defect remains in the figure callout.",
+      "action": "No correction required."
+    }
+  ],
+  "pages_detail": [
+    {"page": 1, "status": "PASS", "evidence": "TOC hierarchy and right-aligned page numbers are legible; internal links are present."},
+    {"page": 2, "status": "PASS", "evidence": "Portuguese list of illustrations, five entries, no visible pretextual page number."},
+    {"page": 3, "status": "PASS_WITH_PENDING", "evidence": "Introduction and centered Figure 1; internal figure reference resolves; image source pending."},
+    {"page": 4, "status": "PASS", "evidence": "Repository links appear within prose and their URL targets are verified; database placeholder is clearly provisional."},
+    {"page": 5, "status": "PASS_WITH_PENDING", "evidence": "Architecture placeholder is clearly provisional; Figure 2 centered and legible; image source pending."},
+    {"page": 6, "status": "PASS_WITH_PENDING", "evidence": "Figures 3 and 4 are centered, legible, and labeled; image sources pending."},
+    {"page": 7, "status": "PASS", "evidence": "No markers as requested. Extraction confirms TypeScript, React, Node.js, Prisma, and PostgreSQL, each once and in order, with descriptions and documentation lines; visible layout is legible and unclipped."},
+    {"page": 8, "status": "PASS", "evidence": "Final technology paragraph continues at the top, followed by section 2.3 and Sprint 0 on the same page; no artificial page break."},
+    {"page": 9, "status": "PASS", "evidence": "Sprint 0 reflection box remains intact; Sprint 1 heading is followed by text on the same page."},
+    {"page": 10, "status": "PASS", "evidence": "Sprint 1 continuation; no isolated headings or clipping."},
+    {"page": 11, "status": "PASS", "evidence": "Sprint 1 reflection ends before Sprint 2; Sprint 2 starts with text on the same page."},
+    {"page": 12, "status": "PASS", "evidence": "Sprint 2 continues; reflection box begins and continues to page 13 with border."},
+    {"page": 13, "status": "PASS", "evidence": "Reflection continuation closes cleanly; Sprint 3 title is followed by body text."},
+    {"page": 14, "status": "PASS", "evidence": "Sprint 3 prose and reflection are legible and unclipped."},
+    {"page": 15, "status": "PASS", "evidence": "Sprint 4 prose and reflection remain within margins."},
+    {"page": 16, "status": "PASS", "evidence": "Prior reflection ends; conclusion follows without orphan heading or artificial break."},
+    {"page": 17, "status": "PASS", "evidence": "Requested `°` symbol in `2° e 4° JK` is present and legible. Figure 5 callout renders and extracts as `Figura 5`; the 5 links to page 18."},
+    {"page": 18, "status": "PASS_WITH_PENDING", "evidence": "Figure 5 is centered with caption above and source below; its source identity remains pending. The float is alone on the page, but XML geometry shows a balanced block (caption y=400, image y=429–863, source y=892 in a 1262 px page), with about 400 px above and 355 px below; page 17 has a direct callout."},
+    {"page": 19, "status": "PASS", "evidence": "References and URLs are legible and clickable with consistent spacing; the page is not blank."}
+  ],
+  "not_applicable": [
+    {"item": "Other AGES editions", "status": "NOT_APPLICABLE", "reason": "This PDF contains AGES I only; other editions are outside the audit scope."}
+  ],
+  "limitations": [
+    "This is a visual PDF audit and does not certify complete ABNT compliance or editorial content accuracy.",
+    "The audit applies only to the PDF with the hash recorded above; a later rebuild requires re-audit.",
+    "Image provenance was not checked or inferred; it remains for manual user identification."
+  ]
+}

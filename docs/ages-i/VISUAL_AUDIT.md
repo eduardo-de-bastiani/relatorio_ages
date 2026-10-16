@@ -1,59 +1,57 @@
-# Auditoria visual independente — AGES I
+# Auditoria visual independente — nova inspeção AGES I
 
-Estado vigente: **PASS no G7 visual da versão corrigida**, com pendências documentais, de representação, normativas e humanas separadas. Revisor: subagente Codex `ages_i_visual_audit`, papel visual independente. Não houve execução Antigravity.
+**G7: PASS para este PDF, com uma observação de acabamento de baixa gravidade. Aceite humano: PENDING.** Revisão nova por Codex, subagente `/root/mariah_style_visual_auditor`, independente da autoria; não Antigravity. Pareceres anteriores não foram usados como evidência visual ou aprovação.
 
-PDF examinado: `build/ages-i/visual-audit/initial-0903a4ec.pdf`, SHA-256 `0903a4ecb1cf1486fc05dde3df72a6ec12e11e7e3cc8c7d428c8fd2f0b47b61a`; commit de origem `ea4b3ee8cad8b441a04730817a91078bc2b83a2a`. Todas as páginas físicas **1–17** foram abertas individualmente, legíveis, em renders150dpi. Hashes individuais e comandos constam no JSON anexo. Preparar renders não foi tratado como aprovação.
+PDF examinado: `build/ages-i/mariah-format-redo/candidate/main.pdf`
 
-## Histórico da primeira versão — falhas corrigidas
+SHA-256: `b0cf8bffb96c157c9d152c8f7627506018bb94adbbd84afca6eb33374d90a344`
 
-| ID | Estado | Página / evidência | Consequência, correção e retorno |
+Abri individualmente todas as 19 páginas em `build/visual/b0cf8bffb96c157c/page-01.png` até `page-19.png`, em 827×1170 pixels, aproximadamente 100 dpi, com texto legível. O JSON registra cada hash e observação. Não compilei nem alterei o memorial.
+
+## Referência e método
+
+Reabri os renders das páginas físicas 9, 12, 14 e 17 do PDF somente leitura da Mariah, SHA-256 `ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420`. Comparei mancha, recuos, interlinha, hierarquia, sumário e legendas. Nenhuma captura adicional do usuário estava disponível no contexto deste subagente; não alego comparação com captura indisponível.
+
+Li exatamente `relatorio_AGES_eduardo/main.tex`, `util/style.tex` e `util/macros.tex`, com hashes no JSON. Essa leitura identifica a implementação usada, mas não substitui a inspeção da saída. As conclusões abaixo vêm do PDF/renders; extração Poppler complementou a identificação de fontes e posições.
+
+A fonte corporal é NimbusSanL regular de 12 pt incorporada. O passo de linha medido é 21,668–21,669 bp, com mancha esquerda em x85,03937 bp; o sumário usa títulos em x144,74448 bp e indicativos em x85,03937 bp. Esses parâmetros e a aparência dos recuos correspondem à referência. Capítulo e seções são negritados; subseções e Sprints são regulares. A4 de aproximadamente 595,28×841,89 bp.
+
+## Achados e verificações
+
+| ID / estado | Arquivo e página | Evidência / gravidade | Correção proposta e verificação |
 |---|---|---|---|
-| VAI01 | FAIL, alta | p4: Tecnologias inicia antes das Figures3/4; bullet React fica sozinho. p5: figuras dos protótipos. p6: descrição React. | Contexto interrompido. Mantenedor deve conter floats antes de Tecnologias e manter rótulo do item com primeiro parágrafo. Recompilar e inspecionar sequência. |
-| VAI02 | FAIL, alta | p13: somente duas linhas no topo; reflexão curta da Sprint4 começa p14. | Vazio artificial. Corrigir cálculo de espaço da caixa após quebra natural; verificar todas reflexões e fluxo da Sprint4. |
-| VAI03 | PENDING, média | p3: tabs internos em `text-p-0303`, `text-p-0314`, `text-p-0318`; lacunas mais evidentes em Arquitetura. | Avanço fixo1.251cm mantém tokens; não equivale aos próximos tab stops ODF. Texto legível sem corte. Manter diferença documentada para decisão humana, sem normalização silenciosa. |
+| VR-01 / PASS | `util/macros.tex` e unidades com figuras; 2/3/5/6/18 | As cinco legendas e entradas da lista estão em romano, com `Figure N:` em negrito. Descrições sem itálico residual; legenda acima e fonte abaixo de cada imagem. | Nenhuma. Renders e fontes do PDF conferidos. |
+| VR-02 / PASS | Unidades de repositório, banco, arquitetura, protótipos e tecnologias; 4/5/7/8 | Todas as âncoras de repositório, Wiki e documentação estão em romano. Itens e descrições tecnológicas também estão em romano e compactos. TypeScript conserva sublinhado, sem inclinação. | Nenhuma para o pedido de romano. Renders e NimbusSanL-Regu nas âncoras conferidos. |
+| VR-03 / OBSERVATION | `conteudo/migracao/chapter-02-text-h-0012.tex`; 7–8 | `Documentação PostgreSQL` ficou sozinha no topo da 8, após a descrição na 7. Baixa gravidade: o vínculo visual fica mais fraco, embora legível e sem perda. Não é título órfão. | O conversor testou `samepage` no último item PostgreSQL; o PDF reproduzido manteve o mesmo SHA-256 `b0cf8bffb96c157c9d152c8f7627506018bb94adbbd84afca6eb33374d90a344` e a âncora continuou isolada. O wrapper foi revertido por não ajudar e por bloqueio da validação de escopo. Nenhuma alteração segura aplicada; manter a observação leve para revisão humana. Nenhuma alternativa não testada é declarada validada. |
+| VR-04 / PASS | `conteudo/migracao/ages-i-sprint-0.tex` até `ages-i-sprint-4.tex`; 8–17 | Sprints no fluxo; títulos nas páginas 8/9/11/13/15, todos acompanhados de texto. Reflexões 2/4 dividem-se em 12–13/15–16, com bordas íntegras. | Nenhuma. Todas as páginas examinadas. |
 
-Os dois FAILs foram comunicados ao orquestrador antes deste relatório. Correções globais pertencem ao mantenedor; o auditor não alterou memorial, macros, ledger ou mídia.
+As âncoras em romano atendem à instrução explícita do usuário, que prevalece sobre os links itálicos visíveis na referência da Mariah. Não há itálico residual nas categorias solicitadas: âncoras, legendas/descrições de figuras ou itens/descrições tecnológicas.
 
-## Verificações positivas da primeira versão
+Há itálico localizado na narrativa das páginas 15–17: por exemplo `Schema`, `path`, `hooks`, `links`, `seed`, `User Experience`, `StakeHolders`, `Sprint Reviews`, `Easy Choose`, `Selenium` e `SonarQube`. Esses casos não pertencem às categorias acima. Não se declara que o documento inteiro esteja sem itálico.
 
-- Corpo sans-serif Helvetica compatível (`NimbusSanL` incorporada),12pt; reflexão com a mesma família/tamanho, bordas sem sobreposição. Sprint0 divide naturalmente entre p7–8, redesenhando a borda.
-- Sprints1/2/4 iniciam em fluxo nas p8/9/12; Sprint3 inicia p11 após p10 quase cheia. Nenhum título de Sprint ficou órfão.
-- A4 595.28×841.89pt. Bbox da numeração em todas17p: topo56.693615pt, borda direita538.5828pt, isto é, aproximadamente2cm de topo/direita; corpo inicia x85.039pt≈3cm e termina x538.597pt≈2cm. O limite físico inferior não foi ultrapassado. Espaçamento ordinário visualmente uniforme; medição de configuração acompanhada por PDF real.
-- Cinco captions literais Figure1–5 acima das imagens e aparato de fonte pendente abaixo. Figure1 JPEG de metadados atípicos renderiza completo e na orientação correta. Screenshots preservados; títulos e conteúdo principal legíveis, com microtexto inerente à imagem menor.
-- p3: dois placeholders explicitamente provisórios, sem simulação de diagrama; não aparecem na lista das cinco figuras reais.
-- Sumário e lista de ilustrações na p1 são aparatos derivados; destinos e páginas conferem nesta versão. Sua presença conjunta não é tratada como duplicação autoral, mas a apresentação final e a norma integral permanecem pendentes.
-- p16 é página de float da Figure5 após a conclusão; espaço de composição legítimo, sem texto cortado. p17 separa cinco referências de documentação consultadas em2026, com aviso expresso sobre ausência de comprovação histórica.
+## Cobertura das 19 páginas
 
-Comparação somente visual: PDF de Mariah, página física12, renderizado readonly em 100 dpi. Hierarquia sans-serif, densidade, recuos e espaçamento oferecem acabamento semelhante. Nenhuma narrativa, autoria ou metadado foi transferido.
-
-## Limites e rastreabilidade
-
-Fontes das cinco imagens, diagramas ausentes, conformidade normativa integral e aprovação humana da edição: **PENDING**. Tabelas e notas autorais: **NOT_APPLICABLE**, ausentes nesta edição. Limpeza do log de compilação não neutraliza falha visual. A reavaliação final abaixo vincula novo hash/commit e abriu todas as páginas novamente.
-
-Lidos: AGENTS, CONTEXT, MIGRATION_PLAN, STYLE_GUIDE, QUALITY_GATES, PENDENCIAS, EXECUTION_PLAN, papel visual-auditor, skill local pdf-visual-audit e skill PDF global; PDF/log/relatório de build e arquivos globais/unidade citados apenas para diagnóstico. Alterados pelo auditor: somente este relatório e `VISUAL_AUDIT.json`; temporários em `build/ages-i/visual-audit` e renders do CLI em `build/visual`.
-
-Comandos Poppler (`pdffonts`, `pdftotext -bbox`, `pdftohtml`, `pdftoppm` comparativo) e SHA-256: saída0. `visual --pdf ... --dpi150` foi realmente executado com argumento separado `--dpi 150`: saída3 prevista por revisão humana pendente, ferramentas internas0. Tentativas de importar `fitz`/`lxml` falharam (saída1); nenhuma instalação foi realizada, e medição foi concluída com Poppler/XML da biblioteca padrão. Hash do ODT conferido: `e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef`.
-
-## Reavaliação final
-
-**PASS visual G7** no PDF de 17 páginas SHA-256 `c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f`, commit `25319d941aa0c7c227dd80094b0b25f582be68b6`. Snapshot imutável: `build/ages-i/review/c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f/main.pdf`. Reabertas individualmente todas as páginas físicas **1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17**, em renders 150 dpi; hashes individuais conferidos e registrados no JSON. Nenhuma nova falha visual foi observada.
-
-| Evidência final | Resultado |
+| Páginas | Inspeção efetiva |
 |---|---|
-| VAI01, p5–7 | PASS: Figures2–4 permanecem nos Protótipos, p5–6; Tecnologias começa p7. React e sua descrição estão juntos p7. |
-| VAI02, p13–14 | PASS: Sprint4 inicia em fluxo p13; reflexão segue o texto p14 e a Conclusão começa abaixo. Eliminado o vazio artificial. |
-| VAI03, p4 | PENDING: os três parágrafos com tabs internos permanecem legíveis, com lacunas largas e documentadas. Avanço fixo1.251cm não simula próximos tab stops ODF. Aceitação da representação pertence ao checkpoint humano. |
-| Reflexões | PASS: Sprint0 p8–9, Sprint1 p10–11 e Sprint2 p11–12 dividem com borda redesenhada e mesma fonte; Sprint3 p13 e Sprint4 p14 sem corte/sobreposição. |
-| Fluxo das Sprints | PASS:0 p8,1 p9,2 p11,3 p12,4 p13. Todos iniciam em fluxo; títulos acompanhados de texto. |
-| Aparatos e figuras | PASS visual: sumário p1 e lista de ilustrações p2 separados; cinco destinos de figuras3/5/6/6/16 conferidos; placeholders p4 fora da lista. Figure5 agora itálica também em p16 e na lista p2, consistente com original. |
-| Imagens e fontes | PASS de renderização: Figure1 p3 orientada/correta, screenshots p5–6 legíveis em seus elementos principais, cinco legendas acima e cinco fontes explicitamente pendentes abaixo. Microtexto das imagens permanece limitado pela escala/arquivo de origem. |
-| Página de figura p16 | Espaço legítimo de composição do float após a conclusão; imagem/legenda/fonte íntegros. |
-| Referências p17 | Cinco referências atuais claramente separadas da narrativa, com nota da consulta de2026 e limite sobre versões históricas. |
+| 1–2 | Sumário com seis entradas alinhadas, destinos 3/3/4/8/16/19 conferidos; lista com cinco figuras, rótulos negritados e descrições romanas. |
+| 3 | Capítulo e introdução legíveis; Figure 1 inteira no contexto da introdução, sem corte, fonte pendente abaixo. |
+| 4–5 | Repositórios/Wikis romanos e sem gaps internos; placeholders do banco/arquitetura inteiros, explicitamente provisórios e junto das respectivas seções. Arquitetura continua naturalmente na 5 antes de Protótipos. Figure 2 completa. |
+| 6 | Figures 3–4 completas, rótulos negritados, descrições romanas e fontes abaixo; página legítima de figuras. |
+| 7–8 | Lista compacta; React inteiro na 7. Observação sobre a documentação PostgreSQL no topo da 8. Fechamento de Tecnologias e Sprint 0 contínuos. |
+| 9–10 | Reflexão 0 inteira na 9 e Sprint 1 com parágrafo na mesma página; continuação na 10 sem vazio artificial. |
+| 11–13 | Reflexão 1 inteira na 11; Sprint 2 acompanhada de cinco linhas. Reflexão 2 divide-se em 12–13; Sprint 3 continua na 13. |
+| 14–16 | Reflexão 3 inteira; Sprint 4 na 15 e reflexão 4 dividida em 15–16; conclusão começa na 16 com texto suficiente. |
+| 17–18 | Conclusão legível; Figure 5 inteira em página legítima de float na 18, com legenda e fonte. |
+| 19 | Referências documentais legíveis, URLs sem corte e ressalva explícita de que consulta atual não prova versões históricas. |
 
-Medição final independente por `pdftotext -bbox` e XML da biblioteca padrão, saída0: números impressos p2–17 têm topo56.693615pt e borda direita538.5828pt≈2cm das bordas A4; margem esquerda de corpo85.03937pt≈3cm e limite direito538.597115pt≈2cm. p1 do sumário não imprime numeral: composição pré-textual/numeração integral permanece assunto normativo pendente. `pdffonts`, saída0, confirma NimbusSanL regular/negrito/itálico incorporadas. Corpo/reflexão permanecem12pt Helvetica compatível; numeral10pt, sem glifo ausente observado.
+Não observei corte, sobreposição, glifo ausente, título isolado, página vazia ou página corporal artificialmente quase vazia. O espaço livre dos índices e referências é compatível com o conteúdo; a página 18 acomoda uma figura completa. Nenhuma figura de protótipo interrompe Tecnologias. Nenhum placeholder é apresentado como diagrama real ou incluído entre as cinco ilustrações.
 
-Hashes finais conferidos: log `d8360bd7a833d83c5766eb5b76075db62b912f865b66753bd585669698745683`; macro `66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082`. Relatório de build identificado com o mesmo commit/PDF apresenta retorno0 e nenhum finding; foi usado como evidência complementar, após exame real das páginas. O CLI visual final foi preparado pelo orquestrador; o auditor leu seu relatório e verificou hashes/abriu todos os renders, sem alegar nova execução de build.
+## Limites e estados
 
-**PENDING separado do PASS G7:** fontes/autoria das cinco imagens; disponibilidade atual dos seis links de projeto; aceitação dos gaps de tabs; dois diagramas reais ainda ausentes; conformidade ABNT integral e decisões finais pré-textuais; aprovação humana da AGES I. Não há aprovação automática de nenhum desses itens. **NOT_APPLICABLE:** tabelas e notas autorais, ausentes nesta edição.
+PASS restrito ao G7 deste PDF, com VR-03 como recomendação de acabamento. Não significa identidade absoluta com Mariah: preservam-se `Figure`, pontuação original, reflexões com borda e fonte corporal divisível, dois placeholders e fontes pendentes. A paginação menor uniforme não reproduz a variação de tamanho da referência. Não há aprovação humana nem promoção permanente do padrão.
 
-Na reavaliação o auditor alterou exclusivamente `docs/ages-i/VISUAL_AUDIT.md` e `.json`; nenhuma fonte LaTeX, ledger, macro, mídia ou conteúdo de Mariah foi escrita.
+**PENDING:** aceite humano deste PDF/AGES I; fontes das cinco imagens; diagramas reais; disponibilidade dos links de projeto; certificação normativa integral. **NOT_APPLICABLE:** tabelas e notas autorais ausentes. Integridade textual integral pertence ao parecer de conteúdo; não foi inferida da aparência.
+
+Comandos executados: `pdfinfo`, `sha256sum` do candidato/referência, `pdftotext -bbox`, `pdftohtml -xml -hidden -i -stdout`, `pdffonts`, parsers XML/fontes em memória e `git rev-parse HEAD`, todos com retorno 0. Os 19 renders do candidato e quatro da referência foram abertos via `view_image`. Li os três arquivos de configuração indicados; nenhuma fonte foi modificada.
+
+Branch real no commit `e5a367d438fe865223879ed4742d52379e563335`, com candidato de trabalho. Escritas desta tarefa: somente `docs/ages-i/VISUAL_AUDIT.md` e `.json`. Nenhum commit, aceite humano, autorização de outra edição ou promoção permanente foi criado.

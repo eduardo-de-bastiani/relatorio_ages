@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "kind": "user_presentation_correction_authorization",
+  "status": "authorized_for_execution_pending_human_review",
+  "quoted_instruction": "Sobre as alterações que você pontuou, pode aplicar todas, exceto aquelas que nós precisamos validar manualmente cada uma, como por exemplo a identificação da fonte de cada uma das imagens, e isso eu vou fazer manualmente. Sobre os links dos repositórios, nós temos que fazer da mesma maneira que a Mariah fez, que é colocar como forma de texto, por exemplo: \"mais informações podem ser encontradas no repositório Easy Choose API\" (com um link direto para o repositório, com já existe). Então esses pontos nós precisamos fazer muito similar à Mariah, nessa questão de estrutura. E mais pra frente, depois que fizermos toda a estruturação de todas as edições da AGES, nós vamos começar a melhorar questões como conteúdo do relatório.",
+  "scope": "AGES I / Easy Choose only",
+  "execution_authorized": true,
+  "human_approval": null,
+  "future_projects_approved": false,
+  "manual_pending": [
+    "Identifying the source/provenance of each of the five real images"
+  ],
+  "approved_presentation_changes": {
+    "figure_caption_labels": {
+      "text-p-0293": "Figura 1 – Foto do time – AGES I",
+      "text-p-0328": "Figura 2 – Tela inicial do tablet – AGES I",
+      "text-p-0356": "Figura 3 – Tela de Gerência do Administrador - AGES I",
+      "text-p-0372": "Figura 4 – Tela de produtos de lojista – AGES I",
+      "text-p-0650": "Figura 5 – Projeto Destaque 2024/1 – AGES I"
+    },
+    "section_numbering": {
+      "text-h-0002": "2 PROJETO AGES I – EASY CHOOSE",
+      "text-h-0022": "2.4 Conclusão"
+    },
+    "figure_cross_references": {
+      "text-p-0290": {
+        "suffix": " A equipe está retratada na Figura~\\ref{ages-i:draw-image-0001}."
+      },
+      "text-p-0325": {
+        "replace_suffix": {
+          "from": ":",
+          "to": " (Figuras~\\ref{ages-i:draw-image-0002} a~\\ref{ages-i:draw-image-0004}):"
+        }
+      },
+      "text-p-0642": {
+        "suffix": " O registro do projeto selecionado está na Figura\\hspace{0.6em}\\hyperref[fig:ages-i-projeto-destaque]{\\ref*{fig:ages-i-projeto-destaque}}."
+      }
+    },
+    "list_markers": {
+      "text-list-0025": {
+        "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+        "item_count": 5,
+        "tex_environment": "\\begin{itemize}[label={},leftmargin=0pt,labelsep=0pt]",
+        "visible_marker": "suppressed"
+      }
+    }
+  },
+  "repository_links": {
+    "text-a-0105": {
+      "href": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin",
+      "source_anchor": "Repositório EasyChooseAdmin",
+      "prefix": "Mais informações podem ser encontradas no repositório ",
+      "anchor": "Easy Choose Admin",
+      "suffix": "."
+    },
+    "text-a-0106": {
+      "href": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista",
+      "source_anchor": "Repositório EasyChooseStore",
+      "prefix": "Mais informações podem ser encontradas no repositório ",
+      "anchor": "Easy Choose Store",
+      "suffix": "."
+    },
+    "text-a-0107": {
+      "href": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+      "source_anchor": "Repositório EasyChooseApi",
+      "prefix": "Mais informações podem ser encontradas no repositório ",
+      "anchor": "Easy Choose API",
+      "suffix": "."
+    }
+  },
+  "list_marker_instruction": "You're are not following Mariah's practices of formatting. You must follow the same pattern as she is. I have uploaded some printscreens of her memorial so you can use it as a reference. Not only that, you are also using useless spacings, italic in links and picture descriptions and bullet points. This goes totally against ABNT practices. Do it again, but YOU MUST USE Mariah's memorial as reference. Her structure is the goal"
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "authorization_id": "ages-i-mariah-format-redo",
+  "kind": "user_formatting_correction_authorization",
+  "status": "proposed_for_human_review",
+  "source_message": "You're are not following Mariah's practices of formatting. You must follow the same pattern as she is. I have uploaded some printscreens of her memorial so you can use it as a reference. Not only that, you are also using useless spacings, italic in links and picture descriptions and bullet points. This goes totally against ABNT practices. Do it again, but YOU MUST USE Mariah's memorial as reference. Her structure is the goal",
+  "baseline_commit": "e5a367d438fe865223879ed4742d52379e563335",
+  "baseline_pdf_sha256": "9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
+  "scope": {
+    "edition": "AGES I / Easy Choose",
+    "unit_ids": [
+      "chapter-02-text-h-0002",
+      "chapter-02-text-h-0003",
+      "chapter-02-text-h-0007",
+      "chapter-02-text-h-0008",
+      "chapter-02-text-h-0009",
+      "chapter-02-text-h-0010",
+      "chapter-02-text-h-0011",
+      "chapter-02-text-h-0012",
+      "chapter-02-text-h-0014",
+      "ages-i-sprint-0",
+      "ages-i-sprint-1",
+      "ages-i-sprint-2",
+      "ages-i-sprint-3",
+      "ages-i-sprint-4",
+      "chapter-02-text-h-0022"
+    ],
+    "reference": "relatorio_mariah/relatorio_ages-main/extracted/main.pdf and user-uploaded screenshots; readonly",
+    "actions": [
+      "Correct visual spacing that exceeds the measured reference while retaining the source text and paragraph order.",
+      "Remove italic styling added to figure captions when the source ODT styles are upright.",
+      "Present link anchors in upright, unadorned text as requested explicitly by the user; preserve each exact href and anchor text.",
+      "Keep list items upright and compact, retaining source list structure and wording.",
+      "Run content and visual audits and produce a review PDF and logs."
+    ]
+  },
+  "reference_conflict": {
+    "fact": "The Mariah screenshots and source mark link anchor text in italics.",
+    "resolution": "Apply the user's explicit instruction that links should not be italic; use the Mariah layout/spacing/heading structure for the remaining presentation."
+  },
+  "future_projects_approved": false,
+  "promoted_to_reusable_policy": false,
+  "human_presentation_approval": null,
+  "notes": [
+    "The ABNT claim is recorded as the user's rationale, not as a verified normative citation.",
+    "No other AGES edition or the Hoortech client experience is in scope.",
+    "No commit or permanent style-guide change is authorized by this record."
+  ]
+}

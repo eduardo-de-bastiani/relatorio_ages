@@ -5,11 +5,11 @@
   "conversion_base_commit": "2952f7f",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
+    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
+    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
   },
   "units": {
     "chapter-02-text-h-0002": {
@@ -20,11 +20,12 @@
           "source_id": "text-h-0002",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0002.tex",
           "start_byte": 187,
-          "end_byte": 221,
+          "end_byte": 219,
           "serializations": [
+            "abnt_section_numbering",
             "original_whitespace"
           ],
-          "target_sha256": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d"
+          "target_sha256": "2c5b4ac38951425fc9b6665f5fe6329fc426a8856744b3ac14964ef8e18c1b07"
         }
       ],
       "asset_map": [],
@@ -39,7 +40,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0003",
           "source_end_id": "text-bookmark-end-0003",
-          "target_sha256": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d"
+          "target_sha256": "2c5b4ac38951425fc9b6665f5fe6329fc426a8856744b3ac14964ef8e18c1b07"
         },
         {
           "source_heading_id": "text-h-0002",
@@ -51,7 +52,7 @@
           "end_byte": 151,
           "source_start_id": "text-bookmark-start-0004",
           "source_end_id": "text-bookmark-end-0004",
-          "target_sha256": "1348a21e70c3d62a8021d20fc4e509e05c2a2c1d2e2d0cd842e4e1289191c15d"
+          "target_sha256": "2c5b4ac38951425fc9b6665f5fe6329fc426a8856744b3ac14964ef8e18c1b07"
         }
       ],
       "structural_dispositions": [
@@ -79,7 +80,21 @@
       "approved_apparatus": [],
       "pending": [
         "Independent content and visual audit, compiled counter verification, normative compliance and human edition approval remain PENDING."
-      ]
+      ],
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-i-mariah-style.json",
+        "source_ids": []
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-i-presentation-corrections.json",
+        "source_ids": [
+          "text-h-0002"
+        ]
+      }
     }
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
   }
 }

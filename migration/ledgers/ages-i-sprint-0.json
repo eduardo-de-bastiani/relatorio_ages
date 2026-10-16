@@ -16,91 +16,106 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0413",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 356,
-          "end_byte": 789,
+          "start_byte": 354,
+          "end_byte": 794,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0415",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 815,
-          "end_byte": 1288,
-          "serializations": [],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "start_byte": 818,
+          "end_byte": 1291,
+          "serializations": [
+            "reference_paragraph_layout",
+            "original_whitespace"
+          ],
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0417",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 1314,
-          "end_byte": 1753,
-          "serializations": [],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "start_byte": 1315,
+          "end_byte": 1754,
+          "serializations": [
+            "reference_paragraph_layout",
+            "original_whitespace"
+          ],
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0419",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 1779,
-          "end_byte": 2102,
-          "serializations": [],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "start_byte": 1778,
+          "end_byte": 2101,
+          "serializations": [
+            "reference_paragraph_layout",
+            "original_whitespace"
+          ],
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0424",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 2216,
-          "end_byte": 2395,
+          "start_byte": 2213,
+          "end_byte": 2392,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0425",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 2421,
-          "end_byte": 2881,
+          "start_byte": 2416,
+          "end_byte": 2876,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0426",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 2907,
-          "end_byte": 3178,
+          "start_byte": 2900,
+          "end_byte": 3171,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0427",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 3204,
-          "end_byte": 3874,
+          "start_byte": 3195,
+          "end_byte": 3865,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         },
         {
           "source_id": "text-p-0428",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex",
-          "start_byte": 3900,
-          "end_byte": 4241,
+          "start_byte": 3889,
+          "end_byte": 4230,
           "serializations": [
-            "original_whitespace"
+            "original_whitespace",
+            "reference_paragraph_layout"
           ],
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4"
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9"
         }
       ],
       "asset_map": [],
@@ -177,16 +192,34 @@
           "command": "hypertarget",
           "start_byte": 118,
           "end_byte": 167,
-          "target_sha256": "fdfae7392f3ae9ffbc6e02006577fa5d1a087bc763a079e460481eb11a6c38e4",
+          "target_sha256": "e667294d31de3226ea27f86c68837678284c43d79bee59b471ad12c3ed19d5e9",
           "evidence": "Original text:bookmark-start and matching text:bookmark-end enclose original heading; zero visible text.",
           "source_start_id": "text-bookmark-start-0016",
           "source_end_id": "text-bookmark-end-0016"
         }
-      ]
+      ],
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-i-mariah-style.json",
+        "source_ids": [
+          "text-p-0413",
+          "text-p-0415",
+          "text-p-0417",
+          "text-p-0419",
+          "text-p-0424",
+          "text-p-0425",
+          "text-p-0426",
+          "text-p-0427",
+          "text-p-0428"
+        ]
+      }
     }
   },
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
+    "sha256": "42b86a56d50c7c22ff986ddb1cda450a2f160da33e99b5ed3b76e089eb08575c"
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
   }
 }

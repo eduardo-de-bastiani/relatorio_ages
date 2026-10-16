@@ -20,6 +20,7 @@ def main():
         source = work / "source"
         source.mkdir()
         shutil.copytree(destination / "util", source / "util")
+        shutil.copytree(destination / "bibliografia", source / "bibliografia")
         shutil.copytree(Path.home() / ".cache" / "tectonic", work / "cache" / "tectonic")
         preamble = r"""\documentclass[a4paper,12pt,oneside,chapter=TITLE,english,brazil]{abntex2}
 \input{util/style.tex}\input{util/macros.tex}
@@ -28,6 +29,7 @@ def main():
 \section{Continuity}
 \subsection{First synthetic unit}
 Synthetic verification “curly quotes” – symbols.
+Literal degree marker: 2°.
 \begin{reflection}
 """
         paragraphs = "\n\n".join(
@@ -71,8 +73,9 @@ The second title follows preceding text without a mandatory page break.
             if text.count("Synthetic paragraph %d." % number) != 1:
                 raise AssertionError("Paragraph missing/duplicated: %d" % number)
         assert "“curly quotes” – symbols." in text
+        assert "Literal degree marker: 2°." in text
         assert "Second synthetic unit" in text
-        print("PASS: 60 synthetic paragraphs retained once; Unicode glyphs and breakable borders compile.")
+        print("PASS: 60 synthetic paragraphs retained once; the literal degree sign, Unicode glyphs, and breakable borders compile.")
         return 0
 
 

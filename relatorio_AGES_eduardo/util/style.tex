@@ -15,9 +15,16 @@
 \renewcommand{\ABNTEXsectionfont}{\normalfont\sffamily\bfseries}
 \renewcommand{\ABNTEXsubsectionfont}{\normalfont\sffamily}
 \setlength{\afterchapskip}{24pt}
-\setlength{\parindent}{1.25cm}
-\setlength{\parskip}{0pt}
-\OnehalfSpacing
+% Match the measured reference PDF: first-line offset 17.559bp (17.625pt).
+% The reference class leaves parskip at its normal stretchable default.
+\setlength{\parindent}{17.625pt}
+\setlength{\parskip}{0pt plus 1pt}
+% Mariah uses the literal factor 1.5, which yields a 21.669bp baseline step
+% with the locked 12pt toolchain; memoir's OnehalfSpacing yields 17.933bp.
+\renewcommand{\baselinestretch}{1.5}
+% enumitem is loaded by the locked abntex2 class. Compact only itemize's
+% vertical glue; the list margins/labels and body leading stay class-defined.
+\setlist[itemize]{topsep=0pt,partopsep=0pt,itemsep=0pt,parsep=0pt}
 % NBR 14724:2024 (corrected 2025), 5.1: smaller, uniform pagination.
 % 10pt is the presentation choice. The measured numeral top and right edge
 % are 2cm from the page edges (5.3); only the numeral moves, not the body.
@@ -28,6 +35,85 @@
 \makeevenhead{simple}{\memorialpagenumber}{}{}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
+% abntex2 serializes its own changetocdepth; apply the reference depth after it.
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+% The sumário exposes all authored subsection levels in this edition.
+% Explicit font resets retain the reference's bold chapter/section entries.
+\setlength{\cftlastnumwidth}{59.929pt}
+\cftsetindents{chapter}{0pt}{\cftlastnumwidth}
+\cftsetindents{section}{0pt}{\cftlastnumwidth}
+\cftsetindents{subsection}{0pt}{\cftlastnumwidth}
+\renewcommand{\cftchapterfont}{\normalfont\normalsize\sffamily\bfseries}
+\renewcommand{\cftchapterpagefont}{\cftchapterfont}
+\renewcommand{\cftsectionfont}{\normalfont\normalsize\sffamily\bfseries}
+\renewcommand{\cftsectionpagefont}{\cftsectionfont}
+\renewcommand{\cftsubsectionfont}{\normalfont\normalsize\sffamily}
+\renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+
+% Literal author-numbered headings use the same numberline layout as generated
+% headings. Match only a complete leading numeric indicator plus its separator;
+% Exactly one ordinary separator space is accepted; repeated whitespace,
+% unmatched titles and existing numberline entries pass through unchanged.
+% Capture token lists without expansion, so originalspace and accents survive.
+% Delegate to hyperref's final writer to retain the original destination anchor.
+\ExplSyntaxOn
+% The source chapter carries its literal numeric indicator inside chapter*.
+% Give only such titles the reference's left alignment; unnumbered apparatus
+% headings retain abntex2's centered appearance and original token lists.
+\cs_new_eq:NN \memorial_saved_printchaptertitle:n \printchaptertitle
+\cs_set_protected:Npn \printchaptertitle #1
+  {
+    \regex_match:nnTF { \A [0-9]+ \x{20} } {#1}
+      { \chaptitlefont \raggedright \ABNTEXchapterupperifneeded{#1} }
+      { \memorial_saved_printchaptertitle:n {#1} }
+  }
+
+\seq_new:N \l_memorial_toc_parts_seq
+\tl_new:N \l_memorial_toc_number_tl
+\tl_new:N \l_memorial_toc_title_tl
+\cs_new_protected:Npn \memorial_toc_write:nnn #1#2#3
+  {
+    \str_if_eq:nnTF {#1} {toc}
+      {
+        \clist_if_in:nnTF {chapter,section,subsection} {#2}
+          {
+            \regex_extract_once:nnNTF
+              { \A ([0-9]+ (?: \.[0-9]+ )* \.? (?: \x{20} - )?) \x{20} (\S.*) \Z }
+              {#3} \l_memorial_toc_parts_seq
+              {
+                \seq_pop_left:NN \l_memorial_toc_parts_seq \l_memorial_toc_title_tl
+                \seq_pop_left:NN \l_memorial_toc_parts_seq \l_memorial_toc_number_tl
+                \seq_pop_left:NN \l_memorial_toc_parts_seq \l_memorial_toc_title_tl
+                % Starred chapter hooks indent unnumbered entries in abntex2.
+                % This entry has an explicit number, so restore its number column.
+                \str_if_eq:nnT {#2} {chapter}
+                  {
+                    \addtocontents{toc}
+                      {\protect\cftsetindents{chapter}{0pt}{\protect\cftlastnumwidth}}
+                  }
+                \use:x
+                  {
+                    \exp_not:N \memorial_saved_addcontentsline:nnn {#1}{#2}
+                      {
+                        \exp_not:N \protect \exp_not:N \numberline
+                          {\exp_not:V \l_memorial_toc_number_tl}
+                        \exp_not:V \l_memorial_toc_title_tl
+                      }
+                  }
+              }
+              { \memorial_saved_addcontentsline:nnn {#1}{#2}{#3} }
+          }
+          { \memorial_saved_addcontentsline:nnn {#1}{#2}{#3} }
+      }
+      { \memorial_saved_addcontentsline:nnn {#1}{#2}{#3} }
+  }
+\AtBeginDocument
+  {
+    \cs_new_eq:NN \memorial_saved_addcontentsline:nnn \addcontentsline
+    \cs_set_eq:NN \addcontentsline \memorial_toc_write:nnn
+  }
+\ExplSyntaxOff
 \widowpenalty=10000
 \clubpenalty=10000
 % Additional legal interword stretch is attempted before accepting overflow.
@@ -35,18 +121,26 @@
 \setlength{\emergencystretch}{1em}
 % Tectonic uses XeTeX; active Unicode characters select existing T1 glyphs.
 % Literal source characters remain literal in the unit for traceability.
-\catcode`“=\active \def“{\textquotedblleft}
-\catcode`”=\active \def”{\textquotedblright}
-\catcode`‘=\active \def‘{\textquoteleft}
-\catcode`’=\active \def’{\textquoteright}
-\catcode`–=\active \def–{\textendash}
-\catcode`—=\active \def—{\textemdash}
+\catcode`“=\active \def“{\textquotedblleft{}}
+\catcode`”=\active \def”{\textquotedblright{}}
+\catcode`‘=\active \def‘{\textquoteleft{}}
+\catcode`’=\active \def’{\textquoteright{}}
+\catcode`–=\active \def–{\textendash{}}
+\catcode`—=\active \def—{\textemdash{}}
+
+% Nimbus Sans/T1 maps a literal degree sign to the wrong extracted glyph.
+% Keep the source character literal while rendering it through textcomp's glyph.
+\catcode`°=\active \def°{\textdegree{}}
 
 % Keep URL glyphs in the body family; the frozen cache has no T1 lmtt font.
 \urlstyle{same}
 % ABNT author-date bibliography; metadata is curated separately.
 \usepackage{csquotes}
 \usepackage[backend=biber,style=abnt]{biblatex}
+\AtBeginBibliography{%
+  \SingleSpacing
+  \setlength{\bibitemsep}{\baselineskip}%
+}
 % The 2018 brazil alias otherwise traverses brazilian twice in biblatex 3.17.
 % Select the canonical ABNT locale explicitly; diagnostics stay enabled.
 \DeclareLanguageMapping{brazil}{brazilian-abnt}

@@ -1,12 +1,12 @@
 {
-  "schema_version": 1,
+  "schema_version": 4,
   "status": "PASS",
-  "phase": "final_visual_review_completed_with_separate_pending_items",
-  "reviewer": "Codex subagent ages_i_visual_audit, independent visual role; not Antigravity",
-  "commit": "25319d941aa0c7c227dd80094b0b25f582be68b6",
-  "pdf": "build/ages-i/review/c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f/main.pdf",
-  "pdf_sha256": "c9621fdb46bd2818cf84d606b0355c5ec3a6ccbcbe7fb8295cdc46f706cfe90f",
-  "page_count": 17,
+  "qualification": "Uma observação de acabamento de baixa gravidade; sem defeito visual bloqueante nas categorias solicitadas.",
+  "audit_mode": "Fresh independent inspection; previous reports not used as visual evidence",
+  "reviewer": "Codex subagent /root/mariah_style_visual_auditor; independente da autoria; não Antigravity",
+  "pdf": "build/ages-i/mariah-format-redo/candidate/main.pdf",
+  "pdf_sha256": "b0cf8bffb96c157c9d152c8f7627506018bb94adbbd84afca6eb33374d90a344",
+  "page_count": 19,
   "inspected_pages": [
     1,
     2,
@@ -24,302 +24,305 @@
     14,
     15,
     16,
-    17
+    17,
+    18,
+    19
   ],
   "page_evidence": [
     {
-      "path": "build/visual/c9621fdb46bd2818/page-01.png",
-      "sha256": "39fb4ccd119133c91231cfaa947fe32fe4f681ba87bc988018e8bea4a7dfaaf6",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-02.png",
-      "sha256": "1ca06a4abe87b56e517f2bcc1a3395bf0e35111799c09dcf85be4172cbde86e2",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-03.png",
-      "sha256": "c79f433a783f8bc2f02b536f270509ad999f303505bb202d81c0efc59ed5526b",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-04.png",
-      "sha256": "d4b8223f98754697d86340e305f6e63e530152e31af68b7d5ce877ade99797b9",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-05.png",
-      "sha256": "3518912158e1b71fd837545b84f79a3d152cf23bc03c28dcb66f253386414069",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-06.png",
-      "sha256": "f33d2d969abce0a57a0ac2386231861e03a6644ec806f1ad74abee9cb31aa697",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-07.png",
-      "sha256": "596e0dab2a518ef417678b1580a69c781369f388e3a506c598173f694b7c648d",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-08.png",
-      "sha256": "e16536290777194c2dca3ea1f270b254ef8e7084c8dab8700956549af86dce0c",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-09.png",
-      "sha256": "f29ab7d67cd7971e9fc46cc122b1376dd0f2a9ab97e0a029fbd69ecfda2f366f",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-10.png",
-      "sha256": "b46659e61a4b5db9da221240afeb7d095a0ed66a5132ee0fee6f058726fde08e",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-11.png",
-      "sha256": "3ee28e4f70c6c8150947e3cb1e7ada6a63410041b25fb4463891bfee3e2fc504",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-12.png",
-      "sha256": "99b3a94d813a68350d5af997852804f170a2f81ef5175244d96e633bd40e9382",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-13.png",
-      "sha256": "f8b1c0e12dde301823e59c778b779282372eb83a396b17e97a2d4c3bc4da7b45",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-14.png",
-      "sha256": "4b85770c0045d56db158293c47aaed7bf2494f3238249ff7c4c698d4e3cc9428",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-15.png",
-      "sha256": "3bd4c99cbd6cc23c660a6224306db0a33453b800ee5ee2f99ab112da798ad04a",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-16.png",
-      "sha256": "4ac71847edc4537fee45409ef3a5c830f395e1d41110b01b2588cc68b193c0b4",
-      "inspected": true,
-      "hash_verified": true
-    },
-    {
-      "path": "build/visual/c9621fdb46bd2818/page-17.png",
-      "sha256": "faab18b280096cc58b9cf59ebe696aedb517ecf79f2f1303272a58d35885bb69",
-      "inspected": true,
-      "hash_verified": true
-    }
-  ],
-  "findings": [
-    {
-      "id": "VAI01",
-      "status": "PASS",
-      "severity": "alta",
-      "pages": [
-        4,
-        5,
-        6
+      "page": 1,
+      "path": "build/visual/b0cf8bffb96c157c/page-01.png",
+      "sha256": "b1f1482a23177c2943d704d83ab4c56f9bc07f4e4f2f51098250e1ca80d35daa",
+      "dimensions_px": [
+        827,
+        1170
       ],
-      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex; main.tex",
-      "evidence": "Título Tecnologias e bullet React aparecem na p4 antes das Figures 3/4, que ocupam p5; descrição React só começa p6.",
-      "consequence": "Figuras saem do contexto dos protótipos e interrompem o item React.",
-      "proposed_correction": "Mantenedor conter floats antes de Tecnologias; preservar item e primeiro parágrafo juntos.",
-      "verification": "Recompilar e inspecionar páginas de protótipos/tecnologias e sumário atualizado.",
-      "resolution": {
-        "pages": [
-          5,
-          6,
-          7
-        ],
-        "evidence": "Protótipos e Figures2–4 ocupam5–6; Tecnologias só inicia7. React rótulo/descrição/documentação juntos7; não há interrupção por figuras."
-      }
+      "inspected": true,
+      "notes": "Sumário com seis entradas alinhadas; destinos 3/3/4/8/16/19 conferidos."
     },
     {
-      "id": "VAI02",
-      "status": "PASS",
-      "severity": "alta",
-      "pages": [
-        13,
-        14
+      "page": 2,
+      "path": "build/visual/b0cf8bffb96c157c/page-02.png",
+      "sha256": "22e483ee481a448243cde2b6e06900d7a5d6719d0bedd6cd1053712d8f1da519",
+      "dimensions_px": [
+        827,
+        1170
       ],
-      "file": "relatorio_AGES_eduardo/util/macros.tex",
-      "evidence": "p13 contém apenas duas linhas de continuação da Sprint4; reflexão curta inicia na p14, deixando quase toda p13 vazia.",
-      "consequence": "Vazio artificial incompatível com fluxo contínuo e caixa divisível.",
-      "proposed_correction": "Mantenedor corrigir cálculo de espaço após page builder/quebra natural, sem mudar conteúdo.",
-      "verification": "Recompilar, inspecionar Sprint4 e todas reflexões, testar quebra natural no mecanismo.",
-      "resolution": {
-        "pages": [
-          13,
-          14
-        ],
-        "evidence": "Sprint4 inicia13; texto e reflexão seguem14 sem página quase vazia. Conclusão inicia14 após caixa."
-      }
+      "inspected": true,
+      "notes": "Lista de cinco ilustrações: rótulos Figure N em negrito e descrições em romano."
     },
     {
-      "id": "VAI03",
-      "status": "PENDING",
-      "severity": "média",
-      "pages": [
-        4
+      "page": 3,
+      "path": "build/visual/b0cf8bffb96c157c/page-03.png",
+      "sha256": "159490ec9436f22f7ba832b1e082d06e0dbb9ed031bc944a2f8312c84f2be143",
+      "dimensions_px": [
+        827,
+        1170
       ],
-      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex; chapter-02-text-h-0009.tex; chapter-02-text-h-0010.tex",
-      "source_ids": [
-        "text-p-0303",
-        "text-p-0314",
-        "text-p-0318"
+      "inspected": true,
+      "notes": "Capítulo e introdução legíveis; Figure 1 íntegra e contextual; descrição em romano, rótulo em negrito, fonte abaixo."
+    },
+    {
+      "page": 4,
+      "path": "build/visual/b0cf8bffb96c157c/page-04.png",
+      "sha256": "00714d22ced8f3d992f4304f95582a6b05f371df5ccfc64ee393f6e4a1cd89ec",
+      "dimensions_px": [
+        827,
+        1170
       ],
-      "evidence": "Tabs internos produzem lacunas visíveis, sobretudo em Arquitetura, sem sobreposição ou cortes.",
-      "consequence": "Avanço fixo1.251cm preserva tokens, mas não reproduz próximos tab stops ODF após recomposição de linhas.",
-      "proposed_correction": "Manter representação fiel documentada e submeter ao checkpoint humano; não normalizar whitespace.",
-      "verification": "Comparador estrito de tokens e inspeção dos três parágrafos na versão final."
-    }
-  ],
-  "measurements": {
-    "page_points": [
-      595.28,
-      841.89
-    ],
-    "pagination_top_points": 56.693615,
-    "pagination_right_points": 56.6972,
-    "body_left_points": 85.039,
-    "body_right_points_approx": 56.683,
-    "body_font": "NimbusSanL-Regu, Helvetica-compatible, embedded",
-    "body_font_points": 12,
-    "pagination_font_points": 10,
-    "pagination_pages": [
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17
-    ],
-    "pagination_page1": "Sumário page1 has no printed page numeral; final pretextual numbering and normative certification remain pending."
-  },
-  "pass": [
-    "All17 final page images reopened individually via view_image at150dpi",
-    "No overlap, missing glyph, clipping or artificial nearly blank body page observed",
-    "Figure1 JPEG renders upright/complete on3",
-    "Five literal italic Figure1–5 captions above; source pending below;Figure5 also italic on16 and LoF2",
-    "Prototype figures remain before Technologies; React is complete on7",
-    "Two provisional diagram boxes on4 excluded from five real figures on LoF2",
-    "Reflection0 divides8–9, reflection1 divides10–11, reflection2 divides11–12; borders redrawn with body font; reflections3/4 on13/14",
-    "All Sprint titles continue existing flow:0 on8,1 on9,2 on11,3 on12,4 on13; no orphan title",
-    "TOC1 and LoF2 separate; destinations correspond to final page numbers",
-    "Documentary references17 explicitly distinguish current curation from historical project versions"
-  ],
-  "pending": [
-    "Five figure sources unknown and visibly pending",
-    "Six original project links current availability unverified",
-    "Fixed-step internal tabs representation in text-p-0303/0314/0318 (page4), human acceptance pending",
-    "Two actual diagrams absent; provisional placeholders accepted for this conversion only",
-    "Complete normative certification and final pretextual/pagination decisions",
-    "Human approval of AGES I"
-  ],
-  "not_applicable": [
-    "No tables or authorial notes in AGES I"
-  ],
-  "commands": [
-    {
-      "command": "python3 scripts/migration.py visual --pdf build/ages-i/visual-audit/initial-0903a4ec.pdf --dpi150 (actual option: --dpi 150)",
-      "returncode": 3,
-      "note": "Rendering succeeds; CLI deliberately awaits human review; internal Poppler commands0."
+      "inspected": true,
+      "notes": "Repositórios e Wikis em romano; sem gaps internos; placeholder do banco inteiro e provisório."
     },
     {
-      "command": "pdffonts build/document/main.pdf",
-      "returncode": 0
+      "page": 5,
+      "path": "build/visual/b0cf8bffb96c157c/page-05.png",
+      "sha256": "8abe599be2a24e2984f1126dbca998ad96c693b0010675e0af811175154dbb90",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Placeholder da arquitetura contextual, inteiro e provisório; Protótipos e Figure 2 completos."
     },
     {
-      "command": "sha256sum build/document/main.pdf RELATORIO_ATUAL.odt",
-      "returncode": 0
+      "page": 6,
+      "path": "build/visual/b0cf8bffb96c157c/page-06.png",
+      "sha256": "735be4d67022ae9e05e9531f8f9fbeaca3d2479e8ae99277641329e7f9ce7c3d",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Figures 3–4 completas, rótulos em negrito, descrições em romano e fontes abaixo."
     },
     {
-      "command": "pdftotext -bbox initial PDF; XML stdlib bbox extraction",
-      "returncode": 0
+      "page": 7,
+      "path": "build/visual/b0cf8bffb96c157c/page-07.png",
+      "sha256": "3d0a6860e2b6d76bd231217843bb87fa0a2c6d2267556dc8db80c5c71f959b48",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Lista tecnológica compacta e em romano; React inteiro; descrição PostgreSQL termina aqui."
     },
     {
-      "command": "pdftohtml -xml -hidden -i -stdout initial PDF",
-      "returncode": 0
+      "page": 8,
+      "path": "build/visual/b0cf8bffb96c157c/page-08.png",
+      "sha256": "eb596e4038aace6119b9cfd9e1bb9fcfaa36068d1198d89a4c7ced6785d8c3ac",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Âncora Documentação PostgreSQL isolada no topo; fechamento de Tecnologias e Sprint 0 no fluxo."
     },
     {
-      "command": "pdftoppm -f12 -l12 -r100 -png -singlefile Mariah readonly PDF",
-      "returncode": 0
+      "page": 9,
+      "path": "build/visual/b0cf8bffb96c157c/page-09.png",
+      "sha256": "3f823c896070f688d466da3d405c0ce13ccbae325ccb649920e7c7fb3f914a85",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Reflexão 0 completa; Sprint 1 começa com parágrafo no mesmo fluxo, sem título órfão."
     },
     {
-      "command": "Python import fitz; Python import lxml",
-      "returncode": 1,
-      "note": "Unavailable; no dependency installed; stdlib XML and Poppler used successfully."
+      "page": 10,
+      "path": "build/visual/b0cf8bffb96c157c/page-10.png",
+      "sha256": "b9438305777f7c81d6e73c7ac7ed5b35aff659b500236072295861ddbf666302",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Continuação Sprint 1 sem corte, overflow ou gaps artificiais."
     },
     {
-      "command": "Final SHA256 and git rev-parse HEAD",
-      "returncode": 0
+      "page": 11,
+      "path": "build/visual/b0cf8bffb96c157c/page-11.png",
+      "sha256": "7d7bf90c6ad58ffd1c92f46cf8633be8ccf1018765c99a1f10e993b48bcbbf67",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Reflexão 1 completa; Sprint 2 com cinco linhas de texto antes da quebra natural."
     },
     {
-      "command": "pdftotext -bbox build/document/main.pdf - | Python stdlib XML extraction (stdout)",
-      "returncode": 0
+      "page": 12,
+      "path": "build/visual/b0cf8bffb96c157c/page-12.png",
+      "sha256": "a59bd597610c7557a2d5ad2e90c4dd280a3cdac1561a5ba0b7f0ffe5812d1c8a",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Sprint 2 e primeiro segmento da reflexão 2; texto e borda íntegros."
     },
     {
-      "command": "pdffonts build/document/main.pdf",
-      "returncode": 0
+      "page": 13,
+      "path": "build/visual/b0cf8bffb96c157c/page-13.png",
+      "sha256": "cc82f8f90f412eed7bd05edfd34d3529285113f8fb28fe428350f174edf4aa55",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Final da reflexão 2 e início da Sprint 3 no fluxo."
     },
     {
-      "command": "sha256sum build/document/main.log relatorio_AGES_eduardo/util/macros.tex",
-      "returncode": 0
+      "page": 14,
+      "path": "build/visual/b0cf8bffb96c157c/page-14.png",
+      "sha256": "b8737bb746fccb0dabaff4a8d68fa60f081f66999fed73b61aa311175f7c1981",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Continuação Sprint 3 e reflexão 3 completa; bordas íntegras."
+    },
+    {
+      "page": 15,
+      "path": "build/visual/b0cf8bffb96c157c/page-15.png",
+      "sha256": "84f6ee7070e25fa2300aeec7d30824cfbcdd424535c4ea2cd91c60ac6b9f5d26",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Sprint 4 e primeiro segmento reflexão 4; itálicos narrativos ainda visíveis fora das categorias solicitadas."
+    },
+    {
+      "page": 16,
+      "path": "build/visual/b0cf8bffb96c157c/page-16.png",
+      "sha256": "d2be486c331a526504abb3c5de34e15fb5422408215bccfc82bfd03cf7b34f6b",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Final reflexão 4 e conclusão no fluxo, sem título isolado."
+    },
+    {
+      "page": 17,
+      "path": "build/visual/b0cf8bffb96c157c/page-17.png",
+      "sha256": "17277d57cfef59556ce6d8a2eb11e30d4e1b365591500726c5c0b998c9ea4420",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Conclusão; itálicos narrativos localizados, sem aplicação às categorias solicitadas."
+    },
+    {
+      "page": 18,
+      "path": "build/visual/b0cf8bffb96c157c/page-18.png",
+      "sha256": "5febf8c3ae5416c1d8369810918832f1aabee5030e862c8a49b887627e391cce",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Figure 5 inteira em página legítima de float; rótulo negrito, descrição romana, fonte abaixo."
+    },
+    {
+      "page": 19,
+      "path": "build/visual/b0cf8bffb96c157c/page-19.png",
+      "sha256": "f3c3f6d9034613ec48415dcbb280e05ea7e72bbb408d3dc3674f0fa4dfdd6549",
+      "dimensions_px": [
+        827,
+        1170
+      ],
+      "inspected": true,
+      "notes": "Referências documentais legíveis e ressalva histórica explícita; sem URL cortada."
     }
   ],
   "comparison": {
-    "source": "relatorio_mariah/relatorio_ages-main/extracted/main.pdf",
-    "inspected_physical_pages": [
-      12
+    "pdf": "relatorio_mariah/relatorio_ages-main/extracted/main.pdf",
+    "sha256": "ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420",
+    "reopened_reference_physical_pages": [
+      9,
+      12,
+      14,
+      17
     ],
-    "use": "Readonly visual metric: sans-serif hierarchy, text density, indents and spacing; no content transferred."
+    "purpose": "Mancha, recuo, interlinha, hierarquia e estilo das legendas; fonte somente leitura.",
+    "screenshots_limit": "Nenhuma captura adicional do usuário foi apresentada neste contexto de subagente; não se alega comparação com captura indisponível."
   },
-  "limitations": "PASS restricted to visual rendering of final identified PDF. Tab gaps remain explicit presentation limitation. No current project URL availability, source authorship, complete ABNT conformity or human approval inferred. No Antigravity invocation.",
-  "history": [
+  "template_read": {
+    "relatorio_AGES_eduardo/main.tex": "1e99dcb2c865160bb34b88670034a71117ec67a50305095b11535c62fb9c4a2f",
+    "relatorio_AGES_eduardo/util/style.tex": "e65364b8ca522406d5dec713a308495fadcfdc5afea03adfa2ec3e522e1cbaee",
+    "relatorio_AGES_eduardo/util/macros.tex": "965a9d7ed83d615aadd5183a0f76fd2d1878368896c5484348f38e74aa1f3a8c"
+  },
+  "template_role": "Leitura da implementação usada, sem tomar configuração como prova suficiente de saída; conclusões visuais baseadas no PDF/renders.",
+  "measurements": {
+    "body_pitch_bp": [
+      21.668,
+      21.669
+    ],
+    "body_left_bp": 85.03937,
+    "toc_title_x_bp": 144.74448,
+    "toc_number_x_bp": 85.03937,
+    "page_bp": [
+      595.28,
+      841.89
+    ],
+    "pagination_top_bp": 56.693615,
+    "body_font": "NimbusSanL-Regu 12 pt embedded; bold and italic variants embedded",
+    "italic_scope": "Itálico narrativo ainda visível em 15–17, como Schema/path/hooks/links/seed, User Experience, StakeHolders, Sprint Reviews, Easy Choose, Selenium e SonarQube. Não se encontra nas legendas/descrições de figuras, âncoras nem itens tecnológicos solicitados."
+  },
+  "findings": [
     {
-      "status": "FAIL",
-      "commit": "ea4b3ee8cad8b441a04730817a91078bc2b83a2a",
-      "pdf": "build/ages-i/visual-audit/initial-0903a4ec.pdf",
-      "pdf_sha256": "0903a4ecb1cf1486fc05dde3df72a6ec12e11e7e3cc8c7d428c8fd2f0b47b61a",
-      "page_count": 17,
-      "inspected_pages": [
-        1,
+      "id": "VR-01",
+      "status": "PASS",
+      "pages": [
         2,
         3,
-        4,
         5,
         6,
+        18
+      ],
+      "file": "relatorio_AGES_eduardo/util/macros.tex; figure-bearing units",
+      "evidence": "As cinco legendas e entradas da lista usam Figure N em negrito, descrição em romano, sem itálico residual. Fontes abaixo das imagens.",
+      "severity": "none",
+      "proposed_fix": "Nenhuma.",
+      "check": "Renders 2/3/5/6/18 e fontes extraídas do PDF."
+    },
+    {
+      "id": "VR-02",
+      "status": "PASS",
+      "pages": [
+        4,
+        5,
         7,
+        8
+      ],
+      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex até chapter-02-text-h-0012.tex",
+      "evidence": "Âncoras de repositório, Wiki e documentação em romano; itens e descrições da lista tecnológica em romano e compactos. TypeScript conserva sublinhado, sem inclinação; sublinhado não é itálico.",
+      "severity": "none",
+      "proposed_fix": "Nenhuma para o pedido de romano.",
+      "check": "Inspeção dos renders e pdftohtml identifica NimbusSanL-Regu nas âncoras."
+    },
+    {
+      "id": "VR-03",
+      "status": "OBSERVATION",
+      "pages": [
+        7,
+        8
+      ],
+      "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+      "evidence": "Documentação PostgreSQL aparece sozinha no topo da página 8; sua descrição termina na página 7. Não há título órfão nem perda de texto.",
+      "severity": "low",
+      "consequence": "O vínculo visual entre a descrição e sua documentação fica mais fraco.",
+      "proposed_fix": "Nenhuma alteração segura aplicada; manter a observação leve para revisão humana.",
+      "check": "Segundo relato do conversor, samepage foi testado ao redor do último item PostgreSQL, mas o PDF reproduzido manteve SHA-256 b0cf8bffb96c157c9d152c8f7627506018bb94adbbd84afca6eb33374d90a344 e a âncora continuou isolada. O wrapper foi revertido porque não ajudou e a validação de escopo o bloqueou. Nenhuma alternativa não testada foi validada. O PASS das 19 páginas continua vinculado ao mesmo PDF."
+    },
+    {
+      "id": "VR-04",
+      "status": "PASS",
+      "pages": [
         8,
         9,
         10,
@@ -331,143 +334,60 @@
         16,
         17
       ],
-      "page_evidence": [
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-01.png",
-          "sha256": "b0356380a99d6304bc8c35e1e07932e7468dd3e67ed9b8e1aa3ceb403d85d828"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-02.png",
-          "sha256": "5ca146929313de36153228c347c4c21055a8f8e26b59018e7c128888416988de"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-03.png",
-          "sha256": "a05f6d3012b7397c01555624ea0c233696e86ddbcbd275a4ee8cba4c69ce65cb"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-04.png",
-          "sha256": "353f8f787659a8693a27dec172ba6000babedbd57646e3ebd4d0fcfa5aa21829"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-05.png",
-          "sha256": "5c2bb1149c41fdcc952e4993e983f890a8bd04752d36b058f00e8d591d07b9a5"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-06.png",
-          "sha256": "9d63db920006975daaa46a4da2a40f5d036aa715e882cb11d8b3cf64c765f50e"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-07.png",
-          "sha256": "710441b21f8e64a45255ede28ba02601c5f8003aa51f69d2e7712eddecb4f4de"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-08.png",
-          "sha256": "92af5c889d559447d3bdf6959ff58bf1688b5d915d098c71b8c7631757192d0d"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-09.png",
-          "sha256": "0d6d0657ed5633276a91e1a8a97ee23c7661190c73367a912ad544c82fdc3079"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-10.png",
-          "sha256": "852eb855a7170a75af5f64d6a20053d42856ad9286ca1563d781b1757ac8d040"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-11.png",
-          "sha256": "2c01070aabc297afe587eaaa43466c9977ca5b1a119888a7f19656f737fe176c"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-12.png",
-          "sha256": "b31a3189c0792c2ce9034da4bf6e6bca21b7e3521415fe960163ede6c15a382a"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-13.png",
-          "sha256": "89efe532be3697e07820af7de727452fc0a41c70a2bd4b2441ddefeecd8dafff"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-14.png",
-          "sha256": "7da510cdf3c17fc848b2dcbfc3145323bfed5f894a1c9e1271a9fc51e638db01"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-15.png",
-          "sha256": "edbca81c7883de9663a9dbadf581d724edd5dc715c71029cb19bd49391fa7ed3"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-16.png",
-          "sha256": "107251b89196d695f2767d5dbc607f94030b141c7698a7a781041a2d6ad76223"
-        },
-        {
-          "path": "build/visual/0903a4ecb1cf1486/page-17.png",
-          "sha256": "faab18b280096cc58b9cf59ebe696aedb517ecf79f2f1303272a58d35885bb69"
-        }
-      ],
-      "findings": [
-        {
-          "id": "VAI01",
-          "status": "PASS",
-          "severity": "alta",
-          "pages": [
-            4,
-            5,
-            6
-          ],
-          "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex; main.tex",
-          "evidence": "Título Tecnologias e bullet React aparecem na p4 antes das Figures 3/4, que ocupam p5; descrição React só começa p6.",
-          "consequence": "Figuras saem do contexto dos protótipos e interrompem o item React.",
-          "proposed_correction": "Mantenedor conter floats antes de Tecnologias; preservar item e primeiro parágrafo juntos.",
-          "verification": "Recompilar e inspecionar páginas de protótipos/tecnologias e sumário atualizado.",
-          "resolution": {
-            "pages": [
-              5,
-              6,
-              7
-            ],
-            "evidence": "Protótipos e Figures2–4 ocupam5–6; Tecnologias só inicia7. React rótulo/descrição/documentação juntos7; não há interrupção por figuras."
-          }
-        },
-        {
-          "id": "VAI02",
-          "status": "PASS",
-          "severity": "alta",
-          "pages": [
-            13,
-            14
-          ],
-          "file": "relatorio_AGES_eduardo/util/macros.tex",
-          "evidence": "p13 contém apenas duas linhas de continuação da Sprint4; reflexão curta inicia na p14, deixando quase toda p13 vazia.",
-          "consequence": "Vazio artificial incompatível com fluxo contínuo e caixa divisível.",
-          "proposed_correction": "Mantenedor corrigir cálculo de espaço após page builder/quebra natural, sem mudar conteúdo.",
-          "verification": "Recompilar, inspecionar Sprint4 e todas reflexões, testar quebra natural no mecanismo.",
-          "resolution": {
-            "pages": [
-              13,
-              14
-            ],
-            "evidence": "Sprint4 inicia13; texto e reflexão seguem14 sem página quase vazia. Conclusão inicia14 após caixa."
-          }
-        },
-        {
-          "id": "VAI03",
-          "status": "PENDING",
-          "severity": "média",
-          "pages": [
-            4
-          ],
-          "file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex; chapter-02-text-h-0009.tex; chapter-02-text-h-0010.tex",
-          "source_ids": [
-            "text-p-0303",
-            "text-p-0314",
-            "text-p-0318"
-          ],
-          "evidence": "Tabs internos produzem lacunas visíveis, sobretudo em Arquitetura, sem sobreposição ou cortes.",
-          "consequence": "Avanço fixo1.251cm preserva tokens, mas não reproduz próximos tab stops ODF após recomposição de linhas.",
-          "proposed_correction": "Manter representação fiel documentada e submeter ao checkpoint humano; não normalizar whitespace.",
-          "verification": "Comparador estrito de tokens e inspeção dos três parágrafos na versão final."
-        }
-      ]
+      "file": "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-0.tex até ages-i-sprint-4.tex",
+      "evidence": "Sprints iniciam em 8/9/11/13/15. Não há título isolado ou página corporal quase vazia. Reflexões 2 e 4 dividem naturalmente em 12–13 e 15–16; demais inteiras em 9/11/14.",
+      "severity": "none",
+      "proposed_fix": "Nenhuma.",
+      "check": "Inspeção de todos os renders."
     }
   ],
-  "scope_of_pass": "G7 visual execution only. Not overall documentary, normative or human approval.",
-  "build_log_sha256": "d8360bd7a833d83c5766eb5b76075db62b912f865b66753bd585669698745683",
-  "macros_sha256": "66b48c4a396515321760beb1c3c1310f81d9ffcbbc24ba20d9c26b931f51e082"
+  "intentional_differences": [
+    "Âncoras em romano prevalecem sobre os links itálicos da referência por instrução explícita do usuário.",
+    "Reflexões com borda e fonte corporal divisível; dois placeholders provisórios; fontes das imagens pendentes.",
+    "Rótulo literal Figure preservado em lugar de Figura da referência; pontuação original conservada.",
+    "Paginação uniforme menor, sem reproduzir alternância de tamanho da referência."
+  ],
+  "pending": [
+    "Aceite humano do PDF identificado e da edição AGES I",
+    "Fontes/autoria das cinco imagens",
+    "Diagramas reais de arquitetura e banco",
+    "Disponibilidade atual de links de projeto",
+    "Certificação normativa integral"
+  ],
+  "not_applicable": [
+    "Tabelas e notas autorais ausentes nesta edição"
+  ],
+  "approved_by_human": false,
+  "human_acceptance": "PENDING",
+  "future_editions_authorized": false,
+  "permanent_promotion_approved": false,
+  "commands": [
+    {
+      "command": "pdfinfo build/ages-i/mariah-format-redo/candidate/main.pdf",
+      "returncode": 0
+    },
+    {
+      "command": "sha256sum candidate PDF and readonly reference PDF",
+      "returncode": 0
+    },
+    {
+      "command": "Python subprocess: pdftotext -bbox; pdftohtml -xml -hidden -i -stdout; pdffonts; in-memory XML/font analysis",
+      "returncode": 0
+    },
+    {
+      "command": "Read exact main.tex, util/style.tex, util/macros.tex; git rev-parse HEAD",
+      "returncode": 0
+    },
+    {
+      "command": "view_image: candidate pages 01–19 and readonly reference renders 09/12/14/17",
+      "returncode": 0,
+      "note": "Rendered pages opened individually; no new PDF authored or compiled by auditor."
+    }
+  ],
+  "commit": "e5a367d438fe865223879ed4742d52379e563335",
+  "scope_of_pass": "G7 visual deste PDF exclusivamente. Não declara identidade absoluta com Mariah, integridade textual integral, conformidade normativa completa, aceite humano ou promoção permanente.",
+  "files_changed": [
+    "docs/ages-i/VISUAL_AUDIT.md",
+    "docs/ages-i/VISUAL_AUDIT.json"
+  ]
 }

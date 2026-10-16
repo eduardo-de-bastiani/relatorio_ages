@@ -5,12 +5,18 @@
 \begin{document}
 % Generated review apparatus; no original pretextual content is migrated.
 \pretextual
+% Pre-textual pages are counted but have no printed number.
+\pagestyle{empty}
+\aliaspagestyle{abntchapfirst}{empty}
 \tableofcontents*
+\thispagestyle{empty}
 % Separate generated pretextual lists; this break is outside the narrative.
 \clearpage
 \listoffigures*
+\thispagestyle{empty}
 \textual
 \pagestyle{simple}
+\aliaspagestyle{abntchapfirst}{simple}
 % Chapter I is outside this edition. The original chapter II remains II.
 \setcounter{chapter}{1}
 \input{conteudo/migracao/chapter-02-text-h-0002.tex}
@@ -33,5 +39,5 @@
 % Separate curated apparatus; original prose has no added citations.
 \postextual
 \nocite{typescript-docs,react-docs,nodejs-docs,prisma-docs,postgresql-docs}
-\printbibliography[heading=bibintoc,title={Referências documentais verificadas},prenote=curationnote]
+\printbibliography[heading=bibintoc,title={Referências},prenote=curationnote]
 \end{document}
