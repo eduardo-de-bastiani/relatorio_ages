@@ -191,6 +191,7 @@ PRESENTATION_OVERRIDES_BY_UNIT.update({
     "chapter-04-text-h-0042": {"text-p-0775", "text-p-0778", "text-a-0116", "text-a-0117"},
     "chapter-04-text-h-0044": {"text-p-0788"},
     "chapter-04-text-h-0045": {"text-p-0797", "text-p-0800", "text-p-0802", "text-p-0804"},
+    "ages-ii-sprint-4": {"text-p-0962"},
     "chapter-04-text-h-0073": {"text-h-0073"},
 })
 
@@ -492,9 +493,11 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         mapping = mappings[source_id]
         relative_end = mapping["end_byte"] - first["start_byte"]
         suffix = raw.encode("utf-8")[relative_end:].decode("utf-8")
-        expected = "".join(r"\space\cite{" + key + "}" for key in keys)
+        source_text = records.get(source_id, {}).get("text", "")
+        citation_gap = "" if source_text.endswith((" ", "\t")) else r"\space"
+        expected = "".join(citation_gap + r"\cite{" + key + "}" for key in keys)
         if not suffix.startswith(expected):
-            raise ValueError(f"Citations are detached from the source technology label {source_id}")
+            raise ValueError(f"Citation spacing or attachment differs from the exact source-ending whitespace for {source_id}")
 
     curated = {item.get("source_record_id"): item for item in reference_evidence.get("references", [])}
     assigned_date = authorization.get("technology_reference_convention", {}).get("access_date")
@@ -1514,7 +1517,12 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     if token.name not in {"chapter", "section", "subsection", "subsubsection"} or len(token.args) != 1 or not token_start <= start <= end <= token_end:
                         continue
                     try:
-                        title = displayed_text(token.args[0], policies, macro_contract_verified=macro_verified)
+                        title = displayed_text(
+                            token.args[0], policies,
+                            macro_contract_verified=macro_verified,
+                            inline_layout_verified=inline_verified,
+                            reference_layout_verified=reference_verified,
+                        )
                         expected = _strict_source(records[rid]["text"], "original_whitespace" in policies and macro_verified)
                         title, _ = _project_approved_presentation(rid, expected, title, policies, presentation_authorization)
                         if title == expected:
@@ -1543,7 +1551,12 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if len(token.args) == 3 and token.args[0] == "toc":
                     for rid, expected, policies, heading in headings:
                         try:
-                            entry = displayed_text(token.args[2], policies, macro_contract_verified=macro_verified)
+                            entry = displayed_text(
+                                token.args[2], policies,
+                                macro_contract_verified=macro_verified,
+                                inline_layout_verified=inline_verified,
+                                reference_layout_verified=reference_verified,
+                            )
                             entry, _ = _project_approved_presentation(rid, expected, entry, policies, presentation_authorization)
                             if heading.starred and token.args[1] == heading.name and entry == expected:
                                 matched.append(rid)
