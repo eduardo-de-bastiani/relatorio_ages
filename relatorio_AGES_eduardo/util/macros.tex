@@ -13,6 +13,9 @@
 % indentation beside the paragraph indent. Interior/trailing spaces keep
 % originalspace below and retain their ordinary visible width.
 \newcommand{\originalleadingspace}{\hspace*{0pt}}
+% Preserve a source ODF prefix line-break token without adding another line;
+% the preceding figure or paragraph already supplies the structural break.
+\newcommand{\originalleadbreak}{\hspace*{0pt}}
 % Authorized formatting correction: an internal source tab remains explicit
 % in the unit while rendering as one normal interword space.
 \newcommand{\originalinlinetab}{\unskip\space}
