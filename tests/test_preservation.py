@@ -32,6 +32,8 @@ from scripts.migration_harness.preservation import (
     AGES_II_LEADING_SPACE_COUNTS,
     AGES_II_LEADING_LINE_BREAK_COUNTS,
     AGES_II_PRESENTATION_AUTHORIZATION,
+    _is_source_heading,
+    _leading_tab_paragraph_ids,
 )
 
 
@@ -89,6 +91,24 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(len(records["text-h-0068"]["text"]) - len(records["text-h-0068"]["text"].lstrip(" ")), 4)
         self.assertEqual(records["text-p-0961"]["text"][:1], "\n")
         self.assertEqual(records["text-p-0969"]["text"][:1], "\n")
+
+    def test_ages_ii_leading_tab_gate_excludes_internal_tab_paragraphs(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        unit = next(item for item in manifest["units"] if item["id"] == "ages-ii-sprint-4")
+        actual = _leading_tab_paragraph_ids(unit["source_record_ids"], records)
+        self.assertEqual(actual, list(AGES_II_LEADING_TAB_COUNTS["ages-ii-sprint-4"]))
+        self.assertTrue(all("\t" in records[rid]["text"] for rid in ("text-p-0975", "text-p-0976", "text-p-0977")))
+        self.assertTrue(all(rid not in actual for rid in ("text-p-0975", "text-p-0976", "text-p-0977")))
+
+    def test_ages_ii_h0068_is_a_paragraph_despite_odf_heading_element_type(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        self.assertTrue(_is_source_heading(records["text-h-0067"]))
+        self.assertFalse(_is_source_heading(records["text-h-0068"]))
+        self.assertEqual(records["text-h-0068"]["semantic_type"], "paragraph")
         source_tokens = [
             (("\\originalleadingspace{}" * 4) + "Na Sprint 4", "    Na Sprint 4"),
             (r"\originalleadbreak{}Primeira Etapa", "\nPrimeira Etapa"),

@@ -834,6 +834,20 @@ def _kind(record):
     return str(record.get("type", "")).split("}")[-1].split(":")[-1]
 
 
+def _is_source_heading(record):
+    return _kind(record) == "h" and record.get("semantic_type", "heading") == "heading"
+
+
+def _leading_tab_paragraph_ids(source_ids, records):
+    return [
+        rid for rid in source_ids
+        if rid in records
+        and _kind(records[rid]) == "p"
+        and isinstance(records[rid].get("text"), str)
+        and records[rid]["text"].startswith("\t")
+    ]
+
+
 def _project_source_text_order(unit_id, source_ids, records):
     """Project the audited AGES II Sprint 4 text-box flow onto text records.
 
@@ -1093,7 +1107,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if uid in AGES_II_UNITS:
                     expected_tabs = AGES_II_LEADING_TAB_COUNTS.get(uid, {})
                     expected_layout_records = {**expected_tabs, **expected_ages_ii_spaces, **expected_ages_ii_line_breaks}
-                    tab_paragraph_ids = [rid for rid in source_ids if rid in records and _kind(records[rid]) == "p" and isinstance(records[rid].get("text"), str) and "\t" in records[rid]["text"]]
+                    tab_paragraph_ids = _leading_tab_paragraph_ids(source_ids, records)
                     if (policy["authorization_evidence"] != AGES_II_PRESENTATION_AUTHORIZATION
                             or policy["source_ids"] != [rid for rid in source_ids if rid in expected_layout_records]
                             or reference_ids != set(expected_layout_records)
@@ -1556,7 +1570,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             target_tokens = list(commands(target_text))
             headings = []
             for rid in source_ids:
-                if _kind(records[rid]) != "h" or rid not in actual or actual[rid][0] != path:
+                if not _is_source_heading(records[rid]) or rid not in actual or actual[rid][0] != path:
                     continue
                 _, start, end, _ = actual[rid]
                 policies = by_id[rid].get("serializations", [])
@@ -1579,7 +1593,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     except UnsupportedSerialization:
                         pass  # Existing source/target text findings remain authoritative.
             for rid in source_ids:
-                if _kind(records[rid]) != "h" or rid not in actual or actual[rid][0] != path:
+                if not _is_source_heading(records[rid]) or rid not in actual or actual[rid][0] != path:
                     continue
                 found = [item for item in headings if item[0] == rid]
                 if len(found) != 1:
