@@ -57,3 +57,12 @@ As referências suplementares de App Store (`text-p-1332`) e TanStack Query (`te
 ## Checkpoint
 
 Gates automáticos aprovados não autorizam editorial nem próxima edição. Para aprovação, apresentar diff por Sprint, lacunas, alterações de representação, PDF e riscos restantes. Registro de aprovação sem evidência identificável do usuário é inválido. Mudanças no commit/PDF após aprovação invalidam o vínculo e exigem nova revisão dos efeitos.
+
+
+## Complemento pré-textual e trajetória (17/10/2026)
+
+- Confirmar o escopo suplementar contra `migration/approvals/ages-iv-frontmatter-authorization.json`: somente `pretext`, `resumo` e `chapter-01-text-h-0001`; manter os capítulos dos projetos inalterados.
+- Conferir a ordem compilada: capa, Dedicatória, Agradecimentos, Epígrafe, Resumo, Lista de Ilustrações, Lista de Siglas, Sumário, trajetória e capítulos existentes. Elementos que seguem o padrão de páginas da referência Mariah começam em páginas próprias.
+- Conferir as 39 entradas da lista de siglas na ordem do ODT, texto da trajetória, placeholders, bookmarks e exclusões das instruções genéricas por ID nos ledgers.
+- Os campos genéricos `AGES I,II, III OU IV` e `Ano` da capa ficam deliberadamente sem decisão/autopreenchimento; resumo, dedicatória, agradecimentos e epígrafe não recebem texto autoral.
+- Validação lexical PASS não equivale à inspeção visual. PDF de revisão deve ser renderizado e as páginas pré-textuais e a transição para a trajetória devem ser examinadas. Avisos de compilação bloqueiam o gate até serem investigados; aprovação humana permanece PENDING.

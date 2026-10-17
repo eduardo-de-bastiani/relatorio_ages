@@ -116,10 +116,19 @@
     "ages-iv-sprint-3",
     "ages-iv-sprint-4",
     "chapter-06-text-h-0122",
-    "chapter-07-text-h-0123"
+    "chapter-07-text-h-0123",
+    "pretext",
+    "resumo",
+    "chapter-01-text-h-0001"
   ],
   "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
   "authorized_edition": "ages-iv-partial",
+  "supplemental_authorizations": [
+    {
+      "evidence": "migration/approvals/ages-iv-frontmatter-authorization.json",
+      "units": ["pretext", "resumo", "chapter-01-text-h-0001"]
+    }
+  ],
   "asset_ownership": {
     "chapter-05-text-h-0075": [
       "relatorio_AGES_eduardo/imagens/original/asset-0015.jpg"

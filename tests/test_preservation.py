@@ -32,6 +32,8 @@ from scripts.migration_harness.preservation import (
     AGES_IV_UNITS,
     AGES_IV_TITLE_ONLY_UNIT,
     AGES_IV_TITLE_ONLY_OMITTED_IDS,
+    FRONTMATTER_UNITS,
+    FRONTMATTER_TRANSFORM_IDS,
     _load_presentation_authorization,
     AGES_II_TECHNOLOGY_REFERENCE_KEYS,
     AGES_II_ADDITIONAL_REFERENCE_RECORDS,
@@ -96,6 +98,50 @@ class PreservationTests(unittest.TestCase):
 
     def codes(self, report):
         return {item["code"] for item in report["findings"]}
+
+    def test_frontmatter_changes_are_source_bound_and_exactly_authorized(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "pretext")
+        self.assertEqual(tuple(authorization["scope"]["units"]), FRONTMATTER_UNITS)
+        for kind, records in authorization["scope"]["presentation_changes"].items():
+            self.assertEqual(set(records), FRONTMATTER_TRANSFORM_IDS[kind])
+            for source_id, spec in records.items():
+                projected, evidence = _project_approved_presentation(
+                    source_id, spec["source_text"], spec["target_text"], [kind], authorization,
+                )
+                self.assertEqual(projected, spec["source_text"])
+                self.assertEqual(evidence["kind"], kind)
+                self.assertEqual(evidence["displayed"], spec["target_text"])
+                with self.assertRaises(UnsupportedSerialization):
+                    _project_approved_presentation(
+                        source_id, spec["source_text"], spec["target_text"] + " altered", [kind], authorization,
+                    )
+
+    def test_frontmatter_authorization_fails_closed_for_source_or_scope_changes(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "resumo")
+        authorization["scope"]["units"].append("chapter-02-text-h-0002")
+        (self.root / "migration").mkdir()
+        (self.root / "migration/approvals").mkdir()
+        (self.root / "migration/approvals/ages-iv-frontmatter-authorization.json").write_text(
+            json.dumps(authorization), encoding="utf-8",
+        )
+        with self.assertRaisesRegex(ValueError, "Frontmatter authorization"):
+            _load_presentation_authorization(self.root, "resumo")
+
+    def test_frontmatter_page_break_permission_is_exact_and_unit_scoped(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "resumo")
+        controls = authorization["scope"]["layout_controls"]["resumo"]
+        self.assertEqual(len(controls), 2)
+        self.assertEqual([item["command"] for item in controls], ["clearpage", "clearpage"])
+        controls[1]["before"] = "chapter"
+        (self.root / "migration/approvals").mkdir(parents=True)
+        (self.root / "migration/approvals/ages-iv-frontmatter-authorization.json").write_text(
+            json.dumps(authorization), encoding="utf-8",
+        )
+        with self.assertRaisesRegex(ValueError, "Frontmatter authorization"):
+            _load_presentation_authorization(self.root, "resumo")
 
     def test_ages_iv_authorization_and_caption_heading_overlays_are_exactly_scoped(self):
         repo = Path(__file__).resolve().parents[1]

@@ -1,5 +1,7 @@
 # Auditoria visual independente — AGES IV / Recorda
 
+> **Artefato histórico:** as páginas, observações e hash abaixo referem-se ao PDF de 85 páginas da etapa limitada a Recorda. Após a inclusão dos pré-textuais e da trajetória, essa paginação não corresponde ao PDF integrado atual. O complemento visual das páginas iniciais está em `docs/ages-iv/FRONTMATTER_INTEGRATION.md`; a revisão humana do PDF completo continua pendente.
+
 **Parecer:** `PENDING` para aprovação visual humana. Nas páginas revisadas não encontrei texto cortado, sobreposição, desalinhamento de figuras ou quebra artificial antes das Sprints. O padrão geral acompanha o estilo aprovado e a referência visual da Mariah. Permanecem pendentes a leitura de rótulos em diagramas densos, a identificação das fontes das imagens e os avisos técnicos de compilação descritos abaixo. Não alterei o memorial, o PDF nem os logs.
 
 ## Artefato e método

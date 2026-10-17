@@ -213,6 +213,33 @@ AGES_IV_TITLE_ONLY_OMITTED_IDS = (
     "text-p-1545", "text-list-item-0229", "text-p-1546", "text-list-item-0230",
     "text-p-1547", "text-p-1549",
 )
+FRONTMATTER_AUTHORIZATION = "migration/approvals/ages-iv-frontmatter-authorization.json"
+FRONTMATTER_UNITS = ("pretext", "resumo", "chapter-01-text-h-0001")
+FRONTMATTER_TRANSFORM_IDS = {
+    "frontmatter_title": {"text-p-0003", "text-p-0004", "text-p-0017", "text-p-0018", "text-p-0034", "text-p-0068"},
+    "frontmatter_placeholder": {"text-p-0097"},
+    "frontmatter_omission": {
+        "text-p-0062", "text-p-0064", "text-p-0066", "text-p-0067", "text-p-0091",
+        "text-p-0092", "text-p-0094", "text-p-0099", "text-p-0101", "text-p-0139",
+        "text-p-0278", "text-p-0279",
+    },
+}
+FRONTMATTER_LAYOUT_CONTROLS = {
+    "resumo": [
+        {
+            "command": "clearpage",
+            "after_source_id": "text-p-0097",
+            "before_command": "listoffigures",
+            "reason": "Manter o resumo em página própria como na estrutura de referência da Mariah e iniciar a lista de ilustrações na página seguinte.",
+        },
+        {
+            "command": "clearpage",
+            "after_unit_input": "conteudo/migracao/lista-de-siglas.tex",
+            "before": "tableofcontents",
+            "reason": "Manter o sumário em página própria após a lista de siglas, como na estrutura de referência da Mariah e na ordem definida pelo usuário.",
+        },
+    ],
+}
 
 PRESENTATION_AUTHORIZATION = "migration/approvals/ages-i-presentation-corrections.json"
 PRESENTATION_USER_INSTRUCTION = (
@@ -594,6 +621,7 @@ PRESENTATION_AUTHORIZATION_BY_UNIT = {
     **{uid: AGES_II_PRESENTATION_AUTHORIZATION for uid in AGES_II_UNITS},
     **{uid: AGES_III_AUTHORIZATION for uid in AGES_III_UNITS},
     **{uid: AGES_IV_AUTHORIZATION for uid in AGES_IV_UNITS},
+    **{uid: FRONTMATTER_AUTHORIZATION for uid in FRONTMATTER_UNITS},
 }
 PRESENTATION_SERIALIZATIONS = {
     "abnt_figure_caption": set(PRESENTATION_CAPTIONS),
@@ -604,6 +632,7 @@ PRESENTATION_SERIALIZATIONS = {
     "approved_technology_narrative": set(AGES_III_TECHNOLOGY_NARRATIVE_TEXT_IDS),
     "technology_documentation_link_prose": set(AGES_III_TECHNOLOGY_DOCUMENTATION_LINK_TEXT_IDS),
     "approved_internal_tab_removal": {"text-p-1084"},
+    **FRONTMATTER_TRANSFORM_IDS,
 }
 PRESENTATION_OVERRIDES_BY_UNIT = {
     "chapter-02-text-h-0002": {"text-h-0002"},
@@ -649,6 +678,15 @@ PRESENTATION_OVERRIDES_BY_UNIT.update({
     "ages-iv-sprint-0": {"text-p-1475", "text-p-1478"},
     "chapter-06-text-h-0122": {"text-h-0122"},
     "chapter-07-text-h-0123": {"text-h-0123"},
+})
+PRESENTATION_OVERRIDES_BY_UNIT.update({
+    "pretext": {
+        "text-p-0003", "text-p-0004", "text-p-0017", "text-p-0018",
+        "text-p-0034", "text-p-0062", "text-p-0064", "text-p-0066", "text-p-0067",
+        "text-p-0068", "text-p-0091", "text-p-0092", "text-p-0094",
+    },
+    "resumo": {"text-p-0097", "text-p-0099", "text-p-0101", "text-p-0139"},
+    "chapter-01-text-h-0001": {"text-p-0278", "text-p-0279"},
 })
 AGES_III_PRESENTATION_SOURCE_IDS = frozenset(
     source_id for unit_id in AGES_III_UNITS
@@ -751,6 +789,21 @@ PRESENTATION_SERIALIZATIONS.update({
 
 
 def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
+    if unit_id in FRONTMATTER_UNITS:
+        authorization = json.loads((repo / FRONTMATTER_AUTHORIZATION).read_text(encoding="utf-8"))
+        scope = authorization.get("scope", {})
+        if (authorization.get("schema_version") != 1
+                or authorization.get("record_type") != "user_authorized_frontmatter_scope"
+                or authorization.get("approval_status") != "authorized_for_execution_pending_human_review"
+                or authorization.get("source", {}).get("path") != "RELATORIO_ATUAL.odt"
+                or authorization.get("source", {}).get("sha256") != "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+                or authorization.get("source", {}).get("must_remain_unchanged") is not True
+                or scope.get("units") != list(FRONTMATTER_UNITS)
+                or set(scope.get("presentation_changes", {})) != set(FRONTMATTER_TRANSFORM_IDS)
+                or scope.get("layout_controls") != FRONTMATTER_LAYOUT_CONTROLS
+                or any(set(scope["presentation_changes"][kind]) != ids for kind, ids in FRONTMATTER_TRANSFORM_IDS.items())):
+            raise ValueError("Frontmatter authorization is missing, stale, or exceeds the explicit supplemental scope")
+        return authorization
     if unit_id in AGES_IV_UNITS:
         authorization = json.loads((repo / AGES_IV_AUTHORIZATION).read_text(encoding="utf-8"))
         expected_partial_inclusion = {
@@ -1864,6 +1917,29 @@ def _project_approved_presentation(source_id, expected, observed, serializations
     for kind in used:
         if source_id not in PRESENTATION_SERIALIZATIONS[kind]:
             raise UnsupportedSerialization(f"{kind} is not authorized for {source_id}")
+    frontmatter_used = used & set(FRONTMATTER_TRANSFORM_IDS)
+    if frontmatter_used:
+        if (len(frontmatter_used) != 1
+                or used != frontmatter_used
+                or authorization.get("record_type") != "user_authorized_frontmatter_scope"
+                or authorization.get("approval_status") != "authorized_for_execution_pending_human_review"
+                or authorization.get("source", {}).get("sha256") != "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+                or not set(FRONTMATTER_UNITS) <= set(authorization.get("scope", {}).get("units", []))):
+            raise UnsupportedSerialization("Frontmatter presentation change is outside the exact supplemental user authorization")
+        kind = next(iter(frontmatter_used))
+        spec = authorization["scope"]["presentation_changes"].get(kind, {}).get(source_id)
+        if (not isinstance(spec, dict)
+                or expected != spec.get("source_text")
+                or observed != spec.get("target_text")):
+            raise UnsupportedSerialization("Frontmatter target text differs from its exact source-bound approved presentation")
+        return expected, {
+            "source_id": source_id,
+            "kind": kind,
+            "source": expected,
+            "displayed": observed,
+            "reason": spec.get("reason"),
+            "authorization_evidence": FRONTMATTER_AUTHORIZATION,
+        }
     if "approved_group_label_removal" in used:
         if (used != {"approved_group_label_removal"}
                 or not _is_authorized_ages_iii_group_label_removal(authorization, source_id)
@@ -2072,7 +2148,7 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
     Accents, punctuation, case, numbers and symbols compare exactly.
     No macro expansion, citation expansion or counter-generated text is guessed.
     """
-    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation", "technology_paragraph_join", "approved_group_label_removal", "approved_technology_narrative", "technology_documentation_link_prose", "approved_internal_tab_removal"}
+    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation", "technology_paragraph_join", "approved_group_label_removal", "approved_technology_narrative", "technology_documentation_link_prose", "approved_internal_tab_removal", "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission"}
     if set(serializations) - allowed:
         raise UnsupportedSerialization("Unrecognized serialization policy")
     if "original_whitespace" in serializations and not macro_contract_verified:
@@ -2949,7 +3025,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 contract_text = contract_data.decode("utf-8")
                 definitions = macro_definitions(contract_text)
                 bodies = {"originaltab": r"\noindent\hspace*{1.251cm}", "originalspace": r"\hspace*{\fontdimen2\font}"}
-                if reference_verified or uid in AGES_II_UNITS or uid in AGES_III_UNITS or uid in AGES_IV_UNITS:
+                if reference_verified or uid in AGES_II_UNITS or uid in AGES_III_UNITS or uid in AGES_IV_UNITS or uid in FRONTMATTER_UNITS:
                     bodies["originaltab"] = r"\hspace*{0pt}"
                     bodies["originalleadingspace"] = r"\hspace*{0pt}"
                     if expected_ages_ii_line_breaks:
@@ -3134,6 +3210,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     if not _source_whitespace_verified(serializations, macro_verified, reference_verified):
                         raise UnsupportedSerialization("AGES III technology paragraph join requires verified source whitespace markers")
                     expected = _normalize_ages_iii_technology_text(original)
+                elif "frontmatter_omission" in serializations:
+                    # An exact, source-bound omission is authorized for this
+                    # frontmatter scope. Its original model text may contain
+                    # trailing spaces, but none are emitted in the target.
+                    expected = original
                 else:
                     expected = _strict_source(
                         original,
@@ -3609,12 +3690,34 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         # cannot hide outside the ledger. Only documented nonprinting scaffolding
         # is allowed. Unknown macros/environments need a harness policy change,
         # not a converter's assertion that they are harmless.
-        structural_commands = {"label", "input", "include"}
+        structural_commands = {"label", "input", "include", "listoffigures", "refstepcounter", "addcontentsline"}
         wrapper_commands = {"chapter", "section", "subsection", "subsubsection", "paragraph", "caption", "textbf", "textit", "emph", "texttt", "textrm", "textsf", "textnormal", "underline", "mbox"}
-        declarations = {"centering", "raggedright", "raggedleft", "small", "footnotesize", "normalsize", "bfseries", "itshape", "normalfont", "noindent", "indent", "par", "newline", "item"}
+        declarations = {"centering", "raggedright", "raggedleft", "small", "large", "footnotesize", "normalsize", "bfseries", "itshape", "normalfont", "noindent", "indent", "par", "newline", "item", "vfill"}
         environments = {"figure", "figure*", "center", "flushleft", "flushright", "itemize", "enumerate", "description", "reflection", "reflexao", "introspection"}
         printable_ids = set(source_ids) | {rid for rid in allowed_ids if _kind(records.get(rid, {})) == "a"} | set(expected_images)
         for path in file_order:
+            authorized_layout_command = False
+            if uid == "resumo" and path.is_file() and path.relative_to(compilation_root).as_posix() == "conteudo/migracao/resumo.tex":
+                target = path.read_text(encoding="utf-8")
+                target_commands = list(commands(target))
+                page_breaks = [token for token in target_commands if token.name == "clearpage"]
+                figure_lists = [token for token in target_commands if token.name == "listoffigures"]
+                summary_mapping = actual.get("text-p-0097")
+                layout_authorization = (presentation_authorization or {}).get("scope", {}).get("layout_controls", {}).get("resumo")
+                acronym_input = "\\input{conteudo/migracao/lista-de-siglas.tex}"
+                acronym_input_positions = [match.start() for match in re.finditer(re.escape(acronym_input), target)]
+                if (layout_authorization == FRONTMATTER_LAYOUT_CONTROLS["resumo"]
+                        and len(page_breaks) == 2 and len(figure_lists) == 1 and len(acronym_input_positions) == 1
+                        and summary_mapping is not None and summary_mapping[0] == path
+                        and summary_mapping[2] <= len(target[:page_breaks[0].start].encode("utf-8"))
+                        and page_breaks[0].end <= figure_lists[0].start
+                        and page_breaks[1].start > acronym_input_positions[0]
+                        and not target[page_breaks[1].end:].strip()):
+                    authorized_layout_command = True
+                elif page_breaks:
+                    report("unauthorized_frontmatter_layout_control", uid,
+                           "The two frontmatter page breaks must match the exact positions authorized after the summary placeholder and after the siglas input.",
+                           path=str(path.relative_to(repo)))
             data = bytearray(path.read_bytes())
             for rid in printable_ids:
                 if rid in actual and actual[rid][0] == path:
@@ -3627,6 +3730,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 chars = list(residue)
                 for token in commands(residue):
                     if token.name in structural_commands or (technology_paragraph_verified and token.name in {"cite", "space"}):
+                        chars[token.start:token.end] = " " * (token.end - token.start)
+                    elif token.name == "clearpage" and authorized_layout_command:
                         chars[token.start:token.end] = " " * (token.end - token.start)
                     elif token.name in {"begin", "end"} and token.args and token.args[0] in environments:
                         chars[token.start:token.end] = " " * (token.end - token.start)

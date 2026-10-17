@@ -4,21 +4,20 @@
 \input{util/macros.tex}
 \input{util/figure-macros.tex}
 \begin{document}
-% Generated review apparatus; no original pretextual content is migrated.
 \pretextual
 % Pre-textual pages are counted but have no printed number.
 \pagestyle{empty}
 \aliaspagestyle{abntchapfirst}{empty}
+\input{conteudo/migracao/pretext.tex}
+\input{conteudo/migracao/resumo.tex}
 \tableofcontents*
-\thispagestyle{empty}
-% Separate generated pretextual lists; this break is outside the narrative.
-\clearpage
-\listoffigures*
 \thispagestyle{empty}
 \textual
 \pagestyle{simple}
 \aliaspagestyle{abntchapfirst}{simple}
-% Chapter I is outside this edition. The original chapter II remains II.
+% Chapter I contains the source trajectory; project chapters retain their original numbering.
+\setcounter{chapter}{0}
+\input{conteudo/migracao/chapter-01-text-h-0001.tex}
 \setcounter{chapter}{1}
 \input{conteudo/migracao/chapter-02-text-h-0002.tex}
 \input{conteudo/migracao/chapter-02-text-h-0003.tex}

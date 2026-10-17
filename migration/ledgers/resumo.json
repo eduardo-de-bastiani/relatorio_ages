@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "31c34e0c164b30a1cb81e289581e48f5279ee1b1",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4ed82b1cf1f5518f759816533544d8e2802f376ef566dcea43a88a3548362938"
+  },
+  "units": {
+    "resumo": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex",
+      "element_map": [
+        {
+          "source_id": "text-p-0095",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex",
+          "start_byte": 101,
+          "end_byte": 107,
+          "target_sha256": "3f1c2e1e4aae452486dc945431d5a6a93597c81d0ed9d6687bdd3c57dd423082",
+          "source_text_sha256": "db8aa8abb29d1393b1a4f7f3aade51b4eb3891deda1580d0d5de009da2ad3b48"
+        },
+        {
+          "source_id": "text-p-0097",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex",
+          "start_byte": 131,
+          "end_byte": 161,
+          "target_sha256": "3f1c2e1e4aae452486dc945431d5a6a93597c81d0ed9d6687bdd3c57dd423082",
+          "source_text_sha256": "550e5dd177356ef64053aabc287a1eed9030ca92cf78bccaa01f627c4414ecad",
+          "serializations": [
+            "frontmatter_placeholder"
+          ]
+        },
+        {
+          "source_id": "text-p-0099",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex",
+          "start_byte": 241,
+          "end_byte": 241,
+          "target_sha256": "3f1c2e1e4aae452486dc945431d5a6a93597c81d0ed9d6687bdd3c57dd423082",
+          "source_text_sha256": "4dac213e98abfa535ca9b56c6017a77bf875a37cbeb205ae3ddd95317c5d0263",
+          "disposition": "approved_frontmatter_omission",
+          "serializations": [
+            "frontmatter_omission"
+          ]
+        },
+        {
+          "source_id": "text-p-0101",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex",
+          "start_byte": 321,
+          "end_byte": 321,
+          "target_sha256": "3f1c2e1e4aae452486dc945431d5a6a93597c81d0ed9d6687bdd3c57dd423082",
+          "source_text_sha256": "207b3f2284e4a4757f0aa6aca52091fe41de7bfca544ed8642ac41101f89abd1",
+          "disposition": "approved_frontmatter_omission",
+          "serializations": [
+            "frontmatter_omission"
+          ]
+        },
+        {
+          "source_id": "text-p-0139",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex",
+          "start_byte": 411,
+          "end_byte": 411,
+          "target_sha256": "3f1c2e1e4aae452486dc945431d5a6a93597c81d0ed9d6687bdd3c57dd423082",
+          "source_text_sha256": "b8bd0b9650636361f75ad9fbf83668c836a1ea3ffbfd516e9456eab5451b4b0c",
+          "disposition": "approved_frontmatter_omission",
+          "serializations": [
+            "frontmatter_omission"
+          ]
+        },
+        {
+          "source_id": "text-p-0142",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 24,
+          "end_byte": 39,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "f6ea0a885fd3467a831adfa18417573916c32a8d25fe9bddce05e03954d688a3"
+        },
+        {
+          "source_id": "text-p-0143",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 65,
+          "end_byte": 115,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "c5ec03f070b8dca7c38a84da85be53829184df98e666fadb50d97998606a8cff"
+        },
+        {
+          "source_id": "text-p-0144",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 144,
+          "end_byte": 198,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "f244b2e34e74065d468404b9f2f5fa68be6a58cb61404497a544f2739a11927c"
+        },
+        {
+          "source_id": "text-p-0145",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 227,
+          "end_byte": 311,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "74898b09fea957fe0d68effb0db835fb2764bbe633a9fed0f50a7c9530a0b395"
+        },
+        {
+          "source_id": "text-p-0146",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 340,
+          "end_byte": 365,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "0588639531e9f9d782586eae776829f349ff6bf90b8c4b0a7273559cfa0010a6"
+        },
+        {
+          "source_id": "text-p-0147",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 394,
+          "end_byte": 465,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "3f9392fd9414296791d55a245666cbf2b97753d21fb786f2dec453476ee3807c"
+        },
+        {
+          "source_id": "text-p-0148",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 494,
+          "end_byte": 532,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "932c1f2a6292361459e96cae577a529de41b51332730448c111f8cc7cbe8daf2"
+        },
+        {
+          "source_id": "text-p-0149",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 561,
+          "end_byte": 660,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "beeeed459d42f21e78ff1441e1fa044e0d99d694a0ae052517477138df0d03eb"
+        },
+        {
+          "source_id": "text-p-0150",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 689,
+          "end_byte": 746,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "359b3bbfca198608a034b72f934ef945a16d05f4d3836cf680c1a1333fd430d7"
+        },
+        {
+          "source_id": "text-p-0151",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 775,
+          "end_byte": 819,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "1607aaca1b09c768f5d3cdc389e80c38ec06f865e391e066cc906928fc1c8ae5"
+        },
+        {
+          "source_id": "text-p-0152",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 848,
+          "end_byte": 883,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "a97512e88c05e590d9323726a4ca089a602557beb15abfe48bbf8e90c026f1e1"
+        },
+        {
+          "source_id": "text-p-0153",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 912,
+          "end_byte": 938,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "bfaa89d85db5e5dd4891ddafbe194b53c66c3adc3435bb562d5e281500491e24"
+        },
+        {
+          "source_id": "text-p-0154",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 967,
+          "end_byte": 991,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "731b2cd498d4bd622b4d7b49791beab9a021e599aab1c897e3ecfbb4d55703b3"
+        },
+        {
+          "source_id": "text-p-0155",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1020,
+          "end_byte": 1059,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "cdcb7fd3df62fa5f78e143b1732d400f2bbcb2e8b3d83efb5a5eb0afa9b47565"
+        },
+        {
+          "source_id": "text-p-0156",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1088,
+          "end_byte": 1115,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "bf4c7619dcecf48c5d8267d7eb6d4af5f392c8cabf219201752d148eff450ccc"
+        },
+        {
+          "source_id": "text-p-0157",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1144,
+          "end_byte": 1180,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "62a9f66b1879c41e46a2cb077cb4155b9fbe32938f75b7864fd08024bef8b2fa"
+        },
+        {
+          "source_id": "text-p-0158",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1209,
+          "end_byte": 1287,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "753f802c6dd052b14a2d857e5054ed6415c3244045c4f70b72fe44a6d85cae1f"
+        },
+        {
+          "source_id": "text-p-0159",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1316,
+          "end_byte": 1345,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "8e19884963d49d1d3c6fb0ce0adc10b0eef9ce618125689a6a8e4ced322bda23"
+        },
+        {
+          "source_id": "text-p-0160",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1374,
+          "end_byte": 1394,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "a00202c33ed92adc2d999359dbda8b89f3e2fb7690a555dca7a7b3e1201c416a"
+        },
+        {
+          "source_id": "text-p-0161",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1423,
+          "end_byte": 1456,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "d6a70382e210a6cff3b38456a70d2ea925e432068877ffa13c0076171c816f18"
+        },
+        {
+          "source_id": "text-p-0162",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1485,
+          "end_byte": 1524,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "878dfd7f21521790a9cfd214eaa8665c564f8356d4c3a8fdbdf521901a2aea18"
+        },
+        {
+          "source_id": "text-p-0163",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1553,
+          "end_byte": 1590,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "aa0a3aeac370eb491dcb4d4b322c2b8b857e234aa0ba0e12363c80884eb4e2a4"
+        },
+        {
+          "source_id": "text-p-0164",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1619,
+          "end_byte": 1661,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "a0b028b6b58735810ffff768e47d811af9d7f76d518c2fa3b351b0de45e62560"
+        },
+        {
+          "source_id": "text-p-0165",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1690,
+          "end_byte": 1719,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "5791090ab9a6dd1b07b48a43bac557112cb65c1ada580ca1cd7d3ae979545abe"
+        },
+        {
+          "source_id": "text-p-0166",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1748,
+          "end_byte": 1804,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "478ca687eb0e690340a98ad9580d4d42b76771de48ca3a70a01f75f255a92e42"
+        },
+        {
+          "source_id": "text-p-0167",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1833,
+          "end_byte": 1895,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "d1e8bf3774e625a5e7eaf37ea2e7a1957d8b153136f0244de5e34b5d9cc0c7a8"
+        },
+        {
+          "source_id": "text-p-0168",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1924,
+          "end_byte": 1958,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "3da4a4d4f1dca8be92b5557f439143882d9314f39df102b482d9ac887efc7887"
+        },
+        {
+          "source_id": "text-p-0169",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 1987,
+          "end_byte": 2029,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "c0dd366d75329826b66943e3032600ab3c27a99d7cd5bc4a79cdb809261a3abb"
+        },
+        {
+          "source_id": "text-p-0170",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2058,
+          "end_byte": 2075,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "018e581b9f11edcc6cd292a3663559f2aad61856ce4529b3f0fc0786c0b4fc28"
+        },
+        {
+          "source_id": "text-p-0171",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2104,
+          "end_byte": 2167,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "6609771c7aa4f1b92a46ce4fcdaaede7e14100e7bcc69112262a4ea044ed0246"
+        },
+        {
+          "source_id": "text-p-0172",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2196,
+          "end_byte": 2221,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "e8bf006c2948dfd2205de357a020ad762827d87fb5f77cd168297de4236ba2ed"
+        },
+        {
+          "source_id": "text-p-0173",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2250,
+          "end_byte": 2354,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "8a3b435b0c6f692df67a334b260b1b2081240fce9967f0b479934f01dc915c02"
+        },
+        {
+          "source_id": "text-p-0174",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2383,
+          "end_byte": 2416,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "f533a39adf622ba86d472a5e6d0a2c5a80d05afb733d8c26f8a1954b328dab52"
+        },
+        {
+          "source_id": "text-p-0175",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2445,
+          "end_byte": 2485,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "841c454c64e0975b7d27695d9a4b00b7f00d4c07410ee7c4242870550e90284b"
+        },
+        {
+          "source_id": "text-p-0176",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2514,
+          "end_byte": 2590,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "8615657603e122dd5efcc13175229d50106579ee5e64639ad6916aea6ae12aab"
+        },
+        {
+          "source_id": "text-p-0177",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2619,
+          "end_byte": 2649,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "6717d1058d945fa37eabc5d981dc8e78dfe7f2386f22dc57064ea8a4559351b7"
+        },
+        {
+          "source_id": "text-p-0178",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2678,
+          "end_byte": 2709,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "a546522e81a6a88097d26f3acd2a3e4096719c35ed830452e64fdceb2702223e"
+        },
+        {
+          "source_id": "text-p-0179",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2738,
+          "end_byte": 2761,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "6577c588702e1a087391684389c3b2e55656ebce0ffaabad2cfc9b7b90e68a05"
+        },
+        {
+          "source_id": "text-p-0180",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2790,
+          "end_byte": 2833,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "3cfe0eecf51822d26c5485f732c5dc76fecc1481fe97bed4f58c683f22793e8e"
+        },
+        {
+          "source_id": "text-p-0181",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+          "start_byte": 2862,
+          "end_byte": 2898,
+          "target_sha256": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+          "source_text_sha256": "62744ab0dfdf871512cc20b627994382c4b5d439c6205246e79743c82b43b6d0"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "text-p-0099",
+          "disposition": "approved_frontmatter_omission",
+          "reason": "Omitir exemplo genérico de palavras-chave do modelo; o resumo ainda será escrito.",
+          "authorization_evidence": "migration/approvals/ages-iv-frontmatter-authorization.json"
+        },
+        {
+          "source_id": "text-p-0101",
+          "disposition": "approved_frontmatter_omission",
+          "reason": "A lista de ilustrações é gerada automaticamente no LaTeX no lugar da lista antiga do ODT.",
+          "authorization_evidence": "migration/approvals/ages-iv-frontmatter-authorization.json"
+        },
+        {
+          "source_id": "text-p-0139",
+          "disposition": "approved_frontmatter_omission",
+          "reason": "O ODT não contém tabelas; não gerar uma lista vazia de tabelas.",
+          "authorization_evidence": "migration/approvals/ages-iv-frontmatter-authorization.json"
+        }
+      ],
+      "pending": [
+        {
+          "id": "ABNT-RESUMO-TEXT",
+          "status": "PENDING",
+          "reason": "Resumo e palavras-chave serão redigidos pelo autor posteriormente."
+        }
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-frontmatter-authorization.json",
+        "source_ids": [
+          "text-p-0097",
+          "text-p-0099",
+          "text-p-0101",
+          "text-p-0139"
+        ]
+      }
+    }
+  }
+}

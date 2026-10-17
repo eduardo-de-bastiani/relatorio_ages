@@ -12,6 +12,8 @@ Em 16/10/2026, o usuário aprovou a apresentação da prévia AGES I identificad
 
 Aplicar os seguintes parâmetros, comparados com o PDF da Mariah e medidos no PDF AGES I:
 
+- Nesta entrega, a ordem aprovada pelo usuário é: capa, Dedicatória, Agradecimentos, Epígrafe, Resumo, Lista de Ilustrações, Lista de Siglas, Sumário e apresentação da trajetória; só então começam os projetos AGES. Cada elemento pré-textual abre sua própria página, acompanhando a estrutura observada na referência Mariah. A ordem específica escolhida pelo usuário prevalece sobre itens que existam apenas na organização do exemplo. Não preencher automaticamente os campos genéricos da capa nem o conteúdo autoral dos placeholders.
+
 - A4; margens superior/esquerda de 3 cm e inferior/direita de 2 cm; corpo em família Helvetica compatível, 12 pt; avanço entre linhas de aproximadamente 21,669 pt; recuo de primeira linha de aproximadamente 0,62 cm; espaço entre parágrafos `0pt plus 1pt`.
 - Títulos de capítulo à esquerda e em negrito; seções no tamanho do corpo, com negrito onde usado na referência; subseções no tamanho do corpo sem negrito. A hierarquia e numeração de cada edição vêm do ODT e devem ser conferidas individualmente.
 - Sumário acompanha a profundidade visual da referência (capítulos e seções); Sprints permanecem no corpo e na rastreabilidade, sem iniciar página artificialmente. Quebra natural por falta de espaço continua permitida.
