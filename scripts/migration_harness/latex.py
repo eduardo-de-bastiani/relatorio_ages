@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 @dataclass(frozen=True)
@@ -127,10 +128,19 @@ def macro_definitions(text: str) -> list[dict]:
 
 
 MEMORIAL_FIGURE_BODY = r'\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape #2}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\XeTeXpicfile "#1" width #5\linewidth\relax}\par\begingroup\centering\small\SingleSpacing #4\par\endgroup\end{figure}'
+MEMORIAL_FIGURE_LINKED_BODY = r'\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape\href{#6}{#2}}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\href{#6}{\XeTeXpicfile "#1" width #5\linewidth\relax}}\par\begingroup\centering\small\SingleSpacing #4\par\endgroup\end{figure}'
 
 
 def canonical_macro_body(body: str) -> str:
     return re.sub(r"\s+", "", strip_comments(body))
+
+
+def _valid_absolute_http_url(value: str) -> bool:
+    try:
+        parsed = urlsplit(value)
+        return parsed.scheme in {"http", "https"} and bool(parsed.hostname)
+    except ValueError:
+        return False
 
 
 def bib_keys(text: str) -> tuple[set[str], list[str]]:
@@ -262,6 +272,29 @@ def audit_latex(root: Path, entry: Path) -> dict:
                     report("invalid_figure_apparatus", relative, line, "Source must remain explicitly pending and width must be a fraction in (0,1]")
                 if not args[1].strip() or not re.fullmatch(r"[A-Za-z0-9:._-]+", args[2]):
                     report("missing_figure_caption_or_label", relative, line, "Caption and label must be explicit")
+                counts["labels"] += 1
+                if args[2] in labels:
+                    report("duplicate_label", relative, line, args[2])
+                labels[args[2]] = (relative, line)
+                continue
+            if name == "memorialfigurelinked":
+                contract = defined.get(name)
+                if contract is None or contract["arity"] != 6 or contract["optional_default"] or canonical_macro_body(contract["body"]) != canonical_macro_body(MEMORIAL_FIGURE_LINKED_BODY):
+                    report("unverified_figure_macro", relative, line, "memorialfigurelinked definition does not match the audited six-argument linked-figure contract")
+                    continue
+                if len(args) != 6:
+                    report("invalid_figure_macro", relative, line, "memorialfigurelinked requires file, caption, label, source, width, URI")
+                    continue
+                counts["images"] += 1
+                target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))
+                if target is None or not target.is_file():
+                    report("missing_or_dynamic_asset", relative, line, args[0])
+                if args[3] != "Fonte: pendente de identificação" or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
+                    report("invalid_figure_apparatus", relative, line, "Source must remain explicitly pending and width must be a fraction in (0,1]")
+                if not args[1].strip() or not re.fullmatch(r"[A-Za-z0-9:._-]+", args[2]):
+                    report("missing_figure_caption_or_label", relative, line, "Caption and label must be explicit")
+                if not _valid_absolute_http_url(args[5]):
+                    report("invalid_figure_link", relative, line, "Linked figure must use an absolute HTTP(S) URI")
                 counts["labels"] += 1
                 if args[2] in labels:
                     report("duplicate_label", relative, line, args[2])

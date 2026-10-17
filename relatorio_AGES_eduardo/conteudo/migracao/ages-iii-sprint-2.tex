@@ -1,0 +1,31 @@
+% Faithful conversion of ages-iii-sprint-2; source ODF IDs and text order retained.
+\hypertarget{__RefHeading___Toc4819_3118176633}{}
+\refstepcounter{subsection}\subsection*{5.3.3 Sprint 2}
+\label{unit:ages-iii-sprint-2}
+\addcontentsline{toc}{subsection}{5.3.3 Sprint 2}
+% text-p-1199
+\indent \originaltab{}Após a retrospectiva da Sprint 1, o time decidiu manter práticas que haviam contribuído positivamente para o andamento do projeto, como a divisão em trios para desenvolvimento das \textit{tasks}, os processos de desenvolvimento definidos anteriormente e as reuniões técnicas realizadas aos sábados. Ao mesmo tempo, reorganizamos o \textit{backlog} para reduzir a quantidade de \textit{tasks} paralelas de diferentes frentes e direcionar maior foco à integração do leitor RFID com o \textit{gateway}, funcionalidade que havia recebido pouca atenção durante a \textit{sprint} anterior.\par
+
+% text-p-1200
+\indent No início da \textit{sprint}, iniciei o desenvolvimento do diagrama de arquitetura da solução utilizando o Draw.io, com o objetivo de definir a infraestrutura o quanto antes para possibilitar o orçamento dos serviços da AWS, configuração do ambiente e disponibilização de parte da aplicação em nuvem para homologação. Para construção dessa arquitetura, reuni os demais AGES III, buscando garantir uma solução coerente tecnicamente e, ao mesmo tempo, envolver todo o grupo nas decisões arquiteturais do projeto.\par
+
+% text-p-1201
+\indent A arquitetura proposta utilizou serviços da AWS além do tradicional provisionamento em máquinas virtuais, buscando melhor adequação ao contexto da aplicação em termos de custo, escalabilidade e manutenção. A partir disso, realizamos o orçamento completo da infraestrutura utilizando a calculadora de \textit{pricing} da AWS, chegando a um custo mensal estimado de aproximadamente US\$15.72, principalmente devido ao aproveitamento da \textit{free} \textit{tier} e à segregação adequada dos serviços utilizados.\par
+
+% text-p-1202
+\indent Também realizei as adaptações necessárias no \textit{backend} para execução em AWS Lambda, mantendo compatibilidade com o desenvolvimento local sem necessidade de alterações no fluxo de execução da aplicação. Em paralelo, desenvolvi a pipeline de Continuous Deployment (CD) do \textit{backend} utilizando nossos \textit{reusable workflows} no GitHub Actions, permitindo que, a cada \textit{merge} realizado na \textit{branch} \textit{main}, uma nova versão da aplicação fosse empacotada e enviada automaticamente para atualização da Lambda na AWS.\par
+
+% text-p-1203
+\indent Durante essa \textit{sprint}, o time demonstrou maior independência no desenvolvimento das \textit{tasks} e melhor adaptação aos processos definidos anteriormente. Isso permitiu que nós, AGES III, concentrássemos maior esforço em decisões arquiteturais, revisões de código e suporte técnico mais estratégico, sem necessidade de acompanhamento constante das implementações desenvolvidas pelos AGES I e II.\par
+
+% text-p-1204
+\indent Próximo à entrega da Sprint 2, eu, Erik Suris e Bruno Panizzi nos dedicamos à configuração da infraestrutura necessária para disponibilizar a aplicação em nuvem. Configuramos o banco de dados PostgreSQL através do Amazon RDS e iniciamos a configuração de hospedagem do \textit{frontend} utilizando Amazon S3 e CloudFront, com o objetivo de apresentar aos \textit{stakeholders} uma versão já “deployada” da solução durante a demonstração da \textit{sprint}.\par
+
+\begin{reflection}
+% text-p-1207
+\indent \originaltab{}Durante a Sprint 2, me senti muito realizado por participar diretamente da etapa de deploy e configuração da infraestrutura da solução. Apesar de já trabalhar frequentemente com serviços em nuvem, foi muito interessante transformar nossa aplicação desenvolvida localmente na AGES em algo realmente acessível e funcional na nuvem. Quando eu era AGES I e II, o processo de deploy parecia algo distante e até um pouco abstrato, então participar ativamente dessa construção me trouxe uma visão muito mais concreta e madura sobre o ciclo completo de desenvolvimento de software.\par
+
+% text-p-1209
+\indent \originaltab{}Também gostei bastante da experiência de automatizar os processos de deployment utilizando GitHub Actions e reusable workflows. Diferente do desenvolvimento tradicional de features, trabalhar com pipelines exige um cuidado muito maior com sequência de etapas, validações e estabilidade do fluxo, já que qualquer erro impacta diretamente o ambiente da aplicação. Foi um trabalho que exigiu bastante atenção aos detalhes e reforçou muito meu papel como AGES III, não apenas no desenvolvimento técnico, mas principalmente na estruturação dos processos do projeto. Me senti satisfeito com o resultado construído pelo time e com a forma como conseguimos evoluir nossa maturidade técnica em relação à infraestrutura e automação.\par
+
+\end{reflection}

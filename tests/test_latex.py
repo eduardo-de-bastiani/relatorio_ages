@@ -139,6 +139,28 @@ class LatexTests(unittest.TestCase):
         self.write("main.tex", altered + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}")
         self.assertIn("unverified_figure_macro", self.codes(self.audit()))
 
+    def test_linked_memorialfigure_checks_contract_destination_asset_and_label(self):
+        body = r'''\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape\href{#6}{#2}}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\href{#6}{\XeTeXpicfile "#1" width #5\linewidth\relax}}\par\begingroup\centering\small\SingleSpacing #4\par\endgroup\end{figure}'''
+        definition = r"\newcommand{\memorialfigurelinked}[6]{" + body + "}"
+        self.write("main.tex", r"\input{util/figure-macros}" + "\n" + r"\input{unit}")
+        self.write("util/figure-macros.tex", definition)
+        (self.root / "image.png").write_bytes(b"synthetic image")
+        good = r"\memorialfigurelinked{image.png}{Figura 25 – Banco}{fig:db}{Fonte: pendente de identificação}{0.8}{https://example.org/wiki}"
+        self.write("unit.tex", good + r"\href{https://example.org/wiki}{Banco de Dados}")
+        result = self.audit()
+        self.assertEqual(result["status"], "pass", result)
+        self.assertEqual(result["counts"]["images"], 1)
+        self.assertEqual(result["counts"]["labels"], 1)
+        self.write("unit.tex", good.replace("{0.8}", "{1.1}"))
+        self.assertIn("invalid_figure_apparatus", self.codes(self.audit()))
+        self.write("unit.tex", good.replace("https://example.org/wiki", "not-a-url"))
+        self.assertIn("invalid_figure_link", self.codes(self.audit()))
+        self.write("unit.tex", good.replace("Figura 25 – Banco", ""))
+        self.assertIn("missing_figure_caption_or_label", self.codes(self.audit()))
+        self.write("util/figure-macros.tex", definition.replace(r"\addcontentsline{lof}", r"\addcontentsline{toc}"))
+        self.write("unit.tex", good)
+        self.assertIn("unverified_figure_macro", self.codes(self.audit()))
+
 
 if __name__ == "__main__":
     unittest.main()

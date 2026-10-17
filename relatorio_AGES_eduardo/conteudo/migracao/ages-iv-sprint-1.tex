@@ -1,0 +1,56 @@
+% Conversão de ages-iv-sprint-1; origem imutável RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4847_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{6.3.2 Sprint 1}
+\label{ages-iv:text-h-0117}
+\addcontentsline{toc}{subsection}{6.3.2 Sprint 1}
+
+% text-p-1497
+\indent A Sprint 1 marcou o início efetivo do desenvolvimento do Recorda e, consequentemente, uma mudança importante na dinâmica da equipe. Após uma Sprint 0 voltada principalmente à definição, prototipação e organização do projeto, nosso principal desafio passou a ser fazer com que o time incorporasse um fluxo de desenvolvimento consistente. Como AGES IV, procurei garantir que todos entendessem não apenas o que deveria ser desenvolvido, mas também como as tarefas deveriam percorrer o processo até chegar a uma entrega.\par
+
+% text-p-1498
+\indent Um dos primeiros pontos de atuação foi a revisão do modelo de banco de dados produzido pela equipe de AGES II com auxílio de ferramentas de IA. Por se tratar de uma parte estrutural do sistema, fiz uma validação detalhada do modelo, confrontando-o com as regras de negócio, decisões tomadas na Sprint 0 e convenções adotadas pelo projeto. A partir dessa análise, repassei à equipe as alterações necessárias para que o desenvolvimento pudesse começar sobre uma base consistente. Paralelamente, trabalhei com os AGES III na adaptação de uma pipeline de Integração Contínua que havia desenvolvido no projeto anterior, adequando-a às tecnologias do Recorda. Com isso, já na primeira Sprint de desenvolvimento tínhamos uma pipeline funcional e pudemos utilizá-la como parte do fluxo de trabalho da equipe.\par
+
+% text-p-1499
+\indent Com a infraestrutura inicial estabelecida, apresentei ao time o fluxo completo de desenvolvimento: recebimento da tarefa, criação e sincronização da branch, convenções de commits, abertura de Pull Request e tratamento das alterações solicitadas durante a revisão. Também apresentei o repositório de \textit{skills} que havia estruturado, contendo orientações tanto sobre compreensão de negócio e especificação técnica quanto sobre boas práticas de React e FastAPI. A intenção era criar uma referência comum para o desenvolvimento e, ao mesmo tempo, ensinar a equipe a utilizar agentes de IA de maneira mais consciente.\par
+
+% text-p-1500
+\indent Durante uma das \textit{dailies} de sábado, o Esthevan, AGES III, me procurou justamente por uma dificuldade que havia identificado ao utilizar um agente de IA como revisor de código. Embora o agente conseguisse encontrar problemas, ele também acabava realizando as próprias correções, quando o objetivo era que atuasse como um revisor: analisando o código, identificando possíveis problemas e indicando ao desenvolvedor o que deveria ser alterado. O Esthevan não tinha uma solução clara para configurar esse comportamento, então trabalhamos juntos na definição de uma abordagem mais adequada.\par
+
+% text-p-1501
+\indent A partir dessa conversa, desenvolvi uma \textit{skill} específica para revisão de Pull Requests, estruturando instruções para que o agente analisasse falhas de lógica, inconsistências com as especificações das tarefas e desvios das práticas adotadas no projeto, sem assumir automaticamente a implementação das correções. A \textit{skill} também foi configurada para produzir comentários diretamente nos trechos de código que precisavam de alteração, tornando o resultado mais próximo de uma revisão humana convencional. Por fim, integrei o fluxo ao GitHub por meio de seu MCP Server e do SDK \texttt{gh}, permitindo que os comentários fossem inseridos diretamente nos Pull Requests.\originalspace{}\par
+
+% text-p-1502
+\indent Do ponto de vista de gestão, nós, AGES IV, também estruturaram durante a Sprint a EAP, a matriz RACI e a priorização MoSCoW. Esses artefatos ajudaram a transformar o grande volume de User Stories definido na Sprint 0 em uma visão mais controlada de escopo, responsabilidades e prioridades.\par
+
+% text-p-1503
+\indent No final da Sprint, realizamos uma \textit{\textup{força tarefa}} conjunta entre AGES IV e AGES III para revisar os Pull Requests pendentes, corrigir problemas de integração e preparar a aplicação para a entrega. Esse momento evidenciou uma quantidade significativa de inconsistências no código produzido ao longo da Sprint, incluindo diferentes abordagens para funcionalidades semelhantes, dependências desnecessárias, problemas de integração e funcionalidades ou testes que haviam sido removidos durante outras implementações. Foi necessário refatorar principalmente o fluxo de onboarding e consolidar as diferentes partes do sistema. Nesse processo, desenvolvi as principais integrações do fluxo de ponta a ponta da Sprint: cadastro, login, onboarding e abertura da câmera. Algumas dificuldades de integração com o Expo Go fizeram com que a continuidade do trabalho fosse repassada ao Andrei, que finalizou a implementação e os ajustes necessários.\par
+
+% text-p-1504
+\indent Apesar dos problemas encontrados durante a consolidação, conseguimos chegar a uma entrega consistente. A apresentação conduzida pelo AGES IV Guilherme Kuhn foi bem executada e recebeu um retorno bastante positivo dos clientes e do time.\par
+
+% text-h-0118
+\subsection*{Retrospectiva da Sprint 1}
+
+% text-p-1505
+\indent A retrospectiva acabou sendo um dos momentos mais importantes da Sprint para os AGES IV. Mais do que discutir apenas problemas técnicos, tivemos uma conversa ampla com a equipe sobre qualidade, responsabilidade e participação no desenvolvimento. Percebemos que parte do time estava tratando a conclusão da tarefa como objetivo suficiente: se o código fosse produzido e a pipeline passasse, a tarefa estaria essencialmente concluída. Na prática, encontramos diversas Pull Requests com falhas, inclusive algumas que sequer passavam pela pipeline, além de situações em que os próprios desenvolvedores não dominavam as decisões presentes no código que haviam produzido com auxílio de agentes de IA.\par
+
+% text-p-1506
+\indent A discussão reforçou que o uso de IA não é o problema. O ponto central é que o desenvolvedor precisa continuar responsável pelas decisões e compreender aquilo que está colocando no projeto. A facilidade proporcionada pelos agentes torna ainda mais importante a revisão, a participação ativa e o senso de responsabilidade sobre o código.\par
+
+% text-p-1507
+\indent Também tivemos uma situação de gestão envolvendo a participação de um dos AGES IV nas atividades de consolidação da Sprint. Sua ausência durante o momento de maior necessidade de integração da equipe, somada à falta de comunicação durante o período, foi discutida pelos demais AGES IV na retrospectiva. Foi necessário realizar uma conversa direta, porém respeitosa, sobre o impacto dessa postura no restante do grupo e sobre a importância da participação dos responsáveis pela gestão justamente nos momentos críticos da Sprint. Esse episódio tornou a retrospectiva não apenas um espaço para identificar problemas do projeto, mas também para alinhar expectativas sobre o comportamento e a responsabilidade esperados dentro da equipe.\par
+
+% text-p-1508
+\indent De forma geral, a Sprint 1 mostrou que, a partir do momento em que o desenvolvimento começa, a atuação dos AGES IV deixa de ser apenas uma questão de organizar tarefas e passa a envolver acompanhamento próximo, identificação de problemas, cobrança, orientação e mediação. Esse acabou sendo o principal aprendizado da Sprint para minha atuação como gestor do projeto.\par
+
+% draw-text-box-0052
+\begin{reflection}
+% text-p-1510
+\noindent \originaltab{}A retrospectiva desta Sprint foi, para mim, o principal exercício de gestão até aqui. Percebi que ser AGES IV não significa apenas organizar tarefas e acompanhar entregas, mas também assumir a responsabilidade de abordar situações desconfortáveis quando elas afetam o funcionamento da equipe. A chamada de atenção feita a um dos AGES IV foi especialmente marcante, por ter sido a primeira vez que precisei dar um feedback mais incisivo publicamente. Procurei conduzir a conversa de forma respeitosa e focada no impacto da situação para o grupo, e não em uma exposição pessoal.\par
+
+% text-p-1511
+\noindent Também percebi que liderança exige equilíbrio entre cobrança e cuidado com a equipe. É preciso saber quando intervir, como comunicar um problema e, principalmente, transformar uma situação individual em um aprendizado coletivo. A retrospectiva me mostrou que, além de garantir que o projeto avance, o AGES IV também precisa ajudar a construir uma equipe mais responsável, participativa e consciente de seu papel.\par
+
+\end{reflection}
+

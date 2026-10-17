@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "a18d5a1f09b0d3602ba78f87a7fe0a7d73264c89",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0108": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0108",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 159,
+          "end_byte": 205,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "source_text_sha256": "78489aebfd63b39975186d5703856fec2c69ec934e96235984d27d1ce591e7e3"
+        },
+        {
+          "source_id": "text-p-1332",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 339,
+          "end_byte": 841,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "source_text_sha256": "a92162fa8c7b7c8810fad9ae767180cbaa186745d8b4f3a4b050aa3db559a50c",
+          "serializations": [
+            "technology_citation"
+          ]
+        },
+        {
+          "source_id": "text-p-1333",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 882,
+          "end_byte": 1024,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "source_text_sha256": "18bb3533781e86f02b8ffc5ccf43349f3bc455d640a6b3553e425941dd852daf",
+          "serializations": [
+            "repository_link_sentence"
+          ]
+        },
+        {
+          "source_id": "text-a-0146",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 882,
+          "end_byte": 1024,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "serializations": [
+            "repository_link_sentence"
+          ]
+        },
+        {
+          "source_id": "text-p-1335",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 1051,
+          "end_byte": 1300,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "source_text_sha256": "75302ef7d03b2d77f81aa376c540aba505933c57510a3539ba05f21ba36c5b21"
+        },
+        {
+          "source_id": "text-p-1336",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 1341,
+          "end_byte": 1481,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "source_text_sha256": "a8f96ade503d4fe76ee62fcf356161af398c07bf9230bff824d09a01862d035b",
+          "serializations": [
+            "repository_link_sentence"
+          ]
+        },
+        {
+          "source_id": "text-a-0147",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "start_byte": 1341,
+          "end_byte": 1481,
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "serializations": [
+            "repository_link_sentence"
+          ]
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0108",
+          "source_name": "__RefHeading___Toc4833_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+          "target_anchor": "__RefHeading___Toc4833_3118176633",
+          "command": "hypertarget",
+          "start_byte": 68,
+          "end_byte": 117,
+          "source_start_id": "text-bookmark-start-0071",
+          "source_end_id": "text-bookmark-end-0071",
+          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0228",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0186",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0229",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0187",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0230",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-header-0063",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        }
+      ],
+      "pending": [
+        "Auditorias independentes de conteúdo e visual, compilação integrada e aprovação humana da AGES IV permanecem PENDING.",
+        "A disponibilidade dos URLs originais dos repositórios Recorda Frontend e Recorda Backend permanece PENDING, por decisão explícita do usuário; os destinos foram preservados.",
+        "A fonte Apple sustenta o App Store como canal de distribuição e iOS como plataforma elegível, mas não verifica a prontidão, o envio, a aprovação ou a listagem do Recorda; a redação original foi preservada e sua afirmação específica permanece pendente de evidência do projeto/auditoria humana."
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0146",
+          "text-a-0147",
+          "text-p-1333",
+          "text-p-1336"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "preserved_links": [
+        {
+          "source_id": "text-a-0146",
+          "original_anchor": "Repositório Recorda Frontend",
+          "typeset_anchor": "Recorda Frontend",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend",
+          "availability": "PENDING"
+        },
+        {
+          "source_id": "text-a-0147",
+          "original_anchor": "Repositório Recorda Backend",
+          "typeset_anchor": "Recorda Backend",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend",
+          "availability": "PENDING"
+        }
+      ],
+      "technology_citations": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_text_changed": false,
+        "source_id_to_keys": {
+          "text-p-1332": [
+            "ages-iv-app-store"
+          ]
+        }
+      },
+      "citation_evidence_path": "migration/evidence/references/ages-iv.json",
+      "candidate_citations": [
+        {
+          "source_link_id": null,
+          "candidate_key": "ages-iv-app-store",
+          "technology_anchor": "App Store",
+          "observed_responsibility_or_title": "Apple Inc.",
+          "basis": "author",
+          "url": "https://developer.apple.com/app-store/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "app_store",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": false,
+          "status": "INTEGRATED centrally; supplemental source with no original ODF hyperlink; claim scope remains bounded by evidence.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "NOT_APPLICABLE: citation does not assert a Recorda dependency version",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-app-store",
+          "bibliography_integration": "confirmed in root bibliography; converter did not edit .bib",
+          "observed_page_title": "Reach a global audience on the App Store",
+          "observed_responsibility": "Apple Inc.",
+          "responsibility_evidence": "The official Apple Developer Agreement names Apple Inc. as the contracting entity and defines the Apple Developer web pages/site and their content/services as part of the agreement. The target page is first-party Apple Developer content; it has no individual author/byline or page-level copyright line in the retrieved content.",
+          "usage_source_id": "text-p-1332",
+          "citation_scope_limitation": "A fonte sustenta App Store como canal de distribuição; não comprova prontidão, envio, aprovação ou publicação do Recorda.",
+          "reference_url_recommendation": "https://developer.apple.com/app-store/"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "71c978338bda24d4b57ff68932c025d2bcd9f33c",
+  "units": {
+    "chapter-06-text-h-0107": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0107.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0107",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0107.tex",
+          "start_byte": 184,
+          "end_byte": 214,
+          "serializations": [],
+          "target_sha256": "8bbd9c4875937cf3af1e2688a2f31314e8f86b9b79fa8593111e4d22673f4d5c"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0107",
+          "source_name": "__RefHeading___Toc4831_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0107.tex",
+          "target_anchor": "__RefHeading___Toc4831_3118176633",
+          "command": "hypertarget",
+          "start_byte": 68,
+          "end_byte": 117,
+          "source_start_id": "text-bookmark-start-0069",
+          "source_end_id": "text-bookmark-end-0069",
+          "target_sha256": "8bbd9c4875937cf3af1e2688a2f31314e8f86b9b79fa8593111e4d22673f4d5c"
+        },
+        {
+          "source_heading_id": "text-h-0107",
+          "source_name": "_Toc4562714612",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0107.tex",
+          "target_anchor": "_Toc4562714612",
+          "command": "hypertarget",
+          "start_byte": 118,
+          "end_byte": 148,
+          "source_start_id": "text-bookmark-start-0070",
+          "source_end_id": "text-bookmark-end-0070",
+          "target_sha256": "8bbd9c4875937cf3af1e2688a2f31314e8f86b9b79fa8593111e4d22673f4d5c"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0225",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de listas ODF vazios/de numeração do título; o único conteúdo visível do grupo é o título de seção, mapeado separadamente."
+        },
+        {
+          "source_id": "text-list-item-0184",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de listas ODF vazios/de numeração do título; o único conteúdo visível do grupo é o título de seção, mapeado separadamente."
+        },
+        {
+          "source_id": "text-list-0226",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de listas ODF vazios/de numeração do título; o único conteúdo visível do grupo é o título de seção, mapeado separadamente."
+        },
+        {
+          "source_id": "text-list-item-0185",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de listas ODF vazios/de numeração do título; o único conteúdo visível do grupo é o título de seção, mapeado separadamente."
+        },
+        {
+          "source_id": "text-list-0227",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de listas ODF vazios/de numeração do título; o único conteúdo visível do grupo é o título de seção, mapeado separadamente."
+        },
+        {
+          "source_id": "text-list-header-0062",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de listas ODF vazios/de numeração do título; o único conteúdo visível do grupo é o título de seção, mapeado separadamente."
+        }
+      ],
+      "pending": [
+        "Auditorias independentes, compilação integrada e aprovação humana da AGES IV permanecem PENDING."
+      ],
+      "presentation_transformations": []
+    }
+  }
+}

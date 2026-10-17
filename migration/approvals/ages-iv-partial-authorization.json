@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_partial_edition_scope",
+  "date": "2026-10-17",
+  "basis": "The user explicitly authorized the controlled migration of AGES IV, stated that report content is ready through Sprint 1 inclusive, asked for headings for Sprints 2–4 and the chapter 6 conclusion so content can be added later, and required delivery for human review before another edition.",
+  "user_instruction_scope": "AGES IV / Recorda; convert source material through Sprint 1 inclusive. Retain Sprints 2–4 and chapter 6 Conclusion as empty structural headings. Include only the chapter 7 heading “7 - CONSIDERAÇÕES FINAIS (Somente AGES IV)”; omit its ten body paragraphs under the user's explicit reply “Incluir apenas o título”.",
+  "branch": "migration/ages-iii",
+  "branch_note": "Creating a new branch failed because .git is read-only in this environment. Continue on the existing non-main work branch; no commit or branch ref was changed.",
+  "base_checkpoint": {
+    "commit": "96c09d125fcde4623d2f4d2218ee6aaa0cb5c656",
+    "working_tree_dirty": true,
+    "note": "The workspace contains prior user-approved AGES I–III edits not yet committed; preserve them and avoid destructive cleanup."
+  },
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "edition": "AGES IV / Recorda",
+  "scope": {
+    "units": [
+      "chapter-06-text-h-0105",
+      "chapter-06-text-h-0106",
+      "chapter-06-text-h-0107",
+      "chapter-06-text-h-0108",
+      "chapter-06-text-h-0109",
+      "chapter-06-text-h-0110",
+      "chapter-06-text-h-0112",
+      "chapter-06-text-h-0113",
+      "chapter-06-text-h-0114",
+      "chapter-06-text-h-0115",
+      "ages-iv-sprint-0",
+      "ages-iv-sprint-1",
+      "ages-iv-sprint-2",
+      "ages-iv-sprint-3",
+      "ages-iv-sprint-4",
+      "chapter-06-text-h-0122",
+      "chapter-07-text-h-0123"
+    ],
+    "nonempty_units": [
+      "chapter-06-text-h-0106",
+      "chapter-06-text-h-0108",
+      "chapter-06-text-h-0109",
+      "chapter-06-text-h-0110",
+      "chapter-06-text-h-0112",
+      "chapter-06-text-h-0113",
+      "chapter-06-text-h-0114",
+      "ages-iv-sprint-0",
+      "ages-iv-sprint-1",
+      "chapter-07-text-h-0123"
+    ],
+    "heading_only_units": [
+      "chapter-06-text-h-0105",
+      "chapter-06-text-h-0107",
+      "chapter-06-text-h-0115",
+      "ages-iv-sprint-2",
+      "ages-iv-sprint-3",
+      "ages-iv-sprint-4",
+      "chapter-06-text-h-0122"
+    ],
+    "unique_manifest_record_ids": 287,
+    "manifest_element_counts": {
+      "paragraphs_and_headings": 117,
+      "images": 11,
+      "hyperlinks": 20,
+      "text_boxes": 13,
+      "captions": 11,
+      "list_containers": 61,
+      "list_items": 49,
+      "list_headers": 16
+    },
+    "assets": {
+      "chapter-06-text-h-0106": [
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0011.jpg",
+          "sha256": "cfa6b3294c6574fde69746653cada5d01a29a6eb159c117bfdc49dba2bae4276"
+        }
+      ],
+      "chapter-06-text-h-0109": [
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0019.png",
+          "sha256": "5a085f7daba0bc64e87bcfeb00e4e83a796c87079d6fba956c89c963eeee3500"
+        }
+      ],
+      "chapter-06-text-h-0110": [
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0001.png",
+          "sha256": "64cd7e8dd8bd0c7a51a3430bd27459d85e1eb48587d60828b4a9a323e4aa2be8"
+        }
+      ],
+      "chapter-06-text-h-0112": [
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0005.png",
+          "sha256": "f2391db864289d5efef845590bd4f6b1bff1ff91683b4058b99f2d09f4b5505e"
+        },
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0002.png",
+          "sha256": "0bf8ff73fb15969e1fe6bdc7eb88ffb08ebc799e704eeb8821b8314d09721dba"
+        },
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0010.png",
+          "sha256": "a7df051066af53a96d22652fd2aef1dee64d9c88f692ad3ba614c68816d8f73f"
+        },
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0006.png",
+          "sha256": "48173331bd0f0b459fc893caa70af91db227f1512e2215ca91f308ddab369901"
+        }
+      ],
+      "chapter-06-text-h-0114": [
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0003.png",
+          "sha256": "3c6477ca131ef09d5bdce4a3485e81e153a790d35e95d155296ece2a2bb63bb6"
+        },
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0009.png",
+          "sha256": "9f644f2d358aa9381df981341805d085eca2903fae790b93a7884cb80401e854"
+        }
+      ],
+      "ages-iv-sprint-0": [
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0033.png",
+          "sha256": "4403cdccae2b6049641224261d6e544920b894bcaa8893484493c778129b6e53"
+        },
+        {
+          "path": "relatorio_AGES_eduardo/imagens/original/asset-0034.png",
+          "sha256": "6e26311e2a86dbae7ed7d04b87d060fb781e5bc8090fb1b2f001bfc09c5a5581"
+        }
+      ]
+    },
+    "title_only_partial_units": [
+      "chapter-07-text-h-0123"
+    ],
+    "authorized_title_only_inclusion": {
+      "unit": "chapter-07-text-h-0123",
+      "source_heading_id": "text-h-0123",
+      "source_heading_text": "7 - CONSIDERAÇÕES FINAIS (Somente AGES IV)",
+      "included_source_record_ids": [
+        "text-h-0123"
+      ],
+      "omitted_source_record_ids": [
+        "text-p-1539",
+        "text-p-1540",
+        "text-p-1541",
+        "text-list-0280",
+        "text-list-item-0225",
+        "text-p-1542",
+        "text-list-0281",
+        "text-list-item-0226",
+        "text-p-1543",
+        "text-list-item-0227",
+        "text-p-1544",
+        "text-list-item-0228",
+        "text-p-1545",
+        "text-list-item-0229",
+        "text-p-1546",
+        "text-list-item-0230",
+        "text-p-1547",
+        "text-p-1549"
+      ],
+      "user_decision": "Incluir apenas o título",
+      "treatment": "Omitir nesta entrega o corpo de orientação e seus contêineres/listas; não é uma omissão acidental. Manter rastreável para eventual redação futura.",
+      "completion_state": "title included; source unit remains partial and body intentionally pending"
+    }
+  },
+  "excluded_or_unresolved": {
+    "other_editions": [
+      "AGES I",
+      "AGES II",
+      "AGES III",
+      "Cliente Hoortech"
+    ],
+    "future_sprint_narrative": "No content may be inferred for Sprints 2–4 or the chapter 6 conclusion."
+  },
+  "converter_ownership": {
+    "converter_a": {
+      "worktree": "/tmp/relatorio-ages-iv-converter-a",
+      "units": [
+        "chapter-06-text-h-0105",
+        "chapter-06-text-h-0106",
+        "chapter-06-text-h-0107",
+        "chapter-06-text-h-0108",
+        "chapter-06-text-h-0109",
+        "chapter-06-text-h-0110",
+        "chapter-06-text-h-0112",
+        "chapter-06-text-h-0113"
+      ],
+      "assets": [
+        "relatorio_AGES_eduardo/imagens/original/asset-0011.jpg",
+        "relatorio_AGES_eduardo/imagens/original/asset-0019.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0001.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0005.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0002.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0010.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0006.png"
+      ]
+    },
+    "converter_b": {
+      "worktree": "/tmp/relatorio-ages-iv-converter-b",
+      "units": [
+        "chapter-06-text-h-0114",
+        "chapter-06-text-h-0115",
+        "ages-iv-sprint-0",
+        "ages-iv-sprint-1",
+        "ages-iv-sprint-2",
+        "ages-iv-sprint-3",
+        "ages-iv-sprint-4",
+        "chapter-06-text-h-0122",
+        "chapter-07-text-h-0123"
+      ],
+      "assets": [
+        "relatorio_AGES_eduardo/imagens/original/asset-0003.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0009.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0033.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0034.png"
+      ]
+    },
+    "execution": "two converters may work concurrently only in these separate temporary checkouts; integration into the project workspace remains serial"
+  },
+  "reference_curator": {
+    "evidence_file": "migration/evidence/references/ages-iv.json",
+    "shared_bibliography_integration": "centralized by the LaTeX maintainer after evidence review; curator does not edit the shared .bib"
+  },
+  "content_and_visual_audits": {
+    "content_auditor_outputs": [
+      "docs/ages-iv/CONTENT_AUDIT.md",
+      "docs/ages-iv/TEXT_DIVERGENCES.json"
+    ],
+    "visual_auditor_outputs": [
+      "docs/ages-iv/VISUAL_AUDIT.md"
+    ]
+  },
+  "presentation_and_preservation": {
+    "follow": "docs/STYLE_GUIDE.md and docs/QUALITY_GATES.md",
+    "source_text": "preserve wording, punctuation, order, and meaning; no editorial revisions or fact completion",
+    "technology_prose": "use the user-approved Mariah project prose pattern with project-specific relationship and citations adjacent to technology names; retain all source facts and document original URLs in ledgers/references",
+    "sprint_flow": "use subsection inputs; no artificial page break before a Sprint",
+    "figures": "preserve the 11 embedded images at source order/anchors; source attribution remains PENDING until manually identified; do not invent figure sources",
+    "references": "preserve source links and anchors; verify official sources and metadata before adding citations; record actual access date; use citation year 2026 as user previously instructed for AGES IV, without claiming it is factual publication metadata unless verified",
+    "empty_structure": "include the original heading-only Sprint 2, Sprint 3, Sprint 4 and chapter 6 conclusion units as actual headings without invented body text",
+    "reflections": "preserve the two identified personal reflection blocks and their text; use the approved bordered environment and body font"
+  },
+  "stop_conditions": [
+    "A source element or image relation cannot be extracted safely.",
+    "An unresolved citation would require fabricated metadata; preserve it PENDING and report.",
+    "An editorial decision or source wording repair is needed.",
+    "A validation/content audit identifies unresolved mismatch.",
+    "Visual defects remain unresolved."
+  ],
+  "approval_status": "authorized_for_partial_AGES_IV_execution; chapter-07 title-only inclusion explicitly authorized; body remains intentionally omitted; human review pending"
+}

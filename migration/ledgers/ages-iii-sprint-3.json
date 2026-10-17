@@ -1,0 +1,562 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "96c09d125fcde4623d2f4d2218e6aaa0cb5c656",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "28b051ecf5a2ca73082158a69ce0c30c2150942039bc94e39393ee99e4ef7257"
+  },
+  "units": {
+    "ages-iii-sprint-3": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0095",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "start_byte": 174,
+          "end_byte": 188,
+          "serializations": [],
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+        },
+        {
+          "source_id": "text-p-1237",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "start_byte": 293,
+          "end_byte": 1113,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+        },
+        {
+          "source_id": "text-p-1238",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "start_byte": 1141,
+          "end_byte": 2220,
+          "serializations": [],
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+        },
+        {
+          "source_id": "text-p-1239",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "start_byte": 2248,
+          "end_byte": 3273,
+          "serializations": [],
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+        },
+        {
+          "source_id": "text-p-1246",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "start_byte": 3320,
+          "end_byte": 4078,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+        },
+        {
+          "source_id": "text-p-1247",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "start_byte": 4106,
+          "end_byte": 5044,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+        }
+      ],
+      "asset_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0038",
+          "disposition": "represented-as-reflection",
+          "evidence": "ODF text box directly contains the mapped introspective paragraphs in source order; the existing divisible reflection environment preserves the border and text."
+        },
+        {
+          "source_id": "text-list-0216",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-item-0179",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-0217",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-item-0180",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-0218",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-header-0058",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 3,
+        "reflection_paragraphs": 2,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "draw-text-box-0038",
+          "text-list-0216",
+          "text-list-item-0179",
+          "text-list-0217",
+          "text-list-item-0180",
+          "text-list-0218",
+          "text-list-header-0058"
+        ]
+      },
+      "pending": [
+        {
+          "status": "PENDING",
+          "code": "independent_emphasis_audit",
+          "source_ids": [
+            "text-span-1481",
+            "text-span-1482",
+            "text-span-1484",
+            "text-span-1485",
+            "text-span-1486",
+            "text-span-1487",
+            "text-span-1488",
+            "text-span-1489",
+            "text-span-1490",
+            "text-span-1491",
+            "text-span-1492",
+            "text-span-1493",
+            "text-span-1494",
+            "text-span-1495",
+            "text-span-1496",
+            "text-span-1497",
+            "text-span-1498",
+            "text-span-1499",
+            "text-span-1500",
+            "text-span-1503",
+            "text-span-1505",
+            "text-span-1509",
+            "text-span-1511",
+            "text-span-1513"
+          ],
+          "detail": "Italic spans and source/target offsets were captured directly from ODF content.xml/styles.xml; independent content/format validation is still required."
+        }
+      ],
+      "layout_disposition": "Title uses the native subsection/section level and continues the document flow without an artificial page break. Reflection text is enclosed in the shared divisible reflection environment; empty/boundary wrappers do not create artificial spacing.",
+      "emphasis_evidence": {
+        "status": "PENDING",
+        "source_part": "content.xml",
+        "style_part": "styles.xml",
+        "style_property": "fo:font-style=italic (including ODF style:text-properties aliases)",
+        "ranges": [
+          {
+            "source_span_id": "text-span-1481",
+            "source_paragraph_id": "text-p-1237",
+            "source_char_start": 146,
+            "source_char_end": 153,
+            "source_xml_sha256": "f489f54bfacf3fc1d7f61e1f7f53299c40f9c054951b1f3047db566d4d8b4d0b",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 454,
+            "target_wrapper_end_byte": 470,
+            "target_payload_start_byte": 462,
+            "target_payload_end_byte": 469,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1482",
+            "source_paragraph_id": "text-p-1237",
+            "source_char_start": 584,
+            "source_char_end": 593,
+            "source_xml_sha256": "05fa67ba905a369ec64331dceec7c3ee143e1cd42ca3cfd2aa6ace6658731682",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 912,
+            "target_wrapper_end_byte": 930,
+            "target_payload_start_byte": 920,
+            "target_payload_end_byte": 929,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1484",
+            "source_paragraph_id": "text-p-1237",
+            "source_char_start": 712,
+            "source_char_end": 717,
+            "source_xml_sha256": "a82ca3df70d5d754a5cbacb20ea1dc741fe3e03ee310447968a708e83c0adb1c",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1057,
+            "target_wrapper_end_byte": 1071,
+            "target_payload_start_byte": 1065,
+            "target_payload_end_byte": 1070,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1485",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 110,
+            "source_char_end": 117,
+            "source_xml_sha256": "c6e527e4e6a9110d066ee05e1cdf3f0384e0c991bf01a0103b2b273ff13e2d00",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1256,
+            "target_wrapper_end_byte": 1272,
+            "target_payload_start_byte": 1264,
+            "target_payload_end_byte": 1271,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1486",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 354,
+            "source_char_end": 363,
+            "source_xml_sha256": "2bcbda00a63882b91a262c422fea317cb1a609f8452fa89af84facd94e309910",
+            "style_name": "T337",
+            "style": "italic",
+            "target_wrapper_start_byte": 1516,
+            "target_wrapper_end_byte": 1534,
+            "target_payload_start_byte": 1524,
+            "target_payload_end_byte": 1533,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1487",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 395,
+            "source_char_end": 401,
+            "source_xml_sha256": "34423ee6b71859cdb12fcd7f75cfdedac84885af536944e5355c15999fe6ca79",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1567,
+            "target_wrapper_end_byte": 1582,
+            "target_payload_start_byte": 1575,
+            "target_payload_end_byte": 1581,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1488",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 480,
+            "source_char_end": 486,
+            "source_xml_sha256": "34423ee6b71859cdb12fcd7f75cfdedac84885af536944e5355c15999fe6ca79",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1664,
+            "target_wrapper_end_byte": 1679,
+            "target_payload_start_byte": 1672,
+            "target_payload_end_byte": 1678,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1489",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 494,
+            "source_char_end": 502,
+            "source_xml_sha256": "824b28fbed99a209c700af7a4d7ccfdd53a2b34ecd139d565baf029154234ca3",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1687,
+            "target_wrapper_end_byte": 1704,
+            "target_payload_start_byte": 1695,
+            "target_payload_end_byte": 1703,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1490",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 520,
+            "source_char_end": 529,
+            "source_xml_sha256": "3d1796f5aa5b769823d4e67786cdaa2d95b47c3ae0ed11936c3bca422fed2bd4",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1722,
+            "target_wrapper_end_byte": 1740,
+            "target_payload_start_byte": 1730,
+            "target_payload_end_byte": 1739,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1491",
+            "source_paragraph_id": "text-p-1238",
+            "source_char_start": 750,
+            "source_char_end": 762,
+            "source_xml_sha256": "55da2fcb66c157bf656355172c5ac938c89cd97e4eab0bf95f7c9c8944117e08",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 1964,
+            "target_wrapper_end_byte": 1985,
+            "target_payload_start_byte": 1972,
+            "target_payload_end_byte": 1984,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1492",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 27,
+            "source_char_end": 39,
+            "source_xml_sha256": "941545303b37617d77f8c1b8f59ba045834d9087abade39653beb16ff8c19a07",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 2279,
+            "target_wrapper_end_byte": 2300,
+            "target_payload_start_byte": 2287,
+            "target_payload_end_byte": 2299,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1493",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 156,
+            "source_char_end": 162,
+            "source_xml_sha256": "94f81037a993e3849f0081e10ef05bf4d8f2e53fe30c5946ad798ba872d54553",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 2418,
+            "target_wrapper_end_byte": 2433,
+            "target_payload_start_byte": 2426,
+            "target_payload_end_byte": 2432,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1494",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 293,
+            "source_char_end": 301,
+            "source_xml_sha256": "e3f466a001e02abf55da7f215a23588dc4d7eb6bad5a2aebcddf03d69f14b6ae",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 2568,
+            "target_wrapper_end_byte": 2585,
+            "target_payload_start_byte": 2576,
+            "target_payload_end_byte": 2584,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1495",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 386,
+            "source_char_end": 392,
+            "source_xml_sha256": "4d4ced3ae9ed8b9580e714abc4010a83baa39f19a9f683ab6a3c241e3c3d295c",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 2670,
+            "target_wrapper_end_byte": 2685,
+            "target_payload_start_byte": 2678,
+            "target_payload_end_byte": 2684,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1496",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 635,
+            "source_char_end": 641,
+            "source_xml_sha256": "4d4ced3ae9ed8b9580e714abc4010a83baa39f19a9f683ab6a3c241e3c3d295c",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 2940,
+            "target_wrapper_end_byte": 2955,
+            "target_payload_start_byte": 2948,
+            "target_payload_end_byte": 2954,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1497",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 745,
+            "source_char_end": 750,
+            "source_xml_sha256": "c125ac1e73bbf6e20fd15432e126f13eb2f94c395c5627f3f8305e8a5951afa8",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 3062,
+            "target_wrapper_end_byte": 3076,
+            "target_payload_start_byte": 3070,
+            "target_payload_end_byte": 3075,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1498",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 754,
+            "source_char_end": 759,
+            "source_xml_sha256": "275a9ba265a27bdddfa828fb2772feca43e140ab5233cadcc043521b4ad02554",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 3080,
+            "target_wrapper_end_byte": 3094,
+            "target_payload_start_byte": 3088,
+            "target_payload_end_byte": 3093,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1499",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 790,
+            "source_char_end": 797,
+            "source_xml_sha256": "498dc0b4c73d2192d2c8ded13794b6c506c680fcd465f687765c6c5ebf678595",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 3125,
+            "target_wrapper_end_byte": 3141,
+            "target_payload_start_byte": 3133,
+            "target_payload_end_byte": 3140,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1500",
+            "source_paragraph_id": "text-p-1239",
+            "source_char_start": 838,
+            "source_char_end": 845,
+            "source_xml_sha256": "d29d5725b11c7733a327d69651bde09eee41ad31611491cb7bd94af8f8bea030",
+            "style_name": "T175",
+            "style": "italic",
+            "target_wrapper_start_byte": 3182,
+            "target_wrapper_end_byte": 3198,
+            "target_payload_start_byte": 3190,
+            "target_payload_end_byte": 3197,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1503",
+            "source_paragraph_id": "text-p-1246",
+            "source_char_start": 193,
+            "source_char_end": 199,
+            "source_xml_sha256": "24187054edab1d535e847a6c00aa38d6aaae701c6fe881e2a5e7a2683b4430f4",
+            "style_name": "T122",
+            "style": "italic",
+            "target_wrapper_start_byte": 3529,
+            "target_wrapper_end_byte": 3544,
+            "target_payload_start_byte": 3537,
+            "target_payload_end_byte": 3543,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1505",
+            "source_paragraph_id": "text-p-1246",
+            "source_char_start": 703,
+            "source_char_end": 710,
+            "source_xml_sha256": "7d333a84a13e7d65d45c42ad192a71f4fa014cd973e2c6a1167bb2576d350cbe",
+            "style_name": "T122",
+            "style": "italic",
+            "target_wrapper_start_byte": 4061,
+            "target_wrapper_end_byte": 4077,
+            "target_payload_start_byte": 4069,
+            "target_payload_end_byte": 4076,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1509",
+            "source_paragraph_id": "text-p-1247",
+            "source_char_start": 218,
+            "source_char_end": 230,
+            "source_xml_sha256": "3767ef23ef14147d6f8dee2cdf98c6c56b8c4d395157cd884a9d37aa12e26206",
+            "style_name": "T122",
+            "style": "italic",
+            "target_wrapper_start_byte": 4338,
+            "target_wrapper_end_byte": 4359,
+            "target_payload_start_byte": 4346,
+            "target_payload_end_byte": 4358,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1511",
+            "source_paragraph_id": "text-p-1247",
+            "source_char_start": 585,
+            "source_char_end": 591,
+            "source_xml_sha256": "24187054edab1d535e847a6c00aa38d6aaae701c6fe881e2a5e7a2683b4430f4",
+            "style_name": "T122",
+            "style": "italic",
+            "target_wrapper_start_byte": 4724,
+            "target_wrapper_end_byte": 4739,
+            "target_payload_start_byte": 4732,
+            "target_payload_end_byte": 4738,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          },
+          {
+            "source_span_id": "text-span-1513",
+            "source_paragraph_id": "text-p-1247",
+            "source_char_start": 704,
+            "source_char_end": 712,
+            "source_xml_sha256": "b258ded35b1d6f861d2172d4ba6a078eed4ce8242ec1784afad03493eb092282",
+            "style_name": "T122",
+            "style": "italic",
+            "target_wrapper_start_byte": 4854,
+            "target_wrapper_end_byte": 4871,
+            "target_payload_start_byte": 4862,
+            "target_payload_end_byte": 4870,
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+            "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a"
+          }
+        ],
+        "note": "This deterministic source-to-target map is converter evidence, not an independent audit result."
+      },
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+        "source_ids": [
+          "text-p-1237",
+          "text-p-1246",
+          "text-p-1247"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0095",
+          "source_name": "__RefHeading___Toc4821_3118176633",
+          "source_start_id": "text-bookmark-start-0063",
+          "source_end_id": "text-bookmark-end-0063",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+          "target_anchor": "__RefHeading___Toc4821_3118176633",
+          "command": "hypertarget",
+          "start_byte": 84,
+          "end_byte": 133,
+          "target_sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a",
+          "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text."
+        }
+      ]
+    }
+  }
+}

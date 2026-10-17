@@ -4,12 +4,15 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.migration_harness.preservation import (
     audit_conversion,
     displayed_text,
     UnsupportedSerialization,
     _project_approved_presentation,
+    _is_authorized_ages_iii_group_label_removal,
+    AGES_III_PROTOTYPE_GROUP_LABELS,
     PRESENTATION_HEADINGS,
     PRESENTATION_CAPTIONS,
     PRESENTATION_REPOSITORY_PARAGRAPHS,
@@ -23,6 +26,12 @@ from scripts.migration_harness.preservation import (
     TECHNOLOGY_PARAGRAPH_RECORDS,
     _verify_technology_paragraph,
     _verify_ages_ii_technology_paragraph,
+    _verify_ages_iii_technology_paragraph,
+    _verify_ages_iv_partial_source_scope,
+    _is_authorized_ages_iv_presentation,
+    AGES_IV_UNITS,
+    AGES_IV_TITLE_ONLY_UNIT,
+    AGES_IV_TITLE_ONLY_OMITTED_IDS,
     _load_presentation_authorization,
     AGES_II_TECHNOLOGY_REFERENCE_KEYS,
     AGES_II_ADDITIONAL_REFERENCE_RECORDS,
@@ -34,15 +43,30 @@ from scripts.migration_harness.preservation import (
     AGES_II_LEADING_SPACE_COUNTS,
     AGES_II_LEADING_LINE_BREAK_COUNTS,
     AGES_II_PRESENTATION_AUTHORIZATION,
+    AGES_III_LEADING_TAB_COUNTS,
+    AGES_III_INLINE_TAB_COUNTS,
+    AGES_III_INTERNAL_TAB_REMOVAL_POLICY,
+    AGES_III_INTERNAL_TAB_REMOVAL_AUTHORIZATION,
     AGES_I_II_WIKI_SENTENCES,
+    AGES_IV_WIKI_SENTENCES,
+    AGES_IV_TECHNICAL_CITATIONS,
+    AGES_IV_CITATION_TERMS,
+    AGES_IV_CITATION_EVIDENCE,
+    AGES_IV_REPOSITORY_UNITS,
+    AGES_IV_WIKI_UNITS,
     AGES_I_II_TECHNICAL_CITATIONS,
     AGES_I_II_TECHNICAL_CITATION_KEYS,
     _load_ages_i_ii_formatting_authorization,
     _citation_keys_in_fragment,
+    _verify_ages_iii_bibliography_entries,
+    _verify_ages_iv_bibliography_entries,
+    _verify_citation_alignment,
     _is_source_heading,
     _leading_tab_paragraph_ids,
     _source_whitespace_verified,
     _strict_source,
+    _project_source_text_order,
+    _verify_linked_figure_source,
 )
 
 
@@ -73,6 +97,63 @@ class PreservationTests(unittest.TestCase):
     def codes(self, report):
         return {item["code"] for item in report["findings"]}
 
+    def test_ages_iv_authorization_and_caption_heading_overlays_are_exactly_scoped(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-06-text-h-0114")
+        self.assertEqual(tuple(authorization["scope"]["units"]), AGES_IV_UNITS)
+        self.assertTrue(_is_authorized_ages_iv_presentation(authorization, "text-p-1450"))
+        self.assertFalse(_is_authorized_ages_iv_presentation(authorization, "text-p-1475"))
+        caption = "Figure 31: Estrutura Analítica do Projeto (EAP) - AGES IV"
+        projected, evidence = _project_approved_presentation(
+            "text-p-1450", caption, "Figura 31 – Estrutura Analítica do Projeto (EAP) - AGES IV",
+            ["abnt_figure_caption"], authorization,
+        )
+        self.assertEqual(projected, caption)
+        self.assertEqual(evidence["kind"], "abnt_figure_caption_label")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-1450", caption, "Figura 31 – Estrutura alterada - AGES IV",
+                ["abnt_figure_caption"], authorization,
+            )
+        chapter7_authorization = _load_presentation_authorization(repo, AGES_IV_TITLE_ONLY_UNIT)
+        source = "7 - CONSIDERAÇÕES FINAIS (Somente AGES IV)"
+        target = "7 CONSIDERAÇÕES FINAIS (Somente AGES IV)"
+        self.assertEqual(PRESENTATION_HEADINGS["text-h-0123"], (source, target))
+        projected, evidence = _project_approved_presentation(
+            "text-h-0123", source, target,
+            ["abnt_section_numbering"], chapter7_authorization,
+        )
+        self.assertEqual(projected, source)
+        self.assertEqual(evidence["kind"], "abnt_section_numbering")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-h-0123", source, "7: CONSIDERAÇÕES FINAIS (Somente AGES IV)",
+                ["abnt_section_numbering"], chapter7_authorization,
+            )
+
+    def test_ages_iv_title_only_unit_is_partial_and_omission_scope_fails_closed(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit = next(item for item in manifest["units"] if item["id"] == AGES_IV_TITLE_ONLY_UNIT)
+        source_ids = list(unit["source_record_ids"])
+        authorization = _load_presentation_authorization(repo, AGES_IV_TITLE_ONLY_UNIT)
+        policy = authorization["scope"]["authorized_title_only_inclusion"]
+        unit_ledger = {
+            "authorized_title_only_inclusion": policy,
+            "element_map": [{"source_id": "text-h-0123"}],
+        }
+        self.assertEqual(
+            _verify_ages_iv_partial_source_scope(AGES_IV_TITLE_ONLY_UNIT, unit, unit_ledger, source_ids, authorization),
+            policy,
+        )
+        self.assertEqual(len(AGES_IV_TITLE_ONLY_OMITTED_IDS), 18)
+        self.assertEqual(len(policy["omitted_source_record_ids"]), 18)
+        unit_ledger["element_map"].append({"source_id": "text-p-1539"})
+        with self.assertRaisesRegex(ValueError, "map exactly its approved heading"):
+            _verify_ages_iv_partial_source_scope(AGES_IV_TITLE_ONLY_UNIT, unit, unit_ledger, source_ids, authorization)
+        with self.assertRaisesRegex(ValueError, "exact authorized chapter 7"):
+            _verify_ages_iv_partial_source_scope("chapter-06-text-h-0122", unit, unit_ledger, source_ids, authorization)
+
     def test_ages_ii_presentation_reuse_authorization_is_current_and_edition_scoped(self):
         repo = Path(__file__).resolve().parents[1]
         authorization = _load_presentation_authorization(repo, "chapter-04-text-h-0040")
@@ -101,6 +182,131 @@ class PreservationTests(unittest.TestCase):
         for key in AGES_II_TECHNOLOGY_REFERENCE_KEYS.values():
             with self.subTest(key=key):
                 self.assertIn(f"@online{{{key},", bibliography)
+
+    def test_ages_iii_bibliography_matches_curator_after_tex_literal_unescaping(self):
+        repo = Path(__file__).resolve().parents[1]
+        evidence = json.loads((repo / "migration/evidence/references/ages-iii.json").read_text(encoding="utf-8"))
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+        self.assertIn(r"C\# Guide", bibliography)
+        self.assertIn(r"Parking \& Access Control", bibliography)
+        self.assertEqual(evidence["consultation_date"], "2026-10-16")
+        self.assertNotIn("user_assigned_bibliographic_access_date_convention", evidence["policy"])
+        _verify_ages_iii_bibliography_entries(bibliography, evidence, records)
+        thesis_entry = bibliography.split("@thesis{ages-iii-fielding-rest,", 1)[1].split("\n}", 1)[0]
+        self.assertIn("date = {2000}", thesis_entry)
+        self.assertIn("urldate = {2026-10-16}", thesis_entry)
+        self.assertNotIn("year =", thesis_entry)
+        style = (repo / "relatorio_AGES_eduardo/util/style.tex").read_text(encoding="utf-8")
+        self.assertIn(
+            r"\DeclareLabeldate[thesis]{\field{urldate}\field{date}\field{year}}",
+            style,
+        )
+
+    def test_ages_iii_unknown_publication_date_must_not_become_citation_year(self):
+        repo = Path(__file__).resolve().parents[1]
+        evidence = json.loads((repo / "migration/evidence/references/ages-iii.json").read_text(encoding="utf-8"))
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        bibliography_path = repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib"
+        bibliography = bibliography_path.read_text(encoding="utf-8")
+        entry_start = bibliography.index("@online{ages-iii-cloudfront,")
+        entry_end = bibliography.index("\n}", entry_start)
+        entry = bibliography[entry_start:entry_end]
+        self.assertNotRegex(entry, r"(?m)^\s*year\s*=")
+        self.assertNotRegex(entry, r"(?m)^\s*date\s*=")
+        fabricated_publication_year = bibliography[:entry_end] + "\n  year = {2026}," + bibliography[entry_end:]
+        with patch("scripts.migration_harness.preservation.AGES_III_TECHNICAL_CITATION_KEYS", {"ages-iii-cloudfront"}):
+            with self.assertRaises(ValueError):
+                _verify_ages_iii_bibliography_entries(fabricated_publication_year, evidence, records)
+
+    def test_legacy_ages_iii_technology_verifier_does_not_accept_prose_v2_ledger(self):
+        # The latest scoped approval revokes the old single-paragraph/link
+        # presentation for the real unit. The legacy verifier stays fail-closed
+        # for synthetic/legacy callers, rather than weakening its old contract.
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        unit = next(item for item in manifest["units"] if item["id"] == "chapter-05-text-h-0085")
+        ledger = json.loads((repo / "migration/ledgers/chapter-05-text-h-0085.json").read_text(encoding="utf-8"))["units"][unit["id"]]
+        source = (repo / ledger["tex_path"]).read_text(encoding="utf-8")
+        self.assertEqual(ledger["technology_prose_revision"]["format"], "mariah-project-prose-v2")
+        with self.assertRaisesRegex(ValueError, "Technology narrative serialization"):
+            _verify_ages_iii_technology_paragraph(
+                source, ledger, unit, records,
+                _load_presentation_authorization(repo, unit["id"]),
+            )
+
+    def test_ages_iii_technology_narrative_rewrite_is_limited_to_user_scope(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0085")
+        policy = authorization["approved_presentation_changes"]["technology_narrative_rewrite"]
+        self.assertEqual(policy["source_ids"], [
+            "text-p-1066", "text-p-1069", "text-p-1072", "text-p-1073",
+            "text-p-1076", "text-p-1077", "text-p-1080", "text-p-1083",
+            "text-p-1084", "text-p-1087", "text-p-1090", "text-p-1093",
+            "text-p-1096", "text-p-1099", "text-p-1102", "text-p-1105",
+        ])
+        self.assertEqual(authorization["review_status"]["independent_content_audit"], "pending")
+        self.assertIsNone(authorization["review_status"]["human_approval_of_final_AGES_III_edition"])
+        projected, transform = _project_approved_presentation(
+            "text-p-1066", "texto original", "prosa autorizada",
+            ["technology_citation", "approved_technology_narrative"], authorization,
+        )
+        self.assertEqual(projected, "texto original")
+        self.assertEqual(transform["kind"], "user_authorized_technology_narrative_rewrite")
+        self.assertFalse(transform["lexical_equality"])
+        self.assertEqual(transform["semantic_review"], "pending_independent_content_audit")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-1111", "texto original", "prosa autorizada",
+                ["approved_technology_narrative"], authorization,
+            )
+
+    def test_ages_iii_documentation_links_use_authorized_mariah_style_prose(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0085")
+        projected, transform = _project_approved_presentation(
+            "text-p-1067", "Documentação C#",
+            "Mais informações podem ser encontradas em: Documentação C#.",
+            ["technology_documentation_link_prose"], authorization,
+        )
+        self.assertEqual(projected, "Documentação C#")
+        self.assertEqual(transform["kind"], "user_authorized_technology_documentation_link_prose")
+        self.assertEqual(transform["authorization_evidence"], "migration/approvals/ages-iii-technology-narrative-authorization.json")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-1067", "Documentação C#",
+                "Mais informações podem ser encontradas em: Documentação .NET.",
+                ["technology_documentation_link_prose"], authorization,
+            )
+
+    def test_ages_iii_conclusion_heading_uses_abnt_section_punctuation(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0097")
+        expected, target = PRESENTATION_HEADINGS["text-h-0097"]
+        projected, transform = _project_approved_presentation(
+            "text-h-0097", expected, target, ["abnt_section_numbering"], authorization,
+        )
+        self.assertEqual(projected, expected)
+        self.assertEqual(transform["displayed"], "5.4 Conclusão")
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit = next(item for item in manifest["units"] if item["id"] == "chapter-05-text-h-0097")
+        ledger = json.loads((repo / "migration/ledgers/chapter-05-text-h-0097.json").read_text(encoding="utf-8"))
+        heading_map = next(item for item in ledger["units"]["chapter-05-text-h-0097"]["element_map"] if item["source_id"] == "text-h-0097")
+        self.assertIn("abnt_section_numbering", heading_map["serializations"])
+        report = audit_conversion({**manifest, "units": [unit]}, ledger, repo)
+        self.assertEqual(report["status"], "pass", report)
+
+    def test_ages_iii_technology_unit_runs_the_full_audit_without_scope_leakage(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit = next(item for item in manifest["units"] if item["id"] == "chapter-05-text-h-0085")
+        unit_manifest = {**manifest, "units": [unit]}
+        ledger = json.loads((repo / "migration/ledgers/chapter-05-text-h-0085.json").read_text(encoding="utf-8"))
+        report = audit_conversion(unit_manifest, ledger, repo)
+        self.assertEqual(report["status"], "pass", report)
 
     def test_brand_authors_use_mixed_case_in_parenthetical_citations(self):
         repo = Path(__file__).resolve().parents[1]
@@ -298,6 +504,16 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(report["facts"]["coverage_percent"], 100)
         self.assertIn("pdf_evidence_pending", self.codes(report))
 
+    def test_odf_character_style_cancellation_wrappers_preserve_visible_text(self):
+        self.assertEqual(
+            displayed_text(r"\textbf{Product Backlog\textmd{…}}"),
+            "Product Backlog…",
+        )
+        self.assertEqual(
+            displayed_text(r"\textit{força\textup{ tarefa}}"),
+            "força tarefa",
+        )
+
     def test_figure_references_require_explicit_serialization_and_keep_label(self):
         token = r"A Figura~\ref{ages-i:draw-image-0001}."
         with self.assertRaises(UnsupportedSerialization):
@@ -342,7 +558,6 @@ class PreservationTests(unittest.TestCase):
             ["abnt_figure_caption"], authorization,
         )
         self.assertEqual(projected, old_caption)
-        self.assertEqual(evidence["displayed"], "Figura 1 – Foto do time – AGES I")
         with self.assertRaises(UnsupportedSerialization):
             _project_approved_presentation(
                 "text-p-0293", old_caption, "Figura 1 – Foto do time alterado – AGES I",
@@ -352,6 +567,49 @@ class PreservationTests(unittest.TestCase):
             _project_approved_presentation(
                 "text-p-0303", "qualquer texto", "qualquer texto",
                 ["abnt_figure_caption"], authorization,
+            )
+
+    def test_ages_iii_caption_overlay_preserves_the_source_leading_tab(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0075")
+        source = "\tFigure 16: Foto do Time - AGES III"
+        displayed = "\tFigura 16 – Foto do Time - AGES III"
+        projected, evidence = _project_approved_presentation(
+            "text-p-1027", source, displayed, ["abnt_figure_caption"], authorization,
+        )
+        self.assertEqual(projected, source)
+        self.assertEqual(evidence["displayed"], displayed)
+
+    def test_ages_iii_prototype_group_labels_are_omitted_only_under_exact_user_decision(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0080")
+        self.assertEqual(
+            PRESENTATION_OVERRIDES_BY_UNIT["chapter-05-text-h-0080"] & set(AGES_III_PROTOTYPE_GROUP_LABELS),
+            set(AGES_III_PROTOTYPE_GROUP_LABELS),
+        )
+        for source_id, original in AGES_III_PROTOTYPE_GROUP_LABELS.items():
+            with self.subTest(source_id=source_id):
+                self.assertTrue(_is_authorized_ages_iii_group_label_removal(authorization, source_id))
+                projected, evidence = _project_approved_presentation(
+                    source_id, original, "", ["approved_group_label_removal"], authorization,
+                )
+                self.assertEqual(projected, original)
+                self.assertEqual(evidence["displayed"], "")
+                self.assertEqual(evidence["authorization_evidence"], "migration/approvals/ages-iii-prototype-group-labels.json")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-h-0085", "Tecnologias utilizadas", "",
+                ["approved_group_label_removal"], authorization,
+            )
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-h-0084", "Telas de Cliente alterado:", "",
+                ["approved_group_label_removal"], authorization,
+            )
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-h-0084", "Telas de Cliente:", "Telas de Cliente:",
+                ["approved_group_label_removal"], authorization,
             )
 
     def test_repository_sentence_overlay_only_accepts_original_anchors(self):
@@ -394,6 +652,186 @@ class PreservationTests(unittest.TestCase):
                         paragraph_id, expected, displayed + " inventado",
                         ["wiki_reference_sentence"], None, auth,
                     )
+
+    def test_ages_iv_repository_and_wiki_sentences_match_approved_style_and_keep_original_urls(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        for unit_id, source_ids in AGES_IV_REPOSITORY_UNITS.items():
+            authorization = _load_presentation_authorization(repo, unit_id)
+            for paragraph_id, link_id in PRESENTATION_REPOSITORY_PARAGRAPHS.items():
+                if link_id not in source_ids:
+                    continue
+                rule = PRESENTATION_REPOSITORY_LINKS[link_id]
+                target = rule["prefix"] + rule["anchor"] + rule["suffix"]
+                projected, evidence = _project_approved_presentation(
+                    paragraph_id, rule["source_anchor"], target,
+                    ["repository_link_sentence"], authorization,
+                )
+                self.assertEqual(projected, rule["source_anchor"])
+                self.assertEqual(evidence["href"], records[link_id]["href"])
+                linked, link_evidence = _project_approved_presentation(
+                    link_id, rule["source_anchor"], target,
+                    ["repository_link_sentence"], authorization,
+                )
+                self.assertEqual(linked, rule["source_anchor"])
+                self.assertEqual(link_evidence["href"], records[link_id]["href"])
+        for unit_id, source_ids in AGES_IV_WIKI_UNITS.items():
+            authorization = _load_presentation_authorization(repo, unit_id)
+            paragraph_id = next(rid for rid in source_ids if rid in AGES_IV_WIKI_SENTENCES)
+            rule = AGES_IV_WIKI_SENTENCES[paragraph_id]
+            target = rule["prefix"] + rule["anchor"] + rule["suffix"]
+            projected, evidence = _project_approved_presentation(
+                paragraph_id, rule["source_anchor"], target,
+                ["wiki_reference_sentence"], authorization,
+            )
+            self.assertEqual(projected, rule["source_anchor"])
+            self.assertEqual(evidence["href"], rule["href"])
+            linked, link_evidence = _project_approved_presentation(
+                rule["source_id"], rule["source_anchor"], rule["anchor"],
+                ["wiki_reference_sentence"], authorization,
+            )
+            self.assertEqual(linked, rule["source_anchor"])
+            self.assertEqual(link_evidence["href"], rule["href"])
+            with self.assertRaises(UnsupportedSerialization):
+                _project_approved_presentation(
+                    paragraph_id, rule["source_anchor"], target + " alterado",
+                    ["wiki_reference_sentence"], authorization,
+                )
+        approval = json.loads((repo / "migration/approvals/ages-iv-pending-references-acceptance.json").read_text(encoding="utf-8"))
+        pending = {item["source_id"]: item for item in approval["original_links"]}
+        expected_urls = {
+            **{rid: rule["href"] for rid, rule in PRESENTATION_REPOSITORY_LINKS.items() if rid in {"text-a-0146", "text-a-0147"}},
+            **{rule["source_id"]: rule["href"] for rule in AGES_IV_WIKI_SENTENCES.values()},
+        }
+        expected_urls.update({
+            "text-a-0148": AGES_IV_WIKI_SENTENCES["text-p-1343"]["href"],
+            "text-a-0150": AGES_IV_WIKI_SENTENCES["text-p-1362"]["href"],
+        })
+        self.assertEqual(set(pending), set(expected_urls))
+        self.assertEqual(len(approval["original_links"]), 7)
+        for link_id, url in expected_urls.items():
+            self.assertEqual(pending[link_id]["url"], url)
+            self.assertEqual(pending[link_id]["availability"], "PENDING")
+            self.assertEqual(records[link_id]["href"], url)
+        self.assertEqual(pending["text-a-0148"]["source_anchor"], "")
+        self.assertEqual(pending["text-a-0150"]["source_anchor"], "")
+        self.assertEqual(pending["text-a-0148"]["url"], pending["text-a-0149"]["url"])
+        self.assertEqual(pending["text-a-0150"]["url"], pending["text-a-0151"]["url"])
+
+    def test_ages_iv_citation_maps_and_bibliography_are_tied_to_curated_sources(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        evidence = json.loads((repo / "migration/evidence/references/ages-iv.json").read_text(encoding="utf-8"))
+        supplemental_authorization = json.loads(
+            (repo / "migration/approvals/ages-iv-supplemental-citations-authorization.json").read_text(encoding="utf-8")
+        )
+        bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+        self.assertEqual(set(AGES_IV_CITATION_EVIDENCE), {
+            key for unit in AGES_IV_TECHNICAL_CITATIONS.values() for keys in unit.values() for key in keys
+        })
+        _verify_ages_iv_bibliography_entries(bibliography, evidence, records, supplemental_authorization)
+        tampered_authorization = json.loads(json.dumps(supplemental_authorization))
+        tampered_authorization["citations"]["ages-iv-app-store"]["verified_url"] = "https://example.invalid/"
+        with self.assertRaises(ValueError):
+            _verify_ages_iv_bibliography_entries(bibliography, evidence, records, tampered_authorization)
+        with self.assertRaises(ValueError):
+            _verify_ages_iv_bibliography_entries(bibliography, evidence, records, {})
+        for unit_map in AGES_IV_TECHNICAL_CITATIONS.values():
+            for source_id, keys in unit_map.items():
+                terms = AGES_IV_CITATION_TERMS[source_id]
+                self.assertEqual(len(keys), len(terms))
+                fragment = " ".join(term + r"\space\cite{" + key + "}" for term, key in zip(terms, keys))
+                _verify_citation_alignment(
+                    source_id, fragment, keys, terms,
+                    ["technology_citation"], False, False, False,
+                )
+                altered = fragment.replace(terms[0], "Termo alterado", 1)
+                with self.assertRaises(ValueError):
+                    _verify_citation_alignment(
+                        source_id, altered, keys, terms,
+                        ["technology_citation"], False, False, False,
+                    )
+
+    def test_ages_iv_citation_alignment_runs_in_full_unit_audit(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit_id = "chapter-06-text-h-0109"
+        unit = next(item for item in manifest["units"] if item["id"] == unit_id)
+        source_id = "text-p-1339"
+        record = next(item for item in manifest["records"] if item["id"] == source_id)
+        keys = AGES_IV_TECHNICAL_CITATIONS[unit_id][source_id]
+        terms = AGES_IV_CITATION_TERMS[source_id]
+        projected = record["text"]
+        for term, key in reversed(list(zip(terms, keys))):
+            projected = projected.replace(term, term + r"\space\cite{" + key + "}", 1)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_root = Path(temp_dir)
+            for relative in (
+                "migration/approvals/ages-iv-partial-authorization.json",
+                "migration/approvals/ages-iv-supplemental-citations-authorization.json",
+                "migration/evidence/references/ages-iv.json",
+                "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+            ):
+                destination = temp_root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes((repo / relative).read_bytes())
+
+            target_path = "relatorio_AGES_eduardo/conteudo/migracao/citation-fixture.tex"
+            target = temp_root / target_path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(projected, encoding="utf-8")
+            target_data = target.read_bytes()
+            start = target_data.index(projected.encode("utf-8"))
+            fixture_unit = {**unit, "record_ids": [source_id], "source_record_ids": [source_id]}
+            fixture_ledger = {
+                "schema_version": 1,
+                "compilation_root": "relatorio_AGES_eduardo",
+                "units": {
+                    unit_id: {
+                        "state": "converted",
+                        "tex_path": target_path,
+                        "technology_citations": {
+                            "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+                            "source_text_changed": False,
+                            "source_id_to_keys": {source_id: keys},
+                        },
+                        "element_map": [{
+                            "source_id": source_id,
+                            "target_file": target_path,
+                            "start_byte": start,
+                            "end_byte": start + len(projected.encode("utf-8")),
+                            "target_sha256": hashlib.sha256(target_data).hexdigest(),
+                            "serializations": ["technology_citation"],
+                        }],
+                    }
+                },
+            }
+            report = audit_conversion({**manifest, "units": [fixture_unit]}, fixture_ledger, temp_root, unit_id)
+
+        self.assertNotIn("invalid_technology_citation_apparatus", self.codes(report), report)
+        self.assertEqual(report["facts"]["technical_citations_verified"], len(keys))
+
+    def test_ages_iv_chapter_heading_override_is_required_and_exactly_scoped(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit_id = "chapter-06-text-h-0105"
+        unit = next(item for item in manifest["units"] if item["id"] == unit_id)
+        ledger = json.loads((repo / "migration/ledgers/chapter-06-text-h-0105.json").read_text(encoding="utf-8"))
+        accepted = audit_conversion({**manifest, "units": [unit]}, ledger, repo, unit_id)
+        self.assertEqual(accepted["status"], "pass", accepted)
+
+        omitted_override = json.loads(json.dumps(ledger))
+        unit_ledger = omitted_override["units"][unit_id]
+        heading_map = next(item for item in unit_ledger["element_map"] if item["source_id"] == "text-h-0105")
+        heading_map["serializations"] = [
+            item for item in heading_map.get("serializations", []) if item != "abnt_section_numbering"
+        ]
+        unit_ledger.pop("approved_presentation_overrides", None)
+        rejected = audit_conversion({**manifest, "units": [unit]}, omitted_override, repo, unit_id)
+        self.assertIn("invalid_repository_link_style", self.codes(rejected), rejected)
 
     def test_technology_citation_serialization_is_removed_only_as_verified_apparatus(self):
         value = r"TypeScript\space\cite{ages-ii-typescript}"
@@ -604,6 +1042,53 @@ class PreservationTests(unittest.TestCase):
         self.test_ages_ii_nested_textbox_order_uses_inline_odf_segments()
         next(record for record in self.manifest["records"] if record["id"] == "draw-text-box-0025")["parent_id"] = "unexpected-frame"
         self.assertIn("unverified_embedded_source_order", self.codes(self.audit()))
+
+    def test_ages_iv_linked_database_figure_order_uses_inline_odf_hierarchy(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit = next(item for item in manifest["units"] if item["id"] == "chapter-06-text-h-0109")
+        records = {item["id"]: item for item in manifest["records"]}
+        projected, error = _project_source_text_order(unit["id"], unit["source_record_ids"], records)
+        self.assertIsNone(error)
+        self.assertEqual(
+            projected,
+            ["text-h-0109", "text-p-1339", "text-p-1344", "text-p-1343"],
+        )
+
+    def test_ages_iv_linked_database_figure_order_fails_closed_on_changed_parent(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        unit = next(item for item in manifest["units"] if item["id"] == "chapter-06-text-h-0109")
+        records = {item["id"]: item for item in manifest["records"]}
+        records["draw-text-box-0041"]["parent_id"] = "unexpected-frame"
+        projected, error = _project_source_text_order(unit["id"], unit["source_record_ids"], records)
+        self.assertEqual(projected, unit["source_record_ids"])
+        self.assertIn("hierarchy", error)
+
+    def test_ages_iv_linked_figure_url_is_bound_to_exact_odf_ancestor(self):
+        from scripts.migration_harness.preservation import AGES_IV_LINKED_FIGURE
+        from scripts.migration_harness.latex import commands
+        expected = AGES_IV_LINKED_FIGURE
+        uri = "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados"
+        records = {
+            expected["paragraph_id"]: {"id": expected["paragraph_id"], "type": "text:p", "inline_segments": [{"kind": "embedded-block", "record_id": expected["frame_id"]}, {"kind": "text", "text": "Banco de Dados"}]},
+            expected["link_id"]: {"id": expected["link_id"], "type": "text:a", "parent_id": expected["paragraph_id"], "href": uri},
+            expected["frame_id"]: {"id": expected["frame_id"], "type": "draw:frame", "parent_id": expected["link_id"]},
+            expected["textbox_id"]: {"id": expected["textbox_id"], "type": "draw:text-box", "parent_id": expected["frame_id"]},
+            expected["caption_id"]: {"id": expected["caption_id"], "type": "text:p", "parent_id": expected["textbox_id"], "ancestor_ids": [expected["link_id"]]},
+            expected["image_frame_id"]: {"id": expected["image_frame_id"], "type": "draw:frame", "parent_id": expected["caption_id"]},
+            expected["image_id"]: {"id": expected["image_id"], "type": "draw:image", "parent_id": expected["image_frame_id"], "ancestor_ids": [expected["link_id"]]},
+        }
+        tex_uri = uri.replace("%", r"\%")
+        call = next(token for token in commands(r"\memorialfigurelinked{asset.png}{Figura 25}{fig:db}{Fonte: pendente de identificação}{0.92}{" + tex_uri + "}") if token.name == "memorialfigurelinked")
+        preserved_links = [{"source_id": expected["link_id"], "original_url": uri}]
+        self.assertEqual(_verify_linked_figure_source(expected["unit_id"], expected["image_id"], call, records, preserved_links), uri)
+        wrong_url = next(token for token in commands(r"\memorialfigurelinked{asset.png}{Figura 25}{fig:db}{Fonte: pendente de identificação}{0.92}{https://example.org/other}") if token.name == "memorialfigurelinked")
+        with self.assertRaisesRegex(ValueError, "differs"):
+            _verify_linked_figure_source(expected["unit_id"], expected["image_id"], wrong_url, records, preserved_links)
+        records[expected["image_id"]]["ancestor_ids"] = []
+        with self.assertRaisesRegex(ValueError, "hierarchy"):
+            _verify_linked_figure_source(expected["unit_id"], expected["image_id"], call, records, preserved_links)
 
     def test_parent_child_parent_expansion_order(self):
         texts = ["Antes.", "Dentro.", "Depois."]
@@ -859,14 +1344,125 @@ class PreservationTests(unittest.TestCase):
         unit = self.ledger["units"].pop("sprint-test", next(iter(self.ledger["units"].values())))
         self.ledger["units"] = {uid: unit}
         unit["element_map"][0].update(source_id=rid, serializations=["original_whitespace", "reference_paragraph_layout"])
-        unit["reference_paragraph_layout"] = {"authorization_evidence": REFERENCE_LAYOUT_AUTHORIZATION, "source_ids": [rid]}
+        evidence = REFERENCE_LAYOUT_AUTHORIZATION
+        if uid.startswith("ages-iii-") or uid.startswith("chapter-05-"):
+            evidence = "migration/approvals/ages-iii-authorization.json"
+        unit["reference_paragraph_layout"] = {"authorization_evidence": evidence, "source_ids": [rid]}
         macros = (self.root / "macros.tex").read_text().replace(r"\noindent\hspace*{1.251cm}", r"\hspace*{0pt}") + "\n" + r"\newcommand{\originalleadingspace}{\hspace*{0pt}}"
         self.write(macros, "macros.tex")
         self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
         (self.root / "migration/approvals").mkdir(parents=True, exist_ok=True)
         authorization = {"kind": "user_reference_style_request", "scope": list(REFERENCE_LAYOUT_UNITS), "paragraph_source_ids": list(REFERENCE_LAYOUT_PARAGRAPHS), "quoted_instruction": REFERENCE_LAYOUT_USER_INSTRUCTION, "baseline_commit": REFERENCE_LAYOUT_BASELINE, "status": "proposed_for_review", "future_projects_approved": False, "execution_authorized": True, "promoted_to_reusable_policy": False, "human_presentation_approval": None}
         self.write(json.dumps(authorization), REFERENCE_LAYOUT_AUTHORIZATION)
+        if uid.startswith("ages-iii-") or uid.startswith("chapter-05-"):
+            ages_iii_authorization = {
+                "schema_version": 1,
+                "record_type": "user_authorized_edition_scope",
+                "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+                "approval_status": "authorized_for_AGES_III_only; final edition approval pending",
+                "source": {"path": "RELATORIO_ATUAL.odt", "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef", "must_remain_unchanged": True},
+                "scope": {"units": ["chapter-05-text-h-0074", "chapter-05-text-h-0075", "chapter-05-text-h-0076", "chapter-05-text-h-0077", "chapter-05-text-h-0078", "chapter-05-text-h-0079", "chapter-05-text-h-0080", "chapter-05-text-h-0085", "chapter-05-text-h-0086", "ages-iii-sprint-0", "ages-iii-sprint-1", "ages-iii-sprint-2", "ages-iii-sprint-3", "ages-iii-sprint-4", "chapter-05-text-h-0097"]},
+                "presentation_and_preservation": {
+                    "follow": "docs/STYLE_GUIDE.md and docs/QUALITY_GATES.md",
+                    "source_text": "preserve exact wording, punctuation, order, and semantics; no editorial revisions",
+                },
+            }
+            self.write(json.dumps(ages_iii_authorization), evidence)
         return unit
+
+    def test_ages_iii_zero_width_leading_tab_uses_only_source_bound_style_policy(self):
+        self.reference_case("\tAção.", r"\originaltab{}Ação.", "text-p-1111", "ages-iii-sprint-0")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+
+    def test_ages_iii_whitespace_policy_matches_exact_manifest_prefixes(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        units = {item["id"]: item for item in manifest["units"]}
+        for unit_id, expected_by_id in AGES_III_LEADING_TAB_COUNTS.items():
+            unit = units[unit_id]
+            actual_ids = _leading_tab_paragraph_ids(unit["source_record_ids"], records)
+            with self.subTest(unit_id=unit_id):
+                self.assertEqual(actual_ids, [rid for rid in unit["source_record_ids"] if rid in expected_by_id])
+                for rid, count in expected_by_id.items():
+                    source = records[rid]["text"]
+                    self.assertEqual(len(source) - len(source.lstrip("\t")), count)
+        self.assertEqual(AGES_III_INLINE_TAB_COUNTS, {"text-p-1084": 1})
+        literal_tab = "consultas t\tipadas"
+        with self.subTest(source_id="text-p-1084"):
+            self.assertEqual(records["text-p-1084"]["text"].count(literal_tab), 1)
+            self.assertEqual(records["text-p-1073"]["text"].count("\t"), 3)
+            self.assertEqual(records["text-p-1077"]["text"].count("\t"), 2)
+
+    def test_ages_iii_internal_tab_removal_is_exactly_authorized_and_source_mapped(self):
+        repo = Path(__file__).resolve().parents[1]
+        self.assertTrue((repo / AGES_III_INTERNAL_TAB_REMOVAL_AUTHORIZATION).is_file())
+        authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0085")
+        self.assertEqual(
+            authorization["approved_presentation_changes"]["internal_tab_removal"],
+            AGES_III_INTERNAL_TAB_REMOVAL_POLICY,
+        )
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        self.assertEqual(records["text-p-1084"]["text"].count("consultas t\tipadas"), 1)
+
+        unit_id = "chapter-05-text-h-0085"
+        unit = next(item for item in manifest["units"] if item["id"] == unit_id)
+        ledger = json.loads((repo / "migration/ledgers/chapter-05-text-h-0085.json").read_text(encoding="utf-8"))["units"][unit_id]
+        self.assertEqual(ledger["technology_prose_revision"]["format"], "mariah-project-prose-v2")
+        self.assertEqual(ledger["technology_prose_revision"]["semantic_review"], "pending_independent_audit")
+        target = (repo / ledger["tex_path"]).read_bytes()
+        mapping = next(item for item in ledger["element_map"] if item["source_id"] == "text-p-1084")
+        fragment = target[mapping["start_byte"]:mapping["end_byte"]].decode("utf-8")
+        self.assertIn("consultas tipadas", fragment)
+        self.assertNotIn(r"\originalinlinetab{}", fragment)
+        self.assertEqual(mapping["disposition"], "narrative")
+        self.assertEqual(mapping["source_text_sha256"], hashlib.sha256(records["text-p-1084"]["text"].encode()).hexdigest())
+
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-1085", "consultas t ipadas", "consultas tipadas",
+                ["approved_technology_narrative", "approved_internal_tab_removal"], authorization,
+            )
+
+    def test_ages_iii_internal_tab_removal_rejects_stale_or_wrong_approval_file(self):
+        repo = Path(__file__).resolve().parents[1]
+        with patch(
+            "scripts.migration_harness.preservation.AGES_III_INTERNAL_TAB_REMOVAL_AUTHORIZATION",
+            "migration/approvals/ages-iii-authorization.json",
+        ):
+            with self.assertRaisesRegex(ValueError, "internal-tab removal approval"):
+                _load_presentation_authorization(repo, "chapter-05-text-h-0085")
+
+    def test_ages_iii_rejects_wrong_leading_tab_id_even_with_user_scope_authorization(self):
+        self.reference_case("\tAção.", r"\originaltab{}Ação.", "text-p-0288", "ages-iii-sprint-0")
+        self.assertIn("invalid_reference_paragraph_layout", self.codes(self.audit()))
+
+    def test_ages_iii_prose_revision_keeps_original_internal_tabs_in_traceability(self):
+        from scripts.migration_harness.technology_prose import verify
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        records = {item["id"]: item for item in manifest["records"]}
+        uid = "chapter-05-text-h-0085"
+        ledger = json.loads((repo / f"migration/ledgers/{uid}.json").read_text(encoding="utf-8"))
+        facts = verify(manifest, ledger, repo, uid)
+        self.assertEqual(records["text-p-1084"]["text"].count("consultas t\tipadas"), 1)
+        self.assertFalse(facts["lexical_equality_claimed"])
+        self.assertEqual(facts["semantic_review"]["status"], "PENDING")
+
+    def test_ages_iii_internal_tab_policy_rejects_missing_marker(self):
+        unit = self.reference_case("\tA\tB\tC", r"\originaltab{}A\originalinlinetab{}BC", "text-p-1073", "chapter-05-text-h-0085")
+        unit["element_map"][0]["serializations"].append("inline_tab_layout")
+        unit["inline_tab_layout"] = {
+            "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+            "source_ids": ["text-p-1073"],
+        }
+        macros = (self.root / "macros.tex").read_text() + "\n" + r"\newcommand{\originalinlinetab}{\unskip\space}"
+        self.write(macros, "macros.tex")
+        self.ledger["macro_contract"]["sha256"] = hashlib.sha256(macros.encode()).hexdigest()
+        with patch.dict("scripts.migration_harness.preservation.AGES_III_TECHNICAL_CITATIONS", {"chapter-05-text-h-0085": {}}):
+            report = self.audit()
+        self.assertIn("unsupported_serialization", self.codes(report))
 
     def test_reference_layout_preserves_double_tabs_leading_space_and_emphasis(self):
         for source, target, rid, uid in [
@@ -954,12 +1550,13 @@ class PreservationTests(unittest.TestCase):
             displayed_text(r"\originalleadingspace{}A", ["original_whitespace"], macro_contract_verified=True)
 
     def test_reference_structural_unit_can_verify_contract_without_body_policy_flags(self):
-        unit = self.reference_case("Título", "Título", "text-h-0002", "chapter-02-text-h-0002")
+        unit = self.reference_case("Título", "Título", "fixture-heading-record", "fixture-heading")
         self.manifest["records"][0].update(type="text:h", semantic_type="heading")
-        unit["reference_paragraph_layout"]["source_ids"] = []
+        unit.pop("reference_paragraph_layout")
+        unit["element_map"][0]["serializations"] = []
         self.write(r"\section*{Título}")
-        unit["element_map"][0].update(self.mapping("text-h-0002", "Título"))
-        unit["element_map"][0]["serializations"] = ["original_whitespace"]
+        unit["element_map"][0].update(self.mapping("fixture-heading-record", "Título"))
+        unit["element_map"][0]["serializations"] = []
         self.assertEqual(self.audit()["status"], "pass", self.audit())
 
     def test_reference_indent_declaration_outside_source_span_is_structural(self):

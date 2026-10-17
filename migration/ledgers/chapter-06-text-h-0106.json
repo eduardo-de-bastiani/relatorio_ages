@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "08acb896c8418258a805e627eb97d55e83fa7d6b",
+  "units": {
+    "chapter-06-text-h-0106": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0106",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "start_byte": 153,
+          "end_byte": 169,
+          "serializations": [],
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        },
+        {
+          "source_id": "text-p-1325",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "start_byte": 270,
+          "end_byte": 842,
+          "serializations": [],
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        },
+        {
+          "source_id": "text-p-1326",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "start_byte": 869,
+          "end_byte": 1379,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        },
+        {
+          "source_id": "text-p-1327",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "start_byte": 1406,
+          "end_byte": 1759,
+          "serializations": [],
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        },
+        {
+          "source_id": "text-p-1329",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "start_byte": 1839,
+          "end_byte": 1884,
+          "serializations": [
+            "abnt_figure_caption"
+          ],
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        },
+        {
+          "source_id": "draw-image-0024",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "start_byte": 1790,
+          "end_byte": 1952,
+          "serializations": [],
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0024",
+          "asset_id": "asset-0011",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0011.jpg",
+          "sha256": "cfa6b3294c6574fde69746653cada5d01a29a6eb159c117bfdc49dba2bae4276"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0106",
+          "source_name": "__RefHeading___Toc4829_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+          "target_anchor": "__RefHeading___Toc4829_3118176633",
+          "command": "hypertarget",
+          "start_byte": 68,
+          "end_byte": 117,
+          "source_start_id": "text-bookmark-start-0068",
+          "source_end_id": "text-bookmark-end-0068",
+          "target_sha256": "233d7745baeee2422e924bddd10244cd3d04989c9e118aa717e66a21255d848c"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0040",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de lista e quadro/text-box do ODF são estrutura de layout; parágrafos, legenda e ocorrência da imagem foram mapeados separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0223",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de lista e quadro/text-box do ODF são estrutura de layout; parágrafos, legenda e ocorrência da imagem foram mapeados separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0183",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de lista e quadro/text-box do ODF são estrutura de layout; parágrafos, legenda e ocorrência da imagem foram mapeados separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0224",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de lista e quadro/text-box do ODF são estrutura de layout; parágrafos, legenda e ocorrência da imagem foram mapeados separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-header-0061",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêineres de lista e quadro/text-box do ODF são estrutura de layout; parágrafos, legenda e ocorrência da imagem foram mapeados separadamente na ordem original."
+        }
+      ],
+      "pending": [
+        "Proveniência da foto draw-image-0024 permanece PENDING: o usuário identificará a fonte.",
+        "O rótulo de legenda Figure→Figura está aplicado conforme docs/STYLE_GUIDE.md; validação automática exige extensão do contrato de apresentação para AGES IV.",
+        "Auditorias independentes de conteúdo e visual, compilação integrada e aprovação humana da AGES IV permanecem PENDING."
+      ],
+      "presentation_transformations": [
+        {
+          "source_id": "text-p-1329",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 24: ",
+          "target_prefix": "Figura 24 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        }
+      ],
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-p-1329"
+        ]
+      }
+    }
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "96c09d125fcde4623d2f4d2218e6aaa0cb5c656",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "28b051ecf5a2ca73082158a69ce0c30c2150942039bc94e39393ee99e4ef7257"
+  },
+  "units": {
+    "ages-iii-sprint-4": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0096",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 174,
+          "end_byte": 188,
+          "serializations": [],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        },
+        {
+          "source_id": "text-p-1278",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 293,
+          "end_byte": 1183,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        },
+        {
+          "source_id": "text-p-1279",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 1211,
+          "end_byte": 2192,
+          "serializations": [],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        },
+        {
+          "source_id": "text-p-1280",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 2220,
+          "end_byte": 3038,
+          "serializations": [],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        },
+        {
+          "source_id": "text-p-1281",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 3066,
+          "end_byte": 4102,
+          "serializations": [],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        },
+        {
+          "source_id": "text-p-1283",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 4149,
+          "end_byte": 4866,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        },
+        {
+          "source_id": "text-p-1284",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "start_byte": 4894,
+          "end_byte": 5698,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2"
+        }
+      ],
+      "asset_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0039",
+          "disposition": "represented-as-reflection",
+          "evidence": "ODF text box directly contains the mapped introspective paragraphs in source order; the existing divisible reflection environment preserves the border and text."
+        },
+        {
+          "source_id": "text-list-0219",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-item-0181",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-0220",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        },
+        {
+          "source_id": "text-list-header-0059",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored text; it carries no visible list item content and is not rendered as artificial spacing."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 4,
+        "reflection_paragraphs": 2,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "draw-text-box-0039",
+          "text-list-0219",
+          "text-list-item-0181",
+          "text-list-0220",
+          "text-list-header-0059"
+        ]
+      },
+      "pending": [],
+      "layout_disposition": "Title uses the native subsection/section level and continues the document flow without an artificial page break. Reflection text is enclosed in the shared divisible reflection environment; empty/boundary wrappers do not create artificial spacing.",
+      "emphasis_evidence": {
+        "status": "PENDING",
+        "source_part": "content.xml",
+        "style_part": "styles.xml",
+        "style_property": "fo:font-style=italic (including ODF style:text-properties aliases)",
+        "ranges": [],
+        "note": "This deterministic source-to-target map is converter evidence, not an independent audit result."
+      },
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+        "source_ids": [
+          "text-p-1278",
+          "text-p-1283"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0096",
+          "source_name": "__RefHeading___Toc4823_3118176633",
+          "source_start_id": "text-bookmark-start-0064",
+          "source_end_id": "text-bookmark-end-0064",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+          "target_anchor": "__RefHeading___Toc4823_3118176633",
+          "command": "hypertarget",
+          "start_byte": 84,
+          "end_byte": 133,
+          "target_sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2",
+          "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text."
+        }
+      ]
+    }
+  }
+}

@@ -449,5 +449,18 @@
     "pypdf": "6.18.0"
   },
   "schema_version": 1,
-  "status": "pass"
+  "status": "pass",
+  "document_font_assets": {
+    "relatorio_AGES_eduardo/util/fonts/LiberationMono-Regular.ttf": {
+      "sha256": "d18235f1e874771f4eaec3ddd6ddb4db849d334bdc6930c5c2185d9344834e62",
+      "family": "Liberation Mono",
+      "package": "fonts-liberation 1:2.1.5-3build1",
+      "upstream": "https://github.com/liberationfonts/liberation-fonts",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "relatorio_AGES_eduardo/util/fonts/COPYRIGHT.txt"
+    },
+    "relatorio_AGES_eduardo/util/fonts/COPYRIGHT.txt": {
+      "sha256": "f32df582a2aab128c07b2f7e36e7b928dc5f6bd82657b905c04f91459f9e5cf9"
+    }
+  }
 }

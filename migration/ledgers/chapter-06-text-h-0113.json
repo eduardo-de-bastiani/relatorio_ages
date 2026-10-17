@@ -1,0 +1,1197 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "a18d5a1f09b0d3602ba78f87a7fe0a7d73264c89",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0113": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0113",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 172,
+          "end_byte": 200,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "7e73e2818dbafbc1bbf581fd162cfdf4613be16d742cfc1932f719cf609722dd",
+          "disposition": "heading"
+        },
+        {
+          "source_id": "text-p-1396",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 295,
+          "end_byte": 486,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a772a03d95b655b13fa60376e3bf1e6920ba02ebaecb6fcae305625932b982ce",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1397",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 295,
+          "end_byte": 486,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "46b1d9f7e6121511b1f5761e7942606c41537c363e5508680f02f6d052f63abd",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-a-0153",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 486,
+          "end_byte": 486,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "027fa157271c30ed59e55fdf69cda88314bc9abf22a62b267738dec5d7714eea",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1399",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 487,
+          "end_byte": 713,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "5ea8965e5b2325a1cb4339e28a6e1b485a01be05254b4cf9cd2d5f0f8001b7a0",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1400",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 487,
+          "end_byte": 713,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "d038efda53102bc15a2610790ba4115a721678783edf56fc72923c209bb0f86a",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1401",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 713,
+          "end_byte": 713,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "8ae765dc3dfd37b626c04a911e6ee517ec72fe8a631606f4daa75f88c372e079",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0154",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 713,
+          "end_byte": 713,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "8ae765dc3dfd37b626c04a911e6ee517ec72fe8a631606f4daa75f88c372e079",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1403",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 714,
+          "end_byte": 924,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "c79870d7016d4965ece64579e44fc3e7589528af7d19a033ddbda6393bd1fcf4",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1404",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 714,
+          "end_byte": 924,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "814dbe9364a6c45bb159e3ca488655edfc0261e3957c3e60eb917832b33a8e2a",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-a-0155",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 924,
+          "end_byte": 924,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "5139f3dfa02d2cd93a44218ba2382b68a5a3a72394a9dc5d45381263b9edd907",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1406",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 930,
+          "end_byte": 1126,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "7873971fe78c9d2e4715f9cc9e61265e537450814ab96c495b881d708e2722d6",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1407",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 930,
+          "end_byte": 1126,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "49d4df6de73b0299e6533c93e0d69fe45159d6b8912e3fa6173a5fd3386534c1",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1408",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1126,
+          "end_byte": 1126,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "11671f7fdb6f0640e9ffad47711e1e5f9066d44a377bb226888b418006586cb3",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0156",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1126,
+          "end_byte": 1126,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "11671f7fdb6f0640e9ffad47711e1e5f9066d44a377bb226888b418006586cb3",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1410",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1127,
+          "end_byte": 1400,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a3919f3d4710aa79bab0ce99fbcc4c18e6d4d45d75144cda373e4819cb4f850d",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1411",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1127,
+          "end_byte": 1400,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "8a4ab8e7951c4eeeb281ddd28307cb0d979b1ee17b6888fea8afbf8bf0b9c6b3",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1412",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1400,
+          "end_byte": 1400,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "0dba477eeab6dff8133ce43de3157811b429d033faef3104756fdfd1de8229c3",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0157",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1400,
+          "end_byte": 1400,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "0dba477eeab6dff8133ce43de3157811b429d033faef3104756fdfd1de8229c3",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1414",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1401,
+          "end_byte": 1618,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a36bcf2e5c50c95f5d8f2e5d2a0e60b3b086ef79811c81153fbc3dd98642e3bd",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1415",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1401,
+          "end_byte": 1618,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "0dfe80542f22c468dc6445fd55581f9c0d26c6a23fcc144635f5378e0809b06f",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1416",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1618,
+          "end_byte": 1618,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "f9d92ff79f5a89aa502d38dcfd92ee0830289b339aa67d39a8aea6ea509d7d58",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0158",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1618,
+          "end_byte": 1618,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "f9d92ff79f5a89aa502d38dcfd92ee0830289b339aa67d39a8aea6ea509d7d58",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1418",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1624,
+          "end_byte": 1837,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a6789720f9691f999fe025a2304ca91b4ad0ff653267d41e19eaac609f9581b0",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1419",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1624,
+          "end_byte": 1837,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "06b75b543eb71985414bc019a77003451c49a9b26ec8e897b71f60dbb8f4ea80",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1420",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1837,
+          "end_byte": 1837,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "177921fe31ffb723883beccfde4babf68e75dc1edf6969b0e26aaf75f8ac9314",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0159",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1837,
+          "end_byte": 1837,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "177921fe31ffb723883beccfde4babf68e75dc1edf6969b0e26aaf75f8ac9314",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1422",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1838,
+          "end_byte": 2069,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "e70c2982d832a7b1898240c33866414234f6a51dbdb5dc4fbe81ea743dd51267",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1423",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 1838,
+          "end_byte": 2069,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "5431ac9eeeb59172244910ff0d15749092163b59ec40872756c8d9480d78c76a",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1424",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2069,
+          "end_byte": 2069,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "214351bf650e0e71394135f39c67e319cf1c05f40c1fa9c77f65cdf0ba968190",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0160",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2069,
+          "end_byte": 2069,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "214351bf650e0e71394135f39c67e319cf1c05f40c1fa9c77f65cdf0ba968190",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1426",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2070,
+          "end_byte": 2286,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "f42d6e0706bdec6d9cf4133753e7ea0b4e8c3714babd97e1b4779f77f59907e9",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1427",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2070,
+          "end_byte": 2286,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "397db025251b776bc4cbfff41e4f9f0709f50bda01b516994c282907063e8856",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-a-0161",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2286,
+          "end_byte": 2286,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "5d400facf45c547cf7001af8bc3738a92753bc57ed78b008099b168780470d38",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1429",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2292,
+          "end_byte": 2517,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "5ad17a14362fb5a614cad3764e5a8f9c1258c3a44d38fcb1d4964e74ea3a21f7",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1430",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2292,
+          "end_byte": 2517,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "b97a5c73013f9e13385574ca19ebcca41b560438bdeeabc711205164da8d9600",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1431",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2517,
+          "end_byte": 2517,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a19687b8444a483ed2b130760301fa1d29fd5f2b9af30796571e34fa60566191",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0162",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2517,
+          "end_byte": 2517,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a19687b8444a483ed2b130760301fa1d29fd5f2b9af30796571e34fa60566191",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1433",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2518,
+          "end_byte": 2778,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "f393078ed9f4a71d2e9e3b5fe2685ee5a404f7d08f7f63efc52d3dada242e550",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1434",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2518,
+          "end_byte": 2778,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "1f46674bd8bae03470157858d4356fd7153a8900fd3e684ba6178ca24fa74074",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1435",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2778,
+          "end_byte": 2778,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "6f6f68aa4c69a904e759f4d41d43ffc99bd0e1f15f6a9128ed0fdde89cceffd8",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0163",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2778,
+          "end_byte": 2778,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "6f6f68aa4c69a904e759f4d41d43ffc99bd0e1f15f6a9128ed0fdde89cceffd8",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1437",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2779,
+          "end_byte": 2944,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "e68d62b2b298f0aba4a42027fa223da72b61d6cc18318e39a2dcd6fa52b218c6",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1438",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2779,
+          "end_byte": 2944,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "aaa915ffb68c266018b5af2ed298d4501d14916c7848a0d4f79c2de23142b935",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1439",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2944,
+          "end_byte": 2944,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "95c14b671e326f6739901dc9a059eab939eb902102236251c61a1b78b849b7bb",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0164",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2944,
+          "end_byte": 2944,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "95c14b671e326f6739901dc9a059eab939eb902102236251c61a1b78b849b7bb",
+          "disposition": "omitted_documentation_link"
+        },
+        {
+          "source_id": "text-p-1441",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2945,
+          "end_byte": 3097,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "66dc6f5175e757810e9afd1bd26de6a213736653b1fc5fea2d75b1b3db9fc36a",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1442",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 2945,
+          "end_byte": 3097,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "48566ead65895a602e94cd5fb27441cf0b60bcf3437dddc4b87259e898231046",
+          "disposition": "narrative"
+        },
+        {
+          "source_id": "text-p-1443",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 3097,
+          "end_byte": 3097,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a1686d184e00868f2ca69bcd9e613f47c310067b22f8f088d6b7cdcba6b4ade1",
+          "disposition": "omitted_documentation_label"
+        },
+        {
+          "source_id": "text-a-0165",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "start_byte": 3097,
+          "end_byte": 3097,
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a",
+          "source_text_sha256": "a1686d184e00868f2ca69bcd9e613f47c310067b22f8f088d6b7cdcba6b4ade1",
+          "disposition": "omitted_documentation_link"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0113",
+          "source_name": "__RefHeading___Toc4841_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex",
+          "target_anchor": "__RefHeading___Toc4841_3118176633",
+          "command": "hypertarget",
+          "start_byte": 81,
+          "end_byte": 130,
+          "source_start_id": "text-bookmark-start-0075",
+          "source_end_id": "text-bookmark-end-0075",
+          "target_sha256": "89216eecd6b712886cea420d816f3fbd4184507c091e6aa8de52467ce7c2c49a"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0240",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0194",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0241",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0195",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0242",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0196",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0243",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0197",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0244",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0198",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0245",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0199",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0246",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0200",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0247",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0201",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0248",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0202",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0249",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0203",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0250",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0204",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0251",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0205",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0252",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0206",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0253",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0207",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0254",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-item-0208",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-0255",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        },
+        {
+          "source_id": "text-list-header-0067",
+          "disposition": "odf-container-replaced-by-prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json"
+        }
+      ],
+      "pending": [
+        "The 13 citation keys and evidence-backed entries are integrated in the root bibliography; the scratch A bibliography copy must be synchronized before an integrated build. The converter did not edit any .bib file.",
+        "For SonarQube / SonarCloud, the original documentation identity, SonarSource Sàrl responsibility, exact title Home, and generic capabilities are verified. Whether and how Recorda configured these capabilities remains PENDING and must be checked against the ODT/project evidence.",
+        "The approved prose reflow does not claim lexical equality; direct independent semantic audit against the ODT remains PENDING.",
+        "Integrated compilation, independent content audit, visual audit, and human approval of AGES IV remain PENDING.",
+        "A categoria de Expo como plataforma e conjunto de ferramentas foi confirmada diretamente em content.xml (text-p-1411) e restaurada na prosa; aguarda auditoria semântica independente."
+      ],
+      "presentation_transformations": [
+        {
+          "kind": "mariah_style_technology_prose",
+          "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+          "source_lists_recast_as": "four connected paragraphs grouped by backend, mobile/frontend, data/local environment, and quality/testing responsibilities",
+          "lexical_equality_claimed": false,
+          "semantic_review": "PENDING"
+        },
+        {
+          "kind": "documentation_labels_removed_from_body",
+          "source_link_ids": [
+            "text-a-0153",
+            "text-a-0154",
+            "text-a-0155",
+            "text-a-0156",
+            "text-a-0157",
+            "text-a-0158",
+            "text-a-0159",
+            "text-a-0160",
+            "text-a-0161",
+            "text-a-0162",
+            "text-a-0163",
+            "text-a-0164",
+            "text-a-0165"
+          ],
+          "original_labels_and_urls_preserved_in": "documentation_links and candidate_citations"
+        },
+        {
+          "kind": "source_fact_restoration_after_direct_odf_check",
+          "source_ids": [
+            "text-p-1410",
+            "text-p-1411"
+          ],
+          "evidence": "RELATORIO_ATUAL.odt content.xml: text-p-1411 states “Plataforma e conjunto de ferramentas integradas ao React Native para gerenciar o ciclo de vida da aplicação, otimizar builds e fornecer acesso simplificado a módulos nativos de hardware (câmera, galeria de mídia e áudio).”",
+          "restoration": "Expo is identified in the prose as a platform and integrated toolset; the existing citation remains adjacent to Expo.",
+          "semantic_review": "PENDING independent audit"
+        }
+      ],
+      "technology_prose_revision": {
+        "format": "ages-iv-mariah-prose-v1",
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_record_ids": [
+          "text-h-0113",
+          "text-list-0240",
+          "text-list-item-0194",
+          "text-p-1396",
+          "text-p-1397",
+          "text-a-0153",
+          "text-list-0241",
+          "text-list-item-0195",
+          "text-p-1399",
+          "text-p-1400",
+          "text-p-1401",
+          "text-a-0154",
+          "text-list-0242",
+          "text-list-item-0196",
+          "text-p-1403",
+          "text-p-1404",
+          "text-a-0155",
+          "text-list-0243",
+          "text-list-item-0197",
+          "text-p-1406",
+          "text-p-1407",
+          "text-p-1408",
+          "text-a-0156",
+          "text-list-0244",
+          "text-list-item-0198",
+          "text-p-1410",
+          "text-p-1411",
+          "text-p-1412",
+          "text-a-0157",
+          "text-list-0245",
+          "text-list-item-0199",
+          "text-p-1414",
+          "text-p-1415",
+          "text-p-1416",
+          "text-a-0158",
+          "text-list-0246",
+          "text-list-item-0200",
+          "text-p-1418",
+          "text-p-1419",
+          "text-p-1420",
+          "text-a-0159",
+          "text-list-0247",
+          "text-list-item-0201",
+          "text-p-1422",
+          "text-p-1423",
+          "text-p-1424",
+          "text-a-0160",
+          "text-list-0248",
+          "text-list-item-0202",
+          "text-p-1426",
+          "text-p-1427",
+          "text-a-0161",
+          "text-list-0249",
+          "text-list-item-0203",
+          "text-p-1429",
+          "text-p-1430",
+          "text-p-1431",
+          "text-a-0162",
+          "text-list-0250",
+          "text-list-item-0204",
+          "text-p-1433",
+          "text-p-1434",
+          "text-p-1435",
+          "text-a-0163",
+          "text-list-0251",
+          "text-list-item-0205",
+          "text-p-1437",
+          "text-p-1438",
+          "text-p-1439",
+          "text-a-0164",
+          "text-list-0252",
+          "text-list-item-0206",
+          "text-p-1441",
+          "text-p-1442",
+          "text-p-1443",
+          "text-a-0165",
+          "text-list-0253",
+          "text-list-item-0207",
+          "text-list-0254",
+          "text-list-item-0208",
+          "text-list-0255",
+          "text-list-header-0067"
+        ],
+        "semantic_review": "pending_independent_audit"
+      },
+      "documentation_links": [
+        {
+          "source_id": "text-a-0153",
+          "anchor": "Documentação Python",
+          "url": "https://www.python.org/doc/"
+        },
+        {
+          "source_id": "text-a-0154",
+          "anchor": "Documentação FastAPI",
+          "url": "https://fastapi.tiangolo.com/tutorial/"
+        },
+        {
+          "source_id": "text-a-0155",
+          "anchor": "Documentação Pydantic",
+          "url": "https://pydantic.dev/docs/validation/latest/get-started/"
+        },
+        {
+          "source_id": "text-a-0156",
+          "anchor": "Documentação React Native",
+          "url": "https://reactnative.dev/docs/getting-started"
+        },
+        {
+          "source_id": "text-a-0157",
+          "anchor": "Documentação Expo",
+          "url": "https://docs.expo.dev/"
+        },
+        {
+          "source_id": "text-a-0158",
+          "anchor": "Documentação TypeScript",
+          "url": "https://www.typescriptlang.org/docs/"
+        },
+        {
+          "source_id": "text-a-0159",
+          "anchor": "Documentação Supabase",
+          "url": "https://supabase.com/docs"
+        },
+        {
+          "source_id": "text-a-0160",
+          "anchor": "Documentação PostgreSQL",
+          "url": "https://www.postgresql.org/docs/"
+        },
+        {
+          "source_id": "text-a-0161",
+          "anchor": "Documentação Docker",
+          "url": "https://docs.docker.com/"
+        },
+        {
+          "source_id": "text-a-0162",
+          "anchor": "Documentação GitHub Actions",
+          "url": "https://docs.github.com/en/actions"
+        },
+        {
+          "source_id": "text-a-0163",
+          "anchor": "Documentação SonarQube",
+          "url": "https://docs.sonarsource.com/"
+        },
+        {
+          "source_id": "text-a-0164",
+          "anchor": "Documentação Pytest",
+          "url": "https://docs.pytest.org/en/stable/"
+        },
+        {
+          "source_id": "text-a-0165",
+          "anchor": "Documentação Jest",
+          "url": "https://jestjs.io/docs/getting-started"
+        }
+      ],
+      "candidate_citations": [
+        {
+          "source_link_id": "text-a-0153",
+          "candidate_key": "ages-iv-python",
+          "technology_anchor": "Documentação Python",
+          "observed_responsibility_or_title": "Python Software Foundation",
+          "basis": "author",
+          "url": "https://www.python.org/doc/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "python",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-python",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Our Documentation",
+          "observed_responsibility": "Python Software Foundation",
+          "responsibility_evidence": "Exact footer copyright: ‘Copyright ©2001-2026. Python Software Foundation.’"
+        },
+        {
+          "source_link_id": "text-a-0154",
+          "candidate_key": "ages-iv-fastapi",
+          "technology_anchor": "Documentação FastAPI",
+          "observed_responsibility_or_title": "Tutorial - User Guide",
+          "basis": "title",
+          "url": "https://fastapi.tiangolo.com/tutorial/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "fastapi",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-fastapi",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Tutorial - User Guide",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page footer says the FastAPI trademark is owned by @tiangolo; trademark ownership is not formal tutorial authorship."
+        },
+        {
+          "source_link_id": "text-a-0155",
+          "candidate_key": "ages-iv-pydantic",
+          "technology_anchor": "Documentação Pydantic",
+          "observed_responsibility_or_title": "Pydantic Validation",
+          "basis": "title",
+          "url": "https://pydantic.dev/docs/validation/latest/get-started/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "pydantic",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-pydantic",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Pydantic Validation",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The retrieved page identifies Pydantic Validation and links the first-party pydantic/pydantic repository; no formal author/copyright line appeared."
+        },
+        {
+          "source_link_id": "text-a-0156",
+          "candidate_key": "ages-iv-react-native",
+          "technology_anchor": "Documentação React Native",
+          "observed_responsibility_or_title": "Meta Platforms, Inc.",
+          "basis": "author",
+          "url": "https://reactnative.dev/docs/getting-started",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "react_native",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-react-native",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Introduction",
+          "observed_responsibility": "Meta Platforms, Inc.",
+          "responsibility_evidence": "Exact page footer: ‘Copyright © Meta Platforms, Inc.’"
+        },
+        {
+          "source_link_id": "text-a-0157",
+          "candidate_key": "ages-iv-expo",
+          "technology_anchor": "Documentação Expo",
+          "observed_responsibility_or_title": "Expo documentation",
+          "basis": "title",
+          "url": "https://docs.expo.dev/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "expo",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-expo",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Expo documentation",
+          "observed_responsibility": null,
+          "responsibility_evidence": "Official Expo docs page describes Android, iOS, web, SDK modules and build/distribution workflows; no formal author/copyright statement was exposed."
+        },
+        {
+          "source_link_id": "text-a-0158",
+          "candidate_key": "ages-iv-typescript",
+          "technology_anchor": "Documentação TypeScript",
+          "observed_responsibility_or_title": "The starting point for learning TypeScript",
+          "basis": "title",
+          "url": "https://www.typescriptlang.org/docs/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "typescript",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-typescript",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "The starting point for learning TypeScript",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page identifies TypeScript Documentation and handbook/reference sections; no page-level copyright/author line was found. A Microsoft-hosted release-note link alone does not establish the docs' authorship."
+        },
+        {
+          "source_link_id": "text-a-0159",
+          "candidate_key": "ages-iv-supabase",
+          "technology_anchor": "Documentação Supabase",
+          "observed_responsibility_or_title": "Supabase Docs",
+          "basis": "title",
+          "url": "https://supabase.com/docs",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "supabase",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-supabase",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Supabase Docs",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page identifies Supabase Docs and feature sections; no formal page author/copyright statement was exposed."
+        },
+        {
+          "source_link_id": "text-a-0160",
+          "candidate_key": "ages-iv-postgresql",
+          "technology_anchor": "Documentação PostgreSQL",
+          "observed_responsibility_or_title": "The PostgreSQL Global Development Group",
+          "basis": "author",
+          "url": "https://www.postgresql.org/docs/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "postgresql",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-postgresql",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Documentation",
+          "observed_responsibility": "The PostgreSQL Global Development Group",
+          "responsibility_evidence": "The exact /docs/ landing page links to official manuals. The official current manual identifies The PostgreSQL Global Development Group and carries its copyright."
+        },
+        {
+          "source_link_id": "text-a-0161",
+          "candidate_key": "ages-iv-docker",
+          "technology_anchor": "Documentação Docker",
+          "observed_responsibility_or_title": "Docker Inc.",
+          "basis": "author",
+          "url": "https://docs.docker.com/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "docker",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-docker",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Docker Docs",
+          "observed_responsibility": "Docker Inc.",
+          "responsibility_evidence": "Exact docs homepage footer: ‘Copyright © 2013-2026 Docker Inc.’"
+        },
+        {
+          "source_link_id": "text-a-0162",
+          "candidate_key": "ages-iv-github-actions",
+          "technology_anchor": "Documentação GitHub Actions",
+          "observed_responsibility_or_title": "GitHub Inc.",
+          "basis": "author",
+          "url": "https://docs.github.com/en/actions",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "github_actions",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-github-actions",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "GitHub Actions documentation",
+          "observed_responsibility": "GitHub Inc.",
+          "responsibility_evidence": "Exact page footer: ‘GitHub Inc. © 2026.’"
+        },
+        {
+          "source_link_id": "text-a-0163",
+          "candidate_key": "ages-iv-sonar",
+          "technology_anchor": "Documentação SonarQube",
+          "observed_responsibility_or_title": "SonarSource Sàrl",
+          "basis": "author",
+          "url": "https://docs.sonarsource.com/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "sonar",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-sonar",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Home",
+          "citation_title": "Home",
+          "documented_capability_status": "VERIFIED in official product documentation: static analysis, imported coverage reports, security rules, and quality gates",
+          "recorda_configuration_status": "PENDING: whether and how Recorda configured these capabilities must be checked against the ODT and project evidence",
+          "original_url_preservation": "https://docs.sonarsource.com/",
+          "observed_responsibility": "SonarSource Sàrl",
+          "responsibility_evidence": "Official SonarQube Cloud documentation page for quality gates displays the copyright attribution “© SonarSource Sàrl.” This supports corporate responsibility for the official documentation; no individual author is identified."
+        },
+        {
+          "source_link_id": "text-a-0164",
+          "candidate_key": "ages-iv-pytest",
+          "technology_anchor": "Documentação Pytest",
+          "observed_responsibility_or_title": "holger krekel and pytest-dev team",
+          "basis": "author",
+          "url": "https://docs.pytest.org/en/stable/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "pytest",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-pytest",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "pytest documentation",
+          "observed_responsibility": "holger krekel and pytest-dev team",
+          "responsibility_evidence": "Exact page footer copyright attribution, preserved verbatim: ‘Copyright © 2015, holger krekel and pytest-dev team.’"
+        },
+        {
+          "source_link_id": "text-a-0165",
+          "candidate_key": "ages-iv-jest",
+          "technology_anchor": "Documentação Jest",
+          "observed_responsibility_or_title": "Getting Started",
+          "basis": "title",
+          "url": "https://jestjs.io/docs/getting-started",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "jest",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED centrally; scratch A bibliography sync pending",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-jest",
+          "bibliography_integration": "confirmed in root bibliography; no local .bib edit by converter",
+          "observed_page_title": "Getting Started",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page displays version 30.5 and links to GitHub/legal pages; none establishes page authorship. Version is the current docs selector only, not the project version."
+        }
+      ],
+      "omitted_documentation_fragments": [
+        {
+          "source_id": "text-p-1397",
+          "fragment": "Documentação Python",
+          "disposition": "replaced_by_bibliography_citation",
+          "citation_source_id": "text-a-0153"
+        },
+        {
+          "source_id": "text-p-1404",
+          "fragment": "Documentação Pydantic",
+          "disposition": "replaced_by_bibliography_citation",
+          "citation_source_id": "text-a-0155"
+        },
+        {
+          "source_id": "text-p-1427",
+          "fragment": "Documentação Docker",
+          "disposition": "replaced_by_bibliography_citation",
+          "citation_source_id": "text-a-0161"
+        }
+      ]
+    }
+  }
+}

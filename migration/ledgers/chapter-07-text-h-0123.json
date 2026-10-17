@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "ee821782e83b66b972175991b064a7e9d87f3483",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-07-text-h-0123": {
+      "state": "partial",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0123",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+          "start_byte": 192,
+          "end_byte": 234,
+          "serializations": [
+            "abnt_section_numbering"
+          ],
+          "target_sha256": "550453d9eaea6f9a9d51933c2ff5bdd83214abcaf7174e79421aaeafdd87d7e4"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0123",
+          "source_name": "__RefHeading___Toc4857_3118176633",
+          "source_start_id": "text-bookmark-start-0084",
+          "source_end_id": "text-bookmark-end-0084",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+          "target_anchor": "__RefHeading___Toc4857_3118176633",
+          "command": "hypertarget",
+          "start_byte": 78,
+          "end_byte": 127,
+          "target_sha256": "550453d9eaea6f9a9d51933c2ff5bdd83214abcaf7174e79421aaeafdd87d7e4"
+        },
+        {
+          "source_heading_id": "text-h-0123",
+          "source_name": "_Toc45627150",
+          "source_start_id": "text-bookmark-start-0085",
+          "source_end_id": "text-bookmark-end-0085",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+          "target_anchor": "_Toc45627150",
+          "command": "hypertarget",
+          "start_byte": 128,
+          "end_byte": 156,
+          "target_sha256": "550453d9eaea6f9a9d51933c2ff5bdd83214abcaf7174e79421aaeafdd87d7e4"
+        }
+      ],
+      "structural_dispositions": [],
+      "source_structure": {
+        "heading_level": 1,
+        "body_paragraphs": 10,
+        "reflection_paragraphs": 0,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 6,
+        "layout_wrappers": [],
+        "body_source_record_ids": [
+          "text-p-1539",
+          "text-p-1540",
+          "text-p-1541",
+          "text-p-1542",
+          "text-p-1543",
+          "text-p-1544",
+          "text-p-1545",
+          "text-p-1546",
+          "text-p-1547",
+          "text-p-1549"
+        ],
+        "authorized_omitted_record_ids": [
+          "text-p-1539",
+          "text-p-1540",
+          "text-p-1541",
+          "text-list-0280",
+          "text-list-item-0225",
+          "text-p-1542",
+          "text-list-0281",
+          "text-list-item-0226",
+          "text-p-1543",
+          "text-list-item-0227",
+          "text-p-1544",
+          "text-list-item-0228",
+          "text-p-1545",
+          "text-list-item-0229",
+          "text-p-1546",
+          "text-list-item-0230",
+          "text-p-1547",
+          "text-p-1549"
+        ]
+      },
+      "pending": [
+        {
+          "status": "PENDING",
+          "code": "independent_content_and_visual_audit",
+          "detail": "Unit requires independent source-to-LaTeX comparison, integrated PDF inspection, and human review."
+        },
+        {
+          "status": "PENDING",
+          "code": "authorized_title_only_body_omission",
+          "source_ids": [
+            "text-p-1539",
+            "text-p-1540",
+            "text-p-1541",
+            "text-list-0280",
+            "text-list-item-0225",
+            "text-p-1542",
+            "text-list-0281",
+            "text-list-item-0226",
+            "text-p-1543",
+            "text-list-item-0227",
+            "text-p-1544",
+            "text-list-item-0228",
+            "text-p-1545",
+            "text-list-item-0229",
+            "text-p-1546",
+            "text-list-item-0230",
+            "text-p-1547",
+            "text-p-1549"
+          ],
+          "detail": "User explicitly authorized inclusion of only text-h-0123; 18 associated body/list records are omitted and this unit remains partial."
+        }
+      ],
+      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "style_contract": {
+        "path": "relatorio_AGES_eduardo/util/style.tex",
+        "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+      },
+      "authorized_title_only_inclusion": {
+        "unit": "chapter-07-text-h-0123",
+        "source_heading_id": "text-h-0123",
+        "source_heading_text": "7 - CONSIDERAÇÕES FINAIS (Somente AGES IV)",
+        "included_source_record_ids": [
+          "text-h-0123"
+        ],
+        "omitted_source_record_ids": [
+          "text-p-1539",
+          "text-p-1540",
+          "text-p-1541",
+          "text-list-0280",
+          "text-list-item-0225",
+          "text-p-1542",
+          "text-list-0281",
+          "text-list-item-0226",
+          "text-p-1543",
+          "text-list-item-0227",
+          "text-p-1544",
+          "text-list-item-0228",
+          "text-p-1545",
+          "text-list-item-0229",
+          "text-p-1546",
+          "text-list-item-0230",
+          "text-p-1547",
+          "text-p-1549"
+        ],
+        "user_decision": "Incluir apenas o título",
+        "treatment": "Omitir nesta entrega o corpo de orientação e seus contêineres/listas; não é uma omissão acidental. Manter rastreável para eventual redação futura.",
+        "completion_state": "title included; source unit remains partial and body intentionally pending"
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-h-0123"
+        ]
+      }
+    }
+  }
+}

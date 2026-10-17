@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "d756dea807734acfb3be5ed788b54896b78a822c",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "ages-iv-sprint-2": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0119",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+          "start_byte": 163,
+          "end_byte": 177,
+          "serializations": [],
+          "target_sha256": "5f84af9dda65ed914bd5c8a9db2e148178be54ee98e38317bde8c872b62d150d"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0119",
+          "source_name": "__RefHeading___Toc4849_3118176633",
+          "source_start_id": "text-bookmark-start-0080",
+          "source_end_id": "text-bookmark-end-0080",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+          "target_anchor": "__RefHeading___Toc4849_3118176633",
+          "command": "hypertarget",
+          "start_byte": 72,
+          "end_byte": 121,
+          "target_sha256": "5f84af9dda65ed914bd5c8a9db2e148178be54ee98e38317bde8c872b62d150d"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0272",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-item-0220",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-0273",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-item-0221",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-0274",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-header-0073",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 0,
+        "reflection_paragraphs": 0,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "text-list-0272",
+          "text-list-item-0220",
+          "text-list-0273",
+          "text-list-item-0221",
+          "text-list-0274",
+          "text-list-header-0073"
+        ]
+      },
+      "pending": [
+        {
+          "status": "PENDING",
+          "code": "independent_content_and_visual_audit",
+          "detail": "Unit requires independent source-to-LaTeX comparison, integrated PDF inspection, and human review."
+        }
+      ],
+      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "style_contract": {
+        "path": "relatorio_AGES_eduardo/util/style.tex",
+        "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+      }
+    }
+  }
+}

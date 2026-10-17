@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "96c09d125fcde4623d2f4d2218e6aaa0cb5c656",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "28b051ecf5a2ca73082158a69ce0c30c2150942039bc94e39393ee99e4ef7257"
+  },
+  "units": {
+    "chapter-05-text-h-0097": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0097",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "start_byte": 173,
+          "end_byte": 187,
+          "serializations": [
+            "abnt_section_numbering"
+          ],
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+        },
+        {
+          "source_id": "text-p-1310",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "start_byte": 287,
+          "end_byte": 978,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+        },
+        {
+          "source_id": "text-p-1311",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "start_byte": 1006,
+          "end_byte": 1682,
+          "serializations": [],
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+        },
+        {
+          "source_id": "text-p-1312",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "start_byte": 1710,
+          "end_byte": 2539,
+          "serializations": [],
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+        },
+        {
+          "source_id": "text-p-1313",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "start_byte": 2567,
+          "end_byte": 3142,
+          "serializations": [],
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+        },
+        {
+          "source_id": "text-p-1314",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "start_byte": 3170,
+          "end_byte": 3831,
+          "serializations": [],
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+        }
+      ],
+      "asset_map": [],
+      "structural_dispositions": [],
+      "source_structure": {
+        "heading_level": 2,
+        "body_paragraphs": 5,
+        "reflection_paragraphs": 0,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": []
+      },
+      "pending": [],
+      "layout_disposition": "Title uses the native subsection/section level and continues the document flow without an artificial page break. Reflection text is enclosed in the shared divisible reflection environment; empty/boundary wrappers do not create artificial spacing.",
+      "emphasis_evidence": {
+        "status": "PENDING",
+        "source_part": "content.xml",
+        "style_part": "styles.xml",
+        "style_property": "fo:font-style=italic (including ODF style:text-properties aliases)",
+        "ranges": [],
+        "note": "This deterministic source-to-target map is converter evidence, not an independent audit result."
+      },
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+        "source_ids": [
+          "text-p-1310"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0097",
+          "source_name": "__RefHeading___Toc4825_3118176633",
+          "source_start_id": "text-bookmark-start-0065",
+          "source_end_id": "text-bookmark-end-0065",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+          "target_anchor": "__RefHeading___Toc4825_3118176633",
+          "command": "hypertarget",
+          "start_byte": 89,
+          "end_byte": 139,
+          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de",
+          "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text."
+        }
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+        "source_ids": [
+          "text-h-0097"
+        ]
+      }
+    }
+  }
+}

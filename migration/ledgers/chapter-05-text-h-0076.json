@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "96c09d125fcde4623d2f4d2218ee6aaa0cb5c656",
+  "units": {
+    "chapter-05-text-h-0076": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0076.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0076",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0076.tex",
+          "start_byte": 108,
+          "end_byte": 138,
+          "serializations": [],
+          "target_sha256": "38e9b6db200da92a7527693664b3130984bcd628ca41810979cd1a4a5735ffec"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0162",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-item-0140",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-0163",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-item-0141",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-0164",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-header-0043",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        }
+      ],
+      "pending": [
+        "Unit contains only the section heading and ODF layout containers. Human edition approval remains pending."
+      ]
+    }
+  }
+}

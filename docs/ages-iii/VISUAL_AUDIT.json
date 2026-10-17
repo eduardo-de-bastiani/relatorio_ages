@@ -1,0 +1,209 @@
+{
+  "audit": "AGES III independent visual audit",
+  "overall_status": "PENDING",
+  "edition_approval_status": "PENDING_HUMAN_APPROVAL",
+  "pdf": {
+    "path": "build/document/main.pdf",
+    "profile": "document-review",
+    "sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+    "pages": 65,
+    "page_size": "A4"
+  },
+  "method": {
+    "tools": ["pdfinfo", "pdftoppm", "pdftotext -layout", "sha256sum", "ODF ZIP/XML inspection"],
+    "render_commands": [
+      "pdftoppm -f 38 -l 65 -r 110 -png build/document/main.pdf /tmp/agesiii-visual-fde5e7/page",
+      "pdftoppm -f 2 -l 3 -r 110 -png build/document/main.pdf /tmp/agesiii-visual-fde5e7/front",
+      "pdftoppm -f 47 -l 48 -r 220 -png build/document/main.pdf /tmp/agesiii-visual-fde5e7/detail"
+    ],
+    "pages_inspected_in_full_audit": [2, 3, "38-65"],
+    "pages_reinspected_in_delta_audit": [48],
+    "delta_render_comparison": {
+      "previous_render_directory": "build/visual/00f115fae1aaf076",
+      "current_render_directory": "build/visual/1bb11250fba90a86",
+      "compared_pages": 65,
+      "changed_pages": [48],
+      "pixel_identical_pages": 64
+    },
+    "changed_page_48_png_sha256": {
+      "previous": "9f9d9c3dc4b39c3455033f93d7268582fc95b00868723d4a47e37661b255c79c",
+      "current": "d5b875b62cd1ee5db1cd48c51785c0af74bd0f70d5fc345d5c5ee8ff349076d0"
+    },
+    "focus": [
+      "all chapter 5 pages 40-62 and transition page 38",
+      "figures 16-23 and their captions/source lines",
+      "sections 5.2.4 and 5.2.5",
+      "technology paragraph pages 47-48",
+      "sprints 0-4 and reflection boxes",
+      "conclusion, table of contents, list of illustrations, and references"
+    ],
+    "reference": "Mariah's report was used only as a presentation metric; no content was reused.",
+    "odt_sha256_checked": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "findings": [
+    {
+      "id": "VA-01",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 41-47, figures 16-23",
+      "evidence": "Figure labels are above images, and titles, images, and source lines are centered. No clipping or overlap was seen. Figures 19-23 have individual captions; no loose administrator/client screen labels remain.",
+      "consequence": "Figures are visually legible and associated with their subjects; image provenance remains explicitly pending.",
+      "proposed_correction": "None identified.",
+      "verification": "Reinspect the same pages after any future rebuild."
+    },
+    {
+      "id": "VA-02",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 44-47, sections 5.2.4-5.2.5 and figures 18-23",
+      "evidence": "Figure 18 follows the architecture section on page 44. Figures 19-23 continue across pages 45-47 before section 5.2.5. Captions and source lines remain with their images.",
+      "consequence": "The order of architecture, prototypes, and technologies is visually coherent.",
+      "proposed_correction": "None identified.",
+      "verification": "Visual inspection of rendered pages 44-47."
+    },
+    {
+      "id": "VA-03",
+      "status": "PASS",
+      "severity": "none",
+      "location": "Current PDF page 44, subsection 5.2.4",
+      "evidence": "The current rendering places “prototipagem e design.” as a continuation of the preceding sentence in the same paragraph composition, without an independent paragraph indent. The approved presentation joins the source nodes with a space and preserves the wording.",
+      "consequence": "The phrase no longer appears as a detached indented fragment; pagination is unchanged.",
+      "proposed_correction": "None identified for VA-03.",
+      "verification": "Visually inspected build/visual/00f115fae1aaf076/page-44.png and compared SHA-256 of all 65 old/current page renders: only page 44 changed; the other 64 are pixel-identical."
+    },
+    {
+      "id": "VA-04",
+      "status": "PASS",
+      "severity": "none",
+      "location": "Current PDF page 48",
+      "evidence": "The current rendering shows “consultas tipadas” continuously. The word aligns with neighboring lines; no excessive space, split, clipping, or shift caused by this change was observed.",
+      "consequence": "The visible gap is removed without introducing a spacing or alignment defect on this page.",
+      "proposed_correction": "None identified for visual presentation.",
+      "verification": "Inspected build/visual/1bb11250fba90a86/page-48.png directly. SHA-256 comparison of all 65 old/current page renders found only page 48 changed; the other 64 are pixel-identical."
+    },
+    {
+      "id": "VA-05",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 47-48, technology section 5.2.5",
+      "evidence": "Individual lead-ins “Mais informações podem ser encontradas em: Documentação …” appear before each documentation link, in regular type and legible. The user expressly selected this repeated-link pattern.",
+      "consequence": "The presentation follows the user's approved decision; this is not an outstanding aesthetic issue.",
+      "proposed_correction": "None; retain the approved choice.",
+      "verification": "Confirm the same pattern in later integrated PDFs."
+    },
+    {
+      "id": "VA-06",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 47-48, technology paragraph",
+      "evidence": "The section remains one continuous paragraph across the page break. Author-date citations and documentation anchors are readable. The final overfull warning does not produce visible clipping or an intrusive protrusion.",
+      "consequence": "Reading remains continuous; external destinations and bibliographic facts are not established by visual inspection.",
+      "proposed_correction": "None for legibility. External references remain pending in VA-08.",
+      "verification": "Recheck pages 47-48 after any build changes."
+    },
+    {
+      "id": "VA-07",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 49, 52, 55, 57-58, 61",
+      "evidence": "Sprint 0 starts on page 49, Sprint 1 on 52, Sprint 2 on 55, Sprint 3 on 57, Sprint 4 on 58, and section 5.4 on 61. Sprint titles are not forced to new pages and each is followed by text. Reflection boxes keep their borders and continue across pages where needed.",
+      "consequence": "Sprint sequence and reflective blocks remain readable and continuous.",
+      "proposed_correction": "None identified.",
+      "verification": "Visual inspection across all chapter 5 pages."
+    },
+    {
+      "id": "VA-08",
+      "status": "PENDING",
+      "severity": "medium",
+      "location": "PDF pages 41-48 and references pages 63-65",
+      "evidence": "All eight figures show centered “Fonte: pendente de identificação” lines. Visible links and reference entries are legible, but image sources and external destinations were not verified.",
+      "consequence": "Presentation is consistent while factual attribution and URL validity remain unresolved.",
+      "proposed_correction": "User supplies image provenance; curator verifies destinations and metadata without inference.",
+      "verification": "Check against evidence provided by the user and test external URLs during reference curation."
+    },
+    {
+      "id": "VA-09",
+      "status": "PENDING",
+      "severity": "low",
+      "location": "PDF page 47; build/document/main.log line 1132; chapter-05-text-h-0085",
+      "evidence": "Final main.log reports one 2.72131pt overfull hbox in the technology paragraph. At 220 dpi on pages 47-48, no text clipping or visually intrusive protrusion was seen.",
+      "consequence": "The warning is small and visually unobtrusive but remains in the final compilation log.",
+      "proposed_correction": "Typesetting maintainer may assess a break opportunity without changing wording; rebuild and recheck the final log and pages 47-48.",
+      "verification": "Confirm the final-pass main.log and rendered pages after any adjustment."
+    },
+    {
+      "id": "VA-10",
+      "status": "PENDING",
+      "severity": "low",
+      "location": "build/document/compiler.txt lines 25-26 and rendered chapter figures",
+      "evidence": "Aggregated compiler output reports ICC profile version 4.3.0 unsupported in the current PDF setting and the profile not embedded. No obvious color artifact was visible.",
+      "consequence": "Screen rendering does not establish consistent color across viewers or print output.",
+      "proposed_correction": "Record technical disposition; if required, compare a controlled output against original assets.",
+      "verification": "Use a color-managed viewer or controlled print workflow if color fidelity is required."
+    },
+    {
+      "id": "VA-11",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 2-3 and chapter/reference pages 40-65",
+      "evidence": "The table of contents and list of illustrations point to the rendered locations: chapter 5 page 40, section 5.2.5 page 47, Sprints pages 49/52/55/57/58, conclusion page 61, references page 63, figures 16-23 pages 41/42/44-47.",
+      "consequence": "Navigation entries match the current PDF pagination.",
+      "proposed_correction": "None identified.",
+      "verification": "Compare front matter against rendered chapter and figures."
+    },
+    {
+      "id": "VA-12",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF page 64, GitHub Actions reference title",
+      "evidence": "The middle dot U+00B7 renders visibly as “·” between the title segments. No replacement or corrupted glyph was seen.",
+      "consequence": "The title punctuation is legible in the current PDF.",
+      "proposed_correction": "None identified.",
+      "verification": "Recheck page 64 after any bibliography or build changes."
+    },
+    {
+      "id": "VA-13",
+      "status": "PENDING",
+      "severity": "low",
+      "location": "PDF pages 63-64, Figma references",
+      "evidence": "“FIGMA. Figma: the collaborative interface design tool. 2024” appears twice with the same URL and different access dates: 10 Apr. 2024 and 15 Oct. 2024.",
+      "consequence": "Visual inspection cannot determine whether these are distinct consultation records or a duplicate bibliography entry.",
+      "proposed_correction": "Curator checks the source records and consolidates only if evidence confirms duplication.",
+      "verification": "Compare both entries with citation inventory and provenance records."
+    },
+    {
+      "id": "VA-14",
+      "status": "PASS",
+      "severity": "none",
+      "location": "PDF pages 38-65, especially pages 62 and 65",
+      "evidence": "No unjustified blank or nearly blank page was found. Page 62 ends the conclusion; page 65 is the final references page containing five entries.",
+      "consequence": "Observed whitespace is consistent with natural section/list endings.",
+      "proposed_correction": "None identified.",
+      "verification": "Rendered-page scan of pages 38-65."
+    }
+  ],
+  "build_diagnostics": {
+    "compiler_exit_code": 0,
+    "build_report_status": "fail",
+    "final_main_log": [
+      "2.72131pt overfull hbox in chapter-05-text-h-0085"
+    ],
+    "aggregated_compiler_only_overfulls_absent_from_final_main_log": [
+      "4.74695pt in chapter-04-text-h-0043",
+      "92.78046pt in chapter-05-text-h-0075",
+      "60.17422pt in chapter-05-text-h-0079"
+    ],
+    "icc_warnings": [
+      "ICC profile format spec. version 4.3.0 not supported in current PDF version setting",
+      "ICC profile not embedded"
+    ],
+    "interpretation": "The larger overfull messages are present only in aggregated compiler output from earlier passes, absent from final main.log, and not visible as defects in the current rendered PDF. They are not classified as final-layout failures. Current build/document/report.json matches the audited PDF hash, returns code 0, and reports status fail because warnings remain."
+  },
+  "limitations": [
+    "External URL destinations were not tested.",
+    "Image provenance remains pending user identification.",
+    "Review covered digital rendering, not physical print output.",
+    "This visual audit does not establish full ABNT or institutional compliance.",
+    "VA-03 passed after the user's approval of the presentation change. Remaining visual/factual issues and final human approval of the AGES III edition remain pending."
+  ]
+}

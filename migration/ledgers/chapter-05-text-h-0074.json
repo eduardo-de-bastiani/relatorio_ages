@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "96c09d125fcde4623d2f4d2218ee6aaa0cb5c656",
+  "units": {
+    "chapter-05-text-h-0074": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0074.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0074",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0074.tex",
+          "start_byte": 187,
+          "end_byte": 269,
+          "serializations": [
+            "abnt_section_numbering"
+          ],
+          "target_sha256": "86fa8516b7ed9e452743b13a39c2b76ab7f69189b171ab1e1f06253d5c9e210d"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0074",
+          "source_name": "__RefHeading___Toc4797_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0074.tex",
+          "target_anchor": "__RefHeading___Toc4797_3118176633",
+          "command": "hypertarget",
+          "start_byte": 73,
+          "end_byte": 123,
+          "source_start_id": "text-bookmark-start-0049",
+          "source_end_id": "text-bookmark-end-0049",
+          "target_sha256": "86fa8516b7ed9e452743b13a39c2b76ab7f69189b171ab1e1f06253d5c9e210d"
+        },
+        {
+          "source_heading_id": "text-h-0074",
+          "source_name": "_Toc45627148",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0074.tex",
+          "target_anchor": "_Toc45627148",
+          "command": "hypertarget",
+          "start_byte": 123,
+          "end_byte": 152,
+          "source_start_id": "text-bookmark-start-0050",
+          "source_end_id": "text-bookmark-end-0050",
+          "target_sha256": "86fa8516b7ed9e452743b13a39c2b76ab7f69189b171ab1e1f06253d5c9e210d"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0158",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-item-0138",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-0159",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        },
+        {
+          "source_id": "text-list-header-0041",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "The immutable ODT XML contains this nonprinting ODF list/frame wrapper. Its visible text descendants, hyperlinks and headings are independently mapped in XML order; this wrapper adds no separate printable wording."
+        }
+      ],
+      "pending": [
+        "References not cited in this structural title unit. Human edition approval remains pending."
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+        "source_ids": [
+          "text-h-0074"
+        ]
+      }
+    }
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  }
+}

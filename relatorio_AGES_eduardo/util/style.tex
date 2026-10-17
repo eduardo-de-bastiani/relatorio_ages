@@ -2,6 +2,14 @@
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
+% The source ODF style “Source Text” uses Liberation Mono. Tectonic's frozen
+% cache does not contain the T1 lmtt metrics; load the pinned local OpenType
+% file directly so \texttt stays monospaced without a host-font lookup.
+\makeatletter
+\DeclareRobustCommand{\texttt}[1]{%
+  {\font\memorialttfont="[util/fonts/LiberationMono-Regular.ttf]" at \f@size pt%
+   \memorialttfont #1}}
+\makeatother
 \usepackage{indentfirst}
 \usepackage[top=3cm,left=3cm,bottom=2cm,right=2cm]{geometry}
 \usepackage{graphicx}
@@ -127,6 +135,9 @@
 \catcode`’=\active \def’{\textquoteright{}}
 \catcode`–=\active \def–{\textendash{}}
 \catcode`—=\active \def—{\textemdash{}}
+% T1 Nimbus Sans maps literal U+00B7 to the wrong glyph; TS1 renders · correctly.
+% Use normal text weight so author/title fields do not request unavailable bold TS1/phv.
+\catcode`·=\active \def·{\textnormal{\textperiodcentered{}}}
 
 % Nimbus Sans/T1 maps a literal degree sign to the wrong extracted glyph.
 % Keep the source character literal while rendering it through textcomp's glyph.
@@ -161,7 +172,9 @@
 \DeclareFieldFormat{firstword}{%
   \normalfont\memorial@citefirstword#1 \@nil}
 \def\memorial@citefirstword#1 #2\@nil{%
-  \FirstWord{#1}%
+  % #1 is already the first space-delimited title word. Preserve leading
+  % punctuation in labels such as ".NET"; biblatex's \FirstWord strips it.
+  #1%
   \ifblank{#2}{}{\space[...]}%
 }
 \makeatother
@@ -173,10 +186,14 @@
     \ifnameundef{labelname}{,\space}{}%
     \printtext[bibhyperref]{\printlabeldateextra}}}
 
-% The user authorized 2024 as the author-date year for online AGES resources.
-% For RFC entries, preserve their publication date in the bibliography while
-% using the separately recorded 2024 access date only as the citation label.
+% Online citation labels use the actual access year recorded in urldate.
+% Factual publication dates remain unchanged in the bibliography.
 \DeclareLabeldate[online]{\field{urldate}\field{date}\field{year}}
+
+% For verified thesis sources cited under the user's access-year convention,
+% use the real access date as the citation label and retain publication year
+% as factual bibliography metadata.
+\DeclareLabeldate[thesis]{\field{urldate}\field{date}\field{year}}
 
 \defbibnote{curationnote}{%
   Documentação consultada pela curadoria em outubro de 2026.

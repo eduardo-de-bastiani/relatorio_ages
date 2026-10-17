@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "a18d5a1f09b0d3602ba78f87a7fe0a7d73264c89",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0109": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0109",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 159,
+          "end_byte": 189,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560",
+          "source_text_sha256": "66e3658d9c0d52dac6d17f7c7432b8fde9cc7113d4d0aa452a24ed73805fc342"
+        },
+        {
+          "source_id": "text-p-1339",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 307,
+          "end_byte": 1067,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560",
+          "source_text_sha256": "574e2cba0d5ed0ba0ef55078b4a4f532f70202a8dd0086851b68026f86d2898e",
+          "serializations": [
+            "technology_citation"
+          ]
+        },
+        {
+          "source_id": "text-a-0148",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 1153,
+          "end_byte": 1246,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560"
+        },
+        {
+          "source_id": "text-p-1344",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 1393,
+          "end_byte": 1449,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560",
+          "source_text_sha256": "b3c5367205c8ac0540151b9453398a6d7c8ebc46c27a4feb529ce38db0aac103",
+          "serializations": [
+            "abnt_figure_caption"
+          ]
+        },
+        {
+          "source_id": "draw-image-0025",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 1338,
+          "end_byte": 1603,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560"
+        },
+        {
+          "source_id": "text-p-1343",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 1640,
+          "end_byte": 1789,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560",
+          "source_text_sha256": "b16bc1f40b5f1b3d91980244c32015a774329659b551864e27e0d7f31e46b9d9",
+          "serializations": [
+            "wiki_reference_sentence"
+          ]
+        },
+        {
+          "source_id": "text-a-0149",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "start_byte": 1682,
+          "end_byte": 1789,
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560",
+          "serializations": [
+            "wiki_reference_sentence"
+          ]
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0025",
+          "asset_id": "asset-0019",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0019.png",
+          "sha256": "5a085f7daba0bc64e87bcfeb00e4e83a796c87079d6fba956c89c963eeee3500"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0109",
+          "source_name": "__RefHeading___Toc4835_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+          "target_anchor": "__RefHeading___Toc4835_3118176633",
+          "command": "hypertarget",
+          "start_byte": 68,
+          "end_byte": 117,
+          "source_start_id": "text-bookmark-start-0072",
+          "source_end_id": "text-bookmark-end-0072",
+          "target_sha256": "84e7149a5582f03d704322d236b79fa2070c438695248a27f451edb6ddb56560"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0041",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0231",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0188",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0232",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0189",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0233",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-header-0064",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        }
+      ],
+      "pending": [
+        "Auditorias independentes de conteúdo e visual, compilação integrada e aprovação humana da AGES IV permanecem PENDING.",
+        "A disponibilidade do URL wiki original da base de dados continua PENDING, por decisão explícita do usuário; URL e âncora ODF vazia foram preservadas.",
+        "A fonte/proveniência da imagem draw-image-0025 permanece PENDING para identificação humana.",
+        "A associação do draw-frame-0065, da legenda text-p-1344 e da imagem draw-image-0025 ao URL preservado está implementada pela macro memorialfigurelinked; a reauditoria independente e a revisão visual permanecem PENDING."
+      ],
+      "presentation_transformations": [
+        {
+          "source_id": "text-p-1344",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 25: ",
+          "target_prefix": "Figura 25 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        }
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0149",
+          "text-p-1343",
+          "text-p-1344"
+        ]
+      },
+      "wiki_link_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0149",
+          "text-p-1343"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "preserved_links": [
+        {
+          "source_id": "text-a-0148",
+          "original_anchor": "",
+          "typeset_anchor": "",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+          "availability": "PENDING"
+        },
+        {
+          "source_id": "text-a-0149",
+          "original_anchor": "Wiki do Banco de Dados",
+          "typeset_anchor": "Banco de Dados",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+          "availability": "PENDING",
+          "source_linked_element_ids": [
+            "draw-frame-0065",
+            "draw-text-box-0041",
+            "text-p-1344",
+            "draw-frame-0066",
+            "draw-image-0025"
+          ],
+          "figure_caption_link_status": "PRESERVED_BY_MEMORIALFIGURELINKED",
+          "required_target_interface": "\\memorialfigurelinked{asset}{caption}{label}{source}{width}{URI}",
+          "source_order_note": "No ODF, frame/imagem e legenda precedem o texto visível do link dentro do mesmo text:a; no TeX, a figura precede a frase.",
+          "linked_element_ids": [
+            "draw-image-0025",
+            "text-p-1344"
+          ]
+        }
+      ],
+      "technology_citations": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_text_changed": false,
+        "source_id_to_keys": {
+          "text-p-1339": [
+            "ages-iv-postgresql",
+            "ages-iv-supabase"
+          ]
+        }
+      },
+      "candidate_citations": [
+        {
+          "source_link_id": "text-a-0160",
+          "candidate_key": "ages-iv-postgresql",
+          "technology_anchor": "Documentação PostgreSQL",
+          "observed_responsibility_or_title": "The PostgreSQL Global Development Group",
+          "basis": "author",
+          "url": "https://www.postgresql.org/docs/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "postgresql",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-postgresql",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Documentation",
+          "observed_responsibility": "The PostgreSQL Global Development Group",
+          "responsibility_evidence": "The exact /docs/ landing page links to official manuals. The official current manual identifies The PostgreSQL Global Development Group and carries its copyright.",
+          "usage_source_id": "text-p-1339"
+        },
+        {
+          "source_link_id": "text-a-0159",
+          "candidate_key": "ages-iv-supabase",
+          "technology_anchor": "Documentação Supabase",
+          "observed_responsibility_or_title": "Supabase Docs",
+          "basis": "title",
+          "url": "https://supabase.com/docs",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "supabase",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-supabase",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Supabase Docs",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page identifies Supabase Docs and feature sections; no formal page author/copyright statement was exposed.",
+          "usage_source_id": "text-p-1339"
+        }
+      ],
+      "citation_evidence_path": "migration/evidence/references/ages-iv.json",
+      "linked_figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/figure-macros.tex",
+        "sha256": "cf7a5866827c7e2336a3ce6cc8bc150f6537e2cefbf019e676df2305e0fbdca4"
+      }
+    }
+  }
+}

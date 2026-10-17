@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_presentation_change",
+  "date": "2026-10-17",
+  "basis": "The user approved joining the two source paragraph fragments without changing the text after reviewing the visual-audit finding.",
+  "user_response": "Unir sem mudar o texto (recomendado)",
+  "scope": {
+    "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+    "unit": "chapter-05-text-h-0080",
+    "source_ids": ["text-p-1053", "text-p-1054"]
+  },
+  "change": {
+    "source_text_sequence": "Os protótipos de alta-fidelidade foram construídos no Figma, ferramenta web de prototipagem e design.",
+    "treatment": "Join the two adjacent source text nodes into one typeset paragraph with a single ordinary interword space at the boundary; preserve every source word, punctuation mark, accent, and order exactly. Keep the separately approved Figma author-date citation apparatus in its existing position."
+  },
+  "limits": [
+    "This authorization applies only to the presentation boundary between text-p-1053 and text-p-1054 in chapter-05-text-h-0080.",
+    "Do not alter any source text, headings, figure order, captions, source lines, links, styles, or other units.",
+    "Keep the original ODT unchanged.",
+    "Final visual review and human approval of AGES III remain pending."
+  ],
+  "approval_status": "authorized_for_execution_pending_human_edition_review"
+}

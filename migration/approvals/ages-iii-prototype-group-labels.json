@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_presentation_change",
+  "date": "2026-10-17",
+  "basis": "User selected removal of both prototype group labels after reviewing the recommendation to follow the Mariah structure and retain the categories in figure captions.",
+  "user_response": "Remover os dois rótulos (recomendado)",
+  "scope": {
+    "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+    "unit": "chapter-05-text-h-0080",
+    "source_ids": ["text-p-1056", "text-h-0084"]
+  },
+  "change": {
+    "text-p-1056": {
+      "source_text": "Telas de Administrador:",
+      "typeset_text": "",
+      "treatment": "Omit this standalone group label from the typeset report; preserve its source text and omission evidence in the unit ledger."
+    },
+    "text-h-0084": {
+      "source_text": "Telas de Cliente:",
+      "typeset_text": "",
+      "treatment": "Omit this unnumbered subordinate heading from the typeset report; preserve its source text and omission evidence in the unit ledger."
+    }
+  },
+  "limits": [
+    "Keep the original ODT and manifest unchanged.",
+    "Do not remove or reorder prototype figures, captions, source lines, links, or other section text.",
+    "This authorization applies only to the two listed source IDs in AGES III and does not approve any other editorial change.",
+    "Final visual and edition approval remains pending."
+  ],
+  "approval_status": "authorized_for_execution_pending_human_edition_review"
+}

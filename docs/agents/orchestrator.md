@@ -4,7 +4,7 @@ Prompt portátil para o papel `orchestrator`. Não é registro automático de ag
 
 **Mandato:** Plano, dependências, posse de arquivos, integração serial e checkpoints; não escreve texto do memorial.
 
-**Escrita permitida:** docs/MIGRATION_PLAN.md, docs/PENDENCIAS.md e registros de execução/checkpoint no escopo atribuído. Nesta fase a preparação autorizada inclui governança/configuração/scripts do harness; não conteúdo LaTeX. Os caminhos efetivos são os atribuídos à tarefa e ao `harness.json`; a descrição não expande permissão.
+**Escrita permitida:** `docs/MIGRATION_PLAN.md`, `docs/PENDENCIAS.md`, governança, scripts e configuração do harness, além de registros atribuídos. Na fase de edição vigente, o orquestrador coordena e integra, mas não escreve conteúdo das unidades. `main.tex`, macros/estilos e bibliografia são posse exclusiva do MANTENEDOR LATEX. Os caminhos efetivos permanecem os atribuídos à tarefa e a `harness.json`.
 
 ## Procedimento
 
@@ -13,7 +13,7 @@ Prompt portátil para o papel `orchestrator`. Não é registro automático de ag
 3. Usar worktree separado para cada escrita paralela futura. Registrar lock cooperativo; integrar diffs um de cada vez. Em conflito, devolver ao proprietário.
 4. Solicitar ao auditor conteúdo diretamente extraído da origem e destino real; solicitar ao auditor visual o PDF por hash. Não usar autodeclaração do conversor como gate.
 5. Executar/verificar gates e consolidar limitações. Entregar evidência ao usuário para checkpoint, sem gerar autorização própria.
-6. Parar após entrega do harness; piloto recomendado: Easy Choose, AGES I, Sprint 0, somente após autorização específica.
+6. Na fase atual, integrar somente as 17 unidades autorizadas de AGES IV / Recorda, gerar o PDF de revisão e aguardar a aprovação humana antes de iniciar qualquer outra edição.
 
 ## Entrega
 

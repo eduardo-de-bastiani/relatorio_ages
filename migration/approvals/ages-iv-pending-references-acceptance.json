@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "record_type": "user_accepted_original_links_pending",
+  "date": "2026-10-17",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "user_decision": "Preservar URLs e seguir com PENDING (recomendado)",
+  "scope": {
+    "edition": "AGES IV / Recorda",
+    "units": [
+      "chapter-06-text-h-0108",
+      "chapter-06-text-h-0109",
+      "chapter-06-text-h-0110",
+      "chapter-06-text-h-0112"
+    ],
+    "link_record_count": 7,
+    "unique_original_url_count": 5,
+    "empty_anchor_ids": ["text-a-0148", "text-a-0150"]
+  },
+  "original_links": [
+    {
+      "source_id": "text-a-0146",
+      "unit": "chapter-06-text-h-0108",
+      "source_anchor": "Repositório Recorda Frontend",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend",
+      "availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0147",
+      "unit": "chapter-06-text-h-0108",
+      "source_anchor": "Repositório Recorda Backend",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend",
+      "availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0148",
+      "unit": "chapter-06-text-h-0109",
+      "source_anchor": "",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+      "availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0149",
+      "unit": "chapter-06-text-h-0109",
+      "source_anchor": "Wiki do Banco de Dados",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+      "availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0150",
+      "unit": "chapter-06-text-h-0110",
+      "source_anchor": "",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+      "availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0151",
+      "unit": "chapter-06-text-h-0110",
+      "source_anchor": "Wiki da Arquitetura",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+      "availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0152",
+      "unit": "chapter-06-text-h-0112",
+      "source_anchor": "Wiki de Design/Mockups",
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups",
+      "availability": "PENDING"
+    }
+  ],
+  "authorized_handling": {
+    "preserve_urls_and_original_link_records": true,
+    "preserve_original_anchors_in_ledgers": true,
+    "allow_conversion_with_availability_pending": true,
+    "create_replacement_urls_or_reference_metadata": false,
+    "use_only_verified_official_sources_for_new_technology_references": true,
+    "human_review_required_before_edition_acceptance": true
+  },
+  "evidence_and_follow_up": {
+    "availability_question": "The five original repository/wiki destinations could not be retrieved with page content.",
+    "user_reply": "Preservar URLs e seguir com PENDING (recomendado)",
+    "verification_status": "PENDING",
+    "follow_up": "Recheck or obtain human-provided access to the original destinations; do not infer availability from the URL string."
+  }
+}

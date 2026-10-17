@@ -1,0 +1,43 @@
+% Faithful conversion of ages-iii-sprint-1; source ODF IDs and text order retained.
+\hypertarget{__RefHeading___Toc4817_3118176633}{}
+\refstepcounter{subsection}\subsection*{5.3.2 Sprint 1}
+\label{unit:ages-iii-sprint-1}
+\addcontentsline{toc}{subsection}{5.3.2 Sprint 1}
+% text-p-1142
+\indent A \textit{sprint} 1 marcou o início efetivo do desenvolvimento do projeto e teve como principal objetivo preparar o time para trabalhar de forma organizada, autônoma e alinhada aos padrões definidos anteriormente. Para isso, nós, AGES III, conduzimos dois \textit{workshops} voltados à capacitação da equipe. No primeiro, apresentamos os processos e práticas adotados pelo projeto, explicando a estrutura dos repositórios e realizando um \textit{walkthrough} inicial dos ambientes de \textit{backend} e \textit{frontend}. O foco desse encontro foi familiarizar o time com a base técnica antes do início das implementações.\par
+
+% text-p-1143
+\indent Em um segundo momento, realizamos uma demonstração prática do fluxo completo de desenvolvimento, desde a escolha de uma \textit{task} até a abertura de um \textit{Pull Request}. Foram apresentados padrões de \textit{branches}, \textit{commits} e PRs, execução de testes, uso do linter, validação do \textit{coverage} mínimo e acompanhamento da pipeline de CI. Para complementar esse processo, elaborei um guia detalhado com todo o passo a passo apresentado, que foi disponibilizado posteriormente na Wiki do projeto para consulta contínua do time.\par
+
+% text-p-1144
+\indent Nos primeiros dias da \textit{sprint}, percebemos que parte da equipe ainda estava insegura para assumir \textit{tasks}, algo natural por se tratar da primeira \textit{sprint} com desenvolvimento ativo. Como resposta, nós, AGES III, organizamos uma dinâmica em trios, compostos por integrantes dos níveis I, II e III. Nessa estrutura, os colegas AGES I e II atuariam diretamente no desenvolvimento das entregas, enquanto os AGES III fariam o acompanhamento das atividades, apoio técnico, esclarecimento de dúvidas e garantia da conclusão das tasks. A iniciativa ajudou a distribuir melhor o conhecimento e trouxe mais segurança para o início dos trabalhos.\par
+
+% text-p-1145
+\indent Ao iniciarmos a atribuição das \textit{tasks}, identificamos inconsistências na organização do \textit{board}. Algumas tarefas de \textit{frontend} e \textit{backend} não estavam conectadas de forma lógica, enquanto outras estavam fragmentadas em excesso. Isso poderia gerar retrabalho e entregas parciais sem integração real entre as partes. Diante disso, realizamos uma reunião extraordinária com os AGES IV para revisar os \textit{cards}, reorganizar prioridades e redistribuir as atividades. Embora o problema tenha sido resolvido rapidamente, o episódio reforçou a importância de acompanhar continuamente a estruturação das entregas.\par
+
+% text-p-1146
+\indent Também atuei na revisão da modelagem do banco de dados. Durante a análise do diagrama lógico-relacional, identifiquei divergências entre a estrutura proposta e os protótipos definidos no Figma, especialmente em campos e atributos previstos para algumas entidades. Após alinhamento com os colegas responsáveis, os ajustes necessários foram realizados, garantindo maior consistência entre interface, regras de negócio e persistência de dados.\par
+
+% text-p-1147
+\indent Na sequência, participei da implementação física do banco de dados e das \textit{migrations} junto ao colega Bernardo (AGES II). Como o prazo para conclusão era curto, utilizamos uma abordagem estruturada com apoio de agentes de IA para acelerar a entrega. A atividade resultou na implementação das entidades, enums, \textit{migrations} e testes automatizados, além da validação do contexto de banco de dados com TestContainers. Após ajustes finais e revisão manual, a entrega foi concluída com sucesso dentro do prazo previsto.\par
+
+% text-p-1148
+\indent Outro ponto importante da \textit{sprint} foi minha primeira experiência realizando \textit{reviews} de \textit{Pull Requests} no GitHub. Avaliei uma entrega de \textit{frontend} relacionada à implementação de um componente de navegação lateral, solicitando ajustes e acompanhando a evolução da \textit{task} até sua aprovação. Além disso, ao longo da \textit{sprint} também revisei outras entregas técnicas e apoiei colegas em dúvidas relacionadas ao fluxo de desenvolvimento, testes e processo de \textit{merge}.\par
+
+% text-p-1149
+\indent Na reta final da \textit{sprint}, houve uma mobilização intensa para concluir o maior número possível de entregas antes do \textit{code freeze}. Diversos \textit{Pull Requests} foram revisados e aprovados nas últimas horas, e algumas funcionalidades pendentes precisaram ser finalizadas com esforço concentrado entre AGES III e IV. Apesar do volume elevado de entregas planejadas para uma \textit{sprint} curta, praticamente tudo o que havia sido prometido foi concluído.\par
+
+% text-p-1150
+\indent No momento da apresentação, os \textit{stakeholders} não compareceram, nem presencialmente nem de forma remota. Ainda assim, durante a retrospectiva, o time manteve o foco nas entregas realizadas e nos aprendizados obtidos ao longo da \textit{sprint}. Como encerramento positivo, recebi \textit{feedbacks} dos colegas, em forma de “Kudos”, reconhecendo meu apoio técnico, participação nas discussões e presença constante ao longo do ciclo, o que trouxe ainda mais motivação para as próximas etapas do projeto.\par
+
+\begin{reflection}
+% text-p-1165
+\indent \originaltab{}Ao longo da \textit{sprint} 1, um dos primeiros pontos que me chamou atenção foi a insegurança inicial de parte do time para assumir \textit{tasks}. Percebi rapidamente que, se não houvesse uma resposta imediata, correríamos o risco de perder ritmo logo no começo do desenvolvimento. Nesse momento, junto aos demais AGES III, estruturamos a dinâmica em trios. A ideia não foi apenas dividir tarefas, mas criar uma organização que incentivasse colaboração entre diferentes níveis, evitasse a formação de grupos isolados e, principalmente, colocasse os colegas AGES I e II em posição ativa dentro do projeto. Entendi que, para aprender de verdade, era importante que eles tivessem responsabilidade sobre o código, liberdade para explorar a base existente e espaço para errar e evoluir.\par
+
+% text-p-1166
+\indent \originaltab{}Outro momento marcante foi minha primeira experiência revisando P\textit{ull Requests}. Tecnicamente, revisar código exige atenção a padrões, qualidade e aderência ao que foi proposto, mas percebi que existe também um lado humano muito importante nesse processo. Para muitos colegas, aquele era o primeiro código sendo avaliado de forma mais direta por alguém do time, o que naturalmente gera ansiedade e receio. Por isso, procurei conduzir minhas revisões com cuidado, escrevendo comentários construtivos e respeitosos, tratando ajustes como parte natural do processo de evolução. Passei a enxergar que uma boa \textit{review} não serve apenas para melhorar código, mas também para desenvolver pessoas e fortalecer a confiança dentro da equipe.\par
+
+% text-p-1167
+\indent \originaltab{}Também considerei positiva a oportunidade de aplicar agentes de IA em uma entrega real do projeto. Por estudar e trabalhar diariamente com esse tipo de tecnologia, tenho clareza de que essas ferramentas possuem grande potencial, mas também limitações importantes. Quando utilizadas sem contexto ou sem supervisão, tendem a gerar resultados inconsistentes. Porém, quando bem direcionadas, podem acelerar bastante tarefas técnicas. Busquei mostrar isso na prática aos meus colegas, utilizando IA como apoio na implementação do banco de dados de forma estruturada e revisada manualmente. Vejo esse uso como algo muito valioso, desde que o desenvolvedor continue entendendo o código produzido e mantenha domínio sobre as decisões tomadas. Mais do que substituir conhecimento, a IA pode ampliar produtividade e aprendizado quando utilizada com responsabilidade.\par
+
+\end{reflection}

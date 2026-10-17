@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "b7f3d677c30aef14c7f19961b304221befb4f608",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0122": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0122",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+          "start_byte": 163,
+          "end_byte": 177,
+          "serializations": [
+            "abnt_section_numbering"
+          ],
+          "target_sha256": "9aed4356936033e09dcb7dd7d0bbad985ae0d8aedf8e47c41caafd50b0631c01"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0122",
+          "source_name": "__RefHeading___Toc4855_3118176633",
+          "source_start_id": "text-bookmark-start-0083",
+          "source_end_id": "text-bookmark-end-0083",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+          "target_anchor": "__RefHeading___Toc4855_3118176633",
+          "command": "hypertarget",
+          "start_byte": 78,
+          "end_byte": 127,
+          "target_sha256": "9aed4356936033e09dcb7dd7d0bbad985ae0d8aedf8e47c41caafd50b0631c01"
+        }
+      ],
+      "structural_dispositions": [],
+      "source_structure": {
+        "heading_level": 2,
+        "body_paragraphs": 0,
+        "reflection_paragraphs": 0,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": []
+      },
+      "pending": [
+        {
+          "status": "PENDING",
+          "code": "independent_content_and_visual_audit",
+          "detail": "Unit requires independent source-to-LaTeX comparison, integrated PDF inspection, and human review."
+        }
+      ],
+      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "style_contract": {
+        "path": "relatorio_AGES_eduardo/util/style.tex",
+        "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-h-0122"
+        ]
+      }
+    }
+  }
+}

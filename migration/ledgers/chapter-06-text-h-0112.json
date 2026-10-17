@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "a18d5a1f09b0d3602ba78f87a7fe0a7d73264c89",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0112": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0112",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 159,
+          "end_byte": 200,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "source_text_sha256": "d361c2f800dce62e17c07f70713053a248d6e710f0469b75c8b9f58bcaa55322"
+        },
+        {
+          "source_id": "text-p-1378",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 404,
+          "end_byte": 456,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "source_text_sha256": "372fbf33a029b009126350c3c3ea0b451e42fe764234aa214d1ca7432ba1c4e4",
+          "serializations": [
+            "abnt_figure_caption"
+          ]
+        },
+        {
+          "source_id": "draw-image-0027",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 355,
+          "end_byte": 524,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1"
+        },
+        {
+          "source_id": "text-p-1385",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 622,
+          "end_byte": 670,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "source_text_sha256": "2989e02df87da907cebc486c1fa53182961a392406bd935af5f39597603a5827",
+          "serializations": [
+            "abnt_figure_caption"
+          ]
+        },
+        {
+          "source_id": "draw-image-0028",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 573,
+          "end_byte": 738,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1"
+        },
+        {
+          "source_id": "text-p-1387",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 836,
+          "end_byte": 891,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "source_text_sha256": "bd9e2d4d23e4f25251419a9433c8ec4b6f3b76c7e85317b36d3233429c8ca719",
+          "serializations": [
+            "abnt_figure_caption"
+          ]
+        },
+        {
+          "source_id": "draw-image-0029",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 787,
+          "end_byte": 959,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1"
+        },
+        {
+          "source_id": "text-p-1392",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 1057,
+          "end_byte": 1114,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "source_text_sha256": "bf6e2cf064143893a308027aac7549e935f55123feff977b8edfa6c4eb3fa96f",
+          "serializations": [
+            "abnt_figure_caption"
+          ]
+        },
+        {
+          "source_id": "draw-image-0030",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 1008,
+          "end_byte": 1182,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1"
+        },
+        {
+          "source_id": "text-p-1393",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 1219,
+          "end_byte": 1392,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "source_text_sha256": "d653f4d4ab4df4104fc25caa3c2e467361cf5a877fe11f2481dfd6a48aa2b779",
+          "serializations": [
+            "wiki_reference_sentence"
+          ]
+        },
+        {
+          "source_id": "text-a-0152",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "start_byte": 1284,
+          "end_byte": 1392,
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1",
+          "serializations": [
+            "wiki_reference_sentence"
+          ]
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0027",
+          "asset_id": "asset-0005",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0005.png",
+          "sha256": "f2391db864289d5efef845590bd4f6b1bff1ff91683b4058b99f2d09f4b5505e"
+        },
+        {
+          "source_id": "draw-image-0028",
+          "asset_id": "asset-0002",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0002.png",
+          "sha256": "0bf8ff73fb15969e1fe6bdc7eb88ffb08ebc799e704eeb8821b8314d09721dba"
+        },
+        {
+          "source_id": "draw-image-0029",
+          "asset_id": "asset-0010",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0010.png",
+          "sha256": "a7df051066af53a96d22652fd2aef1dee64d9c88f692ad3ba614c68816d8f73f"
+        },
+        {
+          "source_id": "draw-image-0030",
+          "asset_id": "asset-0006",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0006.png",
+          "sha256": "48173331bd0f0b459fc893caa70af91db227f1512e2215ca91f308ddab369901"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0112",
+          "source_name": "__RefHeading___Toc4839_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+          "target_anchor": "__RefHeading___Toc4839_3118176633",
+          "command": "hypertarget",
+          "start_byte": 68,
+          "end_byte": 117,
+          "source_start_id": "text-bookmark-start-0074",
+          "source_end_id": "text-bookmark-end-0074",
+          "target_sha256": "9c86d18ce6710d95a45ed2aeca7c1e93381ab4c47845fd83f7e7dfa8be3d2ae1"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0043",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "draw-text-box-0044",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "draw-text-box-0045",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "draw-text-box-0046",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0237",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0192",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0238",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0193",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0239",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-header-0066",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        }
+      ],
+      "pending": [
+        "Auditorias independentes de conteúdo e visual, compilação integrada e aprovação humana da AGES IV permanecem PENDING.",
+        "A disponibilidade do URL wiki original de design/mockups continua PENDING, por decisão explícita do usuário; o destino foi preservado.",
+        "A fonte/proveniência das imagens draw-image-0027 a draw-image-0030 permanece PENDING para identificação humana."
+      ],
+      "presentation_transformations": [
+        {
+          "source_id": "text-p-1378",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 27: ",
+          "target_prefix": "Figura 27 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        },
+        {
+          "source_id": "text-p-1385",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 28: ",
+          "target_prefix": "Figura 28 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        },
+        {
+          "source_id": "text-p-1387",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 29: ",
+          "target_prefix": "Figura 29 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        },
+        {
+          "source_id": "text-p-1392",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 30: ",
+          "target_prefix": "Figura 30 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        }
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0152",
+          "text-p-1378",
+          "text-p-1385",
+          "text-p-1387",
+          "text-p-1392",
+          "text-p-1393"
+        ]
+      },
+      "wiki_link_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0152",
+          "text-p-1393"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "preserved_links": [
+        {
+          "source_id": "text-a-0152",
+          "original_anchor": "Wiki de Design/Mockups",
+          "typeset_anchor": "Protótipo das Telas",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups",
+          "availability": "PENDING"
+        }
+      ]
+    }
+  }
+}

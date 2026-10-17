@@ -1,0 +1,45 @@
+# Auditoria visual independente — AGES IV / Recorda
+
+**Parecer:** `PENDING` para aprovação visual humana. Nas páginas revisadas não encontrei texto cortado, sobreposição, desalinhamento de figuras ou quebra artificial antes das Sprints. O padrão geral acompanha o estilo aprovado e a referência visual da Mariah. Permanecem pendentes a leitura de rótulos em diagramas densos, a identificação das fontes das imagens e os avisos técnicos de compilação descritos abaixo. Não alterei o memorial, o PDF nem os logs.
+
+## Artefato e método
+
+- PDF revisado: `build/document/main.pdf`.
+- SHA-256: `30be17560bfc9f1207632222fe85e29a1644bbdd36bbf0220a2bc3fae91068be`.
+- Propriedades: 85 páginas, A4, 6.911.139 bytes.
+- Páginas da AGES IV examinadas: 64–81; referências: 82–85. Renderizei as páginas 64–81 e 82–85 para inspeção visual; também renderizei as páginas 66, 72, 74 e 75 a 200 dpi para avaliar detalhes dos diagramas.
+- Referência visual, somente leitura: PDF da Mariah, páginas físicas 46–47 (impressas 45–46), SHA-256 `ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420`.
+- Ferramentas: Poppler `pdftoppm`/`pdfinfo` 26.01.0; pypdf 6.18.0. Imagens de inspeção temporárias em `/tmp/agesiv_visual_final/`.
+- Conferências complementares: extração de texto por página; anotações `/URI` via pypdf; leitura do `build/document/main.log`, `build/document/compiler.txt` e `build/document/report.json`.
+
+## Resultado por critério
+
+| Critério | Status | Evidência |
+|---|---|---|
+| Hierarquia, tipografia, alinhamento e espaçamento | `PASS` | Páginas 64–80 mantêm texto justificado, hierarquia consistente entre capítulo, seção e subseção, margens visuais regulares e links em preto. Não há elementos sobrepostos ou glifos visivelmente corrompidos. |
+| Aproximação ao estilo aprovado e à Mariah | `PASS` | O corpo sem serifa, o texto corrido, o uso de citações junto às tecnologias, legendas em português acima das imagens e fontes centralizadas abaixo delas acompanham as decisões de `docs/STYLE_GUIDE.md`. Na amostra da Mariah, páginas 45–46, também há prosa contínua por função e subseções no fluxo. O alinhamento centralizado e a fonte provisória sem itálico seguem a convenção aprovada para este memorial; não são apresentados aqui como exigência normativa isolada. |
+| Continuidade Sprint 0 → Sprint 1 | `PASS` | Sprint 0 começa na página 73; seu texto/reflexão termina nas páginas 76–77. Sprint 1 começa na página 77, sem página nova forçada. A reflexão que atravessa a virada de página continua dentro de caixa e é seguida pelo título da Sprint 1, conforme permitido pelo padrão aprovado. |
+| Figuras, legendas e fontes | `PASS` visual / `PENDING` legibilidade e proveniência | Figuras 24–34 aparecem no contexto esperado, com imagem centralizada e fonte centralizada abaixo. O rótulo provisório está presente. Os rótulos internos de alguns diagramas e capturas ficam pequenos em tamanho de página; veja a pendência 1. A autoria das imagens ainda não foi identificada; veja a pendência 2. |
+| Citações, links e referências | `PASS` visual / `PENDING` disponibilidade e avisos | Citações e URLs são legíveis nas páginas 65–70 e 82–85; a lista de referências não apresenta texto cortado. O PDF contém links externos: dois repositórios na página 65, alvos da wiki do banco de dados na página 66, e alvos de arquitetura/protótipos na página 67. Esta inspeção confirma a presença de anotações, não a disponibilidade atual dos destinos. Dois links vazios são suprimidos por `hyperref`, conforme pendência 3. |
+| Títulos de unidades incompletas | `PENDING` intencional | A página 80 mostra os títulos vazios de Sprint 2, Sprint 3, Sprint 4 e Conclusão. A página 81 contém somente o título do capítulo 7. Esse espaço aberto corresponde ao escopo parcial autorizado; não indica uma quebra de Sprint nem conteúdo concluído. |
+| Páginas vazias/quase vazias | `PASS` com incompletude autorizada | Não há página completamente vazia. A página 80 fica aberta após os títulos ainda sem conteúdo; a página 81 contém somente o título autorizado do capítulo 7. A página 85 termina após as últimas referências, deixando espaço natural abaixo do fim da lista. |
+
+## Pendências e verificações necessárias
+
+| Localização | Evidência e consequência | Gravidade/status | Ação proposta | Verificação de encerramento |
+|---|---|---|---|---|
+| Figuras 25 (p. 66), 31 (p. 72), 33 (p. 74) e 34 (p. 75), arquivos de unidades AGES IV correspondentes | Em renderização A4 e na inspeção a 200 dpi, tabelas/caixas e textos internos são pequenos, em especial no diagrama ER (Figura 25), na EAP (Figura 31) e nas capturas de telas de gerenciamento (Figuras 33–34). As imagens permanecem nítidas e centralizadas, mas vários rótulos só são legíveis com ampliação. | `PENDING`, média; depende da validação humana | Conferir em impressão A4 ou visualizador a 100%. Se as informações internas precisarem ser lidas em tamanho de página, decidir posteriormente sobre uma apresentação maior, página em orientação paisagem ou divisão autorizada, sem redesenhar nem inventar conteúdo. | Reinspecionar as páginas alteradas em tamanho físico A4 e a 200 dpi; confirmar que os rótulos necessários podem ser lidos e que a imagem permanece no contexto correto. |
+| Fontes das figuras 24–34, páginas 65–75 | Todas as linhas exibem “Fonte: pendente de identificação”, centralizado. A aparência está correta, mas a procedência factual não foi determinada. | `PENDING`, conteúdo; revisão manual do usuário | Identificar a fonte/autoria de cada imagem; não preencher por inferência. | Conferir cada crédito com a evidência fornecida pelo usuário e então validar as onze legendas no PDF. |
+| Links dos repositórios e wikis, páginas 65–67; unidades `chapter-06-text-h-0109` e `chapter-06-text-h-0110` | As âncoras visíveis estão presentes. A disponibilidade externa permanece não verificada. O PDF mantém alvos URI para repositórios na p. 65 e wiki na p. 66–67. | `PENDING`, disponibilidade externa | Preservar URLs e âncoras como autorizado; confirmar os cinco destinos manualmente quando acessíveis. | Abrir cada um dos cinco URLs e comparar o destino com a âncora/manifesta; rever os hotspots no PDF. |
+| `chapter-06-text-h-0109.tex:12` e `chapter-06-text-h-0110.tex:12`; `build/document/main.log:1150,1154` | O log final registra duas vezes `Package hyperref Warning: Suppressing empty link on input line 12.`. O conteúdo visual não mostra texto perdido; links sem texto visível não geram hotspot independente. Isso mantém o build sob a política de avisos sem revisão. | `PENDING`, técnico, baixa; `build/document/report.json` status `fail`, embora `returncode` seja 0 | Comparar as duas âncoras vazias com o ODT e o manifesto e decidir se são âncoras estruturais sem alvo visível ou links que necessitam apresentação. Não ocultar o aviso por filtro. | Recompilar após decisão autorizada; conferir no log final a resolução do aviso e no PDF as anotações URI e âncoras correspondentes. |
+| Perfil de cor das imagens; `build/document/compiler.txt:25–26` | O compilador registra que um perfil ICC v4.3 não é suportado na configuração PDF atual e não foi incorporado. Não observei distorção evidente nas imagens renderizadas; a reprodução de cor em outros leitores/impressão não está garantida. | `PENDING`, técnico, baixa | Manter os assets originais. Se fidelidade de cor for requisito, avaliar o pipeline de inclusão de imagens antes de alterá-las. | Revalidar em leitor PDF e, se necessário, impressão; não basta comparar somente o PNG do Poppler. |
+
+## Log final e overfull
+
+O `build/document/main.log` associado ao SHA acima contém os dois avisos `hyperref` citados, mas **não contém `Overfull \hbox` nem `Underfull \hbox`**. Portanto, não há aviso final de caixa excedente para atribuir a esta versão. O arquivo agregado `build/document/compiler.txt` ainda lista avisos de overfull em várias unidades, inclusive AGES IV; eles não aparecem no log final examinado e não foram tratados como falhas da passagem final. O mesmo arquivo agregado registra o aviso ICC acima.
+
+`build/document/report.json` identifica perfil `document-review`, `review_only: true`, `official_document_gate: NOT_RUN: review-only build`, `returncode: 0`, `status: fail` e `visual_review: pending_human_review`. O resultado da compilação, portanto, é útil para revisão, mas não representa aprovação final nem elimina os avisos de links vazios.
+
+## Parecer final
+
+A composição visual da AGES IV está consistente e acompanha o estilo aprovado: não identifiquei falhas de alinhamento, legenda/fonte em posição incorreta, título isolado antes de uma Sprint com conteúdo ou quebra de página artificial entre as Sprints. O conteúdo incompleto das páginas 80–81 é intencional. A aceitação visual permanece `PENDING` até o usuário avaliar a legibilidade dos diagramas/capturas e fornecer as fontes das imagens; também devem ser resolvidos ou aceitos explicitamente os avisos de links vazios e de perfil ICC. Esta auditoria não altera o PDF, não certifica conformidade ABNT integral e não substitui a aprovação humana da edição.

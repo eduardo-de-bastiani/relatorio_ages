@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_supplemental_technology_citations",
+  "date": "2026-10-17",
+  "approval_status": "authorized_for_exact_citations; edition acceptance pending",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "basis": "The user instructed that technology mentions in the database, architecture, and prototype descriptions carry adjacent linked references, following the Mariah author-date pattern. For this partial AGES IV migration, only these two exact supplementary citations are authorized; the source wording remains unchanged. Official-source evidence and the actual access date are recorded separately in migration/evidence/references/ages-iv.json.",
+  "citations": {
+    "ages-iv-app-store": {
+      "unit_id": "chapter-06-text-h-0108",
+      "source_record_id": "text-p-1332",
+      "evidence_id": "app_store",
+      "citation_key": "ages-iv-app-store",
+      "term": "App Store",
+      "verified_url": "https://developer.apple.com/app-store/"
+    },
+    "ages-iv-tanstack-query": {
+      "unit_id": "chapter-06-text-h-0110",
+      "source_record_id": "text-p-1347",
+      "evidence_id": "tanstack_query",
+      "citation_key": "ages-iv-tanstack-query",
+      "term": "TanStack Query",
+      "verified_url": "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state"
+    }
+  },
+  "constraints": {
+    "source_text_changed": false,
+    "only_adjacent_author_date_citations_added": true,
+    "citation_year_is_access_year_label_not_claimed_publication_year": true,
+    "user_acceptance_of_edition_pending": true
+  }
+}

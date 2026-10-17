@@ -2,7 +2,13 @@
 
 ## Escopo e autoridades
 
-Fase vigente: migração controlada de **AGES III / Sistema de Controle Inteligente de Estacionamento com RFID**, autorizada pela mensagem do usuário em 16/10/2026 e registrada em `migration/approvals/ages-iii-authorization.json`. O usuário aprovou a entrega identificada de AGES I/II; checkpoint `abe761c`. Trabalhe na branch `migration/ages-iii`, somente nas 15 unidades do capítulo 5 listadas em `harness.json`. Reutilize as decisões visuais aprovadas em `docs/STYLE_GUIDE.md`. Não converta Hoortech, AGES IV ou qualquer outra unidade nesta fase. Após a entrega de AGES III, aguarde aprovação humana.
+**Fase vigente, autorizada pelo usuário em 17/10/2026:** migração parcial de **AGES IV / Recorda**, até e incluindo Sprint 1. O usuário pediu títulos vazios para Sprints 2–4 e Conclusão do capítulo 6. O escopo executável é exatamente o conjunto de 17 unidades em `harness.json` e `migration/approvals/ages-iv-partial-authorization.json`; a introdução, seis subseções de desenvolvimento e Sprints 0–1 contêm material; sete unidades de capítulo 6 contêm somente títulos; o título do capítulo 7 é incluído sozinho, com os dez parágrafos e estruturas associados explicitamente omitidos por decisão do usuário. O ODT mantém SHA-256 congelado. O PDF final exige aprovação humana e, após a entrega, nenhuma edição seguinte pode começar.
+
+A unidade `chapter-07-text-h-0123` (“Considerações finais (Somente AGES IV)”) está incluída somente como título, conforme a resposta do usuário “Incluir apenas o título”. Os dez parágrafos de corpo e as estruturas de lista relacionadas são omitidos deliberadamente nesta entrega e devem permanecer identificados como pendentes, sem contar como conversão completa. O branch dedicado não pôde ser criado no `.git` principal, que é somente leitura. As conversões usam cópias temporárias independentes em `/tmp`, com unidades e assets sem sobreposição; a integração no branch não principal `migration/ages-iii` é serial. Não gravar commits nem mover referências no repositório principal.
+
+**Decisão permanente de apresentação:** as seções de tecnologias de AGES I/II/III foram corrigidas conforme o PDF da Mariah, nos escopos registrados em `migration/approvals/ages-i-ii-iii-technology-prose-correction.json`. O padrão de prosa por função, com citações junto aos nomes e sem rótulos documentais repetidos, é a referência para AGES IV conforme `docs/STYLE_GUIDE.md`.
+
+Histórico de escopo: AGES III / Controle Inteligente de Estacionamento com RFID foi autorizada em 16/10/2026, e a prosa de tecnologias das três edições foi corrigida em 17/10/2026. Os registros e relatórios anteriores são históricos, não alteram o escopo parcial atual de AGES IV.
 
 Registro histórico: em 16/10/2026, o usuário autorizou correções de apresentação/citações nos trechos técnicos `chapter-02-text-h-0009`–`0011` (AGES I) e `chapter-04-text-h-0043`–`0046` (AGES II), além da macro global de fonte de figuras, registradas em `migration/approvals/ages-i-ii-formatting-authorization.json`. Essas alterações estão concluídas no checkpoint aprovado `abe761c`; as convenções são reutilizáveis conforme `docs/STYLE_GUIDE.md` e `docs/QUALITY_GATES.md`. O escopo de execução vigente é definido pelo parágrafo acima e por `harness.json`.
 
@@ -12,9 +18,9 @@ Autoridades, nesta ordem: instruções explícitas do usuário; original imutáv
 
 ## Invariantes
 
-Atualização vigente de escopo: o usuário autorizou exatamente as 15 unidades AGES III enumeradas em `harness.json` e `migration/approvals/ages-iii-authorization.json`: `chapter-05-text-h-0074`–`0080`, `chapter-05-text-h-0085`, `chapter-05-text-h-0086`, Sprints `ages-iii-sprint-0`–`ages-iii-sprint-4` e conclusão `chapter-05-text-h-0097`. A posse dos oito assets também consta nesses arquivos. A aceitação humana anterior de AGES I/II está vinculada ao PDF no registro `migration/approvals/ages-i-ii-final-acceptance.json`; não apaga pendências factuais. Nenhuma unidade de AGES IV ou da participação Cliente Hoortech está autorizada. A entrega AGES III exige aprovação humana antes de qualquer próxima edição.
+Escopo atual: executar somente as 17 unidades listadas em `harness.json`. As Sprints 2–4 e Conclusão do capítulo 6 ficam como títulos vazios; não criar narrativa. Do capítulo 7, incluir somente o título; o corpo de dez parágrafos permanece explicitamente omitido e pendente. A conclusão da entrega parcial exige aprovação humana antes de iniciar outra edição.
 
-- Não revisar português, reformular, expandir, completar ou corrigir fatos nesta fase ou na conversão fiel.
+- Não revisar português, expandir, completar ou corrigir fatos nesta fase ou na conversão fiel. A reformulação gramatical estritamente necessária nas três seções de tecnologias acima está autorizada, com auditoria independente de todos os fatos e qualificadores.
 - Preservar acentos, símbolos, pontuação, sequência, âncoras e URLs. Contagem de palavras não comprova integridade.
 - Nunca modificar `RELATORIO_ATUAL.odt`; SHA-256 esperado: `e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef`.
 - Não editar `relatorio_mariah/`. Não confiar em auxiliares/PDFs antigos como prova de compilação.
@@ -23,12 +29,13 @@ Atualização vigente de escopo: o usuário autorizou exatamente as 15 unidades 
 - Reflexões conservam texto e borda, usam a mesma fonte do corpo e admitem divisão entre páginas.
 - Aplicar o padrão visual aprovado em `docs/STYLE_GUIDE.md`, distinguindo decisões do usuário, escolhas da referência Mariah, boas práticas técnicas e requisitos normativos verificados.
 - Para AGES III, não inventar nem retrodatá-las: a data de acesso de cada fonte deve ser a data real da curadoria. A decisão anterior do usuário permite usar o ano de acesso como rótulo autor-data; isso não prova nem substitui a data factual de publicação. Não inventar autores, versões ou URLs. Fontes AGES III não verificadas ficam PENDING; por decisão explícita de 16/10/2026 registrada em `migration/approvals/ages-iii-pending-references-acceptance.json`, a conversão fiel pode prosseguir preservando URLs e sem criar metadados. Os gates de referência das unidades afetadas continuam PENDING, não PASS.
+- Exceção de apresentação vigente nas três seções de tecnologias: seguir `migration/approvals/ages-i-ii-iii-technology-prose-correction.json`. A igualdade lexical não se aplica à prosa reformulada; a integridade factual exige auditoria independente. Os registros anteriores permanecem históricos, inclusive a remoção específica do tab interno em `text-p-1084`; nenhuma normalização genérica é autorizada.
 - Revisão editorial e complementações são outra fase.
 - Exigir aprovação humana após cada edição AGES. Recomenda-se também um checkpoint próprio para a participação Cliente Hoortech. Aprovação de harness não autoriza o piloto.
 
 ## Responsabilidade e escrita
 
-Os sete papéis estão em [docs/agents](docs/agents). Só o EXTRATOR mantém o manifesto; só o MANTENEDOR LATEX escreve estilos/macros/configuração globais. CONVERSORES escrevem apenas a unidade e o ledger atribuídos. Curadoria entrega evidências separadas; integração central é serial. Auditores emitem relatórios sem corrigir o memorial diretamente.
+Os sete papéis estão em [docs/agents](docs/agents). Só o EXTRATOR mantém o manifesto; só o MANTENEDOR LATEX escreve estilos/macros/configuração globais. CONVERSORES escrevem apenas a unidade e o ledger atribuídos; o título do capítulo 7 é uma inclusão parcial autorizada, e seus 18 IDs omitidos permanecem explícitos no registro de escopo. Curadoria entrega evidências separadas; integração central é serial. Auditores emitem relatórios sem corrigir o memorial diretamente.
 
 O ORQUESTRADOR coordena e integra; não altera conteúdo. A preparação expressamente autorizada do harness permite alterar documentação, scripts e configuração, não o memorial. A posse de arquivo deve ser registrada antes da execução; duas tarefas não podem possuir o mesmo caminho. Use branches/worktrees para conversores paralelos e integre uma tarefa por vez. Locks são cooperativos: não são uma sandbox de segurança. Não executar comandos não confiáveis sob essa alegação.
 
@@ -40,4 +47,4 @@ Faça commits pequenos na branch de trabalho somente quando autorizado. Não sob
 
 Artefatos locais ficam em `build/`, conforme configuração. O inventário rastreado não contém arquivos extraídos de mídia redundantes. Não incluir caches, credenciais, PDFs de teste ou auxiliares na integração. Consultar o plano para rollback por commit e reprodução limpa.
 
-Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar após a entrega AGES III e aguardar aprovação; não iniciar AGES IV nem Hoortech.
+Ao concluir: listar arquivos alterados, comandos realmente executados, resultados e limitações. Não declarar agentes Antigravity independentes quando houve execução sequencial ou subagentes de outra ferramenta. Parar após a entrega parcial AGES IV e aguardar aprovação; não iniciar outra edição nem preencher o corpo do capítulo 7.
