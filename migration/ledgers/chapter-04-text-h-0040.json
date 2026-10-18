@@ -5,11 +5,11 @@
   "conversion_base_commit": "f5e0ecf258f13a468ce80a6833f4b3483963a7b4",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "style_contract": {
     "path": "relatorio_AGES_eduardo/util/style.tex",
@@ -25,8 +25,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex",
           "start_byte": 158,
           "end_byte": 174,
-          "serializations": [],
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         },
         {
           "source_id": "text-p-0763",
@@ -37,7 +39,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         },
         {
           "source_id": "text-p-0764",
@@ -48,7 +50,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         },
         {
           "source_id": "text-p-0765",
@@ -59,7 +61,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         },
         {
           "source_id": "text-p-0767",
@@ -67,9 +69,10 @@
           "start_byte": 2408,
           "end_byte": 2452,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         },
         {
           "source_id": "draw-image-0009",
@@ -77,7 +80,7 @@
           "start_byte": 2359,
           "end_byte": 2520,
           "serializations": [],
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         }
       ],
       "asset_map": [
@@ -99,7 +102,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0036",
           "source_end_id": "text-bookmark-end-0036",
-          "target_sha256": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655"
+          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
         }
       ],
       "structural_dispositions": [
@@ -145,6 +148,13 @@
           "text-p-0763",
           "text-p-0764",
           "text-p-0765"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0040",
+          "text-p-0767"
         ]
       }
     }

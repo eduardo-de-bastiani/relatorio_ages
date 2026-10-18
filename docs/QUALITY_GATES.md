@@ -66,3 +66,19 @@ Gates automáticos aprovados não autorizam editorial nem próxima edição. Par
 - Conferir as 39 entradas da lista de siglas na ordem do ODT, texto da trajetória, placeholders, bookmarks e exclusões das instruções genéricas por ID nos ledgers.
 - Os campos genéricos `AGES I,II, III OU IV` e `Ano` da capa ficam deliberadamente sem decisão/autopreenchimento; resumo, dedicatória, agradecimentos e epígrafe não recebem texto autoral.
 - Validação lexical PASS não equivale à inspeção visual. PDF de revisão deve ser renderizado e as páginas pré-textuais e a transição para a trajetória devem ser examinadas. Avisos de compilação bloqueiam o gate até serem investigados; aprovação humana permanece PENDING.
+
+## Relocação Hoortech e reindexação do documento (17/10/2026)
+
+Esta etapa depende de `migration/approvals/cliente-hoortech-and-document-order-authorization.json`, do hash imutável do ODT e do overlay `migration_overlay.document_order`. Não altera conteúdo narrativo das edições AGES I–IV.
+
+| Gate | Critério de aprovação |
+|---|---|
+| H1 — Cobertura | Converter exatamente dez unidades Hoortech; conferir parágrafos, listas, três imagens e demais estruturas pelos IDs do ODT. Cada imagem preserva o hash original; as fontes ficam pendentes, sem atribuição inventada. |
+| H2 — Ordem | `main.tex` compila a ordem: trajetória 1, AGES I 2, AGES II 3, AGES III 4, AGES IV 5, Hoortech 6, título final 7. Nenhum `setcounter` mascara a ordem nem reinicia capítulos/figuras artificialmente. |
+| H3 — Mapeamento numérico | As 56 legendas de título e 29 legendas de figura cobrem exatamente os registros autorizados; cada texto final é derivado do texto ODF preservando sufixos/legendas. A única troca de prosa é `text-p-0679`, 3.2→6.2. Mudança fora dos 86 IDs reprova. |
+| H4 — Figuras e referências | Conferir no PDF figuras consecutivas 1–34 (AGES I 1–5, AGES II 6–12, AGES III 13–20, AGES IV 21–31, Hoortech 32–34), lista de ilustrações, labels, `\ref`, contadores e links. |
+| H5 — Conteúdo independente | O auditor relê o ODT congelado e compara as dez unidades Hoortech, imagens/legendas/listas/ênfases, além de conferir todas as trocas numéricas permitidas. O relatório do conversor não serve como evidência. |
+| H6 — Visual integrado | O auditor examina o PDF completo por hash, com foco nas transições de capítulos 5→6→7, continuidade das Sprints Hoortech, títulos órfãos, figuras, fontes, sumário e lista de ilustrações. |
+| H7 — Aprovação | Aprovação humana da participação Hoortech e da nova ordem permanece PENDING até manifestação explícita ligada aos artefatos finais. Não iniciar outra edição antes desse aceite. |
+
+Resultado de cada gate: PASS, FAIL, PENDING ou NOT_APPLICABLE com evidência. Um manifesto ou JSON de autorização não substitui inspeção do conteúdo e do PDF.

@@ -21,8 +21,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
           "start_byte": 176,
           "end_byte": 219,
-          "serializations": [],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "text-p-1446",
@@ -30,7 +32,7 @@
           "start_byte": 444,
           "end_byte": 482,
           "serializations": [],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "text-p-1447",
@@ -40,7 +42,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "text-p-1450",
@@ -48,9 +50,10 @@
           "start_byte": 1105,
           "end_byte": 1175,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "draw-image-0031",
@@ -58,7 +61,7 @@
           "start_byte": 1056,
           "end_byte": 1243,
           "serializations": [],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "text-p-1452",
@@ -66,7 +69,7 @@
           "start_byte": 1399,
           "end_byte": 1411,
           "serializations": [],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "text-p-1453",
@@ -76,7 +79,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "text-p-1455",
@@ -84,9 +87,10 @@
           "start_byte": 2115,
           "end_byte": 2159,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         },
         {
           "source_id": "draw-image-0032",
@@ -94,7 +98,7 @@
           "start_byte": 2066,
           "end_byte": 2227,
           "serializations": [],
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         }
       ],
       "asset_map": [
@@ -122,7 +126,7 @@
           "command": "hypertarget",
           "start_byte": 78,
           "end_byte": 134,
-          "target_sha256": "95a0fe11f0d719a3c781b7d46df563dacd915d4c40cb684428bdf72d133f2cea"
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
         }
       ],
       "structural_dispositions": [
@@ -250,6 +254,14 @@
       "approved_presentation_overrides": {
         "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
         "source_ids": [
+          "text-p-1450",
+          "text-p-1455"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0114",
           "text-p-1450",
           "text-p-1455"
         ]

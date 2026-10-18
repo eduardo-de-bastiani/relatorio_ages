@@ -13,8 +13,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0078.tex",
           "start_byte": 164,
           "end_byte": 194,
-          "serializations": [],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         },
         {
           "source_id": "text-p-1039",
@@ -26,7 +28,7 @@
             "reference_paragraph_layout",
             "technology_citation"
           ],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         },
         {
           "source_id": "text-p-1040",
@@ -34,7 +36,7 @@
           "start_byte": 764,
           "end_byte": 1013,
           "serializations": [],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         },
         {
           "source_id": "text-p-1042",
@@ -42,9 +44,10 @@
           "start_byte": 1093,
           "end_byte": 1150,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         },
         {
           "source_id": "draw-image-0017",
@@ -52,7 +55,7 @@
           "start_byte": 1044,
           "end_byte": 1219,
           "serializations": [],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         },
         {
           "source_id": "text-p-1043",
@@ -62,7 +65,7 @@
           "serializations": [
             "wiki_reference_sentence"
           ],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         },
         {
           "source_id": "text-a-0132",
@@ -72,7 +75,7 @@
           "serializations": [
             "wiki_reference_sentence"
           ],
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         }
       ],
       "asset_map": [
@@ -94,7 +97,7 @@
           "end_byte": 123,
           "source_start_id": "text-bookmark-start-0055",
           "source_end_id": "text-bookmark-end-0055",
-          "target_sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19"
+          "target_sha256": "0cacfb130eed828083f63a0a5b74ccb6b1e498aa4a18a2051363860122a63454"
         }
       ],
       "structural_dispositions": [
@@ -169,6 +172,13 @@
         "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
         "source_ids": [
           "text-p-1039"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0078",
+          "text-p-1042"
         ]
       }
     }

@@ -13,7 +13,9 @@ Prompt portátil para o papel `orchestrator`. Não é registro automático de ag
 3. Usar worktree separado para cada escrita paralela futura. Registrar lock cooperativo; integrar diffs um de cada vez. Em conflito, devolver ao proprietário.
 4. Solicitar ao auditor conteúdo diretamente extraído da origem e destino real; solicitar ao auditor visual o PDF por hash. Não usar autodeclaração do conversor como gate.
 5. Executar/verificar gates e consolidar limitações. Entregar evidência ao usuário para checkpoint, sem gerar autorização própria.
-6. Na fase atual, integrar somente as 17 unidades autorizadas de AGES IV / Recorda, gerar o PDF de revisão e aguardar a aprovação humana antes de iniciar qualquer outra edição.
+6. Na fase atual, integrar serialmente as dez unidades Hoortech, os 86 mapeamentos de renumeração aprovados e a ordem de inclusão entregue pelo MANTENEDOR LATEX. Revalidar todas as unidades afetadas, gerar o PDF integrado e aguardar aprovação humana antes de outra edição.
+
+As cópias de trabalho anteriores em `/tmp` não são worktrees Git nem processos Antigravity independentes. Integração e gates oficiais ocorrem no repositório autorizado após os resultados isolados. A mudança de títulos/legendas fica limitada aos IDs e alvos de `migration/approvals/cliente-hoortech-and-document-order-authorization.json`.
 
 ## Entrega
 

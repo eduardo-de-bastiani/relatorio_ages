@@ -18,9 +18,10 @@
           "start_byte": 173,
           "end_byte": 187,
           "serializations": [
-            "abnt_section_numbering"
+            "abnt_section_numbering",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6"
         },
         {
           "source_id": "text-p-1310",
@@ -31,7 +32,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6"
         },
         {
           "source_id": "text-p-1311",
@@ -39,7 +40,7 @@
           "start_byte": 1006,
           "end_byte": 1682,
           "serializations": [],
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6"
         },
         {
           "source_id": "text-p-1312",
@@ -47,7 +48,7 @@
           "start_byte": 1710,
           "end_byte": 2539,
           "serializations": [],
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6"
         },
         {
           "source_id": "text-p-1313",
@@ -55,7 +56,7 @@
           "start_byte": 2567,
           "end_byte": 3142,
           "serializations": [],
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6"
         },
         {
           "source_id": "text-p-1314",
@@ -63,7 +64,7 @@
           "start_byte": 3170,
           "end_byte": 3831,
           "serializations": [],
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de"
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6"
         }
       ],
       "asset_map": [],
@@ -110,12 +111,18 @@
           "command": "hypertarget",
           "start_byte": 89,
           "end_byte": 139,
-          "target_sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de",
+          "target_sha256": "769604cc51dff810f370a8c63626b90777027f03ac649302eca1c137a7e4d4c6",
           "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text."
         }
       ],
       "approved_presentation_overrides": {
         "authorization_evidence": "migration/approvals/ages-iii-authorization.json",
+        "source_ids": [
+          "text-h-0097"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
         "source_ids": [
           "text-h-0097"
         ]

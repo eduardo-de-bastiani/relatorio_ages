@@ -215,6 +215,15 @@ AGES_IV_TITLE_ONLY_OMITTED_IDS = (
 )
 FRONTMATTER_AUTHORIZATION = "migration/approvals/ages-iv-frontmatter-authorization.json"
 FRONTMATTER_UNITS = ("pretext", "resumo", "chapter-01-text-h-0001")
+DOCUMENT_ORDER_AUTHORIZATION = "migration/approvals/cliente-hoortech-and-document-order-authorization.json"
+HOORTECH_UNITS = (
+    "chapter-03-text-h-0023", "chapter-03-text-h-0024", "chapter-03-text-h-0025",
+    "chapter-03-text-h-0026", "cliente-hoortech-sprint-0", "cliente-hoortech-sprint-1",
+    "cliente-hoortech-sprint-2", "cliente-hoortech-sprint-3", "cliente-hoortech-sprint-4",
+    "chapter-03-text-h-0038",
+)
+DOCUMENT_ORDER_BASELINE = "8f952a6e3b64c8783cef823e52ed2451af653eae"
+DOCUMENT_ORDER_SOURCE_SHA256 = "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
 FRONTMATTER_TRANSFORM_IDS = {
     "frontmatter_title": {"text-p-0003", "text-p-0004", "text-p-0017", "text-p-0018", "text-p-0034", "text-p-0068"},
     "frontmatter_placeholder": {"text-p-0097"},
@@ -632,6 +641,9 @@ PRESENTATION_SERIALIZATIONS = {
     "approved_technology_narrative": set(AGES_III_TECHNOLOGY_NARRATIVE_TEXT_IDS),
     "technology_documentation_link_prose": set(AGES_III_TECHNOLOGY_DOCUMENTATION_LINK_TEXT_IDS),
     "approved_internal_tab_removal": {"text-p-1084"},
+    # Validated against the exact per-record scope in the supplemental
+    # document-order authorization, not a reusable generic serialization.
+    "document_reordering_numbering": set(),
     **FRONTMATTER_TRANSFORM_IDS,
 }
 PRESENTATION_OVERRIDES_BY_UNIT = {
@@ -788,7 +800,7 @@ PRESENTATION_SERIALIZATIONS.update({
 })
 
 
-def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
+def _load_base_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
     if unit_id in FRONTMATTER_UNITS:
         authorization = json.loads((repo / FRONTMATTER_AUTHORIZATION).read_text(encoding="utf-8"))
         scope = authorization.get("scope", {})
@@ -1087,6 +1099,211 @@ def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> 
     ages_i_caption_ids = {"text-p-0293", "text-p-0328", "text-p-0356", "text-p-0372", "text-p-0650"}
     if not isinstance(captions, dict) or set(captions) != ages_i_caption_ids:
         raise ValueError("Caption localization authorization does not cover exactly the five AGES I captions")
+    return authorization
+
+
+def _renumber_display_heading(current: str, chapter: int) -> str:
+    """Change only the leading chapter component in an audited heading."""
+    title = re.match(r"^(\d+)\s*-\s+(.*)$", current, re.DOTALL)
+    if title:
+        return f"{chapter} {title.group(2)}"
+    numbered = re.match(r"^(\d+)(.*)$", current, re.DOTALL)
+    if not numbered or not (numbered.group(2).startswith((".", " ", "\t")) or not numbered.group(2)):
+        raise ValueError("Heading display does not begin with a standalone chapter number")
+    return f"{chapter}{numbered.group(2)}"
+
+
+def _load_document_order_authorization(repo: Path) -> dict:
+    """Validate the narrowly authorized Hoortech relocation and its exact maps."""
+    path = repo / DOCUMENT_ORDER_AUTHORIZATION
+    raw_bytes = path.read_bytes()
+    authorization = json.loads(raw_bytes.decode("utf-8"))
+    scope = authorization.get("scope", {})
+    expected_sequence = [
+        {"chapter": 1, "unit": "chapter-01-text-h-0001", "title": "Apresentação da trajetória do aluno"},
+        {"chapter": 2, "unit": "chapter-02-text-h-0002", "title": "AGES I"},
+        {"chapter": 3, "unit": "chapter-04-text-h-0039", "title": "AGES II"},
+        {"chapter": 4, "unit": "chapter-05-text-h-0074", "title": "AGES III"},
+        {"chapter": 5, "unit": "chapter-06-text-h-0105", "title": "AGES IV"},
+        {"chapter": 6, "unit": "chapter-03-text-h-0023", "title": "Participação como cliente Hoortech"},
+        {"chapter": 7, "unit": "chapter-07-text-h-0123", "title": "Considerações finais (Somente AGES IV); title-only scope remains in force"},
+    ]
+    expected_scope_units = list(HOORTECH_UNITS)
+    expected_order = {
+        "schema_version": 1,
+        "record_type": "user_authorized_document_order_and_numbering_scope",
+        "date": "2026-10-17",
+        "approval_status": "authorized_for_execution_pending_human_review",
+        "source": {
+            "path": "RELATORIO_ATUAL.odt",
+            "sha256": DOCUMENT_ORDER_SOURCE_SHA256,
+            "must_remain_unchanged": True,
+        },
+        "baseline": {
+            "branch": "migration/ages-iii",
+            "commit": DOCUMENT_ORDER_BASELINE,
+            "working_tree_clean": True,
+        },
+        "user_decision": "Renumerar em sequência (recomendado)",
+    }
+    if any(authorization.get(key) != value for key, value in expected_order.items()):
+        raise ValueError("Document-order authorization is missing, stale, or exceeds the approved source and baseline")
+    if (scope.get("units") != expected_scope_units
+            or scope.get("final_chapter_sequence") != expected_sequence
+            or scope.get("figure_numbering") != "AGES I 1–5; AGES II 6–12; AGES III 13–20; AGES IV 21–31; Hoortech 32–34."):
+        raise ValueError("Document-order scope differs from the exact user-approved unit or final sequence")
+
+    manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+    overlay = manifest.get("migration_overlay", {}).get("document_order")
+    if not isinstance(overlay, dict):
+        raise ValueError("Manifest has no document_order traceability overlay")
+    affected_units = scope.get("affected_units")
+    heading_map = scope.get("heading_numbering")
+    caption_map = scope.get("figure_caption_numbering")
+    inline_map = scope.get("inline_reference_adjustments")
+    if (not isinstance(affected_units, list) or not isinstance(heading_map, dict)
+            or not isinstance(caption_map, dict) or not isinstance(inline_map, dict)):
+        raise ValueError("Document-order authorization maps have an invalid shape")
+    if len(affected_units) != len(set(affected_units)) or affected_units != sorted(affected_units):
+        raise ValueError("Affected units must be unique and in deterministic order")
+
+    records = _index(manifest.get("records", []))
+    units = _index(manifest.get("units", []))
+    expected_heading_ids = {
+        rid for rid, record in records.items()
+        if (record.get("type") == "text:h" and record.get("unit_id") in set(affected_units)
+            and re.match(r"^\d+(?:\.\d+)*\.?(?:\s|$|-)", record.get("text", "")))
+    }
+    expected_caption_ids = {
+        rid for rid, record in records.items()
+        if record.get("semantic_type") == "caption" and record.get("unit_id") in set(affected_units)
+    }
+    if set(heading_map) != expected_heading_ids or set(caption_map) != expected_caption_ids:
+        raise ValueError("Heading/caption authorization IDs do not cover exactly the affected ODF records")
+    if set(inline_map) != {"text-p-0679"}:
+        raise ValueError("Inline reference authorization must cover exactly the Hoortech topic reference")
+    derived_units = {
+        spec.get("unit_id") for table in (heading_map, caption_map, inline_map)
+        for spec in table.values()
+    }
+    if affected_units != sorted(derived_units):
+        raise ValueError("Affected-unit list does not equal the units owning authorized source records")
+
+    def heading_target_chapter(unit_id: str) -> int:
+        if unit_id in HOORTECH_UNITS:
+            return 6
+        if unit_id.startswith("chapter-04-") or unit_id.startswith("ages-ii-"):
+            return 3
+        if unit_id.startswith("chapter-05-") or unit_id.startswith("ages-iii-"):
+            return 4
+        if unit_id.startswith("chapter-06-") or unit_id.startswith("ages-iv-"):
+            return 5
+        if unit_id.startswith("chapter-07-"):
+            return 7
+        raise ValueError("Heading belongs to an edition outside the authorized sequence")
+
+    expected_chapter_by_unit = {
+        **{uid: 3 for uid in HOORTECH_UNITS},
+        **{uid: 4 for uid in AGES_II_UNITS},
+        **{uid: 5 for uid in AGES_III_UNITS},
+        **{uid: 6 for uid in AGES_IV_UNITS},
+        "chapter-07-text-h-0123": 7,
+    }
+    for source_id, spec in heading_map.items():
+        record = records[source_id]
+        unit_id = record.get("unit_id")
+        if unit_id not in units or spec.get("unit_id") != unit_id or spec.get("source_text") != record.get("text"):
+            raise ValueError(f"Heading authorization is not bound to the original ODF record: {source_id}")
+        source_chapter = expected_chapter_by_unit.get(unit_id)
+        target_chapter = heading_target_chapter(unit_id)
+        if spec.get("source_chapter") != source_chapter or spec.get("target_chapter") != target_chapter:
+            raise ValueError(f"Heading chapter mapping is invalid for {source_id}")
+        old_style = PRESENTATION_HEADINGS.get(source_id, (spec["source_text"], spec["source_text"]))[1]
+        if spec.get("current_display_text") != old_style:
+            raise ValueError(f"Heading display does not match the independently approved pre-relocation style: {source_id}")
+        if spec.get("target_text") != _renumber_display_heading(old_style, target_chapter):
+            raise ValueError(f"Heading target changes text beyond the authorized chapter number: {source_id}")
+
+    expected_caption_targets = {"ages-ii": set(range(6, 13)), "ages-iii": set(range(13, 21)),
+                                "ages-iv": set(range(21, 32)), "hoortech": set(range(32, 35))}
+    actual_caption_targets = {key: set() for key in expected_caption_targets}
+    for source_id, spec in caption_map.items():
+        record = records[source_id]
+        unit_id = record.get("unit_id")
+        if unit_id not in units or spec.get("unit_id") != unit_id or spec.get("source_text") != record.get("text"):
+            raise ValueError(f"Caption authorization is not bound to the original ODF record: {source_id}")
+        match = re.match(r"^(\s*)Figure (\d+): (.*)$", spec["source_text"], re.DOTALL)
+        if not match:
+            raise ValueError(f"Caption source has an unexpected prefix: {source_id}")
+        leading, number_text, body = match.groups()
+        number = int(number_text)
+        group = ("hoortech" if unit_id in HOORTECH_UNITS else
+                 "ages-ii" if unit_id in AGES_II_UNITS else
+                 "ages-iii" if unit_id in AGES_III_UNITS else
+                 "ages-iv" if unit_id in AGES_IV_UNITS else None)
+        if group is None:
+            raise ValueError(f"Caption belongs to an edition outside the authorized order: {source_id}")
+        current = f"{leading}Figura {number} – {body}"
+        target_number = number + 26 if group == "hoortech" else number - 3
+        target = f"{leading}Figura {target_number} – {body}"
+        if (spec.get("current_display_text") != current
+                or spec.get("source_figure") != number
+                or spec.get("target_figure") != target_number
+                or spec.get("target_text") != target):
+            raise ValueError(f"Caption target changes label/body beyond the authorized numbering: {source_id}")
+        actual_caption_targets[group].add(target_number)
+    if actual_caption_targets != expected_caption_targets:
+        raise ValueError("Reordered figure ranges must remain unique, gap-free and edition-specific")
+
+    inline = inline_map["text-p-0679"]
+    inline_source = records.get("text-p-0679", {}).get("text")
+    if (inline.get("unit_id") != "chapter-03-text-h-0025"
+            or inline.get("source_text") != inline_source
+            or inline.get("source_fragment") != "No tópico 3.2,"
+            or inline.get("target_fragment") != "No tópico 6.2,"
+            or inline.get("target_text") != inline_source.replace("No tópico 3.2,", "No tópico 6.2,", 1)):
+        raise ValueError("Hoortech internal topic reference differs from the exact approved replacement")
+
+    mapped_ids = set(heading_map) | set(caption_map) | set(inline_map)
+    if (overlay.get("schema_version") != 1
+            or overlay.get("status") != "authorized-pending-integration-and-audit"
+            or overlay.get("authorization_evidence") != DOCUMENT_ORDER_AUTHORIZATION
+            or overlay.get("authorization_evidence_sha256") != hashlib.sha256(raw_bytes).hexdigest()
+            or overlay.get("baseline_commit") != DOCUMENT_ORDER_BASELINE
+            or overlay.get("source_sha256") != DOCUMENT_ORDER_SOURCE_SHA256
+            or overlay.get("moved_units") != expected_scope_units
+            or overlay.get("affected_units") != affected_units
+            or overlay.get("final_chapter_sequence") != expected_sequence
+            or set(overlay.get("affected_source_ids", [])) != mapped_ids
+            or len(overlay.get("affected_source_ids", [])) != len(mapped_ids)):
+        raise ValueError("Manifest document-order overlay differs from the current exact authorization")
+    for key, mapping in (("heading_numbering", heading_map), ("figure_caption_numbering", caption_map)):
+        overlay_items = overlay.get(key)
+        if not isinstance(overlay_items, list):
+            raise ValueError(f"Manifest overlay {key} must be a list")
+        projected = {item.get("source_id"): item for item in overlay_items if isinstance(item, dict)}
+        expected_overlay = {source_id: {"source_id": source_id, **spec} for source_id, spec in mapping.items()}
+        if projected != expected_overlay or len(projected) != len(overlay_items):
+            raise ValueError(f"Manifest overlay {key} does not exactly match authorization")
+    if overlay.get("inline_reference_adjustments") != [
+        {"source_id": source_id, **spec} for source_id, spec in inline_map.items()
+    ]:
+        raise ValueError("Manifest overlay inline reference differs from the exact authorization")
+    return authorization
+
+
+def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
+    authorization = _load_base_presentation_authorization(repo, unit_id)
+    document_order_units = set(HOORTECH_UNITS) | set(AGES_II_UNITS) | set(AGES_III_UNITS) | set(AGES_IV_UNITS)
+    if unit_id in document_order_units and (repo / DOCUMENT_ORDER_AUTHORIZATION).is_file():
+        document_authorization = _load_document_order_authorization(repo)
+        authorization = {
+            **authorization,
+            "approved_document_reordering": {
+                "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+                **document_authorization,
+            },
+        }
     return authorization
 
 
@@ -1829,6 +2046,49 @@ def _verify_ages_iv_bibliography_entries(bibliography, reference_evidence, recor
             raise ValueError(f"AGES IV bibliography invents an author for title-as-author source {key}")
 
 
+def _verify_document_order_unit(uid, unit_ledger, records, authorization, read_fragment):
+    """Verify a unit's supplemental chapter/figure numbering overlay exactly."""
+    document_auth = (authorization or {}).get("approved_document_reordering")
+    if not isinstance(document_auth, dict):
+        raise ValueError("Document-order overlay requires the current supplemental authorization")
+    scope = document_auth.get("scope", {})
+    specs = {
+        source_id: spec
+        for table in ("heading_numbering", "figure_caption_numbering", "inline_reference_adjustments")
+        for source_id, spec in scope.get(table, {}).items()
+        if spec.get("unit_id") == uid
+    }
+    mappings = unit_ledger.get("element_map", [])
+    mapped = {
+        item.get("source_id"): item for item in mappings
+        if "document_reordering_numbering" in item.get("serializations", [])
+    }
+    expected_ids = sorted(specs)
+    expected_policy = {
+        "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+        "source_ids": expected_ids,
+    }
+    if (not expected_ids
+            or unit_ledger.get("document_reordering_authorization") != expected_policy
+            or sorted(mapped) != expected_ids):
+        raise ValueError("Document-order ledger must cover exactly the authorized source IDs in this unit")
+    for source_id in expected_ids:
+        mapping = mapped[source_id]
+        spec = specs[source_id]
+        serializations = mapping.get("serializations", [])
+        raw = read_fragment(mapping)
+        observed = displayed_text(raw, serializations)
+        projected, evidence = _project_approved_presentation(
+            source_id, spec.get("source_text"), observed, serializations, authorization,
+        )
+        if (projected != spec.get("source_text")
+                or evidence is None
+                or evidence.get("displayed") != spec.get("target_text")
+                or source_id not in records):
+            raise ValueError(f"Document-order projection differs from its exact authorized source mapping: {source_id}")
+    return expected_ids
+
+
 def _reference_suffix(value: str) -> str:
     value = value.replace(r"\nobreakspace{}", " ")
     value = value.replace(r"\hspace{0.6em}", " ")
@@ -1873,6 +2133,33 @@ def _is_authorized_ages_iii_group_label_removal(authorization, source_id):
 
 
 def _project_approved_presentation(source_id, expected, observed, serializations, authorization, formatting_authorization=None):
+    if "document_reordering_numbering" in serializations:
+        document_auth = (authorization or {}).get("approved_document_reordering")
+        if not isinstance(document_auth, dict):
+            raise UnsupportedSerialization("Document-order numbering requires the exact current supplemental authorization")
+        scope = document_auth.get("scope", {})
+        candidates = [
+            scope.get(table, {}).get(source_id)
+            for table in ("heading_numbering", "figure_caption_numbering", "inline_reference_adjustments")
+        ]
+        spec = next((item for item in candidates if isinstance(item, dict)), None)
+        allowed_companions = {
+            "document_reordering_numbering", "abnt_figure_caption", "abnt_section_numbering",
+            "original_whitespace", "inline_tab_layout", "reference_paragraph_layout",
+            "tex_quotes", "tex_dashes", "canonical_unicode",
+        }
+        if (spec is None
+                or set(serializations) - allowed_companions
+                or expected != spec.get("source_text")
+                or observed != spec.get("target_text")):
+            raise UnsupportedSerialization("Document-order target differs from the exact source-bound approved numbering map")
+        return expected, {
+            "source_id": source_id,
+            "kind": "document_reordering_numbering",
+            "source": expected,
+            "displayed": observed,
+            "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+        }
     if "wiki_reference_sentence" in serializations:
         wiki_rules = {**AGES_I_II_WIKI_SENTENCES, **AGES_III_WIKI_SENTENCES, **AGES_IV_WIKI_SENTENCES}
         paragraph_id = source_id if source_id in wiki_rules else next(
@@ -2148,7 +2435,7 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
     Accents, punctuation, case, numbers and symbols compare exactly.
     No macro expansion, citation expansion or counter-generated text is guessed.
     """
-    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation", "technology_paragraph_join", "approved_group_label_removal", "approved_technology_narrative", "technology_documentation_link_prose", "approved_internal_tab_removal", "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission"}
+    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation", "technology_paragraph_join", "approved_group_label_removal", "approved_technology_narrative", "technology_documentation_link_prose", "approved_internal_tab_removal", "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission", "document_reordering_numbering"}
     if set(serializations) - allowed:
         raise UnsupportedSerialization("Unrecognized serialization policy")
     if "original_whitespace" in serializations and not macro_contract_verified:
@@ -2642,8 +2929,46 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         # presentation contracts. Never fall back to those contracts when a
         # new revision is claimed but invalid/unauthorized.
         if technology_prose.applies(repo, uid, unit_ledger):
+            if uid not in technology_prose.UNITS and uid != technology_prose.AIV_UNIT:
+                try:
+                    technology_prose.verify(manifest, ledger, repo, uid)
+                    report("invalid_technology_prose_revision", uid, "Technology prose revision is outside the three authorized source units")
+                except (OSError, ValueError, KeyError, TypeError, UnicodeError, StopIteration) as exc:
+                    report("invalid_technology_prose_revision", uid, str(exc))
+                continue
             try:
-                revision = technology_prose.verify(manifest, ledger, repo, uid)
+                document_order_scope = (presentation_authorization or {}).get("approved_document_reordering", {}).get("scope", {})
+                expected_technology_order_ids = sorted(
+                    source_id
+                    for table in ("heading_numbering", "figure_caption_numbering", "inline_reference_adjustments")
+                    for source_id, spec in document_order_scope.get(table, {}).items()
+                    if spec.get("unit_id") == uid
+                )
+                unit_mappings = unit_ledger.get("element_map", [])
+                has_document_order_evidence = (
+                    "document_reordering_authorization" in unit_ledger
+                    or any("document_reordering_numbering" in item.get("serializations", []) for item in unit_mappings)
+                )
+                # Legacy ledgers remain auditable while a numbered chapter is
+                # being migrated; once either marker appears, require the exact
+                # per-unit authorization and validate every mapped display.
+                order_ids = expected_technology_order_ids if has_document_order_evidence else None
+                heading_display_text = None
+                if has_document_order_evidence:
+                    _verify_document_order_unit(
+                        uid, unit_ledger, records, presentation_authorization,
+                        lambda mapping: fragment(mapping)[3],
+                    )
+                    heading_id = unit.get("heading_id")
+                    heading_spec = document_order_scope.get("heading_numbering", {}).get(heading_id)
+                    if not isinstance(heading_spec, dict) or heading_spec.get("unit_id") != uid:
+                        raise ValueError("Technology heading has no exact authorized document-order display")
+                    heading_display_text = heading_spec.get("target_text")
+                revision = technology_prose.verify(
+                    manifest, ledger, repo, uid,
+                    document_reordering_ids=order_ids,
+                    heading_display_text=heading_display_text,
+                )
                 facts.setdefault("technology_prose_revisions", []).append(revision)
                 facts["text_records_checked"] += revision["source_text_records_checked"]
                 facts["links_checked"] += revision["links_inventoried"]
@@ -2833,7 +3158,21 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 report("invalid_wiki_link_presentation", uid, str(exc))
         elif wiki_policy is not None or wiki_override_ids:
             report("invalid_wiki_link_presentation", uid, "Wiki-link prose is outside the exact approved source IDs")
-        presentation_override_kinds = set(PRESENTATION_SERIALIZATIONS) - {"technology_citation", "technology_paragraph_join"}
+        dedicated_presentation_kinds = {
+            # These transformations each have a dedicated exact verifier in
+            # this audit path; they must not require a duplicate generic policy.
+            "repository_link_sentence", "wiki_reference_sentence",
+            "approved_group_label_removal", "approved_technology_narrative",
+            "technology_documentation_link_prose", "approved_internal_tab_removal",
+            "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission",
+            "technology_citation", "technology_paragraph_join", "document_reordering_numbering",
+        }
+        presentation_override_kinds = set(PRESENTATION_SERIALIZATIONS) - dedicated_presentation_kinds
+        separately_verified_presentation_ids = set().union(*(
+            PRESENTATION_SERIALIZATIONS[kind]
+            for kind in dedicated_presentation_kinds
+            if kind in PRESENTATION_SERIALIZATIONS
+        ))
         presentation_override_ids = {
             rid for rid, mapping in by_id.items()
             if set(mapping.get("serializations", [])) & presentation_override_kinds
@@ -2850,14 +3189,57 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         expected_override_ids = (
             PRESENTATION_OVERRIDES_BY_UNIT.get(uid, set()) & set(unit.get("record_ids", []))
         )
-        if expected_override_ids or presentation_override_ids or "approved_presentation_overrides" in unit_ledger:
+        document_order_scope = (presentation_authorization or {}).get("approved_document_reordering", {}).get("scope", {})
+        scoped_document_order_ids = {
+            source_id
+            for table in ("heading_numbering", "figure_caption_numbering", "inline_reference_adjustments")
+            for source_id, spec in document_order_scope.get(table, {}).items()
+            if spec.get("unit_id") == uid
+        }
+        document_order_ids = {
+            rid for rid, mapping in by_id.items()
+            if "document_reordering_numbering" in mapping.get("serializations", [])
+        }
+        document_order_active = (
+            bool(document_order_ids)
+            or "document_reordering_authorization" in unit_ledger
+        )
+        expected_document_order_ids = scoped_document_order_ids if document_order_active else set()
+        if expected_document_order_ids or document_order_ids or "document_reordering_authorization" in unit_ledger:
+            try:
+                policy = unit_ledger.get("document_reordering_authorization")
+                expected_policy = {
+                    "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+                    "source_ids": sorted(expected_document_order_ids),
+                }
+                if (presentation_authorization is None
+                        or "approved_document_reordering" not in presentation_authorization
+                        or policy != expected_policy
+                        or document_order_ids != expected_document_order_ids):
+                    raise ValueError("Document-order ledger must cover exactly the authorized source IDs in this unit")
+                report("approved_document_order_review_required", uid,
+                       "Heading/caption renumbering is source-bound to user approval; final document-order review remains pending",
+                       severity="warning")
+            except (ValueError, OSError, KeyError, UnicodeError, TypeError) as exc:
+                report("invalid_document_reordering_authorization", uid, str(exc))
+        # Numbering/caption maps supersede prior style serialization for the
+        # same IDs. Keep any prior authorization as provenance, but require its
+        # visible serialization only for IDs outside the exact relocation map.
+        active_expected_override_ids = (
+            expected_override_ids - expected_document_order_ids - separately_verified_presentation_ids
+        )
+        active_presentation_override_ids = presentation_override_ids - expected_document_order_ids
+        override_policy_present = "approved_presentation_overrides" in unit_ledger
+        if active_expected_override_ids or active_presentation_override_ids or override_policy_present:
             try:
                 policy = unit_ledger.get("approved_presentation_overrides")
                 evidence_path = PRESENTATION_AUTHORIZATION_BY_UNIT.get(uid)
                 if evidence_path is None:
                     raise ValueError("Presentation overrides are outside the specifically authorized edition units")
-                if (policy != {"authorization_evidence": evidence_path, "source_ids": sorted(expected_override_ids)}
-                        or presentation_override_ids != expected_override_ids):
+                expected_policy = {"authorization_evidence": evidence_path, "source_ids": sorted(expected_override_ids)}
+                if ((policy is not None and policy != expected_policy)
+                        or (policy is None and active_expected_override_ids)
+                        or active_presentation_override_ids != active_expected_override_ids):
                     raise ValueError("Presentation override ledger must cover exactly the user-authorized elements in this unit")
                 if presentation_authorization is None:
                     raise ValueError(presentation_authorization_error or "Missing user authorization")
@@ -3025,7 +3407,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 contract_text = contract_data.decode("utf-8")
                 definitions = macro_definitions(contract_text)
                 bodies = {"originaltab": r"\noindent\hspace*{1.251cm}", "originalspace": r"\hspace*{\fontdimen2\font}"}
-                if reference_verified or uid in AGES_II_UNITS or uid in AGES_III_UNITS or uid in AGES_IV_UNITS or uid in FRONTMATTER_UNITS:
+                if (reference_verified or uid in AGES_II_UNITS or uid in AGES_III_UNITS
+                        or uid in AGES_IV_UNITS or uid in HOORTECH_UNITS or uid in FRONTMATTER_UNITS):
                     bodies["originaltab"] = r"\hspace*{0pt}"
                     bodies["originalleadingspace"] = r"\hspace*{0pt}"
                     if expected_ages_ii_line_breaks:
@@ -3538,7 +3921,6 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 spec = placeholder_specs.get(uid)
                 if spec is None or apparatus.get("kind") != "diagram_placeholder" or apparatus.get("source_heading_id") != spec[0] or apparatus.get("placeholder_id") != spec[1] or spec[0] not in source_ids or records[spec[0]]["text"] != spec[2] or expected_images:
                     raise ValueError("Placeholder is not bound to the authorized original heading")
-                config = json.loads(safe_path("harness.json").read_text())
                 if uid == "chapter-04-text-h-0043":
                     evidence = "migration/approvals/ages-ii-authorization.json"
                     auth = json.loads(safe_path(evidence).read_text())
@@ -3548,8 +3930,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         for item in auth.get("missing_material", [])
                     )
                     valid_edition_evidence = (
-                        config.get("authorization_evidence") == evidence
-                        and config.get("authorized_edition") == "ages-ii"
+                        auth.get("schema_version") == 1
+                        and auth.get("edition") == "ages-ii"
+                        and auth.get("project") == "Indústria Digital"
+                        and auth.get("odt_source") == "RELATORIO_ATUAL.odt"
+                        and auth.get("source_sha256") == "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
                         and uid in auth.get("authorized_units", [])
                         and auth.get("authorized") is True
                         and placeholder_decision
@@ -3559,10 +3944,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     auth = json.loads(safe_path(evidence).read_text())
                     quote = "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente"
                     valid_edition_evidence = (
-                        config.get("phase") == "edition"
-                        and uid in config.get("authorized_units", [])
+                        auth.get("schema_version") == 1
                         and uid in auth.get("scope", [])
                         and auth.get("kind") == "user_execution_authorization"
+                        and auth.get("edition") == "AGES I / Easy Choose"
+                        and auth.get("baseline_commit") == "68d159b9b4168f2a913f5c1e4913c30397310437"
                         and auth.get("quoted_instruction") == quote
                         and spec[2].strip() in auth.get("placeholders_explicitly_authorized", [])
                     )

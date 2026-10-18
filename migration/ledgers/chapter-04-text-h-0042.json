@@ -5,11 +5,11 @@
   "conversion_base_commit": "1218ced77a1aa3cb65f0c15182b6248ddfb2d048",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "style_contract": {
     "path": "relatorio_AGES_eduardo/util/style.tex",
@@ -25,8 +25,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
           "start_byte": 164,
           "end_byte": 210,
-          "serializations": [],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         },
         {
           "source_id": "text-p-0774",
@@ -36,7 +38,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         },
         {
           "source_id": "text-p-0775",
@@ -46,7 +48,7 @@
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         },
         {
           "source_id": "text-p-0777",
@@ -56,7 +58,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         },
         {
           "source_id": "text-p-0778",
@@ -66,7 +68,7 @@
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         },
         {
           "source_id": "text-a-0116",
@@ -76,7 +78,7 @@
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         },
         {
           "source_id": "text-a-0117",
@@ -86,7 +88,7 @@
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         }
       ],
       "asset_map": [],
@@ -101,7 +103,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0039",
           "source_end_id": "text-bookmark-end-0039",
-          "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed"
+          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
         }
       ],
       "structural_dispositions": [
@@ -208,7 +210,7 @@
             "target_start_byte": 418,
             "target_end_byte": 436,
             "target_fragment": "\\textit{landing, }",
-            "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed",
+            "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6",
             "paragraph_style_chain": [
               {
                 "name": "P216",
@@ -313,7 +315,7 @@
             "target_start_byte": 436,
             "target_end_byte": 455,
             "target_fragment": "\\textit{dashboard,}",
-            "target_sha256": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed",
+            "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6",
             "paragraph_style_chain": [
               {
                 "name": "P216",
@@ -366,6 +368,12 @@
           }
         ],
         "audit_note": "Only source-effective italic or solid underline is represented with local TeX formatting. Existing hyperlinks remain hyperlinks. text-p-0839 is an underlined paragraph style with no text:a and remains unlinked; no URL was inferred."
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0042"
+        ]
       }
     }
   }

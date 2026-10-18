@@ -17,15 +17,18 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 159,
           "end_byte": 205,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
-          "source_text_sha256": "78489aebfd63b39975186d5703856fec2c69ec934e96235984d27d1ce591e7e3"
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
+          "source_text_sha256": "78489aebfd63b39975186d5703856fec2c69ec934e96235984d27d1ce591e7e3",
+          "serializations": [
+            "document_reordering_numbering"
+          ]
         },
         {
           "source_id": "text-p-1332",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 339,
           "end_byte": 841,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
           "source_text_sha256": "a92162fa8c7b7c8810fad9ae767180cbaa186745d8b4f3a4b050aa3db559a50c",
           "serializations": [
             "technology_citation"
@@ -36,7 +39,7 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 882,
           "end_byte": 1024,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
           "source_text_sha256": "18bb3533781e86f02b8ffc5ccf43349f3bc455d640a6b3553e425941dd852daf",
           "serializations": [
             "repository_link_sentence"
@@ -47,7 +50,7 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 882,
           "end_byte": 1024,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
           "serializations": [
             "repository_link_sentence"
           ]
@@ -57,7 +60,7 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 1051,
           "end_byte": 1300,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
           "source_text_sha256": "75302ef7d03b2d77f81aa376c540aba505933c57510a3539ba05f21ba36c5b21"
         },
         {
@@ -65,7 +68,7 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 1341,
           "end_byte": 1481,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
           "source_text_sha256": "a8f96ade503d4fe76ee62fcf356161af398c07bf9230bff824d09a01862d035b",
           "serializations": [
             "repository_link_sentence"
@@ -76,7 +79,7 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
           "start_byte": 1341,
           "end_byte": 1481,
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e",
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
           "serializations": [
             "repository_link_sentence"
           ]
@@ -94,7 +97,7 @@
           "end_byte": 117,
           "source_start_id": "text-bookmark-start-0071",
           "source_end_id": "text-bookmark-end-0071",
-          "target_sha256": "1855aa321b4d21f5e0e898602789f4ea45ea19b0358fbc325667f3b2074b756e"
+          "target_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7"
         }
       ],
       "structural_dispositions": [
@@ -202,7 +205,13 @@
           "citation_scope_limitation": "A fonte sustenta App Store como canal de distribuição; não comprova prontidão, envio, aprovação ou publicação do Recorda.",
           "reference_url_recommendation": "https://developer.apple.com/app-store/"
         }
-      ]
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0108"
+        ]
+      }
     }
   }
 }

@@ -128,7 +128,7 @@ def _visible(text: str) -> str:
     return re.sub(r"\s+", " ", value.replace("{", "").replace("}", "")).strip()
 
 
-def _grammar(text: str, uid: str, policy: dict) -> tuple[list, list, str]:
+def _grammar(text: str, uid: str, policy: dict, heading_display_text: str | None = None) -> tuple[list, list, str]:
     """Check finite transparent grammar, exact heading scaffold, attached cites."""
     clean = strip_comments(text)
     tokens = list(commands(clean))
@@ -168,6 +168,10 @@ def _grammar(text: str, uid: str, policy: dict) -> tuple[list, list, str]:
     edition, heading_id, number, anchor, _, _ = HEADINGS[uid]
     title = "Tecnologias utilizadas"
     full_title = f"{number} {title}" if number else title
+    if heading_display_text is not None:
+        if not number or not heading_display_text.endswith(" " + title):
+            raise ValueError("Authorized document-order heading must retain the exact technology section title")
+        full_title = heading_display_text
     expected = [("hypertarget", (anchor, ""), False)]
     if number:
         expected.append(("refstepcounter", ("subsection",), False))
@@ -238,7 +242,7 @@ def _matches_frozen_bibliography(repo: Path, data: bytes, expected_sha256: str) 
     )
 
 
-def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str) -> dict:
+def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str, document_reordering_ids=None, heading_display_text=None) -> dict:
     """Return honest traceability facts or fail closed; semantic equality is pending."""
     approval = load_authorization(repo)
     if uid not in UNITS:
@@ -258,6 +262,14 @@ def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str) -> dict:
     if unit_ledger.get("technology_prose_revision") != expected_revision:
         raise ValueError("Missing/stale scoped technology prose revision policy; legacy presentation is revoked")
     expected_keys = {"state", "tex_path", "asset_map", "bookmark_map", "pending", "element_map", "technology_prose_revision", "documentation_links", "structural_dispositions"}
+    if document_reordering_ids is not None:
+        expected_keys.add("document_reordering_authorization")
+        expected_order_policy = {
+            "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+            "source_ids": sorted(document_reordering_ids),
+        }
+        if unit_ledger.get("document_reordering_authorization") != expected_order_policy:
+            raise ValueError("Technology ledger document-order scope differs from its exact approved source IDs")
     if set(unit_ledger) != expected_keys or unit_ledger.get("state") != "converted" or unit_ledger.get("asset_map") != []:
         raise ValueError("Prose ledger has missing fields, legacy policies or unauthorized assets")
     if not isinstance(unit_ledger["pending"], list) or not unit_ledger["pending"] or any(not isinstance(item, str) or not item.strip() for item in unit_ledger["pending"]):
@@ -274,7 +286,7 @@ def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str) -> dict:
     keys, duplicates = bib_keys(bib_data.decode("utf-8"))
     if duplicates or set(policy["required_citation_keys"]) - keys:
         raise ValueError("Required citations have no unique integrated bibliography entries")
-    scaffolds, citations, _ = _grammar(text, uid, policy)
+    scaffolds, citations, _ = _grammar(text, uid, policy, heading_display_text)
     heading_id = unit["heading_id"]
     # Every significant original paragraph/title/link is accounted for in order.
     significant = [rid for rid in unit["record_ids"] if records[rid]["type"] in {"text:p", "text:h", "text:a"}]
@@ -298,7 +310,14 @@ def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str) -> dict:
             if disposition != expected or start != end:
                 raise ValueError("Only exactly authorized documentation labels/links may have empty target spans")
         elif rid == heading_id:
-            if disposition != "heading" or value != _source_text(records[rid]):
+            authorized_heading = (
+                document_reordering_ids is not None
+                and rid in document_reordering_ids
+                and isinstance(heading_display_text, str)
+                and "document_reordering_numbering" in mapping.get("serializations", [])
+                and value == heading_display_text
+            )
+            if disposition != "heading" or (value != _source_text(records[rid]) and not authorized_heading):
                 raise ValueError("Original technology heading changed")
             covered[start:end] = b"\1" * (end - start)
         else:
@@ -358,7 +377,7 @@ def _field_line(entry: str, field: str, value: str, *, nested: bool = False) -> 
     return re.search(pattern, entry) is not None
 
 
-def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path) -> dict:
+def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path, document_reordering_ids=None, heading_display_text=None) -> dict:
     """Validate the one AIV technology prose unit without broadening I–III scope."""
     authorization_path = _path(repo, AIV_AUTHORIZATION)
     authorization = json.loads(authorization_path.read_text(encoding="utf-8"))
@@ -403,6 +422,14 @@ def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path) -> dict:
         "technology_prose_revision", "documentation_links", "structural_dispositions",
         "candidate_citations", "omitted_documentation_fragments", "presentation_transformations",
     }
+    if document_reordering_ids is not None:
+        required_fields.add("document_reordering_authorization")
+        expected_order_policy = {
+            "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+            "source_ids": sorted(document_reordering_ids),
+        }
+        if unit_ledger.get("document_reordering_authorization") != expected_order_policy:
+            raise ValueError("AGES IV technology ledger document-order scope differs from its exact approved source IDs")
     if (set(unit_ledger) != required_fields or unit_ledger.get("state") != "converted"
             or unit_ledger.get("tex_path") != AIV_TEX_PATH or unit_ledger.get("asset_map") != []):
         raise ValueError("AGES IV technology prose ledger has missing, legacy, or unauthorized fields")
@@ -481,7 +508,7 @@ def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path) -> dict:
         "required_citation_keys": required_keys,
         "citation_terms": citation_terms,
         "allow_narrative_documentation_mentions": True,
-    })
+    }, heading_display_text)
     if [token.args[0] for token in citations] != required_keys:
         raise ValueError("AGES IV citations are detached, duplicated, missing, or reordered")
 
@@ -529,7 +556,14 @@ def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path) -> dict:
                 raise ValueError("Only authorized documentation links/standalone labels may use empty spans")
             omissions_seen.add(rid)
         elif rid == unit["heading_id"]:
-            if disposition != "heading" or value != _source_text(records[rid]):
+            authorized_heading = (
+                document_reordering_ids is not None
+                and rid in document_reordering_ids
+                and isinstance(heading_display_text, str)
+                and "document_reordering_numbering" in mapping.get("serializations", [])
+                and value == heading_display_text
+            )
+            if disposition != "heading" or (value != _source_text(records[rid]) and not authorized_heading):
                 raise ValueError("AGES IV original technology heading changed")
             covered[start:end] = b"\1" * (end - start)
         else:
@@ -606,7 +640,7 @@ def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path) -> dict:
     }
 
 
-def verify(manifest: dict, ledger: dict, repo: Path, uid: str) -> dict:
+def verify(manifest: dict, ledger: dict, repo: Path, uid: str, *, document_reordering_ids=None, heading_display_text=None) -> dict:
     if uid == AIV_UNIT:
-        return _verify_ages_iv(manifest, ledger, repo)
-    return _verify_legacy(manifest, ledger, repo, uid)
+        return _verify_ages_iv(manifest, ledger, repo, document_reordering_ids, heading_display_text)
+    return _verify_legacy(manifest, ledger, repo, uid, document_reordering_ids, heading_display_text)

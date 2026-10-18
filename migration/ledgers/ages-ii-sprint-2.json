@@ -5,7 +5,7 @@
   "conversion_base_commit": "a395326d7c18a77a8413521990f4a330fc27d8a0",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "style_contract": {
     "path": "relatorio_AGES_eduardo/util/style.tex",
@@ -21,8 +21,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex",
           "start_byte": 173,
           "end_byte": 187,
-          "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0906",
@@ -30,7 +32,7 @@
           "start_byte": 292,
           "end_byte": 592,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0907",
@@ -38,7 +40,7 @@
           "start_byte": 620,
           "end_byte": 919,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0908",
@@ -46,7 +48,7 @@
           "start_byte": 947,
           "end_byte": 1638,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0909",
@@ -54,7 +56,7 @@
           "start_byte": 1666,
           "end_byte": 1937,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0910",
@@ -62,7 +64,7 @@
           "start_byte": 1965,
           "end_byte": 2441,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0911",
@@ -70,7 +72,7 @@
           "start_byte": 2469,
           "end_byte": 2856,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0912",
@@ -78,7 +80,7 @@
           "start_byte": 2884,
           "end_byte": 3569,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0913",
@@ -86,7 +88,7 @@
           "start_byte": 3597,
           "end_byte": 4075,
           "serializations": [],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0915",
@@ -97,7 +99,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0916",
@@ -108,7 +110,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         },
         {
           "source_id": "text-p-0917",
@@ -119,7 +121,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         }
       ],
       "asset_map": [],
@@ -193,7 +195,7 @@
           "start_byte": 82,
           "end_byte": 131,
           "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text.",
-          "target_sha256": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4"
+          "target_sha256": "09019c47a1bbc9536dfb9f239c25b3bff5f6fd875203ebb0ee0d78163f277cca"
         }
       ],
       "reference_paragraph_layout": {
@@ -233,7 +235,13 @@
           "target_serialization": "\\textit{sampled}",
           "disposition": "Both adjacent visible fragments resolve to italic; a single contiguous LaTeX wrapper covers both without changing visible text."
         }
-      ]
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0050"
+        ]
+      }
     }
   }
 }

@@ -79,7 +79,9 @@
         "docs/ages-iii/TEXT_DIVERGENCES.json",
         "docs/technology-review/CONTENT_AUDIT.md",
         "docs/ages-iv/CONTENT_AUDIT.md",
-        "docs/ages-iv/TEXT_DIVERGENCES.json"
+        "docs/ages-iv/TEXT_DIVERGENCES.json",
+        "docs/document-order/CONTENT_AUDIT.md",
+        "docs/document-order/TEXT_DIVERGENCES.json"
       ],
       "locks": []
     },
@@ -94,7 +96,8 @@
         "docs/ages-iii/VISUAL_AUDIT.md",
         "docs/ages-iii/VISUAL_AUDIT.json",
         "docs/technology-review/VISUAL_AUDIT.md",
-        "docs/ages-iv/VISUAL_AUDIT.md"
+        "docs/ages-iv/VISUAL_AUDIT.md",
+        "docs/document-order/VISUAL_AUDIT.md"
       ],
       "locks": []
     }
@@ -119,14 +122,120 @@
     "chapter-07-text-h-0123",
     "pretext",
     "resumo",
-    "chapter-01-text-h-0001"
+    "chapter-01-text-h-0001",
+    "ages-ii-sprint-0",
+    "ages-ii-sprint-1",
+    "ages-ii-sprint-2",
+    "ages-ii-sprint-3",
+    "ages-ii-sprint-4",
+    "ages-iii-sprint-0",
+    "ages-iii-sprint-1",
+    "ages-iii-sprint-2",
+    "ages-iii-sprint-3",
+    "ages-iii-sprint-4",
+    "chapter-03-text-h-0023",
+    "chapter-03-text-h-0024",
+    "chapter-03-text-h-0025",
+    "chapter-03-text-h-0026",
+    "chapter-03-text-h-0038",
+    "chapter-04-text-h-0039",
+    "chapter-04-text-h-0040",
+    "chapter-04-text-h-0041",
+    "chapter-04-text-h-0042",
+    "chapter-04-text-h-0043",
+    "chapter-04-text-h-0044",
+    "chapter-04-text-h-0045",
+    "chapter-04-text-h-0046",
+    "chapter-04-text-h-0047",
+    "chapter-04-text-h-0073",
+    "chapter-05-text-h-0074",
+    "chapter-05-text-h-0075",
+    "chapter-05-text-h-0076",
+    "chapter-05-text-h-0077",
+    "chapter-05-text-h-0078",
+    "chapter-05-text-h-0079",
+    "chapter-05-text-h-0080",
+    "chapter-05-text-h-0085",
+    "chapter-05-text-h-0086",
+    "chapter-05-text-h-0097",
+    "cliente-hoortech-sprint-0",
+    "cliente-hoortech-sprint-1",
+    "cliente-hoortech-sprint-2",
+    "cliente-hoortech-sprint-3",
+    "cliente-hoortech-sprint-4"
   ],
   "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
   "authorized_edition": "ages-iv-partial",
   "supplemental_authorizations": [
     {
       "evidence": "migration/approvals/ages-iv-frontmatter-authorization.json",
-      "units": ["pretext", "resumo", "chapter-01-text-h-0001"]
+      "units": [
+        "pretext",
+        "resumo",
+        "chapter-01-text-h-0001"
+      ]
+    },
+    {
+      "evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+      "units": [
+        "ages-ii-sprint-0",
+        "ages-ii-sprint-1",
+        "ages-ii-sprint-2",
+        "ages-ii-sprint-3",
+        "ages-ii-sprint-4",
+        "ages-iii-sprint-0",
+        "ages-iii-sprint-1",
+        "ages-iii-sprint-2",
+        "ages-iii-sprint-3",
+        "ages-iii-sprint-4",
+        "ages-iv-sprint-0",
+        "ages-iv-sprint-1",
+        "ages-iv-sprint-2",
+        "ages-iv-sprint-3",
+        "ages-iv-sprint-4",
+        "chapter-03-text-h-0023",
+        "chapter-03-text-h-0024",
+        "chapter-03-text-h-0025",
+        "chapter-03-text-h-0026",
+        "chapter-03-text-h-0038",
+        "chapter-04-text-h-0039",
+        "chapter-04-text-h-0040",
+        "chapter-04-text-h-0041",
+        "chapter-04-text-h-0042",
+        "chapter-04-text-h-0043",
+        "chapter-04-text-h-0044",
+        "chapter-04-text-h-0045",
+        "chapter-04-text-h-0046",
+        "chapter-04-text-h-0047",
+        "chapter-04-text-h-0073",
+        "chapter-05-text-h-0074",
+        "chapter-05-text-h-0075",
+        "chapter-05-text-h-0076",
+        "chapter-05-text-h-0077",
+        "chapter-05-text-h-0078",
+        "chapter-05-text-h-0079",
+        "chapter-05-text-h-0080",
+        "chapter-05-text-h-0085",
+        "chapter-05-text-h-0086",
+        "chapter-05-text-h-0097",
+        "chapter-06-text-h-0105",
+        "chapter-06-text-h-0106",
+        "chapter-06-text-h-0107",
+        "chapter-06-text-h-0108",
+        "chapter-06-text-h-0109",
+        "chapter-06-text-h-0110",
+        "chapter-06-text-h-0112",
+        "chapter-06-text-h-0113",
+        "chapter-06-text-h-0114",
+        "chapter-06-text-h-0115",
+        "chapter-06-text-h-0122",
+        "cliente-hoortech-sprint-0",
+        "cliente-hoortech-sprint-1",
+        "cliente-hoortech-sprint-2",
+        "cliente-hoortech-sprint-3",
+        "cliente-hoortech-sprint-4"
+      ],
+      "purpose": "Migração da participação Hoortech e renumeração estrutural exata aprovada após AGES IV"
     }
   ],
   "asset_ownership": {
@@ -168,6 +277,15 @@
     "ages-iv-sprint-0": [
       "relatorio_AGES_eduardo/imagens/original/asset-0033.png",
       "relatorio_AGES_eduardo/imagens/original/asset-0034.png"
+    ],
+    "chapter-03-text-h-0024": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0017.jpg"
+    ],
+    "cliente-hoortech-sprint-4": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0016.jpg"
+    ],
+    "chapter-03-text-h-0038": [
+      "relatorio_AGES_eduardo/imagens/original/asset-0013.jpg"
     ]
   },
   "correction_authorization_evidence": "migration/approvals/ages-i-ii-iii-technology-prose-correction.json"

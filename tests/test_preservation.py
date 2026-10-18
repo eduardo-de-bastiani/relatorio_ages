@@ -11,6 +11,7 @@ from scripts.migration_harness.preservation import (
     displayed_text,
     UnsupportedSerialization,
     _project_approved_presentation,
+    _verify_document_order_unit,
     _is_authorized_ages_iii_group_label_removal,
     AGES_III_PROTOTYPE_GROUP_LABELS,
     PRESENTATION_HEADINGS,
@@ -35,6 +36,7 @@ from scripts.migration_harness.preservation import (
     FRONTMATTER_UNITS,
     FRONTMATTER_TRANSFORM_IDS,
     _load_presentation_authorization,
+    DOCUMENT_ORDER_AUTHORIZATION,
     AGES_II_TECHNOLOGY_REFERENCE_KEYS,
     AGES_II_ADDITIONAL_REFERENCE_RECORDS,
     AGES_II_RFC_REFERENCE_FIELDS,
@@ -116,6 +118,68 @@ class PreservationTests(unittest.TestCase):
                     _project_approved_presentation(
                         source_id, spec["source_text"], spec["target_text"] + " altered", [kind], authorization,
                     )
+
+    def test_document_reordering_uses_exact_source_bound_heading_caption_and_reference_targets(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-03-text-h-0023")
+        relocation = authorization["approved_document_reordering"]
+        self.assertEqual(relocation["authorization_evidence"], DOCUMENT_ORDER_AUTHORIZATION)
+        scope = relocation["scope"]
+
+        for source_id, table_name in (
+            ("text-h-0040", "heading_numbering"),
+            ("text-p-0767", "figure_caption_numbering"),
+            ("text-p-0679", "inline_reference_adjustments"),
+        ):
+            with self.subTest(source_id=source_id):
+                entry = scope[table_name][source_id]
+                projected, evidence = _project_approved_presentation(
+                    source_id, entry["source_text"], entry["target_text"],
+                    ["document_reordering_numbering"], authorization,
+                )
+                self.assertEqual(projected, entry["source_text"])
+                self.assertEqual(evidence["displayed"], entry["target_text"])
+                self.assertEqual(evidence["authorization_evidence"], DOCUMENT_ORDER_AUTHORIZATION)
+                with self.assertRaises(UnsupportedSerialization):
+                    _project_approved_presentation(
+                        source_id, entry["source_text"], entry["target_text"] + " alterado",
+                        ["document_reordering_numbering"], authorization,
+                    )
+
+    def test_document_reordering_rejects_unmapped_source_ids(self):
+        repo = Path(__file__).resolve().parents[1]
+        authorization = _load_presentation_authorization(repo, "chapter-03-text-h-0023")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-0768", "texto", "texto alterado",
+                ["document_reordering_numbering"], authorization,
+            )
+
+    def test_document_order_unit_checks_exact_mapping_and_rendered_heading(self):
+        repo = Path(__file__).resolve().parents[1]
+        uid = "chapter-04-text-h-0046"
+        authorization = _load_presentation_authorization(repo, uid)
+        spec = authorization["approved_document_reordering"]["scope"]["heading_numbering"]["text-h-0046"]
+        unit_ledger = {
+            "document_reordering_authorization": {
+                "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+                "source_ids": ["text-h-0046"],
+            },
+            "element_map": [{
+                "source_id": "text-h-0046",
+                "serializations": ["document_reordering_numbering"],
+            }],
+        }
+        reader = lambda mapping: spec["target_text"]
+        self.assertEqual(
+            _verify_document_order_unit(uid, unit_ledger, {"text-h-0046": {}}, authorization, reader),
+            ["text-h-0046"],
+        )
+        with self.assertRaises(UnsupportedSerialization):
+            _verify_document_order_unit(
+                uid, unit_ledger, {"text-h-0046": {}}, authorization,
+                lambda mapping: spec["target_text"] + " alterado",
+            )
 
     def test_frontmatter_authorization_fails_closed_for_source_or_scope_changes(self):
         repo = Path(__file__).resolve().parents[1]
@@ -871,13 +935,26 @@ class PreservationTests(unittest.TestCase):
 
         omitted_override = json.loads(json.dumps(ledger))
         unit_ledger = omitted_override["units"][unit_id]
-        heading_map = next(item for item in unit_ledger["element_map"] if item["source_id"] == "text-h-0105")
-        heading_map["serializations"] = [
-            item for item in heading_map.get("serializations", []) if item != "abnt_section_numbering"
-        ]
-        unit_ledger.pop("approved_presentation_overrides", None)
+        unit_ledger.pop("document_reordering_authorization", None)
         rejected = audit_conversion({**manifest, "units": [unit]}, omitted_override, repo, unit_id)
-        self.assertIn("invalid_repository_link_style", self.codes(rejected), rejected)
+        self.assertIn("invalid_document_reordering_authorization", self.codes(rejected), rejected)
+
+    def test_document_order_reindex_keeps_edition_specific_wiki_placeholder_and_technology_gates_valid(self):
+        repo = Path(__file__).resolve().parents[1]
+        manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        for unit_id in (
+            "chapter-04-text-h-0043", "chapter-04-text-h-0044", "chapter-04-text-h-0045",
+            "chapter-05-text-h-0078", "chapter-06-text-h-0109", "chapter-06-text-h-0110",
+            "chapter-06-text-h-0112",
+            "chapter-06-text-h-0113",
+        ):
+            with self.subTest(unit_id=unit_id):
+                unit = next(item for item in manifest["units"] if item["id"] == unit_id)
+                ledger = json.loads((repo / "migration/ledgers" / f"{unit_id}.json").read_text(encoding="utf-8"))
+                report = audit_conversion({**manifest, "units": [unit]}, ledger, repo, unit_id)
+                errors = [item for item in report["findings"] if item.get("severity") == "error"]
+                self.assertEqual(errors, [], report)
+                self.assertEqual(report["status"], "pass", report)
 
     def test_technology_citation_serialization_is_removed_only_as_verified_apparatus(self):
         value = r"TypeScript\space\cite{ages-ii-typescript}"
@@ -1486,12 +1563,20 @@ class PreservationTests(unittest.TestCase):
 
     def test_ages_iii_prose_revision_keeps_original_internal_tabs_in_traceability(self):
         from scripts.migration_harness.technology_prose import verify
+        from scripts.migration_harness.preservation import _load_presentation_authorization
         repo = Path(__file__).resolve().parents[1]
         manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
         records = {item["id"]: item for item in manifest["records"]}
         uid = "chapter-05-text-h-0085"
         ledger = json.loads((repo / f"migration/ledgers/{uid}.json").read_text(encoding="utf-8"))
-        facts = verify(manifest, ledger, repo, uid)
+        authorization = _load_presentation_authorization(repo, uid)["approved_document_reordering"]["scope"]
+        unit = next(item for item in manifest["units"] if item["id"] == uid)
+        heading_id = unit["heading_id"]
+        facts = verify(
+            manifest, ledger, repo, uid,
+            document_reordering_ids=ledger["units"][uid]["document_reordering_authorization"]["source_ids"],
+            heading_display_text=authorization["heading_numbering"][heading_id]["target_text"],
+        )
         self.assertEqual(records["text-p-1084"]["text"].count("consultas t\tipadas"), 1)
         self.assertFalse(facts["lexical_equality_claimed"])
         self.assertEqual(facts["semantic_review"]["status"], "PENDING")
@@ -1741,7 +1826,7 @@ class PreservationTests(unittest.TestCase):
         unit["approved_apparatus"] = [apparatus]
         self.write(json.dumps({"phase": "edition", "authorization_evidence": evidence, "authorized_units": [uid]}), "harness.json")
         (self.root / "migration/approvals").mkdir(parents=True)
-        self.write(json.dumps({"kind": "user_execution_authorization", "scope": [uid], "quoted_instruction": "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente", "placeholders_explicitly_authorized": ["Banco de dados utilizado"]}), evidence)
+        self.write(json.dumps({"schema_version": 1, "kind": "user_execution_authorization", "edition": "AGES I / Easy Choose", "baseline_commit": "68d159b9b4168f2a913f5c1e4913c30397310437", "scope": [uid], "quoted_instruction": "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente", "placeholders_explicitly_authorized": ["Banco de dados utilizado"]}), evidence)
         return unit, apparatus
 
     def test_placeholder_requires_exact_user_evidence_heading_and_schema(self):
@@ -1756,6 +1841,10 @@ class PreservationTests(unittest.TestCase):
         self.assertIn("invalid_approved_apparatus", self.codes(self.audit()))
         apparatus.pop("ignore_text")
         self.write("{}", "harness.json")
+        self.assertEqual(self.audit()["status"], "pass", self.audit())
+        approval = json.loads((self.root / "migration/approvals/ages-i-authorization.json").read_text(encoding="utf-8"))
+        approval["placeholders_explicitly_authorized"].remove("Banco de dados utilizado")
+        self.write(json.dumps(approval), "migration/approvals/ages-i-authorization.json")
         self.assertIn("invalid_approved_apparatus", self.codes(self.audit()))
         unit["approved_apparatus"] = []
         self.assertIn("unsupported_target_scaffolding", self.codes(self.audit()))

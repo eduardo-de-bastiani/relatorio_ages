@@ -15,9 +15,10 @@
           "end_byte": 247,
           "serializations": [
             "abnt_section_numbering",
-            "original_whitespace"
+            "original_whitespace",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "bbfa057c41cb275e0fe0f61b5c1b71be7d493172d90350c5ec26243a60909199"
+          "target_sha256": "3fd6220fb3647b9a949c0c7117bd482edf52919a7fb9cbf84f64e89bb6c8ec3f"
         }
       ],
       "asset_map": [],
@@ -32,7 +33,7 @@
           "end_byte": 138,
           "source_start_id": "text-bookmark-start-0066",
           "source_end_id": "text-bookmark-end-0067",
-          "target_sha256": "bbfa057c41cb275e0fe0f61b5c1b71be7d493172d90350c5ec26243a60909199"
+          "target_sha256": "3fd6220fb3647b9a949c0c7117bd482edf52919a7fb9cbf84f64e89bb6c8ec3f"
         },
         {
           "source_heading_id": "text-h-0105",
@@ -44,7 +45,7 @@
           "end_byte": 167,
           "source_start_id": "text-bookmark-start-0067",
           "source_end_id": "text-bookmark-end-0066",
-          "target_sha256": "bbfa057c41cb275e0fe0f61b5c1b71be7d493172d90350c5ec26243a60909199"
+          "target_sha256": "3fd6220fb3647b9a949c0c7117bd482edf52919a7fb9cbf84f64e89bb6c8ec3f"
         }
       ],
       "structural_dispositions": [
@@ -79,6 +80,12 @@
       },
       "approved_presentation_overrides": {
         "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-h-0105"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
         "source_ids": [
           "text-h-0105"
         ]

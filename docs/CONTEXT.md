@@ -12,6 +12,8 @@ Vocabulário do memorial de Eduardo e de sua preservação documental.
 
 **Participação como cliente**: experiência no projeto Hoortech, situada no original entre AGES I e AGES II. Suas reflexões estão integradas ao relato, sem caixas próprias.
 
+**Ordem de apresentação autorizada (17/10/2026)**: no memorial LaTeX, mover a participação como cliente Hoortech para depois da conclusão da AGES IV e antes do título final. A origem ODT não se move nem é editada. A ordem resultante é trajetória (cap. 1), AGES I (2), AGES II (3), AGES III (4), AGES IV (5), Hoortech (6) e título de considerações finais (7). A referência original “No tópico 3.2” dentro de Hoortech passa exatamente a “No tópico 6.2”. A autorização detalha os 56 títulos, 29 legendas e os alvos numéricos; nenhuma outra redação é autorizada.
+
 **Sprint**: unidade temporal relatada dentro de uma participação, com atividades e reflexão quando existente. Sua identidade inclui a participação e o número; “Sprint 0” isoladamente é ambíguo.
 
 **Reflexão**: conteúdo pessoal ou introspectivo do autor. Pode aparecer em uma caixa ou no texto corrido; não equivale automaticamente a conclusão de seção.

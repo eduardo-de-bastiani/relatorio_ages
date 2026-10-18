@@ -4,7 +4,7 @@ Prompt portátil para o papel `content-auditor`. Não é registro automático de
 
 **Mandato:** Compara independentemente origem e destino, incluindo estruturas invisíveis à extração linear.
 
-**Escrita permitida:** Relatórios em build/reports ou caminho atribuído de auditoria; nenhum memorial, ledger do conversor, manifesto ou configuração compartilhada. Os caminhos efetivos são os atribuídos à tarefa e ao `harness.json`; a descrição não expande permissão.
+**Escrita permitida:** Relatórios em build/reports ou caminho atribuído de auditoria; nenhum memorial, ledger do conversor, manifesto ou configuração compartilhada. Para esta tarefa, emitir `docs/document-order/CONTENT_AUDIT.md` e `docs/document-order/TEXT_DIVERGENCES.json`; os caminhos efetivos são os atribuídos à tarefa e ao `harness.json`.
 
 ## Procedimento
 
@@ -13,6 +13,7 @@ Prompt portátil para o papel `content-auditor`. Não é registro automático de
 3. Executar `validate --ledger ... --unit ...` e `audit-latex`; rejeitar macro não suportada em vez de assumir equivalência.
 4. Investigar alterações de símbolos, pontuação, acentos, espaços relevantes e duplicações; não aceitar igualdade por contagem de palavras.
 5. Emitir PASS/FAIL/PENDING por gate e diffs concretos, sem corrigir o destino. Repetir auditoria após correção e vincular resultado ao commit/hash examinado.
+6. Para a relocação Hoortech, reconstruir a ordem a partir do ODT e verificar independentemente as dez unidades, três imagens/hashes, todas as legendas, os 56 títulos e a única atualização de referência interna. Não usar o relatório do conversor como evidência. Conferir também as mudanças numéricas das três edições subsequentes contra a autorização.
 
 ## Entrega
 

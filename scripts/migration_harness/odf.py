@@ -518,10 +518,11 @@ def verify_manifest(manifest: dict, source: Path) -> list[dict]:
         if not isinstance(overlay, dict) or overlay.get("schema_version") != 1 or not isinstance(overlay.get("tasks"), dict):
             differences.append({"code": "manifest-invalid-overlay", "path": "$.migration_overlay"})
             return differences
-        allowed_fields = {"schema_version", "tasks"}
+        allowed_fields = {"schema_version", "tasks", "document_order"}
         if set(overlay) - allowed_fields:
             differences.append({"code": "manifest-invalid-overlay-field", "path": "$.migration_overlay"})
         units = {u["id"]: u for u in expected["units"]}
+        records = {record["id"]: record for record in expected["records"]}
         for uid, task in overlay["tasks"].items():
             location = "$.migration_overlay.tasks." + uid
             if uid not in units or not isinstance(task, dict):
@@ -554,4 +555,73 @@ def verify_manifest(manifest: dict, source: Path) -> list[dict]:
                     continue
                 if not isinstance(task.get(key), str) or not re.fullmatch("[0-9a-f]{" + str(length) + "}", task[key]):
                     differences.append({"code": "manifest-invalid-task-hash", "path": location + "." + key})
+        document_order = overlay.get("document_order")
+        if document_order is not None:
+            location = "$.migration_overlay.document_order"
+            required = {
+                "schema_version", "status", "authorization_evidence", "authorization_evidence_sha256",
+                "baseline_commit", "source_sha256", "moved_units", "affected_units", "affected_source_ids",
+                "final_chapter_sequence", "planned_unit_sequence_under_chapters", "heading_numbering",
+                "figure_caption_numbering", "unchanged_figure_range", "inline_reference_adjustments",
+                "validation_status", "constraints", "scope_note",
+            }
+            if not isinstance(document_order, dict) or set(document_order) != required:
+                differences.append({"code": "manifest-invalid-document-order-overlay", "path": location})
+                return differences
+            if (document_order.get("schema_version") != 1
+                    or document_order.get("status") not in {"authorized-pending-integration-and-audit", "integrated-pending-audit", "audited-pending-human-review"}
+                    or document_order.get("authorization_evidence") != "migration/approvals/cliente-hoortech-and-document-order-authorization.json"
+                    or document_order.get("source_sha256") != expected["source"]["sha256"]):
+                differences.append({"code": "manifest-invalid-document-order-metadata", "path": location})
+            for key, length in {"authorization_evidence_sha256": 64, "baseline_commit": 40, "source_sha256": 64}.items():
+                if not isinstance(document_order.get(key), str) or not re.fullmatch("[0-9a-f]{" + str(length) + "}", document_order[key]):
+                    differences.append({"code": "manifest-invalid-document-order-hash", "path": location + "." + key})
+            for key in ("moved_units", "affected_units", "affected_source_ids", "planned_unit_sequence_under_chapters"):
+                value = document_order.get(key)
+                if not isinstance(value, list) or any(not isinstance(item, str) for item in value) or len(value) != len(set(value)):
+                    differences.append({"code": "manifest-invalid-document-order-list", "path": location + "." + key})
+            sequence = document_order.get("final_chapter_sequence")
+            if (not isinstance(sequence, list)
+                    or [item.get("chapter") for item in sequence if isinstance(item, dict)] != list(range(1, 8))
+                    or any(not isinstance(item, dict) or set(item) != {"chapter", "unit", "title"}
+                           or item.get("unit") not in units or not isinstance(item.get("title"), str)
+                           for item in sequence)):
+                differences.append({"code": "manifest-invalid-final-chapter-sequence", "path": location + ".final_chapter_sequence"})
+            all_mappings = {}
+            for key in ("heading_numbering", "figure_caption_numbering"):
+                mappings = document_order.get(key)
+                if not isinstance(mappings, list):
+                    differences.append({"code": "manifest-invalid-document-order-map", "path": location + "." + key})
+                    continue
+                seen = set()
+                for item in mappings:
+                    if not isinstance(item, dict) or "source_id" not in item:
+                        differences.append({"code": "manifest-invalid-document-order-entry", "path": location + "." + key})
+                        continue
+                    source_id = item["source_id"]
+                    if source_id in seen:
+                        differences.append({"code": "manifest-duplicate-document-order-id", "path": location + "." + key})
+                    seen.add(source_id)
+                    record = records.get(source_id)
+                    if (record is None or item.get("unit_id") != record.get("unit_id")
+                            or item.get("source_text") != record.get("text")):
+                        differences.append({"code": "manifest-document-order-source-mismatch",
+                                            "path": location + "." + key + "." + str(source_id)})
+                    all_mappings[source_id] = item
+            inline = document_order.get("inline_reference_adjustments")
+            if not isinstance(inline, list):
+                differences.append({"code": "manifest-invalid-document-order-map", "path": location + ".inline_reference_adjustments"})
+                inline = []
+            for item in inline:
+                if not isinstance(item, dict) or item.get("source_id") not in records:
+                    differences.append({"code": "manifest-invalid-document-order-entry", "path": location + ".inline_reference_adjustments"})
+                    continue
+                rid = item["source_id"]
+                if item.get("unit_id") != records[rid].get("unit_id") or item.get("source_text") != records[rid].get("text"):
+                    differences.append({"code": "manifest-document-order-source-mismatch",
+                                        "path": location + ".inline_reference_adjustments." + str(rid)})
+                all_mappings[rid] = item
+            ids = document_order.get("affected_source_ids", [])
+            if set(ids) != set(all_mappings) or len(ids) != len(all_mappings):
+                differences.append({"code": "manifest-document-order-id-set-mismatch", "path": location + ".affected_source_ids"})
     return differences

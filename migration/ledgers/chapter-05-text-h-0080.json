@@ -13,8 +13,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0080.tex",
           "start_byte": 164,
           "end_byte": 205,
-          "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1053",
@@ -24,7 +26,7 @@
           "serializations": [
             "technology_citation"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1054",
@@ -32,7 +34,7 @@
           "start_byte": 464,
           "end_byte": 486,
           "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1056",
@@ -42,7 +44,7 @@
           "serializations": [
             "approved_group_label_removal"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1058",
@@ -50,9 +52,10 @@
           "start_byte": 699,
           "end_byte": 752,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "draw-image-0019",
@@ -60,7 +63,7 @@
           "start_byte": 650,
           "end_byte": 821,
           "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1059",
@@ -69,9 +72,10 @@
           "end_byte": 1015,
           "serializations": [
             "abnt_figure_caption",
-            "original_whitespace"
+            "original_whitespace",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "draw-image-0020",
@@ -79,7 +83,7 @@
           "start_byte": 887,
           "end_byte": 1084,
           "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1060",
@@ -87,9 +91,10 @@
           "start_byte": 1199,
           "end_byte": 1250,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "draw-image-0021",
@@ -97,7 +102,7 @@
           "start_byte": 1150,
           "end_byte": 1319,
           "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-h-0084",
@@ -107,7 +112,7 @@
           "serializations": [
             "approved_group_label_removal"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1063",
@@ -115,9 +120,10 @@
           "start_byte": 1567,
           "end_byte": 1621,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "draw-image-0022",
@@ -125,7 +131,7 @@
           "start_byte": 1518,
           "end_byte": 1690,
           "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "text-p-1064",
@@ -133,9 +139,10 @@
           "start_byte": 1805,
           "end_byte": 1868,
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         },
         {
           "source_id": "draw-image-0023",
@@ -143,7 +150,7 @@
           "start_byte": 1756,
           "end_byte": 1937,
           "serializations": [],
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         }
       ],
       "asset_map": [
@@ -189,7 +196,7 @@
           "end_byte": 123,
           "source_start_id": "text-bookmark-start-0057",
           "source_end_id": "text-bookmark-end-0057",
-          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+          "target_sha256": "f865c738adfec14d8b2d1d39639530f4fa408fd32a5258cf859413391e176bed"
         }
       ],
       "structural_dispositions": [
@@ -378,7 +385,18 @@
           "transformation": "Join only the presentation boundary between the two adjacent source paragraphs, using one ordinary interword space; preserve every source word, punctuation mark, accent, order, and the existing Figma citation.",
           "source_text_changed": false
         }
-      ]
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0080",
+          "text-p-1058",
+          "text-p-1059",
+          "text-p-1060",
+          "text-p-1063",
+          "text-p-1064"
+        ]
+      }
     }
   },
   "macro_contract": {

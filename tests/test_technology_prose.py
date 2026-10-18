@@ -12,7 +12,7 @@ import unittest
 from pathlib import Path
 
 from scripts.migration_harness import technology_prose as prose
-from scripts.migration_harness.preservation import audit_conversion
+from scripts.migration_harness.preservation import audit_conversion, _load_presentation_authorization
 
 
 class TechnologyProseTests(unittest.TestCase):
@@ -38,6 +38,11 @@ class TechnologyProseTests(unittest.TestCase):
         paths = [prose.AUTHORIZATION, self.approval["bibliography"]["path"]]
         for policy in self.approval["units"].values():
             paths.extend((policy["tex_path"], policy["ledger_path"]))
+        paths.extend(["docs/CONTENT_MANIFEST.json", "RELATORIO_ATUAL.odt"])
+        paths.extend(
+            str(path.relative_to(self.repo))
+            for path in (self.repo / "migration/approvals").glob("*.json")
+        )
         for raw in paths:
             target = self.root / raw
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -53,7 +58,17 @@ class TechnologyProseTests(unittest.TestCase):
         self.target = self.root / policy["tex_path"]
 
     def verify(self):
-        return prose.verify(self.manifest, self.ledger, self.root, self.uid)
+        document_ids = self.unit_ledger.get("document_reordering_authorization", {}).get("source_ids")
+        heading_display = None
+        if document_ids is not None:
+            authorization = _load_presentation_authorization(self.repo, self.uid)
+            heading_id = next(item for item in self.manifest["units"] if item["id"] == self.uid)["heading_id"]
+            heading_display = authorization["approved_document_reordering"]["scope"]["heading_numbering"][heading_id]["target_text"]
+        return prose.verify(
+            self.manifest, self.ledger, self.root, self.uid,
+            document_reordering_ids=document_ids,
+            heading_display_text=heading_display,
+        )
 
     def audit(self):
         return audit_conversion(self.manifest, self.ledger, self.root, self.uid)
@@ -89,6 +104,29 @@ class TechnologyProseTests(unittest.TestCase):
                 self.assertEqual(report["status"], "pass", report["findings"])
                 self.assertEqual(report["facts"]["text_records_matched"], 0)
                 self.assertTrue(any(item["code"] == "technology_prose_independent_review_required" for item in report["findings"]))
+
+    def test_document_order_extension_is_explicit_and_unit_scoped(self):
+        unit = next(item for item in self.manifest["units"] if item["id"] == self.uid)
+        heading_id = unit["heading_id"]
+        self.unit_ledger["document_reordering_authorization"] = {
+            "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+            "source_ids": [heading_id],
+        }
+        with self.assertRaisesRegex(ValueError, "missing fields"):
+            prose.verify(self.manifest, self.ledger, self.root, self.uid)
+        result = prose.verify(
+            self.manifest, self.ledger, self.root, self.uid,
+            document_reordering_ids=[heading_id],
+            heading_display_text=_load_presentation_authorization(self.repo, self.uid)["approved_document_reordering"]["scope"]["heading_numbering"][heading_id]["target_text"],
+        )
+        self.assertEqual(result["unit_id"], self.uid)
+        self.unit_ledger["document_reordering_authorization"]["source_ids"].append("text-p-0001")
+        with self.assertRaisesRegex(ValueError, "document-order scope"):
+            prose.verify(
+                self.manifest, self.ledger, self.root, self.uid,
+                document_reordering_ids=[heading_id],
+                heading_display_text=_load_presentation_authorization(self.repo, self.uid)["approved_document_reordering"]["scope"]["heading_numbering"][heading_id]["target_text"],
+            )
 
     def test_missing_source_narrative_mapping_rejected(self):
         self.unit_ledger["element_map"].pop(1)

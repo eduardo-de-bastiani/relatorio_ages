@@ -22,9 +22,10 @@
           "start_byte": 163,
           "end_byte": 177,
           "serializations": [
-            "abnt_section_numbering"
+            "abnt_section_numbering",
+            "document_reordering_numbering"
           ],
-          "target_sha256": "9aed4356936033e09dcb7dd7d0bbad985ae0d8aedf8e47c41caafd50b0631c01"
+          "target_sha256": "457a703cf6123d62928d3516c35d0665b6604262e18fc3aa7afb8227a2e01fae"
         }
       ],
       "asset_map": [],
@@ -39,7 +40,7 @@
           "command": "hypertarget",
           "start_byte": 78,
           "end_byte": 127,
-          "target_sha256": "9aed4356936033e09dcb7dd7d0bbad985ae0d8aedf8e47c41caafd50b0631c01"
+          "target_sha256": "457a703cf6123d62928d3516c35d0665b6604262e18fc3aa7afb8227a2e01fae"
         }
       ],
       "structural_dispositions": [],
@@ -72,6 +73,12 @@
       },
       "approved_presentation_overrides": {
         "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-h-0122"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
         "source_ids": [
           "text-h-0122"
         ]

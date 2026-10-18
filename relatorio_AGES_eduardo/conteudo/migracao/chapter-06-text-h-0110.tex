@@ -1,9 +1,9 @@
 % Conversão de chapter-06-text-h-0110; origem RELATORIO_ATUAL.odt.
 \hypertarget{__RefHeading___Toc4837_3118176633}{}
 \refstepcounter{subsection}
-\subsection*{6.2.3 Arquitetura utilizada}
+\subsection*{5.2.3 Arquitetura utilizada}
 \label{ages-iv:text-h-0110}
-\addcontentsline{toc}{subsection}{6.2.3 Arquitetura utilizada}
+\addcontentsline{toc}{subsection}{5.2.3 Arquitetura utilizada}
 
 % SOURCE text-p-1347
 A arquitetura da solução foi projetada com foco em desacoplamento, modularidade e manutenibilidade entre as camadas mobile e backend. O frontend consiste em um aplicativo mobile desenvolvido em React Native\space\cite{ages-iv-react-native} com Expo\space\cite{ages-iv-expo}, estruturado em uma arquitetura orientada a módulos funcionais com gerenciamento de estado de servidor via TanStack Query\space\cite{ages-iv-tanstack-query} e preparado para distribuição em ambiente iOS e Android. O backend, construído em Python\space\cite{ages-iv-python} com FastAPI\space\cite{ages-iv-fastapi} e conteinerizado via Docker\space\cite{ages-iv-docker}, expõe uma API REST assíncrona organizada em camadas, centralizando as regras operacionais da plataforma, validação estrita de contratos de dados com Pydantic\space\cite{ages-iv-pydantic} e integração com APIs externas de busca musical. A camada de persistência relacional e armazenamento de arquivos de mídia é sustentada pelo Supabase\space\cite{ages-iv-supabase}. Complementando a infraestrutura, o ecossistema utiliza esteiras automatizadas de CI/CD via GitHub Actions\space\cite{ages-iv-github-actions}, integradas a análises estáticas de qualidade de código (SonarCloud\space\cite{ages-iv-sonar}) e execução de testes automatizados com Pytest\space\cite{ages-iv-pytest} e Jest\space\cite{ages-iv-jest}.\par
@@ -12,7 +12,7 @@ A arquitetura da solução foi projetada com foco em desacoplamento, modularidad
 \href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}{}
 
 % FIGURE draw-image-0026 / CAPTION text-p-1350
-\memorialfigure{imagens/original/asset-0001.png}{\textbf{Figura 26 –} Diagrama de Arquitetura - AGES IV}{ages-iv:draw-image-0026}{Fonte: pendente de identificação}{0.92}
+\memorialfigure{imagens/original/asset-0001.png}{\textbf{Figura 23 –} Diagrama de Arquitetura - AGES IV}{ages-iv:draw-image-0026}{Fonte: pendente de identificação}{0.92}
 
 % SOURCE text-p-1362 / text-a-0151
 Mais informações sobre a arquitetura estão disponíveis em: \href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}{Arquitetura}\par

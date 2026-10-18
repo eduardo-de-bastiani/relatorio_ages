@@ -1,0 +1,858 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_document_order_and_numbering_scope",
+  "date": "2026-10-17",
+  "approval_status": "authorized_for_execution_pending_human_review",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "baseline": {
+    "branch": "migration/ages-iii",
+    "commit": "8f952a6e3b64c8783cef823e52ed2451af653eae",
+    "working_tree_clean": true
+  },
+  "user_instruction": "Após o envio das alterações anteriores, portar a experiência como cliente da AGES após a conclusão da AGES IV (item 6.4), ajustando as numerações dos tópicos afetados.",
+  "user_decision": "Renumerar em sequência (recomendado)",
+  "scope": {
+    "moved_edition": "Participação como cliente Hoortech",
+    "source_order": "capítulo 3, entre AGES I e AGES II",
+    "target_order": "após a conclusão da AGES IV (atual seção 6.4) e antes de Considerações finais (Somente AGES IV)",
+    "units": [
+      "chapter-03-text-h-0023",
+      "chapter-03-text-h-0024",
+      "chapter-03-text-h-0025",
+      "chapter-03-text-h-0026",
+      "cliente-hoortech-sprint-0",
+      "cliente-hoortech-sprint-1",
+      "cliente-hoortech-sprint-2",
+      "cliente-hoortech-sprint-3",
+      "cliente-hoortech-sprint-4",
+      "chapter-03-text-h-0038"
+    ],
+    "affected_units": [
+      "ages-ii-sprint-0",
+      "ages-ii-sprint-1",
+      "ages-ii-sprint-2",
+      "ages-ii-sprint-3",
+      "ages-ii-sprint-4",
+      "ages-iii-sprint-0",
+      "ages-iii-sprint-1",
+      "ages-iii-sprint-2",
+      "ages-iii-sprint-3",
+      "ages-iii-sprint-4",
+      "ages-iv-sprint-0",
+      "ages-iv-sprint-1",
+      "ages-iv-sprint-2",
+      "ages-iv-sprint-3",
+      "ages-iv-sprint-4",
+      "chapter-03-text-h-0023",
+      "chapter-03-text-h-0024",
+      "chapter-03-text-h-0025",
+      "chapter-03-text-h-0026",
+      "chapter-03-text-h-0038",
+      "chapter-04-text-h-0039",
+      "chapter-04-text-h-0040",
+      "chapter-04-text-h-0041",
+      "chapter-04-text-h-0042",
+      "chapter-04-text-h-0043",
+      "chapter-04-text-h-0044",
+      "chapter-04-text-h-0045",
+      "chapter-04-text-h-0046",
+      "chapter-04-text-h-0047",
+      "chapter-04-text-h-0073",
+      "chapter-05-text-h-0074",
+      "chapter-05-text-h-0075",
+      "chapter-05-text-h-0076",
+      "chapter-05-text-h-0077",
+      "chapter-05-text-h-0078",
+      "chapter-05-text-h-0079",
+      "chapter-05-text-h-0080",
+      "chapter-05-text-h-0085",
+      "chapter-05-text-h-0086",
+      "chapter-05-text-h-0097",
+      "chapter-06-text-h-0105",
+      "chapter-06-text-h-0106",
+      "chapter-06-text-h-0107",
+      "chapter-06-text-h-0108",
+      "chapter-06-text-h-0109",
+      "chapter-06-text-h-0110",
+      "chapter-06-text-h-0112",
+      "chapter-06-text-h-0113",
+      "chapter-06-text-h-0114",
+      "chapter-06-text-h-0115",
+      "chapter-06-text-h-0122",
+      "cliente-hoortech-sprint-0",
+      "cliente-hoortech-sprint-1",
+      "cliente-hoortech-sprint-2",
+      "cliente-hoortech-sprint-3",
+      "cliente-hoortech-sprint-4"
+    ],
+    "final_chapter_sequence": [
+      {
+        "chapter": 1,
+        "unit": "chapter-01-text-h-0001",
+        "title": "Apresentação da trajetória do aluno"
+      },
+      {
+        "chapter": 2,
+        "unit": "chapter-02-text-h-0002",
+        "title": "AGES I"
+      },
+      {
+        "chapter": 3,
+        "unit": "chapter-04-text-h-0039",
+        "title": "AGES II"
+      },
+      {
+        "chapter": 4,
+        "unit": "chapter-05-text-h-0074",
+        "title": "AGES III"
+      },
+      {
+        "chapter": 5,
+        "unit": "chapter-06-text-h-0105",
+        "title": "AGES IV"
+      },
+      {
+        "chapter": 6,
+        "unit": "chapter-03-text-h-0023",
+        "title": "Participação como cliente Hoortech"
+      },
+      {
+        "chapter": 7,
+        "unit": "chapter-07-text-h-0123",
+        "title": "Considerações finais (Somente AGES IV); title-only scope remains in force"
+      }
+    ],
+    "heading_numbering": {
+      "text-h-0023": {
+        "unit_id": "chapter-03-text-h-0023",
+        "source_text": "3 - Cliente ages – hoortech",
+        "current_display_text": "3 - Cliente ages – hoortech",
+        "target_text": "6 Cliente ages – hoortech",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0024": {
+        "unit_id": "chapter-03-text-h-0024",
+        "source_text": "3.1 Introdução",
+        "current_display_text": "3.1 Introdução",
+        "target_text": "6.1 Introdução",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0025": {
+        "unit_id": "chapter-03-text-h-0025",
+        "source_text": "3.2 Apresentação e Entrega das Sprints",
+        "current_display_text": "3.2 Apresentação e Entrega das Sprints",
+        "target_text": "6.2 Apresentação e Entrega das Sprints",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0026": {
+        "unit_id": "chapter-03-text-h-0026",
+        "source_text": "3.2.1 Apresentação do Projeto aos Alunos",
+        "current_display_text": "3.2.1 Apresentação do Projeto aos Alunos",
+        "target_text": "6.2.1 Apresentação do Projeto aos Alunos",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0028": {
+        "unit_id": "cliente-hoortech-sprint-0",
+        "source_text": "3.2.2 Sprint 0",
+        "current_display_text": "3.2.2 Sprint 0",
+        "target_text": "6.2.2 Sprint 0",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0029": {
+        "unit_id": "cliente-hoortech-sprint-1",
+        "source_text": "3.2.3 Sprint 1",
+        "current_display_text": "3.2.3 Sprint 1",
+        "target_text": "6.2.3 Sprint 1",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0033": {
+        "unit_id": "cliente-hoortech-sprint-2",
+        "source_text": "3.2.4 Sprint 2",
+        "current_display_text": "3.2.4 Sprint 2",
+        "target_text": "6.2.4 Sprint 2",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0034": {
+        "unit_id": "cliente-hoortech-sprint-3",
+        "source_text": "3.2.5 Sprint 3",
+        "current_display_text": "3.2.5 Sprint 3",
+        "target_text": "6.2.5 Sprint 3",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0035": {
+        "unit_id": "cliente-hoortech-sprint-4",
+        "source_text": "3.2.6 Sprint 4",
+        "current_display_text": "3.2.6 Sprint 4",
+        "target_text": "6.2.6 Sprint 4",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0038": {
+        "unit_id": "chapter-03-text-h-0038",
+        "source_text": "3.3 Conclusão",
+        "current_display_text": "3.3 Conclusão",
+        "target_text": "6.3 Conclusão",
+        "source_chapter": 3,
+        "target_chapter": 6
+      },
+      "text-h-0039": {
+        "unit_id": "chapter-04-text-h-0039",
+        "source_text": "4 - PROJETO AGES II – INDÚSTRIA DIGITAL",
+        "current_display_text": "4 PROJETO AGES II – INDÚSTRIA DIGITAL",
+        "target_text": "3 PROJETO AGES II – INDÚSTRIA DIGITAL",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0040": {
+        "unit_id": "chapter-04-text-h-0040",
+        "source_text": "4.1 Introdução",
+        "current_display_text": "4.1 Introdução",
+        "target_text": "3.1 Introdução",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0041": {
+        "unit_id": "chapter-04-text-h-0041",
+        "source_text": "4.2 Desenvolvimento do Projeto",
+        "current_display_text": "4.2 Desenvolvimento do Projeto",
+        "target_text": "3.2 Desenvolvimento do Projeto",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0042": {
+        "unit_id": "chapter-04-text-h-0042",
+        "source_text": "4.2.1 Repositório do código Fonte do Projeto",
+        "current_display_text": "4.2.1 Repositório do código Fonte do Projeto",
+        "target_text": "3.2.1 Repositório do código Fonte do Projeto",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0043": {
+        "unit_id": "chapter-04-text-h-0043",
+        "source_text": "4.2.2 Banco de dados utilizado",
+        "current_display_text": "4.2.2 Banco de dados utilizado",
+        "target_text": "3.2.2 Banco de dados utilizado",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0044": {
+        "unit_id": "chapter-04-text-h-0044",
+        "source_text": "4.2.3 Arquitetura utilizada",
+        "current_display_text": "4.2.3 Arquitetura utilizada",
+        "target_text": "3.2.3 Arquitetura utilizada",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0045": {
+        "unit_id": "chapter-04-text-h-0045",
+        "source_text": "4.2.4 Protótipos das telas desenvolvidas",
+        "current_display_text": "4.2.4 Protótipos das telas desenvolvidas",
+        "target_text": "3.2.4 Protótipos das telas desenvolvidas",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0046": {
+        "unit_id": "chapter-04-text-h-0046",
+        "source_text": "4.2.5 Tecnologias utilizadas",
+        "current_display_text": "4.2.5 Tecnologias utilizadas",
+        "target_text": "3.2.5 Tecnologias utilizadas",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0047": {
+        "unit_id": "chapter-04-text-h-0047",
+        "source_text": "4.3 Atividades desempenhadas pelo aluno no projeto",
+        "current_display_text": "4.3 Atividades desempenhadas pelo aluno no projeto",
+        "target_text": "3.3 Atividades desempenhadas pelo aluno no projeto",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0048": {
+        "unit_id": "ages-ii-sprint-0",
+        "source_text": "4.3.1 Sprint 0",
+        "current_display_text": "4.3.1 Sprint 0",
+        "target_text": "3.3.1 Sprint 0",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0049": {
+        "unit_id": "ages-ii-sprint-1",
+        "source_text": "4.3.2 Sprint 1",
+        "current_display_text": "4.3.2 Sprint 1",
+        "target_text": "3.3.2 Sprint 1",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0050": {
+        "unit_id": "ages-ii-sprint-2",
+        "source_text": "4.3.3 Sprint 2",
+        "current_display_text": "4.3.3 Sprint 2",
+        "target_text": "3.3.3 Sprint 2",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0051": {
+        "unit_id": "ages-ii-sprint-3",
+        "source_text": "4.3.4 Sprint 3",
+        "current_display_text": "4.3.4 Sprint 3",
+        "target_text": "3.3.4 Sprint 3",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0067": {
+        "unit_id": "ages-ii-sprint-4",
+        "source_text": "4.3.5 Sprint 4",
+        "current_display_text": "4.3.5 Sprint 4",
+        "target_text": "3.3.5 Sprint 4",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0073": {
+        "unit_id": "chapter-04-text-h-0073",
+        "source_text": "4.4. Conclusão",
+        "current_display_text": "4.4 Conclusão",
+        "target_text": "3.4 Conclusão",
+        "source_chapter": 4,
+        "target_chapter": 3
+      },
+      "text-h-0074": {
+        "unit_id": "chapter-05-text-h-0074",
+        "source_text": "5 - PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+        "current_display_text": "5 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+        "target_text": "4 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0075": {
+        "unit_id": "chapter-05-text-h-0075",
+        "source_text": "5.1 Introdução",
+        "current_display_text": "5.1 Introdução",
+        "target_text": "4.1 Introdução",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0076": {
+        "unit_id": "chapter-05-text-h-0076",
+        "source_text": "5.2 Desenvolvimento do Projeto",
+        "current_display_text": "5.2 Desenvolvimento do Projeto",
+        "target_text": "4.2 Desenvolvimento do Projeto",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0077": {
+        "unit_id": "chapter-05-text-h-0077",
+        "source_text": "5.2.1 Repositório do código Fonte do Projeto",
+        "current_display_text": "5.2.1 Repositório do código Fonte do Projeto",
+        "target_text": "4.2.1 Repositório do código Fonte do Projeto",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0078": {
+        "unit_id": "chapter-05-text-h-0078",
+        "source_text": "5.2.2 Banco de dados utilizado",
+        "current_display_text": "5.2.2 Banco de dados utilizado",
+        "target_text": "4.2.2 Banco de dados utilizado",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0079": {
+        "unit_id": "chapter-05-text-h-0079",
+        "source_text": "5.2.3 Arquitetura utilizada",
+        "current_display_text": "5.2.3 Arquitetura utilizada",
+        "target_text": "4.2.3 Arquitetura utilizada",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0080": {
+        "unit_id": "chapter-05-text-h-0080",
+        "source_text": "5.2.4 Protótipos das telas desenvolvidas",
+        "current_display_text": "5.2.4 Protótipos das telas desenvolvidas",
+        "target_text": "4.2.4 Protótipos das telas desenvolvidas",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0085": {
+        "unit_id": "chapter-05-text-h-0085",
+        "source_text": "5.2.5 Tecnologias utilizadas",
+        "current_display_text": "5.2.5 Tecnologias utilizadas",
+        "target_text": "4.2.5 Tecnologias utilizadas",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0086": {
+        "unit_id": "chapter-05-text-h-0086",
+        "source_text": "5.3 Atividades desempenhadas pelo aluno no projetos",
+        "current_display_text": "5.3 Atividades desempenhadas pelo aluno no projetos",
+        "target_text": "4.3 Atividades desempenhadas pelo aluno no projetos",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0087": {
+        "unit_id": "ages-iii-sprint-0",
+        "source_text": "5.3.1 Sprint 0",
+        "current_display_text": "5.3.1 Sprint 0",
+        "target_text": "4.3.1 Sprint 0",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0091": {
+        "unit_id": "ages-iii-sprint-1",
+        "source_text": "5.3.2 Sprint 1",
+        "current_display_text": "5.3.2 Sprint 1",
+        "target_text": "4.3.2 Sprint 1",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0092": {
+        "unit_id": "ages-iii-sprint-2",
+        "source_text": "5.3.3 Sprint 2",
+        "current_display_text": "5.3.3 Sprint 2",
+        "target_text": "4.3.3 Sprint 2",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0095": {
+        "unit_id": "ages-iii-sprint-3",
+        "source_text": "5.3.4 Sprint 3",
+        "current_display_text": "5.3.4 Sprint 3",
+        "target_text": "4.3.4 Sprint 3",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0096": {
+        "unit_id": "ages-iii-sprint-4",
+        "source_text": "5.3.5 Sprint 4",
+        "current_display_text": "5.3.5 Sprint 4",
+        "target_text": "4.3.5 Sprint 4",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0097": {
+        "unit_id": "chapter-05-text-h-0097",
+        "source_text": "5.4. Conclusão",
+        "current_display_text": "5.4 Conclusão",
+        "target_text": "4.4 Conclusão",
+        "source_chapter": 5,
+        "target_chapter": 4
+      },
+      "text-h-0105": {
+        "unit_id": "chapter-06-text-h-0105",
+        "source_text": "6 - PROJETOS AGES IV - RECORDA ",
+        "current_display_text": "6 PROJETOS AGES IV - RECORDA ",
+        "target_text": "5 PROJETOS AGES IV - RECORDA ",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0106": {
+        "unit_id": "chapter-06-text-h-0106",
+        "source_text": "6.1 Introdução",
+        "current_display_text": "6.1 Introdução",
+        "target_text": "5.1 Introdução",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0107": {
+        "unit_id": "chapter-06-text-h-0107",
+        "source_text": "6.2 Desenvolvimento do Projeto",
+        "current_display_text": "6.2 Desenvolvimento do Projeto",
+        "target_text": "5.2 Desenvolvimento do Projeto",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0108": {
+        "unit_id": "chapter-06-text-h-0108",
+        "source_text": "6.2.1 Repositório do código Fonte do Projeto",
+        "current_display_text": "6.2.1 Repositório do código Fonte do Projeto",
+        "target_text": "5.2.1 Repositório do código Fonte do Projeto",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0109": {
+        "unit_id": "chapter-06-text-h-0109",
+        "source_text": "6.2.2 Banco de dados utilizado",
+        "current_display_text": "6.2.2 Banco de dados utilizado",
+        "target_text": "5.2.2 Banco de dados utilizado",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0110": {
+        "unit_id": "chapter-06-text-h-0110",
+        "source_text": "6.2.3 Arquitetura utilizada",
+        "current_display_text": "6.2.3 Arquitetura utilizada",
+        "target_text": "5.2.3 Arquitetura utilizada",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0112": {
+        "unit_id": "chapter-06-text-h-0112",
+        "source_text": "6.2.4 Protótipos das telas desenvolvidas",
+        "current_display_text": "6.2.4 Protótipos das telas desenvolvidas",
+        "target_text": "5.2.4 Protótipos das telas desenvolvidas",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0113": {
+        "unit_id": "chapter-06-text-h-0113",
+        "source_text": "6.2.5 Tecnologias utilizadas",
+        "current_display_text": "6.2.5 Tecnologias utilizadas",
+        "target_text": "5.2.5 Tecnologias utilizadas",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0114": {
+        "unit_id": "chapter-06-text-h-0114",
+        "source_text": "6.2.6 Artefatos de gerenciamento do projeto",
+        "current_display_text": "6.2.6 Artefatos de gerenciamento do projeto",
+        "target_text": "5.2.6 Artefatos de gerenciamento do projeto",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0115": {
+        "unit_id": "chapter-06-text-h-0115",
+        "source_text": "6.3 Atividades desempenhadas pelo aluno no projetos",
+        "current_display_text": "6.3 Atividades desempenhadas pelo aluno no projetos",
+        "target_text": "5.3 Atividades desempenhadas pelo aluno no projetos",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0116": {
+        "unit_id": "ages-iv-sprint-0",
+        "source_text": "6.3.1 Sprint 0",
+        "current_display_text": "6.3.1 Sprint 0",
+        "target_text": "5.3.1 Sprint 0",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0117": {
+        "unit_id": "ages-iv-sprint-1",
+        "source_text": "6.3.2 Sprint 1",
+        "current_display_text": "6.3.2 Sprint 1",
+        "target_text": "5.3.2 Sprint 1",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0119": {
+        "unit_id": "ages-iv-sprint-2",
+        "source_text": "6.3.3 Sprint 2",
+        "current_display_text": "6.3.3 Sprint 2",
+        "target_text": "5.3.3 Sprint 2",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0120": {
+        "unit_id": "ages-iv-sprint-3",
+        "source_text": "6.3.4 Sprint 3",
+        "current_display_text": "6.3.4 Sprint 3",
+        "target_text": "5.3.4 Sprint 3",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0121": {
+        "unit_id": "ages-iv-sprint-4",
+        "source_text": "6.3.5 Sprint 4",
+        "current_display_text": "6.3.5 Sprint 4",
+        "target_text": "5.3.5 Sprint 4",
+        "source_chapter": 6,
+        "target_chapter": 5
+      },
+      "text-h-0122": {
+        "unit_id": "chapter-06-text-h-0122",
+        "source_text": "6.4. Conclusão",
+        "current_display_text": "6.4 Conclusão",
+        "target_text": "5.4 Conclusão",
+        "source_chapter": 6,
+        "target_chapter": 5
+      }
+    },
+    "figure_caption_numbering": {
+      "text-p-0663": {
+        "unit_id": "chapter-03-text-h-0024",
+        "source_text": "Figure 6: Foto do time - CLIENTE AGES",
+        "current_display_text": "Figura 6 – Foto do time - CLIENTE AGES",
+        "target_text": "Figura 32 – Foto do time - CLIENTE AGES",
+        "source_figure": 6,
+        "target_figure": 32
+      },
+      "text-p-0749": {
+        "unit_id": "cliente-hoortech-sprint-4",
+        "source_text": "Figure 7: Entrega Final - CLIENTE AGES",
+        "current_display_text": "Figura 7 – Entrega Final - CLIENTE AGES",
+        "target_text": "Figura 33 – Entrega Final - CLIENTE AGES",
+        "source_figure": 7,
+        "target_figure": 33
+      },
+      "text-p-0759": {
+        "unit_id": "chapter-03-text-h-0038",
+        "source_text": "Figure 8: Projeto Destaque 2024/2 - CLIENTE AGES",
+        "current_display_text": "Figura 8 – Projeto Destaque 2024/2 - CLIENTE AGES",
+        "target_text": "Figura 34 – Projeto Destaque 2024/2 - CLIENTE AGES",
+        "source_figure": 8,
+        "target_figure": 34
+      },
+      "text-p-0767": {
+        "unit_id": "chapter-04-text-h-0040",
+        "source_text": "Figure 9: Foto do Time - AGES II",
+        "current_display_text": "Figura 9 – Foto do Time - AGES II",
+        "target_text": "Figura 6 – Foto do Time - AGES II",
+        "source_figure": 9,
+        "target_figure": 6
+      },
+      "text-p-0788": {
+        "unit_id": "chapter-04-text-h-0044",
+        "source_text": "Figure 10: Arquitetura da Aplicação - AGES II",
+        "current_display_text": "Figura 10 – Arquitetura da Aplicação - AGES II",
+        "target_text": "Figura 7 – Arquitetura da Aplicação - AGES II",
+        "source_figure": 10,
+        "target_figure": 7
+      },
+      "text-p-0797": {
+        "unit_id": "chapter-04-text-h-0045",
+        "source_text": "Figure 11: Landing Page - AGES II",
+        "current_display_text": "Figura 11 – Landing Page - AGES II",
+        "target_text": "Figura 8 – Landing Page - AGES II",
+        "source_figure": 11,
+        "target_figure": 8
+      },
+      "text-p-0800": {
+        "unit_id": "chapter-04-text-h-0045",
+        "source_text": "Figure 12: Tela de Dashboard - AGES II",
+        "current_display_text": "Figura 12 – Tela de Dashboard - AGES II",
+        "target_text": "Figura 9 – Tela de Dashboard - AGES II",
+        "source_figure": 12,
+        "target_figure": 9
+      },
+      "text-p-0802": {
+        "unit_id": "chapter-04-text-h-0045",
+        "source_text": "Figure 13: Tela do Mapa - AGES II",
+        "current_display_text": "Figura 13 – Tela do Mapa - AGES II",
+        "target_text": "Figura 10 – Tela do Mapa - AGES II",
+        "source_figure": 13,
+        "target_figure": 10
+      },
+      "text-p-0804": {
+        "unit_id": "chapter-04-text-h-0045",
+        "source_text": "Figure 14: Tela das Empresas - AGES II",
+        "current_display_text": "Figura 14 – Tela das Empresas - AGES II",
+        "target_text": "Figura 11 – Tela das Empresas - AGES II",
+        "source_figure": 14,
+        "target_figure": 11
+      },
+      "text-p-0962": {
+        "unit_id": "ages-ii-sprint-4",
+        "source_text": "Figure 15: Fluxo de Processamento de Presença Digital - AGES II",
+        "current_display_text": "Figura 15 – Fluxo de Processamento de Presença Digital - AGES II",
+        "target_text": "Figura 12 – Fluxo de Processamento de Presença Digital - AGES II",
+        "source_figure": 15,
+        "target_figure": 12
+      },
+      "text-p-1027": {
+        "unit_id": "chapter-05-text-h-0075",
+        "source_text": "\tFigure 16: Foto do Time - AGES III",
+        "current_display_text": "\tFigura 16 – Foto do Time - AGES III",
+        "target_text": "\tFigura 13 – Foto do Time - AGES III",
+        "source_figure": 16,
+        "target_figure": 13
+      },
+      "text-p-1042": {
+        "unit_id": "chapter-05-text-h-0078",
+        "source_text": "Figure 17: Diagrama Banco de Dados - AGES III",
+        "current_display_text": "Figura 17 – Diagrama Banco de Dados - AGES III",
+        "target_text": "Figura 14 – Diagrama Banco de Dados - AGES III",
+        "source_figure": 17,
+        "target_figure": 14
+      },
+      "text-p-1051": {
+        "unit_id": "chapter-05-text-h-0079",
+        "source_text": "Figure 18: Diagrama de Arquitetura - AGES III",
+        "current_display_text": "Figura 18 – Diagrama de Arquitetura - AGES III",
+        "target_text": "Figura 15 – Diagrama de Arquitetura - AGES III",
+        "source_figure": 18,
+        "target_figure": 15
+      },
+      "text-p-1058": {
+        "unit_id": "chapter-05-text-h-0080",
+        "source_text": "Figure 19: Tela de Dashboard – AGES III",
+        "current_display_text": "Figura 19 – Tela de Dashboard – AGES III",
+        "target_text": "Figura 16 – Tela de Dashboard – AGES III",
+        "source_figure": 19,
+        "target_figure": 16
+      },
+      "text-p-1059": {
+        "unit_id": "chapter-05-text-h-0080",
+        "source_text": "Figure 20: Tela de Veículos Cadastrados - AGES III ",
+        "current_display_text": "Figura 20 – Tela de Veículos Cadastrados - AGES III ",
+        "target_text": "Figura 17 – Tela de Veículos Cadastrados - AGES III ",
+        "source_figure": 20,
+        "target_figure": 17
+      },
+      "text-p-1060": {
+        "unit_id": "chapter-05-text-h-0080",
+        "source_text": "Figure 21: Tela de Cobrança - AGES III",
+        "current_display_text": "Figura 21 – Tela de Cobrança - AGES III",
+        "target_text": "Figura 18 – Tela de Cobrança - AGES III",
+        "source_figure": 21,
+        "target_figure": 18
+      },
+      "text-p-1063": {
+        "unit_id": "chapter-05-text-h-0080",
+        "source_text": "Figure 22: Tela Home de Cliente - AGES III",
+        "current_display_text": "Figura 22 – Tela Home de Cliente - AGES III",
+        "target_text": "Figura 19 – Tela Home de Cliente - AGES III",
+        "source_figure": 22,
+        "target_figure": 19
+      },
+      "text-p-1064": {
+        "unit_id": "chapter-05-text-h-0080",
+        "source_text": "Figure 23: Tela de Pagamentos de Cliente - AGES III",
+        "current_display_text": "Figura 23 – Tela de Pagamentos de Cliente - AGES III",
+        "target_text": "Figura 20 – Tela de Pagamentos de Cliente - AGES III",
+        "source_figure": 23,
+        "target_figure": 20
+      },
+      "text-p-1329": {
+        "unit_id": "chapter-06-text-h-0106",
+        "source_text": "Figure 24: Foto do Time - AGES IV",
+        "current_display_text": "Figura 24 – Foto do Time - AGES IV",
+        "target_text": "Figura 21 – Foto do Time - AGES IV",
+        "source_figure": 24,
+        "target_figure": 21
+      },
+      "text-p-1344": {
+        "unit_id": "chapter-06-text-h-0109",
+        "source_text": "Figure 25: Diagrama Banco de Dados - AGES IV",
+        "current_display_text": "Figura 25 – Diagrama Banco de Dados - AGES IV",
+        "target_text": "Figura 22 – Diagrama Banco de Dados - AGES IV",
+        "source_figure": 25,
+        "target_figure": 22
+      },
+      "text-p-1350": {
+        "unit_id": "chapter-06-text-h-0110",
+        "source_text": "Figure 26: Diagrama de Arquitetura - AGES IV",
+        "current_display_text": "Figura 26 – Diagrama de Arquitetura - AGES IV",
+        "target_text": "Figura 23 – Diagrama de Arquitetura - AGES IV",
+        "source_figure": 26,
+        "target_figure": 23
+      },
+      "text-p-1378": {
+        "unit_id": "chapter-06-text-h-0112",
+        "source_text": "Figure 27: Telas de Onboarding - AGES IV",
+        "current_display_text": "Figura 27 – Telas de Onboarding - AGES IV",
+        "target_text": "Figura 24 – Telas de Onboarding - AGES IV",
+        "source_figure": 27,
+        "target_figure": 24
+      },
+      "text-p-1385": {
+        "unit_id": "chapter-06-text-h-0112",
+        "source_text": "Figure 28: Telas de Perfil - AGES IV",
+        "current_display_text": "Figura 28 – Telas de Perfil - AGES IV",
+        "target_text": "Figura 25 – Telas de Perfil - AGES IV",
+        "source_figure": 28,
+        "target_figure": 25
+      },
+      "text-p-1387": {
+        "unit_id": "chapter-06-text-h-0112",
+        "source_text": "Figure 29: Telas de Retrospectiva - AGES IV",
+        "current_display_text": "Figura 29 – Telas de Retrospectiva - AGES IV",
+        "target_text": "Figura 26 – Telas de Retrospectiva - AGES IV",
+        "source_figure": 29,
+        "target_figure": 26
+      },
+      "text-p-1392": {
+        "unit_id": "chapter-06-text-h-0112",
+        "source_text": "Figure 30: Telas de Administração - AGES IV",
+        "current_display_text": "Figura 30 – Telas de Administração - AGES IV",
+        "target_text": "Figura 27 – Telas de Administração - AGES IV",
+        "source_figure": 30,
+        "target_figure": 27
+      },
+      "text-p-1450": {
+        "unit_id": "chapter-06-text-h-0114",
+        "source_text": "Figure 31: Estrutura Analítica do Projeto (EAP) - AGES IV",
+        "current_display_text": "Figura 31 – Estrutura Analítica do Projeto (EAP) - AGES IV",
+        "target_text": "Figura 28 – Estrutura Analítica do Projeto (EAP) - AGES IV",
+        "source_figure": 31,
+        "target_figure": 28
+      },
+      "text-p-1455": {
+        "unit_id": "chapter-06-text-h-0114",
+        "source_text": "Figure 32: Matriz RACI - AGES IV",
+        "current_display_text": "Figura 32 – Matriz RACI - AGES IV",
+        "target_text": "Figura 29 – Matriz RACI - AGES IV",
+        "source_figure": 32,
+        "target_figure": 29
+      },
+      "text-p-1475": {
+        "unit_id": "ages-iv-sprint-0",
+        "source_text": "Figure 33: Quadro Scrumban de Execução de Tasks - AGES IV",
+        "current_display_text": "Figura 33 – Quadro Scrumban de Execução de Tasks - AGES IV",
+        "target_text": "Figura 30 – Quadro Scrumban de Execução de Tasks - AGES IV",
+        "source_figure": 33,
+        "target_figure": 30
+      },
+      "text-p-1478": {
+        "unit_id": "ages-iv-sprint-0",
+        "source_text": "Figure 34: Quadro Gerencial de Épicos, User Stories e Tasks  – AGES IV",
+        "current_display_text": "Figura 34 – Quadro Gerencial de Épicos, User Stories e Tasks  – AGES IV",
+        "target_text": "Figura 31 – Quadro Gerencial de Épicos, User Stories e Tasks  – AGES IV",
+        "source_figure": 34,
+        "target_figure": 31
+      }
+    },
+    "inline_reference_adjustments": {
+      "text-p-0679": {
+        "unit_id": "chapter-03-text-h-0025",
+        "source_text": "No tópico 3.2, meus comentários pessoais estarão juntos aos acontecimentos das sprints, não possuindo uma caixa própria.",
+        "target_text": "No tópico 6.2, meus comentários pessoais estarão juntos aos acontecimentos das sprints, não possuindo uma caixa própria.",
+        "source_fragment": "No tópico 3.2,",
+        "target_fragment": "No tópico 6.2,"
+      }
+    },
+    "figures": {
+      "draw-image-0006": {
+        "asset_id": "asset-0017",
+        "odf_path": "Pictures/1000000000000FC000000BD011E72322.jpg",
+        "sha256": "e9d0b2398e5e1c2bc11e619dfe7c122143ce572e6427a95984531fd33feab72d",
+        "width_px": 4032,
+        "height_px": 3024
+      },
+      "draw-image-0007": {
+        "asset_id": "asset-0016",
+        "odf_path": "Pictures/1000000000000FA000000BB8DCCA8E74.jpg",
+        "sha256": "14b4cbd9430248777709de2ec13df52837dabfc289d8587f6ad840ac8b4d770b",
+        "width_px": 4000,
+        "height_px": 3000
+      },
+      "draw-image-0008": {
+        "asset_id": "asset-0013",
+        "odf_path": "Pictures/1000000000000640000004B0E110B794.jpg",
+        "sha256": "bb60d58e2eb097d811ba56da03fc246df3dd8eb618ae04194da26abe51f2c5ae",
+        "width_px": 1600,
+        "height_px": 1200
+      }
+    },
+    "constraints": [
+      "Do not alter the ODT or its source records.",
+      "Preserve wording, punctuation, order, paragraphs, lists, images, hyperlinks, and historical facts; only exact section/figure numerals and the explicit internal section reference listed above may change.",
+      "No editorial revision, grammar correction, inferred content, or source attribution is authorized.",
+      "The three image-source lines remain “Fonte: pendente de identificação” until the user identifies each source.",
+      "Keep Sprints 0–4 in sequence and allow normal pagination; no forced page break is authorized before a Sprint.",
+      "Keep chapter 7 as title-only; its 18 body/list source IDs remain deliberately omitted under the existing AGES IV authorization."
+    ],
+    "figure_numbering": "AGES I 1–5; AGES II 6–12; AGES III 13–20; AGES IV 21–31; Hoortech 32–34.",
+    "chapter_numbering": "Trajectory 1; AGES I 2; AGES II 3; AGES III 4; AGES IV 5; Hoortech 6; final title 7.",
+    "figure_caption_numbering_rule": "For each listed manifest caption, retain the complete caption body and every whitespace character after the source Figure number; render the previously approved Portuguese caption label “Figura” with en dash and substitute only the explicitly mapped sequential number. No other caption wording or spacing is authorized to change."
+  },
+  "user_review": "Required after integrated compilation and independent content/visual audits; no later edition is authorized by this record."
+}

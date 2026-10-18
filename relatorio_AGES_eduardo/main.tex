@@ -1,4 +1,5 @@
-% Review edition: authorized AGES I, AGES II, AGES III, and partial AGES IV units are included.
+% Review memorial: trajectory, AGES I–IV, Hoortech, and the final title.
+% Chapters and figures follow continuous counters in this approved inclusion order.
 \documentclass[a4paper,12pt,oneside,chapter=TITLE,english,brazil]{abntex2}
 \input{util/style.tex}
 \input{util/macros.tex}
@@ -15,10 +16,9 @@
 \textual
 \pagestyle{simple}
 \aliaspagestyle{abntchapfirst}{simple}
-% Chapter I contains the source trajectory; project chapters retain their original numbering.
+% Chapter 1 contains the trajectory; project chapters follow the approved reading order.
 \setcounter{chapter}{0}
 \input{conteudo/migracao/chapter-01-text-h-0001.tex}
-\setcounter{chapter}{1}
 \input{conteudo/migracao/chapter-02-text-h-0002.tex}
 \input{conteudo/migracao/chapter-02-text-h-0003.tex}
 \input{conteudo/migracao/chapter-02-text-h-0007.tex}
@@ -36,12 +36,10 @@
 \input{conteudo/migracao/ages-i-sprint-3.tex}
 \input{conteudo/migracao/ages-i-sprint-4.tex}
 \input{conteudo/migracao/chapter-02-text-h-0022.tex}
-% Chapter III (Hoortech), including source figures 6–8, is outside this scope.
-\setcounter{chapter}{3}
-\setcounter{figure}{8}
+% Chapter 3 / AGES II — Indústria Digital.
 \input{conteudo/migracao/chapter-04-text-h-0039.tex}
 \input{conteudo/migracao/chapter-04-text-h-0040.tex}
-% Keep the team photograph before section 4.2 and its subsections.
+% Keep the team photograph before section 3.2 and its subsections.
 \FloatBlock
 \input{conteudo/migracao/chapter-04-text-h-0041.tex}
 \input{conteudo/migracao/chapter-04-text-h-0042.tex}
@@ -58,16 +56,16 @@
 \input{conteudo/migracao/ages-ii-sprint-3.tex}
 \input{conteudo/migracao/ages-ii-sprint-4.tex}
 \input{conteudo/migracao/chapter-04-text-h-0073.tex}
-% Chapter V / AGES III — RFID. Sprints remain continuous subsections.
+% Chapter 4 / AGES III — RFID. Sprints remain continuous subsections.
 \input{conteudo/migracao/chapter-05-text-h-0074.tex}
 \input{conteudo/migracao/chapter-05-text-h-0075.tex}
-% Keep the introductory team figure before section 5.2.
+% Keep the introductory team figure before section 4.2.
 \FloatBlock
 \input{conteudo/migracao/chapter-05-text-h-0076.tex}
 \input{conteudo/migracao/chapter-05-text-h-0077.tex}
 \input{conteudo/migracao/chapter-05-text-h-0078.tex}
 \input{conteudo/migracao/chapter-05-text-h-0079.tex}
-% Keep the architecture figure before subsection 5.2.4.
+% Keep the architecture figure before subsection 4.2.4.
 \FloatBlock
 \input{conteudo/migracao/chapter-05-text-h-0080.tex}
 % Contain database, architecture, and prototype figures before technologies.
@@ -80,21 +78,21 @@
 \input{conteudo/migracao/ages-iii-sprint-3.tex}
 \input{conteudo/migracao/ages-iii-sprint-4.tex}
 \input{conteudo/migracao/chapter-05-text-h-0097.tex}
-% Chapter VI / AGES IV — Recorda; all authorized units follow in source order.
+% Chapter 5 / AGES IV — Recorda; partial content and empty titles follow in source order.
 \input{conteudo/migracao/chapter-06-text-h-0105.tex}
 \input{conteudo/migracao/chapter-06-text-h-0106.tex}
-% Keep the introductory team photograph before section 6.2.
+% Keep the introductory team photograph before section 5.2.
 \FloatBlock
 \input{conteudo/migracao/chapter-06-text-h-0107.tex}
 \input{conteudo/migracao/chapter-06-text-h-0108.tex}
 \input{conteudo/migracao/chapter-06-text-h-0109.tex}
 \input{conteudo/migracao/chapter-06-text-h-0110.tex}
 \input{conteudo/migracao/chapter-06-text-h-0112.tex}
-% Contain the section 6.2 figures before the technology and project-artifact subsections.
+% Contain the section 5.2 figures before the technology and project-artifact subsections.
 \FloatBlock
 \input{conteudo/migracao/chapter-06-text-h-0113.tex}
 \input{conteudo/migracao/chapter-06-text-h-0114.tex}
-% Keep management-artifact figures in section 6.2.
+% Keep management-artifact figures in section 5.2.
 \FloatBlock
 \input{conteudo/migracao/chapter-06-text-h-0115.tex}
 % Sprints flow as subsections without an artificial page break.
@@ -106,8 +104,24 @@
 % Do not carry Sprint figures into the conclusion or next chapter.
 \FloatBlock
 \input{conteudo/migracao/chapter-06-text-h-0122.tex}
+% Chapter 6 / Cliente AGES — Hoortech, after the AGES IV conclusion.
+\input{conteudo/migracao/chapter-03-text-h-0023.tex}
+\input{conteudo/migracao/chapter-03-text-h-0024.tex}
+% Keep the introductory team figure before the Sprint presentation section.
+\FloatBlock
+\input{conteudo/migracao/chapter-03-text-h-0025.tex}
+\input{conteudo/migracao/chapter-03-text-h-0026.tex}
+\input{conteudo/migracao/cliente-hoortech-sprint-0.tex}
+\input{conteudo/migracao/cliente-hoortech-sprint-1.tex}
+\input{conteudo/migracao/cliente-hoortech-sprint-2.tex}
+\input{conteudo/migracao/cliente-hoortech-sprint-3.tex}
+\input{conteudo/migracao/cliente-hoortech-sprint-4.tex}
+% Keep the Sprint 4 figure before the Hoortech conclusion.
+\FloatBlock
+\input{conteudo/migracao/chapter-03-text-h-0038.tex}
+% Chapter 7 contains only the authorized final title; its body remains pending.
 \input{conteudo/migracao/chapter-07-text-h-0123.tex}
-% Separate curated apparatus; original prose has no added citations.
+% Curated references support the authorized technical citations.
 \postextual
 \nocite{typescript-docs,react-docs,nodejs-docs,prisma-docs,postgresql-docs}
 \printbibliography[heading=bibintoc,title={Referências},prenote=curationnote]

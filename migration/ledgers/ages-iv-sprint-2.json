@@ -21,8 +21,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
           "start_byte": 163,
           "end_byte": 177,
-          "serializations": [],
-          "target_sha256": "5f84af9dda65ed914bd5c8a9db2e148178be54ee98e38317bde8c872b62d150d"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "3deb2e271d985e0186856a30db9865f0bd54ddcda63db235fefe0108f08c1318"
         }
       ],
       "asset_map": [],
@@ -37,7 +39,7 @@
           "command": "hypertarget",
           "start_byte": 72,
           "end_byte": 121,
-          "target_sha256": "5f84af9dda65ed914bd5c8a9db2e148178be54ee98e38317bde8c872b62d150d"
+          "target_sha256": "3deb2e271d985e0186856a30db9865f0bd54ddcda63db235fefe0108f08c1318"
         }
       ],
       "structural_dispositions": [
@@ -105,6 +107,12 @@
       "style_contract": {
         "path": "relatorio_AGES_eduardo/util/style.tex",
         "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0119"
+        ]
       }
     }
   }

@@ -17,8 +17,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0047.tex",
           "start_byte": 158,
           "end_byte": 208,
-          "serializations": [],
-          "target_sha256": "15b40313c28bff9f372231e9b27ca5e3a69e2d27a5f4eb253eed7827a1338d8e"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "bc448b98dafa8c0ed23ac36f873887fafd3511f72ece02da623784770c3ee6b4"
         }
       ],
       "asset_map": [],
@@ -85,10 +87,16 @@
           "command": "hypertarget",
           "start_byte": 74,
           "end_byte": 123,
-          "target_sha256": "15b40313c28bff9f372231e9b27ca5e3a69e2d27a5f4eb253eed7827a1338d8e",
+          "target_sha256": "bc448b98dafa8c0ed23ac36f873887fafd3511f72ece02da623784770c3ee6b4",
           "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text."
         }
-      ]
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0047"
+        ]
+      }
     }
   }
 }

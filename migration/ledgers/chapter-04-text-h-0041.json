@@ -5,11 +5,11 @@
   "conversion_base_commit": "9838b91f8f627656fd4658b6a3c2694ad1b0ec8b",
   "macro_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "figure_contract": {
     "path": "relatorio_AGES_eduardo/util/macros.tex",
-    "sha256": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8"
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
   },
   "style_contract": {
     "path": "relatorio_AGES_eduardo/util/style.tex",
@@ -25,8 +25,10 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0041.tex",
           "start_byte": 188,
           "end_byte": 218,
-          "serializations": [],
-          "target_sha256": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec"
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "709471064435a0d676f8676b9449fe962c970a12b5bf3cc8eb809e77e3ad7074"
         }
       ],
       "asset_map": [],
@@ -41,7 +43,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0037",
           "source_end_id": "text-bookmark-end-0037",
-          "target_sha256": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec"
+          "target_sha256": "709471064435a0d676f8676b9449fe962c970a12b5bf3cc8eb809e77e3ad7074"
         },
         {
           "source_heading_id": "text-h-0041",
@@ -53,7 +55,7 @@
           "end_byte": 152,
           "source_start_id": "text-bookmark-start-0038",
           "source_end_id": "text-bookmark-end-0038",
-          "target_sha256": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec"
+          "target_sha256": "709471064435a0d676f8676b9449fe962c970a12b5bf3cc8eb809e77e3ad7074"
         }
       ],
       "structural_dispositions": [
@@ -91,7 +93,13 @@
       "approved_apparatus": [],
       "pending": [
         "Independent content audit, integrated compilation, visual audit, ABNT verification and human AGES II approval remain PENDING."
-      ]
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0041"
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,837 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "8f952a6e3b64c8783cef823e52ed2451af653eae",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-03-text-h-0038": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0038",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 154,
+          "end_byte": 168,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "a6dd210c2c9e6e98b410b84076c1a6a7206985555f7c5376445024ec5fa71dd3",
+          "source_text_sha256": "a610445f386e670fd913139f1595b92b7f09891e6b616af1dd277ca82c84b4bf"
+        },
+        {
+          "source_id": "text-p-0751",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 276,
+          "end_byte": 887,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "b23321c8bffe758a7e7113eb37248f9b294563cf1e21d2c701e5564e14a00ab5",
+          "source_text_sha256": "e30bccf1f4bc3e3c900c8583af0bbd26d793183f7e6e04cdc762ddab03d6722e"
+        },
+        {
+          "source_id": "text-p-0752",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 914,
+          "end_byte": 1352,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "4bce78827573b7dba81afd7f00f068d114277e97b242081906ead848a0af83e0",
+          "source_text_sha256": "f661c61bc81d765050ca8508d266cb6bd0dfd0e435e7e61be3f67fd4e0b8c6e1"
+        },
+        {
+          "source_id": "text-p-0753",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 1379,
+          "end_byte": 1839,
+          "serializations": [],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "5f380d493cd24d30436d440cae20d22be629bb5ce4950a1d4bf879d6ac5f6ee1",
+          "source_text_sha256": "44e35cf5d872c504664cb3bd57e3ba281f7b0d7bdeace30c00f6c3e624f4dffb"
+        },
+        {
+          "source_id": "text-p-0754",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 1866,
+          "end_byte": 2400,
+          "serializations": [],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "b86740a828e8fcd3c6f314d871c3308c37c563344e415fafbf3ae1b2682e36b8",
+          "source_text_sha256": "6bacad71d211a200f3fb19f7a7d89cfb8f0b031a1a7ddf9afdc925a26a842a0d"
+        },
+        {
+          "source_id": "text-p-0755",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 2427,
+          "end_byte": 2907,
+          "serializations": [],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "82f2b534ef1c229560e530fcb24c6d535d76699c9154a86e82f1d9b1360fa8ac",
+          "source_text_sha256": "bc14535a40d24cb2e100d1885d1366d25b220c91ada4651ec079e73fb5fd9047"
+        },
+        {
+          "source_id": "text-p-0756",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 2934,
+          "end_byte": 3314,
+          "serializations": [],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "18a75ae15e721103e49c32eb033de3380802919febf3ae9e5b6d590962f6d9b4",
+          "source_text_sha256": "3d9ab7bae9dea35dfdc341c8ea2732b93b4cf28fc7d187e82ea9fc8fd392cd5f"
+        },
+        {
+          "source_id": "text-p-0759",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 3462,
+          "end_byte": 3523,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "94fb7d9df830830b7b1bb927dfd9abb92c0ebc2347fed2aece8163dc90435659",
+          "source_text_sha256": "0f1fbb7b97b0bb014cc60f78087927975abc6d092d4c2e74d4fe9403de708b99"
+        },
+        {
+          "source_id": "draw-image-0008",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+          "start_byte": 3413,
+          "end_byte": 3602,
+          "serializations": [],
+          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "source_xml_sha256": "b80cccd3062ee53928b67b14d8958b34f5319ba735bbcc15eba56be60eb6a08c",
+          "source_text_sha256": null
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0008",
+          "asset_id": "asset-0013",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0013.jpg",
+          "sha256": "bb60d58e2eb097d811ba56da03fc246df3dd8eb618ae04194da26abe51f2c5ae",
+          "width_px": 1600,
+          "height_px": 1200,
+          "odf_path": "Pictures/1000000000000640000004B0E110B794.jpg",
+          "caption_source_id": "text-p-0759"
+        }
+      ],
+      "bookmark_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "text-soft-page-break-0037",
+          "source_type": "text:soft-page-break",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0038",
+          "source_order": 5242,
+          "source_xml_sha256": "bc82db0bdb9a52aee9d9ba6bffee6d76902bf48e9dfa0f754484514be059c053",
+          "source_text_sha256": null,
+          "disposition": "source-soft-page-break-reflowed",
+          "evidence": "Soft page break is layout metadata; normal flow retained at text-h-0038, with no forced page break."
+        },
+        {
+          "source_id": "text-span-0776",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0038",
+          "source_order": 5243,
+          "source_xml_sha256": "6177a94eb0257fd9278d32ca3d9d8d778ee99efab2518f66389bbd092ae31c6d",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T80 and text hash are rendered inside parent text-h-0038; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-tab-0188",
+          "source_type": "text:tab",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0751",
+          "source_order": 5245,
+          "source_xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "source_text_sha256": null,
+          "disposition": "source-tab-represented-in-parent-record",
+          "evidence": "Source ODF tab belongs to text-p-0751 and renders as \\originaltab{} under original_whitespace."
+        },
+        {
+          "source_id": "text-span-0777",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0752",
+          "source_order": 5247,
+          "source_xml_sha256": "33143f913d7553f4f6776aa65587ce99862df0efa6d5c85624133cbf4b9f3ff9",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T192 and text hash are rendered inside parent text-p-0752; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-tab-0189",
+          "source_type": "text:tab",
+          "semantic_type": "layout",
+          "parent_id": "text-span-0777",
+          "source_order": 5248,
+          "source_xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "source_text_sha256": null,
+          "disposition": "source-tab-represented-in-parent-record",
+          "evidence": "Source ODF tab belongs to text-span-0777 and renders as \\originaltab{} under original_whitespace."
+        },
+        {
+          "source_id": "text-span-0778",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0754",
+          "source_order": 5251,
+          "source_xml_sha256": "51e12ddb240979b9a5d42151384b594c77d6b73ddbe2c572747a7f29e5050578",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T200 and text hash are rendered inside parent text-p-0754; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-soft-page-break-0038",
+          "source_type": "text:soft-page-break",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0755",
+          "source_order": 5253,
+          "source_xml_sha256": "bc82db0bdb9a52aee9d9ba6bffee6d76902bf48e9dfa0f754484514be059c053",
+          "source_text_sha256": null,
+          "disposition": "source-soft-page-break-reflowed",
+          "evidence": "Soft page break is layout metadata; normal flow retained at text-p-0755, with no forced page break."
+        },
+        {
+          "source_id": "text-p-0757",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5255,
+          "source_xml_sha256": "bb3729eb58e9bb8b6408485d47e3d87a6281651051b15d018fade94c5678212d",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0758",
+          "source_type": "text:p",
+          "semantic_type": "anchor-container",
+          "parent_id": "office-text-0001",
+          "source_order": 5256,
+          "source_xml_sha256": "e69e567c48b2d8ce059d0eec69423e83be040bc83d042d358cdd0dc2a3a01760",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-figure-anchor-container-represented-by-memorialfigure",
+          "evidence": "Empty anchor paragraph contains figure frame; caption and image are mapped separately."
+        },
+        {
+          "source_id": "draw-frame-0021",
+          "source_type": "draw:frame",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0758",
+          "source_order": 5257,
+          "source_xml_sha256": "97f861df86e5a4883f2fb12e7c3cc23f4e0160cab1fa9976b3283b8ad8a3dcbb",
+          "source_text_sha256": null,
+          "disposition": "figure-layout-container-represented-by-memorialfigure",
+          "evidence": "ODF frame/text-box groups the caption and image; both mapped to one memorialfigure, preserving source order and image bytes."
+        },
+        {
+          "source_id": "draw-text-box-0014",
+          "source_type": "draw:text-box",
+          "semantic_type": "text-box",
+          "parent_id": "draw-frame-0021",
+          "source_order": 5258,
+          "source_xml_sha256": "9490283f9b0f9a6e476f0fce469407bbb19d3cd559a49adf94e7efeeeb567cb6",
+          "source_text_sha256": null,
+          "disposition": "figure-layout-container-represented-by-memorialfigure",
+          "evidence": "ODF frame/text-box groups the caption and image; both mapped to one memorialfigure, preserving source order and image bytes."
+        },
+        {
+          "source_id": "draw-frame-0022",
+          "source_type": "draw:frame",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0759",
+          "source_order": 5260,
+          "source_xml_sha256": "d9de870bd3bd922857a794730506303ea35df33d0ceeb71228a0d3108fc31761",
+          "source_text_sha256": null,
+          "disposition": "figure-layout-container-represented-by-memorialfigure",
+          "evidence": "ODF frame/text-box groups the caption and image; both mapped to one memorialfigure, preserving source order and image bytes."
+        },
+        {
+          "source_id": "text-span-0779",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0759",
+          "source_order": 5262,
+          "source_xml_sha256": "068fb6f975a46b53a14ae3f499588478e359fdaac7bcbae3438205213848d1b8",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T201 and text hash are rendered inside parent text-p-0759; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-p-0760",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5263,
+          "source_xml_sha256": "bb3729eb58e9bb8b6408485d47e3d87a6281651051b15d018fade94c5678212d",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0761",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5264,
+          "source_xml_sha256": "bb3729eb58e9bb8b6408485d47e3d87a6281651051b15d018fade94c5678212d",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        }
+      ],
+      "odf_record_inventory": [
+        {
+          "source_id": "text-h-0038",
+          "type": "text:h",
+          "semantic_type": "heading",
+          "source_order": 5241,
+          "parent_id": "text-list-header-0022",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "text-list-0088",
+            "text-list-item-0073",
+            "text-list-0089"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[32]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]",
+          "attributes": {
+            "text:outline-level": "2",
+            "text:style-name": "Heading_20_2"
+          },
+          "xml_sha256": "a6dd210c2c9e6e98b410b84076c1a6a7206985555f7c5376445024ec5fa71dd3",
+          "text_sha256": "a610445f386e670fd913139f1595b92b7f09891e6b616af1dd277ca82c84b4bf",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-soft-page-break-0037",
+          "type": "text:soft-page-break",
+          "semantic_type": "layout",
+          "source_order": 5242,
+          "parent_id": "text-h-0038",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "text-list-0088",
+            "text-list-item-0073",
+            "text-list-0089"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[32]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:soft-page-break[1]",
+          "attributes": {},
+          "xml_sha256": "bc82db0bdb9a52aee9d9ba6bffee6d76902bf48e9dfa0f754484514be059c053",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "3.3 Conclus"
+        },
+        {
+          "source_id": "text-span-0776",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5243,
+          "parent_id": "text-h-0038",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "text-list-0088",
+            "text-list-item-0073",
+            "text-list-0089"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[32]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T80"
+          },
+          "xml_sha256": "6177a94eb0257fd9278d32ca3d9d8d778ee99efab2518f66389bbd092ae31c6d",
+          "text_sha256": null,
+          "direct_text": "ão",
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0751",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5244,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[590]",
+          "attributes": {
+            "text:style-name": "P193"
+          },
+          "xml_sha256": "b23321c8bffe758a7e7113eb37248f9b294563cf1e21d2c701e5564e14a00ab5",
+          "text_sha256": "e30bccf1f4bc3e3c900c8583af0bbd26d793183f7e6e04cdc762ddab03d6722e",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-tab-0188",
+          "type": "text:tab",
+          "semantic_type": "layout",
+          "source_order": 5245,
+          "parent_id": "text-p-0751",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[590]/text:tab[1]",
+          "attributes": {},
+          "xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "Participar da AGES como cliente foi uma experiência singular e transformadora. Estar do outro lado da mesa, assumindo o papel de stakeholder, exigiu uma mudança profunda na minha mentalidade e abordagem. Foi necessário ajustar meu comportamento, minha forma de pensar e até mesmo como me comunicava com os alunos. Aprendi a dosar expectativas, a dialogar de maneira construtiva e a cobrar melhorias e novas funcionalidades com clareza e objetividade. Essa experiência me desafiou a ser um cliente que, ao mesmo tempo, inspirasse confiança e orientasse o grupo com foco no sucesso do projeto."
+        },
+        {
+          "source_id": "text-p-0752",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5246,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[591]",
+          "attributes": {
+            "text:style-name": "P184"
+          },
+          "xml_sha256": "4bce78827573b7dba81afd7f00f068d114277e97b242081906ead848a0af83e0",
+          "text_sha256": "f661c61bc81d765050ca8508d266cb6bd0dfd0e435e7e61be3f67fd4e0b8c6e1",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0777",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5247,
+          "parent_id": "text-p-0752",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[591]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T192"
+          },
+          "xml_sha256": "33143f913d7553f4f6776aa65587ce99862df0efa6d5c85624133cbf4b9f3ff9",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "No início da jornada, enfrentamos alguns conflitos em relação ao termo de abertura do projeto, que inicialmente não refletia completamente o que queríamos alcançar. Essa divergência trouxe desafios na definição das expectativas e na comunicação das nossas demandas. No entanto, conseguimos superar esses problemas ao longo do processo, alinhando nossas visões e garantindo que todos estivéssemos no mesmo plano."
+        },
+        {
+          "source_id": "text-tab-0189",
+          "type": "text:tab",
+          "semantic_type": "layout",
+          "source_order": 5248,
+          "parent_id": "text-span-0777",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[591]/text:span[1]/text:tab[1]",
+          "attributes": {},
+          "xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0753",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5249,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[592]",
+          "attributes": {
+            "text:style-name": "P200"
+          },
+          "xml_sha256": "5f380d493cd24d30436d440cae20d22be629bb5ce4950a1d4bf879d6ac5f6ee1",
+          "text_sha256": "44e35cf5d872c504664cb3bd57e3ba281f7b0d7bdeace30c00f6c3e624f4dffb",
+          "direct_text": "Ter um projeto idealizado em apenas 24 horas, durante uma Hackatona, ampliado e desenvolvido por uma equipe altamente capacitada foi, sem dúvidas, um privilégio. A sensação de ver a ideia ganhar forma e, finalmente, torná-la um produto funcional e bem-acabado é indescritível. Mais do que apenas um resultado técnico, o que mais me marcou foi perceber o esforço, a dedicação e o talento de cada aluno refletidos em cada detalhe do trabalho entregue.",
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0754",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5250,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[593]",
+          "attributes": {
+            "text:style-name": "P200"
+          },
+          "xml_sha256": "b86740a828e8fcd3c6f314d871c3308c37c563344e415fafbf3ae1b2682e36b8",
+          "text_sha256": "6bacad71d211a200f3fb19f7a7d89cfb8f0b031a1a7ddf9afdc925a26a842a0d",
+          "direct_text": "Entretanto, ser cliente de um grupo de 1",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0778",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5251,
+          "parent_id": "text-p-0754",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[593]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T200"
+          },
+          "xml_sha256": "51e12ddb240979b9a5d42151384b594c77d6b73ddbe2c572747a7f29e5050578",
+          "text_sha256": null,
+          "direct_text": "3",
+          "tail": " alunos também trouxe grandes responsabilidades. Eles confiavam no meu suporte para esclarecer dúvidas, resolver impasses e tomar decisões importantes relacionadas às regras de negócio. Essa confiança me fez refletir profundamente sobre comprometimento e gestão, além de me ensinar lições valiosas sobre como liderar e orientar equipes em projetos de alta complexidade. Essa responsabilidade foi, sem dúvida, um fator que contribuiu para o meu amadurecimento pessoal e profissional."
+        },
+        {
+          "source_id": "text-p-0755",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5252,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[594]",
+          "attributes": {
+            "text:style-name": "P200"
+          },
+          "xml_sha256": "82f2b534ef1c229560e530fcb24c6d535d76699c9154a86e82f1d9b1360fa8ac",
+          "text_sha256": "bc14535a40d24cb2e100d1885d1366d25b220c91ada4651ec079e73fb5fd9047",
+          "direct_text": "A oportunidade de ver o meu projeto selecionado pela AGES, entre tantas ideias, foi motivo de grande alegria para mim e para o meu time da Hackatona. Saber que nossa proposta seria levada adiante por uma equipe tão dedicada trouxe um sentimento de realização e gratidão. A confiança da AGES nos alunos e no ",
+          "tail": null
+        },
+        {
+          "source_id": "text-soft-page-break-0038",
+          "type": "text:soft-page-break",
+          "semantic_type": "layout",
+          "source_order": 5253,
+          "parent_id": "text-p-0755",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[594]/text:soft-page-break[1]",
+          "attributes": {},
+          "xml_sha256": "bc82db0bdb9a52aee9d9ba6bffee6d76902bf48e9dfa0f754484514be059c053",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "potencial da ideia foi um grande incentivo para mim, e fico profundamente agradecido por ter tido essa chance de participar ativamente de um processo tão enriquecedor."
+        },
+        {
+          "source_id": "text-p-0756",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5254,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[595]",
+          "attributes": {
+            "text:style-name": "P200"
+          },
+          "xml_sha256": "18a75ae15e721103e49c32eb033de3380802919febf3ae9e5b6d590962f6d9b4",
+          "text_sha256": "3d9ab7bae9dea35dfdc341c8ea2732b93b4cf28fc7d187e82ea9fc8fd392cd5f",
+          "direct_text": "Levo dessa experiência aprendizados que ultrapassam a esfera técnica e que, sem dúvidas, me acompanharão ao longo da vida. A vivência como stakeholder me ensinou sobre colaboração, comunicação, resiliência e, acima de tudo, sobre o valor do trabalho em equipe e do esforço conjunto. Sou imensamente grato à AGES e a todos os envolvidos por essa jornada transformadora.",
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0757",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5255,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[596]",
+          "attributes": {
+            "text:style-name": "P204"
+          },
+          "xml_sha256": "bb3729eb58e9bb8b6408485d47e3d87a6281651051b15d018fade94c5678212d",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0758",
+          "type": "text:p",
+          "semantic_type": "anchor-container",
+          "source_order": 5256,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]",
+          "attributes": {
+            "text:style-name": "P204"
+          },
+          "xml_sha256": "e69e567c48b2d8ce059d0eec69423e83be040bc83d042d358cdd0dc2a3a01760",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "draw-frame-0021",
+          "type": "draw:frame",
+          "semantic_type": "layout",
+          "source_order": 5257,
+          "parent_id": "text-p-0758",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]/draw:frame[1]",
+          "attributes": {
+            "draw:name": "Frame16",
+            "draw:style-name": "fr3",
+            "draw:z-index": "39",
+            "svg:width": "15.997cm",
+            "text:anchor-type": "char"
+          },
+          "xml_sha256": "97f861df86e5a4883f2fb12e7c3cc23f4e0160cab1fa9976b3283b8ad8a3dcbb",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "draw-text-box-0014",
+          "type": "draw:text-box",
+          "semantic_type": "text-box",
+          "source_order": 5258,
+          "parent_id": "draw-frame-0021",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "draw-frame-0021"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]/draw:frame[1]/draw:text-box[1]",
+          "attributes": {
+            "fo:min-height": "11.996cm"
+          },
+          "xml_sha256": "9490283f9b0f9a6e476f0fce469407bbb19d3cd559a49adf94e7efeeeb567cb6",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0759",
+          "type": "text:p",
+          "semantic_type": "caption",
+          "source_order": 5259,
+          "parent_id": "draw-text-box-0014",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "draw-frame-0021",
+            "draw-text-box-0014"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]/draw:frame[1]/draw:text-box[1]/text:p[1]",
+          "attributes": {
+            "text:style-name": "P95"
+          },
+          "xml_sha256": "94fb7d9df830830b7b1bb927dfd9abb92c0ebc2347fed2aece8163dc90435659",
+          "text_sha256": "0f1fbb7b97b0bb014cc60f78087927975abc6d092d4c2e74d4fe9403de708b99",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "draw-frame-0022",
+          "type": "draw:frame",
+          "semantic_type": "layout",
+          "source_order": 5260,
+          "parent_id": "text-p-0759",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "draw-frame-0021",
+            "draw-text-box-0014"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]/draw:frame[1]/draw:text-box[1]/text:p[1]/draw:frame[1]",
+          "attributes": {
+            "draw:name": "Image15",
+            "draw:style-name": "fr6",
+            "draw:z-index": "40",
+            "style:rel-height": "scale",
+            "style:rel-width": "100%",
+            "svg:height": "11.996cm",
+            "svg:width": "15.997cm",
+            "text:anchor-type": "paragraph"
+          },
+          "xml_sha256": "d9de870bd3bd922857a794730506303ea35df33d0ceeb71228a0d3108fc31761",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "Figure "
+        },
+        {
+          "source_id": "draw-image-0008",
+          "type": "draw:image",
+          "semantic_type": "image",
+          "source_order": 5261,
+          "parent_id": "draw-frame-0022",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "draw-frame-0021",
+            "draw-text-box-0014",
+            "draw-frame-0022"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]/draw:frame[1]/draw:text-box[1]/text:p[1]/draw:frame[1]/draw:image[1]",
+          "attributes": {
+            "xlink:actuate": "onLoad",
+            "xlink:href": "Pictures/1000000000000640000004B0E110B794.jpg",
+            "xlink:show": "embed",
+            "xlink:type": "simple",
+            "draw:mime-type": "image/jpeg"
+          },
+          "xml_sha256": "b80cccd3062ee53928b67b14d8958b34f5319ba735bbcc15eba56be60eb6a08c",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0779",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5262,
+          "parent_id": "text-p-0759",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038",
+            "draw-frame-0021",
+            "draw-text-box-0014"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[597]/draw:frame[1]/draw:text-box[1]/text:p[1]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T201"
+          },
+          "xml_sha256": "068fb6f975a46b53a14ae3f499588478e359fdaac7bcbae3438205213848d1b8",
+          "text_sha256": null,
+          "direct_text": "8",
+          "tail": ": Projeto Destaque 2024/2 - CLIENTE AGES"
+        },
+        {
+          "source_id": "text-p-0760",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5263,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[598]",
+          "attributes": {
+            "text:style-name": "P204"
+          },
+          "xml_sha256": "bb3729eb58e9bb8b6408485d47e3d87a6281651051b15d018fade94c5678212d",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0761",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5264,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0038"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[599]",
+          "attributes": {
+            "text:style-name": "P204"
+          },
+          "xml_sha256": "bb3729eb58e9bb8b6408485d47e3d87a6281651051b15d018fade94c5678212d",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        }
+      ],
+      "manifest_record_ids": [
+        "text-h-0038",
+        "text-p-0751",
+        "text-p-0752",
+        "text-p-0753",
+        "text-p-0754",
+        "text-p-0755",
+        "text-p-0756",
+        "draw-text-box-0014",
+        "text-p-0759",
+        "draw-image-0008"
+      ],
+      "pending": [
+        "Proveniência da imagem draw-image-0008 permanece PENDING para identificação humana; a legenda da fonte da imagem está identificada como provisória.",
+        "Auditoria independente de conteúdo permanece PENDING, incluindo conferência da redação, ordem, estrutura de listas, relações entre figuras e ausência de conteúdo de outras edições/projetos.",
+        "Auditoria visual do PDF integrado permanece PENDING.",
+        "Integração serial, validate/scope-check oficiais e compilação do memorial completo aguardam execução no repositório com Git; não foram executados nesta cópia scratch sem .git.",
+        "Checkpoint de aprovação humana da participação Hoortech permanece PENDING."
+      ],
+      "presentation_transformations": [
+        {
+          "source_id": "text-h-0038",
+          "kind": "document_reordering_numbering",
+          "source_text": "3.3 Conclusão",
+          "current_display_text": "3.3 Conclusão",
+          "target_text": "6.3 Conclusão",
+          "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json"
+        },
+        {
+          "source_id": "text-p-0759",
+          "kind": "document_reordering_numbering",
+          "source_text": "Figure 8: Projeto Destaque 2024/2 - CLIENTE AGES",
+          "current_display_text": "Figura 8 – Projeto Destaque 2024/2 - CLIENTE AGES",
+          "target_text": "Figura 34 – Projeto Destaque 2024/2 - CLIENTE AGES",
+          "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json"
+        }
+      ],
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0038",
+          "text-p-0759"
+        ]
+      }
+    }
+  }
+}

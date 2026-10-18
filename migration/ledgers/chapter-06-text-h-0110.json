@@ -17,15 +17,18 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 159,
           "end_byte": 186,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c",
-          "source_text_sha256": "833a10ba6ef33eccd5433b77d9179b3eb86521b01a2f5d881a51dccd96c61173"
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
+          "source_text_sha256": "833a10ba6ef33eccd5433b77d9179b3eb86521b01a2f5d881a51dccd96c61173",
+          "serializations": [
+            "document_reordering_numbering"
+          ]
         },
         {
           "source_id": "text-p-1347",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 301,
           "end_byte": 1671,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c",
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
           "source_text_sha256": "d567d891214f928ccc2631951027f2dbf37cc3fe6eeaefb3ed046d6aa9e52171",
           "serializations": [
             "technology_citation"
@@ -36,17 +39,18 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 1757,
           "end_byte": 1841,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c"
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd"
         },
         {
           "source_id": "text-p-1350",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 1939,
           "end_byte": 1995,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c",
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
           "source_text_sha256": "9ace1e62d2ee0c9db0d53dc6ab92ce3b34ebe9554977bb391b8e2164f0316fc8",
           "serializations": [
-            "abnt_figure_caption"
+            "abnt_figure_caption",
+            "document_reordering_numbering"
           ]
         },
         {
@@ -54,14 +58,14 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 1890,
           "end_byte": 2063,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c"
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd"
         },
         {
           "source_id": "text-p-1362",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 2100,
           "end_byte": 2258,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c",
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
           "source_text_sha256": "e4ebc081f2f4aa6e7e8649abea40a57b9e4f550f849038531c6c903d710bdd9c",
           "serializations": [
             "wiki_reference_sentence"
@@ -72,7 +76,7 @@
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
           "start_byte": 2163,
           "end_byte": 2258,
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c",
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
           "serializations": [
             "wiki_reference_sentence"
           ]
@@ -97,7 +101,7 @@
           "end_byte": 117,
           "source_start_id": "text-bookmark-start-0073",
           "source_end_id": "text-bookmark-end-0073",
-          "target_sha256": "dabdc12bcc4d3adf73d6e78fe248cce8edefe2604fa28f1f4cf261d393884f8c"
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd"
         }
       ],
       "structural_dispositions": [
@@ -531,7 +535,14 @@
           "usage_source_id": "text-p-1347"
         }
       ],
-      "citation_evidence_path": "migration/evidence/references/ages-iv.json"
+      "citation_evidence_path": "migration/evidence/references/ages-iv.json",
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0110",
+          "text-p-1350"
+        ]
+      }
     }
   }
 }
