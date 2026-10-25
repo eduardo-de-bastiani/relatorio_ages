@@ -1849,6 +1849,118 @@ class PreservationTests(unittest.TestCase):
         unit["approved_apparatus"] = []
         self.assertIn("unsupported_target_scaffolding", self.codes(self.audit()))
 
+    def user_supplied_content_case(self):
+        uid = "ages-iv-sprint-2"
+        self.manifest = {
+            "records": [{"id": "text-h-0119", "type": "text:h", "text": "Sprint 2"}],
+            "units": [{"id": uid, "record_ids": ["text-h-0119"], "source_record_ids": ["text-h-0119"]}],
+            "assets": [],
+        }
+        report_tex = [
+            r"Parágrafo com \textit{models} e \texttt{docs}.",
+            "Segundo parágrafo.",
+            "Terceiro parágrafo.",
+            "Quarto parágrafo.",
+            "Quinto parágrafo.",
+        ]
+        reflection_tex = ["Reflexão fiel.", "Segunda reflexão."]
+        target = r"\subsection{Sprint 2}" + "\n"
+        target += "\n".join(r"\indent " + text + r"\par" for text in report_tex) + "\n"
+        target += r"\begin{reflection}" + "\n"
+        target += "\n".join(r"\noindent " + text + r"\par" for text in reflection_tex) + "\n"
+        target += r"\end{reflection}" + "\n"
+        self.write(target)
+        heading = self.mapping("text-h-0119", "Sprint 2")
+        content = []
+        for number, text in enumerate([
+            "Parágrafo com *models* e `docs`.",
+            "Segundo parágrafo.",
+            "Terceiro parágrafo.",
+            "Quarto parágrafo.",
+            "Quinto parágrafo.",
+        ], start=1):
+            content.append({
+                "content_id": f"user-ages-iv-sprint-2-report-p{number:02}",
+                "kind": "report_paragraph",
+                "source_markup": text,
+                "sha256": hashlib.sha256(text.encode()).hexdigest(),
+            })
+        for number, text in enumerate(["Reflexão fiel.", "Segunda reflexão."], start=1):
+            content.append({
+                "content_id": f"user-ages-iv-sprint-2-reflection-p{number:02}",
+                "kind": "reflection_paragraph",
+                "source_markup": text,
+                "sha256": hashlib.sha256(text.encode()).hexdigest(),
+            })
+        authorization = {
+            "schema_version": 1,
+            "record_type": "user_supplied_content_authorization",
+            "approval_status": "authorized_for_inclusion_pending_human_review",
+            "unit_id": uid,
+            "user_instruction": "Agora vamos colocar o relatório da Sprint 2 (edição AGES IV) e também a caixa introspectiva.",
+            "source": {
+                "type": "direct_user_message",
+                "source_odt_path": "RELATORIO_ATUAL.odt",
+                "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+                "odt_relationship": "The ODF unit contains only its Sprint 2 heading; these seven paragraphs were supplied separately by the user and are not represented as ODT source records.",
+            },
+            "content": content,
+        }
+        auth_path = "migration/approvals/ages-iv-sprint-2-content-authorization.json"
+        auth_data = json.dumps(authorization, ensure_ascii=False, indent=2).encode("utf-8") + b"\n"
+        (self.root / "migration/approvals").mkdir(parents=True)
+        (self.root / auth_path).write_bytes(auth_data)
+        content_maps = []
+        for source_item, tex_fragment in zip(content, report_tex + reflection_tex):
+            mapping = self.mapping("unused", tex_fragment)
+            mapping.pop("source_id")
+            content_maps.append({"content_id": source_item["content_id"], **mapping})
+        self.ledger = {
+            "schema_version": 1,
+            "compilation_root": ".",
+            "units": {
+                uid: {
+                    "state": "converted",
+                    "tex_path": "unit.tex",
+                    "element_map": [heading],
+                    "user_supplied_content": {
+                        "authorization_evidence": auth_path,
+                        "authorization_sha256": hashlib.sha256(auth_data).hexdigest(),
+                        "content_map": content_maps,
+                    },
+                }
+            },
+        }
+        return uid, content, target
+
+    def test_user_supplied_sprint_text_is_authorized_and_compared_outside_odf_inventory(self):
+        self.user_supplied_content_case()
+        report = self.audit()
+        self.assertEqual(report["status"], "pass", report)
+        self.assertEqual(
+            report["facts"]["user_supplied_content_checked"][0]["content_ids"],
+            [
+                "user-ages-iv-sprint-2-report-p01", "user-ages-iv-sprint-2-report-p02",
+                "user-ages-iv-sprint-2-report-p03", "user-ages-iv-sprint-2-report-p04",
+                "user-ages-iv-sprint-2-report-p05", "user-ages-iv-sprint-2-reflection-p01",
+                "user-ages-iv-sprint-2-reflection-p02",
+            ],
+        )
+        self.assertNotIn("unmapped_visible_content", self.codes(report))
+
+    def test_user_supplied_sprint_text_rejects_changed_text(self):
+        _, _, target = self.user_supplied_content_case()
+        changed = target.replace(r"\textit{models}", r"\textit{modelos}")
+        self.write(changed)
+        self.assertIn("invalid_user_supplied_content", self.codes(self.audit()))
+
+    def test_user_supplied_sprint_text_rejects_missing_inline_style(self):
+        _, _, target = self.user_supplied_content_case()
+        changed = target.replace(r"\textit{models}", "models")
+        self.write(changed)
+        self.assertIn("invalid_user_supplied_content", self.codes(self.audit()))
+
+
 
 if __name__ == "__main__":
     unittest.main()

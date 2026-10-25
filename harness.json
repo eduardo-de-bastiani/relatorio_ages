@@ -236,6 +236,13 @@
         "cliente-hoortech-sprint-4"
       ],
       "purpose": "Migração da participação Hoortech e renumeração estrutural exata aprovada após AGES IV"
+    },
+    {
+      "evidence": "migration/approvals/ages-iv-sprint-2-content-authorization.json",
+      "units": [
+        "ages-iv-sprint-2"
+      ],
+      "purpose": "Inclusão rastreada do texto de relatório e da caixa introspectiva fornecidos pelo usuário para a Sprint 2 da AGES IV"
     }
   ],
   "asset_ownership": {

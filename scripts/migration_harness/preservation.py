@@ -224,6 +224,16 @@ HOORTECH_UNITS = (
 )
 DOCUMENT_ORDER_BASELINE = "8f952a6e3b64c8783cef823e52ed2451af653eae"
 DOCUMENT_ORDER_SOURCE_SHA256 = "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION = "migration/approvals/ages-iv-sprint-2-content-authorization.json"
+AGES_IV_SPRINT2_USER_CONTENT_IDS = (
+    "user-ages-iv-sprint-2-report-p01",
+    "user-ages-iv-sprint-2-report-p02",
+    "user-ages-iv-sprint-2-report-p03",
+    "user-ages-iv-sprint-2-report-p04",
+    "user-ages-iv-sprint-2-report-p05",
+    "user-ages-iv-sprint-2-reflection-p01",
+    "user-ages-iv-sprint-2-reflection-p02",
+)
 FRONTMATTER_TRANSFORM_IDS = {
     "frontmatter_title": {"text-p-0003", "text-p-0004", "text-p-0017", "text-p-0018", "text-p-0034", "text-p-0068"},
     "frontmatter_placeholder": {"text-p-0097"},
@@ -2604,6 +2614,31 @@ def _space(text: str) -> str:
     return re.sub(r"[\t\n\r\f\v ]+", " ", text).strip(" ")
 
 
+def _parse_user_supplied_markup(value: str) -> tuple[str, list[tuple[str, str]]]:
+    """Project the narrowly supported user-authored inline Markdown markers."""
+    if not isinstance(value, str) or "\n" in value or "\r" in value:
+        raise UnsupportedSerialization("User-supplied source paragraphs must be single-line strings")
+    marker = re.compile(r"\*([^*`]+)\*|`([^*`]+)`")
+    display, formatting, cursor = [], [], 0
+    for match in marker.finditer(value):
+        plain = value[cursor:match.start()]
+        if "*" in plain or "`" in plain:
+            raise UnsupportedSerialization("Unpaired or unsupported inline Markdown marker")
+        display.append(plain)
+        if match.group(1) is not None:
+            formatting.append(("italic", match.group(1)))
+            display.append(match.group(1))
+        else:
+            formatting.append(("code", match.group(2)))
+            display.append(match.group(2))
+        cursor = match.end()
+    tail = value[cursor:]
+    if "*" in tail or "`" in tail:
+        raise UnsupportedSerialization("Unpaired or unsupported inline Markdown marker")
+    display.append(tail)
+    return "".join(display), formatting
+
+
 def _strict_source(text: str, original_whitespace=False, allowed_leading_line_breaks=0) -> str:
     """No source whitespace is silently discarded or collapsed.
 
@@ -2813,7 +2848,7 @@ def _verify_linked_figure_source(unit_id, image_id, token, records, preserved_li
 
 def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | None = None) -> dict:
     repo = repo.resolve()
-    findings, differences, facts = [], {}, {"scope": unit_id or "all", "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution", "text_records_checked": 0, "text_records_matched": 0, "inline_tab_layout_records_matched": 0, "reference_paragraph_layout_records_matched": 0, "links_checked": 0, "images_checked": 0, "converted_units": 0, "partial_units": 0, "authorized_omitted_source_records": 0, "source_text_records": 0, "coverage_percent": 0.0, "approved_presentation_transformations": []}
+    findings, differences, facts = [], {}, {"scope": unit_id or "all", "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution", "text_records_checked": 0, "text_records_matched": 0, "inline_tab_layout_records_matched": 0, "reference_paragraph_layout_records_matched": 0, "links_checked": 0, "images_checked": 0, "converted_units": 0, "partial_units": 0, "authorized_omitted_source_records": 0, "source_text_records": 0, "coverage_percent": 0.0, "approved_presentation_transformations": [], "user_supplied_content_checked": []}
 
     def report(code, uid, message, source_id=None, path=None, severity="error"):
         findings.append({"severity": severity, "code": code, "unit_id": uid, "source_id": source_id, "path": path, "message": message})
@@ -3893,6 +3928,104 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         for rid in set(asset_ids) - set(expected_images):
             report("unexpected_asset_mapping", uid, "Image occurrence does not belong to the unit", rid)
         derived_spans = {}
+        supplemental_content = unit_ledger.get("user_supplied_content")
+        if supplemental_content is not None or uid == "ages-iv-sprint-2":
+            try:
+                if uid != "ages-iv-sprint-2":
+                    raise ValueError("User-supplied narrative supplement is authorized only for AGES IV Sprint 2")
+                if not isinstance(supplemental_content, dict) or set(supplemental_content) != {
+                    "authorization_evidence", "authorization_sha256", "content_map"
+                }:
+                    raise ValueError("Sprint 2 user-supplied content requires the exact authorization and content_map fields")
+                if supplemental_content.get("authorization_evidence") != AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION:
+                    raise ValueError("Sprint 2 supplement points to an unapproved authorization record")
+                auth_path = safe_path(AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION)
+                auth_bytes = auth_path.read_bytes()
+                if hashlib.sha256(auth_bytes).hexdigest() != supplemental_content.get("authorization_sha256"):
+                    raise ValueError("User-supplied content authorization hash is stale")
+                authorization = json.loads(auth_bytes.decode("utf-8"))
+                expected_instruction = "Agora vamos colocar o relatório da Sprint 2 (edição AGES IV) e também a caixa introspectiva."
+                if (authorization.get("schema_version") != 1
+                        or authorization.get("record_type") != "user_supplied_content_authorization"
+                        or authorization.get("approval_status") != "authorized_for_inclusion_pending_human_review"
+                        or authorization.get("unit_id") != uid
+                        or authorization.get("user_instruction") != expected_instruction
+                        or authorization.get("source") != {
+                            "type": "direct_user_message",
+                            "source_odt_path": "RELATORIO_ATUAL.odt",
+                            "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+                            "odt_relationship": "The ODF unit contains only its Sprint 2 heading; these seven paragraphs were supplied separately by the user and are not represented as ODT source records.",
+                        }):
+                    raise ValueError("User authorization record does not match the exact Sprint 2 addition and frozen source relationship")
+                source_content = authorization.get("content")
+                if (not isinstance(source_content, list)
+                        or [item.get("content_id") for item in source_content if isinstance(item, dict)] != list(AGES_IV_SPRINT2_USER_CONTENT_IDS)
+                        or len(source_content) != len(AGES_IV_SPRINT2_USER_CONTENT_IDS)):
+                    raise ValueError("Supplement authorization must contain the exact seven Sprint 2 report/reflection paragraphs in order")
+                content_map = supplemental_content.get("content_map")
+                if not isinstance(content_map, list) or [item.get("content_id") for item in content_map if isinstance(item, dict)] != list(AGES_IV_SPRINT2_USER_CONTENT_IDS) or len(content_map) != len(AGES_IV_SPRINT2_USER_CONTENT_IDS):
+                    raise ValueError("Ledger content_map must cover all seven authorized paragraphs exactly once and in order")
+                title_mapping = by_id.get("text-h-0119")
+                if title_mapping is None or "text-h-0119" not in actual:
+                    raise ValueError("Sprint 2 title mapping is required before the supplied narrative")
+                heading_path, heading_start, _, _ = actual["text-h-0119"]
+                unit_target = safe_path(unit_ledger.get("tex_path"))
+                supplemental_positions = []
+                checked_content_ids = []
+                for source_item, mapping in zip(source_content, content_map):
+                    expected_keys = {"content_id", "kind", "source_markup", "sha256"}
+                    if set(source_item) != expected_keys:
+                        raise ValueError("Supplement source record has unknown or missing fields")
+                    content_id = source_item.get("content_id")
+                    if source_item.get("kind") not in {"report_paragraph", "reflection_paragraph"}:
+                        raise ValueError(f"Unsupported user-supplied paragraph kind for {content_id}")
+                    source_markup = source_item.get("source_markup")
+                    if not isinstance(source_markup, str) or hashlib.sha256(source_markup.encode("utf-8")).hexdigest() != source_item.get("sha256"):
+                        raise ValueError(f"Source hash is missing or invalid for {content_id}")
+                    expected_text, expected_formatting = _parse_user_supplied_markup(source_markup)
+                    if set(mapping) != {"content_id", "target_file", "start_byte", "end_byte", "target_sha256"} or mapping.get("content_id") != content_id:
+                        raise ValueError(f"Target mapping schema or ID is invalid for {content_id}")
+                    path, start, end, value = fragment(mapping)
+                    if path != unit_target or path not in file_order:
+                        raise ValueError(f"User-supplied paragraph {content_id} must be inside the Sprint 2 unit file")
+                    expansion_position = next((
+                        start + delta for lo, hi, delta in expansion_positions.get(path, []) if lo <= start and end <= hi
+                    ), None)
+                    heading_position = next((
+                        heading_start + delta for lo, hi, delta in expansion_positions.get(heading_path, [])
+                        if lo <= heading_start and actual["text-h-0119"][2] <= hi
+                    ), None)
+                    if expansion_position is None or heading_position is None or expansion_position <= heading_position:
+                        raise ValueError(f"User-supplied paragraph {content_id} is not reachable after the Sprint 2 heading")
+                    observed_text = displayed_text(value)
+                    observed_formatting = []
+                    for token in commands(strip_comments(value)):
+                        if token.name not in {"textit", "texttt"}:
+                            continue
+                        if token.starred or token.optionals or len(token.args) != 1:
+                            raise ValueError(f"Unsupported emphasis/code command in {content_id}")
+                        observed_formatting.append(("italic" if token.name == "textit" else "code", displayed_text(token.args[0])))
+                    if observed_text != expected_text or observed_formatting != expected_formatting:
+                        raise ValueError(f"Displayed text or inline formatting differs from the user source for {content_id}")
+                    supplemental_positions.append(expansion_position)
+                    checked_content_ids.append(content_id)
+                    derived_spans.setdefault(path, []).append((start, end))
+                if supplemental_positions != sorted(supplemental_positions):
+                    raise ValueError("Sprint 2 report and reflection paragraphs are not in the authorized source order")
+                report(
+                    "user_supplied_content_human_review_required", uid,
+                    "Seven paragraphs are bound to a direct user message and checked against the LaTeX display projection; they are not ODT records, and PDF presentation still requires human review",
+                    severity="warning",
+                )
+                facts["user_supplied_content_checked"].append({
+                    "unit_id": uid,
+                    "authorization_evidence": AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION,
+                    "content_ids": checked_content_ids,
+                    "source_is_odt": False,
+                    "lexical_display_and_inline_formatting_checked": True,
+                })
+            except (ValueError, OSError, KeyError, TypeError, UnicodeError, UnsupportedSerialization) as exc:
+                report("invalid_user_supplied_content", uid, str(exc))
         toc_counts = Counter()
         placeholder_specs = {
             "chapter-02-text-h-0009": ("text-h-0009", "ages-i-database", "Banco de dados utilizado ", "Esquema do banco de dados não incorporado ao ODT; preenchimento posterior."),

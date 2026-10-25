@@ -82,3 +82,18 @@ Esta etapa depende de `migration/approvals/cliente-hoortech-and-document-order-a
 | H7 — Aprovação | Aprovação humana da participação Hoortech e da nova ordem permanece PENDING até manifestação explícita ligada aos artefatos finais. Não iniciar outra edição antes desse aceite. |
 
 Resultado de cada gate: PASS, FAIL, PENDING ou NOT_APPLICABLE com evidência. Um manifesto ou JSON de autorização não substitui inspeção do conteúdo e do PDF.
+
+## Complemento restrito — AGES IV, Sprint 2 (25/10/2026)
+
+Aplicar exclusivamente a autorização `migration/approvals/ages-iv-sprint-2-content-authorization.json` e a unidade `ages-iv-sprint-2`.
+
+| Gate | Critério |
+|---|---|
+| S2-1 — Proveniência | O ODT continua contendo só o título e wrappers vazios. Os cinco parágrafos de relatório e dois de reflexão são rotulados como texto fornecido diretamente pelo usuário, com hashes e mapas independentes; não atribuir esses textos ao ODT. |
+| S2-2 — Fidelidade | Comparar individualmente o texto e a ordem dos sete blocos com a autorização; verificar acentos, pontuação, termos em itálico e código inline. Qualquer divergência ou bloco não mapeado é FAIL. |
+| S2-3 — Estrutura | O título da Sprint segue o fluxo, sem quebra forçada; relato precede a caixa introspectiva padronizada. Não modificar Sprint 3–4, conclusão, outras edições ou estilos globais. |
+| S2-4 — Compilação e PDF | Compilar em `document-review`, registrar retorno, log e hashes; vincular o PDF no ledger. Gate global FAIL continua FAIL mesmo que o compilador retorne 0. |
+| S2-5 — Auditorias | Auditor textual acessa diretamente a mensagem/autorização e destino, sem confiar no relatório do conversor. Auditor visual inspeciona renders reais da unidade e transições adjacentes. Relatórios declaram páginas e cobertura; não generalizar o exame local para o PDF completo. |
+| S2-6 — Aceitação | Manter aprovação humana do texto e do PDF como PENDING até manifestação explícita do usuário ligada ao artefato identificado. Não converter próxima Sprint. |
+
+O inventário ODT permanece inalterado: estes sete blocos não são registros de `docs/CONTENT_MANIFEST.json`; sua rastreabilidade suplementar reside no arquivo de autorização, no ledger da Sprint 2 e nos relatórios de auditoria.

@@ -24,7 +24,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "3deb2e271d985e0186856a30db9865f0bd54ddcda63db235fefe0108f08c1318"
+          "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
         }
       ],
       "asset_map": [],
@@ -39,7 +39,7 @@
           "command": "hypertarget",
           "start_byte": 72,
           "end_byte": 121,
-          "target_sha256": "3deb2e271d985e0186856a30db9865f0bd54ddcda63db235fefe0108f08c1318"
+          "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
         }
       ],
       "structural_dispositions": [
@@ -96,10 +96,10 @@
         {
           "status": "PENDING",
           "code": "independent_content_and_visual_audit",
-          "detail": "Unit requires independent source-to-LaTeX comparison, integrated PDF inspection, and human review."
+          "detail": "The ODT contributes only the Sprint 2 heading; all seven narrative paragraphs are user-provided and separately hash-traced. Recheck their displayed text/inline formatting, inspect the integrated PDF pages, and obtain human review."
         }
       ],
-      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "layout_disposition": "The immutable ODF unit contains only its Sprint 2 heading and empty layout wrappers. Seven separately authorized user-provided paragraphs follow the heading: five report paragraphs and two paragraphs inside the shared bordered reflection environment. The reflection uses the existing body-font setting, remains divisible across pages, and the Sprint heading has no forced page break.",
       "macro_contract": {
         "path": "relatorio_AGES_eduardo/util/macros.tex",
         "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
@@ -113,6 +113,65 @@
         "source_ids": [
           "text-h-0119"
         ]
+      },
+      "user_supplied_content": {
+        "authorization_evidence": "migration/approvals/ages-iv-sprint-2-content-authorization.json",
+        "authorization_sha256": "949e1204d01661794b1580b15a902b99e53135283e5b69e29b31377839636283",
+        "content_map": [
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p01",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 301,
+            "end_byte": 1105,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p02",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 1154,
+            "end_byte": 2099,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p03",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 2148,
+            "end_byte": 3085,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p04",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 3134,
+            "end_byte": 3553,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p05",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 3602,
+            "end_byte": 4127,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-reflection-p01",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 4201,
+            "end_byte": 4993,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-reflection-p02",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 5048,
+            "end_byte": 5776,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          }
+        ]
+      },
+      "rendered_pdf": {
+        "path": "build/document/main.pdf",
+        "sha256": "a07dae33d5d91aea796a41ec8d0c6f1f343fd149645fe8b94e4921e082736662"
       }
     }
   }

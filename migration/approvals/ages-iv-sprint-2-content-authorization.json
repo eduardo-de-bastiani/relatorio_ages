@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "record_type": "user_supplied_content_authorization",
+  "date": "2026-10-25",
+  "approval_status": "authorized_for_inclusion_pending_human_review",
+  "unit_id": "ages-iv-sprint-2",
+  "user_instruction": "Agora vamos colocar o relatório da Sprint 2 (edição AGES IV) e também a caixa introspectiva.",
+  "source": {
+    "type": "direct_user_message",
+    "source_odt_path": "RELATORIO_ATUAL.odt",
+    "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "odt_relationship": "The ODF unit contains only its Sprint 2 heading; these seven paragraphs were supplied separately by the user and are not represented as ODT source records."
+  },
+  "content": [
+    {
+      "content_id": "user-ages-iv-sprint-2-report-p01",
+      "kind": "report_paragraph",
+      "source_markup": "A Sprint 2 foi marcada por um amadurecimento significativo da equipe, principalmente em relação à autonomia dos integrantes e à qualidade do código desenvolvido. Diferentemente da Sprint 1, em que precisamos acompanhar muito de perto as implementações e realizar diversas correções, percebemos que o time já conseguia conduzir suas atividades com muito mais independência. Nossa atuação como AGES IV continuou sendo fundamental para a organização das squads, especificação das tarefas, resolução de bloqueios e acompanhamento das entregas, mas a necessidade de intervenção direta no desenvolvimento diminuiu consideravelmente. Ainda foi necessário oferecer algum suporte aos AGES III durante as revisões de Pull Requests, mas, de modo geral, a evolução foi bastante perceptível.",
+      "sha256": "a9719429b89e341a1d834c98e30d2b1bc8cccb9ff004a4bf92df64d1e2caf48e"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-2-report-p02",
+      "kind": "report_paragraph",
+      "source_markup": "Essa melhora ficou especialmente evidente durante as revisões e integrações realizadas ao longo da Sprint. Na entrega anterior, havíamos dedicado praticamente um dia inteiro à correção de inconsistências, integração de funcionalidades e ajustes finais da aplicação. Já na Sprint 2, esse processo exigiu muito menos esforço, pois boa parte dos problemas que antes surgiam apenas na consolidação já havia sido resolvida pelos próprios desenvolvedores. Acredito que um dos principais fatores para essa evolução tenha sido o aprimoramento das especificações elaboradas pelos AGES IV. Passamos a detalhar melhor as tarefas, considerando suas dependências, regras de negócio e critérios de implementação, inclusive antecipando o uso de agentes de IA pelos integrantes. Isso contribuiu para que diferentes funcionalidades fossem desenvolvidas de maneira mais uniforme e chegassem à integração com menos incompatibilidades.",
+      "sha256": "8d9be6bc1403b025b95b9bd11e12f395fedd8667764700f219f2bd30f85fef06"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-2-report-p03",
+      "kind": "report_paragraph",
+      "source_markup": "Apesar dos avanços, identifiquei um problema recorrente nas tarefas de backend que envolviam alterações nos *models* da aplicação. Embora os AGES II tivessem documentado toda a modelagem conceitual do banco de dados na Wiki, algumas implementações apresentavam colunas e tipos de dados incompatíveis com o que havia sido definido. O problema estava especialmente relacionado ao uso de agentes de IA sem acesso adequado ao contexto do projeto, fazendo com que eles assumissem estruturas que não existiam. Para resolver essa situação, criei um diretório `docs` no repositório do backend, contendo um *Architecture Decision Record* (ADR) e um arquivo Markdown com a modelagem conceitual completa. Dessa forma, a documentação passou a estar disponível diretamente no ambiente de desenvolvimento, facilitando sua utilização pelos agentes e reduzindo o risco de implementações baseadas em suposições.",
+      "sha256": "2dc0f458f2bae2de2c45dee83155f7b5e691965dbc3a6f0806e7e1612f04ecc7"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-2-report-p04",
+      "kind": "report_paragraph",
+      "source_markup": "Também participei da revisão de diferentes Pull Requests, envolvendo funcionalidades como exclusão de comentários em Recordas, curtidas, afinidade musical e reprodução automática de músicas. Além disso, realizei ajustes na Wiki relacionados às convenções de nomenclatura de branches e *Conventional Commits*, buscando manter as orientações de desenvolvimento claras e consistentes para todo o time.",
+      "sha256": "47db70296169244bf1d4ad3975775739925131b659532741992825a8b7875755"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-2-report-p05",
+      "kind": "report_paragraph",
+      "source_markup": "Por fim, trabalhei juntamente com o Carlos Eduardo na decomposição das User Stories previstas para a Sprint 3 em tarefas menores e mais objetivas. Após essa organização, repassei à minha squad o planejamento das atividades, estabelecendo a ordem de prioridades e detalhando o que precisava ser desenvolvido. A intenção foi preparar o time para iniciar a Sprint seguinte com maior clareza sobre suas responsabilidades, mantendo a autonomia conquistada e reduzindo a necessidade de esclarecimentos durante a execução.",
+      "sha256": "dd9c741e38451c38cced8dd1f3fb413300666e96d70f6026d9c967cbd4c91f54"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-2-reflection-p01",
+      "kind": "reflection_paragraph",
+      "source_markup": "A Sprint 2 me trouxe uma mudança importante de perspectiva sobre o papel de um AGES IV. Na Sprint anterior, nossa atuação foi muito mais prática, participando diretamente do desenvolvimento, das correções e das integrações. Agora, com o amadurecimento do time, conseguimos assumir uma posição mais voltada à gestão, à orientação e à organização das atividades. Confesso que essa transição causa uma sensação estranha, já que, sem estar constantemente colocando a mão no código, às vezes parece que estamos contribuindo menos. Porém, percebi que nosso trabalho não se torna menos importante por ser menos visível. Pelo contrário, garantir que a equipe tenha direcionamento, autonomia e condições para desenvolver bem também é uma forma de construir o projeto.",
+      "sha256": "c6c6b774f47d12da986b0b63aad32a56172a91667717330fa654439a0c1e396e"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-2-reflection-p02",
+      "kind": "reflection_paragraph",
+      "source_markup": "Outro aprendizado importante foi perceber que, no desenvolvimento com agentes de IA, não basta produzir boas documentações ou disponibilizar ferramentas. É necessário garantir que essas informações estejam presentes no contexto em que os agentes tomam decisões. Isso me fez olhar de maneira diferente para a própria organização do desenvolvimento, desde a especificação mais detalhada das tarefas até a disponibilização de arquivos de contexto diretamente nos repositórios. Percebi que precisamos pensar não apenas em como orientar os desenvolvedores, mas também em como estruturar o projeto para que as ferramentas de IA utilizadas por eles consigam trabalhar de maneira consistente com as decisões do time.",
+      "sha256": "0c6578d756b0512a524e7ef19ca2779bb79c45c13e25d8396e9b6c540b53ea07"
+    }
+  ],
+  "limits": [
+    "The user-supplied content supplements the title-only ODF unit; it is not presented as extracted from the ODT.",
+    "Only this Sprint 2 unit is authorized; Sprint 3–4 and the conclusion remain title-only.",
+    "Preserve all wording and sequence; apply only the supplied inline emphasis/code markup and the approved reflection environment.",
+    "Do not modify global macros, styles, other AGES units, the ODT, or the Mariah reference.",
+    "Human review of the compiled PDF remains required."
+  ]
+}
