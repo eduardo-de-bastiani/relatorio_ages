@@ -234,6 +234,28 @@ AGES_IV_SPRINT2_USER_CONTENT_IDS = (
     "user-ages-iv-sprint-2-reflection-p01",
     "user-ages-iv-sprint-2-reflection-p02",
 )
+AGES_IV_SPRINT3_USER_CONTENT_AUTHORIZATION = "migration/approvals/ages-iv-sprint-3-content-authorization.json"
+AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION = "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json"
+AGES_IV_SPRINT3_FIGURE_DISPLAY_UNITS = frozenset({
+    "ages-iv-sprint-3", "chapter-03-text-h-0023", "chapter-03-text-h-0024",
+    "chapter-03-text-h-0038", "chapter-05-text-h-0074", "chapter-06-text-h-0105",
+    "cliente-hoortech-sprint-4",
+})
+AGES_IV_SPRINT3_USER_CONTENT_IDS = (
+    "user-ages-iv-sprint-3-report-p01",
+    "user-ages-iv-sprint-3-gantt-caption",
+    "user-ages-iv-sprint-3-gantt-source",
+    "user-ages-iv-sprint-3-report-p02",
+    "user-ages-iv-sprint-3-report-p03",
+    "user-ages-iv-sprint-3-report-p04",
+    "user-ages-iv-sprint-3-report-p05",
+    "user-ages-iv-sprint-3-report-p06",
+    "user-ages-iv-sprint-3-report-p07",
+    "user-ages-iv-sprint-3-report-p08",
+    "user-ages-iv-sprint-3-report-p09",
+    "user-ages-iv-sprint-3-reflection-p01",
+    "user-ages-iv-sprint-3-reflection-p02",
+)
 FRONTMATTER_TRANSFORM_IDS = {
     "frontmatter_title": {"text-p-0003", "text-p-0004", "text-p-0017", "text-p-0018", "text-p-0034", "text-p-0068"},
     "frontmatter_placeholder": {"text-p-0097"},
@@ -1302,6 +1324,183 @@ def _load_document_order_authorization(repo: Path) -> dict:
     return authorization
 
 
+def _load_ages_iv_sprint3_figure_display_authorization(repo: Path) -> dict:
+    """Validate the user's follow-up image, numbering, TOC and emphasis decisions."""
+    path = repo / AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION
+    raw = path.read_bytes()
+    authorization = json.loads(raw.decode("utf-8"))
+    expected_root = {
+        "schema_version": 1,
+        "record_type": "user_authorized_ages_iv_sprint_3_figure_and_display_adjustments",
+        "date": "2026-10-29",
+        "approval_status": "authorized_for_execution_pending_human_review",
+        "user_instruction": "Substituir o placeholder Figura X pelo gráfico Gantt recebido e numerá-lo como Figura 32; remover o negrito de “14 tarefas do Épico 6”; deixar CLIENTE AGES – HOORTECH em caixa alta no sumário; corrigir PROJETOS para PROJETO no sumário de AGES III e AGES IV.",
+        "baseline": {
+            "branch": "migration/ages-iii",
+            "commit": "debbcd032323273af74ab183a5ae8758aa4b50ae",
+            "worktree_was_dirty": True,
+        },
+        "source": {
+            "odt_path": "RELATORIO_ATUAL.odt",
+            "odt_sha256": DOCUMENT_ORDER_SOURCE_SHA256,
+            "must_remain_unchanged": True,
+        },
+    }
+    if any(authorization.get(key) != value for key, value in expected_root.items()):
+        raise ValueError("Sprint 3 figure/display authorization is stale or exceeds the direct user instruction")
+
+    document_authorization = _load_document_order_authorization(repo)
+    caption_scope = document_authorization["scope"]["figure_caption_numbering"]
+    expected_figure_updates = [
+        {
+            "source_id": "text-p-0663", "unit_id": "chapter-03-text-h-0024",
+            "from_number": 32, "to_number": 33,
+            "source_caption": "Figure 6: Foto do time - CLIENTE AGES",
+            "previous_target": "Figura 32 – Foto do time - CLIENTE AGES",
+            "target": "Figura 33 – Foto do time - CLIENTE AGES",
+        },
+        {
+            "source_id": "text-p-0749", "unit_id": "cliente-hoortech-sprint-4",
+            "from_number": 33, "to_number": 34,
+            "source_caption": "Figure 7: Entrega Final - CLIENTE AGES",
+            "previous_target": "Figura 33 – Entrega Final - CLIENTE AGES",
+            "target": "Figura 34 – Entrega Final - CLIENTE AGES",
+        },
+        {
+            "source_id": "text-p-0759", "unit_id": "chapter-03-text-h-0038",
+            "from_number": 34, "to_number": 35,
+            "source_caption": "Figure 8: Projeto Destaque 2024/2 - CLIENTE AGES",
+            "previous_target": "Figura 34 – Projeto Destaque 2024/2 - CLIENTE AGES",
+            "target": "Figura 35 – Projeto Destaque 2024/2 - CLIENTE AGES",
+        },
+    ]
+    if authorization.get("following_figure_renumbering") != expected_figure_updates:
+        raise ValueError("Supplemental Hoortech figure renumbering differs from the exact 32→33, 33→34, 34→35 approval")
+    for update in expected_figure_updates:
+        prior = caption_scope.get(update["source_id"])
+        if (prior is None or prior.get("unit_id") != update["unit_id"]
+                or prior.get("target_figure") != update["from_number"]
+                or prior.get("target_text") != update["previous_target"]
+                or prior.get("source_text") != update["source_caption"]):
+            raise ValueError(f"Supplemental figure shift is not bound to its earlier approved mapping: {update['source_id']}")
+
+    manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+    records = _index(manifest.get("records", []))
+    heading_scope = document_authorization["scope"]["heading_numbering"]
+    expected_toc_updates = [
+        {
+            "source_id": "text-h-0023", "unit_id": "chapter-03-text-h-0023",
+            "document_order_text": "6 Cliente ages – hoortech",
+            "target": "6 CLIENTE AGES – HOORTECH", "body_heading_unchanged": True,
+        },
+        {
+            "source_id": "text-h-0074", "unit_id": "chapter-05-text-h-0074",
+            "document_order_text": "4 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+            "target": "4 PROJETO AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+            "body_heading_unchanged": True,
+        },
+        {
+            "source_id": "text-h-0105", "unit_id": "chapter-06-text-h-0105",
+            "document_order_text": "5 PROJETOS AGES IV - RECORDA ",
+            "target": "5 PROJETO AGES IV - RECORDA ",
+            "body_heading_unchanged": True,
+        },
+    ]
+    if authorization.get("toc_entry_adjustments") != expected_toc_updates:
+        raise ValueError("TOC-only title adjustments differ from the exact user-approved capitalization and singular forms")
+    for update in expected_toc_updates:
+        heading = heading_scope.get(update["source_id"])
+        record = records.get(update["source_id"])
+        if (heading is None or record is None or heading.get("unit_id") != update["unit_id"]
+                or heading.get("target_text") != update["document_order_text"]
+                or record.get("text") != heading.get("source_text")):
+            raise ValueError(f"TOC adjustment is not bound to the original heading and current chapter order: {update['source_id']}")
+
+    old_user_auth = json.loads((repo / AGES_IV_SPRINT3_USER_CONTENT_AUTHORIZATION).read_text(encoding="utf-8"))
+    old_content = {item["content_id"]: item for item in old_user_auth.get("content", [])}
+    figure = authorization.get("figure_insertion", {})
+    old_caption = old_content.get("user-ages-iv-sprint-3-gantt-caption", {})
+    old_source = old_content.get("user-ages-iv-sprint-3-gantt-source", {})
+    expected_caption_target = "**Figura 32 –** Planejamento de paralelização das tasks da squad durante a Sprint 3"
+    if (figure.get("unit_id") != "ages-iv-sprint-3"
+            or figure.get("caption_content_id") != "user-ages-iv-sprint-3-gantt-caption"
+            or figure.get("caption_source_markup") != old_caption.get("source_markup")
+            or figure.get("caption_target_markup") != expected_caption_target
+            or figure.get("figure_number") != 32
+            or figure.get("label") != "ages-iv:sprint3:gantt"
+            or figure.get("source_content_id") != "user-ages-iv-sprint-3-gantt-source"
+            or figure.get("source_markup") != old_source.get("source_markup")
+            or figure.get("source_target_markup") != old_source.get("target_markup")
+            or figure.get("target_file") != "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex"
+            or figure.get("rendering") != "Existing memorialfigure macro; real numbered figure, included in List of Illustrations, caption above and source centered below."):
+        raise ValueError("Real Gantt figure is not bound to the prior caption/source and approved Figure 32 presentation")
+    asset = figure.get("asset", {})
+    expected_asset = {
+        "user_supplied_path": "/home/eduardo/Downloads/Backend and Frontend-2026-10-03-150410.png",
+        "target_path": "relatorio_AGES_eduardo/imagens/user-supplied/ages-iv-sprint-3-gantt.png",
+        "sha256": "a507cd17d974f716b1133319a89d19907787cf8f058f4b1fc329deb8e799ee05",
+        "format": "PNG", "width_px": 8191, "height_px": 1353,
+    }
+    asset_path = repo / expected_asset["target_path"]
+    asset_bytes = asset_path.read_bytes() if asset_path.is_file() else b""
+    png_dimensions = tuple(int.from_bytes(asset_bytes[index:index + 4], "big") for index in (16, 20)) if len(asset_bytes) >= 24 else None
+    if (asset != expected_asset or not asset_path.is_file()
+            or not asset_bytes.startswith(b"\x89PNG\r\n\x1a\n")
+            or png_dimensions != (expected_asset["width_px"], expected_asset["height_px"])
+            or hashlib.sha256(asset_bytes).hexdigest() != expected_asset["sha256"]):
+        raise ValueError("Supplied Gantt asset is absent or its bytes/metadata differ from the authorized image")
+
+    old_report = old_content.get("user-ages-iv-sprint-3-report-p07", {})
+    target_markup = old_report.get("source_markup", "").replace("**14 tarefas do Épico 6**", "14 tarefas do Épico 6")
+    expected_format_adjustments = [{
+        "content_id": "user-ages-iv-sprint-3-report-p07",
+        "unit_id": "ages-iv-sprint-3",
+        "source_markup": old_report.get("source_markup"),
+        "source_markup_sha256": hashlib.sha256(old_report.get("source_markup", "").encode("utf-8")).hexdigest(),
+        "target_markup": target_markup,
+        "target_markup_sha256": hashlib.sha256(target_markup.encode("utf-8")).hexdigest(),
+        "visible_text_unchanged": True,
+        "change": "Remove only the bold emphasis from “14 tarefas do Épico 6”.",
+    }]
+    if authorization.get("inline_format_adjustments") != expected_format_adjustments:
+        raise ValueError("The Sprint 3 emphasis adjustment changes more than the user's exact request")
+
+    overlay = manifest.get("migration_overlay", {}).get("ages_iv_sprint_3_figure_and_display")
+    expected_overlay = {
+        "schema_version": 1,
+        "status": "authorized-pending-integration-and-audit",
+        "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+        "authorization_evidence_sha256": hashlib.sha256(raw).hexdigest(),
+        "source_odt_sha256": DOCUMENT_ORDER_SOURCE_SHA256,
+        "source_records_unchanged": True,
+        "figure_insertion": {
+            "unit_id": figure["unit_id"], "asset_path": asset["target_path"],
+            "asset_sha256": asset["sha256"], "caption_content_id": figure["caption_content_id"],
+            "figure_number": figure["figure_number"], "target_caption": figure["caption_target_markup"],
+            "label": figure["label"],
+        },
+        "following_figure_renumbering": [
+            {key: update[key] for key in ("source_id", "unit_id", "from_number", "to_number", "target")}
+            for update in expected_figure_updates
+        ],
+        "toc_entry_adjustments": [
+            {key: update[key] for key in ("source_id", "unit_id", "document_order_text", "target", "body_heading_unchanged")}
+            for update in expected_toc_updates
+        ],
+        "inline_format_adjustments": [{
+            "content_id": expected_format_adjustments[0]["content_id"],
+            "unit_id": expected_format_adjustments[0]["unit_id"],
+            "source_markup_sha256": expected_format_adjustments[0]["source_markup_sha256"],
+            "target_markup_sha256": expected_format_adjustments[0]["target_markup_sha256"],
+            "visible_text_unchanged": True,
+            "change": expected_format_adjustments[0]["change"],
+        }],
+    }
+    if overlay != expected_overlay:
+        raise ValueError("Manifest supplemental figure/display overlay is missing, stale, or differs from its authorization")
+    return authorization
+
+
 def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
     authorization = _load_base_presentation_authorization(repo, unit_id)
     document_order_units = set(HOORTECH_UNITS) | set(AGES_II_UNITS) | set(AGES_III_UNITS) | set(AGES_IV_UNITS)
@@ -1313,6 +1512,12 @@ def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> 
                 "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
                 **document_authorization,
             },
+        }
+    if unit_id in AGES_IV_SPRINT3_FIGURE_DISPLAY_UNITS:
+        adjustment = _load_ages_iv_sprint3_figure_display_authorization(repo)
+        authorization = {
+            **authorization,
+            "approved_ages_iv_sprint3_figure_and_display": adjustment,
         }
     return authorization
 
@@ -2091,9 +2296,14 @@ def _verify_document_order_unit(uid, unit_ledger, records, authorization, read_f
         projected, evidence = _project_approved_presentation(
             source_id, spec.get("source_text"), observed, serializations, authorization,
         )
+        supplemental_figures = {
+            item["source_id"]: item
+            for item in (authorization or {}).get("approved_ages_iv_sprint3_figure_and_display", {}).get("following_figure_renumbering", [])
+        }
+        expected_display = supplemental_figures.get(source_id, {}).get("target", spec.get("target_text"))
         if (projected != spec.get("source_text")
                 or evidence is None
-                or evidence.get("displayed") != spec.get("target_text")
+                or evidence.get("displayed") != expected_display
                 or source_id not in records):
             raise ValueError(f"Document-order projection differs from its exact authorized source mapping: {source_id}")
     return expected_ids
@@ -2158,18 +2368,28 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             "original_whitespace", "inline_tab_layout", "reference_paragraph_layout",
             "tex_quotes", "tex_dashes", "canonical_unicode",
         }
+        supplemental_figures = {
+            item["source_id"]: item
+            for item in (authorization or {}).get("approved_ages_iv_sprint3_figure_and_display", {}).get("following_figure_renumbering", [])
+        }
+        supplemental_figure = supplemental_figures.get(source_id)
+        expected_display = supplemental_figure.get("target") if supplemental_figure else (spec or {}).get("target_text")
         if (spec is None
                 or set(serializations) - allowed_companions
                 or expected != spec.get("source_text")
-                or observed != spec.get("target_text")):
+                or observed != expected_display):
             raise UnsupportedSerialization("Document-order target differs from the exact source-bound approved numbering map")
-        return expected, {
+        evidence = {
             "source_id": source_id,
             "kind": "document_reordering_numbering",
             "source": expected,
             "displayed": observed,
             "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
         }
+        if supplemental_figure:
+            evidence["supplemental_authorization_evidence"] = AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION
+            evidence["previous_displayed"] = supplemental_figure["previous_target"]
+        return expected, evidence
     if "wiki_reference_sentence" in serializations:
         wiki_rules = {**AGES_I_II_WIKI_SENTENCES, **AGES_III_WIKI_SENTENCES, **AGES_IV_WIKI_SENTENCES}
         paragraph_id = source_id if source_id in wiki_rules else next(
@@ -2372,6 +2592,32 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             raise UnsupportedSerialization("Figure callout is missing, altered, or contains unapproved words")
         return expected, {"source_id": source_id, "kind": "figure_cross_reference", "source": expected, "displayed": expected_target}
     raise UnsupportedSerialization("Unrecognized presentation transformation")
+
+
+def _project_approved_toc_entry(source_id, expected, observed, serializations, authorization):
+    """Apply a user-approved display-only TOC adjustment after chapter renumbering."""
+    updates = {
+        item["source_id"]: item
+        for item in (authorization or {}).get("approved_ages_iv_sprint3_figure_and_display", {}).get("toc_entry_adjustments", [])
+    }
+    update = updates.get(source_id)
+    if update is None:
+        return _project_approved_presentation(source_id, expected, observed, serializations, authorization)
+    if observed != update["target"] or update.get("body_heading_unchanged") is not True:
+        raise UnsupportedSerialization("TOC title differs from the exact authorized display-only adjustment")
+    projected, evidence = _project_approved_presentation(
+        source_id, expected, update["document_order_text"], serializations, authorization,
+    )
+    if projected != expected or evidence is None:
+        raise UnsupportedSerialization("TOC adjustment is not layered on the approved chapter renumbering")
+    return expected, {
+        "source_id": source_id,
+        "kind": "user_authorized_toc_display_adjustment",
+        "source": update["document_order_text"],
+        "displayed": observed,
+        "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+        "body_heading_unchanged": True,
+    }
 
 
 def _citation_keys_in_fragment(value):
@@ -2618,7 +2864,7 @@ def _parse_user_supplied_markup(value: str) -> tuple[str, list[tuple[str, str]]]
     """Project the narrowly supported user-authored inline Markdown markers."""
     if not isinstance(value, str) or "\n" in value or "\r" in value:
         raise UnsupportedSerialization("User-supplied source paragraphs must be single-line strings")
-    marker = re.compile(r"\*([^*`]+)\*|`([^*`]+)`")
+    marker = re.compile(r"\*\*([^*`]+)\*\*|\*([^*`]+)\*|`([^*`]+)`")
     display, formatting, cursor = [], [], 0
     for match in marker.finditer(value):
         plain = value[cursor:match.start()]
@@ -2626,11 +2872,14 @@ def _parse_user_supplied_markup(value: str) -> tuple[str, list[tuple[str, str]]]
             raise UnsupportedSerialization("Unpaired or unsupported inline Markdown marker")
         display.append(plain)
         if match.group(1) is not None:
-            formatting.append(("italic", match.group(1)))
+            formatting.append(("bold", match.group(1)))
             display.append(match.group(1))
-        else:
-            formatting.append(("code", match.group(2)))
+        elif match.group(2) is not None:
+            formatting.append(("italic", match.group(2)))
             display.append(match.group(2))
+        else:
+            formatting.append(("code", match.group(3)))
+            display.append(match.group(3))
         cursor = match.end()
     tail = value[cursor:]
     if "*" in tail or "`" in tail:
@@ -3929,100 +4178,176 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             report("unexpected_asset_mapping", uid, "Image occurrence does not belong to the unit", rid)
         derived_spans = {}
         supplemental_content = unit_ledger.get("user_supplied_content")
-        if supplemental_content is not None or uid == "ages-iv-sprint-2":
+        user_content_specs = {
+            "ages-iv-sprint-2": {
+                "authorization": AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION,
+                "ids": AGES_IV_SPRINT2_USER_CONTENT_IDS,
+                "instruction": "Agora vamos colocar o relatório da Sprint 2 (edição AGES IV) e também a caixa introspectiva.",
+                "heading_id": "text-h-0119",
+                "odf_relationship": "The ODF unit contains only its Sprint 2 heading; these seven paragraphs were supplied separately by the user and are not represented as ODT source records.",
+                "kinds": {"report_paragraph", "reflection_paragraph"},
+            },
+            "ages-iv-sprint-3": {
+                "authorization": AGES_IV_SPRINT3_USER_CONTENT_AUTHORIZATION,
+                "ids": AGES_IV_SPRINT3_USER_CONTENT_IDS,
+                "instruction": "Agora, vamos fazer a descrição da Sprint 3:",
+                "heading_id": "text-h-0120",
+                "odf_relationship": "The ODF unit contains only its Sprint 3 heading and empty wrappers. The nine report paragraphs, figure caption/source, and two reflection paragraphs were supplied separately by the user and are not ODT records. No Gantt image is embedded in this unit.",
+                "kinds": {"report_paragraph", "reflection_paragraph", "figure_caption", "figure_source"},
+            },
+        }
+        if supplemental_content is not None or uid in user_content_specs:
             try:
-                if uid != "ages-iv-sprint-2":
-                    raise ValueError("User-supplied narrative supplement is authorized only for AGES IV Sprint 2")
+                spec = user_content_specs.get(uid)
+                if spec is None:
+                    raise ValueError("User-supplied narrative supplement is authorized only for exact scoped AGES IV Sprints")
                 if not isinstance(supplemental_content, dict) or set(supplemental_content) != {
                     "authorization_evidence", "authorization_sha256", "content_map"
                 }:
-                    raise ValueError("Sprint 2 user-supplied content requires the exact authorization and content_map fields")
-                if supplemental_content.get("authorization_evidence") != AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION:
-                    raise ValueError("Sprint 2 supplement points to an unapproved authorization record")
-                auth_path = safe_path(AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION)
+                    raise ValueError("User-supplied content requires exact authorization and content_map fields")
+                if supplemental_content.get("authorization_evidence") != spec["authorization"]:
+                    raise ValueError("User-supplied supplement points to an unapproved authorization record")
+                auth_path = safe_path(spec["authorization"])
                 auth_bytes = auth_path.read_bytes()
                 if hashlib.sha256(auth_bytes).hexdigest() != supplemental_content.get("authorization_sha256"):
                     raise ValueError("User-supplied content authorization hash is stale")
                 authorization = json.loads(auth_bytes.decode("utf-8"))
-                expected_instruction = "Agora vamos colocar o relatório da Sprint 2 (edição AGES IV) e também a caixa introspectiva."
                 if (authorization.get("schema_version") != 1
                         or authorization.get("record_type") != "user_supplied_content_authorization"
                         or authorization.get("approval_status") != "authorized_for_inclusion_pending_human_review"
                         or authorization.get("unit_id") != uid
-                        or authorization.get("user_instruction") != expected_instruction
+                        or authorization.get("user_instruction") != spec["instruction"]
                         or authorization.get("source") != {
                             "type": "direct_user_message",
                             "source_odt_path": "RELATORIO_ATUAL.odt",
                             "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
-                            "odt_relationship": "The ODF unit contains only its Sprint 2 heading; these seven paragraphs were supplied separately by the user and are not represented as ODT source records.",
+                            "odt_relationship": spec["odf_relationship"],
                         }):
-                    raise ValueError("User authorization record does not match the exact Sprint 2 addition and frozen source relationship")
+                    raise ValueError("User authorization record does not match the exact Sprint addition and frozen source relationship")
                 source_content = authorization.get("content")
                 if (not isinstance(source_content, list)
-                        or [item.get("content_id") for item in source_content if isinstance(item, dict)] != list(AGES_IV_SPRINT2_USER_CONTENT_IDS)
-                        or len(source_content) != len(AGES_IV_SPRINT2_USER_CONTENT_IDS)):
-                    raise ValueError("Supplement authorization must contain the exact seven Sprint 2 report/reflection paragraphs in order")
+                        or [item.get("content_id") for item in source_content if isinstance(item, dict)] != list(spec["ids"])
+                        or len(source_content) != len(spec["ids"])):
+                    raise ValueError("Supplement authorization must contain the exact authorized content blocks in order")
+                if uid == "ages-iv-sprint-3":
+                    expected_placeholder = {
+                        "placeholder_id": "ages-iv-sprint-3-gantt",
+                        "source_heading_id": "text-h-0120",
+                        "caption_content_id": "user-ages-iv-sprint-3-gantt-caption",
+                        "source_content_id": "user-ages-iv-sprint-3-gantt-source",
+                        "user_decision": "Placeholder provisório “Figura X” (recomendado)",
+                        "presentation": "Provisional visual placeholder only; not a completed figure and not included in the List of Illustrations or the figure counter.",
+                        "pending_detail": "Imagem do gráfico de Gantt ainda não fornecida; inserir o material original quando disponibilizado.",
+                        "downstream_numbering": "When the actual image is supplied and converted into a numbered figure, it will precede Hoortech figures. At that point renumbering Hoortech figures 32–34 to 33–35 requires a separate traced integration update.",
+                        "caption_target_markup": "**Figura X –** Planejamento de paralelização das tasks da squad durante a Sprint 3",
+                        "source_target_markup": "Fonte: elaboração própria.",
+                    }
+                    if authorization.get("figure_placeholder") != expected_placeholder:
+                        raise ValueError("Sprint 3 Gantt placeholder differs from the exact user-approved provisional treatment")
                 content_map = supplemental_content.get("content_map")
-                if not isinstance(content_map, list) or [item.get("content_id") for item in content_map if isinstance(item, dict)] != list(AGES_IV_SPRINT2_USER_CONTENT_IDS) or len(content_map) != len(AGES_IV_SPRINT2_USER_CONTENT_IDS):
-                    raise ValueError("Ledger content_map must cover all seven authorized paragraphs exactly once and in order")
-                title_mapping = by_id.get("text-h-0119")
-                if title_mapping is None or "text-h-0119" not in actual:
-                    raise ValueError("Sprint 2 title mapping is required before the supplied narrative")
-                heading_path, heading_start, _, _ = actual["text-h-0119"]
+                if not isinstance(content_map, list) or [item.get("content_id") for item in content_map if isinstance(item, dict)] != list(spec["ids"]) or len(content_map) != len(spec["ids"]):
+                    raise ValueError("Ledger content_map must cover every authorized block exactly once and in order")
+                title_mapping = by_id.get(spec["heading_id"])
+                if title_mapping is None or spec["heading_id"] not in actual:
+                    raise ValueError("Source Sprint heading mapping is required before user-supplied content")
+                heading_path, heading_start, _, _ = actual[spec["heading_id"]]
                 unit_target = safe_path(unit_ledger.get("tex_path"))
                 supplemental_positions = []
                 checked_content_ids = []
                 for source_item, mapping in zip(source_content, content_map):
-                    expected_keys = {"content_id", "kind", "source_markup", "sha256"}
-                    if set(source_item) != expected_keys:
+                    required_keys = {"content_id", "kind", "source_markup", "sha256"}
+                    if frozenset(source_item) not in {frozenset(required_keys), frozenset(required_keys | {"target_markup"})}:
                         raise ValueError("Supplement source record has unknown or missing fields")
                     content_id = source_item.get("content_id")
-                    if source_item.get("kind") not in {"report_paragraph", "reflection_paragraph"}:
-                        raise ValueError(f"Unsupported user-supplied paragraph kind for {content_id}")
+                    if source_item.get("kind") not in spec["kinds"]:
+                        raise ValueError(f"Unsupported user-supplied content kind for {content_id}")
                     source_markup = source_item.get("source_markup")
                     if not isinstance(source_markup, str) or hashlib.sha256(source_markup.encode("utf-8")).hexdigest() != source_item.get("sha256"):
                         raise ValueError(f"Source hash is missing or invalid for {content_id}")
-                    expected_text, expected_formatting = _parse_user_supplied_markup(source_markup)
+                    expected_text, _ = _parse_user_supplied_markup(source_markup)
+                    target_markup = source_item.get("target_markup", source_markup)
+                    followup = (presentation_authorization or {}).get("approved_ages_iv_sprint3_figure_and_display", {})
+                    inline_adjustment = next((
+                        adjustment for adjustment in followup.get("inline_format_adjustments", [])
+                        if adjustment.get("content_id") == content_id
+                    ), None)
+                    if inline_adjustment is not None:
+                        if (uid != "ages-iv-sprint-3"
+                                or inline_adjustment.get("unit_id") != uid
+                                or inline_adjustment.get("source_markup") != source_markup
+                                or hashlib.sha256(source_markup.encode("utf-8")).hexdigest() != inline_adjustment.get("source_markup_sha256")
+                                or hashlib.sha256(inline_adjustment.get("target_markup", "").encode("utf-8")).hexdigest() != inline_adjustment.get("target_markup_sha256")
+                                or inline_adjustment.get("visible_text_unchanged") is not True):
+                            raise ValueError("Supplemental inline emphasis adjustment differs from its exact source-bound approval")
+                        target_markup = inline_adjustment["target_markup"]
+                    expected_target_text, expected_formatting = _parse_user_supplied_markup(target_markup)
+                    figure_caption_adjustment = None
+                    figure_spec = followup.get("figure_insertion", {})
+                    if content_id == figure_spec.get("caption_content_id"):
+                        figure_caption_adjustment = figure_spec
+                        target_markup = figure_caption_adjustment["caption_target_markup"]
+                        expected_target_text, expected_formatting = _parse_user_supplied_markup(target_markup)
+                        expected_text = expected_text.replace("Figura X", "Figura 32", 1)
+                    if expected_text != expected_target_text:
+                        raise ValueError(f"Approved target styling changes visible text for {content_id}")
                     if set(mapping) != {"content_id", "target_file", "start_byte", "end_byte", "target_sha256"} or mapping.get("content_id") != content_id:
                         raise ValueError(f"Target mapping schema or ID is invalid for {content_id}")
                     path, start, end, value = fragment(mapping)
                     if path != unit_target or path not in file_order:
-                        raise ValueError(f"User-supplied paragraph {content_id} must be inside the Sprint 2 unit file")
+                        raise ValueError(f"User-supplied content {content_id} must be inside its Sprint unit file")
                     expansion_position = next((
                         start + delta for lo, hi, delta in expansion_positions.get(path, []) if lo <= start and end <= hi
                     ), None)
                     heading_position = next((
                         heading_start + delta for lo, hi, delta in expansion_positions.get(heading_path, [])
-                        if lo <= heading_start and actual["text-h-0119"][2] <= hi
+                        if lo <= heading_start and actual[spec["heading_id"]][2] <= hi
                     ), None)
                     if expansion_position is None or heading_position is None or expansion_position <= heading_position:
-                        raise ValueError(f"User-supplied paragraph {content_id} is not reachable after the Sprint 2 heading")
+                        raise ValueError(f"User-supplied content {content_id} is not reachable after its Sprint heading")
                     observed_text = displayed_text(value)
                     observed_formatting = []
                     for token in commands(strip_comments(value)):
-                        if token.name not in {"textit", "texttt"}:
+                        if token.name not in {"textit", "texttt", "textbf"}:
                             continue
                         if token.starred or token.optionals or len(token.args) != 1:
-                            raise ValueError(f"Unsupported emphasis/code command in {content_id}")
-                        observed_formatting.append(("italic" if token.name == "textit" else "code", displayed_text(token.args[0])))
+                            raise ValueError(f"Unsupported emphasis/code/bold command in {content_id}")
+                        format_kind = {"textit": "italic", "texttt": "code", "textbf": "bold"}[token.name]
+                        observed_formatting.append((format_kind, displayed_text(token.args[0])))
                     if observed_text != expected_text or observed_formatting != expected_formatting:
                         raise ValueError(f"Displayed text or inline formatting differs from the user source for {content_id}")
                     supplemental_positions.append(expansion_position)
                     checked_content_ids.append(content_id)
+                    if inline_adjustment is not None:
+                        facts["approved_presentation_transformations"].append({
+                            "kind": "user_authorized_inline_emphasis_removal",
+                            "content_id": content_id,
+                            "source_markup_sha256": inline_adjustment["source_markup_sha256"],
+                            "target_markup_sha256": inline_adjustment["target_markup_sha256"],
+                            "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+                            "visible_text_unchanged": True,
+                        })
+                    if figure_caption_adjustment is not None:
+                        facts["approved_presentation_transformations"].append({
+                            "kind": "user_authorized_figure_placeholder_numbering",
+                            "content_id": content_id,
+                            "source_text": "Figura X",
+                            "displayed_text": "Figura 32",
+                            "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+                        })
                     derived_spans.setdefault(path, []).append((start, end))
                 if supplemental_positions != sorted(supplemental_positions):
                     raise ValueError("Sprint 2 report and reflection paragraphs are not in the authorized source order")
                 report(
                     "user_supplied_content_human_review_required", uid,
-                    "Seven paragraphs are bound to a direct user message and checked against the LaTeX display projection; they are not ODT records, and PDF presentation still requires human review",
+                    f"{len(checked_content_ids)} content blocks are bound to a direct user message and checked against the LaTeX display projection; they are not ODT records, and PDF presentation still requires human review",
                     severity="warning",
                 )
                 facts["user_supplied_content_checked"].append({
                     "unit_id": uid,
-                    "authorization_evidence": AGES_IV_SPRINT2_USER_CONTENT_AUTHORIZATION,
+                    "authorization_evidence": spec["authorization"],
                     "content_ids": checked_content_ids,
                     "source_is_odt": False,
-                    "lexical_display_and_inline_formatting_checked": True,
+                    "lexical_display_and_target_formatting_checked": True,
                 })
             except (ValueError, OSError, KeyError, TypeError, UnicodeError, UnsupportedSerialization) as exc:
                 report("invalid_user_supplied_content", uid, str(exc))
@@ -4032,9 +4357,154 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             "chapter-02-text-h-0010": ("text-h-0010", "ages-i-architecture", "Arquitetura utilizada ", "Diagrama de arquitetura não incorporado ao ODT; preenchimento posterior."),
             "chapter-04-text-h-0043": ("text-h-0043", "ages-ii-database", "4.2.2 Banco de dados utilizado", "Diagrama do banco de dados ausente no ODT; preenchimento posterior."),
         }
-        if uid in placeholder_specs and len(unit_ledger.get("approved_apparatus", [])) != 1:
-            report("missing_authorized_placeholder", uid, "Missing-diagram unit requires its one explicitly authorized provisional placeholder")
-        for apparatus in unit_ledger.get("approved_apparatus", []):
+        apparatus_items = unit_ledger.get("approved_apparatus", [])
+        expected_apparatus_count = 1 if uid == "ages-iv-sprint-3" else 1
+        if uid in placeholder_specs and len(apparatus_items) != expected_apparatus_count:
+            report("missing_authorized_placeholder", uid, "Missing-material unit requires its exact explicitly authorized provisional apparatus")
+        centered_source_sides = []
+        figure_nopagebreak_anchors = []
+        real_user_figure_count = 0
+        for apparatus in apparatus_items:
+            if apparatus.get("kind") == "user_supplied_figure":
+                try:
+                    expected_fields = {
+                        "kind", "unit_id", "caption_content_id", "source_content_id", "authorization_evidence",
+                        "target_file", "start_byte", "end_byte", "target_sha256", "asset_path", "asset_sha256", "label",
+                    }
+                    if set(apparatus) != expected_fields:
+                        raise ValueError("User-supplied figure apparatus has unknown or missing fields")
+                    followup = (presentation_authorization or {}).get("approved_ages_iv_sprint3_figure_and_display", {})
+                    figure_spec = followup.get("figure_insertion", {})
+                    if (uid != "ages-iv-sprint-3" or apparatus.get("unit_id") != uid
+                            or apparatus.get("authorization_evidence") != AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION
+                            or apparatus.get("caption_content_id") != figure_spec.get("caption_content_id")
+                            or apparatus.get("source_content_id") != figure_spec.get("source_content_id")
+                            or apparatus.get("target_file") != figure_spec.get("target_file")
+                            or apparatus.get("asset_path") != figure_spec.get("asset", {}).get("target_path")
+                            or apparatus.get("asset_sha256") != figure_spec.get("asset", {}).get("sha256")
+                            or apparatus.get("label") != figure_spec.get("label")):
+                        raise ValueError("Real Gantt figure is outside the exact user-approved unit, image, caption and label")
+                    path, start, end, value = fragment(apparatus)
+                    if path.relative_to(repo).as_posix() != figure_spec.get("target_file"):
+                        raise ValueError("User-supplied figure is not in the approved Sprint 3 unit file")
+                    tokens = [token for token in commands(strip_comments(value)) if token.name == "memorialfigure"]
+                    if len(tokens) != 1 or tokens[0].starred or tokens[0].optionals or len(tokens[0].args) != 5:
+                        raise ValueError("Gantt image must use exactly one standardized memorialfigure command")
+                    asset_spec = figure_spec["asset"]
+                    expected_source_markup = figure_spec["source_target_markup"]
+                    expected_caption_text, expected_caption_formatting = _parse_user_supplied_markup(figure_spec["caption_target_markup"])
+                    caption_arg = tokens[0].args[1]
+                    caption_text = displayed_text(caption_arg)
+                    caption_formatting = []
+                    for caption_token in commands(caption_arg):
+                        if caption_token.name in {"textbf", "textit", "texttt"} and len(caption_token.args) == 1:
+                            caption_formatting.append(({"textbf": "bold", "textit": "italic", "texttt": "code"}[caption_token.name], displayed_text(caption_token.args[0])))
+                    expected_arguments = (
+                        "imagens/user-supplied/ages-iv-sprint-3-gantt.png",
+                        expected_caption_text,
+                        figure_spec["label"],
+                        expected_source_markup,
+                        "0.99",
+                    )
+                    if (tokens[0].args[0] != expected_arguments[0]
+                            or caption_text != expected_arguments[1]
+                            or caption_formatting != expected_caption_formatting
+                            or tokens[0].args[2:] != expected_arguments[2:]):
+                        raise ValueError("Gantt image, Figure 32 caption, source line, label or scale differs from the exact approved display")
+                    if hashlib.sha256((repo / asset_spec["target_path"]).read_bytes()).hexdigest() != asset_spec["sha256"]:
+                        raise ValueError("Gantt PNG bytes no longer match the directly supplied asset hash")
+                    expected_asset_map = [{
+                        "asset_id": "user-ages-iv-sprint-3-gantt",
+                        "target_path": asset_spec["target_path"],
+                        "sha256": asset_spec["sha256"],
+                        "format": "PNG",
+                        "width_px": asset_spec["width_px"],
+                        "height_px": asset_spec["height_px"],
+                        "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+                    }]
+                    if unit_ledger.get("user_supplied_asset_map") != expected_asset_map:
+                        raise ValueError("Sprint 3 user-supplied asset map differs from the hash-bound PNG in its authorization")
+                    content_map = (unit_ledger.get("user_supplied_content") or {}).get("content_map", [])
+                    mapped_caption = next((item for item in content_map if item.get("content_id") == apparatus["caption_content_id"]), None)
+                    mapped_source = next((item for item in content_map if item.get("content_id") == apparatus["source_content_id"]), None)
+                    if (mapped_caption is None or mapped_source is None
+                            or safe_path(mapped_caption.get("target_file")) != path
+                            or safe_path(mapped_source.get("target_file")) != path
+                            or not (start <= mapped_caption.get("start_byte") < mapped_caption.get("end_byte") <= end)
+                            or not (start <= mapped_source.get("start_byte") < mapped_source.get("end_byte") <= end)):
+                        raise ValueError("Figure caption/source mappings are not nested in the approved real figure call")
+                    p01 = next((item for item in content_map if item.get("content_id") == "user-ages-iv-sprint-3-report-p01"), None)
+                    p02 = next((item for item in content_map if item.get("content_id") == "user-ages-iv-sprint-3-report-p02"), None)
+                    if (p01 is None or p02 is None or p01.get("end_byte", end) > start or end > p02.get("start_byte", start)):
+                        raise ValueError("Figure 32 is not placed after the first and before the second Sprint 3 report paragraph")
+                    derived_spans.setdefault(path, []).append((start, end))
+                    real_user_figure_count += 1
+                    facts.setdefault("user_supplied_assets_checked", []).append({
+                        "unit_id": uid, "target_path": asset_spec["target_path"],
+                        "sha256": asset_spec["sha256"], "format": "PNG",
+                        "dimensions_px": [asset_spec["width_px"], asset_spec["height_px"]],
+                        "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+                        "figure_number": 32,
+                    })
+                except (ValueError, OSError, KeyError, TypeError, UnicodeError, UnsupportedSerialization) as exc:
+                    report("invalid_user_supplied_figure", uid, str(exc))
+                continue
+            if apparatus.get("kind") == "figure_group_nopagebreak":
+                try:
+                    if set(apparatus) != {"kind", "anchor_id", "authorization_evidence", "target_file", "start_byte", "end_byte", "target_sha256"}:
+                        raise ValueError("Unknown/missing figure keep-with-next fields")
+                    if (uid != "ages-iv-sprint-3"
+                            or apparatus.get("authorization_evidence") != AGES_IV_SPRINT3_USER_CONTENT_AUTHORIZATION
+                            or apparatus.get("anchor_id") not in {"user-ages-iv-sprint-3-gantt-caption", "ages-iv-sprint-3-gantt"}):
+                        raise ValueError("Figure keep-with-next apparatus is outside the exact Sprint 3 placeholder authorization")
+                    content_ledger = unit_ledger.get("user_supplied_content", {})
+                    path, start, end, value = fragment(apparatus)
+                    if apparatus["anchor_id"] == "user-ages-iv-sprint-3-gantt-caption":
+                        anchor = next((item for item in content_ledger.get("content_map", []) if item.get("content_id") == apparatus["anchor_id"]), None)
+                        expected_wrapper = "\\par\\nopagebreak[4]"
+                        adjacent = anchor is not None and path == safe_path(anchor.get("target_file")) and start == anchor.get("end_byte")
+                    else:
+                        placeholder = next((item for item in apparatus_items if item.get("kind") == "diagram_placeholder"), None)
+                        expected_wrapper = "\\nopagebreak[4]"
+                        adjacent = (placeholder is not None
+                                    and path == safe_path(placeholder.get("target_file"))
+                                    and start == placeholder.get("end_byte"))
+                    if value != expected_wrapper or not adjacent:
+                        raise ValueError("Figure keep-with-next control differs from the approved layout or is not adjacent to its anchor")
+                    figure_nopagebreak_anchors.append(apparatus["anchor_id"])
+                    derived_spans.setdefault(path, []).append((start, end))
+                except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
+                    report("invalid_approved_apparatus", uid, str(exc))
+                continue
+            if apparatus.get("kind") == "centered_figure_source_wrapper":
+                try:
+                    if set(apparatus) != {"kind", "source_content_id", "side", "authorization_evidence", "target_file", "start_byte", "end_byte", "target_sha256"}:
+                        raise ValueError("Unknown/missing centered-source wrapper fields")
+                    if (uid != "ages-iv-sprint-3"
+                            or apparatus.get("authorization_evidence") != AGES_IV_SPRINT3_USER_CONTENT_AUTHORIZATION
+                            or apparatus.get("source_content_id") != "user-ages-iv-sprint-3-gantt-source"
+                            or apparatus.get("side") not in {"before", "after"}):
+                        raise ValueError("Centered source wrapper is outside the exact Sprint 3 placeholder authorization")
+                    content_ledger = unit_ledger.get("user_supplied_content", {})
+                    source_mapping = next((item for item in content_ledger.get("content_map", []) if item.get("content_id") == apparatus["source_content_id"]), None)
+                    if source_mapping is None:
+                        raise ValueError("Centered source wrapper lacks its mapped user-provided source line")
+                    path, start, end, value = fragment(apparatus)
+                    if path != safe_path(source_mapping.get("target_file")):
+                        raise ValueError("Centered source wrapper and source line must share a target file")
+                    if apparatus["side"] == "before":
+                        expected_wrapper = r"\begin{center}\small\SingleSpacing "
+                        adjacent = end == source_mapping.get("start_byte")
+                    else:
+                        expected_wrapper = r"\end{center}"
+                        adjacent = start == source_mapping.get("end_byte")
+                    if value != expected_wrapper or not adjacent:
+                        raise ValueError("Centered source wrapper differs from the approved alignment or is not adjacent to its source line")
+                    centered_source_sides.append(apparatus["side"])
+                    derived_spans.setdefault(path, []).append((start, end))
+                except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
+                    report("invalid_approved_apparatus", uid, str(exc))
+                continue
             try:
                 if set(apparatus) != {"kind", "source_heading_id", "placeholder_id", "authorization_evidence", "target_file", "start_byte", "end_byte", "target_sha256"}:
                     raise ValueError("Unknown/missing apparatus schema fields")
@@ -4072,6 +4542,22 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         and auth.get("authorized") is True
                         and placeholder_decision
                     )
+                elif uid == "ages-iv-sprint-3":
+                    evidence = AGES_IV_SPRINT3_USER_CONTENT_AUTHORIZATION
+                    auth = json.loads(safe_path(evidence).read_text())
+                    decision = auth.get("figure_placeholder", {})
+                    valid_edition_evidence = (
+                        auth.get("schema_version") == 1
+                        and auth.get("record_type") == "user_supplied_content_authorization"
+                        and auth.get("approval_status") == "authorized_for_inclusion_pending_human_review"
+                        and auth.get("unit_id") == uid
+                        and auth.get("source", {}).get("source_odt_sha256") == "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+                        and decision.get("placeholder_id") == spec[1]
+                        and decision.get("source_heading_id") == spec[0]
+                        and decision.get("user_decision") == "Placeholder provisório “Figura X” (recomendado)"
+                        and decision.get("presentation") == "Provisional visual placeholder only; not a completed figure and not included in the List of Illustrations or the figure counter."
+                        and decision.get("pending_detail") == spec[3]
+                    )
                 else:
                     evidence = "migration/approvals/ages-i-authorization.json"
                     auth = json.loads(safe_path(evidence).read_text())
@@ -4091,11 +4577,19 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 tokens = list(commands(value))
                 if path not in file_order or len(tokens) != 1 or tokens[0].name != "diagramplaceholder" or tokens[0].args != (spec[1], spec[3]) or tokens[0].starred or tokens[0].optionals or strip_comments(value[:tokens[0].start] + value[tokens[0].end:]).strip():
                     raise ValueError("Placeholder interval differs from authorized provisional apparatus")
-                if len(unit_ledger["approved_apparatus"]) != 1:
+                if sum(item.get("kind") == "diagram_placeholder" for item in unit_ledger["approved_apparatus"]) != 1:
                     raise ValueError("Exactly one authorized placeholder per missing-diagram unit")
                 derived_spans.setdefault(path, []).append((start, end))
             except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
                 report("invalid_approved_apparatus", uid, str(exc))
+        if uid == "ages-iv-sprint-3" and real_user_figure_count == 1 and (centered_source_sides or figure_nopagebreak_anchors):
+            report("invalid_approved_apparatus", uid, "Real Figure 32 must replace the provisional centered-source and keep-with-next apparatus")
+        if uid == "ages-iv-sprint-3" and real_user_figure_count == 0 and sorted(centered_source_sides) != ["after", "before"]:
+            report("invalid_approved_apparatus", uid, "Sprint 3 placeholder source line must have exactly one approved centered wrapper before and after")
+        if uid == "ages-iv-sprint-3" and real_user_figure_count == 0 and sorted(figure_nopagebreak_anchors) != ["ages-iv-sprint-3-gantt", "user-ages-iv-sprint-3-gantt-caption"]:
+            report("invalid_approved_apparatus", uid, "Sprint 3 caption and placeholder must each have one approved keep-with-next control")
+        if uid == "ages-iv-sprint-3" and real_user_figure_count != 1:
+            report("missing_authorized_user_figure", uid, "Sprint 3 must contain exactly one hash-verified user-supplied Figure 32")
         for path in file_order:
             target_text = path.read_text(encoding="utf-8")
             target_tokens = list(commands(target_text))
@@ -4155,9 +4649,13 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                                 inline_layout_verified=inline_verified,
                                 reference_layout_verified=reference_verified,
                             )
-                            entry, _ = _project_approved_presentation(rid, expected, entry, policies, presentation_authorization)
+                            entry, toc_evidence = _project_approved_toc_entry(
+                                rid, expected, entry, policies, presentation_authorization,
+                            )
                             if heading.starred and token.args[1] == heading.name and entry == expected:
                                 matched.append(rid)
+                                if toc_evidence and toc_evidence.get("kind") == "user_authorized_toc_display_adjustment":
+                                    facts["approved_presentation_transformations"].append(toc_evidence)
                         except UnsupportedSerialization:
                             pass
                 if len(matched) != 1:

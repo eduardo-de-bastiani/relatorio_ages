@@ -24,7 +24,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "00a7a00a17602b4ede48579dfef0e134d810658e14cbd1a9e96d0cd959472082",
+          "target_sha256": "0fb17dafd1a0d65acfdd7385226d24ca614b11d426e05bc7e6c6bcb5c1cec58e",
           "source_xml_sha256": "9a6d82b8c5b0f1a149a2b7c82f2cf81166aa77250835adf6823eaa98b3a8c3f7",
           "source_text_sha256": "2368b2baecbe300c45ff19aa678c74e417a15cfea3c9c9bb5c15788cfc8527e8"
         }
@@ -41,7 +41,7 @@
           "end_byte": 146,
           "source_start_id": "text-bookmark-start-0023",
           "source_end_id": "text-bookmark-end-0023",
-          "target_sha256": "00a7a00a17602b4ede48579dfef0e134d810658e14cbd1a9e96d0cd959472082"
+          "target_sha256": "0fb17dafd1a0d65acfdd7385226d24ca614b11d426e05bc7e6c6bcb5c1cec58e"
         }
       ],
       "structural_dispositions": [

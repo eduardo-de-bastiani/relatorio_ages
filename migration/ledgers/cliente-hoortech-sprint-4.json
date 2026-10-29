@@ -24,7 +24,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "f8f81b9f491cd7548d55b357eaa091007147a9a7b73b7ca5c2b375eba0837627",
           "source_text_sha256": "8d5fc5c45db620328ad94ac64637d8ea945a8f8b09d4ee60654181f3b7382ed1"
         },
@@ -34,7 +34,7 @@
           "start_byte": 337,
           "end_byte": 793,
           "serializations": [],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "a9608a7b57ced7743f8b47127abdf2915f52956872ae5a55ac9b0bd22d7b6844",
           "source_text_sha256": "3dc7639ee698f8c219f7c6bfdf9e92d4b2ea51c2ad8f0414e4e601bc5592ecce"
         },
@@ -44,7 +44,7 @@
           "start_byte": 820,
           "end_byte": 1625,
           "serializations": [],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "68b5fb4b2d2e6e2cc0e331205d0624c2bd2b87eb00cf9f36b47d757522f879a4",
           "source_text_sha256": "3e89f0650552d6bdd1778c5df94f246df7c695b769ccbdcd856f44ef94f71090"
         },
@@ -54,7 +54,7 @@
           "start_byte": 1652,
           "end_byte": 2010,
           "serializations": [],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "fa0e0b14667610db15ef24ceebe6e3d9568fd94921a31d43d7acadaf5acc6f1f",
           "source_text_sha256": "0bf9e004c9d00daa0f6dc7384b89fa47843f1252c4d3a26bfdbae623cca044a7"
         },
@@ -64,7 +64,7 @@
           "start_byte": 2037,
           "end_byte": 2441,
           "serializations": [],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "ac7262fa0da9ec0cfd427450d9cdb6758c1f53924d53ba69a2f5fb732ae904c4",
           "source_text_sha256": "4f55a1c5a9d71fa96d9097f364e76b6d3ffd6e9201fa56c9fdd69dc35385baff"
         },
@@ -74,7 +74,7 @@
           "start_byte": 2468,
           "end_byte": 3047,
           "serializations": [],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "51e0bad27268195ff3c60fbd4f88c9898c858233eccbfb180f56801b7b7cc3a8",
           "source_text_sha256": "a2fb51418e00192d2e4627378481f7d1ff193b23b3ca5ac8f6d3debe4f1fa03e"
         },
@@ -86,7 +86,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "e3a6460b76ef1e6ad983a542d188450dbd71d9e7615d935036657552581a7088",
           "source_text_sha256": "9265344cc0f152a319b6e0cbb479cd6678b603a47510c3987bc1551637b07e9b"
         },
@@ -96,7 +96,7 @@
           "start_byte": 3146,
           "end_byte": 3325,
           "serializations": [],
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b",
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524",
           "source_xml_sha256": "a5c4d5a4a60d19db1cbe54d3665b9704c44e19af5b0a47f66a8d1f9f88d6accf",
           "source_text_sha256": null
         }
@@ -124,7 +124,7 @@
           "end_byte": 148,
           "source_start_id": "text-bookmark-start-0033",
           "source_end_id": "text-bookmark-end-0033",
-          "target_sha256": "4aa9974e79cb9a116875ec03578e0e16651c80b4e416a85ce9e669f03ed7794b"
+          "target_sha256": "9f5267469c591c47a7f0a3f82fbbc9bc4eb4de9cfd5cb9250e311fa39e4c2524"
         }
       ],
       "structural_dispositions": [

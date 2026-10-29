@@ -1,3 +1,6 @@
+import hashlib
+import json
+import struct
 import tempfile
 import unittest
 from pathlib import Path
@@ -138,6 +141,52 @@ class LatexTests(unittest.TestCase):
         )
         self.write("main.tex", altered + r"\memorialfigure{image.png}{Legenda}{fig:sample}{Fonte: pendente de identificação}{0.8}")
         self.assertIn("unverified_figure_macro", self.codes(self.audit()))
+
+    def test_only_exact_user_authorized_sprint3_figure_may_have_identified_source(self):
+        latex_root = self.root / "relatorio_AGES_eduardo"
+        approval_path = self.root / "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json"
+        asset_path = latex_root / "imagens/user-supplied/ages-iv-sprint-3-gantt.png"
+        asset_path.parent.mkdir(parents=True)
+        png = b"\x89PNG\r\n\x1a\n" + struct.pack(">I", 13) + b"IHDR" + struct.pack(">II", 8191, 1353)
+        asset_path.write_bytes(png)
+        approval_path.parent.mkdir(parents=True)
+        approval_path.write_text(json.dumps({
+            "schema_version": 1,
+            "record_type": "user_authorized_ages_iv_sprint_3_figure_and_display_adjustments",
+            "approval_status": "authorized_for_execution_pending_human_review",
+            "source": {"odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"},
+            "figure_insertion": {
+                "unit_id": "ages-iv-sprint-3",
+                "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex",
+                "figure_number": 32,
+                "label": "ages-iv:sprint3:gantt",
+                "source_target_markup": "Fonte: elaboração própria.",
+                "asset": {
+                    "target_path": "relatorio_AGES_eduardo/imagens/user-supplied/ages-iv-sprint-3-gantt.png",
+                    "sha256": hashlib.sha256(png).hexdigest(),
+                    "format": "PNG",
+                    "width_px": 8191,
+                    "height_px": 1353,
+                },
+            },
+        }), encoding="utf-8")
+        definition = r"\newcommand{\memorialfigure}[5]{" + MEMORIAL_FIGURE_BODY + "}"
+        (latex_root / "main.tex").parent.mkdir(parents=True, exist_ok=True)
+        (latex_root / "main.tex").write_text(definition + r"\input{conteudo/migracao/ages-iv-sprint-3}", encoding="utf-8")
+        unit_path = latex_root / "conteudo/migracao/ages-iv-sprint-3.tex"
+        unit_path.parent.mkdir(parents=True)
+        invocation = r"\memorialfigure{imagens/user-supplied/ages-iv-sprint-3-gantt.png}{\textbf{Figura 32 –} Planejamento de paralelização das tasks da squad durante a Sprint 3}{ages-iv:sprint3:gantt}{Fonte: elaboração própria.}{0.99}"
+        unit_path.write_text(invocation, encoding="utf-8")
+
+        result = audit_latex(latex_root, Path("main.tex"))
+        self.assertEqual(result["status"], "pass", result)
+        self.assertEqual(result["counts"]["images"], 1)
+
+        unit_path.write_text(invocation.replace("elaboração própria", "fonte desconhecida"), encoding="utf-8")
+        self.assertIn("invalid_figure_apparatus", self.codes(audit_latex(latex_root, Path("main.tex"))))
+
+        unit_path.write_text(invocation.replace("Figura 32", "Figura 31"), encoding="utf-8")
+        self.assertIn("invalid_figure_apparatus", self.codes(audit_latex(latex_root, Path("main.tex"))))
 
     def test_linked_memorialfigure_checks_contract_destination_asset_and_label(self):
         body = r'''\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape\href{#6}{#2}}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\href{#6}{\XeTeXpicfile "#1" width #5\linewidth\relax}}\par\begingroup\centering\small\SingleSpacing #4\par\endgroup\end{figure}'''

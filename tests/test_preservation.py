@@ -9,8 +9,10 @@ from unittest.mock import patch
 from scripts.migration_harness.preservation import (
     audit_conversion,
     displayed_text,
+    _parse_user_supplied_markup,
     UnsupportedSerialization,
     _project_approved_presentation,
+    _project_approved_toc_entry,
     _verify_document_order_unit,
     _is_authorized_ages_iii_group_label_removal,
     AGES_III_PROTOTYPE_GROUP_LABELS,
@@ -37,6 +39,7 @@ from scripts.migration_harness.preservation import (
     FRONTMATTER_TRANSFORM_IDS,
     _load_presentation_authorization,
     DOCUMENT_ORDER_AUTHORIZATION,
+    AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
     AGES_II_TECHNOLOGY_REFERENCE_KEYS,
     AGES_II_ADDITIONAL_REFERENCE_RECORDS,
     AGES_II_RFC_REFERENCE_FIELDS,
@@ -180,6 +183,49 @@ class PreservationTests(unittest.TestCase):
                 uid, unit_ledger, {"text-h-0046": {}}, authorization,
                 lambda mapping: spec["target_text"] + " alterado",
             )
+
+    def test_sprint3_figure_append_is_source_bound_and_shifts_only_the_three_hoortech_figures(self):
+        repo = Path(__file__).resolve().parents[1]
+        auth_path = repo / AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION
+        auth = json.loads(auth_path.read_text(encoding="utf-8"))
+        self.assertEqual(auth["figure_insertion"]["figure_number"], 32)
+        for update in auth["following_figure_renumbering"]:
+            with self.subTest(source_id=update["source_id"]):
+                unit_auth = _load_presentation_authorization(repo, update["unit_id"])
+                spec = unit_auth["approved_document_reordering"]["scope"]["figure_caption_numbering"][update["source_id"]]
+                projected, evidence = _project_approved_presentation(
+                    update["source_id"], spec["source_text"], update["target"],
+                    ["document_reordering_numbering"], unit_auth,
+                )
+                self.assertEqual(projected, spec["source_text"])
+                self.assertEqual(evidence["displayed"], update["target"])
+                self.assertEqual(evidence["previous_displayed"], update["previous_target"])
+                self.assertEqual(evidence["supplemental_authorization_evidence"], AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION)
+                with self.assertRaises(UnsupportedSerialization):
+                    _project_approved_presentation(
+                        update["source_id"], spec["source_text"], update["previous_target"],
+                        ["document_reordering_numbering"], unit_auth,
+                    )
+
+    def test_sprint3_toc_adjustments_change_only_the_authorized_entries(self):
+        repo = Path(__file__).resolve().parents[1]
+        auth = json.loads((repo / AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION).read_text(encoding="utf-8"))
+        for update in auth["toc_entry_adjustments"]:
+            with self.subTest(source_id=update["source_id"]):
+                unit_auth = _load_presentation_authorization(repo, update["unit_id"])
+                spec = unit_auth["approved_document_reordering"]["scope"]["heading_numbering"][update["source_id"]]
+                projected, evidence = _project_approved_toc_entry(
+                    update["source_id"], spec["source_text"], update["target"],
+                    ["document_reordering_numbering"], unit_auth,
+                )
+                self.assertEqual(projected, spec["source_text"])
+                self.assertEqual(evidence["displayed"], update["target"])
+                self.assertTrue(evidence["body_heading_unchanged"])
+                with self.assertRaises(UnsupportedSerialization):
+                    _project_approved_toc_entry(
+                        update["source_id"], spec["source_text"], update["target"] + " alterado",
+                        ["document_reordering_numbering"], unit_auth,
+                    )
 
     def test_frontmatter_authorization_fails_closed_for_source_or_scope_changes(self):
         repo = Path(__file__).resolve().parents[1]
@@ -1959,6 +2005,21 @@ class PreservationTests(unittest.TestCase):
         changed = target.replace(r"\textit{models}", "models")
         self.write(changed)
         self.assertIn("invalid_user_supplied_content", self.codes(self.audit()))
+
+    def test_user_supplied_markup_supports_bold_caption_and_target_style_only(self):
+        display, formatting = _parse_user_supplied_markup(
+            "**Figura X – Planejamento** e *Fonte própria* com `moderation_action`"
+        )
+        self.assertEqual(display, "Figura X – Planejamento e Fonte própria com moderation_action")
+        self.assertEqual(
+            formatting,
+            [("bold", "Figura X – Planejamento"), ("italic", "Fonte própria"), ("code", "moderation_action")],
+        )
+        target_display, target_formatting = _parse_user_supplied_markup(
+            "**Figura X –** Planejamento e Fonte própria com `moderation_action`"
+        )
+        self.assertEqual(target_display, display)
+        self.assertNotEqual(target_formatting, formatting)
 
 
 

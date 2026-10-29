@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "unit_id": "ages-iv-sprint-3-and-approved-display-adjustments",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "pdf": "build/document/main.pdf",
+  "pdf_sha256": "651ff8b5eb3555af4df0cf04b8feae69508e26db6f178ee132ce9a42e5e382b7",
+  "content_authorization": "migration/approvals/ages-iv-sprint-3-content-authorization.json",
+  "display_authorization": "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json",
+  "summary": {
+    "user_supplied_text_blocks": 13,
+    "blocks_matched_once_in_order": 13,
+    "unapproved_text_differences": 0,
+    "approved_display_transformations": 8,
+    "independent_content_audit": "PASS",
+    "human_review": "PENDING"
+  },
+  "approved_transformations": [
+    {
+      "content_id": "user-ages-iv-sprint-3-gantt-caption",
+      "kind": "replace_user_placeholder_with_figure_number",
+      "from": "Figura X",
+      "to": "Figura 32",
+      "asset_sha256": "a507cd17d974f716b1133319a89d19907787cf8f058f4b1fc329deb8e799ee05"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p07",
+      "kind": "remove_bold_only",
+      "text": "14 tarefas do Épico 6",
+      "visible_text_unchanged": true
+    },
+    {
+      "source_id": "text-p-0663",
+      "kind": "authorized_figure_renumbering",
+      "from": "Figura 32",
+      "to": "Figura 33"
+    },
+    {
+      "source_id": "text-p-0749",
+      "kind": "authorized_figure_renumbering",
+      "from": "Figura 33",
+      "to": "Figura 34"
+    },
+    {
+      "source_id": "text-p-0759",
+      "kind": "authorized_figure_renumbering",
+      "from": "Figura 34",
+      "to": "Figura 35"
+    },
+    {
+      "source_id": "text-h-0023",
+      "kind": "toc_entry_only",
+      "from": "6 Cliente ages – hoortech",
+      "to": "6 CLIENTE AGES – HOORTECH",
+      "body_heading_unchanged": true
+    },
+    {
+      "source_id": "text-h-0074",
+      "kind": "toc_entry_only",
+      "from": "4 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "to": "4 PROJETO AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "body_heading_unchanged": true
+    },
+    {
+      "source_id": "text-h-0105",
+      "kind": "toc_entry_only",
+      "from": "5 PROJETOS AGES IV - RECORDA ",
+      "to": "5 PROJETO AGES IV - RECORDA ",
+      "body_heading_unchanged": true
+    }
+  ],
+  "unresolved_lexical_differences": [],
+  "notes": [
+    "The ODT unit contains only the Sprint 3 heading and empty structures; the 13 blocks and PNG came directly from the user.",
+    "The full independent audit details and evidence are in CONTENT_AUDIT.md.",
+    "Visual legibility of small chart labels and global build warnings are tracked separately."
+  ]
+}

@@ -243,9 +243,32 @@
         "ages-iv-sprint-2"
       ],
       "purpose": "Inclusão rastreada do texto de relatório e da caixa introspectiva fornecidos pelo usuário para a Sprint 2 da AGES IV"
+    },
+    {
+      "evidence": "migration/approvals/ages-iv-sprint-3-content-authorization.json",
+      "units": [
+        "ages-iv-sprint-3"
+      ],
+      "purpose": "Inclusão rastreada do relato, reflexão e placeholder Gantt provisório fornecidos/autorizados pelo usuário para AGES IV Sprint 3"
+    },
+    {
+      "evidence": "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json",
+      "units": [
+        "ages-iv-sprint-3",
+        "chapter-03-text-h-0023",
+        "chapter-03-text-h-0024",
+        "chapter-03-text-h-0038",
+        "chapter-05-text-h-0074",
+        "chapter-06-text-h-0105",
+        "cliente-hoortech-sprint-4"
+      ],
+      "purpose": "Integração do gráfico Gantt fornecido, Figura 32 e ajuste rastreado das legendas Hoortech, três entradas do sumário e ênfase textual da Sprint 3"
     }
   ],
   "asset_ownership": {
+    "ages-iv-sprint-3": [
+      "relatorio_AGES_eduardo/imagens/user-supplied/ages-iv-sprint-3-gantt.png"
+    ],
     "chapter-05-text-h-0075": [
       "relatorio_AGES_eduardo/imagens/original/asset-0015.jpg"
     ],

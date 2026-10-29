@@ -408775,6 +408775,79 @@
         "Keep chapter 7 as title-only; its 18 body/list source IDs remain deliberately omitted under the existing AGES IV authorization."
       ],
       "scope_note": "This overlay records only the authorized plan. It does not mark conversion complete or authorize omitted chapter7 body/list records; existing title-only restrictions remain in force."
+    },
+    "ages_iv_sprint_3_figure_and_display": {
+      "schema_version": 1,
+      "status": "authorized-pending-integration-and-audit",
+      "authorization_evidence": "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json",
+      "authorization_evidence_sha256": "e9e4cd96e216be9811fe4801b8e4bc28d78b75aa707889275e99fe116ef6e8ca",
+      "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+      "source_records_unchanged": true,
+      "figure_insertion": {
+        "unit_id": "ages-iv-sprint-3",
+        "asset_path": "relatorio_AGES_eduardo/imagens/user-supplied/ages-iv-sprint-3-gantt.png",
+        "asset_sha256": "a507cd17d974f716b1133319a89d19907787cf8f058f4b1fc329deb8e799ee05",
+        "caption_content_id": "user-ages-iv-sprint-3-gantt-caption",
+        "figure_number": 32,
+        "target_caption": "**Figura 32 –** Planejamento de paralelização das tasks da squad durante a Sprint 3",
+        "label": "ages-iv:sprint3:gantt"
+      },
+      "following_figure_renumbering": [
+        {
+          "source_id": "text-p-0663",
+          "unit_id": "chapter-03-text-h-0024",
+          "from_number": 32,
+          "to_number": 33,
+          "target": "Figura 33 – Foto do time - CLIENTE AGES"
+        },
+        {
+          "source_id": "text-p-0749",
+          "unit_id": "cliente-hoortech-sprint-4",
+          "from_number": 33,
+          "to_number": 34,
+          "target": "Figura 34 – Entrega Final - CLIENTE AGES"
+        },
+        {
+          "source_id": "text-p-0759",
+          "unit_id": "chapter-03-text-h-0038",
+          "from_number": 34,
+          "to_number": 35,
+          "target": "Figura 35 – Projeto Destaque 2024/2 - CLIENTE AGES"
+        }
+      ],
+      "toc_entry_adjustments": [
+        {
+          "source_id": "text-h-0023",
+          "unit_id": "chapter-03-text-h-0023",
+          "document_order_text": "6 Cliente ages – hoortech",
+          "target": "6 CLIENTE AGES – HOORTECH",
+          "body_heading_unchanged": true
+        },
+        {
+          "source_id": "text-h-0074",
+          "unit_id": "chapter-05-text-h-0074",
+          "document_order_text": "4 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+          "target": "4 PROJETO AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+          "body_heading_unchanged": true
+        },
+        {
+          "source_id": "text-h-0105",
+          "unit_id": "chapter-06-text-h-0105",
+          "document_order_text": "5 PROJETOS AGES IV - RECORDA ",
+          "target": "5 PROJETO AGES IV - RECORDA ",
+          "body_heading_unchanged": true
+        }
+      ],
+      "inline_format_adjustments": [
+        {
+          "content_id": "user-ages-iv-sprint-3-report-p07",
+          "unit_id": "ages-iv-sprint-3",
+          "source_markup_sha256": "db718609e10f3e6bafa305e10a630c68846428edce6947d1d8149f651005ac92",
+          "target_markup_sha256": "32b56ca3496276788aaac540463b488432ffb1bcfcb785a9192eb142feea35f5",
+          "visible_text_unchanged": true,
+          "change": "Remove only the bold emphasis from “14 tarefas do Épico 6”."
+        }
+      ]
     }
   }
 }

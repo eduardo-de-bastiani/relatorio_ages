@@ -13,7 +13,7 @@ Prompt portátil para o papel `visual-auditor`. Não é registro automático de 
 3. Conferir margem/mancha, fonte/glifos, título órfão, continuidade entre Sprints, caixas longas, overflow, figuras/legendas/fontes e links longos.
 4. Distinguir início legítimo de seção primária/pré-textual e quebra artificial de Sprint. Conferir sumário/listas/bookmarks contra destinos reais.
 5. Registrar página/elemento, evidência visual, gravidade e correção proposta. Emitir PENDING quando não viu todas as páginas; não atestar norma inacessível nem editar o documento.
-6. Conferir no PDF integrado a sequência de capítulos 1–7, continuidade após a seção 5.4, início e conclusão Hoortech como capítulo 6, novo capítulo final 7, referências cruzadas, sumário e lista de figuras 1–34. Inspecionar as páginas de transição e não apenas as unidades novas.
+6. Conferir no PDF integrado a sequência de capítulos 1–7, continuidade após a seção 5.4, início e conclusão Hoortech como capítulo 6, novo capítulo final 7, referências cruzadas, sumário e lista de figuras 1–35 (após o suplemento da Figura 32 da Sprint 3). Inspecionar as páginas de transição e não apenas as unidades novas.
 
 ## Entrega
 

@@ -518,7 +518,7 @@ def verify_manifest(manifest: dict, source: Path) -> list[dict]:
         if not isinstance(overlay, dict) or overlay.get("schema_version") != 1 or not isinstance(overlay.get("tasks"), dict):
             differences.append({"code": "manifest-invalid-overlay", "path": "$.migration_overlay"})
             return differences
-        allowed_fields = {"schema_version", "tasks", "document_order"}
+        allowed_fields = {"schema_version", "tasks", "document_order", "ages_iv_sprint_3_figure_and_display"}
         if set(overlay) - allowed_fields:
             differences.append({"code": "manifest-invalid-overlay-field", "path": "$.migration_overlay"})
         units = {u["id"]: u for u in expected["units"]}
@@ -624,4 +624,44 @@ def verify_manifest(manifest: dict, source: Path) -> list[dict]:
             ids = document_order.get("affected_source_ids", [])
             if set(ids) != set(all_mappings) or len(ids) != len(all_mappings):
                 differences.append({"code": "manifest-document-order-id-set-mismatch", "path": location + ".affected_source_ids"})
+        figure_display = overlay.get("ages_iv_sprint_3_figure_and_display")
+        if figure_display is not None:
+            location = "$.migration_overlay.ages_iv_sprint_3_figure_and_display"
+            required = {
+                "schema_version", "status", "authorization_evidence", "authorization_evidence_sha256",
+                "source_odt_sha256", "source_records_unchanged", "figure_insertion",
+                "following_figure_renumbering", "toc_entry_adjustments", "inline_format_adjustments",
+            }
+            if not isinstance(figure_display, dict) or set(figure_display) != required:
+                differences.append({"code": "manifest-invalid-figure-display-overlay", "path": location})
+            else:
+                if (figure_display.get("schema_version") != 1
+                        or figure_display.get("status") not in {"authorized-pending-integration-and-audit", "integrated-pending-audit", "audited-pending-human-review"}
+                        or figure_display.get("authorization_evidence") != "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json"
+                        or figure_display.get("source_odt_sha256") != expected["source"]["sha256"]
+                        or figure_display.get("source_records_unchanged") is not True):
+                    differences.append({"code": "manifest-invalid-figure-display-metadata", "path": location})
+                for key in ("authorization_evidence_sha256", "source_odt_sha256"):
+                    if not isinstance(figure_display.get(key), str) or not re.fullmatch(r"[0-9a-f]{64}", figure_display[key]):
+                        differences.append({"code": "manifest-invalid-figure-display-hash", "path": location + "." + key})
+                insertion = figure_display.get("figure_insertion")
+                insertion_keys = {"unit_id", "asset_path", "asset_sha256", "caption_content_id", "figure_number", "target_caption", "label"}
+                if (not isinstance(insertion, dict) or set(insertion) != insertion_keys
+                        or insertion.get("unit_id") not in units or insertion.get("figure_number") != 32
+                        or not isinstance(insertion.get("asset_path"), str)
+                        or PurePosixPath(insertion["asset_path"]).is_absolute() or ".." in PurePosixPath(insertion["asset_path"]).parts
+                        or not isinstance(insertion.get("asset_sha256"), str) or not re.fullmatch(r"[0-9a-f]{64}", insertion["asset_sha256"])):
+                    differences.append({"code": "manifest-invalid-figure-display-insertion", "path": location + ".figure_insertion"})
+                for key, expected_ids in (
+                    ("following_figure_renumbering", {"text-p-0663", "text-p-0749", "text-p-0759"}),
+                    ("toc_entry_adjustments", {"text-h-0023", "text-h-0074", "text-h-0105"}),
+                ):
+                    entries = figure_display.get(key)
+                    if not isinstance(entries, list) or {item.get("source_id") for item in entries if isinstance(item, dict)} != expected_ids or len(entries) != len(expected_ids):
+                        differences.append({"code": "manifest-invalid-figure-display-map", "path": location + "." + key})
+                inline_entries = figure_display.get("inline_format_adjustments")
+                if (not isinstance(inline_entries, list) or len(inline_entries) != 1
+                        or inline_entries[0].get("content_id") != "user-ages-iv-sprint-3-report-p07"
+                        or inline_entries[0].get("visible_text_unchanged") is not True):
+                    differences.append({"code": "manifest-invalid-figure-display-map", "path": location + ".inline_format_adjustments"})
     return differences

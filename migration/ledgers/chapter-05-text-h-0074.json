@@ -17,7 +17,7 @@
             "abnt_section_numbering",
             "document_reordering_numbering"
           ],
-          "target_sha256": "43c7804e9f3ca4b5c649776ddca87b624de430e6d415b865417eff4562bd7a2d"
+          "target_sha256": "07ffb8b7674e3ff0ff2440ea9b90653448b2d65db0bcd5201e25f766b8c66f92"
         }
       ],
       "asset_map": [],
@@ -32,7 +32,7 @@
           "end_byte": 123,
           "source_start_id": "text-bookmark-start-0049",
           "source_end_id": "text-bookmark-end-0049",
-          "target_sha256": "43c7804e9f3ca4b5c649776ddca87b624de430e6d415b865417eff4562bd7a2d"
+          "target_sha256": "07ffb8b7674e3ff0ff2440ea9b90653448b2d65db0bcd5201e25f766b8c66f92"
         },
         {
           "source_heading_id": "text-h-0074",
@@ -44,7 +44,7 @@
           "end_byte": 152,
           "source_start_id": "text-bookmark-start-0050",
           "source_end_id": "text-bookmark-end-0050",
-          "target_sha256": "43c7804e9f3ca4b5c649776ddca87b624de430e6d415b865417eff4562bd7a2d"
+          "target_sha256": "07ffb8b7674e3ff0ff2440ea9b90653448b2d65db0bcd5201e25f766b8c66f92"
         }
       ],
       "structural_dispositions": [

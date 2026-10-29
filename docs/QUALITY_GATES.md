@@ -76,7 +76,7 @@ Esta etapa depende de `migration/approvals/cliente-hoortech-and-document-order-a
 | H1 — Cobertura | Converter exatamente dez unidades Hoortech; conferir parágrafos, listas, três imagens e demais estruturas pelos IDs do ODT. Cada imagem preserva o hash original; as fontes ficam pendentes, sem atribuição inventada. |
 | H2 — Ordem | `main.tex` compila a ordem: trajetória 1, AGES I 2, AGES II 3, AGES III 4, AGES IV 5, Hoortech 6, título final 7. Nenhum `setcounter` mascara a ordem nem reinicia capítulos/figuras artificialmente. |
 | H3 — Mapeamento numérico | As 56 legendas de título e 29 legendas de figura cobrem exatamente os registros autorizados; cada texto final é derivado do texto ODF preservando sufixos/legendas. A única troca de prosa é `text-p-0679`, 3.2→6.2. Mudança fora dos 86 IDs reprova. |
-| H4 — Figuras e referências | Conferir no PDF figuras consecutivas 1–34 (AGES I 1–5, AGES II 6–12, AGES III 13–20, AGES IV 21–31, Hoortech 32–34), lista de ilustrações, labels, `\ref`, contadores e links. |
+| H4 — Figuras e referências | Conferir no PDF figuras consecutivas 1–35 (AGES I 1–5, AGES II 6–12, AGES III 13–20, AGES IV 21–32 incluindo Gantt da Sprint 3, Hoortech 33–35), lista de ilustrações, labels, `\ref`, contadores e links. O overlay suplementar deve permanecer separado do mapa inicial de ordem. |
 | H5 — Conteúdo independente | O auditor relê o ODT congelado e compara as dez unidades Hoortech, imagens/legendas/listas/ênfases, além de conferir todas as trocas numéricas permitidas. O relatório do conversor não serve como evidência. |
 | H6 — Visual integrado | O auditor examina o PDF completo por hash, com foco nas transições de capítulos 5→6→7, continuidade das Sprints Hoortech, títulos órfãos, figuras, fontes, sumário e lista de ilustrações. |
 | H7 — Aprovação | Aprovação humana da participação Hoortech e da nova ordem permanece PENDING até manifestação explícita ligada aos artefatos finais. Não iniciar outra edição antes desse aceite. |
@@ -97,3 +97,19 @@ Aplicar exclusivamente a autorização `migration/approvals/ages-iv-sprint-2-con
 | S2-6 — Aceitação | Manter aprovação humana do texto e do PDF como PENDING até manifestação explícita do usuário ligada ao artefato identificado. Não converter próxima Sprint. |
 
 O inventário ODT permanece inalterado: estes sete blocos não são registros de `docs/CONTENT_MANIFEST.json`; sua rastreabilidade suplementar reside no arquivo de autorização, no ledger da Sprint 2 e nos relatórios de auditoria.
+
+## Complemento restrito — AGES IV, Sprint 3 e Figura 32 (29/10/2026)
+
+Aplicar as autorizações separadas `migration/approvals/ages-iv-sprint-3-content-authorization.json` e `migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json`. A segunda autorização acrescenta apenas a imagem direta do usuário, a remoção de uma ênfase, o deslocamento das três figuras Hoortech e os três ajustes no sumário.
+
+| Gate | Critério |
+|---|---|
+| S3-1 — Proveniência | O ODT e os registros-fonte do manifesto continuam com somente o título e wrappers vazios nesta Sprint. Relato, reflexão e legenda/fonte são conteúdo direto do usuário; o PNG fornecido é asset suplementar, não imagem extraída do ODT. Verificar ambos os hashes. |
+| S3-2 — Fidelidade | Conferir os 13 blocos suplementares, a troca autorizada “Figura X”→“Figura 32” e a retirada apenas do negrito de “14 tarefas do Épico 6”. Os demais textos e ênfases devem permanecer iguais; não alegar igualdade lexical para a numeração do placeholder. |
+| S3-3 — Figura real | O arquivo PNG corresponde ao hash e às dimensões aprovadas; usa o ambiente padronizado, legenda Figura 32, label, Lista de Ilustrações e fonte centralizada “Fonte: elaboração própria.”. Não há mais placeholder nem controles locais do placeholder. |
+| S3-4 — Reindexação | Somente as legendas Hoortech `text-p-0663`, `text-p-0749` e `text-p-0759` mudam 32→33, 33→34 e 34→35. Verificar ordem, contador, referências e Lista de Ilustrações no PDF; preservar o overlay de ordem/documento anterior e manter o overlay suplementar separado. |
+| S3-5 — Sumário | As entradas de `text-h-0023`, `text-h-0074` e `text-h-0105` correspondem exatamente aos três textos autorizados. Os títulos no corpo não mudam; confirmar também bookmarks/destinos. |
+| S3-6 — Estrutura/visual | Sprint segue em fluxo contínuo, sem quebra artificial. Inspecionar a nova página da Figura 32, legenda/fonte, continuidade da Sprint e reflexões, além das páginas de sumário e lista de ilustrações. |
+| S3-7 — Build/auditorias | Compilar `document-review`, registrar PDF/log/hash; executar teste do harness e validação das unidades afetadas; auditorias independentes de conteúdo e visual devem ler o resultado atualizado. Avisos globais continuam FAIL quando não resolvidos. Aprovação humana do PDF permanece PENDING. |
+
+Nenhum desses gates autoriza alterar o ODT, prosa de outras unidades, Sprints posteriores ou estilo/macros globais.

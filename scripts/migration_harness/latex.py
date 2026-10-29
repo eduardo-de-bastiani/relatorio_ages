@@ -2,6 +2,9 @@
 from __future__ import annotations
 
 import re
+import hashlib
+import json
+import struct
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -143,6 +146,61 @@ def _valid_absolute_http_url(value: str) -> bool:
         return False
 
 
+def _authorized_sprint3_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
+    """Allow only the exact user-supplied Sprint 3 figure/source apparatus.
+
+    The general figure policy still requires an explicitly pending source.
+    This narrow exception is backed by the specific dated user authorization,
+    and checks its asset bytes and declared PNG dimensions before accepting the
+    user-provided source statement.
+    """
+    expected_path = Path("conteudo/migracao/ages-iv-sprint-3.tex")
+    expected_asset = "imagens/user-supplied/ages-iv-sprint-3-gantt.png"
+    expected_caption = r"\textbf{Figura 32 –} Planejamento de paralelização das tasks da squad durante a Sprint 3"
+    expected_args = (
+        expected_asset,
+        expected_caption,
+        "ages-iv:sprint3:gantt",
+        "Fonte: elaboração própria.",
+        "0.99",
+    )
+    if relative != expected_path or args != expected_args:
+        return False
+
+    approval_path = root.parent / "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json"
+    try:
+        approval = json.loads(approval_path.read_text(encoding="utf-8"))
+        figure = approval["figure_insertion"]
+        asset = figure["asset"]
+        image_path = (root / expected_asset).resolve()
+        image_bytes = image_path.read_bytes()
+    except (OSError, UnicodeError, ValueError, KeyError, TypeError):
+        return False
+
+    if not image_path.is_relative_to(root.resolve()):
+        return False
+    if (
+        approval.get("schema_version") != 1
+        or approval.get("record_type") != "user_authorized_ages_iv_sprint_3_figure_and_display_adjustments"
+        or approval.get("approval_status") != "authorized_for_execution_pending_human_review"
+        or approval.get("source", {}).get("odt_sha256") != "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+        or figure.get("unit_id") != "ages-iv-sprint-3"
+        or figure.get("target_file") != "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex"
+        or figure.get("figure_number") != 32
+        or figure.get("label") != "ages-iv:sprint3:gantt"
+        or figure.get("source_target_markup") != "Fonte: elaboração própria."
+        or asset.get("target_path") != "relatorio_AGES_eduardo/" + expected_asset
+        or asset.get("sha256") != hashlib.sha256(image_bytes).hexdigest()
+        or len(image_bytes) < 24
+        or image_bytes[:8] != b"\x89PNG\r\n\x1a\n"
+        or image_bytes[12:16] != b"IHDR"
+        or struct.unpack(">II", image_bytes[16:24]) != (asset.get("width_px"), asset.get("height_px"))
+        or (asset.get("format"), asset.get("width_px"), asset.get("height_px")) != ("PNG", 8191, 1353)
+    ):
+        return False
+    return True
+
+
 def bib_keys(text: str) -> tuple[set[str], list[str]]:
     """Read BibTeX entry keys, ignoring nested braces and quoted fields."""
     keys, duplicates = set(), []
@@ -268,7 +326,8 @@ def audit_latex(root: Path, entry: Path) -> dict:
                 target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))
                 if target is None or not target.is_file():
                     report("missing_or_dynamic_asset", relative, line, args[0])
-                if args[3] != "Fonte: pendente de identificação" or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
+                source_is_authorized = _authorized_sprint3_figure_source(root, relative, args)
+                if (args[3] != "Fonte: pendente de identificação" and not source_is_authorized) or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
                     report("invalid_figure_apparatus", relative, line, "Source must remain explicitly pending and width must be a fraction in (0,1]")
                 if not args[1].strip() or not re.fullmatch(r"[A-Za-z0-9:._-]+", args[2]):
                     report("missing_figure_caption_or_label", relative, line, "Caption and label must be explicit")

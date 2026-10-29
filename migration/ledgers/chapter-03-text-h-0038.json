@@ -24,7 +24,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "a6dd210c2c9e6e98b410b84076c1a6a7206985555f7c5376445024ec5fa71dd3",
           "source_text_sha256": "a610445f386e670fd913139f1595b92b7f09891e6b616af1dd277ca82c84b4bf"
         },
@@ -36,7 +36,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "b23321c8bffe758a7e7113eb37248f9b294563cf1e21d2c701e5564e14a00ab5",
           "source_text_sha256": "e30bccf1f4bc3e3c900c8583af0bbd26d793183f7e6e04cdc762ddab03d6722e"
         },
@@ -48,7 +48,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "4bce78827573b7dba81afd7f00f068d114277e97b242081906ead848a0af83e0",
           "source_text_sha256": "f661c61bc81d765050ca8508d266cb6bd0dfd0e435e7e61be3f67fd4e0b8c6e1"
         },
@@ -58,7 +58,7 @@
           "start_byte": 1379,
           "end_byte": 1839,
           "serializations": [],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "5f380d493cd24d30436d440cae20d22be629bb5ce4950a1d4bf879d6ac5f6ee1",
           "source_text_sha256": "44e35cf5d872c504664cb3bd57e3ba281f7b0d7bdeace30c00f6c3e624f4dffb"
         },
@@ -68,7 +68,7 @@
           "start_byte": 1866,
           "end_byte": 2400,
           "serializations": [],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "b86740a828e8fcd3c6f314d871c3308c37c563344e415fafbf3ae1b2682e36b8",
           "source_text_sha256": "6bacad71d211a200f3fb19f7a7d89cfb8f0b031a1a7ddf9afdc925a26a842a0d"
         },
@@ -78,7 +78,7 @@
           "start_byte": 2427,
           "end_byte": 2907,
           "serializations": [],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "82f2b534ef1c229560e530fcb24c6d535d76699c9154a86e82f1d9b1360fa8ac",
           "source_text_sha256": "bc14535a40d24cb2e100d1885d1366d25b220c91ada4651ec079e73fb5fd9047"
         },
@@ -88,7 +88,7 @@
           "start_byte": 2934,
           "end_byte": 3314,
           "serializations": [],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "18a75ae15e721103e49c32eb033de3380802919febf3ae9e5b6d590962f6d9b4",
           "source_text_sha256": "3d9ab7bae9dea35dfdc341c8ea2732b93b4cf28fc7d187e82ea9fc8fd392cd5f"
         },
@@ -100,7 +100,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "94fb7d9df830830b7b1bb927dfd9abb92c0ebc2347fed2aece8163dc90435659",
           "source_text_sha256": "0f1fbb7b97b0bb014cc60f78087927975abc6d092d4c2e74d4fe9403de708b99"
         },
@@ -110,7 +110,7 @@
           "start_byte": 3413,
           "end_byte": 3602,
           "serializations": [],
-          "target_sha256": "01e96bd9e9ad13a7c98b307abe961ee82a2c7def713b7b26b820ef8118bf8f6a",
+          "target_sha256": "375ede368498b3502e3ff8ca65cff729b7d800ab1e8ad1a7b9a83e266f48d85b",
           "source_xml_sha256": "b80cccd3062ee53928b67b14d8958b34f5319ba735bbcc15eba56be60eb6a08c",
           "source_text_sha256": null
         }
