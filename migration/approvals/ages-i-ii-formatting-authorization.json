@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_scope_extension",
+  "date": "2026-10-16",
+  "basis": "Explicit user message in this conversation: correct the cited link wording, center image-source lines, link technology mentions to references, and persist the conventions for future AGES editions.",
+  "branch": "migration/ages-ii",
+  "scope": {
+    "units": [
+      "chapter-02-text-h-0009",
+      "chapter-02-text-h-0010",
+      "chapter-02-text-h-0011",
+      "chapter-04-text-h-0043",
+      "chapter-04-text-h-0044",
+      "chapter-04-text-h-0045",
+      "chapter-04-text-h-0046"
+    ],
+    "shared_configuration": [
+      "relatorio_AGES_eduardo/util/macros.tex",
+      "relatorio_AGES_eduardo/util/style.tex",
+      "relatorio_AGES_eduardo/bibliografia/bibliografia.bib"
+    ],
+    "governance": [
+      "AGENTS.md",
+      "harness.json",
+      "docs/STYLE_GUIDE.md",
+      "docs/QUALITY_GATES.md",
+      "docs/PENDENCIAS.md",
+      "docs/MIGRATION_PLAN.md"
+    ],
+    "harness_validation": [
+      "scripts/migration_harness/preservation.py",
+      "tests/test_preservation.py"
+    ]
+  },
+  "approved_wiki_link_sentences": {
+    "text-p-0315": {
+      "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+      "source_anchor": "Wiki do Banco de Dados",
+      "prefix": "Mais detalhes podem ser encontrados aqui: ",
+      "anchor": "Banco de Dados",
+      "suffix": "",
+      "source_id": "text-a-0108",
+      "leading_tabs": 1
+    },
+    "text-p-0319": {
+      "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+      "source_anchor": "Wiki da Arquitetura",
+      "prefix": "Mais informações sobre a arquitetura estão disponíveis em: ",
+      "anchor": "Arquitetura",
+      "suffix": "",
+      "source_id": "text-a-0109",
+      "leading_tabs": 1
+    },
+    "text-p-0323": {
+      "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+      "source_anchor": "Wiki dos Protótipos",
+      "prefix": "Os mockups de cada tela podem ser visualizados no seguinte link: ",
+      "anchor": "Protótipo das Telas",
+      "suffix": "",
+      "source_id": "text-a-0110",
+      "leading_tabs": 0
+    },
+    "text-p-0782": {
+      "href": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados",
+      "source_anchor": "Wiki do Banco de Dados",
+      "prefix": "Mais detalhes podem ser encontrados aqui: ",
+      "anchor": "Banco de Dados",
+      "suffix": "",
+      "source_id": "text-a-0118",
+      "leading_tabs": 0
+    },
+    "text-p-0789": {
+      "href": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+      "source_anchor": "Wiki da Arquitetura",
+      "prefix": "Mais informações sobre a arquitetura estão disponíveis em: ",
+      "anchor": "Arquitetura",
+      "suffix": "",
+      "source_id": "text-a-0120",
+      "leading_tabs": 0
+    },
+    "text-p-0793": {
+      "href": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups",
+      "source_anchor": "Wiki dos Protótipos",
+      "prefix": "Os mockups de cada tela podem ser visualizados no seguinte link: ",
+      "anchor": "Protótipo das Telas",
+      "suffix": "",
+      "source_id": "text-a-0121",
+      "leading_tabs": 0
+    }
+  },
+  "approved_technical_citations_by_unit": {
+    "chapter-02-text-h-0009": {
+      "text-p-0314": ["postgresql-docs", "prisma-docs"]
+    },
+    "chapter-02-text-h-0011": {
+      "text-p-0322": ["ages-i-excalidraw", "ages-i-figma"]
+    },
+    "chapter-04-text-h-0043": {
+      "text-p-0781": ["ages-ii-postgresql", "ages-ii-sqlalchemy"]
+    },
+    "chapter-04-text-h-0044": {
+      "text-p-0785": [
+        "ages-ii-angular",
+        "ages-ii-http-rfc9110",
+        "ages-ii-fastapi",
+        "ages-ii-fastapi",
+        "ages-ii-postgresql",
+        "ages-ii-postgresql",
+        "ages-ii-json-rfc8259",
+        "ages-ii-angular"
+      ]
+    },
+    "chapter-04-text-h-0045": {
+      "text-p-0791": ["ages-ii-figma"]
+    },
+    "chapter-04-text-h-0046": {
+      "text-p-0812": ["ages-ii-angular", "ages-ii-typescript"],
+      "text-p-0813": ["ages-ii-typescript", "ages-ii-angular", "ages-ii-http-rfc9110", "ages-ii-json-rfc8259"],
+      "text-p-0817": ["ages-ii-python"],
+      "text-p-0818": ["ages-ii-graph-api", "ages-ii-python", "ages-ii-fastapi"],
+      "text-p-0821": ["ages-ii-fastapi"],
+      "text-p-0822": ["ages-ii-angular", "ages-ii-postgresql"],
+      "text-p-0825": ["ages-ii-graph-api"],
+      "text-p-0829": ["ages-ii-sqlalchemy"],
+      "text-p-0830": ["ages-ii-postgresql", "ages-ii-python"],
+      "text-p-0833": ["ages-ii-postgresql"],
+      "text-p-0834": ["ages-ii-fastapi", "ages-ii-sqlalchemy"],
+      "text-p-0837": ["ages-ii-docker"],
+      "text-p-0838": ["ages-ii-postgresql"]
+    }
+  },
+  "approved_presentation_changes": [
+    "Replace the three bare AGES wiki anchors with the exact descriptive sentence patterns requested by the user, keeping each original URL.",
+    "Center each figure source line below the image through the shared figure macro.",
+    "Add author-date links to verified bibliography entries for technology/product mentions in the database, architecture, prototype, and technology-description passages; retain unresolved original URLs and report missing metadata as pending.",
+    "Use the current NBR 10520:2023 title-based citation form for no-author sources, and remove malformed unconditional ellipses and spacing from the legacy style output.",
+    "Document these presentation rules for later AGES editions without authorizing conversion of any later edition."
+  ],
+  "explicit_limits": [
+    "Do not alter any other AGES I units or any units outside the list above.",
+    "Do not change source wording beyond the three approved wiki-link sentence patterns and necessary citation/link apparatus.",
+    "Do not invent authors, titles, publication facts, historical access dates, URLs, image sources, or architecture content.",
+    "Do not modify RELATORIO_ATUAL.odt or relatorio_mariah/.",
+    "Do not start AGES III, AGES IV, or Cliente Hoortech."
+  ],
+  "approval_status": "scope_extension_authorized; revised PDFs and reports still require user review"
+}

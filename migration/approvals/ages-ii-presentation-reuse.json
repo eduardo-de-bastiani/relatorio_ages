@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "kind": "user_authorized_ages_ii_presentation_reuse",
+  "status": "authorized_for_execution_pending_human_review",
+  "date": "2026-10-16",
+  "edition": "ages-ii",
+  "scope": [
+    "chapter-04-text-h-0039",
+    "chapter-04-text-h-0040",
+    "chapter-04-text-h-0041",
+    "chapter-04-text-h-0042",
+    "chapter-04-text-h-0043",
+    "chapter-04-text-h-0044",
+    "chapter-04-text-h-0045",
+    "chapter-04-text-h-0046",
+    "chapter-04-text-h-0047",
+    "ages-ii-sprint-0",
+    "ages-ii-sprint-1",
+    "ages-ii-sprint-2",
+    "ages-ii-sprint-3",
+    "ages-ii-sprint-4",
+    "chapter-04-text-h-0073"
+  ],
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "style_basis": {
+    "accepted_decision": "migration/approvals/ages-i-presentation-accepted.json",
+    "style_guide": "docs/STYLE_GUIDE.md",
+    "approved_reference_pattern": "Mariah memorial, used only for presentation",
+    "content_from_reference_project_allowed": false
+  },
+  "user_instruction": "Gostaria de utilizar a mesma estrutura que a Mariah. Para as datas de acesso, vamos fazer o seguinte: Todos os projetos AGES I e AGES II tiveram data de acesso em 2024. Q3: utilize o ano de acesso como o ano de publicação, assim como a Mariah fez.",
+  "approved_presentation_changes": {
+    "figure_caption_labels": {
+      "text-p-0767": "Figura 9 – Foto do Time - AGES II",
+      "text-p-0788": "Figura 10 – Arquitetura da Aplicação - AGES II",
+      "text-p-0797": "Figura 11 – Landing Page - AGES II",
+      "text-p-0800": "Figura 12 – Tela de Dashboard - AGES II",
+      "text-p-0802": "Figura 13 – Tela do Mapa - AGES II",
+      "text-p-0804": "Figura 14 – Tela das Empresas - AGES II",
+      "text-p-0962": "Figura 15 – Fluxo de Processamento de Presença Digital - AGES II"
+    },
+    "section_numbering": {
+      "text-h-0039": "4 PROJETO AGES II – INDÚSTRIA DIGITAL",
+      "text-h-0073": "4.4 Conclusão"
+    },
+    "repository_links": {
+      "text-a-0116": {
+        "href": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+        "source_anchor": "Repositório Indústria Digital Frontend",
+        "prefix": "Mais informações podem ser encontradas no repositório ",
+        "anchor": "Indústria Digital Frontend",
+        "suffix": "."
+      },
+      "text-a-0117": {
+        "href": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+        "source_anchor": "Repositório Indústria Digital Backend",
+        "prefix": "Mais informações podem ser encontradas no repositório ",
+        "anchor": "Indústria Digital Backend",
+        "suffix": "."
+      }
+    },
+    "technology_paragraph": {
+      "source_list_ids": [
+        "text-list-0109",
+        "text-list-0110",
+        "text-list-0111",
+        "text-list-0112",
+        "text-list-0113",
+        "text-list-0114",
+        "text-list-0115"
+      ],
+      "heading_numbering_wrapper_ids": [
+        "text-list-0116",
+        "text-list-0117"
+      ],
+      "item_count": 7,
+      "target_structure": "one continuous paragraph retaining all source text, original hyperlink anchors and order; add only the approved author-date citation apparatus for verified sources",
+      "citation_keys": [
+        "ages-ii-angular",
+        "ages-ii-typescript",
+        "ages-ii-python",
+        "ages-ii-fastapi",
+        "ages-ii-sqlalchemy",
+        "ages-ii-postgresql"
+      ],
+      "pending_sources": [
+        "text-a-0126",
+        "text-p-0839"
+      ]
+    },
+    "leading_tab_source_ids_by_unit": {
+      "chapter-04-text-h-0040": {
+        "text-p-0763": 1,
+        "text-p-0764": 1,
+        "text-p-0765": 1
+      },
+      "chapter-04-text-h-0046": {
+        "text-p-0814": 1,
+        "text-p-0815": 1,
+        "text-p-0819": 2,
+        "text-p-0823": 2,
+        "text-p-0831": 1
+      },
+      "ages-ii-sprint-0": {
+        "text-p-0844": 1,
+        "text-p-0845": 1,
+        "text-p-0846": 1,
+        "text-p-0847": 1,
+        "text-p-0848": 1,
+        "text-p-0851": 1,
+        "text-p-0852": 1
+      },
+      "ages-ii-sprint-1": {
+        "text-p-0876": 1,
+        "text-p-0877": 1,
+        "text-p-0878": 1,
+        "text-p-0879": 1,
+        "text-p-0880": 1
+      },
+      "ages-ii-sprint-2": {
+        "text-p-0915": 1,
+        "text-p-0916": 1,
+        "text-p-0917": 1
+      },
+      "ages-ii-sprint-3": {
+        "text-p-0942": 1,
+        "text-p-0943": 1
+      },
+      "ages-ii-sprint-4": {
+        "text-p-0971": 1,
+        "text-p-0973": 1,
+        "text-p-0979": 1,
+        "text-p-0983": 1,
+        "text-p-0984": 1,
+        "text-p-0998": 1,
+        "text-p-1004": 1,
+        "text-p-1005": 1,
+        "text-p-1006": 1
+      }
+    },
+    "inline_tab_source_counts": {
+      "text-p-0814": 1,
+      "text-p-0975": 2,
+      "text-p-0976": 2,
+      "text-p-0977": 2
+    },
+    "leading_space_source_counts": {
+      "ages-ii-sprint-4": {
+        "text-h-0068": 4
+      }
+    },
+    "leading_line_break_source_counts": {
+      "ages-ii-sprint-4": {
+        "text-p-0961": 1,
+        "text-p-0969": 1
+      }
+    }
+  },
+  "technology_reference_convention": {
+    "publication_year": 2024,
+    "access_date": "2024-10-15",
+    "provenance": "User-authorized assigned date within AGES II's August-November 2024 period; not browser history and not a verified publication date.",
+    "use_current_documentation_version_as_project_version": false,
+    "infer_missing_author": false,
+    "human_review_after_edition": true
+  },
+  "human_approval_of_result": null,
+  "promoted_to_reusable_policy": false,
+  "future_editions_authorized": false
+}

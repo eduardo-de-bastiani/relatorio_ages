@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_cross_edition_technology_prose_correction",
+  "date": "2026-10-17",
+  "user_instruction": "Eu preciso que você refaça nessas três edições como as tecnologias estão escritas e você precisa seguir o padrão da Mariah. Você precisa acessar o PDF da Mariah e seguir esse padrão.",
+  "basis": "Latest user instruction explicitly reopens only the technology sections of AGES I, II and III and supersedes earlier requirements to print documentation labels or repeated lead-ins in the narrative.",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "baseline_commit": "96c09d125fcde4623d2f4d2218ee6aaa0cb5c656",
+  "baseline_pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+  "bibliography": {
+    "path": "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "sha256": "52b7a3442d7a1feae8e7cb66ab909570455ab12c6d5dd5fbb8f1f065e76963a3",
+    "change_authorized": false
+  },
+  "reference": {
+    "pdf": "relatorio_mariah/relatorio_ages-main/extracted/main.pdf",
+    "pdf_sha256": "ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420",
+    "physical_pages": [
+      46,
+      47
+    ],
+    "printed_pages": [
+      45,
+      46
+    ],
+    "pattern": "Connected paragraphs grouped by project role, technology names followed immediately by clickable author-date citations; no standalone documentation labels within the explanations."
+  },
+  "units": {
+    "chapter-02-text-h-0012": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+      "ledger_path": "migration/ledgers/chapter-02-text-h-0012.json",
+      "source_record_ids": [
+        "text-h-0012",
+        "text-p-0376",
+        "text-list-0025",
+        "text-list-item-0023",
+        "text-p-0378",
+        "text-p-0379",
+        "text-p-0380",
+        "text-p-0381",
+        "text-a-0111",
+        "text-list-0026",
+        "text-list-item-0024",
+        "text-p-0385",
+        "text-p-0386",
+        "text-p-0387",
+        "text-p-0388",
+        "text-a-0112",
+        "text-list-item-0025",
+        "text-p-0390",
+        "text-p-0391",
+        "text-p-0392",
+        "text-a-0113",
+        "text-list-0027",
+        "text-list-item-0026",
+        "text-p-0394",
+        "text-p-0395",
+        "text-p-0396",
+        "text-a-0114",
+        "text-list-item-0027",
+        "text-p-0398",
+        "text-p-0399",
+        "text-p-0400",
+        "text-a-0115",
+        "text-p-0402",
+        "text-list-0028",
+        "text-list-item-0028",
+        "text-list-0029",
+        "text-list-item-0029",
+        "text-list-0030",
+        "text-list-header-0004"
+      ],
+      "source_text_ids": [
+        "text-h-0012",
+        "text-p-0376",
+        "text-p-0378",
+        "text-p-0379",
+        "text-p-0380",
+        "text-p-0381",
+        "text-p-0385",
+        "text-p-0386",
+        "text-p-0387",
+        "text-p-0388",
+        "text-p-0390",
+        "text-p-0391",
+        "text-p-0392",
+        "text-p-0394",
+        "text-p-0395",
+        "text-p-0396",
+        "text-p-0398",
+        "text-p-0399",
+        "text-p-0400",
+        "text-p-0402"
+      ],
+      "omitted_documentation_ids": [
+        "text-p-0381",
+        "text-a-0111",
+        "text-p-0388",
+        "text-a-0112",
+        "text-p-0392",
+        "text-a-0113",
+        "text-p-0396",
+        "text-a-0114",
+        "text-p-0400",
+        "text-a-0115"
+      ],
+      "required_citation_keys": [
+        "typescript-docs",
+        "react-docs",
+        "nodejs-docs",
+        "prisma-docs",
+        "postgresql-docs"
+      ],
+      "citation_terms": {
+        "typescript-docs": [
+          "TypeScript"
+        ],
+        "react-docs": [
+          "React"
+        ],
+        "nodejs-docs": [
+          "Node.js"
+        ],
+        "prisma-docs": [
+          "Prisma",
+          "prisma"
+        ],
+        "postgresql-docs": [
+          "PostgreSQL"
+        ]
+      },
+      "baseline_tex_sha256": "59826c64dc151b4a8abb65682a881c75d5202fc1e45d89579a9d3929a20a5d83",
+      "baseline_ledger_sha256": "32e36fe5e210256420df80ad3dcd41b3ee2b2e2a617f77da5ed6bd468d5e5ada"
+    },
+    "chapter-04-text-h-0046": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+      "ledger_path": "migration/ledgers/chapter-04-text-h-0046.json",
+      "source_record_ids": [
+        "text-h-0046",
+        "text-p-0810",
+        "text-list-0109",
+        "text-list-item-0086",
+        "text-p-0812",
+        "text-p-0813",
+        "text-p-0814",
+        "text-a-0122",
+        "text-p-0815",
+        "text-a-0123",
+        "text-list-0110",
+        "text-list-item-0087",
+        "text-p-0817",
+        "text-p-0818",
+        "text-p-0819",
+        "text-a-0124",
+        "text-list-0111",
+        "text-list-item-0088",
+        "text-p-0821",
+        "text-p-0822",
+        "text-p-0823",
+        "text-a-0125",
+        "text-list-0112",
+        "text-list-item-0089",
+        "text-p-0825",
+        "text-p-0826",
+        "text-p-0827",
+        "text-a-0126",
+        "text-list-0113",
+        "text-list-item-0090",
+        "text-p-0829",
+        "text-p-0830",
+        "text-p-0831",
+        "text-a-0127",
+        "text-list-0114",
+        "text-list-item-0091",
+        "text-p-0833",
+        "text-p-0834",
+        "text-p-0835",
+        "text-a-0128",
+        "text-list-0115",
+        "text-list-item-0092",
+        "text-p-0837",
+        "text-p-0838",
+        "text-p-0839",
+        "text-p-0841",
+        "text-list-0116",
+        "text-list-item-0093",
+        "text-list-0117",
+        "text-list-header-0030"
+      ],
+      "source_text_ids": [
+        "text-h-0046",
+        "text-p-0810",
+        "text-p-0812",
+        "text-p-0813",
+        "text-p-0814",
+        "text-p-0815",
+        "text-p-0817",
+        "text-p-0818",
+        "text-p-0819",
+        "text-p-0821",
+        "text-p-0822",
+        "text-p-0823",
+        "text-p-0825",
+        "text-p-0826",
+        "text-p-0827",
+        "text-p-0829",
+        "text-p-0830",
+        "text-p-0831",
+        "text-p-0833",
+        "text-p-0834",
+        "text-p-0835",
+        "text-p-0837",
+        "text-p-0838",
+        "text-p-0839",
+        "text-p-0841"
+      ],
+      "omitted_documentation_ids": [
+        "text-p-0814",
+        "text-a-0122",
+        "text-p-0815",
+        "text-a-0123",
+        "text-p-0819",
+        "text-a-0124",
+        "text-p-0823",
+        "text-a-0125",
+        "text-p-0827",
+        "text-a-0126",
+        "text-p-0831",
+        "text-a-0127",
+        "text-p-0835",
+        "text-a-0128",
+        "text-p-0839"
+      ],
+      "required_citation_keys": [
+        "ages-ii-angular",
+        "ages-ii-typescript",
+        "ages-ii-http-rfc9110",
+        "ages-ii-json-rfc8259",
+        "ages-ii-python",
+        "ages-ii-graph-api",
+        "ages-ii-fastapi",
+        "ages-ii-postgresql",
+        "ages-ii-sqlalchemy",
+        "ages-ii-docker"
+      ],
+      "citation_terms": {
+        "ages-ii-angular": [
+          "Angular"
+        ],
+        "ages-ii-typescript": [
+          "TypeScript"
+        ],
+        "ages-ii-http-rfc9110": [
+          "HTTP"
+        ],
+        "ages-ii-json-rfc8259": [
+          "JSON"
+        ],
+        "ages-ii-python": [
+          "Python"
+        ],
+        "ages-ii-graph-api": [
+          "Graph API"
+        ],
+        "ages-ii-fastapi": [
+          "FastAPI"
+        ],
+        "ages-ii-postgresql": [
+          "PostgreSQL"
+        ],
+        "ages-ii-sqlalchemy": [
+          "SQLAlchemy"
+        ],
+        "ages-ii-docker": [
+          "Docker"
+        ]
+      },
+      "baseline_tex_sha256": "f2b3039ff4aa841bd4342a6d43c42d042f1d64e05071163a1fcf9e7d04245123",
+      "baseline_ledger_sha256": "e92f22a0b4232cdcfe4e73f04b1c7fe3855f752fc3f831d2a246aeccae06cea8"
+    },
+    "chapter-05-text-h-0085": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0085.tex",
+      "ledger_path": "migration/ledgers/chapter-05-text-h-0085.json",
+      "source_record_ids": [
+        "text-h-0085",
+        "text-list-0183",
+        "text-list-item-0154",
+        "text-p-1066",
+        "text-p-1067",
+        "text-a-0133",
+        "text-list-0184",
+        "text-list-item-0155",
+        "text-p-1069",
+        "text-p-1070",
+        "text-a-0134",
+        "text-list-0185",
+        "text-list-header-0050",
+        "text-list-0186",
+        "text-list-item-0156",
+        "text-p-1072",
+        "text-p-1073",
+        "text-p-1074",
+        "text-a-0135",
+        "text-list-0187",
+        "text-list-item-0157",
+        "text-p-1076",
+        "text-p-1077",
+        "text-p-1078",
+        "text-a-0136",
+        "text-list-0188",
+        "text-list-item-0158",
+        "text-p-1080",
+        "text-p-1081",
+        "text-a-0137",
+        "text-list-0189",
+        "text-list-item-0159",
+        "text-p-1083",
+        "text-p-1084",
+        "text-p-1085",
+        "text-a-0138",
+        "text-list-0190",
+        "text-list-item-0160",
+        "text-p-1087",
+        "text-p-1088",
+        "text-a-0139",
+        "text-list-0191",
+        "text-list-item-0161",
+        "text-p-1090",
+        "text-p-1091",
+        "text-a-0140",
+        "text-list-0192",
+        "text-list-item-0162",
+        "text-p-1093",
+        "text-p-1094",
+        "text-a-0141",
+        "text-list-0193",
+        "text-list-item-0163",
+        "text-p-1096",
+        "text-p-1097",
+        "text-a-0142",
+        "text-list-0194",
+        "text-list-item-0164",
+        "text-p-1099",
+        "text-p-1100",
+        "text-a-0143",
+        "text-list-0195",
+        "text-list-item-0165",
+        "text-p-1102",
+        "text-p-1103",
+        "text-a-0144",
+        "text-list-0196",
+        "text-list-item-0166",
+        "text-p-1105",
+        "text-p-1106",
+        "text-a-0145",
+        "text-list-0197",
+        "text-list-item-0167",
+        "text-list-0198",
+        "text-list-header-0051"
+      ],
+      "source_text_ids": [
+        "text-h-0085",
+        "text-p-1066",
+        "text-p-1067",
+        "text-p-1069",
+        "text-p-1070",
+        "text-p-1072",
+        "text-p-1073",
+        "text-p-1074",
+        "text-p-1076",
+        "text-p-1077",
+        "text-p-1078",
+        "text-p-1080",
+        "text-p-1081",
+        "text-p-1083",
+        "text-p-1084",
+        "text-p-1085",
+        "text-p-1087",
+        "text-p-1088",
+        "text-p-1090",
+        "text-p-1091",
+        "text-p-1093",
+        "text-p-1094",
+        "text-p-1096",
+        "text-p-1097",
+        "text-p-1099",
+        "text-p-1100",
+        "text-p-1102",
+        "text-p-1103",
+        "text-p-1105",
+        "text-p-1106"
+      ],
+      "omitted_documentation_ids": [
+        "text-p-1067",
+        "text-a-0133",
+        "text-p-1070",
+        "text-a-0134",
+        "text-p-1074",
+        "text-a-0135",
+        "text-p-1078",
+        "text-a-0136",
+        "text-p-1081",
+        "text-a-0137",
+        "text-p-1085",
+        "text-a-0138",
+        "text-p-1088",
+        "text-a-0139",
+        "text-p-1091",
+        "text-a-0140",
+        "text-p-1094",
+        "text-a-0141",
+        "text-p-1097",
+        "text-a-0142",
+        "text-p-1100",
+        "text-a-0143",
+        "text-p-1103",
+        "text-a-0144",
+        "text-p-1106",
+        "text-a-0145"
+      ],
+      "required_citation_keys": [
+        "ages-iii-csharp",
+        "ages-iii-dotnet",
+        "ages-iii-react",
+        "ages-iii-typescript",
+        "ages-iii-javascript",
+        "ages-iii-impinj-iot-interface",
+        "ages-iii-rfid-nist",
+        "ages-iii-entity-framework",
+        "ages-iii-aws-lambda",
+        "ages-iii-s3",
+        "ages-iii-cloudfront",
+        "ages-iii-rds",
+        "ages-iii-postgresql",
+        "ages-iii-docker",
+        "ages-iii-github-actions",
+        "ages-iii-gitlab"
+      ],
+      "citation_terms": {
+        "ages-iii-csharp": [
+          "C#"
+        ],
+        "ages-iii-dotnet": [
+          ".NET"
+        ],
+        "ages-iii-react": [
+          "React"
+        ],
+        "ages-iii-typescript": [
+          "TypeScript"
+        ],
+        "ages-iii-javascript": [
+          "JavaScript"
+        ],
+        "ages-iii-impinj-iot-interface": [
+          "Impinj R700 REST API"
+        ],
+        "ages-iii-rfid-nist": [
+          "RFID"
+        ],
+        "ages-iii-entity-framework": [
+          "Entity Framework Core"
+        ],
+        "ages-iii-aws-lambda": [
+          "AWS Lambda"
+        ],
+        "ages-iii-s3": [
+          "Amazon S3"
+        ],
+        "ages-iii-cloudfront": [
+          "Amazon CloudFront"
+        ],
+        "ages-iii-rds": [
+          "Amazon RDS"
+        ],
+        "ages-iii-postgresql": [
+          "PostgreSQL"
+        ],
+        "ages-iii-docker": [
+          "Docker"
+        ],
+        "ages-iii-github-actions": [
+          "GitHub Actions"
+        ],
+        "ages-iii-gitlab": [
+          "GitLab"
+        ]
+      },
+      "baseline_tex_sha256": "9a24f11872900566156e11d865bcf97bfd8b11239255e88725b745ca301cf3af",
+      "baseline_ledger_sha256": "86228e853549811c0052caac3999e519764ce6549c2b32026582cc23f77e8618"
+    }
+  },
+  "allowed_changes": [
+    "Recast technology labels and descriptions as coherent project-specific prose while retaining every original fact, role, qualifier and the original technology order.",
+    "Remove standalone documentation labels and their repeated prose lead-ins from the typeset body. Preserve every original label and URL in the immutable inventory and the unit ledger. Existing verified bibliography URLs remain unchanged; unverified or different original destinations remain pending in traceability.",
+    "Attach existing citations directly to technology names, at the first substantive mention in each coherent paragraph, without repeatedly citing an unchanged source within its continuous explanation. Retain the existing required reference keys, verified metadata and pending statuses.",
+    "Use natural paragraph boundaries as in the reference; no forced page breaks, list labels with colons or list markup.",
+    "Retain original emphasis in author prose and the specifically approved removal of the internal tab in text-p-1084; no general textual normalization."
+  ],
+  "not_authorized": [
+    "New technology facts, project history, versions, authors, publication dates, access dates or URLs.",
+    "Changes outside these three technology units, their ledgers, scope/governance, the scoped preservation validator and its tests, and review reports.",
+    "New AGES editions or factual approval of pending references/image sources."
+  ],
+  "supersedes": "Only the presentation and link-placement requirements for these three technology units in earlier decisions, including the one-paragraph constraint, documentation-link labels and AGES III repeated lead-ins. Previous approvals remain historical; all unrelated requirements remain in force.",
+  "approval_status": "execution_authorized; resulting_pdf_pending_human_review",
+  "human_acceptance": null
+}

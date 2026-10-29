@@ -1,0 +1,115 @@
+# Gates verificáveis
+
+## Semântica dos resultados
+
+**PASS** exige evidência executada; **FAIL** identifica divergência; **PENDING** significa ausência de prova ou decisão; **NOT_APPLICABLE** exige justificativa. Cobertura parcial não vira PASS total. Qualidade do harness e qualidade do memorial são resultados distintos. Fixtures sintéticas provam comportamento dos scripts, não integralidade do memorial.
+
+| Gate | Evidência exigida | Critério / tratamento de falha |
+|---|---|---|
+| G0 — Origem | `verify-source`, baseline e status/diff | ODT com SHA-256 congelado; comparativo inalterado; nenhuma escrita fora de escopo |
+| G1 — Inventário | `inventory`, `validate`, hashes e XPaths | ZIP íntegro; recursos referenciados presentes; IDs estáveis; ordem e descendentes de caixas/títulos examinados |
+| G2 — Cobertura da unidade | Ledger e fonte extraída independentemente | Todo elemento pertencente à unidade corresponde a destino ou classificação justificada; unidade não convertida é PENDING |
+| G3 — Texto e ordem | `validate --ledger ... --unit ...`; diff por elemento | Acentos, pontuação, símbolos e sequência preservados; não aceitar mero total de palavras. Exceção: reestruturação em prosa expressamente autorizada pelo usuário deve ser identificada como transformação, nunca como igualdade lexical, e exige auditoria independente de conteúdo antes da unidade passar |
+| G4 — Mídia e URLs | Hash de arquivo, referência no destino, URL/âncora por elemento | Imagem correta e íntegra; URLs originais iguais e bem formadas; âncoras preservadas; links remotos não testados explicitamente continuam sem declaração de disponibilidade |
+| G4a — Referências tecnológicas | Inspecionar as seções de banco de dados, arquitetura, protótipos e tecnologias contra o `.bib` e a evidência do curador | Cada produto/ferramenta nomeado aponta para uma referência verificada por chamada autor-data clicável; URL original permanece intacta; fonte sem metadados suficientes fica PENDING, sem autoria ou URL inventada |
+| G4b — Forma da chamada | Extrair chamadas renderizadas do PDF e comparar com NBR 10520:2023, itens 6.1.1.1–6.1.1.4 | Fonte sem autoria usa o título no formato normativo: título de uma palavra sem supressão; título com várias palavras com primeira palavra + `[...]`; capitalização e pontuação corretas; sem reticências automáticas fora dos colchetes |
+| G4c — Lista de referências | Inspecionar entradas repetidas para a mesma autoria/título e o PDF renderizado | Campos repetidos permanecem completos e legíveis, sem substituição por traços/sublinhados; opções efetivas do estilo bibliográfico são suportadas pela versão instalada |
+| G5 — Estrutura LaTeX | `audit-latex`, grafo de inclusão e fontes completas | Sem arquivos omitidos, include indevido de Sprint, referências indefinidas, labels duplicados ou chave bibliográfica inexistente |
+| G6 — Compilação | Build limpo, versões, log e relatório | Processador bibliográfico correto; índices resolvidos; sem erros, glifos ausentes, citações/referências indefinidas; overflow exige avaliação explícita |
+| G7 — Visual | PDF identificado por hash, renders e relatório assinado pelo revisor | Todas as páginas legíveis; Sprints contínuas; títulos não órfãos; reflexões divisíveis; imagem, legenda e fonte em contexto; linha “Fonte:” centralizada segundo a apresentação aprovada; autoria continua pendente até identificação |
+| G8 — Normativo | Matriz com fonte/edição/seção e medição do PDF | Exigências verificadas cumpridas; norma inacessível ou regra sem prova fica PENDING |
+| G9 — Humano | Mensagem do usuário vinculada a commit/PDF/relatórios | Aprovação explícita após cada edição; piloto e Hoortech com decisão própria conforme plano |
+
+## Expectativas da auditoria, não metas cegas
+
+A origem auditada contém 25 títulos de Sprint, quatro edições como aluno e uma participação como cliente, 34 imagens/legendas, 17 caixas de reflexão com 48 parágrafos não vazios, 36 referências textuais e 39 siglas. O inventário XML registra 1.634 `text:p`, 123 `text:h`, 52 caixas, 86 quadros e 188 hyperlinks, dos quais 104 são de índices. Estas contagens usam categorias diferentes e não podem ser somadas como conteúdos independentes.
+
+Checar expectativas contra o extractor atual e explicar diferenças de classificação. Não exigir que o LaTeX reproduza contêineres XML, títulos sem texto, números de índice antigos ou 116 páginas. Nunca ajustar os valores esperados para esconder perda. Índices regenerados e exclusões autorizadas precisam de classificação/justificativa rastreável.
+
+## Equivalência textual estrita
+
+Só aceitar transformações de serialização listadas e testadas pelo decodificador: caracteres reservados escapados, comandos tipográficos que exibem o mesmo conteúdo e marcadores explícitos de estrutura. Preservar o valor original no manifesto. Não remover acentos, pontuação, símbolos, caixa, números ou URLs para diminuir o diff. Não colapsar espaços/quebras semanticamente relevantes; justificar cada exceção.
+
+Uma reestruturação narrativa autorizada é classificada separadamente da serialização textual. O validador pode conferir escopo, IDs, ordem, hyperlinks, chamadas e estrutura, mas não prova equivalência semântica. A unidade fica PENDING até um auditor independente comparar cada afirmação com a origem e registrar os conceitos preservados, alterações de apresentação e eventuais omissões/acréscimos. A regra corrente para prosa tecnológica está em `docs/STYLE_GUIDE.md`; não amplia o escopo de unidades autorizadas em `harness.json`.
+
+Um parser conservador não é um motor TeX: macro desconhecida, texto oculto ou construção não suportada deve gerar falha/pendência. Extração do PDF complementa a comparação de fonte e a inspeção visual, mas hifenização, ordem de extração, glyph mapping e ligaturas impedem tratá-la como prova única. Não confiar no texto esperado escrito pelo próprio conversor como prova do texto efetivamente presente no destino.
+
+## Limites automatizados
+
+Regex de LaTeX não prova a saída de macros arbitrárias. Reconhecimento heurístico de reflexão/referência exige conferir IDs e fontes. Detecção de comandos de quebra identifica candidatos; inspeção da página decide se há quebra artificial. A disponibilidade de uma URL exige teste remoto e registro separado, não apenas análise sintática.
+
+Auditor textual lê a origem independentemente do relatório do conversor. Auditor visual lê PDF/render real, não uma lista de avisos. A preparação de renders por `visual` não constitui inspeção humana completa. Relatório obrigatório: página/elemento, evidência, consequência, gravidade, correção proposta e verificação de retorno.
+
+Na revisão dos parágrafos técnicos, cada produto/ferramenta deve ter sua fonte identificada por chamada para referência verificada, conforme `STYLE_GUIDE.md`. Na prosa de tecnologias, colocar a chamada junto à primeira menção substantiva em cada parágrafo coerente e repetir quando necessário para identificar uma nova atribuição, evitando duplicatas na mesma explicação contínua. A data de acesso pertence à entrada bibliográfica online, não é repetida como parte obrigatória de cada chamada autor-data. Um link original cuja fonte ainda não tem metadados continua PENDING e deve permanecer preservado sem uma citação bibliográfica inventada.
+
+## Correção de prosa tecnológica — 17/10/2026
+
+Nas três unidades autorizadas em `migration/approvals/ages-i-ii-iii-technology-prose-correction.json`, o gate exige: cobertura de todos os IDs e hashes de origem; rótulos e URLs retirados do corpo explicitamente inventariados; bibliografia intacta; citações adjacentes aos nomes com chaves existentes; ausência de rótulos `Documentação`, chamadas documentais repetidas, listas e quebras artificiais. Mais de um parágrafo natural é permitido, como na referência Mariah. O validador v2 deve rejeitar ledger legado nessas três unidades enquanto esta correção estiver vigente. A passagem técnica não prova a preservação dos fatos: a auditoria independente precisa comparar toda a prosa com o ODT e registrar omissões/acréscimos, sem confiar no relato do conversor. Inspecionar os hyperlinks internos de citações no PDF e os URLs nas referências. Os relatórios anteriores continuam históricos; a revisão desta correção fica em `docs/technology-review/`.
+
+Se uma tecnologia exigir referência oficial que não estava hiperlinkada no ODF, a curadoria deve registrar a página e seus limites; a citação suplementar só pode ser integrada com autorização exata que identifique unidade, registro textual, termo, chave bibliográfica e URL. Essa autorização não substitui nem reescreve links originais. Sem autorização, a citação suplementar permanece PENDING. O validador deve aceitar apenas o conjunto e o hash bibliográfico expressamente autorizados.
+
+## Gate da etapa parcial AGES IV
+
+Para a entrega parcial de AGES IV, aplicar somente as 17 unidades identificadas em `migration/approvals/ages-iv-partial-authorization.json`. Conferir 287 IDs do inventário no escopo: as unidades do capítulo 6 cobrem 268 IDs, incluindo 11 imagens, 20 hyperlinks/âncoras e duas reflexões. Sete títulos do capítulo 6 sem corpo permanecem vazios. Em `chapter-07-text-h-0123`, somente `text-h-0123` é incluído; os outros 18 IDs listados em `authorized_title_only_inclusion.omitted_source_record_ids` são omissões deliberadas autorizadas, não conversões completas. O relatório de integridade deve separar: título presente, corpo omitido por decisão e conteúdo da seção futura pendente. A aprovação humana final permanece necessária mesmo que os gates técnicos passem.
+
+As referências suplementares de App Store (`text-p-1332`) e TanStack Query (`text-p-1347`), ausentes como links no ODF, estão limitadas a `migration/approvals/ages-iv-supplemental-citations-authorization.json` e às URLs oficiais correspondentes em `migration/evidence/references/ages-iv.json`. Não extrapolar essa autorização para outros termos ou unidades; a aprovação final da edição continua pendente.
+
+## Checkpoint
+
+Gates automáticos aprovados não autorizam editorial nem próxima edição. Para aprovação, apresentar diff por Sprint, lacunas, alterações de representação, PDF e riscos restantes. Registro de aprovação sem evidência identificável do usuário é inválido. Mudanças no commit/PDF após aprovação invalidam o vínculo e exigem nova revisão dos efeitos.
+
+
+## Complemento pré-textual e trajetória (17/10/2026)
+
+- Confirmar o escopo suplementar contra `migration/approvals/ages-iv-frontmatter-authorization.json`: somente `pretext`, `resumo` e `chapter-01-text-h-0001`; manter os capítulos dos projetos inalterados.
+- Conferir a ordem compilada: capa, Dedicatória, Agradecimentos, Epígrafe, Resumo, Lista de Ilustrações, Lista de Siglas, Sumário, trajetória e capítulos existentes. Elementos que seguem o padrão de páginas da referência Mariah começam em páginas próprias.
+- Conferir as 39 entradas da lista de siglas na ordem do ODT, texto da trajetória, placeholders, bookmarks e exclusões das instruções genéricas por ID nos ledgers.
+- Os campos genéricos `AGES I,II, III OU IV` e `Ano` da capa ficam deliberadamente sem decisão/autopreenchimento; resumo, dedicatória, agradecimentos e epígrafe não recebem texto autoral.
+- Validação lexical PASS não equivale à inspeção visual. PDF de revisão deve ser renderizado e as páginas pré-textuais e a transição para a trajetória devem ser examinadas. Avisos de compilação bloqueiam o gate até serem investigados; aprovação humana permanece PENDING.
+
+## Relocação Hoortech e reindexação do documento (17/10/2026)
+
+Esta etapa depende de `migration/approvals/cliente-hoortech-and-document-order-authorization.json`, do hash imutável do ODT e do overlay `migration_overlay.document_order`. Não altera conteúdo narrativo das edições AGES I–IV.
+
+| Gate | Critério de aprovação |
+|---|---|
+| H1 — Cobertura | Converter exatamente dez unidades Hoortech; conferir parágrafos, listas, três imagens e demais estruturas pelos IDs do ODT. Cada imagem preserva o hash original; as fontes ficam pendentes, sem atribuição inventada. |
+| H2 — Ordem | `main.tex` compila a ordem: trajetória 1, AGES I 2, AGES II 3, AGES III 4, AGES IV 5, Hoortech 6, título final 7. Nenhum `setcounter` mascara a ordem nem reinicia capítulos/figuras artificialmente. |
+| H3 — Mapeamento numérico | As 56 legendas de título e 29 legendas de figura cobrem exatamente os registros autorizados; cada texto final é derivado do texto ODF preservando sufixos/legendas. A única troca de prosa é `text-p-0679`, 3.2→6.2. Mudança fora dos 86 IDs reprova. |
+| H4 — Figuras e referências | Conferir no PDF figuras consecutivas 1–35 (AGES I 1–5, AGES II 6–12, AGES III 13–20, AGES IV 21–32 incluindo Gantt da Sprint 3, Hoortech 33–35), lista de ilustrações, labels, `\ref`, contadores e links. O overlay suplementar deve permanecer separado do mapa inicial de ordem. |
+| H5 — Conteúdo independente | O auditor relê o ODT congelado e compara as dez unidades Hoortech, imagens/legendas/listas/ênfases, além de conferir todas as trocas numéricas permitidas. O relatório do conversor não serve como evidência. |
+| H6 — Visual integrado | O auditor examina o PDF completo por hash, com foco nas transições de capítulos 5→6→7, continuidade das Sprints Hoortech, títulos órfãos, figuras, fontes, sumário e lista de ilustrações. |
+| H7 — Aprovação | Aprovação humana da participação Hoortech e da nova ordem permanece PENDING até manifestação explícita ligada aos artefatos finais. Não iniciar outra edição antes desse aceite. |
+
+Resultado de cada gate: PASS, FAIL, PENDING ou NOT_APPLICABLE com evidência. Um manifesto ou JSON de autorização não substitui inspeção do conteúdo e do PDF.
+
+## Complemento restrito — AGES IV, Sprint 2 (25/10/2026)
+
+Aplicar exclusivamente a autorização `migration/approvals/ages-iv-sprint-2-content-authorization.json` e a unidade `ages-iv-sprint-2`.
+
+| Gate | Critério |
+|---|---|
+| S2-1 — Proveniência | O ODT continua contendo só o título e wrappers vazios. Os cinco parágrafos de relatório e dois de reflexão são rotulados como texto fornecido diretamente pelo usuário, com hashes e mapas independentes; não atribuir esses textos ao ODT. |
+| S2-2 — Fidelidade | Comparar individualmente o texto e a ordem dos sete blocos com a autorização; verificar acentos, pontuação, termos em itálico e código inline. Qualquer divergência ou bloco não mapeado é FAIL. |
+| S2-3 — Estrutura | O título da Sprint segue o fluxo, sem quebra forçada; relato precede a caixa introspectiva padronizada. Não modificar Sprint 3–4, conclusão, outras edições ou estilos globais. |
+| S2-4 — Compilação e PDF | Compilar em `document-review`, registrar retorno, log e hashes; vincular o PDF no ledger. Gate global FAIL continua FAIL mesmo que o compilador retorne 0. |
+| S2-5 — Auditorias | Auditor textual acessa diretamente a mensagem/autorização e destino, sem confiar no relatório do conversor. Auditor visual inspeciona renders reais da unidade e transições adjacentes. Relatórios declaram páginas e cobertura; não generalizar o exame local para o PDF completo. |
+| S2-6 — Aceitação | Manter aprovação humana do texto e do PDF como PENDING até manifestação explícita do usuário ligada ao artefato identificado. Não converter próxima Sprint. |
+
+O inventário ODT permanece inalterado: estes sete blocos não são registros de `docs/CONTENT_MANIFEST.json`; sua rastreabilidade suplementar reside no arquivo de autorização, no ledger da Sprint 2 e nos relatórios de auditoria.
+
+## Complemento restrito — AGES IV, Sprint 3 e Figura 32 (29/10/2026)
+
+Aplicar as autorizações separadas `migration/approvals/ages-iv-sprint-3-content-authorization.json` e `migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json`. A segunda autorização acrescenta apenas a imagem direta do usuário, a remoção de uma ênfase, o deslocamento das três figuras Hoortech e os três ajustes no sumário.
+
+| Gate | Critério |
+|---|---|
+| S3-1 — Proveniência | O ODT e os registros-fonte do manifesto continuam com somente o título e wrappers vazios nesta Sprint. Relato, reflexão e legenda/fonte são conteúdo direto do usuário; o PNG fornecido é asset suplementar, não imagem extraída do ODT. Verificar ambos os hashes. |
+| S3-2 — Fidelidade | Conferir os 13 blocos suplementares, a troca autorizada “Figura X”→“Figura 32” e a retirada apenas do negrito de “14 tarefas do Épico 6”. Os demais textos e ênfases devem permanecer iguais; não alegar igualdade lexical para a numeração do placeholder. |
+| S3-3 — Figura real | O arquivo PNG corresponde ao hash e às dimensões aprovadas; usa o ambiente padronizado, legenda Figura 32, label, Lista de Ilustrações e fonte centralizada “Fonte: elaboração própria.”. Não há mais placeholder nem controles locais do placeholder. |
+| S3-4 — Reindexação | Somente as legendas Hoortech `text-p-0663`, `text-p-0749` e `text-p-0759` mudam 32→33, 33→34 e 34→35. Verificar ordem, contador, referências e Lista de Ilustrações no PDF; preservar o overlay de ordem/documento anterior e manter o overlay suplementar separado. |
+| S3-5 — Sumário | As entradas de `text-h-0023`, `text-h-0074` e `text-h-0105` correspondem exatamente aos três textos autorizados. Os títulos no corpo não mudam; confirmar também bookmarks/destinos. |
+| S3-6 — Estrutura/visual | Sprint segue em fluxo contínuo, sem quebra artificial. Inspecionar a nova página da Figura 32, legenda/fonte, continuidade da Sprint e reflexões, além das páginas de sumário e lista de ilustrações. |
+| S3-7 — Build/auditorias | Compilar `document-review`, registrar PDF/log/hash; executar teste do harness e validação das unidades afetadas; auditorias independentes de conteúdo e visual devem ler o resultado atualizado. Avisos globais continuam FAIL quando não resolvidos. Aprovação humana do PDF permanece PENDING. |
+
+Nenhum desses gates autoriza alterar o ODT, prosa de outras unidades, Sprints posteriores ou estilo/macros globais.

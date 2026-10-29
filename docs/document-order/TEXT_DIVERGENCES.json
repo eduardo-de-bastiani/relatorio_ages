@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "audit": "independent_content_and_order_audit",
+  "date": "2026-10-17",
+  "overall_status": "PENDING",
+  "scope": {
+    "authorization": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+    "authorized_unit_count": 56,
+    "moved_hoortech_unit_count": 10,
+    "other_affected_unit_count": 46,
+    "source": "RELATORIO_ATUAL.odt",
+    "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "target_main": "relatorio_AGES_eduardo/main.tex",
+    "manifest": "docs/CONTENT_MANIFEST.json",
+    "ledger_directory": "migration/ledgers"
+  },
+  "evidence_and_results": [
+    {
+      "id": "source_hash_and_manifest",
+      "status": "PASS",
+      "evidence": "ODT SHA-256 equals the frozen authorization hash; verify_manifest(source, manifest) returned no discrepancies."
+    },
+    {
+      "id": "unit_coverage_and_order",
+      "status": "PASS",
+      "evidence": "All 56 authorized unit IDs occur once in the current TeX include graph; the ten Hoortech units retain source order within the moved block and the 46 other affected units retain order within their blocks."
+    },
+    {
+      "id": "chapter_order",
+      "status": "PASS",
+      "expected": [
+        "1 trajectory",
+        "2 AGES I",
+        "3 AGES II",
+        "4 AGES III",
+        "5 AGES IV including 5.4 conclusion",
+        "6 Hoortech",
+        "7 final title only"
+      ],
+      "evidence": "Current main.tex order matches the authorized final sequence."
+    },
+    {
+      "id": "heading_hierarchy",
+      "status": "PASS",
+      "counts": {
+        "headings": 56,
+        "chapters": 4,
+        "sections": 15,
+        "subsections": 37
+      },
+      "evidence": "All 56 visible heading titles/numbers match the approved heading_numbering map."
+    },
+    {
+      "id": "text_presence_and_order",
+      "status": "PASS",
+      "counts": {
+        "source_text_records": 432,
+        "lexical_matches": 340,
+        "authorized_reflow_records": 92
+      },
+      "authorized_reflows": [
+        {
+          "unit": "chapter-04-text-h-0046",
+          "record_count": 25
+        },
+        {
+          "unit": "chapter-05-text-h-0085",
+          "record_count": 30
+        },
+        {
+          "unit": "chapter-06-text-h-0113",
+          "record_count": 37
+        }
+      ],
+      "evidence": "Direct comparison found only the three approved technology prose reflows. Independent semantic comparison confirmed technology order, project use, functions and qualifiers; no added project facts or omitted functions identified."
+    },
+    {
+      "id": "text-p-0679-reference",
+      "status": "PASS",
+      "source": "No tópico 3.2, meus comentários pessoais estarão juntos aos acontecimentos das sprints, não possuindo uma caixa própria.",
+      "target": "No tópico 6.2, meus comentários pessoais estarão juntos aos acontecimentos das sprints, não possuindo uma caixa própria.",
+      "evidence": "Only the explicitly authorized internal section reference changed from 3.2 to 6.2."
+    },
+    {
+      "id": "figures_captions_numbering_and_hashes",
+      "status": "PASS",
+      "counts": {
+        "target_figures": 34,
+        "renumbered_caption_mappings": 29
+      },
+      "numbering": "1–34 consecutively",
+      "evidence": "Mapped captions preserve their body under the approved numbering/label substitution; source image bytes match corresponding ODT media resource hashes."
+    },
+    {
+      "id": "hoortech_image_caption_bindings",
+      "status": "PASS",
+      "figures": [
+        {
+          "image_id": "draw-image-0006",
+          "caption_id": "text-p-0663",
+          "source_caption": "Figure 6: Foto do time - CLIENTE AGES",
+          "target_caption": "Figura 32 – Foto do time - CLIENTE AGES",
+          "source_resource": "Pictures/1000000000000FC000000BD011E72322.jpg",
+          "sha256": "e9d0b2398e5e1c2bc11e619dfe7c122143ce572e6427a95984531fd33feab72d"
+        },
+        {
+          "image_id": "draw-image-0007",
+          "caption_id": "text-p-0749",
+          "source_caption": "Figure 7: Entrega Final - CLIENTE AGES",
+          "target_caption": "Figura 33 – Entrega Final - CLIENTE AGES",
+          "source_resource": "Pictures/1000000000000FA000000BB8DCCA8E74.jpg",
+          "sha256": "14b4cbd9430248777709de2ec13df52837dabfc289d8587f6ad840ac8b4d770b"
+        },
+        {
+          "image_id": "draw-image-0008",
+          "caption_id": "text-p-0759",
+          "source_caption": "Figure 8: Projeto Destaque 2024/2 - CLIENTE AGES",
+          "target_caption": "Figura 34 – Projeto Destaque 2024/2 - CLIENTE AGES",
+          "source_resource": "Pictures/1000000000000640000004B0E110B794.jpg",
+          "sha256": "bb60d58e2eb097d811ba56da03fc246df3dd8eb618ae04194da26abe51f2c5ae"
+        }
+      ],
+      "evidence": "Each source occurrence is associated with its approved caption ID, and target media bytes match source media bytes."
+    },
+    {
+      "id": "hyperlinks_and_anchors",
+      "status": "PENDING",
+      "counts": {
+        "odf_hyperlinks": 50,
+        "direct_inline_links": 17,
+        "technology_documentation_links_in_ledger": 33,
+        "literal_bibliography_url_matches": 31
+      },
+      "pending": [
+        {
+          "source_id": "text-a-0126",
+          "source_anchor": "Graph API Explorer",
+          "source_url": "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+          "bibliography_key": "ages-ii-graph-api",
+          "bibliography_url": "https://developers.facebook.com/docs/graph-api/",
+          "issue": "Different destination URLs; source URL preserved in ledger; equivalence unverified."
+        },
+        {
+          "source_id": "text-a-0137",
+          "source_anchor": "Documentação API Impinj R700",
+          "source_url": "https://support.impinj.com/hc/en-us",
+          "bibliography_key": "ages-iii-impinj-iot-interface",
+          "bibliography_url": "https://www.impinj.com/products/technology/key-features/iot-device-interface",
+          "issue": "Different destination URLs; source URL preserved in ledger; equivalence unverified."
+        }
+      ],
+      "evidence": "All 50 original hyperlink records were accounted for. Approved technology prose restructuring replaces 33 body documentation links with citations; their source anchors and URLs remain traceable in unit ledgers."
+    },
+    {
+      "id": "chapter_7_title_only",
+      "status": "PASS",
+      "included": "Only the chapter 7 title.",
+      "omitted_source_body_ids": 18,
+      "evidence": "Ten body paragraphs and associated list structures, per the user's title-only decision and partial AGES IV authorization. Omissão deliberada, não divergência."
+    },
+    {
+      "id": "invented_or_cross_project_content",
+      "status": "PASS",
+      "evidence": "No content outside the ODT source was identified in the 56 scoped units during direct content comparison."
+    },
+    {
+      "id": "image_source_attribution",
+      "status": "PENDING",
+      "evidence": "The three Hoortech image sources remain unidentified for human confirmation; image bytes and caption associations are intact."
+    },
+    {
+      "id": "integrated_pdf_visual_review",
+      "status": "PENDING",
+      "evidence": "No compilation or PDF visual inspection was performed as part of this content/order audit."
+    }
+  ],
+  "text_divergences": [
+    {
+      "id": "text-p-0679",
+      "status": "AUTHORIZED",
+      "source": "No tópico 3.2, meus comentários pessoais estarão juntos aos acontecimentos das sprints, não possuindo uma caixa própria.",
+      "target": "No tópico 6.2, meus comentários pessoais estarão juntos aos acontecimentos das sprints, não possuindo uma caixa própria.",
+      "authorized_change": "3.2 -> 6.2"
+    },
+    {
+      "id": "technology-prose-reflows",
+      "status": "AUTHORIZED_AND_SEMANTICALLY_CHECKED",
+      "units": [
+        "chapter-04-text-h-0046",
+        "chapter-05-text-h-0085",
+        "chapter-06-text-h-0113"
+      ],
+      "source_text_record_count": 92,
+      "finding": "Only the three scopes authorized for restructuring differ lexically. Technology sequence, project use, functional claims and qualifiers were preserved in direct semantic comparison; no additional project facts were found."
+    }
+  ],
+  "not_performed": [
+    "Compilation",
+    "PDF visual inspection"
+  ],
+  "limitations": [
+    "The audit establishes source-to-TeX content and order only; it does not approve visual layout or close pending human image-source and URL-equivalence review."
+  ],
+  "report_path": "docs/document-order/CONTENT_AUDIT.md",
+  "content_and_order_status": "PASS"
+}

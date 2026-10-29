@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_edition_scope",
+  "date": "2026-10-16",
+  "basis": "User's explicit request to begin AGES III and execute the controlled migration mission in this conversation.",
+  "branch": "migration/ages-iii",
+  "base_checkpoint": {
+    "commit": "abe761c",
+    "full_commit": "abe761cba29a653e19db234b497fffd957a944b6",
+    "description": "User-approved AGES I/II candidate and persistent formatting rules."
+  },
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+  "scope": {
+    "units": [
+      "chapter-05-text-h-0074",
+      "chapter-05-text-h-0075",
+      "chapter-05-text-h-0076",
+      "chapter-05-text-h-0077",
+      "chapter-05-text-h-0078",
+      "chapter-05-text-h-0079",
+      "chapter-05-text-h-0080",
+      "chapter-05-text-h-0085",
+      "chapter-05-text-h-0086",
+      "ages-iii-sprint-0",
+      "ages-iii-sprint-1",
+      "ages-iii-sprint-2",
+      "ages-iii-sprint-3",
+      "ages-iii-sprint-4",
+      "chapter-05-text-h-0097"
+    ],
+    "excluded": ["AGES IV", "Cliente Hoortech", "all other document units"]
+  },
+  "converter_ownership": {
+    "converter_a": {
+      "worktree": "/tmp/relatorio-ages-iii-converter-a",
+      "units": [
+        "chapter-05-text-h-0074",
+        "chapter-05-text-h-0075",
+        "chapter-05-text-h-0076",
+        "chapter-05-text-h-0077",
+        "chapter-05-text-h-0078",
+        "chapter-05-text-h-0079",
+        "chapter-05-text-h-0080",
+        "chapter-05-text-h-0085"
+      ],
+      "assets": [
+        "relatorio_AGES_eduardo/imagens/original/asset-0015.jpg",
+        "relatorio_AGES_eduardo/imagens/original/asset-0014.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0004.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0028.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0029.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0030.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0031.png",
+        "relatorio_AGES_eduardo/imagens/original/asset-0032.png"
+      ]
+    },
+    "converter_b": {
+      "worktree": "/tmp/relatorio-ages-iii-converter-b",
+      "units": [
+        "chapter-05-text-h-0086",
+        "ages-iii-sprint-0",
+        "ages-iii-sprint-1",
+        "ages-iii-sprint-2",
+        "ages-iii-sprint-3",
+        "ages-iii-sprint-4",
+        "chapter-05-text-h-0097"
+      ],
+      "assets": []
+    }
+  },
+  "reference_curator": {
+    "evidence_file": "migration/evidence/references/ages-iii.json",
+    "shared_bibliography_integration": "centralized and serial; curator does not edit the shared .bib"
+  },
+  "content_and_visual_audits": {
+    "content_auditor_outputs": [
+      "docs/ages-iii/CONTENT_AUDIT.md",
+      "docs/ages-iii/CONTENT_AUDIT.json",
+      "docs/ages-iii/TEXT_DIVERGENCES.json"
+    ],
+    "visual_auditor_outputs": [
+      "docs/ages-iii/VISUAL_AUDIT.md",
+      "docs/ages-iii/VISUAL_AUDIT.json"
+    ]
+  },
+  "presentation_and_preservation": {
+    "follow": "docs/STYLE_GUIDE.md and docs/QUALITY_GATES.md",
+    "source_text": "preserve exact wording, punctuation, order, and semantics; no editorial revisions",
+    "sprint_flow": "no forced page break before a Sprint",
+    "missing_diagrams": "use clearly provisional placeholders only when the ODT actually lacks that diagram; the ODT currently contains database and architecture diagrams in this edition",
+    "image_sources": "do not infer; mark pending identification until verified",
+    "citations": "cite only sources with verifiable metadata; preserve original URLs and anchors",
+    "access_dates": "record the actual date of source verification; never invent or backdate access dates",
+    "blank_reflection_paragraph": "text-p-1208 in Sprint 2 is present in the ODT; retain its ID and classify/validate before deciding its visual representation"
+  },
+  "user_accepted_pending_references": {
+    "record": "migration/approvals/ages-iii-pending-references-acceptance.json",
+    "decision": "Continue conversion with original unresolved URLs preserved and sources explicitly marked PENDING.",
+    "affected_records": ["text-a-0129", "text-a-0130", "text-a-0131", "text-a-0132", "text-a-0137"],
+    "affected_units": ["chapter-05-text-h-0077", "chapter-05-text-h-0078", "chapter-05-text-h-0085"],
+    "limits": "No source metadata, bibliographic entry, claim of availability, URL substitution, or source-specific citation may be invented. Related reference gates remain PENDING."
+  },
+  "stop_conditions": [
+    "A source, paragraph, image-to-text relation, or structure cannot be extracted safely.",
+    "A required reference cannot be verified and no explicit user decision permits continuation with PENDING.",
+    "A human editorial decision or a conflict with an approved rule is required.",
+    "A validation or audit identifies an unresolved content mismatch."
+  ],
+  "approval_status": "authorized_for_AGES_III_only; final edition approval pending"
+}

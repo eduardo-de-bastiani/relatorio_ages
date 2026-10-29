@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_ages_iv_sprint_3_figure_and_display_adjustments",
+  "date": "2026-10-29",
+  "approval_status": "authorized_for_execution_pending_human_review",
+  "user_instruction": "Substituir o placeholder Figura X pelo gráfico Gantt recebido e numerá-lo como Figura 32; remover o negrito de “14 tarefas do Épico 6”; deixar CLIENTE AGES – HOORTECH em caixa alta no sumário; corrigir PROJETOS para PROJETO no sumário de AGES III e AGES IV.",
+  "baseline": {
+    "branch": "migration/ages-iii",
+    "commit": "debbcd032323273af74ab183a5ae8758aa4b50ae",
+    "worktree_was_dirty": true
+  },
+  "source": {
+    "odt_path": "RELATORIO_ATUAL.odt",
+    "odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "figure_insertion": {
+    "unit_id": "ages-iv-sprint-3",
+    "asset": {
+      "user_supplied_path": "/home/eduardo/Downloads/Backend and Frontend-2026-10-03-150410.png",
+      "target_path": "relatorio_AGES_eduardo/imagens/user-supplied/ages-iv-sprint-3-gantt.png",
+      "sha256": "a507cd17d974f716b1133319a89d19907787cf8f058f4b1fc329deb8e799ee05",
+      "format": "PNG",
+      "width_px": 8191,
+      "height_px": 1353
+    },
+    "caption_content_id": "user-ages-iv-sprint-3-gantt-caption",
+    "caption_source_markup": "**Figura X – Planejamento de paralelização das tasks da squad durante a Sprint 3**",
+    "caption_target_markup": "**Figura 32 –** Planejamento de paralelização das tasks da squad durante a Sprint 3",
+    "figure_number": 32,
+    "label": "ages-iv:sprint3:gantt",
+    "source_content_id": "user-ages-iv-sprint-3-gantt-source",
+    "source_markup": "*Fonte: elaboração própria.*",
+    "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex",
+    "rendering": "Existing memorialfigure macro; real numbered figure, included in List of Illustrations, caption above and source centered below.",
+    "source_target_markup": "Fonte: elaboração própria."
+  },
+  "following_figure_renumbering": [
+    {
+      "source_id": "text-p-0663",
+      "unit_id": "chapter-03-text-h-0024",
+      "from_number": 32,
+      "to_number": 33,
+      "source_caption": "Figure 6: Foto do time - CLIENTE AGES",
+      "previous_target": "Figura 32 – Foto do time - CLIENTE AGES",
+      "target": "Figura 33 – Foto do time - CLIENTE AGES"
+    },
+    {
+      "source_id": "text-p-0749",
+      "unit_id": "cliente-hoortech-sprint-4",
+      "from_number": 33,
+      "to_number": 34,
+      "source_caption": "Figure 7: Entrega Final - CLIENTE AGES",
+      "previous_target": "Figura 33 – Entrega Final - CLIENTE AGES",
+      "target": "Figura 34 – Entrega Final - CLIENTE AGES"
+    },
+    {
+      "source_id": "text-p-0759",
+      "unit_id": "chapter-03-text-h-0038",
+      "from_number": 34,
+      "to_number": 35,
+      "source_caption": "Figure 8: Projeto Destaque 2024/2 - CLIENTE AGES",
+      "previous_target": "Figura 34 – Projeto Destaque 2024/2 - CLIENTE AGES",
+      "target": "Figura 35 – Projeto Destaque 2024/2 - CLIENTE AGES"
+    }
+  ],
+  "toc_entry_adjustments": [
+    {
+      "source_id": "text-h-0023",
+      "unit_id": "chapter-03-text-h-0023",
+      "document_order_text": "6 Cliente ages – hoortech",
+      "target": "6 CLIENTE AGES – HOORTECH",
+      "body_heading_unchanged": true
+    },
+    {
+      "source_id": "text-h-0074",
+      "unit_id": "chapter-05-text-h-0074",
+      "document_order_text": "4 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "target": "4 PROJETO AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "body_heading_unchanged": true
+    },
+    {
+      "source_id": "text-h-0105",
+      "unit_id": "chapter-06-text-h-0105",
+      "document_order_text": "5 PROJETOS AGES IV - RECORDA ",
+      "target": "5 PROJETO AGES IV - RECORDA ",
+      "body_heading_unchanged": true
+    }
+  ],
+  "inline_format_adjustments": [
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p07",
+      "unit_id": "ages-iv-sprint-3",
+      "source_markup": "O resultado dessa antecipação foi bastante positivo. Até o *code freeze*, já havíamos desenvolvido, revisado e integrado **14 tarefas do Épico 6**, originalmente previsto para a Sprint 4, restando apenas quatro tarefas em *To Do* e três em *In Progress*. Optamos por manter essas atividades restantes para a Sprint seguinte, preservando um volume adequado de trabalho para a equipe. Esse avanço nos colocou em uma posição mais confortável para a reta final do projeto, com maior disponibilidade para testes de integração e de sistema, correção de bugs e polimento da aplicação.",
+      "source_markup_sha256": "db718609e10f3e6bafa305e10a630c68846428edce6947d1d8149f651005ac92",
+      "target_markup": "O resultado dessa antecipação foi bastante positivo. Até o *code freeze*, já havíamos desenvolvido, revisado e integrado 14 tarefas do Épico 6, originalmente previsto para a Sprint 4, restando apenas quatro tarefas em *To Do* e três em *In Progress*. Optamos por manter essas atividades restantes para a Sprint seguinte, preservando um volume adequado de trabalho para a equipe. Esse avanço nos colocou em uma posição mais confortável para a reta final do projeto, com maior disponibilidade para testes de integração e de sistema, correção de bugs e polimento da aplicação.",
+      "target_markup_sha256": "32b56ca3496276788aaac540463b488432ffb1bcfcb785a9192eb142feea35f5",
+      "visible_text_unchanged": true,
+      "change": "Remove only the bold emphasis from “14 tarefas do Épico 6”."
+    }
+  ],
+  "constraints": [
+    "Preserve the ODT and its manifest source records.",
+    "Preserve the supplied PNG bytes and hash.",
+    "Keep all other report wording, source statements, headings in the body, links and image captions unchanged except the three exact figure numbers.",
+    "Human review of the integrated PDF remains pending."
+  ]
+}

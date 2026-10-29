@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_type": "user_approved_citation_author_attribution",
+  "date": "2026-10-17",
+  "user_decision": "Usar nome da tecnologia/empresa com evidência.",
+  "scope": {
+    "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+    "bibliography": "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "citation_year_convention": "2026 based on the actual access date; not a factual publication year",
+    "bibliography_access_date_retained": "2026-10-16",
+    "authorship_recheck_date": "2026-10-17"
+  },
+  "rule": "Add a corporate or collective author only when the primary source itself supports the responsible organization or author. Do not infer authorship from a technology name alone. Retain title-based citation fallback for sources that do not establish authorship.",
+  "verified_attributions": [
+    {"key": "ages-iii-csharp", "author": "Microsoft", "evidence": "Official Microsoft Learn page; title identifies Microsoft Learn and the C# documentation."},
+    {"key": "ages-iii-dotnet", "author": "Microsoft", "evidence": "Official dotnet.microsoft.com page; the page identifies Microsoft as the organization behind .NET."},
+    {"key": "ages-iii-react", "author": "Meta Platforms, Inc.", "evidence": "The official React page states Copyright © Meta Platforms, Inc."},
+    {"key": "ages-iii-entity-framework", "author": "Microsoft", "evidence": "Official Microsoft Learn page for Entity Framework Core."},
+    {"key": "ages-iii-aws-lambda", "author": "Amazon Web Services", "evidence": "Official AWS product page; the page title identifies Amazon Web Services."},
+    {"key": "ages-iii-s3", "author": "Amazon Web Services", "evidence": "Official AWS product page; the page title identifies Amazon Web Services."},
+    {"key": "ages-iii-cloudfront", "author": "Amazon Web Services", "evidence": "Official AWS product page; the page title identifies Amazon Web Services."},
+    {"key": "ages-iii-rds", "author": "Amazon Web Services", "evidence": "Official AWS product page; the page title identifies AWS/Amazon Web Services."},
+    {"key": "ages-iii-aws-iot-core", "author": "Amazon Web Services", "evidence": "Official AWS documentation host and AWS IoT Core documentation page."},
+    {"key": "ages-iii-postgresql", "author": "PostgreSQL Global Development Group", "evidence": "The official PostgreSQL site identifies the PostgreSQL Global Development Group in its copyright notice."},
+    {"key": "ages-iii-docker", "author": "Docker, Inc.", "evidence": "The official Docker page states © 2026 Docker Inc."},
+    {"key": "ages-iii-github-actions", "author": "GitHub", "evidence": "The official GitHub feature page is titled GitHub Actions and is served from github.com."},
+    {"key": "ages-iii-mqtt", "author": "OASIS Open", "evidence": "The official MQTT 5.0 standard identifies itself as an OASIS Standard and states Copyright © OASIS Open."},
+    {"key": "ages-iii-gitlab", "author": "GitLab", "evidence": "Official GitLab Docs page; the page identifies GitLab as the documentation and product owner."},
+    {"key": "ages-iii-figma", "author": "Figma", "evidence": "Official Figma Learn Help Center page; its title and first-party help.figma.com host identify Figma."},
+    {"key": "ages-iii-rfid-nist", "author": "Scarfone, K.", "evidence": "The official NIST publication page provides a citation naming Scarfone, K. as author."},
+    {"key": "ages-iii-rfid-parking-use-cases", "author": "TransCore", "evidence": "The official TransCore page states © TransCore."},
+    {"key": "ages-iii-impinj-r700", "author": "Impinj, Inc.", "evidence": "The official Impinj page states © 2012–2026 Impinj, Inc."},
+    {"key": "ages-iii-impinj-iot-interface", "author": "Impinj, Inc.", "evidence": "The official Impinj page states © 2012–2026 Impinj, Inc."}
+  ],
+  "kept_title_based_pending": [
+    {"key": "ages-iii-typescript", "reason": "The official TypeScript page identifies the technology but did not provide a verified author/corporate-responsibility statement in the page reviewed."},
+    {"key": "ages-iii-javascript", "reason": "The official MDN page credits individual mozilla.org contributors rather than a single verified corporate author; do not replace that attribution with Mozilla as an inferred author."}
+  ],
+  "non_goals": [
+    "This decision does not validate whether a cited source proves the historical use/configuration in AGES III.",
+    "This decision does not clear PENDING status for inaccessible project/wiki links or unsupported implementation claims.",
+    "No original hyperlink URL was replaced."
+  ]
+}

@@ -1,0 +1,49 @@
+% Faithful conversion of ages-iii-sprint-0; source ODF IDs and text order retained.
+\hypertarget{__RefHeading___Toc4815_3118176633}{}
+\refstepcounter{subsection}\subsection*{4.3.1 Sprint 0}
+\label{unit:ages-iii-sprint-0}
+\addcontentsline{toc}{subsection}{4.3.1 Sprint 0}
+% text-p-1111
+\indent \originaltab{}A sprint 0 foi marcada por um contexto pouco comum dentro dos projetos da AGES, principalmente pela presença de integração entre software e hardware. Desde o início, ficou claro que o projeto exigiria não apenas desenvolvimento de software, mas também um entendimento mais aprofundado do funcionamento do leitor RFID, o que trouxe um nível adicional de complexidade para o time.\par
+
+% text-p-1112
+\indent Diante disso, a equipe optou por usar o início da \textit{S}\textit{print} para dois objetivos principais: integração entre os membros e aprofundamento técnico no domínio do problema. Foram realizadas pesquisas sobre as tecnologias sugeridas no termo de abertura, bem como sobre o funcionamento e as possibilidades de integração do leitor Impinj R700. Em paralelo, foi construído um documento colaborativo com dúvidas a serem levadas aos \textit{stakeholders}, reunindo pontos importantes que ainda não estavam claros e que seriam essenciais para orientar o projeto.\par
+
+% text-p-1113
+\indent Também houve uma preocupação inicial em estruturar bem o time. Em conjunto com os colegas Erik Suris e Bruno Panizzi, ambos AGES III, elaboramos um formulário para mapear o perfil dos integrantes, considerando experiências prévias, interesses de aprendizado e disponibilidade. Essa iniciativa ajudou a entender melhor o time e contribuiu para uma distribuição mais consciente das responsabilidades ao longo do projeto. A partir disso, também foi definido um encontro semanal síncrono, via Discord, utilizado para alinhamentos gerais e acompanhamento das atividades.\par
+
+% text-p-1114
+\indent Paralelamente, eu e os demais AGES III iniciamos discussões sobre práticas de desenvolvimento que seriam adotadas pelo time, como padrões de \textit{commit}, organização de \textit{branches} e definição de \textit{pipelines} de CI/CD. Essas definições foram importantes para concretizar, ainda na \textit{Sprint} 0, uma base mais organizada e com maior controle de qualidade.\par
+
+% text-p-1115
+\indent Após a reunião com os \textit{stakeholders}, alguns pontos importantes foram esclarecidos, mas também surgiu um novo desafio: o escopo aberto do projeto. Apesar de existir um contexto de uso relacionado a um sistema de estacionamento com leitura de \textit{tags} RFID, ficou claro que o foco dos clientes não estava na aplicação em si, mas sim na integração do leitor com um sistema externo. A ausência de regras de negócio mais bem definidas acabou abrindo muito espaço para interpretação.\par
+
+% text-p-1116
+\indent A partir disso, o time iniciou um processo de levantamento de funcionalidades e diversas ideias surgiram, como identificação de veículos, controle de planos e pagamentos e plataformas para usuários. No entanto, esse momento acabou gerando uma dispersão de foco, já que muitas das funcionalidades discutidas não estavam diretamente ligadas ao objetivo principal do projeto. Isso fez com que parte do tempo fosse direcionada a discussões com menor impacto no valor de negócio. Como forma de contornar esse cenário, sugeri que priorizássemos as funcionalidades essenciais, focando naquilo que de fato entregaria mais valor para os \textit{stakeholders}. Embora o time tenha conseguido elencar essas prioridades, ainda foi possível perceber certa dificuldade em retomar o foco, devido ao volume de ideias levantadas anteriormente.\par
+
+% text-p-1117
+\indent Em paralelo às definições de escopo, o time teve a oportunidade de interagir diretamente com o hardware. Foi realizada uma demonstração do leitor RFID, onde pudemos explorar suas funcionalidades e formas de configuração. O processo se mostrou mais simples do que o esperado, sendo possível configurar o equipamento por meio de requisições diretas e também por uma interface gráfica. Essa etapa ajudou a reduzir a complexidade inicial percebida e aumentou a confiança do time em relação à integração com o dispositivo.\par
+
+% text-p-1118
+\indent Aproveitando esse avanço, iniciei estudos sobre possíveis soluções de infraestrutura em nuvem, analisando serviços como AWS App Runner, Fargate, Lambda e EC2. O objetivo foi antecipar discussões arquiteturais e entender quais abordagens poderiam ser mais adequadas para o projeto. Com base nisso, junto aos demais AGES III, realizamos uma primeira discussão de arquitetura, onde foram levantadas ideias iniciais e desenhado um esboço da solução. Busquei também incluir integrantes menos experientes nessas conversas, como a Isadora Spode (AGES I) e o Luis Acosta (AGES II), entendendo que a exposição precoce a esse tipo de discussão é benéfica para o desenvolvimento profissional deles.\par
+
+% text-p-1119
+\indent Já na etapa final da \textit{S}\textit{print}, durante as atividades de prototipação de telas, surgiram alguns problemas relacionados à priorização das tarefas. Apesar de as atividades estarem sendo executadas, foi possível perceber que telas menos relevantes estavam sendo desenvolvidas enquanto a tela principal do sistema, o \textit{dashboard} administrativo, ainda não havia sido sequer estruturada em uma \textit{issue}. Inicialmente, a criação e organização dos \textit{cards} havia sido delegada aos AGES IV, porém ficou evidente que essa responsabilidade precisava ser mais compartilhada. Após algumas discussões com os AGES III, que inclusive geraram certa tensão no time, decidi atuar de forma mais direta, criando as tarefas que estavam faltando e reorganizando parte das prioridades. Além disso, me envolvi diretamente na prototipação de telas junto a outros integrantes do time, buscando acelerar essa etapa e dar mais direcionamento ao trabalho.\par
+
+% text-p-1120
+\indent Em paralelo, também iniciei a estruturação de um documento com base na documentação da API do leitor, com o objetivo de mapear as principais funcionalidades que precisariam ser suportadas pelo \textit{back-end}. Mesmo sem uma definição final sobre o uso de API REST ou SDK, esse levantamento ajudou a antecipar decisões e pensar na organização de um possível \textit{gateway} de comunicação com o dispositivo.\par
+
+% text-p-1121
+\indent Por fim, ainda dentro da \textit{S}\textit{print} 0, foi realizada a configuração da sincronização entre os repositórios do GitHub e do GitLab. Considerando a instabilidade recorrente do GitLab em edições anteriores da AGES, o time optou por utilizar o GitHub como ambiente principal de desenvolvimento, mantendo o GitLab como repositório espelho. Para isso, implementei uma solução utilizando GitHub Actions com reusable workflows, garantindo a sincronização automática entre os repositórios e suas respectivas \textit{branches} a cada novo \textit{commit.} Tal configuração garantiu ao time maior segurança no armazenamento do código-fonte.\par
+
+\begin{reflection}
+% text-p-1123
+\indent \originaltab{}De forma geral, considero que a sprint 0 foi muito positiva, apesar da preocupação inicial com a priorização das atividades e o risco de não entregarmos as telas mais importantes devido ao foco em funcionalidades secundárias. No entanto, o comprometimento do time fez com que, até o \textit{code freeze}, todas as \textit{tasks} fossem entregues.\par
+
+% text-p-1124
+\indent \originaltab{}Tivemos também alguns momentos de tensão com os AGES IV em relação à organização e priorização das tarefas, o que me levou a me posicionar de forma mais ativa do que o habitual. Essa situação foi importante para mim, pois percebi a necessidade de assumir responsabilidade não apenas técnica, mas também na condução do projeto, buscando alinhamento para garantir um melhor resultado.\par
+
+% text-p-1125
+\indent \originaltab{}Por fim, as atividades de AGES III, como participar das decisões estruturais, como definição de tecnologias, organização de repositórios e construção de pipelines, foi uma experiência muito enriquecedora. Isso me fez enxergar o projeto com uma visão mais ampla, mais próxima de um engenheiro de software do que apenas de um desenvolvedor, o que considero um dos principais aprendizados dessa \textit{sprint}.\par
+
+\end{reflection}

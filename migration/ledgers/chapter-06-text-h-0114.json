@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "2fd746f753e1aa48845dbde12812b02b43a82b64",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0114": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0114",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 176,
+          "end_byte": 219,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "text-p-1446",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 444,
+          "end_byte": 482,
+          "serializations": [],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "text-p-1447",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 520,
+          "end_byte": 1025,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "text-p-1450",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 1105,
+          "end_byte": 1175,
+          "serializations": [
+            "abnt_figure_caption",
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "draw-image-0031",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 1056,
+          "end_byte": 1243,
+          "serializations": [],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "text-p-1452",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 1399,
+          "end_byte": 1411,
+          "serializations": [],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "text-p-1453",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 1449,
+          "end_byte": 2035,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "text-p-1455",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 2115,
+          "end_byte": 2159,
+          "serializations": [
+            "abnt_figure_caption",
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        },
+        {
+          "source_id": "draw-image-0032",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "start_byte": 2066,
+          "end_byte": 2227,
+          "serializations": [],
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0031",
+          "asset_id": "asset-0003",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0003.png",
+          "sha256": "3c6477ca131ef09d5bdce4a3485e81e153a790d35e95d155296ece2a2bb63bb6"
+        },
+        {
+          "source_id": "draw-image-0032",
+          "asset_id": "asset-0009",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0009.png",
+          "sha256": "9f644f2d358aa9381df981341805d085eca2903fae790b93a7884cb80401e854"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0114",
+          "source_name": "__RefHeading___Toc4837_3118176633 Copy 1",
+          "source_start_id": "text-bookmark-start-0076",
+          "source_end_id": "text-bookmark-end-0076",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+          "target_anchor": "__RefHeading___Toc4837_3118176633 Copy 1",
+          "command": "hypertarget",
+          "start_byte": 78,
+          "end_byte": 134,
+          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0256",
+          "disposition": "represented-as-itemize-environment",
+          "evidence": "content.xml defines text:list-style L24 with a level-1 text:list-level-style-bullet, text:bullet-char=\"•\"; target uses a corresponding itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0209",
+          "disposition": "represented-as-visible-bullet-item",
+          "evidence": "The sole list item has child text-p-1446 with exact text \"Estrutura Analítica do projeto (EAP):\"; target emits it as the first-level \\item in L24 order."
+        },
+        {
+          "source_id": "draw-text-box-0047",
+          "disposition": "represented-as-figure-caption-container",
+          "evidence": "ODF text box is a nonprinting wrapper; its caption and image are mapped together as the corresponding memorialfigure and asset."
+        },
+        {
+          "source_id": "text-list-0257",
+          "disposition": "represented-as-itemize-environment",
+          "evidence": "content.xml defines text:list-style L25 with a level-1 text:list-level-style-bullet, text:bullet-char=\"•\"; target uses a corresponding itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0210",
+          "disposition": "represented-as-visible-bullet-item",
+          "evidence": "The sole list item has child text-p-1452 with exact text \"Matriz RACI:\"; target emits it as the first-level \\item in L25 order."
+        },
+        {
+          "source_id": "draw-text-box-0048",
+          "disposition": "represented-as-figure-caption-container",
+          "evidence": "ODF text box is a nonprinting wrapper; its caption and image are mapped together as the corresponding memorialfigure and asset."
+        },
+        {
+          "source_id": "text-list-0258",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-item-0211",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-0259",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-header-0068",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 6,
+        "reflection_paragraphs": 0,
+        "figures": 2,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 2,
+        "layout_wrappers": [
+          "text-list-0256",
+          "text-list-item-0209",
+          "draw-text-box-0047",
+          "text-list-0257",
+          "text-list-item-0210",
+          "draw-text-box-0048",
+          "text-list-0258",
+          "text-list-item-0211",
+          "text-list-0259",
+          "text-list-header-0068"
+        ]
+      },
+      "pending": [
+        {
+          "status": "PENDING",
+          "code": "manual_image_source_identification",
+          "source_ids": [
+            "draw-image-0031",
+            "draw-image-0032"
+          ],
+          "detail": "Use “Fonte: pendente de identificação” until the author confirms each image provenance."
+        },
+        {
+          "status": "PENDING",
+          "code": "independent_emphasis_audit",
+          "source_ids": [
+            "text-span-1589",
+            "text-span-1590",
+            "text-span-1591",
+            "text-span-1592",
+            "text-span-1593",
+            "text-span-1594",
+            "text-span-1595"
+          ],
+          "detail": "ODF text-span styles were resolved from content.xml/styles.xml and represented in TeX; independent content/visual verification of emphasis remains required."
+        },
+        {
+          "status": "PENDING",
+          "code": "independent_content_and_visual_audit",
+          "detail": "Unit requires independent source-to-LaTeX comparison, integrated PDF inspection, and human review."
+        }
+      ],
+      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "style_contract": {
+        "path": "relatorio_AGES_eduardo/util/style.tex",
+        "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "original_whitespace_evidence": {
+        "authorization": "docs/STYLE_GUIDE.md",
+        "source": "RELATORIO_ATUAL.odt content.xml",
+        "detail": "Explicit ODF tabs/repeated/edge spaces are represented only by the verified original_whitespace macros; no whitespace normalization."
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-p-1450",
+          "text-p-1455"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0114",
+          "text-p-1450",
+          "text-p-1455"
+        ]
+      }
+    }
+  }
+}

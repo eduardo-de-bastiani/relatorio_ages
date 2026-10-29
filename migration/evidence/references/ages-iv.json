@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "record_type": "reference_curator_evidence",
+  "edition": "AGES IV / Recorda",
+  "scope": {
+    "content_units_reviewed": [
+      "chapter-06-text-h-0108",
+      "chapter-06-text-h-0109",
+      "chapter-06-text-h-0110",
+      "chapter-06-text-h-0112",
+      "chapter-06-text-h-0113"
+    ],
+    "context_checked": [
+      "chapter-06-text-h-0106"
+    ],
+    "manifest": "docs/CONTENT_MANIFEST.json",
+    "link_ids_original": [
+      "text-a-0146",
+      "text-a-0147",
+      "text-a-0148",
+      "text-a-0149",
+      "text-a-0150",
+      "text-a-0151",
+      "text-a-0152",
+      "text-a-0153",
+      "text-a-0154",
+      "text-a-0155",
+      "text-a-0156",
+      "text-a-0157",
+      "text-a-0158",
+      "text-a-0159",
+      "text-a-0160",
+      "text-a-0161",
+      "text-a-0162",
+      "text-a-0163",
+      "text-a-0164",
+      "text-a-0165"
+    ]
+  },
+  "curation_window": {
+    "date": "2026-10-17",
+    "start_utc": "2026-10-17T19:37:30Z",
+    "end_utc": "2026-10-17T19:42:14Z",
+    "note": "Web tool does not expose exact per-page retrieval timestamp; bounded real work window recorded instead of invented individual times."
+  },
+  "tools_and_limits": [
+    {
+      "tool": "web__run open/find/search_query",
+      "result": "Official pages below were retrieved by the web tool. It exposes content/title, not HTTP status."
+    },
+    {
+      "tool": "Python 3 urllib.request HEAD",
+      "exit_code": 0,
+      "result": "All direct requests failed before HTTP response: URLError [Errno -3] Temporary failure in name resolution; no HTTP status or redirect could be established."
+    }
+  ],
+  "sources": [
+    {
+      "id": "python",
+      "original_link_ids": [
+        "text-a-0153"
+      ],
+      "original_anchor_text": [
+        "Documentação Python"
+      ],
+      "original_url": "https://www.python.org/doc/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Our Documentation",
+      "observed_responsibility": "Python Software Foundation",
+      "responsibility_evidence": "Exact footer copyright: ‘Copyright ©2001-2026. Python Software Foundation.’",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "The page links the Python 3.x manuals. Current 3.15.0 listing is not evidence of the project dependency version.",
+      "citation_guidance": "Use corporate responsibility as author because the named organization is explicitly identified in the official source evidence."
+    },
+    {
+      "id": "fastapi",
+      "original_link_ids": [
+        "text-a-0154"
+      ],
+      "original_anchor_text": [
+        "Documentação FastAPI"
+      ],
+      "original_url": "https://fastapi.tiangolo.com/tutorial/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Tutorial - User Guide",
+      "observed_responsibility": null,
+      "responsibility_evidence": "The page footer says the FastAPI trademark is owned by @tiangolo; trademark ownership is not formal tutorial authorship.",
+      "supporting_official_urls": [
+        "https://fastapi.tiangolo.com/tutorial/first-steps/",
+        "https://fastapi.tiangolo.com/async/"
+      ],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Official tutorial. The official First Steps page documents path operations, async functions, automatic interactive documentation and OpenAPI; supports the framework feature, not Recorda’s implementation.",
+      "citation_guidance": "Formal author not established; cite the observed page title under the title-as-author rule, without guessing an organization."
+    },
+    {
+      "id": "pydantic",
+      "original_link_ids": [
+        "text-a-0155"
+      ],
+      "original_anchor_text": [
+        "Documentação Pydantic"
+      ],
+      "original_url": "https://pydantic.dev/docs/validation/latest/get-started/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Pydantic Validation",
+      "observed_responsibility": null,
+      "responsibility_evidence": "The retrieved page identifies Pydantic Validation and links the first-party pydantic/pydantic repository; no formal author/copyright line appeared.",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Official Pydantic Validation getting-started documentation; no project version inferred.",
+      "citation_guidance": "Formal author not established; cite the observed page title under the title-as-author rule, without guessing an organization."
+    },
+    {
+      "id": "react_native",
+      "original_link_ids": [
+        "text-a-0156"
+      ],
+      "original_anchor_text": [
+        "Documentação React Native"
+      ],
+      "original_url": "https://reactnative.dev/docs/getting-started",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Introduction",
+      "observed_responsibility": "Meta Platforms, Inc.",
+      "responsibility_evidence": "Exact page footer: ‘Copyright © Meta Platforms, Inc.’",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Page explicitly includes Android/iOS platform context. Page says last updated 2026-08-12; not a publication date.",
+      "citation_guidance": "Use corporate responsibility as author because the named organization is explicitly identified in the official source evidence."
+    },
+    {
+      "id": "expo",
+      "original_link_ids": [
+        "text-a-0157"
+      ],
+      "original_anchor_text": [
+        "Documentação Expo"
+      ],
+      "original_url": "https://docs.expo.dev/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Expo documentation",
+      "observed_responsibility": null,
+      "responsibility_evidence": "Official Expo docs page describes Android, iOS, web, SDK modules and build/distribution workflows; no formal author/copyright statement was exposed.",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Supports general Expo/platform identity; does not verify Recorda-specific camera/gallery/audio usage.",
+      "citation_guidance": "Formal author not established; cite the observed page title under the title-as-author rule, without guessing an organization."
+    },
+    {
+      "id": "typescript",
+      "original_link_ids": [
+        "text-a-0158"
+      ],
+      "original_anchor_text": [
+        "Documentação TypeScript"
+      ],
+      "original_url": "https://www.typescriptlang.org/docs/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "The starting point for learning TypeScript",
+      "observed_responsibility": null,
+      "responsibility_evidence": "The page identifies TypeScript Documentation and handbook/reference sections; no page-level copyright/author line was found. A Microsoft-hosted release-note link alone does not establish the docs' authorship.",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Official TypeScript documentation landing page.",
+      "citation_guidance": "Formal author not established; cite the observed page title under the title-as-author rule, without guessing an organization."
+    },
+    {
+      "id": "supabase",
+      "original_link_ids": [
+        "text-a-0159"
+      ],
+      "original_anchor_text": [
+        "Documentação Supabase"
+      ],
+      "original_url": "https://supabase.com/docs",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Supabase Docs",
+      "observed_responsibility": null,
+      "responsibility_evidence": "The page identifies Supabase Docs and feature sections; no formal page author/copyright statement was exposed.",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Exact page says each project has a full Postgres database and documents Auth and Storage. This supports general platform features, not the project configuration.",
+      "citation_guidance": "Formal author not established; cite the observed page title under the title-as-author rule, without guessing an organization."
+    },
+    {
+      "id": "postgresql",
+      "original_link_ids": [
+        "text-a-0160"
+      ],
+      "original_anchor_text": [
+        "Documentação PostgreSQL"
+      ],
+      "original_url": "https://www.postgresql.org/docs/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Documentation",
+      "observed_responsibility": "The PostgreSQL Global Development Group",
+      "responsibility_evidence": "The exact /docs/ landing page links to official manuals. The official current manual identifies The PostgreSQL Global Development Group and carries its copyright.",
+      "supporting_official_urls": [
+        "https://www.postgresql.org/docs/current/"
+      ],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "The observed current manual is PostgreSQL 18.6; this is not evidence of Recorda's version. Publication year is not inferred.",
+      "citation_guidance": "Use corporate responsibility as author because the named organization is explicitly identified in the official source evidence."
+    },
+    {
+      "id": "docker",
+      "original_link_ids": [
+        "text-a-0161"
+      ],
+      "original_anchor_text": [
+        "Documentação Docker"
+      ],
+      "original_url": "https://docs.docker.com/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Docker Docs",
+      "observed_responsibility": "Docker Inc.",
+      "responsibility_evidence": "Exact docs homepage footer: ‘Copyright © 2013-2026 Docker Inc.’",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "General official docs homepage includes manuals and Docker Compose references; no project version inferred.",
+      "citation_guidance": "Use corporate responsibility as author because the named organization is explicitly identified in the official source evidence."
+    },
+    {
+      "id": "github_actions",
+      "original_link_ids": [
+        "text-a-0162"
+      ],
+      "original_anchor_text": [
+        "Documentação GitHub Actions"
+      ],
+      "original_url": "https://docs.github.com/en/actions",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "GitHub Actions documentation",
+      "observed_responsibility": "GitHub Inc.",
+      "responsibility_evidence": "Exact page footer: ‘GitHub Inc. © 2026.’",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Official Actions page has workflow, policy, runner and custom action documentation. Copyright year is not treated as publication year.",
+      "citation_guidance": "Use corporate responsibility as author because the named organization is explicitly identified in the official source evidence."
+    },
+    {
+      "id": "sonar",
+      "original_link_ids": [
+        "text-a-0163"
+      ],
+      "original_anchor_text": [
+        "Documentação SonarQube"
+      ],
+      "original_url": "https://docs.sonarsource.com/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Home",
+      "observed_responsibility": "SonarSource Sàrl",
+      "responsibility_evidence": "Official SonarQube Cloud documentation page for quality gates displays the copyright attribution “© SonarSource Sàrl.” This supports corporate responsibility for the official documentation; no individual author is identified.",
+      "supporting_official_urls": [
+        "https://docs.sonarsource.com/sonarqube-cloud/",
+        "https://docs.sonarsource.com/sonarqube-cloud/analyzing-source-code/test-coverage/overview",
+        "https://docs.sonarsource.com/sonarqube-cloud/standards/managing-rules/security-related-rules",
+        "https://docs.sonarsource.com/sonarqube-cloud/standards/managing-quality-gates/introduction-to-quality-gates"
+      ],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "The original URL is the cross-product documentation homepage (observed page title: “Home”), which identifies documentation for SonarQube Server, SonarQube Cloud, and SonarQube for IDE. Official SonarQube Cloud documentation now specifically verifies static code analysis, importing/displaying test coverage reports (SonarQube Cloud itself does not calculate coverage), automated analysis of vulnerability/security rules, and quality-gate metrics. These sources verify product capabilities, not whether or how Recorda configured them.",
+      "citation_guidance": "Corporate responsibility is verified as SonarSource Sàrl. For a reference using the exact original URL, retain its observed title “Home” (cross-product documentation homepage); product-specific supporting pages have the observed titles “Homepage”, “Overview”, “Security-related rules”, and “Understanding quality gates”. No factual publication date was observed. Use 2026 only as the user-approved author-date label based on actual access year, not as a publication year."
+    },
+    {
+      "id": "pytest",
+      "original_link_ids": [
+        "text-a-0164"
+      ],
+      "original_anchor_text": [
+        "Documentação Pytest"
+      ],
+      "original_url": "https://docs.pytest.org/en/stable/",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "pytest documentation",
+      "observed_responsibility": "holger krekel and pytest-dev team",
+      "responsibility_evidence": "Exact page footer copyright attribution, preserved verbatim: ‘Copyright © 2015, holger krekel and pytest-dev team.’",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Official stable documentation includes test writing, assertions and fixtures. Copyright line is not a publication date.",
+      "citation_guidance": "Use corporate responsibility as author because the named organization is explicitly identified in the official source evidence."
+    },
+    {
+      "id": "jest",
+      "original_link_ids": [
+        "text-a-0165"
+      ],
+      "original_anchor_text": [
+        "Documentação Jest"
+      ],
+      "original_url": "https://jestjs.io/docs/getting-started",
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Getting Started",
+      "observed_responsibility": null,
+      "responsibility_evidence": "The page displays version 30.5 and links to GitHub/legal pages; none establishes page authorship. Version is the current docs selector only, not the project version.",
+      "supporting_official_urls": [],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "Official Jest Getting Started page.",
+      "citation_guidance": "Formal author not established; cite the observed page title under the title-as-author rule, without guessing an organization."
+    },
+    {
+      "id": "tanstack_query",
+      "original_link_ids": [],
+      "original_anchor_text": [],
+      "original_url": null,
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Does TanStack Query replace Redux, MobX or other global state managers?",
+      "observed_responsibility": "TanStack LLC",
+      "responsibility_evidence": "The exact official TanStack Query React documentation page footer states “© 2026 TanStack LLC.”",
+      "supporting_official_urls": [
+        "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state",
+        "https://tanstack.com/query/latest/docs/framework/react/overview"
+      ],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "The page calls TanStack Query a server-state library that manages asynchronous operations between server and client, and says it replaces boilerplate for managing cached server data. It explicitly distinguishes client-only state, for which a client-state manager may still be needed. The docs selector shows v5 Latest; this does not establish Recorda’s dependency version.",
+      "citation_guidance": "Corporate authorship is directly supported by the exact page copyright footer. Recommended call adjacent to the product name: (TanStack LLC, 2026), using the user-approved access-year label only; publication date not observed.",
+      "reference_url_recommendation": "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state",
+      "verified_reference_url": "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state"
+    },
+    {
+      "id": "app_store",
+      "original_link_ids": [],
+      "original_anchor_text": [],
+      "original_url": null,
+      "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+      "observed_page_title": "Reach a global audience on the App Store",
+      "observed_responsibility": "Apple Inc.",
+      "responsibility_evidence": "The official Apple Developer Agreement names Apple Inc. as the contracting entity and defines the Apple Developer web pages/site and their content/services as part of the agreement. The target page is first-party Apple Developer content; it has no individual author/byline or page-level copyright line in the retrieved content.",
+      "supporting_official_urls": [
+        "https://developer.apple.com/support/terms/",
+        "https://developer.apple.com/support/downloads/terms/apple-developer-agreement/Apple-Developer-Agreement-20250318-English.pdf"
+      ],
+      "publication_date_observed": null,
+      "access_date": "2026-10-17",
+      "author_date_label_year": 2026,
+      "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+      "source_content_evidence": "The target page says apps and games can be distributed on the App Store and describes submission/review resources. The Apple Developer Program agreement states iOS apps can be distributed through the App Store if selected by Apple. These sources substantiate the general role of the App Store and iOS distribution route, but do not prove Recorda was technically ready, submitted, accepted, or listed.",
+      "citation_guidance": "Corporate responsibility as Apple Inc. is supported by the first-party Apple Developer Agreement for its Developer web pages. Recommended call adjacent to App Store: (Apple Inc., 2026), using the user-approved access-year label only; no factual publication date was observed.",
+      "browser_title": "App Store - Apple Developer",
+      "reference_url_recommendation": "https://developer.apple.com/app-store/",
+      "verified_reference_url": "https://developer.apple.com/app-store/"
+    }
+  ],
+  "original_ages_links": [
+    {
+      "ids": [
+        "text-a-0146"
+      ],
+      "anchors": [
+        "Repositório Recorda Frontend"
+      ],
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend",
+      "web_result": "not accessible via tool",
+      "status": "PENDING"
+    },
+    {
+      "ids": [
+        "text-a-0147"
+      ],
+      "anchors": [
+        "Repositório Recorda Backend"
+      ],
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend",
+      "web_result": "not accessible via tool",
+      "status": "PENDING"
+    },
+    {
+      "ids": [
+        "text-a-0148",
+        "text-a-0149"
+      ],
+      "anchors": [
+        "",
+        "Wiki do Banco de Dados"
+      ],
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+      "web_result": "Internal Error",
+      "status": "PENDING",
+      "note": "First ODF anchor is empty; preserve both link IDs and exact literal target."
+    },
+    {
+      "ids": [
+        "text-a-0150",
+        "text-a-0151"
+      ],
+      "anchors": [
+        "",
+        "Wiki da Arquitetura"
+      ],
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+      "web_result": "Internal Error",
+      "status": "PENDING",
+      "note": "First ODF anchor is empty; preserve both link IDs and exact literal target."
+    },
+    {
+      "ids": [
+        "text-a-0152"
+      ],
+      "anchors": [
+        "Wiki de Design/Mockups"
+      ],
+      "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups",
+      "web_result": "Internal Error",
+      "status": "PENDING"
+    }
+  ],
+  "term_assessment": [
+    {
+      "name": "PostgreSQL",
+      "records": [
+        "text-p-1339",
+        "text-p-1423"
+      ],
+      "classification": "named database; citation required",
+      "source": "text-a-0160",
+      "status": "official docs retrieved; Recorda use depends on source memorial; repo/wiki PENDING"
+    },
+    {
+      "name": "Supabase",
+      "records": [
+        "text-p-1339",
+        "text-p-1347",
+        "text-p-1419"
+      ],
+      "classification": "named platform; citation required",
+      "source": "text-a-0159",
+      "status": "official docs retrieved; project setup not independently verified"
+    },
+    {
+      "name": "React Native / Expo",
+      "records": [
+        "text-p-1347",
+        "text-p-1407",
+        "text-p-1411"
+      ],
+      "classification": "named framework/platform tooling; citation required",
+      "source": "text-a-0156 / text-a-0157",
+      "status": "official docs retrieved"
+    },
+    {
+      "name": "TanStack Query",
+      "records": [
+        "text-p-1347"
+      ],
+      "classification": "named library; citation required",
+      "source": "additional official docs in source tanstack_query",
+      "status": "official overview and React Native compatibility retrieved; no original ODF link"
+    },
+    {
+      "name": "Python / FastAPI / Pydantic",
+      "records": [
+        "text-p-1347",
+        "text-p-1397",
+        "text-p-1400",
+        "text-p-1404"
+      ],
+      "classification": "named language/framework/library; citations required",
+      "source": "text-a-0153 / text-a-0154 / text-a-0155",
+      "status": "official docs retrieved; FastAPI official pages support async and OpenAPI features"
+    },
+    {
+      "name": "TypeScript / JavaScript",
+      "records": [
+        "text-p-1415"
+      ],
+      "classification": "TypeScript requires citation; JavaScript is contextual to the TypeScript claim",
+      "source": "text-a-0158",
+      "status": "official TypeScript docs retrieved; no separate JavaScript entry needed unless a separate JavaScript capability is claimed"
+    },
+    {
+      "name": "Docker / Docker Compose",
+      "records": [
+        "text-p-1347",
+        "text-p-1427"
+      ],
+      "classification": "named platform and named component; cite Docker source adjacent to first mention",
+      "source": "text-a-0161",
+      "status": "official docs retrieved; current homepage links to Docker Compose"
+    },
+    {
+      "name": "GitHub Actions",
+      "records": [
+        "text-p-1347",
+        "text-p-1430"
+      ],
+      "classification": "named automation product; citation required",
+      "source": "text-a-0162",
+      "status": "official docs retrieved"
+    },
+    {
+      "name": "SonarQube / SonarCloud",
+      "records": [
+        "text-p-1347",
+        "text-p-1433",
+        "text-p-1434"
+      ],
+      "classification": "named analysis product; citation required",
+      "source": "text-a-0163",
+      "status": "PENDING exact product/feature scope; official name-change evidence confirms SonarCloud -> SonarQube Cloud; homepage is broad"
+    },
+    {
+      "name": "Pytest / Jest",
+      "records": [
+        "text-p-1347",
+        "text-p-1438",
+        "text-p-1442"
+      ],
+      "classification": "named test frameworks; citations required",
+      "source": "text-a-0164 / text-a-0165",
+      "status": "official docs retrieved; no project versions inferred"
+    },
+    {
+      "name": "App Store",
+      "records": [
+        "text-p-1332"
+      ],
+      "classification": "named distribution service; cite under the user's all-named-technology pattern",
+      "source": "additional official Apple source in app_store",
+      "status": "official Apple page verified; it cannot prove project readiness/submission"
+    },
+    {
+      "name": "iOS / Android",
+      "records": [
+        "text-p-1326",
+        "text-p-1347",
+        "text-p-1407"
+      ],
+      "classification": "target-platform context; may be supported by adjacent React Native/Expo citations",
+      "source": "text-a-0156 / text-a-0157",
+      "status": "platforms explicitly mentioned in official framework docs; no standalone references needed unless an OS-specific claim is added"
+    },
+    {
+      "name": "API REST / REST assíncrona",
+      "records": [
+        "text-p-1347",
+        "text-p-1400"
+      ],
+      "classification": "generic architectural description, not a product",
+      "source": "FastAPI official docs text-a-0154 and its First Steps page",
+      "status": "no standalone REST reference recommended for these descriptive clauses; official docs support FastAPI API/path-operation and async features, not Recorda-specific backend behavior"
+    },
+    {
+      "name": "OpenAPI",
+      "records": [
+        "text-p-1400"
+      ],
+      "classification": "named API-description specification used as a FastAPI feature",
+      "source": "FastAPI official First Steps support URL",
+      "status": "FastAPI documentation directly covers the OpenAPI schema and auto-generated docs; separate OpenAPI bibliography entry unnecessary unless the standard itself is explained"
+    },
+    {
+      "name": "HTTP, JSON, CI/CD, schemas, external music-search APIs",
+      "records": [
+        "text-p-1347",
+        "text-p-1404"
+      ],
+      "classification": "generic contextual terms / unidentified external service",
+      "source": null,
+      "status": "No new product source recommended. No vendor for the music API is named; do not infer one."
+    }
+  ],
+  "citation_integration_guidance": [
+    "Preserve all 13 original source URLs and anchor-to-target associations (text-a-0153–0165) in the unit ledger, even if the body follows approved Mariah-style flowing prose without repeated 'Documentação ...' labels.",
+    "TanStack Query is the only newly named library without an ODT source URL; the first-party TanStack Query Overview is a candidate source and its React Native page verifies mobile compatibility. Central maintainer must decide bibliography integration; no citation key or .bib entry was created.",
+    "App Store is named as a distribution destination in text-p-1332. The official Apple Developer page is a candidate citation; it identifies App Store, not the project-specific readiness claim.",
+    "iOS/Android are target-platform context and can be covered by adjacent React Native/Expo sources; no separate reference is needed absent OS-specific claims. REST is an architectural term; FastAPI source is enough here. OpenAPI as a FastAPI feature is covered by official FastAPI docs; no standalone OpenAPI source is recommended.",
+    "Docs establish technology identity/general capability, not Recorda's actual use. Project-specific details require original memorial evidence; inaccessible repositories/wiki remain PENDING.",
+    "All unknown authors, publication dates, project versions, missing vendors, and URLs remain null/PENDING. User's year 2026 convention is recorded only as the author-date label year based on actual access year, never as factual publication metadata."
+  ],
+  "files_read": [
+    "AGENTS.md",
+    "docs/agents/reference-curator.md",
+    "migration/approvals/ages-iv-partial-authorization.json",
+    "docs/CONTENT_MANIFEST.json",
+    "docs/STYLE_GUIDE.md"
+  ],
+  "files_written": [
+    "migration/evidence/references/ages-iv.json"
+  ],
+  "files_not_modified": [
+    "bibliography .bib",
+    "LaTeX content",
+    "harness.json",
+    "other docs"
+  ],
+  "result": "PARTIAL: all 13 official technology URLs retrieved by web tool; formal author/publication metadata is absent for some and left unassigned; 5 AGES destination URLs PENDING; SonarCloud feature scope and project-specific evidence remain PENDING.",
+  "follow_up_curations": [
+    {
+      "id": "sonar-text-a-0163-follow-up",
+      "original_link_id": "text-a-0163",
+      "original_anchor_text": "Documentação SonarQube",
+      "original_url": "https://docs.sonarsource.com/",
+      "checked_at_utc": "2026-10-17T19:53:04Z",
+      "time_limit": "The web tool exposes no exact page retrieval time or HTTP status; checked_at_utc is the real clock reading recorded after source retrieval, not a claimed timestamp for each page.",
+      "method": "Official-source web search and direct page opening with web__run; no bibliographic key or memorial change made.",
+      "original_page": {
+        "url": "https://docs.sonarsource.com/",
+        "observed_title": "Home",
+        "observed_description": "Documentation for SonarQube Server, SonarQube Cloud, and SonarQube for IDE.",
+        "evidence": "Official page heading is “Home”; the page describes itself as documentation for the three product lines and links to the SonarQube Cloud documentation. It has no observed publication date."
+      },
+      "corporate_responsibility": {
+        "responsible_entity": "SonarSource Sàrl",
+        "evidence_url": "https://docs.sonarsource.com/sonarqube-cloud/standards/quality-gates",
+        "evidence": "The official SonarQube Cloud “Quality gates” page search retrieval displayed the footer attribution “© SonarSource Sàrl.” No individual author was identified.",
+        "status": "VERIFIED_CORPORATE_RESPONSIBILITY"
+      },
+      "official_capability_sources": [
+        {
+          "url": "https://docs.sonarsource.com/sonarqube-cloud/",
+          "observed_title": "Homepage",
+          "evidence": "Official SonarQube Cloud homepage describes the SaaS code-analysis product; says its platform performs automated code quality/security analysis, and describes static analysis during pull-request review and CI/CD integration.",
+          "supports": "Product identity, static code analysis, code quality and security analysis.",
+          "limitations": "Product documentation does not prove Recorda used these capabilities or its exact configuration."
+        },
+        {
+          "url": "https://docs.sonarsource.com/sonarqube-cloud/analyzing-source-code/test-coverage/overview",
+          "observed_title": "Overview",
+          "evidence": "The page explains coverage reports and reporting percentage of code covered by tests; it explicitly says SonarQube Cloud does not calculate coverage itself and requires an external coverage tool/report to be configured/imported.",
+          "supports": "Monitoring/reporting imported test coverage, with the implementation caveat stated.",
+          "limitations": "Does not establish Recorda’s coverage tool, report import, or actual coverage level."
+        },
+        {
+          "url": "https://docs.sonarsource.com/sonarqube-cloud/standards/managing-rules/security-related-rules",
+          "observed_title": "Security-related rules",
+          "evidence": "The official page describes automated code review/analysis rules for reliability, maintainability, vulnerabilities, and security hotspots, including vulnerability detection.",
+          "supports": "Analysis of vulnerabilities/security findings.",
+          "limitations": "Does not prove the Recorda project detected any vulnerability or which rule set it used."
+        },
+        {
+          "url": "https://docs.sonarsource.com/sonarqube-cloud/standards/managing-quality-gates/introduction-to-quality-gates",
+          "observed_title": "Understanding quality gates",
+          "evidence": "The page states quality gates measure code metrics during analysis; listed metrics include security, maintainability and reliability issues and test coverage.",
+          "supports": "Quality criteria/quality-gate monitoring and coverage metrics.",
+          "limitations": "Does not prove Recorda’s configured quality gate, pipeline, or enforcement."
+        }
+      ],
+      "bibliographic_guidance": {
+        "corporate_author": "SonarSource Sàrl (explicit official documentation copyright attribution).",
+        "title_for_original_destination": "Home (exact observed title of the original URL; broad documentation portal).",
+        "product_specific_titles": "Use the exact observed titles above only if a product-specific official documentation page is used as a separate reference; do not relabel the original URL as a page it does not target.",
+        "publication_date_observed": null,
+        "author_date_label_year": 2026,
+        "year_basis": "User-approved label from real access year only; not a factual publication year."
+      },
+      "result": "VERIFIED_CAPABILITIES_WITH_SCOPE_LIMITS; original URL preserved; no evidence of project-specific configuration; no new bibliographic key created."
+    },
+    {
+      "id": "ages-iv-architecture-app-store-tanstack-follow-up",
+      "scope": [
+        {
+          "unit_id": "chapter-06-text-h-0110",
+          "term": "TanStack Query",
+          "source_record": "Existing candidate source tanstack_query; no ODF hyperlink for this technology."
+        },
+        {
+          "unit_id": "chapter-06-text-h-0108",
+          "term": "App Store (iOS)",
+          "source_record": "Existing candidate source app_store; claim is project preparation/intent, not independently verifiable from Apple docs."
+        }
+      ],
+      "checked_at_utc": "2026-10-17T21:01:42Z",
+      "time_limit": "The web retrieval tool did not expose exact per-page retrieval timestamps or HTTP status codes. checked_at_utc is the real clock reading recorded after source retrieval, not a per-page timestamp.",
+      "method": "Opened the candidate URLs and supporting first-party documentation through web__run; examined docs/STYLE_GUIDE.md and docs/QUALITY_GATES.md. Validated the resulting JSON locally with Python.",
+      "style_and_gate_basis": {
+        "files_read": [
+          "docs/STYLE_GUIDE.md",
+          "docs/QUALITY_GATES.md",
+          "docs/agents/reference-curator.md",
+          "docs/CONTENT_MANIFEST.json"
+        ],
+        "rules": "G4a requires a verified clickable author-date source for each named product/tool; G4b and STYLE_GUIDE require proven corporate responsibility when available, otherwise title-based citation; the user-approved AGES IV convention permits 2026 as access-year label, not factual publication year."
+      },
+      "results": [
+        {
+          "technology": "TanStack Query",
+          "unit_id": "chapter-06-text-h-0110",
+          "chosen_reference_url": "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state",
+          "page_title": "Does TanStack Query replace Redux, MobX or other global state managers?",
+          "page_context": "TanStack Query React Docs; selector shows v5 Latest.",
+          "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "responsibility": "TanStack LLC",
+          "responsibility_evidence": "Exact page footer: © 2026 TanStack LLC.",
+          "capability_evidence": "The page identifies the library as server-state management for asynchronous server/client operations and cached server data; it distinguishes client-only state.",
+          "fit_to_original_claim": "Supports the general role described in the AGES IV architecture paragraph: management of server state via TanStack Query. It cannot verify the Recorda code/configuration.",
+          "publication_date_observed": null,
+          "access_date": "2026-10-17",
+          "author_date_recommendation": "(TanStack LLC, 2026); 2026 is the user-approved access-year label only, not a publication date.",
+          "status": "VERIFIED_FOR_GENERAL_PRODUCT_ROLE"
+        },
+        {
+          "technology": "App Store (iOS distribution)",
+          "unit_id": "chapter-06-text-h-0108",
+          "chosen_reference_url": "https://developer.apple.com/app-store/",
+          "page_title": "Reach a global audience on the App Store",
+          "browser_title": "App Store - Apple Developer",
+          "retrieval": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "responsibility": "Apple Inc.",
+          "responsibility_evidence": "The linked Apple Developer Agreement names Apple Inc. and applies to the Apple Developer site/content/services; the target is first-party Apple Developer content, with no individual byline.",
+          "capability_evidence": "The target page states apps and games can be distributed through the App Store. The official Apple Developer Program License Agreement states iOS apps may be distributed via the App Store if selected by Apple.",
+          "fit_to_original_claim": "Supports App Store as a distribution channel and iOS as an eligible platform. It does not prove Recorda’s build readiness, submission, acceptance, or listing.",
+          "publication_date_observed": null,
+          "access_date": "2026-10-17",
+          "author_date_recommendation": "(Apple Inc., 2026); 2026 is the user-approved access-year label only, not a publication date.",
+          "status": "VERIFIED_FOR_GENERAL_DISTRIBUTION_ROLE; PROJECT_READINESS_NOT_VERIFIED"
+        }
+      ],
+      "no_invention": "No project version, publication date, submission status, approval, or listing status was inferred. No bibliography key or memorial text was changed."
+    }
+  ]
+}

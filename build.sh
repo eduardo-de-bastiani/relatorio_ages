@@ -2,10 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR/Template_AGES___Guvidaletti"
-
-echo "Compilando documento com Tectonic..."
-tectonic main.tex
-
-cp -p main.pdf "$SCRIPT_DIR/main.pdf"
-echo "Compilação concluída com sucesso! Gerado: $SCRIPT_DIR/main.pdf"
+# Source trees and tracked PDFs are never output destinations.
+# template = unchanged baseline; fixture = synthetic harness test;
+# document = future memorial, which does not exist in this phase.
+exec python3 "$SCRIPT_DIR/scripts/migration.py" build "$@"

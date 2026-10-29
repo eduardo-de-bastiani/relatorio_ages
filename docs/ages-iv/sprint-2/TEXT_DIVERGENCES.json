@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "unit_id": "ages-iv-sprint-2",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "user_authorization": "migration/approvals/ages-iv-sprint-2-content-authorization.json",
+  "user_authorization_sha256": "949e1204d01661794b1580b15a902b99e53135283e5b69e29b31377839636283",
+  "pdf": "build/document/main.pdf",
+  "pdf_sha256": "a07dae33d5d91aea796a41ec8d0c6f1f343fd149645fe8b94e4921e082736662",
+  "summary": {
+    "odt_narrative_records": 0,
+    "direct_user_supplied_paragraphs": 7,
+    "latex_paragraphs_matched": 7,
+    "pdf_paragraphs_matched_once_in_order": 7,
+    "unresolved_content_differences": 0,
+    "status": "PASS"
+  },
+  "paragraphs": [
+    {"id":"user-ages-iv-sprint-2-report-p01","kind":"report_paragraph","status":"PASS","source_sha256":"a9719429b89e341a1d834c98e30d2b1bc8cccb9ff004a4bf92df64d1e2caf48e"},
+    {"id":"user-ages-iv-sprint-2-report-p02","kind":"report_paragraph","status":"PASS","source_sha256":"8d9be6bc1403b025b95b9bd11e12f395fedd8667764700f219f2bd30f85fef06"},
+    {"id":"user-ages-iv-sprint-2-report-p03","kind":"report_paragraph","status":"PASS","source_sha256":"2dc0f458f2bae2de2c45dee83155f7b5e691965dbc3a6f0806e7e1612f04ecc7"},
+    {"id":"user-ages-iv-sprint-2-report-p04","kind":"report_paragraph","status":"PASS","source_sha256":"47db70296169244bf1d4ad3975775739925131b659532741992825a8b7875755"},
+    {"id":"user-ages-iv-sprint-2-report-p05","kind":"report_paragraph","status":"PASS","source_sha256":"dd9c741e38451c38cced8dd1f3fb413300666e96d70f6026d9c967cbd4c91f54"},
+    {"id":"user-ages-iv-sprint-2-reflection-p01","kind":"reflection_paragraph","status":"PASS","source_sha256":"c6c6b774f47d12da986b0b63aad32a56172a91667717330fa654439a0c1e396e"},
+    {"id":"user-ages-iv-sprint-2-reflection-p02","kind":"reflection_paragraph","status":"PASS","source_sha256":"0c6578d756b0512a524e7ef19ca2779bb79c45c13e25d8396e9b6c540b53ea07"}
+  ],
+  "normalizations_for_pdf_text_extraction": [
+    "font ligatures such as ﬁ",
+    "line-end hyphenation",
+    "current page number 90 appearing in the extracted page stream"
+  ],
+  "nonsemantic_extraction_difference": {
+    "status": "RECORDED",
+    "detail": "The PDF text extractor returned one trailing space after the final period. The rendered page has no visible extra content; no source or LaTeX wording was changed."
+  },
+  "human_review": "PENDING"
+}

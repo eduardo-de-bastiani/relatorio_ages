@@ -1,0 +1,1439 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "8f952a6e3b64c8783cef823e52ed2451af653eae",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "cliente-hoortech-sprint-1": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-1.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0029",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-1.tex",
+          "start_byte": 212,
+          "end_byte": 226,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "1c57540ae1b853bb936d0e3b941f3d3ebf19d7dcddab093b4eb0ae97f11e85a4",
+          "source_xml_sha256": "e1e61cb50c4edc2b5acc229937a910b71f06dcf018ddc7fdb9b139540bf9776c",
+          "source_text_sha256": "d683da28368aa636a669cd53b50313f6bac090197e67b91a85dfc54e3b4629d0"
+        },
+        {
+          "source_id": "text-p-0718",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-1.tex",
+          "start_byte": 337,
+          "end_byte": 972,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "1c57540ae1b853bb936d0e3b941f3d3ebf19d7dcddab093b4eb0ae97f11e85a4",
+          "source_xml_sha256": "7452f93e4143bfb0126c8f46448bcc97b7e2a46c9214d36bb1f1f0f0a2919ed8",
+          "source_text_sha256": "6dd1e97fef486f86317a483e46a068a7632d00f14c7a9e997871dda60fbcc85b"
+        },
+        {
+          "source_id": "text-p-0719",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-1.tex",
+          "start_byte": 999,
+          "end_byte": 1493,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "1c57540ae1b853bb936d0e3b941f3d3ebf19d7dcddab093b4eb0ae97f11e85a4",
+          "source_xml_sha256": "fa7a48362ce29214b7b0f9098ec97770ce00725cb14a8d141a0190eeeca199ed",
+          "source_text_sha256": "7ce7decda7b49730eb13cedc57a644dc93ef03675836e77a13daaa2496c00ec3"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0029",
+          "source_name": "__RefHeading___Toc4470_311817663321",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-1.tex",
+          "target_anchor": "__RefHeading___Toc4470_311817663321",
+          "command": "hypertarget",
+          "start_byte": 97,
+          "end_byte": 148,
+          "source_start_id": "text-bookmark-start-0030",
+          "source_end_id": "text-bookmark-end-0030",
+          "target_sha256": "1c57540ae1b853bb936d0e3b941f3d3ebf19d7dcddab093b4eb0ae97f11e85a4"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-soft-page-break-0032",
+          "source_type": "text:soft-page-break",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5086,
+          "source_xml_sha256": "bc82db0bdb9a52aee9d9ba6bffee6d76902bf48e9dfa0f754484514be059c053",
+          "source_text_sha256": null,
+          "disposition": "source-soft-page-break-reflowed",
+          "evidence": "Soft page break is layout metadata; normal flow retained at text-h-0029, with no forced page break."
+        },
+        {
+          "source_id": "text-span-0715",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5087,
+          "source_xml_sha256": "077bc16c7e82567c1056494c08a6235ad7494c3d615be0cdb85166459c9d669a",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T176 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0716",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5088,
+          "source_xml_sha256": "10027b6ecd63a3c40b48a4aa86f66a37444a47b7b860ce5e80ca961539863ac0",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T177 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0717",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5089,
+          "source_xml_sha256": "bce540b197a630c955a59334bf4240933e9cd64a6c6a0a3e85c7052b7fc7cfff",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T176 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0718",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5090,
+          "source_xml_sha256": "d3fc31cbe93f3ba5492c5ee7dc5a3a9787a826f2ef3513b1db82777c7f156933",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T178 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0719",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5091,
+          "source_xml_sha256": "de5178c3778f16a934c4d9e74c337c6a6607e7d2e07fad191e2bc8671e908cef",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T176 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0720",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5092,
+          "source_xml_sha256": "1cc34fe06cb35e226f94f31948215edc6ee15ce17950f0b02cef74de5dad22b8",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T179 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0721",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-h-0029",
+          "source_order": 5093,
+          "source_xml_sha256": "a69e9f0400c0d94d522a5b762174602bea7318548eeed43bc0f92df6c80f73b3",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T178 and text hash are rendered inside parent text-h-0029; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0722",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0718",
+          "source_order": 5096,
+          "source_xml_sha256": "1baccced7e287f0b9cab37bf3e5ac240aca48555f34edeef0d9395f0cf242841",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T180 and text hash are rendered inside parent text-p-0718; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-tab-0185",
+          "source_type": "text:tab",
+          "semantic_type": "layout",
+          "parent_id": "text-span-0722",
+          "source_order": 5097,
+          "source_xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "source_text_sha256": null,
+          "disposition": "source-tab-represented-in-parent-record",
+          "evidence": "Source ODF tab belongs to text-span-0722 and renders as \\originaltab{} under original_whitespace."
+        },
+        {
+          "source_id": "text-tab-0186",
+          "source_type": "text:tab",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0719",
+          "source_order": 5099,
+          "source_xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "source_text_sha256": null,
+          "disposition": "source-tab-represented-in-parent-record",
+          "evidence": "Source ODF tab belongs to text-p-0719 and renders as \\originaltab{} under original_whitespace."
+        },
+        {
+          "source_id": "text-span-0723",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0719",
+          "source_order": 5100,
+          "source_xml_sha256": "4e963db79b2afbb66d23a2e1de475ea0e9b5129ff683a4ceb4da146f5ee4e3e7",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T181 and text hash are rendered inside parent text-p-0719; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-span-0724",
+          "source_type": "text:span",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0719",
+          "source_order": 5101,
+          "source_xml_sha256": "dd218185780b5a34591886a1adb8be1a09cc6dd6ece224f455cdafa1ebf1b74b",
+          "source_text_sha256": null,
+          "disposition": "inline-formatting-preserved-in-parent-record",
+          "evidence": "Inline style T182 and text hash are rendered inside parent text-p-0719; verified bold/italic styles use TeX font wrappers."
+        },
+        {
+          "source_id": "text-p-0720",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5102,
+          "source_xml_sha256": "b7f721c6bf1a9161e026e51c630e7195f89ccbe6b950c20c30b14ea6dcb34337",
+          "source_text_sha256": "2b4c342f5433ebe591a1da77e013d1b72475562d48578dca8b84bac6651c3cb9",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-tab-0187",
+          "source_type": "text:tab",
+          "semantic_type": "layout",
+          "parent_id": "text-p-0720",
+          "source_order": 5103,
+          "source_xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "source_text_sha256": null,
+          "disposition": "source-tab-represented-in-parent-record",
+          "evidence": "Source ODF tab belongs to text-p-0720 and renders as \\originaltab{} under original_whitespace."
+        },
+        {
+          "source_id": "text-p-0721",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5104,
+          "source_xml_sha256": "98f29c287e3514ba69544105959244008f1c9a48f9ec1d861ac819439c2c1ac9",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-list-0073",
+          "source_type": "text:list",
+          "semantic_type": "list",
+          "parent_id": "office-text-0001",
+          "source_order": 5105,
+          "source_xml_sha256": "bb0403dfdf1b0f6b5673f6471613dd011f025e114f0645ce095e1ba457e268e7",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-item-0063",
+          "source_type": "text:list-item",
+          "semantic_type": "list-item",
+          "parent_id": "text-list-0073",
+          "source_order": 5106,
+          "source_xml_sha256": "4e650962d79189e702c818014971cb22f415c9cf40e358129ca7a82d64931717",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-0074",
+          "source_type": "text:list",
+          "semantic_type": "list",
+          "parent_id": "text-list-item-0063",
+          "source_order": 5107,
+          "source_xml_sha256": "baf3604857e492f35b3d65bb40bbcbd8f01360c9b2ef1efde15af206b38df5eb",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-item-0064",
+          "source_type": "text:list-item",
+          "semantic_type": "list-item",
+          "parent_id": "text-list-0074",
+          "source_order": 5108,
+          "source_xml_sha256": "42b0c6b34ead3079e46f3618e7bed0cf1c739f48d6371ceeb6b49374d211bdd1",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-0075",
+          "source_type": "text:list",
+          "semantic_type": "list",
+          "parent_id": "text-list-item-0064",
+          "source_order": 5109,
+          "source_xml_sha256": "6e559aeecada7fb2a2bfc2ae5a231db1af88a5f958c7fd4fb418ec88fe83cda1",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-header-0017",
+          "source_type": "text:list-header",
+          "semantic_type": "list-header",
+          "parent_id": "text-list-0075",
+          "source_order": 5110,
+          "source_xml_sha256": "16e25008803d6008363dcfec3fae73c6dcbd760507a1676c64aed406069a0bf6",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-h-0030",
+          "source_type": "text:h",
+          "semantic_type": "layout",
+          "parent_id": "text-list-header-0017",
+          "source_order": 5111,
+          "source_xml_sha256": "9ab71f3b84128b7071c7db21b1222277f3471f4ff6c680892c4a18db6750bae1",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0722",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5112,
+          "source_xml_sha256": "826c2cbb2c82e123ccc99a9a15630a856397b6591f6c0f5b6b3e99734b251d35",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-h-0031",
+          "source_type": "text:h",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5113,
+          "source_xml_sha256": "c9ff19f7411198904764c23851ea43824fc2fb85329c436cff4b61237dcd8d66",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-h-0032",
+          "source_type": "text:h",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5114,
+          "source_xml_sha256": "7941d16f9a7784253786575d27a5cffe3fcc94e6a97d051536d79f80e2ca2990",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0723",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5115,
+          "source_xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0724",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5116,
+          "source_xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0725",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5117,
+          "source_xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0726",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5118,
+          "source_xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-p-0727",
+          "source_type": "text:p",
+          "semantic_type": "layout",
+          "parent_id": "office-text-0001",
+          "source_order": 5119,
+          "source_xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "source_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "disposition": "empty-odf-layout-record-not-emitted",
+          "evidence": "No displayed source text; this is an empty layout paragraph/heading. Natural pagination is retained."
+        },
+        {
+          "source_id": "text-list-0076",
+          "source_type": "text:list",
+          "semantic_type": "list",
+          "parent_id": "office-text-0001",
+          "source_order": 5120,
+          "source_xml_sha256": "ee8859a53546838bb8b460d7a04849a7ab613ddf8bf05147c088fe72f4221e4b",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-item-0065",
+          "source_type": "text:list-item",
+          "semantic_type": "list-item",
+          "parent_id": "text-list-0076",
+          "source_order": 5121,
+          "source_xml_sha256": "8f15f507fe81e84f8e9d64e53d049b6d55e4ba31b2d58f2c63246f65429ff832",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-0077",
+          "source_type": "text:list",
+          "semantic_type": "list",
+          "parent_id": "text-list-item-0065",
+          "source_order": 5122,
+          "source_xml_sha256": "b52021d12354414a20aa7419c8cfc0237123bead23cd97bd33459d78cc0b2ac0",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-item-0066",
+          "source_type": "text:list-item",
+          "semantic_type": "list-item",
+          "parent_id": "text-list-0077",
+          "source_order": 5123,
+          "source_xml_sha256": "2c7ae98a832803b56457639f52244f4b31733121ca5d0a80832d305ba76d945c",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-0078",
+          "source_type": "text:list",
+          "semantic_type": "list",
+          "parent_id": "text-list-item-0066",
+          "source_order": 5124,
+          "source_xml_sha256": "9849dd0a33c577e5952152f234b650fb9b7d5b7a68bc132fba6a3661b4dad7ac",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        },
+        {
+          "source_id": "text-list-header-0018",
+          "source_type": "text:list-header",
+          "semantic_type": "list-header",
+          "parent_id": "text-list-0078",
+          "source_order": 5125,
+          "source_xml_sha256": "55a6a60092538d43abab74931ec7c8166af39e11bdd763eac97a35c938677159",
+          "source_text_sha256": null,
+          "disposition": "odf-heading-list-wrapper-represented-by-heading-command",
+          "evidence": "Nested list/header is a structural heading container; visible heading is represented by chapter/section/subsection command and source bookmark."
+        }
+      ],
+      "odf_record_inventory": [
+        {
+          "source_id": "text-h-0029",
+          "type": "text:h",
+          "semantic_type": "heading",
+          "source_order": 5084,
+          "parent_id": "text-list-header-0016",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]",
+          "attributes": {
+            "text:outline-level": "3",
+            "text:style-name": "P183"
+          },
+          "xml_sha256": "e1e61cb50c4edc2b5acc229937a910b71f06dcf018ddc7fdb9b139540bf9776c",
+          "text_sha256": "d683da28368aa636a669cd53b50313f6bac090197e67b91a85dfc54e3b4629d0",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-bookmark-start-0030",
+          "type": "text:bookmark-start",
+          "semantic_type": "layout",
+          "source_order": 5085,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:bookmark-start[1]",
+          "attributes": {
+            "text:name": "__RefHeading___Toc4470_311817663321"
+          },
+          "xml_sha256": "aefce01fa366e97a8cdd849b92e9663ece48be5441ab94153669e318fb972a08",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-soft-page-break-0032",
+          "type": "text:soft-page-break",
+          "semantic_type": "layout",
+          "source_order": 5086,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:soft-page-break[1]",
+          "attributes": {},
+          "xml_sha256": "bc82db0bdb9a52aee9d9ba6bffee6d76902bf48e9dfa0f754484514be059c053",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0715",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5087,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T176"
+          },
+          "xml_sha256": "077bc16c7e82567c1056494c08a6235ad7494c3d615be0cdb85166459c9d669a",
+          "text_sha256": null,
+          "direct_text": "3.",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0716",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5088,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[2]",
+          "attributes": {
+            "text:style-name": "T177"
+          },
+          "xml_sha256": "10027b6ecd63a3c40b48a4aa86f66a37444a47b7b860ce5e80ca961539863ac0",
+          "text_sha256": null,
+          "direct_text": "2",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0717",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5089,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[3]",
+          "attributes": {
+            "text:style-name": "T176"
+          },
+          "xml_sha256": "bce540b197a630c955a59334bf4240933e9cd64a6c6a0a3e85c7052b7fc7cfff",
+          "text_sha256": null,
+          "direct_text": ".",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0718",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5090,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[4]",
+          "attributes": {
+            "text:style-name": "T178"
+          },
+          "xml_sha256": "d3fc31cbe93f3ba5492c5ee7dc5a3a9787a826f2ef3513b1db82777c7f156933",
+          "text_sha256": null,
+          "direct_text": "3",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0719",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5091,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[5]",
+          "attributes": {
+            "text:style-name": "T176"
+          },
+          "xml_sha256": "de5178c3778f16a934c4d9e74c337c6a6607e7d2e07fad191e2bc8671e908cef",
+          "text_sha256": null,
+          "direct_text": " ",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0720",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5092,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[6]",
+          "attributes": {
+            "text:style-name": "T179"
+          },
+          "xml_sha256": "1cc34fe06cb35e226f94f31948215edc6ee15ce17950f0b02cef74de5dad22b8",
+          "text_sha256": null,
+          "direct_text": "Sprint ",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0721",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5093,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:span[7]",
+          "attributes": {
+            "text:style-name": "T178"
+          },
+          "xml_sha256": "a69e9f0400c0d94d522a5b762174602bea7318548eeed43bc0f92df6c80f73b3",
+          "text_sha256": null,
+          "direct_text": "1",
+          "tail": null
+        },
+        {
+          "source_id": "text-bookmark-end-0030",
+          "type": "text:bookmark-end",
+          "semantic_type": "layout",
+          "source_order": 5094,
+          "parent_id": "text-h-0029",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0070",
+            "text-list-item-0061",
+            "text-list-0071",
+            "text-list-item-0062",
+            "text-list-0072"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[26]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]/text:bookmark-end[1]",
+          "attributes": {
+            "text:name": "__RefHeading___Toc4470_311817663321"
+          },
+          "xml_sha256": "0b4905a1b4d66f93cfa4031a5d2a161f4645d702c156d9a4c7dddee4aead1074",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0718",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5095,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[558]",
+          "attributes": {
+            "text:style-name": "P184"
+          },
+          "xml_sha256": "7452f93e4143bfb0126c8f46448bcc97b7e2a46c9214d36bb1f1f0f0a2919ed8",
+          "text_sha256": "6dd1e97fef486f86317a483e46a068a7632d00f14c7a9e997871dda60fbcc85b",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0722",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5096,
+          "parent_id": "text-p-0718",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[558]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T180"
+          },
+          "xml_sha256": "1baccced7e287f0b9cab37bf3e5ac240aca48555f34edeef0d9395f0cf242841",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "Importante ressaltar que todas as sugestões de melhoria apresentadas por mim e outros colegas durante a entrega anterior foram atendidas prontamente. Esse fato demonstrou que os alunos ouviram nosso feedback e implementaram as mudanças necessárias, mostrando proatividade e compromisso com o projeto. "
+        },
+        {
+          "source_id": "text-tab-0185",
+          "type": "text:tab",
+          "semantic_type": "layout",
+          "source_order": 5097,
+          "parent_id": "text-span-0722",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[558]/text:span[1]/text:tab[1]",
+          "attributes": {},
+          "xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "Na Sprint 1, os alunos avançaram significativamente, com foco no desenvolvimento e aprimoramento do front-end. Praticamente todos os elementos dessa interface foram finalizados, embora alguns ajustes técnicos, como o funcionamento da câmera para captura dos sinais ainda estivessem sendo refinados. "
+        },
+        {
+          "source_id": "text-p-0719",
+          "type": "text:p",
+          "semantic_type": "paragraph",
+          "source_order": 5098,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[559]",
+          "attributes": {
+            "text:style-name": "P184"
+          },
+          "xml_sha256": "fa7a48362ce29214b7b0f9098ec97770ce00725cb14a8d141a0190eeeca199ed",
+          "text_sha256": "7ce7decda7b49730eb13cedc57a644dc93ef03675836e77a13daaa2496c00ec3",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-tab-0186",
+          "type": "text:tab",
+          "semantic_type": "layout",
+          "source_order": 5099,
+          "parent_id": "text-p-0719",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[559]/text:tab[1]",
+          "attributes": {},
+          "xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": "Em relação ao back-end, a equipe deu início à construção dessa camada da aplicação, que será responsável pela integração e suporte ao modelo de reconhecimento de linguagem de sinais brasileiras (Libras). Embora o desenvolvimento do back-end ainda estivesse em uma fase inicial e, portanto, sem elementos visuais "
+        },
+        {
+          "source_id": "text-span-0723",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5100,
+          "parent_id": "text-p-0719",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[559]/text:span[1]",
+          "attributes": {
+            "text:style-name": "T181"
+          },
+          "xml_sha256": "4e963db79b2afbb66d23a2e1de475ea0e9b5129ff683a4ceb4da146f5ee4e3e7",
+          "text_sha256": null,
+          "direct_text": "ou integraç",
+          "tail": null
+        },
+        {
+          "source_id": "text-span-0724",
+          "type": "text:span",
+          "semantic_type": "layout",
+          "source_order": 5101,
+          "parent_id": "text-p-0719",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[559]/text:span[2]",
+          "attributes": {
+            "text:style-name": "T182"
+          },
+          "xml_sha256": "dd218185780b5a34591886a1adb8be1a09cc6dd6ece224f455cdafa1ebf1b74b",
+          "text_sha256": null,
+          "direct_text": "ões",
+          "tail": " para demonstrar, o progresso notável no front-end trouxe uma grande tranquilidade e confiança no desenvolvimento do projeto como um todo."
+        },
+        {
+          "source_id": "text-p-0720",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5102,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[560]",
+          "attributes": {
+            "text:style-name": "P185"
+          },
+          "xml_sha256": "b7f721c6bf1a9161e026e51c630e7195f89ccbe6b950c20c30b14ea6dcb34337",
+          "text_sha256": "2b4c342f5433ebe591a1da77e013d1b72475562d48578dca8b84bac6651c3cb9",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-tab-0187",
+          "type": "text:tab",
+          "semantic_type": "layout",
+          "source_order": 5103,
+          "parent_id": "text-p-0720",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[560]/text:tab[1]",
+          "attributes": {},
+          "xml_sha256": "2b58be65a8da7c5b6283fee9ca6026779ac5bae4a7e839add595d8642b40e467",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0721",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5104,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[561]",
+          "attributes": {
+            "text:style-name": "P186"
+          },
+          "xml_sha256": "98f29c287e3514ba69544105959244008f1c9a48f9ec1d861ac819439c2c1ac9",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-0073",
+          "type": "text:list",
+          "semantic_type": "list",
+          "source_order": 5105,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]",
+          "attributes": {
+            "text:continue-numbering": "true",
+            "text:style-name": "WWNum10"
+          },
+          "xml_sha256": "bb0403dfdf1b0f6b5673f6471613dd011f025e114f0645ce095e1ba457e268e7",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-item-0063",
+          "type": "text:list-item",
+          "semantic_type": "list-item",
+          "source_order": 5106,
+          "parent_id": "text-list-0073",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0073"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]/text:list-item[1]",
+          "attributes": {},
+          "xml_sha256": "4e650962d79189e702c818014971cb22f415c9cf40e358129ca7a82d64931717",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-0074",
+          "type": "text:list",
+          "semantic_type": "list",
+          "source_order": 5107,
+          "parent_id": "text-list-item-0063",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0073",
+            "text-list-item-0063"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]/text:list-item[1]/text:list[1]",
+          "attributes": {},
+          "xml_sha256": "baf3604857e492f35b3d65bb40bbcbd8f01360c9b2ef1efde15af206b38df5eb",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-item-0064",
+          "type": "text:list-item",
+          "semantic_type": "list-item",
+          "source_order": 5108,
+          "parent_id": "text-list-0074",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0073",
+            "text-list-item-0063",
+            "text-list-0074"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]/text:list-item[1]/text:list[1]/text:list-item[1]",
+          "attributes": {},
+          "xml_sha256": "42b0c6b34ead3079e46f3618e7bed0cf1c739f48d6371ceeb6b49374d211bdd1",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-0075",
+          "type": "text:list",
+          "semantic_type": "list",
+          "source_order": 5109,
+          "parent_id": "text-list-item-0064",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0073",
+            "text-list-item-0063",
+            "text-list-0074",
+            "text-list-item-0064"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]",
+          "attributes": {},
+          "xml_sha256": "6e559aeecada7fb2a2bfc2ae5a231db1af88a5f958c7fd4fb418ec88fe83cda1",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-header-0017",
+          "type": "text:list-header",
+          "semantic_type": "list-header",
+          "source_order": 5110,
+          "parent_id": "text-list-0075",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0073",
+            "text-list-item-0063",
+            "text-list-0074",
+            "text-list-item-0064",
+            "text-list-0075"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]",
+          "attributes": {},
+          "xml_sha256": "16e25008803d6008363dcfec3fae73c6dcbd760507a1676c64aed406069a0bf6",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-h-0030",
+          "type": "text:h",
+          "semantic_type": "layout",
+          "source_order": 5111,
+          "parent_id": "text-list-header-0017",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0073",
+            "text-list-item-0063",
+            "text-list-0074",
+            "text-list-item-0064",
+            "text-list-0075"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[27]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]/text:h[1]",
+          "attributes": {
+            "text:outline-level": "3",
+            "text:style-name": "P187"
+          },
+          "xml_sha256": "9ab71f3b84128b7071c7db21b1222277f3471f4ff6c680892c4a18db6750bae1",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0722",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5112,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[562]",
+          "attributes": {
+            "text:style-name": "P188"
+          },
+          "xml_sha256": "826c2cbb2c82e123ccc99a9a15630a856397b6591f6c0f5b6b3e99734b251d35",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-h-0031",
+          "type": "text:h",
+          "semantic_type": "layout",
+          "source_order": 5113,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:h[5]",
+          "attributes": {
+            "text:outline-level": "1",
+            "text:style-name": "P189"
+          },
+          "xml_sha256": "c9ff19f7411198904764c23851ea43824fc2fb85329c436cff4b61237dcd8d66",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-h-0032",
+          "type": "text:h",
+          "semantic_type": "layout",
+          "source_order": 5114,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:h[6]",
+          "attributes": {
+            "text:outline-level": "1",
+            "text:style-name": "P190"
+          },
+          "xml_sha256": "7941d16f9a7784253786575d27a5cffe3fcc94e6a97d051536d79f80e2ca2990",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0723",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5115,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[563]",
+          "attributes": {
+            "text:style-name": "P191"
+          },
+          "xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0724",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5116,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[564]",
+          "attributes": {
+            "text:style-name": "P191"
+          },
+          "xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0725",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5117,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[565]",
+          "attributes": {
+            "text:style-name": "P191"
+          },
+          "xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0726",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5118,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[566]",
+          "attributes": {
+            "text:style-name": "P191"
+          },
+          "xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-p-0727",
+          "type": "text:p",
+          "semantic_type": "layout",
+          "source_order": 5119,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[567]",
+          "attributes": {
+            "text:style-name": "P191"
+          },
+          "xml_sha256": "3c8a6b8826d96820175858f95b5db0eb3638ee6f714bf8e968905e8c32e8ba0c",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-0076",
+          "type": "text:list",
+          "semantic_type": "list",
+          "source_order": 5120,
+          "parent_id": "office-text-0001",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[28]",
+          "attributes": {
+            "text:continue-numbering": "true",
+            "text:style-name": "WWNum10"
+          },
+          "xml_sha256": "ee8859a53546838bb8b460d7a04849a7ab613ddf8bf05147c088fe72f4221e4b",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-item-0065",
+          "type": "text:list-item",
+          "semantic_type": "list-item",
+          "source_order": 5121,
+          "parent_id": "text-list-0076",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0076"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[28]/text:list-item[1]",
+          "attributes": {},
+          "xml_sha256": "8f15f507fe81e84f8e9d64e53d049b6d55e4ba31b2d58f2c63246f65429ff832",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-0077",
+          "type": "text:list",
+          "semantic_type": "list",
+          "source_order": 5122,
+          "parent_id": "text-list-item-0065",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0076",
+            "text-list-item-0065"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[28]/text:list-item[1]/text:list[1]",
+          "attributes": {},
+          "xml_sha256": "b52021d12354414a20aa7419c8cfc0237123bead23cd97bd33459d78cc0b2ac0",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-item-0066",
+          "type": "text:list-item",
+          "semantic_type": "list-item",
+          "source_order": 5123,
+          "parent_id": "text-list-0077",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0076",
+            "text-list-item-0065",
+            "text-list-0077"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[28]/text:list-item[1]/text:list[1]/text:list-item[1]",
+          "attributes": {},
+          "xml_sha256": "2c7ae98a832803b56457639f52244f4b31733121ca5d0a80832d305ba76d945c",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-0078",
+          "type": "text:list",
+          "semantic_type": "list",
+          "source_order": 5124,
+          "parent_id": "text-list-item-0066",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0076",
+            "text-list-item-0065",
+            "text-list-0077",
+            "text-list-item-0066"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[28]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]",
+          "attributes": {},
+          "xml_sha256": "9849dd0a33c577e5952152f234b650fb9b7d5b7a68bc132fba6a3661b4dad7ac",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        },
+        {
+          "source_id": "text-list-header-0018",
+          "type": "text:list-header",
+          "semantic_type": "list-header",
+          "source_order": 5125,
+          "parent_id": "text-list-0078",
+          "context_ids": [
+            "text-h-0023",
+            "text-h-0025",
+            "text-h-0029",
+            "text-list-0076",
+            "text-list-item-0065",
+            "text-list-0077",
+            "text-list-item-0066",
+            "text-list-0078"
+          ],
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[28]/text:list-item[1]/text:list[1]/text:list-item[1]/text:list[1]/text:list-header[1]",
+          "attributes": {},
+          "xml_sha256": "55a6a60092538d43abab74931ec7c8166af39e11bdd763eac97a35c938677159",
+          "text_sha256": null,
+          "direct_text": null,
+          "tail": null
+        }
+      ],
+      "manifest_record_ids": [
+        "text-h-0029",
+        "text-p-0718",
+        "text-p-0719",
+        "text-list-0073",
+        "text-list-item-0063",
+        "text-list-0074",
+        "text-list-item-0064",
+        "text-list-0075",
+        "text-list-header-0017",
+        "text-list-0076",
+        "text-list-item-0065",
+        "text-list-0077",
+        "text-list-item-0066",
+        "text-list-0078",
+        "text-list-header-0018"
+      ],
+      "pending": [
+        "Auditoria independente de conteúdo permanece PENDING, incluindo conferência da redação, ordem, estrutura de listas, relações entre figuras e ausência de conteúdo de outras edições/projetos.",
+        "Auditoria visual do PDF integrado permanece PENDING.",
+        "Integração serial, validate/scope-check oficiais e compilação do memorial completo aguardam execução no repositório com Git; não foram executados nesta cópia scratch sem .git.",
+        "Checkpoint de aprovação humana da participação Hoortech permanece PENDING."
+      ],
+      "presentation_transformations": [
+        {
+          "source_id": "text-h-0029",
+          "kind": "document_reordering_numbering",
+          "source_text": "3.2.3 Sprint 1",
+          "current_display_text": "3.2.3 Sprint 1",
+          "target_text": "6.2.3 Sprint 1",
+          "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json"
+        }
+      ],
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0029"
+        ]
+      }
+    }
+  }
+}

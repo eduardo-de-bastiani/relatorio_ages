@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "a18d5a1f09b0d3602ba78f87a7fe0a7d73264c89",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-06-text-h-0110": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0110",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 159,
+          "end_byte": 186,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
+          "source_text_sha256": "833a10ba6ef33eccd5433b77d9179b3eb86521b01a2f5d881a51dccd96c61173",
+          "serializations": [
+            "document_reordering_numbering"
+          ]
+        },
+        {
+          "source_id": "text-p-1347",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 301,
+          "end_byte": 1671,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
+          "source_text_sha256": "d567d891214f928ccc2631951027f2dbf37cc3fe6eeaefb3ed046d6aa9e52171",
+          "serializations": [
+            "technology_citation"
+          ]
+        },
+        {
+          "source_id": "text-a-0150",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 1757,
+          "end_byte": 1841,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd"
+        },
+        {
+          "source_id": "text-p-1350",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 1939,
+          "end_byte": 1995,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
+          "source_text_sha256": "9ace1e62d2ee0c9db0d53dc6ab92ce3b34ebe9554977bb391b8e2164f0316fc8",
+          "serializations": [
+            "abnt_figure_caption",
+            "document_reordering_numbering"
+          ]
+        },
+        {
+          "source_id": "draw-image-0026",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 1890,
+          "end_byte": 2063,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd"
+        },
+        {
+          "source_id": "text-p-1362",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 2100,
+          "end_byte": 2258,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
+          "source_text_sha256": "e4ebc081f2f4aa6e7e8649abea40a57b9e4f550f849038531c6c903d710bdd9c",
+          "serializations": [
+            "wiki_reference_sentence"
+          ]
+        },
+        {
+          "source_id": "text-a-0151",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "start_byte": 2163,
+          "end_byte": 2258,
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd",
+          "serializations": [
+            "wiki_reference_sentence"
+          ]
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0026",
+          "asset_id": "asset-0001",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0001.png",
+          "sha256": "64cd7e8dd8bd0c7a51a3430bd27459d85e1eb48587d60828b4a9a323e4aa2be8"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0110",
+          "source_name": "__RefHeading___Toc4837_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+          "target_anchor": "__RefHeading___Toc4837_3118176633",
+          "command": "hypertarget",
+          "start_byte": 68,
+          "end_byte": 117,
+          "source_start_id": "text-bookmark-start-0073",
+          "source_end_id": "text-bookmark-end-0073",
+          "target_sha256": "d0076c64d59ae146be072747fdcabceaac5e537d6f5c20c28d3480923625c1fd"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0042",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0234",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0190",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0235",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-item-0191",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-0236",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        },
+        {
+          "source_id": "text-list-header-0065",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Contêiner ODF vazio ou estrutural de lista/quadro; conteúdo autoral, legenda, links e imagens foi mapeado separadamente na ordem original."
+        }
+      ],
+      "pending": [
+        "Auditorias independentes de conteúdo e visual, compilação integrada e aprovação humana da AGES IV permanecem PENDING.",
+        "A disponibilidade do URL wiki original da arquitetura continua PENDING, por decisão explícita do usuário; URL e âncora ODF vazia foram preservadas.",
+        "A configuração/uso específico do SonarCloud no Recorda permanece PENDING contra ODT/evidência de projeto.",
+        "A fonte/proveniência da imagem draw-image-0026 permanece PENDING para identificação humana."
+      ],
+      "presentation_transformations": [
+        {
+          "source_id": "text-p-1350",
+          "kind": "abnt_figure_caption_label",
+          "source_prefix": "Figure 26: ",
+          "target_prefix": "Figura 26 – ",
+          "basis": "docs/STYLE_GUIDE.md; user-approved Portuguese figure labels"
+        }
+      ],
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0151",
+          "text-p-1350",
+          "text-p-1362"
+        ]
+      },
+      "wiki_link_overrides": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_ids": [
+          "text-a-0151",
+          "text-p-1362"
+        ]
+      },
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "figure_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "preserved_links": [
+        {
+          "source_id": "text-a-0150",
+          "original_anchor": "",
+          "typeset_anchor": "",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+          "availability": "PENDING"
+        },
+        {
+          "source_id": "text-a-0151",
+          "original_anchor": "Wiki da Arquitetura",
+          "typeset_anchor": "Arquitetura",
+          "original_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+          "availability": "PENDING"
+        }
+      ],
+      "technology_citations": {
+        "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
+        "source_text_changed": false,
+        "source_id_to_keys": {
+          "text-p-1347": [
+            "ages-iv-react-native",
+            "ages-iv-expo",
+            "ages-iv-tanstack-query",
+            "ages-iv-python",
+            "ages-iv-fastapi",
+            "ages-iv-docker",
+            "ages-iv-pydantic",
+            "ages-iv-supabase",
+            "ages-iv-github-actions",
+            "ages-iv-sonar",
+            "ages-iv-pytest",
+            "ages-iv-jest"
+          ]
+        }
+      },
+      "candidate_citations": [
+        {
+          "source_link_id": "text-a-0156",
+          "candidate_key": "ages-iv-react-native",
+          "technology_anchor": "Documentação React Native",
+          "observed_responsibility_or_title": "Meta Platforms, Inc.",
+          "basis": "author",
+          "url": "https://reactnative.dev/docs/getting-started",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "react_native",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-react-native",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Introduction",
+          "observed_responsibility": "Meta Platforms, Inc.",
+          "responsibility_evidence": "Exact page footer: ‘Copyright © Meta Platforms, Inc.’",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0157",
+          "candidate_key": "ages-iv-expo",
+          "technology_anchor": "Documentação Expo",
+          "observed_responsibility_or_title": "Expo documentation",
+          "basis": "title",
+          "url": "https://docs.expo.dev/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "expo",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-expo",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Expo documentation",
+          "observed_responsibility": null,
+          "responsibility_evidence": "Official Expo docs page describes Android, iOS, web, SDK modules and build/distribution workflows; no formal author/copyright statement was exposed.",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": null,
+          "candidate_key": "ages-iv-tanstack-query",
+          "technology_anchor": "TanStack Query",
+          "observed_responsibility_or_title": "TanStack LLC",
+          "basis": "author",
+          "url": "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "tanstack_query",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": false,
+          "status": "INTEGRATED centrally; supplemental source with no original ODF hyperlink; claim scope remains bounded by evidence.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "NOT_APPLICABLE: citation does not assert a Recorda dependency version",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-tanstack-query",
+          "bibliography_integration": "confirmed in root bibliography; converter did not edit .bib",
+          "observed_page_title": "Does TanStack Query replace Redux, MobX or other global state managers?",
+          "observed_responsibility": "TanStack LLC",
+          "responsibility_evidence": "The exact official TanStack Query React documentation page footer states “© 2026 TanStack LLC.”",
+          "usage_source_id": "text-p-1347",
+          "citation_scope_limitation": "A fonte sustenta o papel geral da biblioteca no gerenciamento de estado do servidor; não comprova configuração específica do Recorda nem versão usada.",
+          "reference_url_recommendation": "https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state"
+        },
+        {
+          "source_link_id": "text-a-0153",
+          "candidate_key": "ages-iv-python",
+          "technology_anchor": "Documentação Python",
+          "observed_responsibility_or_title": "Python Software Foundation",
+          "basis": "author",
+          "url": "https://www.python.org/doc/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "python",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-python",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Our Documentation",
+          "observed_responsibility": "Python Software Foundation",
+          "responsibility_evidence": "Exact footer copyright: ‘Copyright ©2001-2026. Python Software Foundation.’",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0154",
+          "candidate_key": "ages-iv-fastapi",
+          "technology_anchor": "Documentação FastAPI",
+          "observed_responsibility_or_title": "Tutorial - User Guide",
+          "basis": "title",
+          "url": "https://fastapi.tiangolo.com/tutorial/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "fastapi",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-fastapi",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Tutorial - User Guide",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page footer says the FastAPI trademark is owned by @tiangolo; trademark ownership is not formal tutorial authorship.",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0161",
+          "candidate_key": "ages-iv-docker",
+          "technology_anchor": "Documentação Docker",
+          "observed_responsibility_or_title": "Docker Inc.",
+          "basis": "author",
+          "url": "https://docs.docker.com/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "docker",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-docker",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Docker Docs",
+          "observed_responsibility": "Docker Inc.",
+          "responsibility_evidence": "Exact docs homepage footer: ‘Copyright © 2013-2026 Docker Inc.’",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0155",
+          "candidate_key": "ages-iv-pydantic",
+          "technology_anchor": "Documentação Pydantic",
+          "observed_responsibility_or_title": "Pydantic Validation",
+          "basis": "title",
+          "url": "https://pydantic.dev/docs/validation/latest/get-started/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "pydantic",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-pydantic",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Pydantic Validation",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The retrieved page identifies Pydantic Validation and links the first-party pydantic/pydantic repository; no formal author/copyright line appeared.",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0159",
+          "candidate_key": "ages-iv-supabase",
+          "technology_anchor": "Documentação Supabase",
+          "observed_responsibility_or_title": "Supabase Docs",
+          "basis": "title",
+          "url": "https://supabase.com/docs",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "supabase",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-supabase",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Supabase Docs",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page identifies Supabase Docs and feature sections; no formal page author/copyright statement was exposed.",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0162",
+          "candidate_key": "ages-iv-github-actions",
+          "technology_anchor": "Documentação GitHub Actions",
+          "observed_responsibility_or_title": "GitHub Inc.",
+          "basis": "author",
+          "url": "https://docs.github.com/en/actions",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "github_actions",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-github-actions",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "GitHub Actions documentation",
+          "observed_responsibility": "GitHub Inc.",
+          "responsibility_evidence": "Exact page footer: ‘GitHub Inc. © 2026.’",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0163",
+          "candidate_key": "ages-iv-sonar",
+          "technology_anchor": "Documentação SonarQube",
+          "observed_responsibility_or_title": "SonarSource Sàrl",
+          "basis": "author",
+          "url": "https://docs.sonarsource.com/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "sonar",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-sonar",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Home",
+          "citation_title": "Home",
+          "documented_capability_status": "VERIFIED in official product documentation: static analysis, imported coverage reports, security rules, and quality gates",
+          "recorda_configuration_status": "PENDING: whether and how Recorda configured these capabilities must be checked against the ODT and project evidence",
+          "original_url_preservation": "https://docs.sonarsource.com/",
+          "observed_responsibility": "SonarSource Sàrl",
+          "responsibility_evidence": "Official SonarQube Cloud documentation page for quality gates displays the copyright attribution “© SonarSource Sàrl.” This supports corporate responsibility for the official documentation; no individual author is identified.",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0164",
+          "candidate_key": "ages-iv-pytest",
+          "technology_anchor": "Documentação Pytest",
+          "observed_responsibility_or_title": "holger krekel and pytest-dev team",
+          "basis": "author",
+          "url": "https://docs.pytest.org/en/stable/",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "pytest",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "VERIFIED in official source evidence",
+          "bibliography_key": "ages-iv-pytest",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "pytest documentation",
+          "observed_responsibility": "holger krekel and pytest-dev team",
+          "responsibility_evidence": "Exact page footer copyright attribution, preserved verbatim: ‘Copyright © 2015, holger krekel and pytest-dev team.’",
+          "usage_source_id": "text-p-1347"
+        },
+        {
+          "source_link_id": "text-a-0165",
+          "candidate_key": "ages-iv-jest",
+          "technology_anchor": "Documentação Jest",
+          "observed_responsibility_or_title": "Getting Started",
+          "basis": "title",
+          "url": "https://jestjs.io/docs/getting-started",
+          "curation_evidence": "migration/evidence/references/ages-iv.json",
+          "curated_source_id": "jest",
+          "access_date": "2026-10-17",
+          "author_date_label_year": 2026,
+          "year_basis": "User-approved AGES IV convention based on actual access year; not a factual publication year.",
+          "candidate_only": true,
+          "status": "INTEGRATED in scratch A bibliography by orchestrator; converter did not edit the bibliography.",
+          "publication_date_observed": null,
+          "publication_date_status": "PENDING: not observed in curated source",
+          "source_retrieval_status": "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed",
+          "project_version_status": "PENDING: no project version inferred",
+          "formal_author_status": "PENDING: formal author not established; cite by observed page title",
+          "bibliography_key": "ages-iv-jest",
+          "bibliography_integration": "confirmed in scratch A bibliography; converter did not edit any .bib file",
+          "observed_page_title": "Getting Started",
+          "observed_responsibility": null,
+          "responsibility_evidence": "The page displays version 30.5 and links to GitHub/legal pages; none establishes page authorship. Version is the current docs selector only, not the project version.",
+          "usage_source_id": "text-p-1347"
+        }
+      ],
+      "citation_evidence_path": "migration/evidence/references/ages-iv.json",
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0110",
+          "text-p-1350"
+        ]
+      }
+    }
+  }
+}

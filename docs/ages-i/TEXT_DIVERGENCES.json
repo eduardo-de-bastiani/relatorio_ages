@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Words, punctuation, accents, emphasis, URLs and source-token order. Presentation policies deliberately change line spacing/first-line indents and rendering of leading source whitespace; no claim of literal PDF whitespace equality.",
+  "baseline_commit": "e5a367d438fe865223879ed4742d52379e563335",
+  "candidate_state": "uncommitted_review_candidate",
+  "temporary_build_commit": "e1019ac9d7ecd3cb8a97388c4b50a4805732c074",
+  "pdf_sha256": "9670b53640a3b2f67977100bc51fd381af56403d96b941f15f6e37252aa04d38",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "human_approval": null,
+  "future_projects_approved": false,
+  "presentation_changes": {
+    "body_paragraphs_traced": 82,
+    "prose_indent_declarations_changed": 59,
+    "standalone_link_paragraphs_not_indented": 11,
+    "internal_tabs_presented_as_word_space": 9,
+    "leading_tab_tokens_preserved_with_zero_extra_advance": true,
+    "leading_space_token_preserved_without_extra_indent": [
+      "text-p-0413"
+    ],
+    "toc_rendered_depth": 1,
+    "body_headings_preserved": 15
+  },
+  "units": [
+    {
+      "id": "chapter-02-text-h-0002",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 0,
+        "scope": "chapter-02-text-h-0002",
+        "source_text_records": 1,
+        "text_records_checked": 1,
+        "text_records_matched": 1
+      },
+      "differences": {
+        "chapter-02-text-h-0002": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "17f660040fa9cb3bf94cdda9ea2385ac73da7c017634db66817f8769f2fabe9b",
+      "report": "build/ages-i/mariah-style/converter/final-validate-chapter-02-text-h-0002.json"
+    },
+    {
+      "id": "chapter-02-text-h-0003",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 1,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 3,
+        "scope": "chapter-02-text-h-0003",
+        "source_text_records": 5,
+        "text_records_checked": 5,
+        "text_records_matched": 5
+      },
+      "differences": {
+        "chapter-02-text-h-0003": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "46c9a4f37b104e6bce9748942d95b7e48c95c2bb8dbcb4df400ac9b07afc0c79",
+      "report": "build/ages-i/mariah-style/converter/final-validate-chapter-02-text-h-0003.json"
+    },
+    {
+      "id": "chapter-02-text-h-0007",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 0,
+        "scope": "chapter-02-text-h-0007",
+        "source_text_records": 1,
+        "text_records_checked": 1,
+        "text_records_matched": 1
+      },
+      "differences": {
+        "chapter-02-text-h-0007": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "a8856acde24bd5594b4a59f6a2a4337f96dfd2b4274e30f05d52e01c4281a30e",
+      "report": "build/ages-i/mariah-style/converter/final-validate-chapter-02-text-h-0007.json"
+    },
+    {
+      "id": "chapter-02-text-h-0008",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 1,
+        "links_checked": 3,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 6,
+        "scope": "chapter-02-text-h-0008",
+        "source_text_records": 7,
+        "text_records_checked": 7,
+        "text_records_matched": 7
+      },
+      "differences": {
+        "chapter-02-text-h-0008": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "b54edde067330bd38d1ab1285af7210a498fd9c4327cfccdcd7adeb67e1c8d68",
+      "report": "build/ages-i/mariah-style/converter/final-validate-chapter-02-text-h-0008.json"
+    },
+    {
+      "id": "chapter-02-text-h-0009",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 1,
+        "links_checked": 1,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 2,
+        "scope": "chapter-02-text-h-0009",
+        "source_text_records": 3,
+        "text_records_checked": 3,
+        "text_records_matched": 3
+      },
+      "differences": {
+        "chapter-02-text-h-0009": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "23030b61b4944578e07b98daa4a274997db8ad0642df97a25a3eb0c8436c8420",
+      "report": "build/ages-i/mariah-style/converter/final-validate-chapter-02-text-h-0009.json"
+    },
+    {
+      "id": "chapter-02-text-h-0010",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 1,
+        "links_checked": 1,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 2,
+        "scope": "chapter-02-text-h-0010",
+        "source_text_records": 3,
+        "text_records_checked": 3,
+        "text_records_matched": 3
+      },
+      "differences": {
+        "chapter-02-text-h-0010": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "e1cb29b2e0dcf58d62598d1287d5097103d0ca86a1711ceef3278be69de588ed",
+      "report": "build/ages-i/mariah-style/converter/validate-chapter-02-text-h-0010.json"
+    },
+    {
+      "id": "chapter-02-text-h-0011",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 3,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 1,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 3,
+        "scope": "chapter-02-text-h-0011",
+        "source_text_records": 7,
+        "text_records_checked": 7,
+        "text_records_matched": 7
+      },
+      "differences": {
+        "chapter-02-text-h-0011": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "506e0f7a37abb9c178c623be33c2190bd4b87f707ef92f0e88acaf1edbaaa864",
+      "report": "build/ages-i/mariah-style/converter/validate-chapter-02-text-h-0011.json"
+    },
+    {
+      "id": "chapter-02-text-h-0012",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 5,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 19,
+        "scope": "chapter-02-text-h-0012",
+        "source_text_records": 20,
+        "text_records_checked": 20,
+        "text_records_matched": 20
+      },
+      "differences": {
+        "chapter-02-text-h-0012": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "19a28f83a574af662588c695e5507621f1f7f45f2ed50b93d4d4bdb3d651b587",
+      "report": "build/ages-i/mariah-style/converter/validate-chapter-02-text-h-0012.json"
+    },
+    {
+      "id": "chapter-02-text-h-0014",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 0,
+        "scope": "chapter-02-text-h-0014",
+        "source_text_records": 1,
+        "text_records_checked": 1,
+        "text_records_matched": 1
+      },
+      "differences": {
+        "chapter-02-text-h-0014": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "6fa31549da93c9c7c05cf0b82f821f7a14cef2d3c576b1fc10dd1093742f0f87",
+      "report": "build/ages-i/mariah-style/converter/validate-chapter-02-text-h-0014.json"
+    },
+    {
+      "id": "ages-i-sprint-0",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 9,
+        "scope": "ages-i-sprint-0",
+        "source_text_records": 10,
+        "text_records_checked": 10,
+        "text_records_matched": 10
+      },
+      "differences": {
+        "ages-i-sprint-0": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "ebb25b8a60e13e22aa8fed2ec92cfb468e27da503d3be3c62b24472c1bbf402e",
+      "report": "build/ages-i/mariah-style/converter/validate-ages-i-sprint-0.json"
+    },
+    {
+      "id": "ages-i-sprint-1",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 11,
+        "scope": "ages-i-sprint-1",
+        "source_text_records": 12,
+        "text_records_checked": 12,
+        "text_records_matched": 12
+      },
+      "differences": {
+        "ages-i-sprint-1": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "695cc39248eb142c2511e98bfab8e4955bd1c09a36e3164476ac8a6b489070d9",
+      "report": "build/ages-i/mariah-style/converter/validate-ages-i-sprint-1.json"
+    },
+    {
+      "id": "ages-i-sprint-2",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 6,
+        "scope": "ages-i-sprint-2",
+        "source_text_records": 7,
+        "text_records_checked": 7,
+        "text_records_matched": 7
+      },
+      "differences": {
+        "ages-i-sprint-2": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "6167f3e782a551633185d4eabf6b53468c7c9ea0498a2d0ad3a9be2225a8591d",
+      "report": "build/ages-i/mariah-style/converter/validate-ages-i-sprint-2.json"
+    },
+    {
+      "id": "ages-i-sprint-3",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 8,
+        "scope": "ages-i-sprint-3",
+        "source_text_records": 9,
+        "text_records_checked": 9,
+        "text_records_matched": 9
+      },
+      "differences": {
+        "ages-i-sprint-3": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "3110a560ee8547d2c7238de66f580e0c7a21d2235b269468fe0862287fe19a03",
+      "report": "build/ages-i/mariah-style/converter/validate-ages-i-sprint-3.json"
+    },
+    {
+      "id": "ages-i-sprint-4",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 0,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 6,
+        "scope": "ages-i-sprint-4",
+        "source_text_records": 7,
+        "text_records_checked": 7,
+        "text_records_matched": 7
+      },
+      "differences": {
+        "ages-i-sprint-4": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "d9038e25ed3c67aa0d7b5483ca3d9820ef70042e4831a73192fcb2c84bfdb42d",
+      "report": "build/ages-i/mariah-style/converter/validate-ages-i-sprint-4.json"
+    },
+    {
+      "id": "chapter-02-text-h-0022",
+      "status": "PASS",
+      "facts": {
+        "converted_units": 1,
+        "coverage_percent": 100.0,
+        "images_checked": 1,
+        "inline_tab_layout_records_matched": 0,
+        "links_checked": 0,
+        "proof": "actual UTF-8 bytes and conservative lexical projection; not TeX execution",
+        "reference_paragraph_layout_records_matched": 7,
+        "scope": "chapter-02-text-h-0022",
+        "source_text_records": 9,
+        "text_records_checked": 9,
+        "text_records_matched": 9
+      },
+      "differences": {
+        "chapter-02-text-h-0022": []
+      },
+      "source_projection_only_for_whitespace": true,
+      "ledger_sha256": "975c1fdaba4f2d9bebefc67f972cc065e0435fff3345c1a1e143484b04d83fc5",
+      "report": "build/ages-i/mariah-style/converter/validate-chapter-02-text-h-0022.json"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_type": "human_acceptance_to_continue_with_pending_references",
+  "date": "2026-10-16",
+  "basis": "User reply to the reference-verification question during the AGES III migration.",
+  "user_response": "Continuar com PENDING (recomendado)",
+  "scope": {
+    "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+    "reference_ids": [
+      "text-a-0129",
+      "text-a-0130",
+      "text-a-0131",
+      "text-a-0132",
+      "text-a-0137"
+    ],
+    "dependent_units": [
+      "chapter-05-text-h-0077",
+      "chapter-05-text-h-0078",
+      "chapter-05-text-h-0085"
+    ]
+  },
+  "accepted_policy": {
+    "continue_faithful_conversion": true,
+    "preserve_original_urls_and_anchors": true,
+    "mark_unverified_sources_pending": true,
+    "permit_unverified_bibliographic_entry_or_citation": false,
+    "permit_inferred_author_version_publication_date_or_url": false,
+    "claim_source_availability_or_support_without_evidence": false,
+    "reference_quality_gates": "PENDING until independently evidenced or separately accepted by the user"
+  },
+  "curation_evidence": "migration/evidence/references/ages-iii.json"
+}

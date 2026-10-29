@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_scoped_content_presentation_change",
+  "date": "2026-10-17",
+  "user_instruction": "O tópico \"Tecnologias utilizadas\" não está seguindo os padrões. Nós combinamos de construir parágrafos explicando onde as tecnologias foram utilizadas. Você simplesmente colocou um bloco de parágrafo das tecnologias e disse o que cada uma faz, sem correlação com o projeto. Está totalmente fora do padrão.",
+  "scope": {
+    "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+    "unit": "chapter-05-text-h-0085",
+    "source_ids": [
+      "text-p-1066", "text-p-1069", "text-p-1072", "text-p-1073",
+      "text-p-1076", "text-p-1077", "text-p-1080", "text-p-1083",
+      "text-p-1084", "text-p-1087", "text-p-1090", "text-p-1093",
+      "text-p-1096", "text-p-1099", "text-p-1102", "text-p-1105"
+    ],
+    "source": {
+      "path": "RELATORIO_ATUAL.odt",
+      "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+    }
+  },
+  "approved_change": {
+    "presentation": "Replace the separate technology labels and descriptions with one continuous narrative paragraph in the Mariah reference pattern, explicitly relating each named technology to its use in the AGES III project.",
+    "documentation_link_presentation": {
+      "source_ids": ["text-p-1067", "text-p-1070", "text-p-1074", "text-p-1078", "text-p-1081", "text-p-1085", "text-p-1088", "text-p-1091", "text-p-1094", "text-p-1097", "text-p-1100", "text-p-1103", "text-p-1106"],
+      "prefix": "Mais informações podem ser encontradas em: ",
+      "suffix": ".",
+      "pattern_basis": "The user's previously approved Mariah-style narrative-link convention, applied to the retained original technology documentation links."
+    },
+    "limits": [
+      "Retain every source fact, technical role, qualifier, and the order of technologies from the ODT.",
+      "Only sentence connectors and grammatical recasting needed to form project-context prose are authorized; do not add capabilities, deployments, versions, or project history by inference.",
+      "Preserve all 13 original documentation hyperlink URLs and anchors byte-for-byte and in source order.",
+      "Present each original documentation hyperlink with the approved Mariah-style prose lead-in ‘Mais informações podem ser encontradas em:’ and a sentence-ending period; retain each original anchor and URL in place and in source order.",
+      "Retain only verified, ordered author-date citations; keep the original Impinj support URL and anchor as PENDING, distinct from any separately verified citation source.",
+      "Preserve the original internal tab in `consultas t<TAB>ipadas`; do not silently repair source wording or whitespace."
+    ],
+    "not_authorized": [
+      "Change to any other AGES III unit or shared LaTeX style/configuration.",
+      "Editorial review, expansion, omission of source claims, or correction of project facts.",
+      "Treat semantic equivalence as proven by the automatic lexical validator."
+    ]
+  },
+  "review_status": {
+    "execution": "authorized",
+    "independent_content_audit": "pending",
+    "visual_audit": "pending",
+    "human_approval_of_final_AGES_III_edition": null
+  }
+}

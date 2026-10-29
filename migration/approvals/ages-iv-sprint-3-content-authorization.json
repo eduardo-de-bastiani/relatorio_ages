@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "record_type": "user_supplied_content_authorization",
+  "date": "2026-10-29",
+  "approval_status": "authorized_for_inclusion_pending_human_review",
+  "unit_id": "ages-iv-sprint-3",
+  "user_instruction": "Agora, vamos fazer a descrição da Sprint 3:",
+  "source": {
+    "type": "direct_user_message",
+    "source_odt_path": "RELATORIO_ATUAL.odt",
+    "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "odt_relationship": "The ODF unit contains only its Sprint 3 heading and empty wrappers. The nine report paragraphs, figure caption/source, and two reflection paragraphs were supplied separately by the user and are not ODT records. No Gantt image is embedded in this unit."
+  },
+  "content": [
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p01",
+      "kind": "report_paragraph",
+      "source_markup": "A Sprint 3 foi marcada pela continuidade do bom ritmo de desenvolvimento que havíamos conquistado na Sprint anterior, mas também por novos desafios relacionados à coordenação das atividades e ao gerenciamento das dependências entre squads. Logo no início, decidi elaborar um gráfico de Gantt para organizar as tarefas dos desenvolvedores da minha squad, Gabriel Borges e Matias, ambos AGES II. O objetivo era estabelecer uma sequência de execução que permitisse o desenvolvimento paralelo das atividades de frontend e backend, considerando suas dependências e os momentos necessários para integração. A iniciativa foi bem recebida pelos colegas, que relataram que o planejamento visual facilitou a organização e a execução das tarefas ao longo da Sprint.",
+      "sha256": "69efad47901cc62c5faaaa690ec33704388f4ad37bc2e7ec0b676ee72987138c"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-gantt-caption",
+      "kind": "figure_caption",
+      "source_markup": "**Figura X – Planejamento de paralelização das tasks da squad durante a Sprint 3**",
+      "sha256": "7648be5a057e4faa17faf6c29c36321937563b92d007c65ae8f1a1ded9b8c6e2",
+      "target_markup": "**Figura X –** Planejamento de paralelização das tasks da squad durante a Sprint 3"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-gantt-source",
+      "kind": "figure_source",
+      "source_markup": "*Fonte: elaboração própria.*",
+      "sha256": "5d4642788e62454d541e30896b9c714ac1e2431e09ad1646c96c20265fa7574c",
+      "target_markup": "Fonte: elaboração própria."
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p02",
+      "kind": "report_paragraph",
+      "source_markup": "Outra mudança importante na organização do time foi a alocação dos AGES III junto às squads, permitindo que participassem mais diretamente do desenvolvimento. Nas Sprints anteriores, eles estavam concentrados principalmente nas revisões de Pull Requests e nas definições de arquitetura e tecnologias. Essa redistribuição buscou aproveitar melhor a experiência técnica desses integrantes e ampliar o apoio oferecido aos desenvolvedores.",
+      "sha256": "90d16d395e72028b28b6214bef448ce08336dcf824530c73fe5039681502f497"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p03",
+      "kind": "report_paragraph",
+      "source_markup": "Assim como na Sprint 2, o desenvolvimento ocorreu de maneira bastante fluida, com poucos problemas relacionados à qualidade do código ou à compreensão das tarefas. Entretanto, percebemos que as diferenças de velocidade entre as squads começaram a gerar bloqueios inesperados, especialmente quando uma funcionalidade dependia de entregas de outra equipe. Essas situações exigiram um acompanhamento mais próximo de determinadas atividades, com intervenções pontuais para reorganizar prioridades e cobrar a conclusão de tarefas que estavam impedindo o avanço de outros integrantes. Esse acabou sendo um dos principais desafios de gestão da Sprint, pois precisávamos garantir que o bom desempenho individual das squads também se refletisse no progresso do projeto como um todo.",
+      "sha256": "9cd352816f297b8bb8e3245739937ac350415a59ebf41279bc1d724beb3ef39e"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p04",
+      "kind": "report_paragraph",
+      "source_markup": "Durante a Sprint, também identifiquei que a User Story referente à notificação de usuários quando seus conteúdos fossem removidos ainda não havia sido mapeada. Fiquei responsável por criá-la e especificar as tarefas necessárias. Além disso, como coordenador das atividades relacionadas ao banco de dados, participei da revisão dos Pull Requests de implementação das tabelas `reports` e `moderation_action`, relacionadas às funcionalidades de denúncia e moderação de conteúdo.",
+      "sha256": "b5a6ea4f09784619fee6d95cf62de46b797d524a1d576af9b295b67c3f23ba0d"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p05",
+      "kind": "report_paragraph",
+      "source_markup": "Como a Sprint 3 possuía uma semana adicional de desenvolvimento em comparação à anterior e as equipes estavam avançando em um ritmo satisfatório, decidimos antecipar parte do escopo da Sprint 4. Incorporamos o Épico 6, que contemplava funcionalidades de perfil pessoal, visualização de perfis de terceiros, configurações e preferências, além de streaks de publicações. Embora não tivéssemos certeza de que todas as novas tarefas seriam concluídas, entendemos que antecipar essas entregas permitiria reservar mais tempo na última Sprint para testes, correções e refinamentos da aplicação.",
+      "sha256": "426f32ba594fd5db13870d949d58ed590fc2cbcfd87d727c5c5812d81b7dd30c"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p06",
+      "kind": "report_paragraph",
+      "source_markup": "Essa decisão, entretanto, trouxe um novo desafio: o aumento expressivo do volume de Pull Requests, justamente em um momento em que os dois AGES III também estavam envolvidos com a definição da infraestrutura de implantação. Como éramos seis AGES IV, todos com experiência prévia como AGES III, decidimos apoiá-los nas revisões para distribuir melhor a carga de trabalho e permitir que concentrassem seus esforços nas responsabilidades de arquitetura e infraestrutura.",
+      "sha256": "c45883fcda6693e763736dacb79aced971cc7815f2c3619c73f0da118c008189"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p07",
+      "kind": "report_paragraph",
+      "source_markup": "O resultado dessa antecipação foi bastante positivo. Até o *code freeze*, já havíamos desenvolvido, revisado e integrado **14 tarefas do Épico 6**, originalmente previsto para a Sprint 4, restando apenas quatro tarefas em *To Do* e três em *In Progress*. Optamos por manter essas atividades restantes para a Sprint seguinte, preservando um volume adequado de trabalho para a equipe. Esse avanço nos colocou em uma posição mais confortável para a reta final do projeto, com maior disponibilidade para testes de integração e de sistema, correção de bugs e polimento da aplicação.",
+      "sha256": "db718609e10f3e6bafa305e10a630c68846428edce6947d1d8149f651005ac92"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p08",
+      "kind": "report_paragraph",
+      "source_markup": "Também iniciei conversas com os AGES III para auxiliá-los na implantação do backend. Embora inicialmente tivéssemos considerado utilizar o Supabase, as limitações de sua modalidade gratuita nos levaram a avaliar alternativas. Recomendei a utilização dos serviços da AWS, considerando as cotas disponíveis para o projeto e a possibilidade de atender às necessidades de infraestrutura da aplicação.",
+      "sha256": "599a5dec081caf3334c604665f941f9dfa015cb6f745109a5af76e30ac46c5a9"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-report-p09",
+      "kind": "report_paragraph",
+      "source_markup": "Por fim, fiquei responsável pela apresentação das entregas da Sprint aos stakeholders. A apresentação recebeu elogios tanto da equipe quanto dos clientes, especialmente pela clareza na explicação das funcionalidades e pelo volume de trabalho realizado. Encerramos a Sprint 3 com uma evolução significativa em relação ao planejamento inicial e com boa parte das atividades da última Sprint já encaminhadas, resultado do amadurecimento da equipe e das melhorias de organização e gestão que viemos implementando ao longo do semestre.",
+      "sha256": "cdca758dbf016b620aa9e005c36261f83a3486184a0284e56228e0de41c0ac11"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-reflection-p01",
+      "kind": "reflection_paragraph",
+      "source_markup": "A Sprint 3 me fez perceber de forma muito clara a evolução do time ao longo do semestre. Se compararmos com a Sprint 1, em que ainda havia muitos problemas de qualidade, organização e integração, o cenário agora foi bastante diferente. O desenvolvimento ocorreu de maneira muito mais fluida, com menos atritos e com uma capacidade muito maior de entrega. Esse resultado não surgiu por acaso, mas sim de um processo contínuo de ajustes que fomos fazendo ao longo das Sprints, tanto na organização das squads quanto na definição das tasks, no tratamento de bloqueios e na rede de apoio ao desenvolvimento.",
+      "sha256": "929ea881ad36d6ff9af9d77f15bc92ceb193b7b703d7e400ad7d8cec5dbd3581"
+    },
+    {
+      "content_id": "user-ages-iv-sprint-3-reflection-p02",
+      "kind": "reflection_paragraph",
+      "source_markup": "Para mim, foi muito positivo perceber que essas melhorias realmente produziram efeito. A Sprint 2 já havia mostrado sinais dessa evolução, mas a Sprint 3 deixou isso ainda mais evidente, principalmente pela velocidade e pela consistência das entregas. Vejo isso como mérito do time, que amadureceu bastante, mas também como resultado direto do trabalho de organização, acompanhamento e refinamento de processos que nós, AGES IV, fomos construindo desde o início do projeto.",
+      "sha256": "4af27df2db4d866cadb14e4faab025083bc4a0afe857e6720ca3ac87fd044c90"
+    }
+  ],
+  "figure_placeholder": {
+    "placeholder_id": "ages-iv-sprint-3-gantt",
+    "source_heading_id": "text-h-0120",
+    "caption_content_id": "user-ages-iv-sprint-3-gantt-caption",
+    "source_content_id": "user-ages-iv-sprint-3-gantt-source",
+    "user_decision": "Placeholder provisório “Figura X” (recomendado)",
+    "presentation": "Provisional visual placeholder only; not a completed figure and not included in the List of Illustrations or the figure counter.",
+    "pending_detail": "Imagem do gráfico de Gantt ainda não fornecida; inserir o material original quando disponibilizado.",
+    "downstream_numbering": "When the actual image is supplied and converted into a numbered figure, it will precede Hoortech figures. At that point renumbering Hoortech figures 32–34 to 33–35 requires a separate traced integration update.",
+    "caption_target_markup": "**Figura X –** Planejamento de paralelização das tasks da squad durante a Sprint 3",
+    "source_target_markup": "Fonte: elaboração própria."
+  },
+  "limits": [
+    "Only ages-iv-sprint-3 is authorized; the ODT and source manifest remain unchanged.",
+    "The nine report paragraphs and two reflection paragraphs are direct user-provided text, not ODT content.",
+    "Preserve all source wording/order; translate only inline Markdown emphasis/code to LaTeX, with figure caption/source styled according to the approved house style.",
+    "The Gantt image is missing. Use only the approved visibly provisional, unnumbered placeholder, excluded from the List of Illustrations.",
+    "Do not modify other AGES units, the Hoortech captions/authorization, global styles/macros, or the Mariah reference.",
+    "Human review of content, placeholder and integrated PDF remains required."
+  ]
+}

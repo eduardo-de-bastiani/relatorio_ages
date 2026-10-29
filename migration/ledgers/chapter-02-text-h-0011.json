@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "2952f7f",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "chapter-02-text-h-0011": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0011",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 135,
+          "end_byte": 186,
+          "serializations": [
+            "original_whitespace"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-p-0322",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 224,
+          "end_byte": 399,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout",
+            "technology_citation"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-p-0323",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 415,
+          "end_byte": 577,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout",
+            "wiki_reference_sentence"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-a-0110",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 480,
+          "end_byte": 577,
+          "serializations": [
+            "original_whitespace",
+            "wiki_reference_sentence"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-p-0325",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 591,
+          "end_byte": 683,
+          "serializations": [
+            "approved_figure_cross_reference",
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-p-0328",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 738,
+          "end_byte": 793,
+          "serializations": [
+            "abnt_figure_caption",
+            "original_whitespace"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "draw-image-0002",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 689,
+          "end_byte": 861,
+          "serializations": [],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-p-0356",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 910,
+          "end_byte": 975,
+          "serializations": [
+            "abnt_figure_caption",
+            "original_whitespace"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "draw-image-0003",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 861,
+          "end_byte": 1043,
+          "serializations": [],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "text-p-0372",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 1092,
+          "end_byte": 1152,
+          "serializations": [
+            "abnt_figure_caption",
+            "original_whitespace"
+          ],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        },
+        {
+          "source_id": "draw-image-0004",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "start_byte": 1043,
+          "end_byte": 1219,
+          "serializations": [],
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0002",
+          "asset_id": "asset-0024",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0024.png",
+          "sha256": "9e6ac21913dccf932c1b34fca43a122dd20f964d6f6ac5373ddaa752b6aeec3a"
+        },
+        {
+          "source_id": "draw-image-0003",
+          "asset_id": "asset-0027",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0027.png",
+          "sha256": "25929f41067241299786607690b1604ce70a2fcba9301f8a2902a86d2d5a1563"
+        },
+        {
+          "source_id": "draw-image-0004",
+          "asset_id": "asset-0026",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0026.png",
+          "sha256": "3f17af046c5ab4b20729322fcd2496b0455084c7eca88d9a5305ce6d53368a63"
+        }
+      ],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0011",
+          "source_name": "__RefHeading___Toc4739_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+          "target_anchor": "__RefHeading___Toc4739_3118176633",
+          "command": "hypertarget",
+          "start_byte": 73,
+          "end_byte": 122,
+          "source_start_id": "text-bookmark-start-0012",
+          "source_end_id": "text-bookmark-end-0012",
+          "target_sha256": "da9b316a634378cfad7b7cb77e3bb48a4315cfc7d08e5c455d68c01f2cf61aeb"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0002",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "draw-text-box-0003",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "draw-text-box-0004",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "draw-text-box-0005",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-0022",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-item-0020",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-0023",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-item-0021",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-0024",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-header-0003",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        },
+        {
+          "source_id": "text-list-item-0022",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF container retained in immutable manifest; visible descendants mapped individually in source order. Actual five technology bullet groups rendered as five itemize items; heading list nesting is numbering apparatus."
+        }
+      ],
+      "approved_apparatus": [],
+      "pending": [
+        "Independent content and visual audit, compiled counter verification, normative compliance and human edition approval remain PENDING."
+      ],
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-i-mariah-style.json",
+        "source_ids": [
+          "text-p-0322",
+          "text-p-0323",
+          "text-p-0325"
+        ]
+      },
+      "caption_presentation_overrides": {
+        "authority": "user requested the uploaded Mariah memorial presentation pattern; caption-label bolding is the scoped visual choice authorized for this correction",
+        "source_style_evidence": "ODT content.xml confirms the caption source records and their paragraph/character styles. The paragraphs use P64 or P95, parent Figure -> Caption; character styles T50, T51, T71, or T141 have no italic declaration. The conversion had added an outer italic wrapper.",
+        "visual_rule": "Only the literal identifier Figure N: is bold; the following literal description is roman. Every original displayed character, space, punctuation mark, language, and dash remains unchanged.",
+        "elements": [
+          {
+            "source_caption_id": "text-p-0328",
+            "image_id": "draw-image-0002",
+            "paragraph_style": "P64",
+            "character_style_ids": [
+              "T50",
+              "T51"
+            ],
+            "display_override": "\\textbf{Figure N:} plus unchanged roman description"
+          },
+          {
+            "source_caption_id": "text-p-0356",
+            "image_id": "draw-image-0003",
+            "paragraph_style": "P95",
+            "character_style_ids": [
+              "T71"
+            ],
+            "display_override": "\\textbf{Figure N:} plus unchanged roman description"
+          },
+          {
+            "source_caption_id": "text-p-0372",
+            "image_id": "draw-image-0004",
+            "paragraph_style": "P64",
+            "character_style_ids": [
+              "T50",
+              "T51"
+            ],
+            "display_override": "\\textbf{Figure N:} plus unchanged roman description"
+          }
+        ]
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-i-presentation-corrections.json",
+        "source_ids": [
+          "text-p-0325",
+          "text-p-0328",
+          "text-p-0356",
+          "text-p-0372"
+        ]
+      },
+      "technology_citations": {
+        "authorization_evidence": "migration/approvals/ages-i-ii-formatting-authorization.json",
+        "source_text_changed": false,
+        "source_id_to_keys": {
+          "text-p-0322": [
+            "ages-i-excalidraw",
+            "ages-i-figma"
+          ]
+        }
+      },
+      "wiki_link_overrides": {
+        "authorization_evidence": "migration/approvals/ages-i-ii-formatting-authorization.json",
+        "source_ids": [
+          "text-a-0110",
+          "text-p-0323"
+        ]
+      }
+    }
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
+  }
+}

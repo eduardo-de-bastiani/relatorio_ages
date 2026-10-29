@@ -1,0 +1,1146 @@
+{
+  "schema_version": 3,
+  "audit_id": "ages-iii-independent-content-audit-1bb112",
+  "audit_date": "2026-10-17",
+  "overall_status": "PENDING",
+  "content_integrity_status": "PASS_WITH_REFERENCE_IMAGE_AND_HUMAN_REVIEW_PENDING",
+  "human_approval": "NOT_REQUESTED",
+  "summary": "No unapproved content omission, factual addition or ordering difference found in the 15 scoped units. h0085 semantic review remains PASS without a lexical-equivalence claim. The internal tab in text-p-1084 is retained in the immutable ODT and removed only in its authorized presentation; the current PDF extraction reads “consultas tipadas”. Bibliographic support, image provenance, remaining visual findings and human edition approval remain pending.",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "expected_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "odf_version": "1.4",
+    "package_parts_sha256": {
+      "content.xml": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28",
+      "styles.xml": "f1e19eda233ce7e8d225aa61601e02f0d927f7cffc6d91f8cc07757da02eb072",
+      "meta.xml": "00f7c99792a8aaba6ac99718fab4ee45dd2f929f572c7a6c4bc9212ccfa2d7f6",
+      "META-INF/manifest.xml": "879c5e4736fd4aa012c55887987b8dab5804c9bb329b1ec03111637c79bbfdb4"
+    },
+    "direct_odf_extraction": true
+  },
+  "scope": {
+    "edition": "AGES III — Sistema de Controle Inteligente de Estacionamento com RFID",
+    "units": [
+      {
+        "id": "chapter-05-text-h-0074",
+        "record_count": 5,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0074.tex",
+        "sha256": "86fa8516b7ed9e452743b13a39c2b76ab7f69189b171ab1e1f06253d5c9e210d",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0075",
+        "record_count": 11,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0075.tex",
+        "sha256": "73d3452d6942933aed0d28ac4fba0de62ea2b9fc6be8329980e5bb84e2919f47",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0076",
+        "record_count": 7,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0076.tex",
+        "sha256": "38e9b6db200da92a7527693664b3130984bcd628ca41810979cd1a4a5735ffec",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0077",
+        "record_count": 16,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0077.tex",
+        "sha256": "8f63cbcd9b487ee6ed34010f1a3f74b7cf52de038427edb3c8de8a4e73b62bc3",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0078",
+        "record_count": 14,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0078.tex",
+        "sha256": "398a4003483afb4864f6299944616c44a75f32ccd07d68a79b054e1bb3c7bd19",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0079",
+        "record_count": 14,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0079.tex",
+        "sha256": "343cbe4123d5f3f8ff5b07e3be1ae876d1a0f61e1f13a7f532ce8c675d08190b",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0080",
+        "record_count": 38,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0080.tex",
+        "sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS_AUTHORIZED_PRESENTATION_MERGE"
+      },
+      {
+        "id": "chapter-05-text-h-0085",
+        "record_count": 75,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0085.tex",
+        "sha256": "9a24f11872900566156e11d865bcf97bfd8b11239255e88725b745ca301cf3af",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS_AUTHORIZED_PRESENTATION_CHANGE"
+      },
+      {
+        "id": "chapter-05-text-h-0086",
+        "record_count": 7,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0086.tex",
+        "sha256": "bc1fa98fb42e50ef8a142311372f2a4599d294c618996dfadb46cf6284a95c55",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "ages-iii-sprint-0",
+        "record_count": 26,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-0.tex",
+        "sha256": "627ec890d9e5cd613688b05a5d4758303e6add3d66389714118e778d7f0951d9",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "ages-iii-sprint-1",
+        "record_count": 20,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-1.tex",
+        "sha256": "90aaa982321ddb5cc64922b146a62af1a5b564a5bc43f06b0179099d6ffe316a",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "ages-iii-sprint-2",
+        "record_count": 22,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-2.tex",
+        "sha256": "174ab9dfebd3f4d5aa13098c2b0a915d3fc08c95a1d17c9c57db8ffc2156169e",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "ages-iii-sprint-3",
+        "record_count": 13,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex",
+        "sha256": "19bc397b82f38a16eb06a54a14a7c424951c9839a69ed4e8bad7e94c9132658a",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "ages-iii-sprint-4",
+        "record_count": 12,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-4.tex",
+        "sha256": "19ad3991d558c150882001a6a7bd8021746121df61444ec40df330612f27c4a2",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      },
+      {
+        "id": "chapter-05-text-h-0097",
+        "record_count": 6,
+        "path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0097.tex",
+        "sha256": "596f5a2dffb396f7afcf4c25b4f743aa40f2b9a815833316942abcf719ee35de",
+        "current_build_hash_match": true,
+        "mapping_check": "PASS",
+        "content_status": "PASS"
+      }
+    ],
+    "unique_source_ids": 286,
+    "all_ids_mapped": true
+  },
+  "inventory": {
+    "unit_record_counts": {
+      "chapter-05-text-h-0074": 5,
+      "chapter-05-text-h-0075": 11,
+      "chapter-05-text-h-0076": 7,
+      "chapter-05-text-h-0077": 16,
+      "chapter-05-text-h-0078": 14,
+      "chapter-05-text-h-0079": 14,
+      "chapter-05-text-h-0080": 38,
+      "chapter-05-text-h-0085": 75,
+      "chapter-05-text-h-0086": 7,
+      "ages-iii-sprint-0": 26,
+      "ages-iii-sprint-1": 20,
+      "ages-iii-sprint-2": 22,
+      "ages-iii-sprint-3": 13,
+      "ages-iii-sprint-4": 12,
+      "chapter-05-text-h-0097": 6
+    },
+    "source_types": {
+      "text:list": 63,
+      "text:p": 106,
+      "text:list-header": 19,
+      "text:h": 16,
+      "text:list-item": 44,
+      "draw:image": 8,
+      "text:a": 17,
+      "draw:text-box": 13
+    },
+    "semantic_types": {
+      "list": 63,
+      "paragraph": 98,
+      "list-header": 19,
+      "heading": 15,
+      "list-item": 44,
+      "image": 8,
+      "hyperlink": 17,
+      "text-box": 8,
+      "subheading": 1,
+      "caption": 8,
+      "reflection": 5
+    },
+    "nonempty_paragraphs": 106,
+    "nonempty_headings": 16,
+    "empty_or_whitespace_p_h_nodes_in_unit_ownership": 212,
+    "soft_page_breaks": 23,
+    "reflection_blocks": 5,
+    "reflection_nonempty_paragraphs": 12,
+    "tables": 0,
+    "notes": 0,
+    "charts": 0,
+    "objects": 0,
+    "formulas": 0
+  },
+  "method": {
+    "origin_and_media_read_directly": true,
+    "converter_report_used_as_proof": false,
+    "deterministic_audit_crosscheck": "Fresh ODT extraction plus current per-unit ledger check; 15/15 returned pass. Warnings are presentation/layout only.",
+    "tools": [
+      "Python zipfile/ElementTree via migration_harness.odf.extract_manifest",
+      "migration_harness.preservation.audit_conversion in memory",
+      "SHA-256",
+      "pdfinfo",
+      "pdftotext -layout"
+    ],
+    "pdf_not_used_as_text_equivalence_proof": true,
+    "reaudit_scope": {
+      "scope": [
+        "ODT content.xml records text-p-1053/text-p-1054",
+        "current h0080 LaTeX and ledger spans/hashes",
+        "current PDF extraction for the authorized phrase only"
+      ],
+      "converter_report_used_as_proof": false,
+      "build_rerun_by_auditor": false,
+      "independent_visual_audit": {
+        "status": "DELTA_COMPLETED",
+        "pdf_sha256": "00f115fae1aaf0769c7c44b99e67a6352ea3f24b0eb53bf37e55ef87df3272ec",
+        "report_markdown": "docs/ages-iii/VISUAL_AUDIT.md",
+        "report_markdown_sha256": "4b78d0759fbed2f29b0d082820b0cb49bc3425b8d100101f742a6500eb344eab",
+        "report_json": "docs/ages-iii/VISUAL_AUDIT.json",
+        "report_json_sha256": "dcd0420f70b8876a39beae37843c9cc79787c9cd468db4740a42610394b8d461",
+        "overall_status": "PENDING",
+        "va_03": "PASS",
+        "remaining_pending_ids": [
+          "VA-04",
+          "VA-08",
+          "VA-09",
+          "VA-10",
+          "VA-13"
+        ]
+      },
+      "current_h0085_tab_check": {
+        "source_read_directly_from_odt_content_xml": true,
+        "latex_and_ledger_read_directly": true,
+        "pdf_text_extracted_directly": true,
+        "independent_visual_report_crosschecked_for_current_pdf": true,
+        "converter_report_used_as_proof": false,
+        "visual_status": {
+          "status": "CURRENT_ARTIFACT_REVIEWED",
+          "pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+          "report_markdown": "docs/ages-iii/VISUAL_AUDIT.md",
+          "report_markdown_sha256": "4a9c2b13adebbd052716a7232454030e37ff71dd2047f3cdd3b57b30ad028614",
+          "report_json": "docs/ages-iii/VISUAL_AUDIT.json",
+          "report_json_sha256": "a1ab9203964cbcf5d3a4b41ace3b297e44fd5c7d4d3de8d90d3f96223ccda248",
+          "overall_status": "PENDING",
+          "va_03": "PASS",
+          "va_04": "PASS",
+          "remaining_pending_ids": [
+            "VA-08",
+            "VA-09",
+            "VA-10",
+            "VA-13"
+          ]
+        }
+      }
+    }
+  },
+  "checks": {
+    "source_to_latex": {
+      "status": "PASS",
+      "unapproved_content_differences": [],
+      "all_15_target_hashes_match_build_report": true
+    },
+    "h0085_semantics": {
+      "status": "PASS",
+      "lexical_equivalence_claimed": false,
+      "authorization": "migration/approvals/ages-iii-technology-narrative-authorization.json",
+      "source_paragraphs": 29,
+      "target_paragraphs": 1,
+      "all_13_technology_use_associations": [
+        {
+          "technology": "C#",
+          "source_ids": [
+            "text-p-1066"
+          ],
+          "status": "PASS",
+          "check": "Backend e gateway; maturidade, produtividade e integração nativa com .NET preservados."
+        },
+        {
+          "technology": ".NET",
+          "source_ids": [
+            "text-p-1069"
+          ],
+          "status": "PASS",
+          "check": "Framework principal para backend e gateway RFID; robustez, performance e integração com nuvem preservadas."
+        },
+        {
+          "technology": "React",
+          "source_ids": [
+            "text-p-1072",
+            "text-p-1073"
+          ],
+          "status": "PASS",
+          "check": "Biblioteca da interface web; telas administrativas/de clientes e componentes reutilizáveis preservados."
+        },
+        {
+          "technology": "TypeScript e JavaScript",
+          "source_ids": [
+            "text-p-1076",
+            "text-p-1077"
+          ],
+          "status": "PASS",
+          "check": "Uso no frontend para tipagem estática de JavaScript, segurança do código e manutenção preservados."
+        },
+        {
+          "technology": "Impinj R700 REST API",
+          "source_ids": [
+            "text-p-1080"
+          ],
+          "status": "PASS",
+          "check": "Comunicação gateway/leitor RFID físico, configuração e captura de eventos preservados; sem capacidade extra.",
+          "documentation_support": "PENDING/PARTIAL: link original text-a-0137 não recupera a página técnica; a fonte suplementar não prova uso histórico."
+        },
+        {
+          "technology": "Entity Framework Core",
+          "source_ids": [
+            "text-p-1083",
+            "text-p-1084"
+          ],
+          "status": "PASS",
+          "check": "ORM no backend .NET, mapeamento relacional, models, migrations, relações, constraints, consultas tipadas, aceleração e padronização preservados; o único tab interno foi removido conforme autorização específica."
+        },
+        {
+          "technology": "AWS Lambda",
+          "source_ids": [
+            "text-p-1087"
+          ],
+          "status": "PASS",
+          "check": "Hospedagem/execução backend serverless, escala sob demanda e menor custo operacional preservados."
+        },
+        {
+          "technology": "Amazon S3",
+          "source_ids": [
+            "text-p-1090"
+          ],
+          "status": "PASS",
+          "check": "Hospedagem de arquivos estáticos do frontend preservada.",
+          "documentation_support": "PARTIAL: evidência confirma identidade do produto, não todo o relato histórico."
+        },
+        {
+          "technology": "Amazon CloudFront",
+          "source_ids": [
+            "text-p-1093"
+          ],
+          "status": "PASS",
+          "check": "Distribuição do frontend, melhor desempenho e menor latência preservados."
+        },
+        {
+          "technology": "Amazon RDS/PostgreSQL",
+          "source_ids": [
+            "text-p-1096"
+          ],
+          "status": "PASS",
+          "check": "RDS gerenciado hospedando o banco PostgreSQL da aplicação preservado."
+        },
+        {
+          "technology": "PostgreSQL",
+          "source_ids": [
+            "text-p-1099"
+          ],
+          "status": "PASS",
+          "check": "Banco relacional para armazenamento estruturado de informações do sistema preservado."
+        },
+        {
+          "technology": "Docker",
+          "source_ids": [
+            "text-p-1102"
+          ],
+          "status": "PASS",
+          "check": "Padronização de ambientes locais, dependências e apoio a testes automatizados preservados.",
+          "documentation_support": "PARTIAL: evidência confirma identidade do produto, não todo o relato histórico."
+        },
+        {
+          "technology": "GitHub Actions/GitLab",
+          "source_ids": [
+            "text-p-1105"
+          ],
+          "status": "PASS",
+          "check": "Automação CI/CD, validação de qualidade e sincronização dos repositórios GitHub/GitLab preservadas."
+        }
+      ],
+      "facts_roles_qualifiers_and_order_preserved": true,
+      "new_capabilities_or_project_history_found": false
+    },
+    "h0085_links": {
+      "status": "PASS",
+      "individual_original_urls_and_anchors_preserved": true,
+      "count": 13,
+      "in_original_order": true,
+      "leadins": 13,
+      "terminal_periods": 13
+    },
+    "prototype_labels_h0080": {
+      "status": "PASS_APPROVED_OMISSION",
+      "ids": [
+        "text-p-1056",
+        "text-h-0084"
+      ],
+      "approval": "migration/approvals/ages-iii-prototype-group-labels.json",
+      "figures_19_to_23_retained_in_order": true
+    },
+    "h0080_paragraph_join": {
+      "status": "PASS_AUTHORIZED_PRESENTATION_MERGE",
+      "source_ids": [
+        "text-p-1053",
+        "text-p-1054"
+      ],
+      "source_node_count": 2,
+      "source_nodes": [
+        {
+          "id": "text-p-1053",
+          "part": "content.xml",
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[826]",
+          "order": 6494,
+          "source_text": "Os protótipos de alta-fidelidade foram construídos no Figma, ferramenta web de",
+          "source_text_sha256": "88b98de18aa28f45ae5d224d1f9001937a563846545f5b43a52e4db26a3dadf0"
+        },
+        {
+          "id": "text-p-1054",
+          "part": "content.xml",
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[827]",
+          "order": 6495,
+          "source_text": "prototipagem e design.",
+          "source_text_sha256": "3fdca8d9d3abc7d7c68fc5ffc3b65a90e389989d5d4405f5505748f31bd1cc15",
+          "contains_nonprinting_soft_page_break_before_text": true
+        }
+      ],
+      "source_paragraph_count": 2,
+      "typeset_paragraph_count": 1,
+      "source_text_sequence": "Os protótipos de alta-fidelidade foram construídos no Figma, ferramenta web de prototipagem e design.",
+      "target_text_sequence_excluding_author_date_apparatus": "Os protótipos de alta-fidelidade foram construídos no Figma, ferramenta web de prototipagem e design.",
+      "source_text_changed": false,
+      "authorization": "migration/approvals/ages-iii-prototype-intro-merge.json",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0080.tex",
+      "target_tex_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf",
+      "ledger_path": "migration/ledgers/chapter-05-text-h-0080.json",
+      "ledger_sha256": "62a9dd8a787b3e1eadaf3c34f01f44ab59c2627f1075b71c3833ca3f40d7e862",
+      "ledger_mapping": [
+        {
+          "source_id": "text-p-1053",
+          "start_byte": 335,
+          "end_byte": 442,
+          "serializations": [
+            "technology_citation"
+          ],
+          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+        },
+        {
+          "source_id": "text-p-1054",
+          "start_byte": 464,
+          "end_byte": 486,
+          "serializations": [],
+          "target_sha256": "05c5878eed951aca51b4e2d5dc4786a834a1220b7367b7e4acf1d4aa88510baf"
+        }
+      ],
+      "latex_has_one_paragraph": true,
+      "separate_citation_apparatus": "\\space\\cite{ages-iii-figma} after “Figma”; the source words/punctuation remain in order.",
+      "pdf_text_extraction": {
+        "status": "PASS",
+        "pdf_path": "build/document/main.pdf",
+        "pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+        "page_index": 44,
+        "command": "pdftotext -layout -enc UTF-8 build/document/main.pdf -",
+        "excerpt_lines": [
+          "Os protótipos de alta-ﬁdelidade foram construídos no Figma (Figma, 2026), ferra-",
+          "menta web de prototipagem e design."
+        ],
+        "interword_space_de_prototipagem": true,
+        "citation_text": "Figma (Figma, 2026)",
+        "page_text_sha256": "9aa04bd3e44fd41437b6c2ae1c9c2196d6d4380f825b20e52cae68a2d35fee70",
+        "line_wrap_note": "pdftotext shows automatic line hyphenation “ferra-” / “menta”; the tested boundary is extracted as “de prototipagem”."
+      },
+      "visual_audit": {
+        "status": "CURRENT_ARTIFACT_REVIEWED",
+        "pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+        "report_markdown": "docs/ages-iii/VISUAL_AUDIT.md",
+        "report_markdown_sha256": "4a9c2b13adebbd052716a7232454030e37ff71dd2047f3cdd3b57b30ad028614",
+        "report_json": "docs/ages-iii/VISUAL_AUDIT.json",
+        "report_json_sha256": "a1ab9203964cbcf5d3a4b41ace3b297e44fd5c7d4d3de8d90d3f96223ccda248",
+        "overall_status": "PENDING",
+        "va_03": "PASS",
+        "va_04": "PASS",
+        "remaining_pending_ids": [
+          "VA-08",
+          "VA-09",
+          "VA-10",
+          "VA-13"
+        ]
+      }
+    },
+    "links_all_scope": {
+      "status": "PASS_URL_AND_ORDER",
+      "count": 17,
+      "same_urls_after_tex_escape_decode": true,
+      "same_order": true,
+      "items": [
+        {
+          "source_id": "text-a-0129",
+          "source_unit": "chapter-05-text-h-0077",
+          "source_anchor": "Repositório RFID Frontend",
+          "target_anchor": "RFID Frontend",
+          "source_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+          "target_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+          "url_preserved": true,
+          "approved_anchor_rewrite": true,
+          "position": 1,
+          "target_unit": "chapter-05-text-h-0077"
+        },
+        {
+          "source_id": "text-a-0130",
+          "source_unit": "chapter-05-text-h-0077",
+          "source_anchor": "Repositório RFID Backend",
+          "target_anchor": "RFID Backend",
+          "source_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+          "target_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+          "url_preserved": true,
+          "approved_anchor_rewrite": true,
+          "position": 2,
+          "target_unit": "chapter-05-text-h-0077"
+        },
+        {
+          "source_id": "text-a-0131",
+          "source_unit": "chapter-05-text-h-0077",
+          "source_anchor": "Repositório RFID Gateway",
+          "target_anchor": "RFID Gateway",
+          "source_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+          "target_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+          "url_preserved": true,
+          "approved_anchor_rewrite": true,
+          "position": 3,
+          "target_unit": "chapter-05-text-h-0077"
+        },
+        {
+          "source_id": "text-a-0132",
+          "source_unit": "chapter-05-text-h-0078",
+          "source_anchor": "Wiki do Banco de Dados",
+          "target_anchor": "Banco de Dados",
+          "source_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+          "target_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+          "url_preserved": true,
+          "approved_anchor_rewrite": true,
+          "position": 4,
+          "target_unit": "chapter-05-text-h-0078"
+        },
+        {
+          "source_id": "text-a-0133",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação C#",
+          "target_anchor": "Documentação C#",
+          "source_url": "https://learn.microsoft.com/dotnet/csharp/",
+          "target_url": "https://learn.microsoft.com/dotnet/csharp/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 5,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0134",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação .NET",
+          "target_anchor": "Documentação .NET",
+          "source_url": "https://dotnet.microsoft.com/",
+          "target_url": "https://dotnet.microsoft.com/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 6,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0135",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação React",
+          "target_anchor": "Documentação React",
+          "source_url": "https://react.dev/",
+          "target_url": "https://react.dev/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 7,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0136",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação Typescript",
+          "target_anchor": "Documentação Typescript",
+          "source_url": "https://www.typescriptlang.org/",
+          "target_url": "https://www.typescriptlang.org/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 8,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0137",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação API Impinj R700",
+          "target_anchor": "Documentação API Impinj R700",
+          "source_url": "https://support.impinj.com/hc/en-us",
+          "target_url": "https://support.impinj.com/hc/en-us",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 9,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0138",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação Entity Framework",
+          "target_anchor": "Documentação Entity Framework",
+          "source_url": "https://learn.microsoft.com/ef/core/",
+          "target_url": "https://learn.microsoft.com/ef/core/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 10,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0139",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação AWS Lambda",
+          "target_anchor": "Documentação AWS Lambda",
+          "source_url": "https://aws.amazon.com/lambda/",
+          "target_url": "https://aws.amazon.com/lambda/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 11,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0140",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação AWS S3",
+          "target_anchor": "Documentação AWS S3",
+          "source_url": "https://aws.amazon.com/s3/",
+          "target_url": "https://aws.amazon.com/s3/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 12,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0141",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação AWS Cloudfront",
+          "target_anchor": "Documentação AWS Cloudfront",
+          "source_url": "https://aws.amazon.com/cloudfront/",
+          "target_url": "https://aws.amazon.com/cloudfront/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 13,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0142",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação AWS RDS",
+          "target_anchor": "Documentação AWS RDS",
+          "source_url": "https://aws.amazon.com/rds/",
+          "target_url": "https://aws.amazon.com/rds/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 14,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0143",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação PostgreSQL",
+          "target_anchor": "Documentação PostgreSQL",
+          "source_url": "https://www.postgresql.org/",
+          "target_url": "https://www.postgresql.org/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 15,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0144",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação Docker",
+          "target_anchor": "Documentação Docker",
+          "source_url": "https://www.docker.com/",
+          "target_url": "https://www.docker.com/",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 16,
+          "target_unit": "chapter-05-text-h-0085"
+        },
+        {
+          "source_id": "text-a-0145",
+          "source_unit": "chapter-05-text-h-0085",
+          "source_anchor": "Documentação GitHub Actions",
+          "target_anchor": "Documentação GitHub Actions",
+          "source_url": "https://github.com/features/actions",
+          "target_url": "https://github.com/features/actions",
+          "url_preserved": true,
+          "approved_anchor_rewrite": false,
+          "position": 17,
+          "target_unit": "chapter-05-text-h-0085"
+        }
+      ],
+      "external_reachability": "PENDING where source evidence is indeterminate"
+    },
+    "figures": {
+      "status": "PASS_BYTES_AND_SEQUENCE",
+      "count": 8,
+      "items": [
+        {
+          "image_id": "draw-image-0016",
+          "caption_source_id": "text-p-1027",
+          "source_resource": "Pictures/1000000000000A00000003E044DD577B.jpg",
+          "target_path": "imagens/original/asset-0015.jpg",
+          "source_sha256": "c13c06b1ee5a244f434acbe7465c3ebf2dc26ff7f00e57fbee86aad3a7d04bc3",
+          "target_sha256": "c13c06b1ee5a244f434acbe7465c3ebf2dc26ff7f00e57fbee86aad3a7d04bc3",
+          "hash_match": true,
+          "figure_number": 16,
+          "unit": "chapter-05-text-h-0075"
+        },
+        {
+          "image_id": "draw-image-0017",
+          "caption_source_id": "text-p-1042",
+          "source_resource": "Pictures/10000000000008AC0000072AC98860DD.png",
+          "target_path": "imagens/original/asset-0014.png",
+          "source_sha256": "65ba98033d6fc5f0b51ffec1268ab56a2d51b841dfe6d18651b6f66440610a6f",
+          "target_sha256": "65ba98033d6fc5f0b51ffec1268ab56a2d51b841dfe6d18651b6f66440610a6f",
+          "hash_match": true,
+          "figure_number": 17,
+          "unit": "chapter-05-text-h-0078"
+        },
+        {
+          "image_id": "draw-image-0018",
+          "caption_source_id": "text-p-1051",
+          "source_resource": "Pictures/10000000000003F300000348F7BFC1B5.png",
+          "target_path": "imagens/original/asset-0004.png",
+          "source_sha256": "c45153f227b4c1921eb040150d2bea37de8a82131dfde5e9338402fc01956851",
+          "target_sha256": "c45153f227b4c1921eb040150d2bea37de8a82131dfde5e9338402fc01956851",
+          "hash_match": true,
+          "figure_number": 18,
+          "unit": "chapter-05-text-h-0079"
+        },
+        {
+          "image_id": "draw-image-0019",
+          "caption_source_id": "text-p-1058",
+          "source_resource": "Pictures/100000010000050C000003784C37B67F.png",
+          "target_path": "imagens/original/asset-0030.png",
+          "source_sha256": "f9b0b201bd6e035f775fa2f5c1c23d1a31c706b12f08883ad8ca3cb15c1b45b0",
+          "target_sha256": "f9b0b201bd6e035f775fa2f5c1c23d1a31c706b12f08883ad8ca3cb15c1b45b0",
+          "hash_match": true,
+          "figure_number": 19,
+          "unit": "chapter-05-text-h-0080"
+        },
+        {
+          "image_id": "draw-image-0020",
+          "caption_source_id": "text-p-1059",
+          "source_resource": "Pictures/100000010000050C000003788186BE3F.png",
+          "target_path": "imagens/original/asset-0032.png",
+          "source_sha256": "1dfa5d3e7205d419fdbf687eb44004d42671eda675fe17cc7b4cc5115fc3a4b0",
+          "target_sha256": "1dfa5d3e7205d419fdbf687eb44004d42671eda675fe17cc7b4cc5115fc3a4b0",
+          "hash_match": true,
+          "figure_number": 20,
+          "unit": "chapter-05-text-h-0080"
+        },
+        {
+          "image_id": "draw-image-0021",
+          "caption_source_id": "text-p-1060",
+          "source_resource": "Pictures/100000010000050C0000037813FD8E28.png",
+          "target_path": "imagens/original/asset-0029.png",
+          "source_sha256": "e06a9480cf5e0cec8a069e6252685769be62ef87bbc92f30527202c9b6650895",
+          "target_sha256": "e06a9480cf5e0cec8a069e6252685769be62ef87bbc92f30527202c9b6650895",
+          "hash_match": true,
+          "figure_number": 21,
+          "unit": "chapter-05-text-h-0080"
+        },
+        {
+          "image_id": "draw-image-0022",
+          "caption_source_id": "text-p-1063",
+          "source_resource": "Pictures/100000010000050C000003781149B98A.png",
+          "target_path": "imagens/original/asset-0028.png",
+          "source_sha256": "8af58d6f0cd5e30e87d28a2f2df2fd2f4db5d52dca8d2de88183ad9362b78dc0",
+          "target_sha256": "8af58d6f0cd5e30e87d28a2f2df2fd2f4db5d52dca8d2de88183ad9362b78dc0",
+          "hash_match": true,
+          "figure_number": 22,
+          "unit": "chapter-05-text-h-0080"
+        },
+        {
+          "image_id": "draw-image-0023",
+          "caption_source_id": "text-p-1064",
+          "source_resource": "Pictures/100000010000050C00000378594FB371.png",
+          "target_path": "imagens/original/asset-0031.png",
+          "source_sha256": "dde92688f8dd24a02f91e4061b1fa96f84fb9e7e90dc967aa3d5afb480d57adf",
+          "target_sha256": "dde92688f8dd24a02f91e4061b1fa96f84fb9e7e90dc967aa3d5afb480d57adf",
+          "hash_match": true,
+          "figure_number": 23,
+          "unit": "chapter-05-text-h-0080"
+        }
+      ],
+      "figure_numbers": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "source_identification": "PENDING human identification"
+    },
+    "corporate_and_collective_authorship": {
+      "status": "PASS_APPROVAL_MATCH",
+      "authorization": "migration/approvals/ages-iii-citation-author-attribution.json",
+      "verified_author_entries_match_bibliography": 19,
+      "authors": [
+        {
+          "key": "ages-iii-csharp",
+          "author": "Microsoft",
+          "evidence": "Official Microsoft Learn page; title identifies Microsoft Learn and the C# documentation.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-dotnet",
+          "author": "Microsoft",
+          "evidence": "Official dotnet.microsoft.com page; the page identifies Microsoft as the organization behind .NET.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-react",
+          "author": "Meta Platforms, Inc.",
+          "evidence": "The official React page states Copyright © Meta Platforms, Inc.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-entity-framework",
+          "author": "Microsoft",
+          "evidence": "Official Microsoft Learn page for Entity Framework Core.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-aws-lambda",
+          "author": "Amazon Web Services",
+          "evidence": "Official AWS product page; the page title identifies Amazon Web Services.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-s3",
+          "author": "Amazon Web Services",
+          "evidence": "Official AWS product page; the page title identifies Amazon Web Services.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-cloudfront",
+          "author": "Amazon Web Services",
+          "evidence": "Official AWS product page; the page title identifies Amazon Web Services.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-rds",
+          "author": "Amazon Web Services",
+          "evidence": "Official AWS product page; the page title identifies AWS/Amazon Web Services.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-aws-iot-core",
+          "author": "Amazon Web Services",
+          "evidence": "Official AWS documentation host and AWS IoT Core documentation page.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-postgresql",
+          "author": "PostgreSQL Global Development Group",
+          "evidence": "The official PostgreSQL site identifies the PostgreSQL Global Development Group in its copyright notice.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-docker",
+          "author": "Docker, Inc.",
+          "evidence": "The official Docker page states © 2026 Docker Inc.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-github-actions",
+          "author": "GitHub",
+          "evidence": "The official GitHub feature page is titled GitHub Actions and is served from github.com.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-mqtt",
+          "author": "OASIS Open",
+          "evidence": "The official MQTT 5.0 standard identifies itself as an OASIS Standard and states Copyright © OASIS Open.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-gitlab",
+          "author": "GitLab",
+          "evidence": "Official GitLab Docs page; the page identifies GitLab as the documentation and product owner.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-figma",
+          "author": "Figma",
+          "evidence": "Official Figma Learn Help Center page; its title and first-party help.figma.com host identify Figma.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-rfid-nist",
+          "author": "Scarfone, K.",
+          "evidence": "The official NIST publication page provides a citation naming Scarfone, K. as author.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-rfid-parking-use-cases",
+          "author": "TransCore",
+          "evidence": "The official TransCore page states © TransCore.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-impinj-r700",
+          "author": "Impinj, Inc.",
+          "evidence": "The official Impinj page states © 2012–2026 Impinj, Inc.",
+          "matches_approval": true
+        },
+        {
+          "key": "ages-iii-impinj-iot-interface",
+          "author": "Impinj, Inc.",
+          "evidence": "The official Impinj page states © 2012–2026 Impinj, Inc.",
+          "matches_approval": true
+        }
+      ],
+      "title_based_fallbacks": [
+        {
+          "key": "ages-iii-typescript",
+          "reason": "The official TypeScript page identifies the technology but did not provide a verified author/corporate-responsibility statement in the page reviewed.",
+          "bib_author_absent": true,
+          "status": "PASS_APPROVED_TITLE_FALLBACK"
+        },
+        {
+          "key": "ages-iii-javascript",
+          "reason": "The official MDN page credits individual mozilla.org contributors rather than a single verified corporate author; do not replace that attribution with Mozilla as an inferred author.",
+          "bib_author_absent": true,
+          "status": "PASS_APPROVED_TITLE_FALLBACK"
+        }
+      ],
+      "h0085_citation_occurrences": 19,
+      "h0085_unique_keys": [
+        "ages-iii-aws-lambda",
+        "ages-iii-cloudfront",
+        "ages-iii-csharp",
+        "ages-iii-docker",
+        "ages-iii-dotnet",
+        "ages-iii-entity-framework",
+        "ages-iii-github-actions",
+        "ages-iii-gitlab",
+        "ages-iii-impinj-iot-interface",
+        "ages-iii-javascript",
+        "ages-iii-postgresql",
+        "ages-iii-rds",
+        "ages-iii-react",
+        "ages-iii-rfid-nist",
+        "ages-iii-s3",
+        "ages-iii-typescript"
+      ],
+      "all_cite_keys_resolve": true,
+      "pdf_title_based_examples": [
+        "TypeScript: […]",
+        "Introduction […]"
+      ],
+      "citation_year": "2026 reflects actual urldate 2026-10-16 per user convention; not publication year"
+    },
+    "reference_support": {
+      "status": "PENDING_OR_PARTIAL",
+      "impinj_original_link": "text-a-0137 PENDING; supplementary citation does not establish historical implementation",
+      "s3_docker": [
+        "text-a-0140 PARTIAL",
+        "text-a-0144 PARTIAL"
+      ],
+      "project_wiki_links": [
+        "text-a-0129",
+        "text-a-0130",
+        "text-a-0131",
+        "text-a-0132 PENDING"
+      ],
+      "fielding_ledger": "PENDING reconciliation; citation/key exist, claim_support remains PARTIAL"
+    },
+    "literal_tab": {
+      "status": "PASS_AUTHORIZED_PRESENTATION_CHANGE",
+      "source_id": "text-p-1084",
+      "source": "consultas t<TAB>ipadas",
+      "target": "consultas tipadas",
+      "authorization": "migration/approvals/ages-iii-internal-tab-removal.json",
+      "source_tab_still_present_in_odt": true,
+      "target_tab_removed_at_internal_word_boundary": true,
+      "pdf_extracted_phrase": "consultas tipadas",
+      "pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+      "pdf_page_index": 48,
+      "visual_status": "VA-04 PASS for current PDF"
+    },
+    "integrated_pdf": {
+      "status": "FAIL_OVERFULL_IN_CURRENT_MAIN_LOG",
+      "path": "build/document/main.pdf",
+      "sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+      "pages": 65,
+      "pdfinfo_exit_code": 0,
+      "pdftotext_exit_code": 0,
+      "main_log_sha256": "a76e9938299f10139eab14517f0b9321f7701b8fc46663bf0a8b1f8681055d8b",
+      "main_log_final_warnings": [
+        "Overfull \\hbox (2.72131pt too wide) in paragraph at lines 7--36"
+      ],
+      "compiler_txt_sha256": "89c82e70c621261182e61f37d4512fadda59976837e274e4d842866dadc1a85b",
+      "visual_audit_status": "CURRENT_ARTIFACT_REVIEWED; VA-03/VA-04 PASS; VA-08/VA-09/VA-10/VA-13 PENDING",
+      "build_rerun_by_auditor": false,
+      "build_executed_by_auditor": false,
+      "compiler_txt_aggregated_warnings": [
+        "chapter-04-text-h-0043: 4.74695pt",
+        "chapter-05-text-h-0075: 92.78046pt",
+        "chapter-05-text-h-0079: 60.17422pt",
+        "chapter-05-text-h-0085: 2.72131pt (repeated in aggregated compiler output)"
+      ],
+      "visual_audit_report_sha256": "a1ab9203964cbcf5d3a4b41ace3b297e44fd5c7d4d3de8d90d3f96223ccda248"
+    },
+    "approved_internal_tab_removal": {
+      "status": "PASS_AUTHORIZED_PRESENTATION_CHANGE",
+      "authorization": "migration/approvals/ages-iii-internal-tab-removal.json",
+      "authorization_sha256": "5ab1eb65147692cea0fc753e9d6b31d41218f1bd31591715aa48ae405888d7b0",
+      "supersedes": "Only preservation of the internal tab for text-p-1084; all other technology-narrative limits remain.",
+      "source_id": "text-p-1084",
+      "source_fragment": "consultas t\tipadas",
+      "source_p1084_sha256": "269768099910b2b90f9e9ef4ed63373382d438d3b43a957a3c6a9a22b580ca2f",
+      "source_p1084_tab_node_count": 4,
+      "source_internal_tab_retained_in_odt": true,
+      "target_fragment": "consultas tipadas",
+      "target_internal_tab_present": false,
+      "prior_layout_tabs_handled_under_existing_inline_tab_layout_disposition": true,
+      "target_tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0085.tex",
+      "target_tex_sha256": "9a24f11872900566156e11d865bcf97bfd8b11239255e88725b745ca301cf3af",
+      "ledger_path": "migration/ledgers/chapter-05-text-h-0085.json",
+      "ledger_sha256": "86228e853549811c0052caac3999e519764ce6549c2b32026582cc23f77e8618",
+      "target_span": {
+        "start_byte": 2611,
+        "end_byte": 2936,
+        "serializations": [
+          "original_whitespace",
+          "original_whitespace",
+          "inline_tab_layout",
+          "technology_citation",
+          "technology_paragraph_join",
+          "approved_technology_narrative",
+          "approved_internal_tab_removal"
+        ],
+        "target_sha256": "9a24f11872900566156e11d865bcf97bfd8b11239255e88725b745ca301cf3af"
+      },
+      "adjacent_source_evidence": {
+        "text-p-1083": {
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[82]/text:list-item[1]/text:p[1]",
+          "order": 6637,
+          "source_text_sha256": "ba1c76e2a3d9193b11d8ba443a4605865df7d0456aaf88e2f9a1ab6475df3f7d",
+          "source_text": "Entity Framework Core (ORM):"
+        },
+        "text-p-1084": {
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[844]",
+          "order": 6638,
+          "source_text_sha256": "269768099910b2b90f9e9ef4ed63373382d438d3b43a957a3c6a9a22b580ca2f",
+          "source_text": "\tFramework ORM utilizado no backend em .NET para mapear entidades da \taplicação para tabelas relacionais no banco de dados. Foi empregado na \tcriação de models, migrations, relacionamentos, constraints e consultas t\tipadas, acelerando o desenvolvimento e padronizando o acesso aos dados."
+        },
+        "text-p-1085": {
+          "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[845]",
+          "order": 6643,
+          "source_text_sha256": "3de9eb843e3aed98a91d4103a48023f16242fb17346a1841d9fea61115d818cc",
+          "source_text": "\tDocumentação Entity Framework"
+        }
+      },
+      "adjacent_target_order": [
+        "text-p-1083",
+        "text-p-1084",
+        "text-p-1085"
+      ],
+      "adjacent_source_ids_present_and_ordered": true,
+      "adjacent_mappings_exclude_this_override": true,
+      "textual_semantic_effect": "Only the internal tab inside “consultas t<TAB>ipadas” is removed; all letters, punctuation and adjacent phrase order remain.",
+      "pdf_text_extraction": {
+        "status": "PASS",
+        "pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+        "page_index": 48,
+        "command": "pdftotext -layout -enc UTF-8 build/document/main.pdf -",
+        "excerpt_lines": [
+          "pregado na criação de models, migrations, relacionamentos, constraints e consultas",
+          "tipadas, acelerando o desenvolvimento e padronizando o acesso aos dados. Mais"
+        ],
+        "normalized_phrase": "consultas tipadas",
+        "internal_t_space_split_present": false,
+        "page_text_sha256": "958a4d1e7bd8bb7a63572b716cc6dc02924d2a0031e164bac7b1af7f20e358d1"
+      },
+      "visual_audit": {
+        "status": "CURRENT_ARTIFACT_REVIEWED",
+        "pdf_sha256": "1bb11250fba90a866e55a95250bf022915655feef90ecf487da80c3c9e755ac7",
+        "report_markdown": "docs/ages-iii/VISUAL_AUDIT.md",
+        "report_markdown_sha256": "4a9c2b13adebbd052716a7232454030e37ff71dd2047f3cdd3b57b30ad028614",
+        "report_json": "docs/ages-iii/VISUAL_AUDIT.json",
+        "report_json_sha256": "a1ab9203964cbcf5d3a4b41ace3b297e44fd5c7d4d3de8d90d3f96223ccda248",
+        "overall_status": "PENDING",
+        "va_03": "PASS",
+        "va_04": "PASS",
+        "remaining_pending_ids": [
+          "VA-08",
+          "VA-09",
+          "VA-10",
+          "VA-13"
+        ]
+      },
+      "limitation": "The one-paragraph technology narrative was previously authorized and is semantically audited; this check does not claim lexical equivalence for the full recast paragraph."
+    }
+  },
+  "pending_items": [
+    "Source metadata/support and external availability (including original Impinj and four project/wiki links).",
+    "Image provenance for Figures 16–23.",
+    "Reconcile h0077 Fielding ledger status without promoting PARTIAL claim support.",
+    "Resolve h0085 final overfull and preserve ICC diagnostics.",
+    "Human edition approval.",
+    "VA-08, VA-09, VA-10 and VA-13 remain visually PENDING; VA-03 and VA-04 PASS for the current PDF."
+  ],
+  "limitations": [
+    "This audit is not a complete ABNT compliance certification.",
+    "Source-text fidelity does not verify historical implementation truth or current external URL availability."
+  ]
+}

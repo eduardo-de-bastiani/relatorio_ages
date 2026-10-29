@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "kind": "user_execution_authorization",
+  "scope": [
+    "chapter-02-text-h-0002",
+    "chapter-02-text-h-0003",
+    "chapter-02-text-h-0007",
+    "chapter-02-text-h-0008",
+    "chapter-02-text-h-0009",
+    "chapter-02-text-h-0010",
+    "chapter-02-text-h-0011",
+    "chapter-02-text-h-0012",
+    "chapter-02-text-h-0014",
+    "ages-i-sprint-0",
+    "ages-i-sprint-1",
+    "ages-i-sprint-2",
+    "ages-i-sprint-3",
+    "ages-i-sprint-4",
+    "chapter-02-text-h-0022"
+  ],
+  "edition": "AGES I / Easy Choose",
+  "baseline_commit": "68d159b9b4168f2a913f5c1e4913c30397310437",
+  "source": "User instruction selecting AGES I after controlled edition migration mission",
+  "quoted_instruction": "Vamos começar com AGES I. Lembre-se que os itens faltantes como arquitetura, banco de dados precisarão de placeholders que serão preenchidos posteriormente",
+  "placeholders_explicitly_authorized": [
+    "Banco de dados utilizado",
+    "Arquitetura utilizada"
+  ],
+  "preserve_text": true,
+  "other_editions_authorized": false,
+  "result_approved": false,
+  "notice": "Execution authorization records the actual message; this JSON does not create approval of the resulting edition.",
+  "restricted_project_links_decision": {
+    "source": "User reply to six-link verification question",
+    "quote": "Preservar links e continuar com a pendência registrada (recomendado)",
+    "preserve_literal_urls": true,
+    "availability": "PENDING",
+    "new_bibliography": "only five verified official documentation pages"
+  }
+}

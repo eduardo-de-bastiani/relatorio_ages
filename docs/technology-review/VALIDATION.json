@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "branch": "migration/ages-iii",
+  "reference_commit": "96c09d125fcde4623d2f4d2218ee6aaa0cb5c656",
+  "dirty": true,
+  "human_acceptance": "PENDING",
+  "publication_gate": "NOT_RUN: review-only build",
+  "pdf": {
+    "path": "build/document/main.pdf",
+    "sha256": "27e555177cf74892cee52a90ba5da411ab6b4c4cb379cd954fdd2db17f01a2e1",
+    "pages": 64,
+    "technology_pages": {
+      "AGES I": [
+        8
+      ],
+      "AGES II": [
+        24,
+        25
+      ],
+      "AGES III": [
+        47,
+        48
+      ]
+    }
+  },
+  "build": {
+    "command": [
+      "python3",
+      "scripts/migration.py",
+      "build",
+      "--profile",
+      "document-review"
+    ],
+    "exit_code": 0,
+    "status": "pass",
+    "findings": [],
+    "artifacts": {
+      "compiler.txt": "d8a1a1933f2e2261734d19a68516c38a501fc5aaeda5bf4fa4878e0a884d68ff",
+      "main.aux": "953df4fc0080d05a9918f34da991ea57ebbc9f287b1012df762fb7b3ce27f783",
+      "main.bbl": "b93be31914181a25f36191f2d0ba7dbbe5da312582bb1d4ed98bf3ffd958fe08",
+      "main.bcf": "ced03d885c1637eb136dd3a46ee637a4a92a0750ed691302e5332b3cd5da3a3e",
+      "main.blg": "f89e153e2ebd7436e718c7f038c002460d74a64da8a48f1a59b8a5b547205a5a",
+      "main.lof": "7985d1a7be986c06ac476bbaa2115c555e9f35a08a9bd18f0d3f4974b04210f0",
+      "main.log": "c8e340a74fab2ba4870d69f9e795834c288acbfe284d2438514f2095d006c12f",
+      "main.pdf": "27e555177cf74892cee52a90ba5da411ab6b4c4cb379cd954fdd2db17f01a2e1",
+      "main.run.xml": "f0bc1e7e3d41925208439c8105bed5ef5aeb00795f30016183bf27a26688a7e4",
+      "main.toc": "b1f6f971fe882482d6793ec25462e11d9d2343c87eb52cbccd4d3e4a8dd5e5b7"
+    }
+  },
+  "source_scope_comparison": {
+    "baseline_report": "build/technology-review/baseline-build-report.json",
+    "changed_compile_sources": [
+      "conteudo/migracao/chapter-02-text-h-0012.tex",
+      "conteudo/migracao/chapter-04-text-h-0046.tex",
+      "conteudo/migracao/chapter-05-text-h-0085.tex"
+    ],
+    "all_other_compile_sources_unchanged": true
+  },
+  "immutable_or_frozen_files": {
+    "RELATORIO_ATUAL.odt": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "relatorio_mariah/relatorio_ages-main/extracted/main.pdf": "ec4c925eff76a1dc09f7feeebaf7382be0777d9f180806f54470f33c48a76420",
+    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib": "52b7a3442d7a1feae8e7cb66ab909570455ab12c6d5dd5fbb8f1f065e76963a3",
+    "migration/approvals/ages-i-ii-iii-technology-prose-correction.json": "8e33f6eaf6510aee20f660b64869bf3d4ded862f02e119eacb09bf0a3a58eecc"
+  },
+  "tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-q"
+    ],
+    "executor": "technology_prose_harness",
+    "tests_passed": 160,
+    "new_adversarial_tests": 31,
+    "exit_code": 0,
+    "scope_note": "Executed before final paragraph-closure/ledger-description cleanup; all final unit validators rerun afterwards."
+  },
+  "unit_validation": [
+    {
+      "unit": "chapter-02-text-h-0012",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-04-text-h-0046",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0085",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0074",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0075",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0076",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0077",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0078",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0079",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0080",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0086",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "ages-iii-sprint-0",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "ages-iii-sprint-1",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "ages-iii-sprint-2",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "ages-iii-sprint-3",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "ages-iii-sprint-4",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "unit": "chapter-05-text-h-0097",
+      "status": "pass",
+      "exit_code": 0
+    }
+  ],
+  "independent_audits": {
+    "docs/technology-review/CONTENT_AUDIT.md": {
+      "sha256": "836df8207c6a50712c6f13c7f39c6caa59dcfca644513cbd9c7735208a2e673e",
+      "scoped_result": "PASS"
+    },
+    "docs/technology-review/VISUAL_AUDIT.md": {
+      "sha256": "76892470c46e15f49070e25f7aa50c44108eb5f549a6d4524327fc60a8191b16",
+      "scoped_result": "PASS"
+    }
+  },
+  "pdf_citation_links": {
+    "pdf_sha256": "27e555177cf74892cee52a90ba5da411ab6b4c4cb379cd954fdd2db17f01a2e1",
+    "pages": 64,
+    "units": {
+      "chapter-02-text-h-0012": {
+        "pages": [
+          8
+        ],
+        "all_required_citations_linked": true,
+        "reference_destination_pages": {
+          "typescript-docs": 64,
+          "react-docs": 64,
+          "nodejs-docs": 63,
+          "prisma-docs": 63,
+          "postgresql-docs": 63
+        },
+        "external_urls_in_technology_body": []
+      },
+      "chapter-04-text-h-0046": {
+        "pages": [
+          24,
+          25
+        ],
+        "all_required_citations_linked": true,
+        "reference_destination_pages": {
+          "ages-ii-angular": 62,
+          "ages-ii-typescript": 64,
+          "ages-ii-http-rfc9110": 62,
+          "ages-ii-json-rfc8259": 62,
+          "ages-ii-python": 62,
+          "ages-ii-graph-api": 63,
+          "ages-ii-fastapi": 62,
+          "ages-ii-postgresql": 63,
+          "ages-ii-sqlalchemy": 64,
+          "ages-ii-docker": 62
+        },
+        "external_urls_in_technology_body": []
+      },
+      "chapter-05-text-h-0085": {
+        "pages": [
+          47,
+          48
+        ],
+        "all_required_citations_linked": true,
+        "reference_destination_pages": {
+          "ages-iii-csharp": 63,
+          "ages-iii-dotnet": 63,
+          "ages-iii-react": 63,
+          "ages-iii-typescript": 64,
+          "ages-iii-javascript": 63,
+          "ages-iii-impinj-iot-interface": 63,
+          "ages-iii-rfid-nist": 64,
+          "ages-iii-entity-framework": 63,
+          "ages-iii-aws-lambda": 62,
+          "ages-iii-s3": 62,
+          "ages-iii-cloudfront": 62,
+          "ages-iii-rds": 62,
+          "ages-iii-postgresql": 63,
+          "ages-iii-docker": 62,
+          "ages-iii-github-actions": 63,
+          "ages-iii-gitlab": 63
+        },
+        "external_urls_in_technology_body": []
+      }
+    },
+    "status": "PASS"
+  },
+  "semantic_basis": "Independent direct ODF-to-result audit, not converter report or automated mapping alone",
+  "lexical_equality_claimed": false,
+  "remaining_pending": [
+    "Human acceptance of this artifact",
+    "Existing title-based bibliographic metadata and reference-source limitations",
+    "Graph API Explorer/generic Graph API equivalence",
+    "Original Impinj URL availability and supporting evidence",
+    "S3/Docker source support limitations",
+    "Image provenance",
+    "Inherited ICC profile warning"
+  ],
+  "source_verification": {
+    "command": [
+      "python3",
+      "scripts/migration.py",
+      "verify-source"
+    ],
+    "exit_code": 0,
+    "status": "pass",
+    "protected_files": 112,
+    "findings": []
+  }
+}

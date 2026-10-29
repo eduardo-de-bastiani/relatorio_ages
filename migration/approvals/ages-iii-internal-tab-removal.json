@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_presentation_change",
+  "date": "2026-10-17",
+  "basis": "The user selected removal of only the internal tab after reviewing that it renders a space inside the word in the PDF.",
+  "user_response": "Remover só o tab (recomendado)",
+  "scope": {
+    "edition": "AGES III / Sistema de Controle Inteligente de Estacionamento com RFID",
+    "unit": "chapter-05-text-h-0085",
+    "source_ids": ["text-p-1084"],
+    "source": {
+      "path": "RELATORIO_ATUAL.odt",
+      "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+    }
+  },
+  "supersedes": {
+    "approval": "migration/approvals/ages-iii-technology-narrative-authorization.json",
+    "limit": "Only the instruction to preserve the internal tab in text-p-1084 is superseded; all other limits remain in force."
+  },
+  "change": {
+    "source_text_fragment": "consultas t\tipadas",
+    "typeset_text_fragment": "consultas tipadas",
+    "treatment": "Remove only the single tab between the existing letters ‘t’ and ‘ipadas’. Preserve every letter, all other source wording and whitespace, punctuation, citations, links, and order."
+  },
+  "limits": [
+    "This authorization applies only to text-p-1084 in chapter-05-text-h-0085.",
+    "Do not alter any other tab, whitespace, wording, claim, citation, hyperlink, or unit.",
+    "Do not modify RELATORIO_ATUAL.odt.",
+    "This is a one-unit presentation correction and does not establish a general whitespace normalization rule for future projects.",
+    "Independent content and visual audits and human approval of AGES III remain pending."
+  ],
+  "approval_status": "authorized_for_execution_pending_human_edition_review"
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "5aeea2a986e695183ecd04bdf736860e1e64c6b3",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
+  },
+  "units": {
+    "chapter-04-text-h-0039": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0039",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex",
+          "start_byte": 187,
+          "end_byte": 227,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "b4bf1c9e36ca2fd81f699a69820062a20444a68d509aa7900d10bccf61f6a19e"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0039",
+          "source_name": "__RefHeading___Toc4767_3118176633",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex",
+          "target_anchor": "__RefHeading___Toc4767_3118176633",
+          "command": "hypertarget",
+          "start_byte": 73,
+          "end_byte": 122,
+          "source_start_id": "text-bookmark-start-0034",
+          "source_end_id": "text-bookmark-end-0035",
+          "target_sha256": "b4bf1c9e36ca2fd81f699a69820062a20444a68d509aa7900d10bccf61f6a19e"
+        },
+        {
+          "source_heading_id": "text-h-0039",
+          "source_name": "_Toc45627147",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex",
+          "target_anchor": "_Toc45627147",
+          "command": "hypertarget",
+          "start_byte": 123,
+          "end_byte": 151,
+          "source_start_id": "text-bookmark-start-0035",
+          "source_end_id": "text-bookmark-end-0034",
+          "target_sha256": "b4bf1c9e36ca2fd81f699a69820062a20444a68d509aa7900d10bccf61f6a19e"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0090",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-item-0074",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-0091",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        },
+        {
+          "source_id": "text-list-header-0023",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "ODF structural/numbering container retained in the immutable manifest; visible heading and paragraph descendants are mapped by their own source IDs in document order. This container contributes no separate printable wording."
+        }
+      ],
+      "approved_apparatus": [],
+      "pending": [
+        "Independent content audit, integrated compilation, visual audit, ABNT verification and human AGES II approval remain PENDING."
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0039"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "report_type": "text-divergences",
+  "status": "PASS",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "snapshot_commit": "1fdeefeda92c574e42b3ffd539db24346f8a00b7",
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "runs collapsed for comparison",
+    "preserved": "accents, punctuation, symbols, lexical order",
+    "removed_for_comparison": "LaTeX markup and approved citation/figure-label macros; citation macros treated as metadata"
+  },
+  "approved_transformations": [
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+      "source_anchor": "Repositório Indústria Digital Frontend",
+      "target_anchor": "Indústria Digital Frontend",
+      "approved_target_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Frontend.",
+      "authorization": "explicit user direction to use the repository-link sentence pattern from Mariah; URL remains unchanged"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "url": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+      "source_anchor": "Repositório Indústria Digital Backend",
+      "target_anchor": "Indústria Digital Backend",
+      "approved_target_sentence": "Mais informações podem ser encontradas no repositório Indústria Digital Backend.",
+      "authorization": "explicit user direction to use the repository-link sentence pattern from Mariah; URL remains unchanged"
+    },
+    {
+      "unit_id": "chapter-04-text-h-0040..0045 and ages-ii-sprint-4",
+      "transformation": "Figure n: → Figura n –",
+      "authorization": "approved Portuguese figure-caption presentation convention; numbering and caption text preserved"
+    }
+  ],
+  "unresolved_differences": [],
+  "raw_comparator_hunks": [
+    {
+      "unit_id": "chapter-04-text-h-0042",
+      "source_characters": 493,
+      "target_characters": 579,
+      "hunks": [
+        {
+          "op": "replace",
+          "source": "às páginas de landing, dashboard, mapa e empresas. Repositório Indústria Digital Frontend Repositório referente ao Back-end, que",
+          "target": "às páginas de landing, dashboard, mapa e empresas. Mais informações podem ser encontradas no repositório Indústria Digital Frontend. Repositório referente ao Back-end, que"
+        },
+        {
+          "op": "replace",
+          "source": "landing, dashboard, mapa e empresas. Repositório Indústria Digital Frontend Repositório referente ao Back-end, que contem o Banco",
+          "target": "informações podem ser encontradas no repositório Indústria Digital Frontend. Repositório referente ao Back-end, que contem o Banco"
+        },
+        {
+          "op": "replace",
+          "source": "e as operações de comunicação com o Front-end. Repositório Indústria Digital Backend",
+          "target": "e as operações de comunicação com o Front-end. Mais informações podem ser encontradas no repositório Indústria Digital Backend."
+        },
+        {
+          "op": "replace",
+          "source": "de comunicação com o Front-end. Repositório Indústria Digital Backend",
+          "target": "informações podem ser encontradas no repositório Indústria Digital Backend."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Literal text comparison passes; this does not imply full content/presentation PASS.",
+    "The current full audit FAIL is caused by 31 independently verified ODF emphasis omissions, recorded in CONTENT_AUDIT.json.",
+    "All 13 URLs are present in identical multiplicity and order; see original_hyperlinks check in CONTENT_AUDIT.json."
+  ]
+}

@@ -1,0 +1,21 @@
+% Conversão fiel de chapter-05-text-h-0079; origem RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4807_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{4.2.3 Arquitetura utilizada}
+\label{ages-iii:text-h-0079}
+\addcontentsline{toc}{subsection}{4.2.3 Arquitetura utilizada}
+
+% SOURCE text-p-1046
+\originaltab{}A arquitetura da solução foi projetada com foco em escalabilidade, organização de responsabilidades e integração entre ambiente físico e nuvem. O \textit{frontend} da aplicação é hospedado por meio de Amazon S3\space\cite{ages-iii-s3} com distribuição via Cloudfront\space\cite{ages-iii-cloudfront}, disponibilizando as interfaces administrativas e de clientes por meio web. Já o \textit{backend} foi desenvolvido em .NET\space\cite{ages-iii-dotnet} e implantado em ambiente \textit{serverless} utilizando AWS Lambda\space\cite{ages-iii-aws-lambda}, concentrando regras de negócio, autenticação, persistência de dados e exposição de APIs consumidas pela interface.\par
+
+% SOURCE text-p-1047
+O banco de dados relacional utiliza PostgreSQL\space\cite{ages-iii-postgresql} em Amazon RDS\space\cite{ages-iii-rds}, responsável pelo armazenamento centralizado das informações do sistema. Para comunicação assíncrona de eventos relacionados ao hardware RFID\space\cite{ages-iii-rfid-nist}, a arquitetura também utiliza Amazon IoT Core\space\cite{ages-iii-aws-iot-core} com protocolo MQTT\space\cite{ages-iii-mqtt}, permitindo troca eficiente de mensagens entre os componentes conectados.\par
+
+% SOURCE text-p-1048
+No ambiente local onde o leitor RFID\space\cite{ages-iii-rfid-nist} está instalado, foi desenvolvido um Gateway em .NET\space\cite{ages-iii-dotnet} responsável por se comunicar diretamente com o equipamento físico, capturar eventos de leitura e encaminhar essas informações à infraestrutura em nuvem. Esse componente atua como ponte entre o dispositivo e os serviços centrais da aplicação, isolando particularidades do hardware e facilitando futuras evoluções.\par
+
+% SOURCE text-p-1049
+Complementando a solução, o projeto também contou com pipelines automatizadas de integração contínua e sincronização entre os repositórios GitHub\space\cite{ages-iii-github-actions} e GitLab\space\cite{ages-iii-gitlab}, garantindo padronização do desenvolvimento, validação de qualidade e maior segurança no fluxo de entregas.\par
+
+% FIGURE draw-image-0018
+\memorialfigure{imagens/original/asset-0004.png}{\textbf{Figura 15 –} Diagrama de Arquitetura - AGES III}{ages-iii:draw-image-0018}{Fonte: pendente de identificação}{0.92} % <<ASSET draw-image-0018 asset-0004>>

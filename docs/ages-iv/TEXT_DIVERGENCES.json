@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "record_type": "independent_content_audit_divergences",
+  "edition": "AGES IV / Recorda — partial through Sprint 1",
+  "audit_date": "2026-10-17",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "parts_read": ["content.xml", "styles.xml", "embedded media"]
+  },
+  "target": {
+    "pdf": "build/document/main.pdf",
+    "sha256": "30be17560bfc9f1207632222fe85e29a1644bbdd36bbf0220a2bc3fae91068be",
+    "pages": 85
+  },
+  "scope": {
+    "authorization": "migration/approvals/ages-iv-partial-authorization.json",
+    "units": [
+      "chapter-06-text-h-0105",
+      "chapter-06-text-h-0106",
+      "chapter-06-text-h-0107",
+      "chapter-06-text-h-0108",
+      "chapter-06-text-h-0109",
+      "chapter-06-text-h-0110",
+      "chapter-06-text-h-0112",
+      "chapter-06-text-h-0113",
+      "chapter-06-text-h-0114",
+      "chapter-06-text-h-0115",
+      "ages-iv-sprint-0",
+      "ages-iv-sprint-1",
+      "ages-iv-sprint-2",
+      "ages-iv-sprint-3",
+      "ages-iv-sprint-4",
+      "chapter-06-text-h-0122",
+      "chapter-07-text-h-0123"
+    ],
+    "manifest_record_ids": 287,
+    "record_ids_unique": true,
+    "direct_odf_xpaths_resolved": 287,
+    "element_counts": {
+      "headings": 17,
+      "subheadings": 1,
+      "paragraphs": 88,
+      "captions": 11,
+      "images": 11,
+      "hyperlinks": 20,
+      "text_boxes": 11,
+      "reflection_boxes": 2,
+      "list_containers": 61,
+      "list_items": 49,
+      "list_headers": 16,
+      "tables": 0,
+      "notes": 0
+    },
+    "unit_validation_results": {
+      "PASS": 16,
+      "PARTIAL_authorized_chapter_7_title_only": 1
+    }
+  },
+  "overall_status": "PARTIAL_DELIVERY_CONTENT_AUDIT_PASS_WITH_AUTHORIZED_OMISSION_AND_PENDING_ITEMS",
+  "findings": [
+    {
+      "id": "content-preservation-units",
+      "status": "PASS",
+      "scope": [
+        "chapter-06-text-h-0105",
+        "chapter-06-text-h-0106",
+        "chapter-06-text-h-0107",
+        "chapter-06-text-h-0108",
+        "chapter-06-text-h-0109",
+        "chapter-06-text-h-0110",
+        "chapter-06-text-h-0112",
+        "chapter-06-text-h-0113",
+        "chapter-06-text-h-0114",
+        "chapter-06-text-h-0115",
+        "ages-iv-sprint-0",
+        "ages-iv-sprint-1",
+        "ages-iv-sprint-2",
+        "ages-iv-sprint-3",
+        "ages-iv-sprint-4",
+        "chapter-06-text-h-0122"
+      ],
+      "evidence": "Lidos diretamente os elementos-fonte e seus descendentes no content.xml, os 16 destinos LaTeX e ledgers; validador executado novamente por unidade. Ordem de headings, parágrafos, atividades e reflexões coincide. Não foi identificado texto autoral omitido ou inserido nessas unidades.",
+      "limitations": "A igualdade lexical não é critério para a reestruturação de 13 entradas de tecnologia em prosa; essa unidade foi examinada por equivalência semântica item a item."
+    },
+    {
+      "id": "nested-database-figure-link",
+      "status": "PASS",
+      "source_ids": ["text-p-1343", "text-a-0149", "text-p-1344", "draw-image-0025"],
+      "evidence": "No ODF, o paragraph do link da wiki contém frame, imagem, legenda e âncora. O LaTeX separa-os como figura ligada e frase com link, preservando texto, imagem, destino e ordem lógica. A extração linear isolada do nó pai repete a legenda; não representa conteúdo duplicado no destino."
+    },
+    {
+      "id": "sprint-1-retrospective-heading",
+      "status": "PASS",
+      "source_ids": ["text-h-0117", "text-h-0118"],
+      "source_outline_level": 3,
+      "source_heading": "Retrospectiva da Sprint 1",
+      "target_representation": "\\subsection*{Retrospectiva da Sprint 1}",
+      "evidence": "O nó ODF é text:h de nível 3, embora use o estilo P416; o destino é um comando de título semântico e o PDF o mostra na sequência da Sprint 1 (página 79)."
+    },
+    {
+      "id": "technology-prose-reflow",
+      "status": "PASS_SEMANTIC_EQUIVALENCE",
+      "source_unit": "chapter-06-text-h-0113",
+      "source_technology_order": [
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "Docker",
+        "GitHub Actions",
+        "SonarQube / SonarCloud",
+        "Pytest",
+        "Jest"
+      ],
+      "target_paragraphs": 4,
+      "facts_and_qualifiers": "All 13 source descriptions were compared against target prose. Their role, project connection, function, stated characteristics and qualifiers are present in the same technology sequence; no additional Recorda capability or fact was found.",
+      "lexical_equality": "NOT_APPLICABLE: presentation reflow from source item entries to Mariah-style prose; original labels/documentation fragments were replaced by adjacent author-date citations as instructed.",
+      "citation_calls": [
+        "ages-iv-python",
+        "ages-iv-fastapi",
+        "ages-iv-pydantic",
+        "ages-iv-react-native",
+        "ages-iv-expo",
+        "ages-iv-typescript",
+        "ages-iv-supabase",
+        "ages-iv-postgresql",
+        "ages-iv-docker",
+        "ages-iv-github-actions",
+        "ages-iv-sonar",
+        "ages-iv-pytest",
+        "ages-iv-jest"
+      ],
+      "citation_urls_match_original_technology_links": true,
+      "all_reference_urls_present_as_pdf_uri_annotations": true,
+      "evidence": "Direct comparison of ODF paragraphs text-p-1396 through text-p-1443 with chapter-06-text-h-0113.tex and its ledger; citation URLs were compared with original hyperlink href values and PDF URI annotations.",
+      "fact_scope_limit": "The cited documentation supports general technology descriptions, not independent project-specific configuration or usage. This audit confirms preservation of the author’s source claims; it does not independently verify those claims against project repositories."
+    },
+    {
+      "id": "supplemental-app-store-citation",
+      "status": "PASS_FOR_ADJACENT_CITATION; PROJECT_READYNESS_PENDING",
+      "unit": "chapter-06-text-h-0108",
+      "source_id": "text-p-1332",
+      "citation_key": "ages-iv-app-store",
+      "evidence": "The App Store author-date citation is adjacent to the original term. The source wording remains; the supplementary citation has its separately recorded user authorization and official URL."
+    },
+    {
+      "id": "database-citations",
+      "status": "PASS",
+      "unit": "chapter-06-text-h-0109",
+      "source_id": "text-p-1339",
+      "citation_keys": ["ages-iv-postgresql", "ages-iv-supabase"],
+      "evidence": "Both calls are adjacent to their source technology terms, with existing official URLs and corresponding PDF annotations. Source paragraph text and sequence are retained."
+    },
+    {
+      "id": "architecture-citations",
+      "status": "PASS",
+      "unit": "chapter-06-text-h-0110",
+      "source_id": "text-p-1347",
+      "citation_keys": [
+        "ages-iv-react-native",
+        "ages-iv-expo",
+        "ages-iv-tanstack-query",
+        "ages-iv-python",
+        "ages-iv-fastapi",
+        "ages-iv-docker",
+        "ages-iv-pydantic",
+        "ages-iv-supabase",
+        "ages-iv-github-actions",
+        "ages-iv-sonar",
+        "ages-iv-pytest",
+        "ages-iv-jest"
+      ],
+      "evidence": "All 12 names in the source architecture paragraph have adjacent citation calls in source order. Each has a bibliography key and PDF URI annotation."
+    },
+    {
+      "id": "captions-and-labels",
+      "status": "PASS_TRANSFORMATION",
+      "source_caption_ids": [
+        "text-p-1329",
+        "text-p-1344",
+        "text-p-1350",
+        "text-p-1378",
+        "text-p-1385",
+        "text-p-1387",
+        "text-p-1392",
+        "text-p-1450",
+        "text-p-1455",
+        "text-p-1475",
+        "text-p-1478"
+      ],
+      "source_image_ids": [
+        "draw-image-0024",
+        "draw-image-0025",
+        "draw-image-0026",
+        "draw-image-0027",
+        "draw-image-0028",
+        "draw-image-0029",
+        "draw-image-0030",
+        "draw-image-0031",
+        "draw-image-0032",
+        "draw-image-0033",
+        "draw-image-0034"
+      ],
+      "target_figure_numbers": [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34],
+      "evidence": "Each ODF image and caption maps in source order to one target figure; label transformation Figure N: → Figura N – is approved. Target media SHA-256 equals the corresponding ODF image bytes for all 11 assets.",
+      "figure_source_attribution": "PENDING_HUMAN_IDENTIFICATION for all 11 images"
+    },
+    {
+      "id": "reflection-boxes",
+      "status": "PASS",
+      "source_box_ids": ["draw-text-box-0051", "draw-text-box-0052"],
+      "source_paragraph_ids": ["text-p-1484", "text-p-1485", "text-p-1510", "text-p-1511"],
+      "evidence": "Both ODF introspective boxes and four nonempty paragraphs remain in order within the two corresponding reflection environments."
+    },
+    {
+      "id": "empty-future-headings",
+      "status": "PASS_WITH_PENDING_FUTURE_CONTENT",
+      "unit_ids": [
+        "chapter-06-text-h-0105",
+        "chapter-06-text-h-0107",
+        "chapter-06-text-h-0115",
+        "ages-iv-sprint-2",
+        "ages-iv-sprint-3",
+        "ages-iv-sprint-4",
+        "chapter-06-text-h-0122"
+      ],
+      "evidence": "Original title-only units are represented by titles only. In particular Sprints 2–4 and section 6.4 have no invented body text. Their future content remains pending."
+    },
+    {
+      "id": "chapter-7-title-only",
+      "status": "PARTIAL_AUTHORIZED_OMISSION",
+      "unit": "chapter-07-text-h-0123",
+      "included_ids": ["text-h-0123"],
+      "omitted_ids": [
+        "text-p-1539",
+        "text-p-1540",
+        "text-p-1541",
+        "text-list-0280",
+        "text-list-item-0225",
+        "text-p-1542",
+        "text-list-0281",
+        "text-list-item-0226",
+        "text-p-1543",
+        "text-list-item-0227",
+        "text-p-1544",
+        "text-list-item-0228",
+        "text-p-1545",
+        "text-list-item-0229",
+        "text-p-1546",
+        "text-list-item-0230",
+        "text-p-1547",
+        "text-p-1549"
+      ],
+      "omitted_record_count": 18,
+      "omitted_content_count": {
+        "paragraphs": 10,
+        "list_items": 6,
+        "list_containers": 2
+      },
+      "authorization": "User reply: ‘Incluir apenas o título’.",
+      "completion": "The title is present; body/list content is intentionally pending and the unit is not complete."
+    }
+  ],
+  "presentation_transformations": [
+    {
+      "source_ids": ["text-h-0105", "text-h-0122", "text-h-0123"],
+      "status": "PASS_APPROVED_PRESENTATION",
+      "transformation": "Section/chapter numbering and punctuation are presented in the approved LaTeX hierarchy; for example the source heading ‘7 - CONSIDERAÇÕES FINAIS (Somente AGES IV)’ is rendered as a chapter title without the source hyphen."
+    },
+    {
+      "source_ids": ["text-p-1329", "text-p-1344", "text-p-1350", "text-p-1378", "text-p-1385", "text-p-1387", "text-p-1392", "text-p-1450", "text-p-1455", "text-p-1475", "text-p-1478"],
+      "status": "PASS_APPROVED_PRESENTATION",
+      "transformation": "English figure prefix ‘Figure N:’ becomes Portuguese ‘Figura N –’. Caption wording and order remain."
+    },
+    {
+      "source_ids": ["text-a-0146", "text-a-0147", "text-a-0149", "text-a-0151", "text-a-0152"],
+      "status": "PASS_APPROVED_ANCHOR_AND_LINK_PROSE",
+      "transformation": "Repository/wiki anchor labels and surrounding link sentences follow the user-approved Mariah pattern. URL targets are unchanged; the mapping below records each visible destination."
+    },
+    {
+      "source_ids": ["text-p-1396", "text-p-1397", "text-a-0153", "text-p-1399", "text-p-1400", "text-p-1401", "text-a-0154", "text-p-1403", "text-p-1404", "text-a-0155", "text-p-1406", "text-p-1407", "text-p-1408", "text-a-0156", "text-p-1410", "text-p-1411", "text-p-1412", "text-a-0157", "text-p-1414", "text-p-1415", "text-p-1416", "text-a-0158", "text-p-1418", "text-p-1419", "text-p-1420", "text-a-0159", "text-p-1422", "text-p-1423", "text-p-1424", "text-a-0160", "text-p-1426", "text-p-1427", "text-a-0161", "text-p-1429", "text-p-1430", "text-p-1431", "text-a-0162", "text-p-1433", "text-p-1434", "text-p-1435", "text-a-0163", "text-p-1437", "text-p-1438", "text-p-1439", "text-a-0164", "text-p-1441", "text-p-1442", "text-p-1443", "text-a-0165"],
+      "status": "PASS_SEMANTIC_RESTRUCTURE",
+      "transformation": "Thirteen source technology labels/descriptions/documentation links are restructured into four paragraphs, with author-date citations adjacent to technology names. All source functions/qualifiers are retained; the 13 original URLs remain the bibliographic citation URLs."
+    }
+  ],
+  "original_link_map": [
+    {"source_id": "text-a-0146", "anchor": "Repositório Recorda Frontend", "target_anchor": "Recorda Frontend", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend", "target": "visible repository link in a Mariah-style sentence", "url_in_pdf_annotation": true, "availability": "PENDING"},
+    {"source_id": "text-a-0147", "anchor": "Repositório Recorda Backend", "target_anchor": "Recorda Backend", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend", "target": "visible repository link in a Mariah-style sentence", "url_in_pdf_annotation": true, "availability": "PENDING"},
+    {"source_id": "text-a-0148", "anchor": "", "target_anchor": "", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados", "target": "empty href retained in TeX; same URL also appears on the visible wiki phrase/linked figure", "url_in_pdf_annotation": true, "empty_anchor_pdf_annotation": false, "availability": "PENDING"},
+    {"source_id": "text-a-0149", "anchor": "Wiki do Banco de Dados", "target_anchor": "Banco de Dados", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados", "target": "visible wiki phrase and linked Figure 25", "url_in_pdf_annotation": true, "availability": "PENDING"},
+    {"source_id": "text-a-0150", "anchor": "", "target_anchor": "", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura", "target": "empty href retained in TeX; same URL also appears on the visible architecture phrase", "url_in_pdf_annotation": true, "empty_anchor_pdf_annotation": false, "availability": "PENDING"},
+    {"source_id": "text-a-0151", "anchor": "Wiki da Arquitetura", "target_anchor": "Arquitetura", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura", "target": "visible wiki phrase", "url_in_pdf_annotation": true, "availability": "PENDING"},
+    {"source_id": "text-a-0152", "anchor": "Wiki de Design/Mockups", "target_anchor": "Protótipo das Telas", "url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups", "target": "visible Mariah-style prototype phrase", "url_in_pdf_annotation": true, "availability": "PENDING"},
+    {"source_id": "text-a-0153", "anchor": "Documentação Python", "target_anchor": "Python (citation)", "url": "https://www.python.org/doc/", "target": "ages-iv-python", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0154", "anchor": "Documentação FastAPI", "target_anchor": "FastAPI (citation)", "url": "https://fastapi.tiangolo.com/tutorial/", "target": "ages-iv-fastapi", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0155", "anchor": "Documentação Pydantic", "target_anchor": "Pydantic (citation)", "url": "https://pydantic.dev/docs/validation/latest/get-started/", "target": "ages-iv-pydantic", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0156", "anchor": "Documentação React Native", "target_anchor": "React Native (citation)", "url": "https://reactnative.dev/docs/getting-started", "target": "ages-iv-react-native", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0157", "anchor": "Documentação Expo", "target_anchor": "Expo (citation)", "url": "https://docs.expo.dev/", "target": "ages-iv-expo", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0158", "anchor": "Documentação TypeScript", "target_anchor": "TypeScript (citation)", "url": "https://www.typescriptlang.org/docs/", "target": "ages-iv-typescript", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0159", "anchor": "Documentação Supabase", "target_anchor": "Supabase (citation)", "url": "https://supabase.com/docs", "target": "ages-iv-supabase", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0160", "anchor": "Documentação PostgreSQL", "target_anchor": "PostgreSQL (citation)", "url": "https://www.postgresql.org/docs/", "target": "ages-iv-postgresql", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0161", "anchor": "Documentação Docker", "target_anchor": "Docker (citation)", "url": "https://docs.docker.com/", "target": "ages-iv-docker", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0162", "anchor": "Documentação GitHub Actions", "target_anchor": "GitHub Actions (citation)", "url": "https://docs.github.com/en/actions", "target": "ages-iv-github-actions", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0163", "anchor": "Documentação SonarQube", "target_anchor": "SonarQube / SonarCloud (citation)", "url": "https://docs.sonarsource.com/", "target": "ages-iv-sonar", "url_in_pdf_annotation": true, "availability": "source curated; project-specific configuration remains PENDING"},
+    {"source_id": "text-a-0164", "anchor": "Documentação Pytest", "target_anchor": "Pytest (citation)", "url": "https://docs.pytest.org/en/stable/", "target": "ages-iv-pytest", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"},
+    {"source_id": "text-a-0165", "anchor": "Documentação Jest", "target_anchor": "Jest (citation)", "url": "https://jestjs.io/docs/getting-started", "target": "ages-iv-jest", "url_in_pdf_annotation": true, "availability": "source curated; project-specific claim not independently verified"}
+  ],
+  "media": {
+    "status": "PASS",
+    "count": 11,
+    "byte_identical_source_target": 11,
+    "order": [
+      "draw-image-0024",
+      "draw-image-0025",
+      "draw-image-0026",
+      "draw-image-0027",
+      "draw-image-0028",
+      "draw-image-0029",
+      "draw-image-0030",
+      "draw-image-0031",
+      "draw-image-0032",
+      "draw-image-0033",
+      "draw-image-0034"
+    ],
+    "source_attribution": "PENDING for manual user identification"
+  },
+  "pending": [
+    {
+      "id": "unverified-ages-url-availability",
+      "status": "PENDING",
+      "urls": [
+        "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend",
+        "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend",
+        "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+        "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+        "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups"
+      ],
+      "reason": "The user authorized preserving these URLs and continuing with availability marked PENDING."
+    },
+    {
+      "id": "empty-odf-hyperlinks",
+      "status": "PENDING",
+      "source_ids": ["text-a-0148", "text-a-0150"],
+      "reason": "The links have no visible anchor. Hyperref suppresses empty PDF annotations; corresponding identical URLs are active through nonempty anchors in the same sections."
+    },
+    {
+      "id": "figure-source-identification",
+      "status": "PENDING",
+      "source_ids": ["draw-image-0024", "draw-image-0025", "draw-image-0026", "draw-image-0027", "draw-image-0028", "draw-image-0029", "draw-image-0030", "draw-image-0031", "draw-image-0032", "draw-image-0033", "draw-image-0034"],
+      "reason": "Image bytes and placement are preserved, but the source attribution must be supplied manually by the user."
+    },
+    {
+      "id": "chapter-7-body",
+      "status": "PENDING_AUTHORIZED_OMISSION",
+      "source_ids": ["text-p-1539", "text-p-1540", "text-p-1541", "text-list-0280", "text-list-item-0225", "text-p-1542", "text-list-0281", "text-list-item-0226", "text-p-1543", "text-list-item-0227", "text-p-1544", "text-list-item-0228", "text-p-1545", "text-list-item-0229", "text-p-1546", "text-list-item-0230", "text-p-1547", "text-p-1549"],
+      "reason": "The user authorized including only the chapter 7 title. These 18 source records remain omitted and are not converted."
+    },
+    {
+      "id": "human-edition-acceptance",
+      "status": "PENDING",
+      "reason": "This content audit does not grant approval of the partial AGES IV PDF."
+    }
+  ],
+  "commands": [
+    "sha256sum RELATORIO_ATUAL.odt build/document/main.pdf",
+    "python3 scripts/migration.py validate --ledger <ledger> --unit <unit> (run for each of the 17 authorized units)",
+    "python3 read-only ZIP/XML audit with zipfile and xml.etree.ElementTree (resolve all 287 manifest XPaths; compare source text/URLs; compare 11 ODF media bytes to ledger targets)",
+    "pdftotext -layout build/document/main.pdf /tmp/agesiv-final.txt",
+    "python3 pypdf inspection of PDF pages and /URI link annotations"
+  ]
+}

@@ -1,0 +1,15 @@
+% Conversão fiel de chapter-04-text-h-0044; origem RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4777_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{3.2.3 Arquitetura utilizada}
+\label{ages-ii:text-h-0044}
+\addcontentsline{toc}{subsection}{3.2.3 Arquitetura utilizada}
+
+% SERIALIZATION text-p-0785 original_whitespace
+\indent\href{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura}{\mbox{}}%
+A arquitetura utilizada no projeto segue um padrão amplamente adotado, conhecido por sua separação clara de responsabilidades entre as camadas. No Front-end, o Angular\space\cite{ages-ii-angular} é responsável por criar a interface de usuário interativa, permitindo que o usuário final realize ações como buscas de empresas. Essas interações enviam requisições HTTP\space\cite{ages-ii-http-rfc9110} (GET, POST, PUT, DELETE) para o Back-end, que utiliza o FastAPI\space\cite{ages-ii-fastapi}\originalspace{} para processar as requisições. O FastAPI\space\cite{ages-ii-fastapi} atua como uma ponte entre a interface e o banco de dados PostgreSQL\space\cite{ages-ii-postgresql}, enviando consultas SQL\space\cite{ages-ii-postgresql} e retornando dados relevantes. Esses dados são retornados em formato JSON\space\cite{ages-ii-json-rfc8259} para o Angular\space\cite{ages-ii-angular}, que então atualiza a interface do usuário em tempo real. Essa arquitetura modular e escalável garante que a apresentação, a lógica de negócios e a persistência de dados sejam gerenciadas de forma independente, permitindo uma manutenção mais fácil e flexibilidade para expansões futuras, que serão necessárias.\par
+
+% SERIALIZATION text-p-0788 abnt_figure_caption
+\memorialfigure{imagens/original/asset-0008.png}{\textbf{Figura 7 –} Arquitetura da Aplicação - AGES II}{ages-ii:draw-image-0010}{Fonte: pendente de identificação}{0.92} % <<ASSET draw-image-0010 asset-0008>>
+
+\indent Mais informações sobre a arquitetura estão disponíveis em: \href{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura}{Arquitetura}\par

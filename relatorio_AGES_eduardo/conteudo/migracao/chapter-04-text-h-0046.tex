@@ -1,0 +1,19 @@
+% Conversão fiel de chapter-04-text-h-0046; origem RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4781_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{3.2.5 Tecnologias utilizadas}
+\label{ages-ii:text-h-0046}
+\addcontentsline{toc}{subsection}{3.2.5 Tecnologias utilizadas}
+
+Para o desenvolvimento do projeto, utilizamos Angular \cite{ages-ii-angular} no Front-end da aplicação, desenvolvido em TypeScript \cite{ages-ii-typescript}, responsável por renderizar a interface de usuário, que inclui a \textit{landing page}, a tela de \textit{dashboards}, a visualização de mapa e a página das empresas. Angular envia requisições HTTP \cite{ages-ii-http-rfc9110} para o Back-end e recebe dados em formato JSON \cite{ages-ii-json-rfc8259}, atualizando a interface do usuário em tempo real.
+
+No Back-end, utilizamos Python \cite{ages-ii-python} para realizar as requisições web à Graph API \cite{ages-ii-graph-api}, obtendo dados de usuários das redes sociais. Python também é responsável pela criação de lógicas de enriquecimento de dados, pelo algoritmo de presença digital e pela comunicação com o Front-end via FastAPI \cite{ages-ii-fastapi}.
+O FastAPI foi utilizado para construir a API que serve como interface de comunicação entre o Front-end Angular \cite{ages-ii-angular} e o banco de dados PostgreSQL \cite{ages-ii-postgresql}, gerenciando a lógica de negócios e facilitando a troca de dados entre os componentes do sistema.
+A Graph API foi utilizada para fazer requisições e obter dados de perfis de usuários nas redes sociais, que são integrados ao sistema e utilizados no enriquecimento de dados e no cálculo de presença digital.
+
+O SQLAlchemy \cite{ages-ii-sqlalchemy} foi utilizado como ORM (\textit{Object-Relational Mapping}), facilitando o mapeamento entre as entidades do sistema e as tabelas no banco de dados PostgreSQL \cite{ages-ii-postgresql}, simplificando a manipulação de dados e consultas via Python \cite{ages-ii-python}.
+O PostgreSQL é o banco de dados relacional utilizado para armazenar as informações das empresas presentes no banco de dados da Receita Federal, bem como os dados capturados dos perfis das redes sociais. As consultas são feitas via FastAPI \cite{ages-ii-fastapi} e SQLAlchemy para obter os dados necessários.
+
+Para criar ambientes de testes locais, utilizamos Docker \cite{ages-ii-docker}, especialmente para o banco de dados PostgreSQL \cite{ages-ii-postgresql}, garantindo a consistência e confiabilidade dos testes em desenvolvimento.
+
+Essas tecnologias foram integradas com o objetivo de oferecer uma experiência completa e otimizada para os usuários finais. Com isso, é possível pesquisar empresas com base em seu CNAE (Classificação Nacional de Atividades Econômicas) e/ou região geográfica, obtendo como resultado um mapa interativo com a localização dessas empresas. Além disso, o sistema retorna informações valiosas, como dados de redes sociais, informações de contato e \textit{dashboards} detalhados sobre a presença digital de cada empresa encontrada, incluindo níveis de visibilidade e engajamento online. Tudo isso facilita o acesso a dados essenciais para tomadas de decisão.\par

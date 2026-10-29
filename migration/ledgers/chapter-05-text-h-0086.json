@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "96c09d125fcde4623d2f4d2218ee6aaa0cb5c656",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "28b051ecf5a2ca73082158a69ce0c30c2150942039bc94e39393ee99e4ef7257"
+  },
+  "units": {
+    "chapter-05-text-h-0086": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0086.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0086",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0086.tex",
+          "start_byte": 157,
+          "end_byte": 208,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "a135e3f723bb528946cc0d8b692dd736c5d9ad282897dd72899c1d75040d47c0"
+        }
+      ],
+      "asset_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0199",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/list-item/list-header containers structurally wrap the source section heading; the authored heading is represented by the LaTeX section command, and no visible list item belongs to this unit."
+        },
+        {
+          "source_id": "text-list-item-0168",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/list-item/list-header containers structurally wrap the source section heading; the authored heading is represented by the LaTeX section command, and no visible list item belongs to this unit."
+        },
+        {
+          "source_id": "text-list-0200",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/list-item/list-header containers structurally wrap the source section heading; the authored heading is represented by the LaTeX section command, and no visible list item belongs to this unit."
+        },
+        {
+          "source_id": "text-list-item-0169",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/list-item/list-header containers structurally wrap the source section heading; the authored heading is represented by the LaTeX section command, and no visible list item belongs to this unit."
+        },
+        {
+          "source_id": "text-list-0201",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/list-item/list-header containers structurally wrap the source section heading; the authored heading is represented by the LaTeX section command, and no visible list item belongs to this unit."
+        },
+        {
+          "source_id": "text-list-header-0052",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/list-item/list-header containers structurally wrap the source section heading; the authored heading is represented by the LaTeX section command, and no visible list item belongs to this unit."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 2,
+        "body_paragraphs": 0,
+        "reflection_paragraphs": 0,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "text-list-0199",
+          "text-list-item-0168",
+          "text-list-0200",
+          "text-list-item-0169",
+          "text-list-0201",
+          "text-list-header-0052"
+        ]
+      },
+      "pending": [],
+      "layout_disposition": "The original section heading retains its ODF bookmark and hierarchy; ODF list wrappers around the heading are structural only. No forced page break is inserted.",
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0086",
+          "source_name": "__RefHeading___Toc4813_3118176633",
+          "source_start_id": "text-bookmark-start-0059",
+          "source_end_id": "text-bookmark-end-0059",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0086.tex",
+          "target_anchor": "__RefHeading___Toc4813_3118176633",
+          "command": "hypertarget",
+          "start_byte": 73,
+          "end_byte": 122,
+          "target_sha256": "a135e3f723bb528946cc0d8b692dd736c5d9ad282897dd72899c1d75040d47c0",
+          "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text."
+        }
+      ],
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0086"
+        ]
+      }
+    }
+  }
+}

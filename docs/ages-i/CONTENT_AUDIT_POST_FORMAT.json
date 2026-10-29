@@ -1,0 +1,1366 @@
+{
+  "schema_version": 1,
+  "role": "content-auditor",
+  "independence": "Separate Codex subagent. Re-extracted the ODT archive directly from ZIP/XML for this audit; used source IDs and target byte ranges only as locators, not ledger expected text as proof. Independently compared extracted PDF text and PDF URI annotations. No Antigravity execution claimed.",
+  "status": "PASS",
+  "status_scope": "Preservation of source wording, punctuation, accents, order, hierarchy, figure/image linkage, URLs, reflection content, list-item text, placeholders, and only explicitly authorized presentation overlays.",
+  "overall_delivery": "PENDING",
+  "audit_date": "2026-10-15",
+  "branch": "migration/ages-i",
+  "commit": "e5a367d438fe865223879ed4742d52379e563335",
+  "candidate_state": "Uncommitted review candidate; current PDF and evidence/configuration hashes bind this result.",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "content_xml_sha256": "b8fe0f8a7d35303374f5a25b0bcf17630aa4978489d63bc61be2f1c258130c28",
+    "immutability_status": "PASS"
+  },
+  "candidate_pdf": {
+    "path": "build/document/main.pdf",
+    "sha256": "3543f768de00b24de46fc09a615eec241ffe22197040e0a55e118ecba848e7f4",
+    "pages": 19,
+    "page_size": "A4",
+    "compiled_by": "orchestrator; content auditor did not compile or modify the PDF"
+  },
+  "scope": {
+    "edition": "AGES I / Easy Choose",
+    "unit_ids": [
+      "chapter-02-text-h-0002",
+      "chapter-02-text-h-0003",
+      "chapter-02-text-h-0007",
+      "chapter-02-text-h-0008",
+      "chapter-02-text-h-0009",
+      "chapter-02-text-h-0010",
+      "chapter-02-text-h-0011",
+      "chapter-02-text-h-0012",
+      "chapter-02-text-h-0014",
+      "ages-i-sprint-0",
+      "ages-i-sprint-1",
+      "ages-i-sprint-2",
+      "ages-i-sprint-3",
+      "ages-i-sprint-4",
+      "chapter-02-text-h-0022"
+    ],
+    "source_text_ids_count": 102,
+    "other_editions_authorized": false
+  },
+  "ownership": [
+    "docs/ages-i/CONTENT_AUDIT_POST_FORMAT.md",
+    "docs/ages-i/CONTENT_AUDIT_POST_FORMAT.json"
+  ],
+  "counts": {
+    "source_text_elements": 102,
+    "headings": 15,
+    "body_paragraphs_including_noncaption_text": 82,
+    "caption_paragraphs": 5,
+    "images": 5,
+    "original_urls": 11,
+    "reflection_blocks": 5,
+    "reflection_nonempty_paragraphs": 17,
+    "provisional_diagram_placeholders": 2,
+    "technology_list_items": 5,
+    "empty_layout_only_paragraphs_inside_first_reflection": 2
+  },
+  "checks": {
+    "source_sha_and_odf_xml": "PASS",
+    "source_to_latex_text_and_order": "PASS: 102/102 exact source IDs matched from fresh ODF extraction; no unmatched IDs",
+    "source_to_pdf_text_and_order": "PASS: 102/102; authorized display overlays applied; Poppler output normalized for NFKC ligatures, folio-only lines, and line-end hyphenation; no unmatched IDs",
+    "heading_hierarchy": "PASS: all 15 source headings in sequence",
+    "images_and_caption_order": "PASS: 5/5 image payload hashes identical; 5 captions in source order and approved Portuguese labels present",
+    "hyperlinks": "PASS: all 11 source hrefs, including percent encoding, present in the PDF annotation target set; 11 unique targets",
+    "reflections": "PASS: all 5 boxes and 17 nonempty source paragraphs preserved in order",
+    "technology_list_items": "PASS: TypeScript, React, Node.js, Prisma, PostgreSQL; source wording/order retained while authorized visible markers are suppressed",
+    "placeholders": "PASS: database and architecture diagrams each have a visibly provisional placeholder with stable identifiers",
+    "other_edition_leakage": "PASS: no other edition/Hoortech chapter heading found in candidate; original in-scope narrative mentions remain",
+    "page_17_degree_symbol": "PASS: original 2° and 4° render and extract as degree symbols",
+    "page_17_figure_5_callout": "PASS: final rendered page shows a visible space in “Figura 5”; layout extraction reads it with spacing; prior no-gap candidate is superseded",
+    "image_source_attribution": "PENDING: user will manually identify the provenance of each of the five images",
+    "six_project_links_remote_availability": "PENDING: current availability/content of repository/wiki links not verified; literal hrefs preserved",
+    "historical_documentation_metadata": "PENDING: current official documentation does not establish historical versions/authors/publication dates used in 2024",
+    "human_acceptance": "PENDING: no human approval recorded",
+    "complete_abnt_or_visual_certification": "NOT_APPLICABLE: this is a content audit; separate visual/normative review remains its own gate"
+  },
+  "unmatched_ids": [],
+  "elements": [
+    {
+      "order": 1,
+      "id": "text-h-0002",
+      "unit": "chapter-02-text-h-0002",
+      "kind": "heading",
+      "source_text_sha256": "6983f4f4033a52150f305be5c72bd3555431edac8a598cba89e1d7d165244312",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 2,
+      "id": "text-h-0003",
+      "unit": "chapter-02-text-h-0003",
+      "kind": "heading",
+      "source_text_sha256": "800c227aab6c9088beb0256a6606268ed26469c143c80d3e477173df0de31858",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 3,
+      "id": "text-p-0288",
+      "unit": "chapter-02-text-h-0003",
+      "kind": "paragraph",
+      "source_text_sha256": "fe0bf69d6c2ffba9269509b528499764b287327173929335c1c3c664b3ea0c48",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 4,
+      "id": "text-p-0289",
+      "unit": "chapter-02-text-h-0003",
+      "kind": "paragraph",
+      "source_text_sha256": "0ea1c9a95e9656a0d076291be9aa38d4b58d3080066ef9132a919d19a8ba9c5c",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 5,
+      "id": "text-p-0290",
+      "unit": "chapter-02-text-h-0003",
+      "kind": "paragraph",
+      "source_text_sha256": "80d9b51d85dc3cb88bfca6c08db5923335f376ebfa2edddb30c6e9e821cf6ddc",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 6,
+      "id": "text-p-0293",
+      "unit": "chapter-02-text-h-0003",
+      "kind": "caption",
+      "source_text_sha256": "92bd6b93455bb555a083dc8baa2b39e9e2bb27421f71571fac9d3b7ec0ead460",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 7,
+      "id": "text-h-0007",
+      "unit": "chapter-02-text-h-0007",
+      "kind": "heading",
+      "source_text_sha256": "709d3651b36a64325a4128efbd82f070ce1654266c6436f476dffb46e8551d0b",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 8,
+      "id": "text-h-0008",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "heading",
+      "source_text_sha256": "f1e146648a6ad924c97987baf5b05172a3a79b91927be98c66d438eca7e759f5",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 9,
+      "id": "text-p-0303",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "paragraph",
+      "source_text_sha256": "aac9d76527c8107ddd22f320944f224bc20edce01b690bf964e346a02c9ed4a0",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 10,
+      "id": "text-p-0304",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "paragraph",
+      "source_text_sha256": "eeac18c043bfe28f30357e1ce9a232f0d4003687cecbc5b49c44c9f7079cecb6",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 11,
+      "id": "text-p-0306",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "paragraph",
+      "source_text_sha256": "b7c198a194df32c22787524dab43d0c4249d32782399b6b9899558b237d633bc",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 12,
+      "id": "text-p-0307",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "paragraph",
+      "source_text_sha256": "63110f3b63063ba56c21f586dcb6df38b95338af92962f5a82e58a7271435313",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 13,
+      "id": "text-p-0309",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "paragraph",
+      "source_text_sha256": "ca55b292a28a8407fabc034ea8d123eccbecd654687e9cb31b3921aaae9a8791",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 14,
+      "id": "text-p-0310",
+      "unit": "chapter-02-text-h-0008",
+      "kind": "paragraph",
+      "source_text_sha256": "7e7f8535c3e9642ed7c89bc7d692a9001c178c8a5b3ddbabf86f2ffda10e72b5",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 15,
+      "id": "text-h-0009",
+      "unit": "chapter-02-text-h-0009",
+      "kind": "heading",
+      "source_text_sha256": "2e2ce709af5186f19d83962ffb1248ca18dd8a764d3f7c5c953b4cc2d1e48761",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 16,
+      "id": "text-p-0314",
+      "unit": "chapter-02-text-h-0009",
+      "kind": "paragraph",
+      "source_text_sha256": "e68682464562a3a95de14134e45bd3eab56a1a6f1f729d274b88d05b4379e3f0",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 17,
+      "id": "text-p-0315",
+      "unit": "chapter-02-text-h-0009",
+      "kind": "paragraph",
+      "source_text_sha256": "915212f8c6af088a49b5b525de5f0cf001c6f90b6883666ccacd4bd9f3f64967",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 18,
+      "id": "text-h-0010",
+      "unit": "chapter-02-text-h-0010",
+      "kind": "heading",
+      "source_text_sha256": "53caa77cf1c0e7dd44b2632d916e840d64c7360211ed81ed8f902dcfb2d8f231",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 19,
+      "id": "text-p-0318",
+      "unit": "chapter-02-text-h-0010",
+      "kind": "paragraph",
+      "source_text_sha256": "26403ca5dda3a15c615dc4a5fb95fb8b57fbe56a9c24ce5c144bb22a3aed38a4",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 20,
+      "id": "text-p-0319",
+      "unit": "chapter-02-text-h-0010",
+      "kind": "paragraph",
+      "source_text_sha256": "6c43d3f061cdf0759f490d96d41cb21524bc85eb67cc9e1d56a22b430503dc83",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 21,
+      "id": "text-h-0011",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "heading",
+      "source_text_sha256": "8d364a8214371fa797e99173afd5244b35524b20e1048150c6acf4c3fcb4f1da",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 22,
+      "id": "text-p-0322",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "paragraph",
+      "source_text_sha256": "d72d6699232f37c1c24cef20b56e668d767e7ceefab1b768c3865243c815962c",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 23,
+      "id": "text-p-0323",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "paragraph",
+      "source_text_sha256": "18ade2de23e15a2333a4740441ba06fd744f4d081112f4291271b843325ae557",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 24,
+      "id": "text-p-0325",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "paragraph",
+      "source_text_sha256": "3d4dd735655281fa0949c4c120d231362ae91bdc17e3e099a6e784e0a0734796",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 25,
+      "id": "text-p-0328",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "caption",
+      "source_text_sha256": "72e8193956d7f44c6a1f4e6ccd693670bc0321879c1b755d0f627d086f7067c1",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 26,
+      "id": "text-p-0356",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "caption",
+      "source_text_sha256": "84bf08eebc4612112b94810a983b7496562bf2c2cfb785342e8fa8e9bf83c126",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 27,
+      "id": "text-p-0372",
+      "unit": "chapter-02-text-h-0011",
+      "kind": "caption",
+      "source_text_sha256": "5b44dba26c1e7957170f66e05d4f5eeb26bfcca229964e1e5f1cf8affdfb5a8d",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 28,
+      "id": "text-h-0012",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "heading",
+      "source_text_sha256": "23c94fac3143889704e19c527cd72d34777f72238a2a251efe39a3ee07e4fcf3",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 29,
+      "id": "text-p-0376",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "249101e4dec7e72bbf05335ce18cb68f625b7ebe039f1ce0670117a632d00c26",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 30,
+      "id": "text-p-0378",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "77e3ab91065c0c1e5726d57653cef72c14a180f92a954655223fdc5427cadd24",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 31,
+      "id": "text-p-0379",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "4e53c024064ca122706864fe67b38277b53d935fb8b52a3f034fba9d6ff4b141",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 32,
+      "id": "text-p-0380",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "36031e93a6a0d133623b74f3edf6baa8c3bb9fde7d8eebd920b176187a2ae72a",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 33,
+      "id": "text-p-0381",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "f9d92ff79f5a89aa502d38dcfd92ee0830289b339aa67d39a8aea6ea509d7d58",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 34,
+      "id": "text-p-0385",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "777f36c1517609236669ebbc20e4b2d04b909fecb61d58a57917179d3942be3d",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 35,
+      "id": "text-p-0386",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "c2ee64709660fe81fe8b9075fcf5182ac7861f3d7b2dc73711caa56b1a4ebac9",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 36,
+      "id": "text-p-0387",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "138b6f08e45d980d5f12efb5d44b31a5a3b2a41aaade251864e054b70bd0c094",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 37,
+      "id": "text-p-0388",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "f4dde4abafb85862375d6bed60c3b2dde0dea57e38171b2da939c79dd7568ce8",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 38,
+      "id": "text-p-0390",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "4d79b7ef281fe95c8adf504927a05fc530b945793cc03a91d9b2a57c451e7aa2",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 39,
+      "id": "text-p-0391",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "fc246098f3e6e856dd7788047fe9e926feeb7b60e7e5077f1d6b5ad7e14d99a1",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 40,
+      "id": "text-p-0392",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "2e19635ac5ae78580e452eaf76a91f7fec2683f60ad8585fecd77b65ae1758cb",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 41,
+      "id": "text-p-0394",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "29f12ed4ed8f7f7a8f476599dc4b73c999a58d99c431bc4894f3c00b337b5f71",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 42,
+      "id": "text-p-0395",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "3e10e7af80f0f91df512c5478af1d63f2730eb39e9ccf10bfa3c28fd1f4055b2",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 43,
+      "id": "text-p-0396",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "7c2074053125a7617f6887a515003ce7bd17f803de4e7f2935b4be5782014231",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 44,
+      "id": "text-p-0398",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "a510a36b65e87de80d9957def0274bdf729f771bfaad027c14e72f0b1697510b",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 45,
+      "id": "text-p-0399",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "f0962a6ee99f9d495157b01a07c13872c8d803c636a8c6fa3667db3806ea8b9e",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 46,
+      "id": "text-p-0400",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "214351bf650e0e71394135f39c67e319cf1c05f40c1fa9c77f65cdf0ba968190",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 47,
+      "id": "text-p-0402",
+      "unit": "chapter-02-text-h-0012",
+      "kind": "paragraph",
+      "source_text_sha256": "012d4de0c1aff39ab1696f1a32b58a11ad1bbaf22eceeaba7359ca51a69db9df",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 48,
+      "id": "text-h-0014",
+      "unit": "chapter-02-text-h-0014",
+      "kind": "heading",
+      "source_text_sha256": "d396b862c635965842e3cb3e2cd337276a315382786b574bb15be5c7ed200340",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 49,
+      "id": "text-h-0016",
+      "unit": "ages-i-sprint-0",
+      "kind": "heading",
+      "source_text_sha256": "ae95e46833275e4b65a4fd480c77cb351db36caf659f8511b25df30475f6baaf",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 50,
+      "id": "text-p-0413",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "d5c7e5beceb928b7df6dc7007f4f10cc081c518d57363fb174054e975b87bd52",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 51,
+      "id": "text-p-0415",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "aaa1984071c2b22b06d3e10b08c45849a916e4c0c65178bb0c5d83e0cc09b2c5",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 52,
+      "id": "text-p-0417",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "d2347299ae3c931ad335694dec9298e0daafc775201be492abb733a0fd11c2a6",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 53,
+      "id": "text-p-0419",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "9ee46e99625fa657637bb4a9d02b5bdfcf2500e99187363cedfabc91297a6c1c",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 54,
+      "id": "text-p-0424",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "617bd39d2b2a0b17962e6cc8fd6c805626b0f4e7a32aa73c7ccff432a586826f",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 55,
+      "id": "text-p-0425",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "4d8fe3f26476b911733e8c575c67a18eb7e391a48c86c069fcde380e15a516d5",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 56,
+      "id": "text-p-0426",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "54c27996d60ed5945676a343cdb4fc767c4bfd2cd65aea5e607d1e813ab2489e",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 57,
+      "id": "text-p-0427",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "f078af38711570cf32678071064be5cfae41df04f820199db1d0c2fcda06ea5f",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 58,
+      "id": "text-p-0428",
+      "unit": "ages-i-sprint-0",
+      "kind": "paragraph",
+      "source_text_sha256": "95b15b3bf9ec62f99012fe51a6f45311e8408b9e06e85da93135e34b653ae9f0",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 59,
+      "id": "text-h-0017",
+      "unit": "ages-i-sprint-1",
+      "kind": "heading",
+      "source_text_sha256": "7e249539d19546a1c15456d92b50609e2dcbf82460540ae01925bd5b9f18e502",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 60,
+      "id": "text-p-0465",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "7dff6dd6f2a2748d7388d75681fea0adfeb9a15eeebbf5796c4441995e152d56",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 61,
+      "id": "text-p-0466",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "69f4b0af34d5fc28f8adf75a7236dda9a1093cbdb32d351658f1c5f412ca00a0",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 62,
+      "id": "text-p-0467",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "e14cb9e830b32b03be9328ddaaa87c8eed6674ba6968095f0eb71039eb56c67b",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 63,
+      "id": "text-p-0468",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "016bc938fc705a9ade0c44b79f5d3c18f9743a22cc84588b1978160754659b5f",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 64,
+      "id": "text-p-0469",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "82e176a089a59a5fd5f411298a85d4be6a2e0506ff1e144393fed32f1938ac61",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 65,
+      "id": "text-p-0470",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "f3038871a013978228c2645753ce62cd6344245757426551da489836ad0d35be",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 66,
+      "id": "text-p-0472",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "6af010027b5d3014bbd941f01b2b2ece0db730fbc3d0a73eafdeb734b3b948f9",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 67,
+      "id": "text-p-0473",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "726ee8d5122eec28091a58c7aca194c19294b6649332ba60741e9079dec99c88",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 68,
+      "id": "text-p-0474",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "8a9cbe5d9cbc1862eb4ee45e1dd97d905ac8e31dc85de6258ac6fc1088528df8",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 69,
+      "id": "text-p-0475",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "117e34da78fc21fc1b22d172e3f6e77d878e0d02395440d5b46596a4bcadb040",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 70,
+      "id": "text-p-0476",
+      "unit": "ages-i-sprint-1",
+      "kind": "paragraph",
+      "source_text_sha256": "5015ad333a2c8c121d6ec5d052ac20a55c525ed03228b06c807eb863bc2de408",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 71,
+      "id": "text-h-0018",
+      "unit": "ages-i-sprint-2",
+      "kind": "heading",
+      "source_text_sha256": "8c9a161946d0c8a55198095b86935910fbcf1cea6543858f95b2a32331a6b344",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 72,
+      "id": "text-p-0509",
+      "unit": "ages-i-sprint-2",
+      "kind": "paragraph",
+      "source_text_sha256": "4ef9562268f9d368cf5d38beb997ed9c586b1e094f0acf09e25786c071a76605",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 73,
+      "id": "text-p-0510",
+      "unit": "ages-i-sprint-2",
+      "kind": "paragraph",
+      "source_text_sha256": "31fa9df06f9916f3ca295bd9bcc9e371dcf7ab40759d8e2adf80b72c59dd5b8e",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 74,
+      "id": "text-p-0511",
+      "unit": "ages-i-sprint-2",
+      "kind": "paragraph",
+      "source_text_sha256": "53b3016f94542f2fb58c8d0fa5377ded9b53602f56e7f6192b2efe46f16cd08f",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 75,
+      "id": "text-p-0521",
+      "unit": "ages-i-sprint-2",
+      "kind": "paragraph",
+      "source_text_sha256": "509219626e869ca147484f51da52bcd040fcd08fee005cf8a2ba895b63d65b6e",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 76,
+      "id": "text-p-0522",
+      "unit": "ages-i-sprint-2",
+      "kind": "paragraph",
+      "source_text_sha256": "99093bf60c19d40f49d3fedc4a17c3f72408a142f86ef9a3bda12405309379d9",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 77,
+      "id": "text-p-0523",
+      "unit": "ages-i-sprint-2",
+      "kind": "paragraph",
+      "source_text_sha256": "660fe375abf39a2a370545f31163f2b310dd486d25863c90a5c7fd1c69e73005",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 78,
+      "id": "text-h-0019",
+      "unit": "ages-i-sprint-3",
+      "kind": "heading",
+      "source_text_sha256": "5ed379b4b4c5a1ddeea665cfde8b4d7f5567cd790b56eb57053f289808af48ef",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 79,
+      "id": "text-p-0557",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "186382c54da12529d32c9bb3fa7c58ea8e5168ffac22625e0a0b1a48b7738ecb",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 80,
+      "id": "text-p-0558",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "9ea9822ab6796378303ecb06dd4b911349d6943bfcf3cc3f44c924052b223e86",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 81,
+      "id": "text-p-0559",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "25138d0a6853e7b12d8b1d5cc9626d20e8a103cdc304033c1467bd42616865f7",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 82,
+      "id": "text-p-0560",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "1f2323985a714859ff8e827390f51630ee51f61570d34fd915733af40f22a8ce",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 83,
+      "id": "text-p-0561",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "1c403b0066e76bc4fbeed5ddcd194aed7bea138144e57a795104d2cbe208bd7f",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 84,
+      "id": "text-p-0562",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "d840a57f2aa03ed7124a4180efa4246fa23032b50fcb941660e9912d73bbda23",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 85,
+      "id": "text-p-0565",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "b2dcf7cf8913fcb5172a690a9a45e692e509b172e74aba7df18e3afa7dd03f6e",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 86,
+      "id": "text-p-0566",
+      "unit": "ages-i-sprint-3",
+      "kind": "paragraph",
+      "source_text_sha256": "20a81eff102297902fbf4ec3d4f54571a5ee9769854254b96004a8c9308c8482",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 87,
+      "id": "text-h-0020",
+      "unit": "ages-i-sprint-4",
+      "kind": "heading",
+      "source_text_sha256": "7d166aa828f83e9473b2a16bb8170bba063a7619a39731a0397530ad26bc8150",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 88,
+      "id": "text-p-0592",
+      "unit": "ages-i-sprint-4",
+      "kind": "paragraph",
+      "source_text_sha256": "19f5009be1004a61d716c83a543da42b2da64faea32bceb3e14e91dc16eb0081",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 89,
+      "id": "text-p-0593",
+      "unit": "ages-i-sprint-4",
+      "kind": "paragraph",
+      "source_text_sha256": "3f4fabc45f975e1f363f8471957586202e80342bf8125b2c969e2b1dc1529638",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 90,
+      "id": "text-p-0594",
+      "unit": "ages-i-sprint-4",
+      "kind": "paragraph",
+      "source_text_sha256": "518a0ebcfaaf8e518f1b97d18d64606c3d4a34342828602d88b79dc0e085329d",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 91,
+      "id": "text-p-0595",
+      "unit": "ages-i-sprint-4",
+      "kind": "paragraph",
+      "source_text_sha256": "92ea1aae3c786e556e93a4ea6b475e2f8f403b0143c9b2aa721bf4d28d190376",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 92,
+      "id": "text-p-0606",
+      "unit": "ages-i-sprint-4",
+      "kind": "paragraph",
+      "source_text_sha256": "dca7976a2ed5dbdeb093d7bca112c858a9ae9594435093bd1e91fc446e9b5817",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 93,
+      "id": "text-p-0607",
+      "unit": "ages-i-sprint-4",
+      "kind": "paragraph",
+      "source_text_sha256": "67263bbb683f64b2c9ac5c0b20b6c878ce6758947e53402b1deb94e47867e32b",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 94,
+      "id": "text-h-0022",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "heading",
+      "source_text_sha256": "411bdd7ce2ccf70807de4c28d6b975da8d7f92947051c5579a51cd40aa1176e7",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 95,
+      "id": "text-p-0637",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "8e6026900fd922d9e8df54b44f1b35241a244d7bac97bab9935aa1504f3389e8",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 96,
+      "id": "text-p-0638",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "0ccc4102e2050c7b42fa4d54c7ee9695b94abbdfda71e6abc7cd1e5cbb647792",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 97,
+      "id": "text-p-0639",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "08d6eaac933f8f9289dbad382dd9c8c77427200774fcdd8044639109c5fac0a2",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 98,
+      "id": "text-p-0640",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "20f3f79e26a9258c89a06e7e8b4f10eab39e9cafdc3906eff3c882f8988a0ad4",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 99,
+      "id": "text-p-0641",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "f9268dfff5b2920cd8e8be4ecaa89d10ce7c5873ecd681a9b1ff42095742ef74",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 100,
+      "id": "text-p-0642",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "6c15c302cfb36460d67de146ed4180c821f06bd145d02ba99880959823170582",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 101,
+      "id": "text-p-0643",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "paragraph",
+      "source_text_sha256": "702c7baaf4cb608e3dcca37a833eb6e930e9c8a08eadafe1f48b6960fd20ee94",
+      "target_text_status": "PASS"
+    },
+    {
+      "order": 102,
+      "id": "text-p-0650",
+      "unit": "chapter-02-text-h-0022",
+      "kind": "caption",
+      "source_text_sha256": "bf6c068e189cd017be487f9f0df9bdc5c6ed404124192af0ee4160f1b572a89b",
+      "target_text_status": "PASS"
+    }
+  ],
+  "figures": [
+    {
+      "source_id": "text-p-0293",
+      "source_caption": "Figure 1: Foto do time – AGES I",
+      "approved_display_caption": "Figura 1 – Foto do time – AGES I",
+      "status": "PASS"
+    },
+    {
+      "source_id": "text-p-0328",
+      "source_caption": "Figure 2: Tela inicial do tablet – AGES I",
+      "approved_display_caption": "Figura 2 – Tela inicial do tablet – AGES I",
+      "status": "PASS"
+    },
+    {
+      "source_id": "text-p-0356",
+      "source_caption": "Figure 3: Tela de Gerência do Administrador - AGES I",
+      "approved_display_caption": "Figura 3 – Tela de Gerência do Administrador - AGES I",
+      "status": "PASS"
+    },
+    {
+      "source_id": "text-p-0372",
+      "source_caption": "Figure 4: Tela de produtos de lojista – AGES I",
+      "approved_display_caption": "Figura 4 – Tela de produtos de lojista – AGES I",
+      "status": "PASS"
+    },
+    {
+      "source_id": "text-p-0650",
+      "source_caption": "Figure 5: Projeto Destaque 2024/1 – AGES I",
+      "approved_display_caption": "Figura 5 – Projeto Destaque 2024/1 – AGES I",
+      "status": "PASS"
+    }
+  ],
+  "images": [
+    {
+      "source_id": "draw-image-0001",
+      "asset_id": "asset-0012",
+      "source_path_in_odt": "Pictures/1000000000000640000004B0558407F4.jpg",
+      "target_path": "relatorio_AGES_eduardo/imagens/original/asset-0012.jpg",
+      "sha256": "c6e5b04c2fd3cc62ddfa15e0f74c8245dbec2822e8816ba6b994614a79b54896",
+      "bytes_identical": true,
+      "provenance_status": "PENDING"
+    },
+    {
+      "source_id": "draw-image-0002",
+      "asset_id": "asset-0024",
+      "source_path_in_odt": "Pictures/1000000100000465000002E355606D42.png",
+      "target_path": "relatorio_AGES_eduardo/imagens/original/asset-0024.png",
+      "sha256": "9e6ac21913dccf932c1b34fca43a122dd20f964d6f6ac5373ddaa752b6aeec3a",
+      "bytes_identical": true,
+      "provenance_status": "PENDING"
+    },
+    {
+      "source_id": "draw-image-0003",
+      "asset_id": "asset-0027",
+      "source_path_in_odt": "Pictures/10000001000004DB00000329586EB8A5.png",
+      "target_path": "relatorio_AGES_eduardo/imagens/original/asset-0027.png",
+      "sha256": "25929f41067241299786607690b1604ce70a2fcba9301f8a2902a86d2d5a1563",
+      "bytes_identical": true,
+      "provenance_status": "PENDING"
+    },
+    {
+      "source_id": "draw-image-0004",
+      "asset_id": "asset-0026",
+      "source_path_in_odt": "Pictures/10000001000004D600000329EA04C0A0.png",
+      "target_path": "relatorio_AGES_eduardo/imagens/original/asset-0026.png",
+      "sha256": "3f17af046c5ab4b20729322fcd2496b0455084c7eca88d9a5305ce6d53368a63",
+      "bytes_identical": true,
+      "provenance_status": "PENDING"
+    },
+    {
+      "source_id": "draw-image-0005",
+      "asset_id": "asset-0007",
+      "source_path_in_odt": "Pictures/1000000000000500000003C04A764F79.jpg",
+      "target_path": "relatorio_AGES_eduardo/imagens/original/asset-0007.jpg",
+      "sha256": "13e31ed2e2dccd3f7b370dcacb8025de967b816de4849492939f5f511b01b27d",
+      "bytes_identical": true,
+      "provenance_status": "PENDING"
+    }
+  ],
+  "urls": [
+    {
+      "source_id": "text-a-0105",
+      "anchor": "Repositório EasyChooseAdmin",
+      "href": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0106",
+      "anchor": "Repositório EasyChooseStore",
+      "href": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0107",
+      "anchor": "Repositório EasyChooseApi",
+      "href": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0108",
+      "anchor": "Wiki do Banco de Dados",
+      "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0109",
+      "anchor": "Wiki da Arquitetura",
+      "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0110",
+      "anchor": "Wiki dos Protótipos",
+      "href": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PENDING"
+    },
+    {
+      "source_id": "text-a-0111",
+      "anchor": "Documentação TypeScript",
+      "href": "https://www.typescriptlang.org/docs/",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PASS"
+    },
+    {
+      "source_id": "text-a-0112",
+      "anchor": "Documentação React",
+      "href": "https://react.dev/",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PASS"
+    },
+    {
+      "source_id": "text-a-0113",
+      "anchor": "Documentação Node.js",
+      "href": "https://nodejs.org/docs/latest/api/",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PASS"
+    },
+    {
+      "source_id": "text-a-0114",
+      "anchor": "Documentação Prisma",
+      "href": "https://www.prisma.io/docs",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PASS"
+    },
+    {
+      "source_id": "text-a-0115",
+      "anchor": "Documentação PostgreSQL",
+      "href": "https://www.postgresql.org/docs/",
+      "preserved_in_pdf_annotation_set": true,
+      "current_remote_availability": "PASS"
+    }
+  ],
+  "reflections": [
+    {
+      "source_frame_id": "draw-text-box-0006",
+      "source_paragraph_ids": [
+        "text-p-0424",
+        "text-p-0425",
+        "text-p-0426",
+        "text-p-0427",
+        "text-p-0428"
+      ],
+      "nonempty_paragraph_count": 5,
+      "latex_environment": "reflection",
+      "text_status": "PASS"
+    },
+    {
+      "source_frame_id": "draw-text-box-0007",
+      "source_paragraph_ids": [
+        "text-p-0472",
+        "text-p-0473",
+        "text-p-0474",
+        "text-p-0475",
+        "text-p-0476"
+      ],
+      "nonempty_paragraph_count": 5,
+      "latex_environment": "reflection",
+      "text_status": "PASS"
+    },
+    {
+      "source_frame_id": "draw-text-box-0008",
+      "source_paragraph_ids": [
+        "text-p-0521",
+        "text-p-0522",
+        "text-p-0523"
+      ],
+      "nonempty_paragraph_count": 3,
+      "latex_environment": "reflection",
+      "text_status": "PASS"
+    },
+    {
+      "source_frame_id": "draw-text-box-0009",
+      "source_paragraph_ids": [
+        "text-p-0565",
+        "text-p-0566"
+      ],
+      "nonempty_paragraph_count": 2,
+      "latex_environment": "reflection",
+      "text_status": "PASS"
+    },
+    {
+      "source_frame_id": "draw-text-box-0010",
+      "source_paragraph_ids": [
+        "text-p-0606",
+        "text-p-0607"
+      ],
+      "nonempty_paragraph_count": 2,
+      "latex_environment": "reflection",
+      "text_status": "PASS"
+    }
+  ],
+  "technology_list_items": [
+    {
+      "source_list_item_id": "text-list-item-0023",
+      "name": "TypeScript",
+      "source_paragraph_ids": [
+        "text-p-0378",
+        "text-p-0379",
+        "text-p-0380",
+        "text-p-0381"
+      ],
+      "text_status": "PASS",
+      "marker_status": "SUPPRESSED_AS_AUTHORIZED"
+    },
+    {
+      "source_list_item_id": "text-list-item-0024",
+      "name": "React",
+      "source_paragraph_ids": [
+        "text-p-0385",
+        "text-p-0386",
+        "text-p-0387",
+        "text-p-0388"
+      ],
+      "text_status": "PASS",
+      "marker_status": "SUPPRESSED_AS_AUTHORIZED"
+    },
+    {
+      "source_list_item_id": "text-list-item-0025",
+      "name": "Node.js",
+      "source_paragraph_ids": [
+        "text-p-0390",
+        "text-p-0391",
+        "text-p-0392"
+      ],
+      "text_status": "PASS",
+      "marker_status": "SUPPRESSED_AS_AUTHORIZED"
+    },
+    {
+      "source_list_item_id": "text-list-item-0026",
+      "name": "Prisma",
+      "source_paragraph_ids": [
+        "text-p-0394",
+        "text-p-0395",
+        "text-p-0396"
+      ],
+      "text_status": "PASS",
+      "marker_status": "SUPPRESSED_AS_AUTHORIZED"
+    },
+    {
+      "source_list_item_id": "text-list-item-0027",
+      "name": "PostgreSQL",
+      "source_paragraph_ids": [
+        "text-p-0398",
+        "text-p-0399",
+        "text-p-0400"
+      ],
+      "text_status": "PASS",
+      "marker_status": "SUPPRESSED_AS_AUTHORIZED"
+    }
+  ],
+  "placeholders": [
+    {
+      "id": "ages-i-database",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+      "status": "PASS",
+      "provisional": true
+    },
+    {
+      "id": "ages-i-architecture",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
+      "status": "PASS",
+      "provisional": true
+    }
+  ],
+  "curated_references": {
+    "evidence_file": "migration/evidence/references/ages-i.json",
+    "evidence_sha256": "2f1790fe1c5a2738c46937236470fd51398b98bf215ebf6cebd537249ec51712",
+    "bibliography_file": "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "bibliography_sha256": "645e177b77fa174ea04d1b28cc6b59618e4ee64ec738944c1d2ea334de94274e",
+    "status": "PENDING",
+    "interpretation": "Five externally curated official technology documentation entries have matching evidence and are separate from the 102 authored source elements. Six project/wiki link availability remains pending. Current pages do not establish historical versions; authorship/year are not inferred.",
+    "official_documentation_entries": [
+      {
+        "evidence_id": "ages-i-text-a-0111",
+        "bibtex_key": "typescript-docs",
+        "evidence_status": "PASS",
+        "scope": "externally curated documentation; separate from the 102 authored source blocks"
+      },
+      {
+        "evidence_id": "ages-i-text-a-0112",
+        "bibtex_key": "react-docs",
+        "evidence_status": "PASS",
+        "scope": "externally curated documentation; separate from the 102 authored source blocks"
+      },
+      {
+        "evidence_id": "ages-i-text-a-0113",
+        "bibtex_key": "nodejs-docs",
+        "evidence_status": "PASS",
+        "scope": "externally curated documentation; separate from the 102 authored source blocks"
+      },
+      {
+        "evidence_id": "ages-i-text-a-0114",
+        "bibtex_key": "prisma-docs",
+        "evidence_status": "PASS",
+        "scope": "externally curated documentation; separate from the 102 authored source blocks"
+      },
+      {
+        "evidence_id": "ages-i-text-a-0115",
+        "bibtex_key": "postgresql-docs",
+        "evidence_status": "PASS",
+        "scope": "externally curated documentation; separate from the 102 authored source blocks"
+      }
+    ]
+  },
+  "presentation_authorization": {
+    "file": "migration/approvals/ages-i-presentation-corrections.json",
+    "sha256": "f00488e0dca024a4ba21bd880030825e557f474fda14345c00753125d3aed9ab",
+    "status": "authorized_for_execution_pending_human_review",
+    "human_approval": null,
+    "authorized_overlay_kinds_applied": [
+      "figure_caption_labels",
+      "section_numbering",
+      "figure_cross_references",
+      "list_markers"
+    ]
+  },
+  "findings": [
+    {
+      "id": "CA-POST-01",
+      "status": "PASS",
+      "severity": "none",
+      "location": "RELATORIO_ATUAL.odt / content.xml; relatorio_AGES_eduardo/conteudo/migracao/**; build/document/main.pdf",
+      "evidence": "Fresh ZIP/XML extraction and independent ordered comparison matched all 102 text elements to the current TeX and PDF. The final candidate also retains all five image payload hashes and eleven original URL targets.",
+      "consequence": "No confirmed authored-content omission, addition, or reordering in the audited AGES I scope.",
+      "correction": "None required by this content audit.",
+      "verification": "Direct ODF extraction, per-unit source-to-TeX checks, PDF text extraction/order comparison, pypdf annotation target comparison, image SHA-256 comparison."
+    },
+    {
+      "id": "CA-POST-02",
+      "status": "PENDING",
+      "severity": "human_review",
+      "location": "Five AGES I image records draw-image-0001 through draw-image-0005",
+      "evidence": "Embedded bytes are preserved exactly, but source/provenance is absent from the original and each display line remains “Fonte: pendente de identificação”.",
+      "consequence": "The real image attributions cannot be finalized without the user’s manual identification.",
+      "correction": "User to provide/confirm each source in a later authorized content update; no attribution invented.",
+      "verification": "Compare each manually supplied attribution against the corresponding source image record and PDF caption."
+    },
+    {
+      "id": "CA-POST-03",
+      "status": "PENDING",
+      "severity": "external_verification",
+      "location": "text-a-0105 through text-a-0110; original repository/wiki URLs",
+      "evidence": "All six literal hrefs are preserved and appear in the PDF target set, but current availability/content was not verified.",
+      "consequence": "The PDF preserves the original links, but their present-day accessibility remains unknown.",
+      "correction": "No replacement made; verify through a legitimate authorized source if needed.",
+      "verification": "Recheck the exact original URLs without substituting destinations."
+    },
+    {
+      "id": "CA-POST-04",
+      "status": "PENDING",
+      "severity": "metadata_limit",
+      "location": "Five externally curated entries in relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+      "evidence": "Each official-documentation entry has matching curation evidence; the evidence does not establish the precise historical version used in 2024 or absent author/year fields.",
+      "consequence": "Bibliographic historical metadata cannot be inferred from the current pages.",
+      "correction": "Retain verified fields only and await historical source evidence where the report needs it.",
+      "verification": "Compare against an archived version or project records before filling any missing historical metadata."
+    }
+  ],
+  "commands": [
+    {
+      "tool": "sha256sum",
+      "command": "sha256sum RELATORIO_ATUAL.odt build/document/main.pdf",
+      "exit_code": 0,
+      "purpose": "Bind audit to the immutable ODT and final PDF hashes."
+    },
+    {
+      "tool": "unzip",
+      "command": "unzip -p RELATORIO_ATUAL.odt content.xml | sha256sum",
+      "exit_code": 0,
+      "purpose": "Hash the source XML part directly."
+    },
+    {
+      "tool": "Python 3.12.8",
+      "command": "Read-only inline Python: fresh ODF ZIP/XML extraction plus audit_conversion against each of the 15 AGES I target byte ranges; no ledger expected text used.",
+      "exit_code": 0,
+      "purpose": "Compare all 102 source elements to current LaTeX."
+    },
+    {
+      "tool": "Python 3.12.8 / pypdf 6.18.0",
+      "command": "Read-only inline Python: direct source XML inventory, ordered source-to-PDF text matching, source/local media SHA-256 checks, and PDF annotation URI comparison.",
+      "exit_code": 0,
+      "purpose": "Independently verify final PDF text, images, URLs, reflections, list items, and placeholders."
+    },
+    {
+      "tool": "pdfinfo (Poppler 26.01.0)",
+      "command": "pdfinfo build/document/main.pdf",
+      "exit_code": 0,
+      "purpose": "Confirm 19 pages and A4 page dimensions."
+    },
+    {
+      "tool": "pdftotext (Poppler 26.01.0)",
+      "command": "pdftotext -layout build/document/main.pdf -",
+      "exit_code": 0,
+      "purpose": "Ordered text comparison; page 17 callout spacing and technology-list order."
+    },
+    {
+      "tool": "pdftotext (Poppler 26.01.0)",
+      "command": "pdftotext -f 17 -l 17 -raw build/document/main.pdf -",
+      "exit_code": 0,
+      "purpose": "Check degree symbol extraction and page 17 text."
+    },
+    {
+      "tool": "pdftoppm (Poppler 26.01.0)",
+      "command": "pdftoppm -f 17 -l 17 -png -r 120 build/document/main.pdf /tmp/agesi-final-3543-page",
+      "exit_code": 0,
+      "purpose": "Render exact final candidate page 17 for direct visual check."
+    },
+    {
+      "tool": "view_image",
+      "command": "Inspect /tmp/agesi-final-3543-page-17.png",
+      "exit_code": null,
+      "purpose": "Confirm visible “2° e 4°” and spaced “Figura 5” on final page."
+    }
+  ],
+  "tool_versions": {
+    "python": "3.12.8",
+    "pypdf": "6.18.0",
+    "poppler": "26.01.0"
+  },
+  "evidence_hashes": {
+    "presentation_authorization_sha256": "f00488e0dca024a4ba21bd880030825e557f474fda14345c00753125d3aed9ab",
+    "reference_curation_sha256": "2f1790fe1c5a2738c46937236470fd51398b98bf215ebf6cebd537249ec51712",
+    "bibliography_sha256": "645e177b77fa174ea04d1b28cc6b59618e4ee64ec738944c1d2ea334de94274e"
+  },
+  "limitations": [
+    "Image provenance was intentionally not inferred; all five sources remain pending for the user’s manual attribution.",
+    "The six repository/wiki URLs are preserved but their current remote availability/content was not verified.",
+    "The five current official documentation pages do not establish historical versions or missing authorship/publication dates used by the original author.",
+    "Poppler text extraction can normalize ligatures and line-end hyphenation differently from visible typography. The final ordered comparison applied only NFKC, removed page-number-only lines, and checked retained/joined line-wrap hyphen forms; source text was independently checked against TeX byte ranges. Page 17 was additionally rendered and inspected.",
+    "This report does not certify full ABNT conformity or replace the separate complete visual audit and human approval."
+  ],
+  "human_approval": null,
+  "future_projects_approved": false,
+  "artifacts": [
+    "build/document/main.pdf",
+    "docs/ages-i/CONTENT_AUDIT_POST_FORMAT.md",
+    "docs/ages-i/CONTENT_AUDIT_POST_FORMAT.json"
+  ]
+}

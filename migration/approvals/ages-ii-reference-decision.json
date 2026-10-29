@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "source": "explicit_user_message_in_conversation",
+  "source_message": "pode preservar a URL original e dar continuidade ao processo",
+  "scope": "AGES II / Graph API Explorer, original hyperlink text-a-0126 in unit chapter-04-text-h-0046",
+  "original_url": "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+  "decision": "Preserve the exact original URL and anchor. Continue the AGES II migration. Mark current access and bibliography metadata as pending; do not infer or substitute author, title, publication year, or URL. Keep this source out of the bibliography until evidence supports a valid entry.",
+  "verification_status": "PENDING",
+  "reason": "The official page could not be accessed during the read-only reference audit; this does not establish that the original link is broken.",
+  "human_review_after_edition": true
+}

@@ -1,0 +1,34 @@
+% Synthetic harness fixture. No text from the memorial or Mariah.
+% Memoir isolates the bibliography/build test from abntex2's language defaults.
+% The untouched template profile separately exercises abntex2.
+\documentclass[12pt,oneside,a4paper]{memoir}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[backend=biber,style=abnt,language=english]{biblatex}
+\usepackage{csquotes}
+\addbibresource{references.bib}
+\usepackage{hyperref}
+\begin{document}
+\tableofcontents*
+\listoffigures*
+\listoftables*
+\chapter{Synthetic verification}
+\section{Continuity}
+This is synthetic verification text. Figure~\ref{fig:fixture},
+Table~\ref{tab:fixture} and \cite{fixture} exercise automatic references.
+\begin{figure}[htbp]
+\caption{Synthetic illustration}\label{fig:fixture}
+\centering\fbox{\rule{0pt}{15mm}\rule{40mm}{0pt}}
+\par\small Source: synthetic harness fixture.
+\end{figure}
+\begin{table}[htbp]
+\caption{Synthetic table}\label{tab:fixture}
+\centering\begin{tabular}{ll}Element & State\\ Fixture & Synthetic\end{tabular}
+\par\small Source: synthetic harness fixture.
+\end{table}
+\subsection{Synthetic unit}
+This heading continues the preceding text without an artificial page break.
+\href{https://example.org/fixture}{Synthetic link}.
+\printbibliography
+\end{document}

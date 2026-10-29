@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "d756dea807734acfb3be5ed788b54896b78a822c",
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+  },
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "units": {
+    "ages-iv-sprint-2": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0119",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+          "start_byte": 163,
+          "end_byte": 177,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+        }
+      ],
+      "asset_map": [],
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0119",
+          "source_name": "__RefHeading___Toc4849_3118176633",
+          "source_start_id": "text-bookmark-start-0080",
+          "source_end_id": "text-bookmark-end-0080",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+          "target_anchor": "__RefHeading___Toc4849_3118176633",
+          "command": "hypertarget",
+          "start_byte": 72,
+          "end_byte": 121,
+          "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0272",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-item-0220",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-0273",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-item-0221",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-0274",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        },
+        {
+          "source_id": "text-list-header-0073",
+          "disposition": "boundary-layout-only",
+          "evidence": "Empty ODF list boundary after this unit’s authored content; it carries no visible item and creates no artificial spacing in LaTeX."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 0,
+        "reflection_paragraphs": 0,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "text-list-0272",
+          "text-list-item-0220",
+          "text-list-0273",
+          "text-list-item-0221",
+          "text-list-0274",
+          "text-list-header-0073"
+        ]
+      },
+      "pending": [
+        {
+          "status": "PENDING",
+          "code": "independent_content_and_visual_audit",
+          "detail": "The ODT contributes only the Sprint 2 heading; all seven narrative paragraphs are user-provided and separately hash-traced. Recheck their displayed text/inline formatting, inspect the integrated PDF pages, and obtain human review."
+        }
+      ],
+      "layout_disposition": "The immutable ODF unit contains only its Sprint 2 heading and empty layout wrappers. Seven separately authorized user-provided paragraphs follow the heading: five report paragraphs and two paragraphs inside the shared bordered reflection environment. The reflection uses the existing body-font setting, remains divisible across pages, and the Sprint heading has no forced page break.",
+      "macro_contract": {
+        "path": "relatorio_AGES_eduardo/util/macros.tex",
+        "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+      },
+      "style_contract": {
+        "path": "relatorio_AGES_eduardo/util/style.tex",
+        "sha256": "4910d078652ffe8adae0a0d91383d6a3743eb2f900f544e5890b253df5cdb6b4"
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0119"
+        ]
+      },
+      "user_supplied_content": {
+        "authorization_evidence": "migration/approvals/ages-iv-sprint-2-content-authorization.json",
+        "authorization_sha256": "949e1204d01661794b1580b15a902b99e53135283e5b69e29b31377839636283",
+        "content_map": [
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p01",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 301,
+            "end_byte": 1105,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p02",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 1154,
+            "end_byte": 2099,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p03",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 2148,
+            "end_byte": 3085,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p04",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 3134,
+            "end_byte": 3553,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-report-p05",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 3602,
+            "end_byte": 4127,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-reflection-p01",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 4201,
+            "end_byte": 4993,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          },
+          {
+            "content_id": "user-ages-iv-sprint-2-reflection-p02",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex",
+            "start_byte": 5048,
+            "end_byte": 5776,
+            "target_sha256": "1e5c58ded6ea8787580c9e48cb06878cc60a379179fd35dbfedbd36df91520ad"
+          }
+        ]
+      },
+      "rendered_pdf": {
+        "path": "build/document/main.pdf",
+        "sha256": "a07dae33d5d91aea796a41ec8d0c6f1f343fd149645fe8b94e4921e082736662"
+      }
+    }
+  }
+}

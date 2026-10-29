@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "role": "reference-curator",
+  "unit": "chapter-04-text-h-0046",
+  "edition": "ages-ii",
+  "status": "PENDING",
+  "consultation_date": "2026-10-16",
+  "consulted_at_utc": "2026-10-16T17:26:43Z",
+  "commit_at_start": "5aeea2a986e695183ecd04bdf736860e1e64c6b3",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "scope": {
+    "owned": [
+      "migration/evidence/references/ages-ii.json"
+    ],
+    "ownership_record": "Parent task assignment",
+    "central_bibliography_edited": false,
+    "authored_text_edited": false,
+    "manifest_edited": false,
+    "human_approval_created": false
+  },
+  "authorization": {
+    "edition_authorization": "migration/approvals/ages-ii-authorization.json",
+    "reference_decision": "migration/approvals/ages-ii-reference-decision.json",
+    "graph_api_decision": "Preserve the exact original URL and anchor; continue AGES II; current access and bibliography metadata remain pending; do not infer or substitute author, title, publication year, or URL; keep out of bibliography until evidence supports an entry."
+  },
+  "count_reconciliation": {
+    "expected_documentation_hyperlinks_in_assignment": 7,
+    "manifest_hyperlinks_text_a_0122_to_0128": 7,
+    "verified": 6,
+    "pending": 1,
+    "additional_unlinked_documentation_label": {
+      "record_id": "text-p-0839",
+      "text": "Documentação Docker",
+      "href": null,
+      "note": "The source contains this plain-text label without an original hyperlink. No URL is proposed."
+    }
+  },
+  "policy": {
+    "original_urls": "Preserve each literal href exactly, including path, percent encoding, and trailing slash.",
+    "consultation_vs_access_date": "2026-10-16 is the curator's actual consultation date. The user-assigned access date is recorded separately and is not browser history or proof of a visit on that date.",
+    "assigned_bibliographic_convention": {
+      "publication_year": 2024,
+      "access_date": "2024-10-15",
+      "authority": "migration/approvals/ages-ii-authorization.json",
+      "meaning": "User-authorized convention for AGES II technology references; not verified publication metadata or historical access evidence.",
+      "application": "May be supplied to the maintainer for verified entries. It is not assigned as metadata for the pending Graph API Explorer entry."
+    },
+    "authors": "No personal or corporate author is proposed unless the inspected official source explicitly establishes authorship. A software or product entity is recorded separately from authorship.",
+    "versions": "Current documentation version does not prove the software version used in the historical project. Do not claim a project version from a rolling documentation URL.",
+    "url_availability": "Web retrieval outcomes are reported separately from URL syntax. The browsing tool did not expose HTTP status codes for successfully opened pages; its Meta redirect error is recorded as reported, not as proof the original link is broken.",
+    "integration": "No central bibliography entry is added by the curator. The Graph API Explorer remains out of the bibliography pending evidence."
+  },
+  "references": [
+    {
+      "evidence_id": "ages-ii-text-a-0122",
+      "source_record_id": "text-a-0122",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[644]/text:a[1]",
+      "source_xml_sha256": "25f6d36b58e3c4076283040a0293ccdbcad32d936ffd2989898187e14512d83f",
+      "original_anchor": "Documentação Angular",
+      "original_url": "https://v17.angular.io/docs",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://v17.angular.io/docs",
+        "observed_url": "https://v17.angular.io/docs",
+        "http_status": null,
+        "outcome": "HTML page retrieved; displayed text says the website requires JavaScript. No redirect was reported.",
+        "observed_page_title": "Angular"
+      },
+      "official_metadata_evidence": [
+        {
+          "url": "https://v17.angular.io/guide/setup/local",
+          "evidence_type": "Official Angular v17 documentation page on the same v17.angular.io domain",
+          "excerpt": "These Angular docs help you learn and use the Angular framework and development platform.",
+          "supports": ["entity: Angular", "documentation identity", "v17 documentation host"]
+        }
+      ],
+      "metadata": {
+        "status": "VERIFIED",
+        "title": "Angular",
+        "entity": "Angular",
+        "author": null,
+        "author_note": "No author attribution was established by the inspected page.",
+        "version_note": "The original URL is on the v17 documentation host; this does not establish which Angular version the project used."
+      },
+      "assigned_bibliographic_convention": {
+        "publication_year": 2024,
+        "access_date": "2024-10-15",
+        "is_historical_fact": false
+      },
+      "suggested_bibtex": null,
+      "limitations": ["Entry-point content is JavaScript-rendered and was not readable in the retrieval output."]
+    },
+    {
+      "evidence_id": "ages-ii-text-a-0123",
+      "source_record_id": "text-a-0123",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[645]/text:a[1]",
+      "source_xml_sha256": "f51d44a992c12907916141945cfa77aad79fb8d70c65755f0d85fb1ee70b0788",
+      "original_anchor": "Documentação TypeScript",
+      "original_url": "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html",
+        "observed_url": "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html",
+        "http_status": null,
+        "outcome": "Official page retrieved; no redirect was reported.",
+        "observed_page_title": "TypeScript: Documentation - TypeScript para programadores JavaScript"
+      },
+      "official_metadata_evidence": [
+        {
+          "url": "https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html",
+          "evidence_type": "Official TypeScript documentation page",
+          "excerpt": "TypeScript para programadores JavaScript",
+          "supports": ["title", "entity: TypeScript"]
+        }
+      ],
+      "metadata": {
+        "status": "VERIFIED",
+        "title": "TypeScript para programadores JavaScript",
+        "entity": "TypeScript",
+        "author": null,
+        "author_note": "The page identifies the TypeScript project but does not establish an author for this record.",
+        "current_page_update": "2026-10-13",
+        "current_page_update_note": "Current page metadata only; not publication metadata for 2024."
+      },
+      "assigned_bibliographic_convention": {
+        "publication_year": 2024,
+        "access_date": "2024-10-15",
+        "is_historical_fact": false
+      },
+      "suggested_bibtex": null,
+      "limitations": []
+    },
+    {
+      "evidence_id": "ages-ii-text-a-0124",
+      "source_record_id": "text-a-0124",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[647]/text:a[1]",
+      "source_xml_sha256": "e313b54742d872253cb375a0279572382dd62faf22eea9cd41efd947533ba4ad",
+      "original_anchor": "Documentação Python",
+      "original_url": "https://docs.python.org/pt-br/3/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://docs.python.org/pt-br/3/",
+        "observed_url": "https://docs.python.org/pt-br/3/",
+        "http_status": null,
+        "outcome": "Official page retrieved; no redirect was reported.",
+        "observed_page_title": "Documentação Python 3.15.0"
+      },
+      "official_metadata_evidence": [
+        {
+          "url": "https://docs.python.org/pt-br/3/",
+          "evidence_type": "Official Python documentation page",
+          "excerpt": "Esta é a documentação oficial do Python 3.15.0.",
+          "supports": ["current page title/version", "entity: Python"]
+        },
+        {
+          "url": "https://docs.python.org/pt-br/3/",
+          "evidence_type": "Official documentation footer",
+          "excerpt": "© 2001 Python Software Foundation.",
+          "supports": ["copyright holder only; not treated as author"]
+        }
+      ],
+      "metadata": {
+        "status": "VERIFIED",
+        "title": "Documentação Python 3.15.0",
+        "entity": "Python",
+        "author": null,
+        "author_note": "The current footer names the Python Software Foundation as copyright holder; this is not promoted to authorship.",
+        "version_note": "The /3/ URL is rolling and currently displays Python 3.15.0. This does not establish the project version or the page version consulted in 2024."
+      },
+      "assigned_bibliographic_convention": {
+        "publication_year": 2024,
+        "access_date": "2024-10-15",
+        "is_historical_fact": false
+      },
+      "suggested_bibtex": null,
+      "limitations": ["The page is versioned dynamically at the unversioned /3/ URL."]
+    },
+    {
+      "evidence_id": "ages-ii-text-a-0125",
+      "source_record_id": "text-a-0125",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[649]/text:a[1]",
+      "source_xml_sha256": "711e8137b0ba8e905db67447ceb3018d8ce7b2473cfb104a1ca04efdd0ec7440",
+      "original_anchor": "Documentação FastAPI",
+      "original_url": "https://fastapi.tiangolo.com/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://fastapi.tiangolo.com/",
+        "observed_url": "https://fastapi.tiangolo.com/",
+        "http_status": null,
+        "outcome": "Official page retrieved; no redirect was reported.",
+        "observed_page_title": "FastAPI - FastAPI"
+      },
+      "official_metadata_evidence": [
+        {
+          "url": "https://fastapi.tiangolo.com/",
+          "evidence_type": "Official FastAPI documentation home page",
+          "excerpt": "FastAPI",
+          "supports": ["title", "entity: FastAPI"]
+        }
+      ],
+      "metadata": {
+        "status": "VERIFIED",
+        "title": "FastAPI",
+        "entity": "FastAPI",
+        "author": null,
+        "author_note": "No author attribution was established by the inspected page.",
+        "version_note": "The home page does not establish the version used by the project."
+      },
+      "assigned_bibliographic_convention": {
+        "publication_year": 2024,
+        "access_date": "2024-10-15",
+        "is_historical_fact": false
+      },
+      "suggested_bibtex": null,
+      "limitations": []
+    },
+    {
+      "evidence_id": "ages-ii-text-a-0126",
+      "source_record_id": "text-a-0126",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[43]/text:list-item[1]/text:p[3]/text:a[1]",
+      "source_xml_sha256": "433fa1b9f50a756c78f4729ecbaf3fb2f967a5a119b7357d610ee9c1627e654e",
+      "original_anchor": "Documentação Graph API",
+      "original_url": "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://developers.facebook.com/docs/graph-api/guides/explorer/",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "Internal Error from retrieval tool; requested URL reported not accessible. This does not establish that the original link is broken.",
+        "diagnostic_alternative_requested_url": "https://developers.facebook.com/tools/explorer/",
+        "diagnostic_alternative_observed_url": "https://business.facebook.com/business/loginpage/?next=https://developers.facebook.com/tools/explorer/",
+        "diagnostic_alternative_tool_report": "Fetch failed with tool-reported 500 redirect to business login, which was inaccessible. This alternative is diagnostic only and does not replace the original URL."
+      },
+      "official_metadata_evidence": [],
+      "metadata": {
+        "status": "PENDING",
+        "title": null,
+        "entity": null,
+        "author": null,
+        "publication_year": null,
+        "access_date": null,
+        "reason": "The official original page could not be accessed. The human decision explicitly prohibits inferring or substituting title, author, publication year, or URL."
+      },
+      "human_decision_evidence": "migration/approvals/ages-ii-reference-decision.json",
+      "bibliography_entry": null,
+      "suggested_bibtex": null,
+      "status": "PENDING",
+      "scope_of_pending": "Current access and bibliographic metadata remain unverified. Preserve the exact original URL and anchor; keep this source out of the bibliography until evidence supports an entry.",
+      "limitations": ["The retrieval-tool error is not proof that the original link is broken."]
+    },
+    {
+      "evidence_id": "ages-ii-text-a-0127",
+      "source_record_id": "text-a-0127",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[652]/text:a[1]",
+      "source_xml_sha256": "a9992c45d23052947277eae2654a62841f8bedd00a701bb2d4bf82f87ead579a",
+      "original_anchor": "Documentação SQLAlchemy",
+      "original_url": "https://docs.sqlalchemy.org/en/20/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open and official-site search result",
+        "requested_url": "https://docs.sqlalchemy.org/en/20/",
+        "observed_url": "https://docs.sqlalchemy.org/en/20/",
+        "http_status": null,
+        "outcome": "Official SQLAlchemy 2.0 documentation retrieved; no redirect was reported.",
+        "observed_page_title": "SQLAlchemy Documentation — SQLAlchemy 2.0 Documentation"
+      },
+      "official_metadata_evidence": [
+        {
+          "url": "https://docs.sqlalchemy.org/en/20/intro.html",
+          "evidence_type": "Official SQLAlchemy 2.0 documentation overview",
+          "excerpt": "This documentation covers SQLAlchemy version 2.0.",
+          "supports": ["title family", "documentation series 2.0", "entity: SQLAlchemy"]
+        },
+        {
+          "url": "https://docs.sqlalchemy.org/en/20/",
+          "evidence_type": "Official SQLAlchemy documentation release banner",
+          "excerpt": "Release: 2.0.54 ... Release Date: September 15, 2026",
+          "supports": ["current release only; not historical project version"]
+        }
+      ],
+      "metadata": {
+        "status": "VERIFIED",
+        "title": "SQLAlchemy 2.0 Documentation",
+        "entity": "SQLAlchemy",
+        "author": null,
+        "author_note": "No author attribution was established by the inspected page.",
+        "documentation_series": "2.0",
+        "current_release_note": "The page currently reports release 2.0.54; do not attribute that release to the project or the 2024 consultation."
+      },
+      "assigned_bibliographic_convention": {
+        "publication_year": 2024,
+        "access_date": "2024-10-15",
+        "is_historical_fact": false
+      },
+      "suggested_bibtex": null,
+      "limitations": []
+    },
+    {
+      "evidence_id": "ages-ii-text-a-0128",
+      "source_record_id": "text-a-0128",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[45]/text:list-item[1]/text:p[3]/text:a[1]",
+      "source_xml_sha256": "2af22a14ee0603182d29b03de860b62fa53b439a39238671928a46f3d3c2c791",
+      "original_anchor": "Documentação PostgreSQL",
+      "original_url": "https://www.postgresql.org/docs/",
+      "syntax_status": "PASS",
+      "original_url_replacement": null,
+      "consultation_date": "2026-10-16",
+      "retrieval": {
+        "tool": "web.run open",
+        "requested_url": "https://www.postgresql.org/docs/",
+        "observed_url": "https://www.postgresql.org/docs/",
+        "http_status": null,
+        "outcome": "Official documentation portal retrieved; no redirect was reported.",
+        "observed_page_title": "PostgreSQL: Documentation"
+      },
+      "official_metadata_evidence": [
+        {
+          "url": "https://www.postgresql.org/docs/",
+          "evidence_type": "Official PostgreSQL documentation portal",
+          "excerpt": "18 / Current",
+          "supports": ["current portal state only", "entity: PostgreSQL"]
+        },
+        {
+          "url": "https://www.postgresql.org/docs/18/preface.html",
+          "evidence_type": "Official PostgreSQL documentation preface",
+          "excerpt": "This book is the official documentation of PostgreSQL.",
+          "supports": ["official documentation identity", "entity: PostgreSQL"]
+        }
+      ],
+      "metadata": {
+        "status": "VERIFIED",
+        "title": "PostgreSQL: Documentation",
+        "entity": "PostgreSQL",
+        "author": null,
+        "author_note": "The current page gives a PostgreSQL Global Development Group copyright notice; copyright is not promoted to authorship.",
+        "version_note": "The /docs/ portal is rolling and currently marks version 18 as current. This does not establish the project version or the version consulted in 2024."
+      },
+      "assigned_bibliographic_convention": {
+        "publication_year": 2024,
+        "access_date": "2024-10-15",
+        "is_historical_fact": false
+      },
+      "suggested_bibtex": null,
+      "limitations": ["The original URL is a rolling documentation portal, not a version-pinned manual."]
+    }
+  ],
+  "unlinked_documentation_labels": [
+    {
+      "record_id": "text-p-0839",
+      "source_unit": "chapter-04-text-h-0046",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[46]/text:list-item[1]/text:p[3]",
+      "source_xml_sha256": "45e0c5afaba90af7c0c3e94aa7e54e09bbf1ec02872b0f0d57fd6d4ac9b6f6c6",
+      "text": "Documentação Docker",
+      "href": null,
+      "status": "PENDING",
+      "note": "No original hyperlink exists for this label in the manifest. No replacement URL or bibliography entry is proposed."
+    }
+  ],
+  "validation": {
+    "source_record_ids": [
+      "text-a-0122",
+      "text-a-0123",
+      "text-a-0124",
+      "text-a-0125",
+      "text-a-0126",
+      "text-a-0127",
+      "text-a-0128"
+    ],
+    "original_urls_preserved": true,
+    "source_manifest_and_authorization_read": true,
+    "bibliography_edited": false,
+    "files_written_by_curator": ["migration/evidence/references/ages-ii.json"],
+    "antigravity_used": false
+  }
+}

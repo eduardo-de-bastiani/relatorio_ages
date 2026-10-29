@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "3d3641ea404e672bec55099fbf71a5a5cf48b87c",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
+  },
+  "units": {
+    "ages-ii-sprint-0": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0048",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 173,
+          "end_byte": 187,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0844",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 292,
+          "end_byte": 872,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0845",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 900,
+          "end_byte": 1592,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0846",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 1620,
+          "end_byte": 2228,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0847",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 2256,
+          "end_byte": 2962,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0848",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 2990,
+          "end_byte": 3839,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0851",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 3886,
+          "end_byte": 4488,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        },
+        {
+          "source_id": "text-p-0852",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "start_byte": 4516,
+          "end_byte": 4849,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        }
+      ],
+      "asset_map": [],
+      "structural_dispositions": [
+        {
+          "source_id": "draw-text-box-0021",
+          "disposition": "represented-as-reflection",
+          "evidence": "ODF text box is the parent wrapper of the mapped introspective paragraphs; target wraps those paragraphs in the existing reflection environment in source order."
+        },
+        {
+          "source_id": "text-list-0121",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0049; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-item-0096",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0049; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-0122",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0049; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-item-0097",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0049; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-0123",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0049; excluded to prevent cross-unit content attribution."
+        },
+        {
+          "source_id": "text-list-header-0032",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF list/layout wrapper follows the last authored source record in this unit and belongs to the following heading text-h-0049; excluded to prevent cross-unit content attribution."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 5,
+        "reflection_paragraphs": 2,
+        "figures": 0,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 0,
+        "layout_wrappers": [
+          "draw-text-box-0021",
+          "text-list-0121",
+          "text-list-item-0096",
+          "text-list-0122",
+          "text-list-item-0097",
+          "text-list-0123",
+          "text-list-header-0032"
+        ]
+      },
+      "pending": [],
+      "layout_disposition": "Sprint heading and paragraphs flow naturally in document order with no forced page break; introspective paragraphs use the shared divisible reflection environment.",
+      "bookmark_map": [
+        {
+          "source_heading_id": "text-h-0048",
+          "source_name": "__RefHeading___Toc4785_3118176633",
+          "source_start_id": "text-bookmark-start-0045",
+          "source_end_id": "text-bookmark-end-0045",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex",
+          "target_anchor": "__RefHeading___Toc4785_3118176633",
+          "command": "hypertarget",
+          "start_byte": 82,
+          "end_byte": 131,
+          "evidence": "Matching ODF bookmark-start/end enclose this original heading; target anchor has no visible text.",
+          "target_sha256": "9b1fab91866cefff2bfa4249de7c7702e9e6415b2fd5f49349647a681deeb9f1"
+        }
+      ],
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-ii-presentation-reuse.json",
+        "source_ids": [
+          "text-p-0844",
+          "text-p-0845",
+          "text-p-0846",
+          "text-p-0847",
+          "text-p-0848",
+          "text-p-0851",
+          "text-p-0852"
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0048"
+        ]
+      }
+    }
+  }
+}

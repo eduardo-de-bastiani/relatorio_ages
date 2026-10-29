@@ -1,0 +1,1920 @@
+{
+  "schema_version": 1,
+  "role": "reference-curator",
+  "unit": "ages-iii",
+  "edition": "AGES III — Sistema de Controle Inteligente de Estacionamento com RFID",
+  "status": "PENDING",
+  "consultation_date": "2026-10-16",
+  "consulted_at_utc": "2026-10-16T23:43:03Z",
+  "commit_at_start": "abe761cba29a653e19db234b497fffd957a944b6",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+  },
+  "scope": {
+    "owned": [
+      "migration/evidence/references/ages-iii.json"
+    ],
+    "authorization": "migration/approvals/ages-iii-authorization.json",
+    "manifest": "docs/CONTENT_MANIFEST.json",
+    "manifest_link_scope": "text-a-0129–text-a-0145",
+    "project_and_wiki_links": "text-a-0129–text-a-0132",
+    "official_technology_links": "text-a-0133–text-a-0145",
+    "central_bibliography_edited": false,
+    "latex_or_memorial_content_edited": false,
+    "manifest_or_pending_docs_edited": false,
+    "human_approval_created": false
+  },
+  "policy": {
+    "original_urls": "All 17 original hrefs are recorded verbatim; no substitute or alternate URL was inserted.",
+    "access_date": "Actual consultation date 2026-10-16; no backdating.",
+    "user_citation_year_preference": "The prior Q3 decision explicitly authorizes using the real access year as the author-date/citation-year convention, as Mariah did. For consultations dated 2026-10-16, assign user_assigned_citation_year=2026 to eligible sources. This is a citation convention only, not a factual publication date; preserve actual source dates as evidenced and leave unknown factual publication dates null. Do not invent authors, publishers, versions, URLs, or entries. Source/relevance and bibliography verification remain separately PENDING where evidence is insufficient.",
+    "evidence_threshold": "Direct page content/title and stated metadata only. Current product versions, dated news items, copyright years, and access dates are not project versions or page publication dates.",
+    "user_citation_year_decision": {
+      "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+      "access_date_basis": "Actual source consultation date 2026-10-16.",
+      "meaning": "2026 is the user-authorized author-date/citation-year convention, matching the actual consultation/access year. It is not a factual publication, creation, version, or update date.",
+      "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+      "scope": "Assign the year only to sources whose identity and relevant content are sufficiently verified. Inaccessible, unrelated, or unverified sources remain PENDING with no assigned citation year. The actual consultation date 2026-10-16 remains the factual access-date record and does not change that status."
+    }
+  },
+  "verification_method": {
+    "official_page_tool": "web__run open on exact source URLs; statuses are based on retrieved page text or explicit redirect/tool failure. The web tool did not expose HTTP status codes, so http_status is null, not inferred.",
+    "supplementary_command": "python3 urllib.request HEAD attempt for four tools.ages.pucrs.br URLs and support.impinj.com; all failed before HTTP with [Errno -3] Temporary failure in name resolution. This is a local network/DNS limitation and does not establish the servers return an HTTP error.",
+    "metadata_search": "web__run find for publication/update/copyright evidence on accessible pages. Search did not find page publication dates except EF Core explicit “Last updated on 2024-11-12”; current news dates/copyright notices are recorded separately and not treated as publication dates.",
+    "manifest_reconciliation": "Loaded IDs, href, anchor, XPath, source hash, unit ID and parent paragraph from docs/CONTENT_MANIFEST.json."
+  },
+  "count_reconciliation": {
+    "expected_project_wiki": 4,
+    "actual_project_wiki": 4,
+    "expected_official_technical": 13,
+    "actual_official_technical": 13,
+    "manifest_ids": "text-a-0129 through text-a-0145 inclusive",
+    "units_dependent": [
+      "chapter-05-text-h-0077",
+      "chapter-05-text-h-0078",
+      "chapter-05-text-h-0085"
+    ]
+  },
+  "references": [
+    {
+      "evidence_id": "ages-iii-text-a-0129",
+      "source_record_id": "text-a-0129",
+      "source_unit": "chapter-05-text-h-0077",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[805]/text:a[1]",
+      "source_xml_sha256": "41fecd5593bd32a0156cd6150ab250ec22ffb9ffa841b99886f59f075b97211a",
+      "original_anchor": "Repositório RFID Frontend",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+      "source_category": "project_repository",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web retornou Cache miss; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "Repositório referente à interface de Administrador + Dashboard e Interface de Clientes.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo, autoria, data, versão e correspondência atual do repositório não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0077",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir repositório, autoria, versão nem estado de acesso a partir do rótulo. Preservar literalmente a URL original."
+      ],
+      "linked_paragraph_id": "text-p-1030",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING",
+      "user_assigned_citation_year": null,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked.",
+        "status": "PENDING",
+        "reason": "A convenção de 2026 só é aplicada depois que a fonte e seu conteúdo relevante forem verificáveis; a data real de consulta permanece registrada separadamente."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0130",
+      "source_record_id": "text-a-0130",
+      "source_unit": "chapter-05-text-h-0077",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[808]/text:a[1]",
+      "source_xml_sha256": "76ff7be5501b6db442ff1d3e6f363734234c4dcf5c30bc8a4714a1fabd1abf71",
+      "original_anchor": "Repositório RFID Backend",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+      "source_category": "project_repository",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web retornou Cache miss; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "O ODT descreve este repositório como responsável pela lógica de negócio, endpoints, autenticação, regras operacionais, persistência e integração entre serviços, com execução serverless via AWS Lambda.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo, autoria, data, versão e correspondência atual do repositório não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0077",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir repositório, autoria, versão nem estado de acesso a partir do rótulo. Preservar literalmente a URL original."
+      ],
+      "linked_paragraph_id": "text-p-1033",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING",
+      "user_assigned_citation_year": null,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked.",
+        "status": "PENDING",
+        "reason": "A convenção de 2026 só é aplicada depois que a fonte e seu conteúdo relevante forem verificáveis; a data real de consulta permanece registrada separadamente."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0131",
+      "source_record_id": "text-a-0131",
+      "source_unit": "chapter-05-text-h-0077",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[811]/text:a[1]",
+      "source_xml_sha256": "293cce0fb469759b9da3b84b6b96f8de1a54812db5ab686d0922efdc8429184f",
+      "original_anchor": "Repositório RFID Gateway",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+      "source_category": "project_repository",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web informou URL não acessível por esta ferramenta; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "O ODT descreve este repositório como serviço local que comunica leitor RFID e aplicação em nuvem, usa API RESTful, processa eventos e os encaminha ao backend.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo, autoria, data, versão e correspondência atual do repositório não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0077",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir repositório, autoria, versão nem estado de acesso a partir do rótulo. Preservar literalmente a URL original."
+      ],
+      "linked_paragraph_id": "text-p-1036",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING",
+      "user_assigned_citation_year": null,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked.",
+        "status": "PENDING",
+        "reason": "A convenção de 2026 só é aplicada depois que a fonte e seu conteúdo relevante forem verificáveis; a data real de consulta permanece registrada separadamente."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0132",
+      "source_record_id": "text-a-0132",
+      "source_unit": "chapter-05-text-h-0078",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[817]/text:a[1]",
+      "source_xml_sha256": "7b1ba69f6efdda66b1d57de462985a50df4d2d0893ce15d1067a498049824635",
+      "original_anchor": "Wiki do Banco de Dados",
+      "original_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+      "source_category": "project_wiki",
+      "verification_status": "INDETERMINADO",
+      "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+      "observed_url": null,
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+        "observed_url": null,
+        "http_status": null,
+        "outcome": "A ferramenta web informou URL não acessível por esta ferramenta; não foi possível recuperar página, título ou corpo. Tentativa HEAD via urllib também falhou por Temporary failure in name resolution. Isso não comprova indisponibilidade HTTP nem erro 404."
+      },
+      "observed_title": null,
+      "responsible_author_or_publisher": "Indeterminado; o destino não foi carregado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "version": null
+      },
+      "original_context": "Link identificado no ODT como Wiki do Banco de Dados, na unidade sobre o banco de dados utilizado.",
+      "what_source_supports": "A URL e o rótulo estão preservados no ODT; conteúdo da wiki, autoria, data, versão e correspondência atual não puderam ser verificados externamente.",
+      "dependent_unit": "chapter-05-text-h-0078",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não inferir o conteúdo da wiki nem substituir a URL. Preservar literalmente o endereço codificado no ODT."
+      ],
+      "linked_paragraph_id": "text-p-1043",
+      "availability_status": "INDETERMINADO; ferramenta web sem conteúdo recuperado e consulta shell falhou antes de HTTP por DNS.",
+      "claim_support_status": "PENDING",
+      "user_assigned_citation_year": null,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked.",
+        "status": "PENDING",
+        "reason": "A convenção de 2026 só é aplicada depois que a fonte e seu conteúdo relevante forem verificáveis; a data real de consulta permanece registrada separadamente."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0133",
+      "source_record_id": "text-a-0133",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[76]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "0737095e8b08be7da605ba607e63dda417dec5490c126d27717a8aac47c4e97c",
+      "original_anchor": "Documentação C#",
+      "original_url": "https://learn.microsoft.com/dotnet/csharp/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://learn.microsoft.com/dotnet/csharp/",
+      "observed_url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://learn.microsoft.com/dotnet/csharp/",
+        "observed_url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada; redirecionamento de localização observado de /dotnet/csharp/ para /en-us/dotnet/csharp/."
+      },
+      "observed_title": "C# Guide - .NET managed language - C# | Microsoft Learn",
+      "responsible_author_or_publisher": "Microsoft Learn é o site editorial observado; nenhum autor pessoal/byline foi identificado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null,
+        "note": "A página explica que o guia inclui artigos, tutoriais, exemplos e referência da linguagem C#; nenhuma data de publicação/atualização foi encontrada na página consultada."
+      },
+      "original_context": "C#: Linguagem utilizada no desenvolvimento do backend e gateway, escolhida por sua maturidade, produtividade e integração nativa com o ecossistema .NET.",
+      "what_source_supports": "Confirma que o destino é o guia/documentação oficial da linguagem C# e associa a linguagem ao ecossistema .NET. Não comprova por si só que o projeto usou C# nem as razões de escolha relatadas no ODT.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "A data/ano factual de publicação não está estabelecida; não usar 2026 como ano factual com base apenas na data de acesso."
+      ],
+      "linked_paragraph_id": "text-p-1067",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0134",
+      "source_record_id": "text-a-0134",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[835]/text:a[1]",
+      "source_xml_sha256": "6bdd2ad2f7bfae5162e77d7801558e02841e6679b619aa3314b4a748f8a87d09",
+      "original_anchor": "Documentação .NET",
+      "original_url": "https://dotnet.microsoft.com/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://dotnet.microsoft.com/",
+      "observed_url": "https://dotnet.microsoft.com/en-us/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://dotnet.microsoft.com/",
+        "observed_url": "https://dotnet.microsoft.com/en-us/",
+        "http_status": null,
+        "outcome": "Página oficial do produto recuperada; redirecionamento da raiz para /en-us/."
+      },
+      "observed_title": ".NET - Build modern apps and powerful cloud services",
+      "responsible_author_or_publisher": "Site oficial .NET da Microsoft; nenhum autor pessoal/byline foi identificado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null,
+        "note": "A página mostra menção contemporânea a .NET Conf 2026 e .NET 11 RC, que não é data de publicação da página nem versão usada no projeto."
+      },
+      "original_context": ".NET: Framework principal utilizado no desenvolvimento do backend e também no gateway RFID, oferecendo robustez, performance e boa integração com serviços em nuvem.",
+      "what_source_supports": "A página identifica .NET como framework gratuito, open-source, multiplataforma para aplicações e serviços de nuvem. Não comprova uso ou versão no projeto nem as qualidades avaliativas descritas no ODT.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Link original leva à página inicial de produto, não a uma página técnica versionada. Ano factual da página ausente."
+      ],
+      "linked_paragraph_id": "text-p-1070",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0135",
+      "source_record_id": "text-a-0135",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[837]/text:a[1]",
+      "source_xml_sha256": "a823f570e9f83f8b7c1b52c953c666212865afec896f6bf4ee28849b7336a7d1",
+      "original_anchor": "Documentação React",
+      "original_url": "https://react.dev/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://react.dev/",
+      "observed_url": "https://react.dev/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://react.dev/",
+        "observed_url": "https://react.dev/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "React",
+      "responsible_author_or_publisher": "A página apresenta copyright Meta Platforms, Inc.; nenhum autor pessoal nem data de autoria foi identificado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": "A página exibe link para React 19.3; não prova versão usada pelo projeto.",
+        "dated_page_item": "Notícia sobre React 19.3 datada de 2026-09-09, não é data de publicação da página."
+      },
+      "original_context": "React: Biblioteca utilizada no desenvolvimento da interface web do sistema, responsável pela construção das telas administrativas e de clientes por meio de componentes reutilizáveis.",
+      "what_source_supports": "A página identifica React como biblioteca de interfaces web e nativas e descreve construção de interfaces com componentes; sustenta a caracterização geral, não o uso/versionamento específico no projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano de publicação da página não identificado. Não transformar a data da notícia nem o link de versão em ano de publicação ou versão do projeto."
+      ],
+      "linked_paragraph_id": "text-p-1074",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0136",
+      "source_record_id": "text-a-0136",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[840]/text:a[1]",
+      "source_xml_sha256": "9e14a274d919779dc1577cb09ccb68a2cf60e08e64b0d0904895dfcd8b4b2c14",
+      "original_anchor": "Documentação Typescript",
+      "original_url": "https://www.typescriptlang.org/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://www.typescriptlang.org/",
+      "observed_url": "https://www.typescriptlang.org/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://www.typescriptlang.org/",
+        "observed_url": "https://www.typescriptlang.org/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "TypeScript: JavaScript With Syntax For Types.",
+      "responsible_author_or_publisher": "Nenhum autor ou entidade editora formal/byline ficou identificável no conteúdo consultado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": "A página apresenta link para TypeScript 7.0; não estabelece versão usada pelo projeto."
+      },
+      "original_context": "TypeScript: Utilizado no frontend para adicionar tipagem estática ao JavaScript, aumentando a segurança do código e facilitando a manutenção do projeto.",
+      "what_source_supports": "A página define TypeScript como linguagem fortemente tipada baseada em JavaScript e explica seu suporte de tipos/tooling. Não prova adoção nem versão no projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano de publicação e autoria formal não identificados; não atribuir 2026 como data factual."
+      ],
+      "linked_paragraph_id": "text-p-1078",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0137",
+      "source_record_id": "text-a-0137",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[842]/text:a[1]",
+      "source_xml_sha256": "a12d329b2147d77251a1ebf6663a93320e9db8ff8320c69f455c25634d1fbb76",
+      "original_anchor": "Documentação API Impinj R700",
+      "original_url": "https://support.impinj.com/hc/en-us",
+      "source_category": "official_technical_source",
+      "verification_status": "PENDING",
+      "requested_url": "https://support.impinj.com/hc/en-us",
+      "observed_url": "https://support.impinj.com/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://support.impinj.com/hc/en-us",
+        "observed_url": "https://support.impinj.com/",
+        "http_status": null,
+        "outcome": "O link original foi redirecionado para a raiz de suporte da Impinj; a ferramenta apresentou o título Welcome to LWC Communities! e nenhum conteúdo (0 linhas), sem página técnica/API legível."
+      },
+      "observed_title": "Welcome to LWC Communities!",
+      "responsible_author_or_publisher": "A raiz pertence ao domínio support.impinj.com; autoria/editor formal não pode ser confirmada a partir do conteúdo vazio.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Impinj R700 REST API: API utilizada para comunicação entre o gateway e o leitor RFID físico, permitindo configuração e captura de eventos do equipamento.",
+      "what_source_supports": "Não sustenta as afirmações específicas sobre API REST, configuração ou captura de eventos, pois o destino não apresentou documentação técnica recuperável.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": true,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não procurar, inventar nem substituir por URL alternativa sem autorização. A unidade de tecnologias depende de referência técnica verificável para esta afirmação."
+      ],
+      "linked_paragraph_id": "text-p-1081",
+      "availability_status": "URL de origem redireciona para raiz de suporte acessível, mas página técnica/API não foi recuperada.",
+      "claim_support_status": "PENDING",
+      "user_assigned_citation_year": null,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked.",
+        "status": "PENDING",
+        "reason": "A convenção de 2026 só é aplicada depois que a fonte e seu conteúdo relevante forem verificáveis; a data real de consulta permanece registrada separadamente."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0138",
+      "source_record_id": "text-a-0138",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[845]/text:a[1]",
+      "source_xml_sha256": "bec710c4feef9cf393066ae32097bd32762d5a7dbb87a098fb3fc64906e35c9a",
+      "original_anchor": "Documentação Entity Framework",
+      "original_url": "https://learn.microsoft.com/ef/core/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://learn.microsoft.com/ef/core/",
+      "observed_url": "https://learn.microsoft.com/en-us/ef/core/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://learn.microsoft.com/ef/core/",
+        "observed_url": "https://learn.microsoft.com/en-us/ef/core/",
+        "http_status": null,
+        "outcome": "Página recuperada; redirecionamento de localização observado de /ef/core/ para /en-us/ef/core/. A interface também exibe aviso de autorização, embora o texto do artigo esteja renderizado."
+      },
+      "observed_title": "Overview of Entity Framework Core - EF Core | Microsoft Learn",
+      "responsible_author_or_publisher": "Microsoft Learn / .NET; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": "2024-11-12",
+        "version": null,
+        "note": "A página declara “Last updated on 2024-11-12”; isso é data de atualização, não prova de publicação original nem versão usada no projeto."
+      },
+      "original_context": "Entity Framework Core (ORM): Framework ORM utilizado no backend em .NET para mapear entidades para tabelas relacionais; usado para models, migrations, relações, constraints e consultas tipadas.",
+      "what_source_supports": "A documentação explica que EF Core pode servir como O/RM, permite trabalhar com banco de dados por objetos .NET e documenta modelos, consultas, gravação e migrations.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Não atribuir 2024 como ano de publicação apenas com base na data Last updated; separar data de atualização da publicação."
+      ],
+      "linked_paragraph_id": "text-p-1085",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0139",
+      "source_record_id": "text-a-0139",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[847]/text:a[1]",
+      "source_xml_sha256": "52b76e775658d5a68da3e5b02aba3944145d33abdf383d8b4430b393e5add866",
+      "original_anchor": "Documentação AWS Lambda",
+      "original_url": "https://aws.amazon.com/lambda/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/lambda/",
+      "observed_url": "https://aws.amazon.com/lambda/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/lambda/",
+        "observed_url": "https://aws.amazon.com/lambda/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; o conteúdo é uma página de produto e não a documentação de referência técnica."
+      },
+      "observed_title": "Serverless Computing - AWS Lambda - Amazon Web Services",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "AWS Lambda: Serviço serverless utilizado para hospedagem e execução do backend, permitindo escalabilidade sob demanda e menor custo operacional.",
+      "what_source_supports": "A página identifica Lambda como computação serverless e associa seu funcionamento a execução sem gerenciamento de infraestrutura e cobrança por uso. É uma página de produto; não comprova uso, implementação, escala ou custo do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano factual de publicação ausente; endereço original é página comercial de produto, não documentação detalhada."
+      ],
+      "linked_paragraph_id": "text-p-1088",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0140",
+      "source_record_id": "text-a-0140",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[84]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "301f29dd4019ee12f3c19ec222480883bbc73c7304cee6d8ee80180657d6ff8e",
+      "original_anchor": "Documentação AWS S3",
+      "original_url": "https://aws.amazon.com/s3/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/s3/",
+      "observed_url": "https://aws.amazon.com/s3/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/s3/",
+        "observed_url": "https://aws.amazon.com/s3/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; a página contém visão geral e remete à user guide."
+      },
+      "observed_title": "Cloud Object Storage – Amazon S3 – Amazon Web Services",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Amazon S3: Utilizado para hospedagem dos arquivos estáticos do frontend da aplicação web.",
+      "what_source_supports": "A página define S3 como serviço gerenciado de armazenamento de objetos e de guardar/recuperar dados. A página consultada não demonstrou diretamente hospedagem de arquivos estáticos de frontend; o uso concreto permanece fato autoral do relatório.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Página de produto, não guia técnico; ano factual ausente; suporte direto à afirmação sobre hosting estático não localizado no texto consultado."
+      ],
+      "linked_paragraph_id": "text-p-1091",
+      "availability_status": "Página oficial recuperada; identidade do produto confirmada.",
+      "claim_support_status": "PARTIAL",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0141",
+      "source_record_id": "text-a-0141",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[85]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "88761721445be20d689a2089696fb3c15caa542d8fb40586d8620474b7dc3ed3",
+      "original_anchor": "Documentação AWS Cloudfront",
+      "original_url": "https://aws.amazon.com/cloudfront/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/cloudfront/",
+      "observed_url": "https://aws.amazon.com/cloudfront/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/cloudfront/",
+        "observed_url": "https://aws.amazon.com/cloudfront/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; possui descrição e guia/tutorial ligados."
+      },
+      "observed_title": "Low-Latency Content Delivery Network (CDN) - Amazon CloudFront - Amazon Web Services",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Amazon CloudFront: responsável pela distribuição de conteúdo do frontend com melhor desempenho e menor latência de acesso.",
+      "what_source_supports": "A página caracteriza CloudFront como CDN de entrega de conteúdo e declara redução de latência; sustenta a função geral, não comprova a configuração/uso específico pelo projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano factual de publicação ausente; página comercial de produto."
+      ],
+      "linked_paragraph_id": "text-p-1094",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0142",
+      "source_record_id": "text-a-0142",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[851]/text:a[1]",
+      "source_xml_sha256": "e6c364a46c1618df05a43cb00e7a3557296b70ccc7535b9705b671446fd44ffe",
+      "original_anchor": "Documentação AWS RDS",
+      "original_url": "https://aws.amazon.com/rds/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://aws.amazon.com/rds/",
+      "observed_url": "https://aws.amazon.com/rds/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://aws.amazon.com/rds/",
+        "observed_url": "https://aws.amazon.com/rds/",
+        "http_status": null,
+        "outcome": "Página oficial de produto recuperada sem redirecionamento reportado; descreve RDS e remete ao user guide."
+      },
+      "observed_title": "Fully Managed Relational Database – Amazon RDS – AWS",
+      "responsible_author_or_publisher": "Amazon Web Services (AWS) indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "Amazon RDS: Serviço gerenciado utilizado para hospedagem do banco de dados PostgreSQL da aplicação.",
+      "what_source_supports": "A página identifica RDS como serviço gerenciado de banco relacional e declara suporte a PostgreSQL; sustenta função geral, não prova deployment específico do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Ano factual de publicação ausente; página de produto, não registro de implantação do projeto."
+      ],
+      "linked_paragraph_id": "text-p-1097",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0143",
+      "source_record_id": "text-a-0143",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[87]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "4688e00497a0b48551a058aec597505488dc5adc9ade8588719c30649cb0756b",
+      "original_anchor": "Documentação PostgreSQL",
+      "original_url": "https://www.postgresql.org/",
+      "source_category": "official_technical_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://www.postgresql.org/",
+      "observed_url": "https://www.postgresql.org/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://www.postgresql.org/",
+        "observed_url": "https://www.postgresql.org/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "PostgreSQL: The World's Most Advanced Open Source Relational Database",
+      "responsible_author_or_publisher": "Site oficial PostgreSQL; a página atribui a notícia de lançamento ao PostgreSQL Global Development Group, mas não estabelece byline para a página inicial.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "dated_page_item": "Notícia de lançamento PostgreSQL 19 RC 1 em 2026-10-15; versão não deve ser confundida com a utilizada no projeto.",
+        "release_list": "A página lista versões/releases correntes, mas não informa versão usada pelo projeto."
+      },
+      "original_context": "PostgreSQL: banco de dados relacional utilizado para armazenamento estruturado das informações do sistema.",
+      "what_source_supports": "A página apresenta PostgreSQL como sistema de banco de dados objeto-relacional, open-source; sustenta a caracterização geral, não o uso/versão específicos do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "A notícia datada de 2026-10-15 não é data de publicação da página inicial; não inferir versão do projeto."
+      ],
+      "linked_paragraph_id": "text-p-1100",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0144",
+      "source_record_id": "text-a-0144",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[88]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "5e65d1c667e01fda4b39c7409e4b7b85c6e19fee4cb249b6fb7af159e10aecc0",
+      "original_anchor": "Documentação Docker",
+      "original_url": "https://www.docker.com/",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://www.docker.com/",
+      "observed_url": "https://www.docker.com/",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://www.docker.com/",
+        "observed_url": "https://www.docker.com/",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado. Página atual orientada a Docker para agentes e produtos; liga à documentação, mas o link original é a página inicial comercial."
+      },
+      "observed_title": "Docker | Secure Sandboxes for AI Agents",
+      "responsible_author_or_publisher": "A página apresenta copyright © 2026 Docker Inc.; isso identifica o detentor do copyright, não necessariamente autoria individual ou data de publicação.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null,
+        "copyright_notice": "© 2026 Docker Inc. All rights reserved; não é ano de publicação."
+      },
+      "original_context": "Docker: utilizado para padronização de ambientes locais de desenvolvimento, execução de dependências e apoio em testes automatizados.",
+      "what_source_supports": "A página identifica os produtos Docker e menciona Docker Desktop/containers, mas não é documentação técnica e não sustenta diretamente todos os usos específicos descritos no ODT.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Página inicial/marketing atual; ano de publicação ausente. Não confundir o aviso de copyright com data de publicação; a documentação técnica não foi substituída ao verificar o link."
+      ],
+      "linked_paragraph_id": "text-p-1103",
+      "availability_status": "Página oficial recuperada; identidade do produto confirmada.",
+      "claim_support_status": "PARTIAL",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    },
+    {
+      "evidence_id": "ages-iii-text-a-0145",
+      "source_record_id": "text-a-0145",
+      "source_unit": "chapter-05-text-h-0085",
+      "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[89]/text:list-item[1]/text:p[2]/text:a[1]",
+      "source_xml_sha256": "59db113b97ed3d7da42e5c9fea65538fe620f69c5d5927f775d1acffa957d196",
+      "original_anchor": "Documentação GitHub Actions",
+      "original_url": "https://github.com/features/actions",
+      "source_category": "official_product_source",
+      "verification_status": "VERIFICADO",
+      "requested_url": "https://github.com/features/actions",
+      "observed_url": "https://github.com/features/actions",
+      "retrieval": {
+        "tool": "web__run open",
+        "requested_url": "https://github.com/features/actions",
+        "observed_url": "https://github.com/features/actions",
+        "http_status": null,
+        "outcome": "Página oficial recuperada sem redirecionamento reportado."
+      },
+      "observed_title": "GitHub Actions · CI/CD and automations · Agentic Workflows · Workflows · GitHub",
+      "responsible_author_or_publisher": "GitHub indicado no título/site; nenhum autor pessoal/byline observado.",
+      "published_dates_or_versions": {
+        "page_publication_date": null,
+        "last_updated": null,
+        "version": null
+      },
+      "original_context": "GitHub Actions: utilizado para automação de pipelines de CI/CD, validação de qualidade do código e sincronização entre repositórios GitHub e GitLab.",
+      "what_source_supports": "A página descreve automação de workflows, build, teste e deploy via GitHub e CI/CD; não comprova sincronização específica GitHub/GitLab nem a configuração do projeto.",
+      "dependent_unit": "chapter-05-text-h-0085",
+      "blocks_unit": false,
+      "abnt_bibliographic_status": "PENDING",
+      "limitations": [
+        "Nenhuma data/versionamento do produto foi mostrada; página de recurso, não documentação técnica detalhada."
+      ],
+      "linked_paragraph_id": "text-p-1106",
+      "availability_status": "Página oficial recuperada; título e conteúdo temático identificados.",
+      "claim_support_status": "VERIFICADO",
+      "user_assigned_citation_year": 2026,
+      "citation_year_provenance": {
+        "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+        "access_date_basis": "Actual source consultation date 2026-10-16.",
+        "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+        "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+        "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+      }
+    }
+  ],
+  "aggregate_blockers": [
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0077",
+        "chapter-05-text-h-0078"
+      ],
+      "reason": "The three original repository URLs and the database wiki URL could not be loaded. Their status is indeterminate, not confirmed down/404; contents/authorship/version/history cannot be verified."
+    },
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0085"
+      ],
+      "reason": "Original Impinj R700 API URL redirects to support homepage, with no technical content recovered; API-specific claims are unsupported by this linked page."
+    },
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0085"
+      ],
+      "reason": "Most accessible source pages provide no factual publication year. The verified access date is 2026-10-16; do not convert it to factual publication metadata. Human/editorial decision about citation treatment and bibliography is required if style convention conflicts."
+    },
+    {
+      "status": "PENDING",
+      "units": [
+        "chapter-05-text-h-0085"
+      ],
+      "reason": "The S3 product homepage establishes object-storage identity but the retrieved text did not directly substantiate the specific static-frontend-hosting claim; Docker link is a current product/marketing homepage rather than technical docs. Do not silently change the original URLs."
+    }
+  ],
+  "consultation_log": [
+    "git rev-parse HEAD → abe761cba29a653e19db234b497fffd957a944b6",
+    "sha256sum RELATORIO_ATUAL.odt → e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "jq on docs/CONTENT_MANIFEST.json → reconciled text-a-0129–0145, unit IDs, original anchors, hrefs, XPaths and source hashes",
+    "web__run open: exact URLs text-a-0129–0145; pages and redirects recorded per source",
+    "web__run find: publication/update/copyright patterns on C#, .NET, React, TypeScript; no general page publication date; EF page exposes Last updated 2024-11-12",
+    "python3 urllib.request HEAD on 4 project/wiki URLs and Impinj support URL → all pre-HTTP DNS failures [Errno -3] Temporary failure in name resolution; not an HTTP response",
+    "web__run open: PDF, resumo e página de referência bibliográfica da dissertação de Roy Thomas Fielding em UCI; metadados de 2000, fundamento REST e limite de suporte verificados para text-p-1035."
+  ],
+  "supplementary_inventory": {
+    "consultation_date": "2026-10-16",
+    "date_basis": "Real consultation date supplied by the environment; not a publication date.",
+    "scope": {
+      "units": [
+        "chapter-05-text-h-0078",
+        "chapter-05-text-h-0079",
+        "chapter-05-text-h-0080",
+        "chapter-05-text-h-0085"
+      ],
+      "purpose": "Supplementary inventory of named technical products and standards in the indicated ODT records that lack a term-specific original hyperlink in those paragraphs. No source URL is added to or substituted for any original ODT URL.",
+      "source_of_text": "docs/CONTENT_MANIFEST.json records reconciled to RELATORIO_ATUAL.odt content.xml; source ODT SHA-256 e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+    },
+    "verification_method": {
+      "tools": [
+        "web__run search_query",
+        "web__run open on official primary-source pages",
+        "web__run find for publication/update/copyright evidence",
+        "Python json inspection of docs/CONTENT_MANIFEST.json"
+      ],
+      "http_status_policy": "The web tool did not expose HTTP status codes; null is recorded rather than inferring one. No redirect was reported by the open operation where requested and observed URLs match.",
+      "queries": [
+        "site:help.figma.com Guide to prototyping in Figma",
+        "site:docs.aws.amazon.com/iot AWS IoT Core documentation MQTT",
+        "site:docs.gitlab.com/user/project/repository/mirror Repository mirroring GitLab",
+        "site:nist.gov RFID reader tag definition NIST RFID systems",
+        "Official OASIS MQTT Version 5.0 standard"
+      ],
+      "metadata_checks": [
+        "Figma Help Center: find Last updated and Copyright; no matching text found.",
+        "AWS IoT Core docs and AWS MQTT page: find Last updated; no matching text found. AWS MQTT page Copyright search also found no matching text.",
+        "GitLab repository mirroring docs: find Last updated; no matching text found.",
+        "NIST publication page explicitly displays author, publication date, abstract, citation, and created/updated dates.",
+        "OASIS MQTT Version 5.0 page explicitly displays standard title/type/date/editors and protocol abstract."
+      ],
+      "javascript_supplement": {
+        "search_query": "site:developer.mozilla.org/en-US/docs/Web/JavaScript/Guide JavaScript guide MDN",
+        "opened_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction",
+        "other_searches": "Also searched TC39/ECMA-262. Direct open of the large TC39 snapshot failed because the web tool rejected content over 4,194,305 bytes; MDN itself directly identifies ECMA-262 as the specification and serves as descriptive documentation.",
+        "metadata_evidence": "Page displays MDN contributors attribution and last modified date Jul 8, 2026; no factual original publication date or version is shown in the opened page.",
+        "access_date": "2026-10-16"
+      },
+      "parking_rfid_and_impinj_supplement": {
+        "search_queries": [
+          "RFID parking access control official documentation parking facility site:impinj.com OR site:hidglobal.com OR site:avigilon.com",
+          "Impinj R700 RFID reader REST API official R700 datasheet documentation site:impinj.com OR site:support.impinj.com",
+          "site:transcore.com RFID parking access control communities RFID vehicles official"
+        ],
+        "opened_official_sources": [
+          "https://transcore.com/rfid/parking-access-control",
+          "https://www.impinj.com/products/readers/impinj-r700",
+          "https://www.impinj.com/products/technology/key-features/iot-device-interface"
+        ],
+        "original_impinj_url_rechecked": "https://support.impinj.com/hc/en-us",
+        "original_impinj_result": "Redirected to https://support.impinj.com/ with title Welcome to LWC Communities! and 0 content lines; find for R700 returned no match. Kept original reference PENDING.",
+        "metadata_policy": "Actual consultation date 2026-10-16; access-year citation convention recorded separately from factual publication dates. Copyright 2026 is not treated as a publication date."
+      }
+    },
+    "items": [
+      {
+        "item_id": "ages-iii-supplement-aws-iot-core",
+        "term_as_written": "Amazon IoT Core",
+        "source_record_ids": [
+          "text-p-1047"
+        ],
+        "source_unit": "chapter-05-text-h-0079",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[821]",
+        "source_xml_sha256": "d6f45e3b6ccd9e3ac6ea12ced62db8c2e41c96399011fbaf0028201910bbef76",
+        "exact_source_text": "O banco de dados relacional utiliza PostgreSQL em Amazon RDS, responsável pelo armazenamento centralizado das informações do sistema. Para comunicação assíncrona de eventos relacionados ao hardware RFID, a arquitetura também utiliza Amazon IoT Core com protocolo MQTT, permitindo troca eficiente de mensagens entre os componentes conectados.",
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_COM_LIMITAÇÕES",
+        "official_sources": [
+          {
+            "url": "https://docs.aws.amazon.com/iot/",
+            "observed_url": "https://docs.aws.amazon.com/iot/",
+            "redirect_status": "Nenhum redirect foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial recuperada por busca e abertura.",
+            "title": "AWS IoT Core Documentation",
+            "responsible_entity": "Documentação oficial AWS (docs.aws.amazon.com); autor individual não exibido.",
+            "published_date": null,
+            "last_updated_date": null,
+            "product_or_document_version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página identifica AWS IoT Core e declara que fornece comunicação bidirecional segura de dispositivos conectados com a AWS Cloud por MQTT, HTTPS e LoRaWAN.",
+            "supports": "Identidade/nome oficial do serviço AWS IoT Core e capacidade geral de comunicação via MQTT.",
+            "does_not_support": "Não comprova que este projeto implantou ou configurou o serviço, nem que o uso chamado no ODT por Amazon IoT Core corresponde a uma conta ou configuração específica.",
+            "bibliographic_status": "PENDING",
+            "unknown_fields": [
+              "autor individual",
+              "data factual de publicação",
+              "data de atualização",
+              "versão documental aplicável ao projeto"
+            ],
+            "limitations": [
+              "A página usa o nome AWS IoT Core; o ODT diz Amazon IoT Core. A redação original deve permanecer sem correção nesta fase.",
+              "Nenhum ano de acesso pode ser convertido em ano factual de publicação."
+            ],
+            "user_assigned_citation_year": 2026,
+            "citation_year_provenance": {
+              "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+              "access_date_basis": "Actual source consultation date 2026-10-16.",
+              "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+              "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+              "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+            }
+          }
+        ],
+        "claim_support_status": "PARTIAL",
+        "dependent_unit": "chapter-05-text-h-0079",
+        "unit_decision": "A fonte confirma a identidade e capacidade geral do produto. A referência bibliográfica com autor/data factual permanece PENDING; fonte pública não comprova a implantação relatada.",
+        "citation_recommendation": {
+          "status": "RECOMMENDED_WITH_LIMITATION",
+          "recommend_for": "documentar o nome oficial AWS IoT Core e sua capacidade geral de comunicação com dispositivos via MQTT",
+          "do_not_use_as_evidence_for": "implantação/configuração no projeto AGES III; o ODT usa a forma “Amazon IoT Core”, diferente do título oficial consultado",
+          "citation_year_does_not_clear_bibliography_pending": true
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        }
+      },
+      {
+        "item_id": "ages-iii-supplement-mqtt",
+        "term_as_written": "MQTT",
+        "source_record_ids": [
+          "text-p-1047"
+        ],
+        "source_unit": "chapter-05-text-h-0079",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[821]",
+        "source_xml_sha256": "d6f45e3b6ccd9e3ac6ea12ced62db8c2e41c96399011fbaf0028201910bbef76",
+        "exact_source_text": "O banco de dados relacional utiliza PostgreSQL em Amazon RDS, responsável pelo armazenamento centralizado das informações do sistema. Para comunicação assíncrona de eventos relacionados ao hardware RFID, a arquitetura também utiliza Amazon IoT Core com protocolo MQTT, permitindo troca eficiente de mensagens entre os componentes conectados.",
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_COM_LIMITAÇÕES",
+        "official_sources": [
+          {
+            "url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html",
+            "observed_url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html",
+            "redirect_status": "Nenhum redirect foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Especificação oficial OASIS recuperada.",
+            "title": "MQTT Version 5.0",
+            "responsible_entity": "OASIS Message Queuing Telemetry Transport (MQTT) Technical Committee; editors Andrew Banks, Ed Briggs, Ken Borgendale e Rahul Gupta.",
+            "published_date": "2019-03-07",
+            "last_updated_date": null,
+            "product_or_document_version": "MQTT Version 5.0; OASIS Standard",
+            "access_date": "2026-10-16",
+            "direct_evidence": "O abstract define MQTT como protocolo de transporte de mensagens cliente-servidor publish/subscribe e descreve uso em ambientes restritos e IoT. A página identifica o documento como OASIS Standard, datado de 07 March 2019, e lista seus editores.",
+            "supports": "Definição geral do protocolo MQTT.",
+            "does_not_support": "Não determina qual versão de MQTT foi usada pelo projeto AGES III.",
+            "bibliographic_status": "METADADOS_VERIFICADOS_PARA_ESTA_EDICAO_DA_NORMA",
+            "unknown_fields": [
+              "versão implementada no projeto"
+            ],
+            "limitations": [
+              "A edição Version 5.0 é uma fonte para definição do protocolo, não evidência de que AGES III utilizou MQTT 5.0."
+            ],
+            "user_assigned_citation_year": 2026,
+            "citation_year_provenance": {
+              "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+              "access_date_basis": "Actual source consultation date 2026-10-16.",
+              "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+              "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+              "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+            }
+          },
+          {
+            "url": "https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html",
+            "observed_url": "https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html",
+            "redirect_status": "Nenhum redirect foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial AWS recuperada por busca e abertura.",
+            "title": "MQTT - AWS IoT Core",
+            "responsible_entity": "Documentação oficial AWS; autor individual não exibido.",
+            "published_date": null,
+            "last_updated_date": null,
+            "product_or_document_version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página chama MQTT de protocolo de mensagens leve, identifica suporte AWS IoT Core baseado nas especificações MQTT 3.1.1 e 5.0 e afirma que o AWS IoT Core aceita conexões de dispositivos usando MQTT e MQTT sobre WSS.",
+            "supports": "A compatibilidade geral entre AWS IoT Core e MQTT.",
+            "does_not_support": "Não comprova configuração do projeto nem qual versão foi usada nele.",
+            "bibliographic_status": "PENDING",
+            "unknown_fields": [
+              "autor individual",
+              "data factual de publicação",
+              "data de atualização",
+              "versão documental aplicável ao projeto"
+            ],
+            "limitations": [
+              "A documentação lista versões de suporte do produto, que não equivalem à versão usada por AGES III."
+            ],
+            "user_assigned_citation_year": 2026,
+            "citation_year_provenance": {
+              "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+              "access_date_basis": "Actual source consultation date 2026-10-16.",
+              "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+              "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+              "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+            }
+          }
+        ],
+        "claim_support_status": "PARTIAL",
+        "dependent_unit": "chapter-05-text-h-0079",
+        "unit_decision": "A definição geral pode ser referenciada pela especificação OASIS com metadados verificados. A versão implementada no projeto é desconhecida e deve permanecer sem inferência; a fonte AWS adicional tem metadados bibliográficos PENDING.",
+        "citation_recommendation": {
+          "status": "RECOMMENDED_FOR_GENERIC_PROTOCOL_DEFINITION_ONLY",
+          "recommend_for": "definição geral do protocolo MQTT, usando a especificação OASIS consultada como fonte de conceito",
+          "do_not_use_as_evidence_for": "versão MQTT efetivamente utilizada por AGES III ou configuração AWS específica. A versão do projeto permanece PENDING.",
+          "citation_year_does_not_clear_bibliography_pending": true
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        }
+      },
+      {
+        "item_id": "ages-iii-supplement-gitlab",
+        "term_as_written": "GitLab",
+        "source_record_ids": [
+          "text-p-1049"
+        ],
+        "source_unit": "chapter-05-text-h-0079",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[823]",
+        "source_xml_sha256": "68772046ab985032eacd47c282786f14265428849d780a4068aad1d917b07ce0",
+        "exact_source_text": "Complementando a solução, o projeto também contou com pipelines automatizadas de integração contínua e sincronização entre os repositórios GitHub e GitLab, garantindo padronização do desenvolvimento, validação de qualidade e maior segurança no fluxo de entregas.",
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_COM_LIMITAÇÕES",
+        "official_sources": [
+          {
+            "url": "https://docs.gitlab.com/user/project/repository/mirror/",
+            "observed_url": "https://docs.gitlab.com/user/project/repository/mirror/",
+            "redirect_status": "Nenhum redirect foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial GitLab Docs recuperada por busca e abertura.",
+            "title": "Repository mirroring",
+            "responsible_entity": "GitLab Docs; autor individual não exibido.",
+            "published_date": null,
+            "last_updated_date": null,
+            "product_or_document_version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página diz que repositórios podem ser espelhados de e para fontes externas, que branches, tags e commits sincronizam automaticamente, e descreve espelhamento push e pull.",
+            "supports": "Capacidade geral documentada de espelhamento/sincronização de repositórios no GitLab.",
+            "does_not_support": "Não comprova que a sincronização foi configurada neste projeto nem que o pipeline automatizado descrito foi executado; a página não é evidência da configuração concreta de GitHub Actions.",
+            "bibliographic_status": "PENDING",
+            "unknown_fields": [
+              "autor individual",
+              "data factual de publicação",
+              "data de atualização",
+              "versão documental aplicável ao projeto"
+            ],
+            "limitations": [
+              "A documentação de espelhamento suporta a capacidade do GitLab, não os fatos específicos da implantação AGES III."
+            ],
+            "user_assigned_citation_year": 2026,
+            "citation_year_provenance": {
+              "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+              "access_date_basis": "Actual source consultation date 2026-10-16.",
+              "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+              "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+              "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+            }
+          }
+        ],
+        "related_existing_original_source": {
+          "source_record_id": "text-a-0145",
+          "original_url": "https://github.com/features/actions",
+          "relevance": "O manifesto contém fonte original de GitHub Actions na seção de tecnologias. Ela não demonstra configuração, vínculo ou sincronização concreta com GitLab."
+        },
+        "claim_support_status": "PARTIAL",
+        "dependent_unit": "chapter-05-text-h-0079",
+        "unit_decision": "A capacidade do GitLab é verificável; autoria/data factual da página e uso concreto no projeto permanecem PENDING.",
+        "citation_recommendation": {
+          "status": "RECOMMENDED_WITH_LIMITATION",
+          "recommend_for": "capacidade documentada do GitLab para espelhamento de repositórios",
+          "do_not_use_as_evidence_for": "existência/configuração dos pipelines e sincronização concreta entre os repositórios deste projeto",
+          "citation_year_does_not_clear_bibliography_pending": true
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        }
+      },
+      {
+        "item_id": "ages-iii-supplement-figma",
+        "term_as_written": "Figma",
+        "source_record_ids": [
+          "text-p-1053",
+          "text-p-1054"
+        ],
+        "source_unit": "chapter-05-text-h-0080",
+        "source_xpaths": [
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[826]",
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[827]"
+        ],
+        "source_xml_sha256": [
+          "6abc483df38e56699be90a99527341b1652152b3ab41d800ea48b2f1b5ecd5f8",
+          "715edec498df5cd812d82aaea16bd7be262a6aa0b89dee86d8a6934c10fbd5e5"
+        ],
+        "exact_source_fragments_in_order": [
+          "Os protótipos de alta-fidelidade foram construídos no Figma, ferramenta web de",
+          "prototipagem e design."
+        ],
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_COM_LIMITAÇÕES",
+        "official_sources": [
+          {
+            "url": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma",
+            "observed_url": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma",
+            "redirect_status": "Nenhum redirect foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial Figma Learn Help Center recuperada por busca e abertura.",
+            "title": "Guide to prototyping in Figma",
+            "responsible_entity": "Figma Learn - Help Center; autor individual não exibido.",
+            "published_date": null,
+            "last_updated_date": null,
+            "product_or_document_version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página declara que as ferramentas de prototipagem Figma criam fluxos interativos, e detalha fluxos, conexões e interações para explorar designs.",
+            "supports": "Capacidade geral do Figma para prototipagem e criação de fluxos interativos.",
+            "does_not_support": "Não comprova que os protótipos deste projeto foram construídos no Figma nem sustenta por si só que o produto seja uma ferramenta web.",
+            "bibliographic_status": "PENDING",
+            "unknown_fields": [
+              "autor individual",
+              "data factual de publicação",
+              "data de atualização",
+              "versão documental aplicável ao projeto"
+            ],
+            "limitations": [
+              "Busca por Last updated e Copyright não encontrou esses dados no conteúdo recuperado.",
+              "A fonte documenta capacidade do produto, não o histórico de uso no projeto."
+            ],
+            "user_assigned_citation_year": 2026,
+            "citation_year_provenance": {
+              "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+              "access_date_basis": "Actual source consultation date 2026-10-16.",
+              "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+              "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+              "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+            }
+          }
+        ],
+        "claim_support_status": "PARTIAL",
+        "dependent_unit": "chapter-05-text-h-0080",
+        "unit_decision": "A função de prototipagem está documentada em fonte oficial. A referência ABNT permanece PENDING por falta de data/autor individual; fonte pública não confirma o uso neste projeto.",
+        "citation_recommendation": {
+          "status": "RECOMMENDED_WITH_LIMITATION",
+          "recommend_for": "capacidade geral de prototipagem e criação de fluxos interativos no Figma",
+          "do_not_use_as_evidence_for": "prova histórica de que os protótipos específicos do projeto foram construídos no Figma",
+          "citation_year_does_not_clear_bibliography_pending": true
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        }
+      },
+      {
+        "item_id": "ages-iii-supplement-rfid",
+        "term_as_written": "RFID",
+        "source_record_ids": [
+          "text-p-1039",
+          "text-p-1047",
+          "text-p-1048"
+        ],
+        "source_units": [
+          "chapter-05-text-h-0078",
+          "chapter-05-text-h-0079"
+        ],
+        "source_xpaths": [
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[814]",
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[821]",
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[822]"
+        ],
+        "source_xml_sha256": [
+          "dbfe52f27f82cb98c92d8e47ac7c05cdc28b93e20344620787e9b4aee9f96448",
+          "d6f45e3b6ccd9e3ac6ea12ced62db8c2e41c96399011fbaf0028201910bbef76",
+          "691fc29af9cb494fb5d1b4e87add7e3a0ca9117a2328eb74aff9ae564009ea9f"
+        ],
+        "exact_source_fragments": [
+          "A modelagem foi estruturada para contemplar as principais entidades do projeto, como usuários, veículos, tags RFID, acessos e transações, garantindo integridade relacional e consistência dos dados.",
+          "Para comunicação assíncrona de eventos relacionados ao hardware RFID, a arquitetura também utiliza Amazon IoT Core com protocolo MQTT, permitindo troca eficiente de mensagens entre os componentes conectados.",
+          "No ambiente local onde o leitor RFID está instalado, foi desenvolvido um Gateway em .NET responsável por se comunicar diretamente com o equipamento físico, capturar eventos de leitura e encaminhar essas informações à infraestrutura em nuvem. Esse componente atua como ponte entre o dispositivo e os serviços centrais da aplicação, isolando particularidades do hardware e facilitando futuras evoluções."
+        ],
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_PARA_DEFINICAO_GENERICA; DETALHES_DE_IMPLEMENTACAO_PENDENTES",
+        "official_sources": [
+          {
+            "url": "https://www.nist.gov/publications/securing-radio-frequency-identification-rfid-systems",
+            "observed_url": "https://www.nist.gov/publications/securing-radio-frequency-identification-rfid-systems",
+            "redirect_status": "Nenhum redirect foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Publicação oficial NIST recuperada por busca e abertura.",
+            "title": "Securing Radio Frequency Identification (RFID) Systems",
+            "responsible_author_or_publisher": "Karen A. Scarfone; ITL Bulletin, National Institute of Standards and Technology (NIST).",
+            "published_date": "2007-05-17",
+            "page_last_updated_date": "2017-02-19",
+            "product_or_document_version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "O resumo NIST define RFID como tecnologia de identificação automática e captura de dados que usa campos elétricos ou magnéticos em radiofrequências. A publicação descreve sistemas RFID, mas não a implementação do projeto.",
+            "supports": "Definição geral do termo RFID.",
+            "does_not_support": "Não identifica fabricante/modelo do leitor AGES III, frequência, padrão, firmware, tags ou configuração de integração.",
+            "bibliographic_status": "METADADOS_VERIFICADOS_PARA_PUBLICACAO_DE_2007",
+            "unknown_fields": [
+              "modelo/fabricante do leitor referido nas unidades 0078/0079",
+              "frequência/padrão/versão usados",
+              "configuração factual do hardware no projeto"
+            ],
+            "limitations": [
+              "A data 2017-02-19 é a atualização da página; a própria publicação é de 2007 e essa é a data factual de publicação.",
+              "A existência de ligação original Impinj em text-a-0137 é registrada separadamente na curadoria de links; o URL original não foi substituído por esta fonte genérica."
+            ],
+            "user_assigned_citation_year": 2026,
+            "citation_year_provenance": {
+              "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+              "access_date_basis": "Actual source consultation date 2026-10-16.",
+              "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+              "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+              "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+            }
+          }
+        ],
+        "claim_support_status": "PARTIAL",
+        "dependent_units": [
+          "chapter-05-text-h-0078",
+          "chapter-05-text-h-0079"
+        ],
+        "unit_decision": "Fonte oficial NIST com metadados completos para definição genérica. Hardware e detalhes de implementação continuam sem verificação independente.",
+        "citation_recommendation": {
+          "status": "RECOMMENDED_FOR_GENERIC_DEFINITION_ONLY",
+          "recommend_for": "definição genérica de RFID conforme publicação NIST de 2007",
+          "do_not_use_as_evidence_for": "fabricante/modelo do leitor, frequência, padrão, firmware ou integração utilizados no projeto",
+          "citation_year_does_not_clear_bibliography_pending": false
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        }
+      },
+      {
+        "item_id": "ages-iii-supplement-javascript",
+        "term_as_written": "JavaScript",
+        "source_record_ids": [
+          "text-p-1077"
+        ],
+        "source_unit": "chapter-05-text-h-0085",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[839]",
+        "source_xml_sha256": "eeffe3d6e2b29dd0420028c49a87645d7c5450628f5733f115625fc0c598825c",
+        "exact_source_text": "\tUtilizado no frontend para adicionar tipagem estática ao JavaScript, \taumentando a segurança do código e facilitando a manutenção do projeto.",
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO",
+        "official_sources": [
+          {
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction",
+            "observed_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction",
+            "redirect_status": "Nenhum redirecionamento foi indicado pelo web__run open; URL observada igual à consultada.",
+            "http_status": null,
+            "availability": "Página oficial de documentação MDN recuperada por busca e abertura.",
+            "title": "Introduction - JavaScript | MDN",
+            "page_heading": "Introduction",
+            "responsible_entity": "MDN Web Docs; a página credita MDN contributors, sem autor individual identificado.",
+            "factual_publication_date": null,
+            "factual_last_modified_date": "2026-07-08",
+            "version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A introdução define JavaScript como linguagem de scripting orientada a objetos e descreve seus usos. Também declara que JavaScript não tem tipagem estática e que variáveis, parâmetros e retornos não são explicitamente tipados; informa que JavaScript é padronizado como ECMAScript e que a especificação está em ECMA-262.",
+            "supports": "Descrição geral de JavaScript e a afirmação de que a linguagem JavaScript não tem tipagem estática por si só.",
+            "does_not_support": "Não comprova fatos sobre o código AGES III, adoção de TypeScript, aumento efetivo de segurança/manutenibilidade no projeto ou qualquer versão usada.",
+            "evidence_locations": "web__run open, linhas 202–226 e 297 (definição, tipagem/ECMAScript, crédito de atualização).",
+            "bibliographic_status": "VERIFICADO_COM_ANO_DE_CITACAO_CONVENCIONADO",
+            "bibliographic_status_note": "A página fornece título, entidade/documentação, crédito coletivo MDN contributors e data factual de última modificação. A data factual de publicação não é exibida; permanece null. O ano 2026 para o campo autor-data é convenção explícita do usuário, baseada no acesso, e não data factual de publicação.",
+            "unknown_fields": [
+              "data factual de publicação original",
+              "versão documental aplicável ao projeto"
+            ],
+            "limitations": [
+              "O texto-fonte apresenta uma afirmação combinada sobre TypeScript e JavaScript. Esta página sustenta diretamente a parte sobre JavaScript; não atribuir a ela, isoladamente, a capacidade do TypeScript de adicionar checagem estática.",
+              "A página documenta a linguagem, mas não prova o uso histórico no projeto."
+            ]
+          }
+        ],
+        "related_existing_source_record": {
+          "source_record_id": "text-a-0136",
+          "original_url": "https://www.typescriptlang.org/",
+          "note": "A evidência independente do site oficial TypeScript já registrada para text-a-0136 sustenta a relação TypeScript/JavaScript e a tipagem; seu status bibliográfico original continua PENDING. Não foi usada por analogia para verificar esta fonte MDN; MDN foi aberta e verificada diretamente para o termo JavaScript."
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        },
+        "citation_recommendation": {
+          "status": "RECOMMENDED_WITH_SCOPE",
+          "recommend_for": "definição descritiva de JavaScript e informação de que a linguagem não declara tipagem estática como parte do JavaScript base",
+          "do_not_use_as_evidence_for": "adoção de TypeScript, configuração concreta do frontend ou efeitos específicos na segurança/manutenção do projeto"
+        },
+        "claim_support_status": "VERIFICADO_PARA_DESCRICAO_GERAL; USO_NO_PROJETO_NAO_VERIFICADO",
+        "dependent_unit": "chapter-05-text-h-0085"
+      },
+      {
+        "item_id": "ages-iii-supplement-rfid-parking-use-cases",
+        "term_as_written": "RFID",
+        "source_record_ids": [
+          "text-p-1022"
+        ],
+        "source_unit": "chapter-05-text-h-0075",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[798]",
+        "source_xml_sha256": "81925d4ef6e259521feb6b1bbb76438d852161a9df28f73fd057ccd0d95fb942",
+        "exact_source_text": "\tA tecnologia RFID é amplamente utilizada em ambientes que necessitam de controle de acesso rápido e seguro, como estacionamentos corporativos, condomínios residenciais e empresas. Nesses contextos, seu uso normalmente está concentrado na identificação de veículos autorizados e na liberação de entradas e saídas. No entanto, os dados gerados por esse processo também podem ser utilizados de forma estratégica, permitindo uma gestão mais eficiente da operação.",
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_COM_LIMITACOES",
+        "official_sources": [
+          {
+            "url": "https://transcore.com/rfid/parking-access-control",
+            "observed_url": "https://transcore.com/rfid/parking-access-control",
+            "redirect_status": "Nenhum redirecionamento foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial TransCore aberta com conteúdo recuperável.",
+            "title": "Parking & Access Control",
+            "site_title": "TransCore | Parking & Access Control",
+            "responsible_entity": "TransCore (site corporativo e autoria institucional; byline individual não identificada).",
+            "factual_publication_date": null,
+            "factual_last_updated_date": null,
+            "copyright_notice": "© TransCore 2026 (copyright do site; não tratado como data factual de publicação).",
+            "version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página apresenta solução wireless baseada em RFID para instalações de estacionamento, campus empresariais e comunidades fechadas; descreve administração de acesso a estacionamentos corporativos e entrada/saída de residentes. Também relata operação, throughput, monitoramento de tráfego e integração com sistemas de gestão.",
+            "evidence_locations": "web__run open linhas 78–102 e 125–135.",
+            "supports": "Existem aplicações comerciais documentadas de identificação veicular RFID em estacionamentos comerciais/municipais e corporativos, business parks, campus e comunidades fechadas, com controle de entrada/saída. A empresa declara que essas soluções estão instaladas em vários locais.",
+            "does_not_support": "Não oferece evidência independente ou estatística de prevalência ampla de RFID em todo o mercado; não caracteriza explicitamente condomínios residenciais brasileiros; não comprova implementação específica AGES III.",
+            "bibliographic_status": "VERIFICADO_COM_ANO_DE_CITACAO_CONVENCIONADO",
+            "bibliographic_status_note": "Título e entidade corporativa são exibidos. A página não informa data factual de publicação ou atualização; copyright 2026 não foi usado como data de publicação. O ano autor-data 2026 decorre da decisão explícita do usuário e da data real de acesso.",
+            "unknown_fields": [
+              "data factual de publicação",
+              "data de atualização",
+              "autor individual",
+              "versão"
+            ],
+            "limitations": [
+              "A frase ‘amplamente utilizada’ é mais abrangente do que os exemplos exibidos; a fonte mostra aplicações e instalações da própria TransCore, não frequência de uso de RFID no mercado em geral.",
+              "‘Comunidades fechadas’ (gated communities) é a terminologia da fonte; não afirmar equivalência jurídica com todo condomínio residencial.",
+              "Citações de clientes na página são relatos de clientes publicados pelo fornecedor, não verificação independente."
+            ]
+          }
+        ],
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        },
+        "citation_recommendation": {
+          "status": "RECOMMENDED_FOR_DOCUMENTED_USE_CASES_ONLY",
+          "recommend_for": "apoiar exemplos de estacionamento corporativo, business campus e acesso de veículos em comunidades fechadas, com atribuição da informação ao fornecedor TransCore",
+          "do_not_use_as_evidence_for": "prevalência geral ampla/estatística, todos os condomínios residenciais ou implantação do projeto AGES III"
+        },
+        "claim_support_status": "PARTIAL",
+        "dependent_unit": "chapter-05-text-h-0075"
+      },
+      {
+        "item_id": "ages-iii-supplement-impinj-r700",
+        "term_as_written": "Impinj R700 / Impinj R700 REST API",
+        "source_record_ids": [
+          "text-p-1024",
+          "text-p-1080",
+          "text-a-0137"
+        ],
+        "source_units": [
+          "chapter-05-text-h-0075",
+          "chapter-05-text-h-0085"
+        ],
+        "source_xpaths": [
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[800]",
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:list[81]/text:list-item[1]/text:p[1]",
+          "/office:document-content[1]/office:body[1]/office:text[1]/text:p[842]/text:a[1]"
+        ],
+        "source_xml_sha256": [
+          "2d63bc0e063e0ac1e814a0ecb4c480a8c45f1641e9cd4150713c01a6692e518a",
+          "1f91d23cbf52a36010249ad394c30038302ac237a1278e70fa3b6a649f7c8c42",
+          "a12d329b2147d77251a1ebf6663a93320e9db8ff8320c69f455c25634d1fbb76"
+        ],
+        "exact_source_fragments": [
+          "Outro diferencial do projeto está em sua natureza técnica, por envolver não apenas desenvolvimento de software, mas também integração com hardware real, o Impinj R700. Dentro do contexto da AGES, trata-se de uma experiência pouco comum, exigindo do time conhecimentos de arquitetura, comunicação entre sistemas e operação de dispositivos físicos. Dessa forma, o projeto proporciona uma vivência próxima de desafios encontrados no mercado, onde soluções completas dependem da integração entre software e hardware.",
+          "Impinj R700 REST API\nAPI utilizada para comunicação entre o gateway e o leitor RFID físico, permitindo configuração e captura de eventos do equipamento.",
+          "Documentação API Impinj R700"
+        ],
+        "original_impinj_link": {
+          "source_record_id": "text-a-0137",
+          "url_literal": "https://support.impinj.com/hc/en-us",
+          "status": "PENDING",
+          "observed_url": "https://support.impinj.com/",
+          "observed_title": "Welcome to LWC Communities!",
+          "http_status": null,
+          "consultation_date": "2026-10-16",
+          "method": "web__run open on the exact original URL; tool reported redirect to support root and zero lines; web__run find for ‘R700’ returned no matching text.",
+          "interpretation": "Original URL is preserved as PENDING because it does not present retrievable R700 technical/API content. The additional official product pages below are separate corroborating sources and do not replace or rewrite that href."
+        },
+        "verification_status": "VERIFICADO_COM_LIMITACOES",
+        "official_sources": [
+          {
+            "url": "https://www.impinj.com/products/readers/impinj-r700",
+            "observed_url": "https://www.impinj.com/products/readers/impinj-r700",
+            "redirect_status": "Nenhum redirecionamento foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial Impinj aberta com conteúdo recuperável.",
+            "title": "Impinj R700 Series RAIN RFID Readers",
+            "responsible_entity": "Impinj, Inc. (identificação corporativa no próprio site); autor individual não exibido.",
+            "factual_publication_date": null,
+            "factual_last_updated_date": null,
+            "copyright_notice": "© 2012–2026 Impinj, Inc. (copyright do site; não tratado como data factual de publicação).",
+            "version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página identifica o Impinj R700 Series como leitor RAIN RFID e descreve recursos de leitura, dados de tags, aplicações de IoT, configuração de leitor e eventos via Impinj IoT Device Interface.",
+            "evidence_locations": "web__run open linhas 19–40, 59–65 e 70–82.",
+            "supports": "Identidade do produto Impinj R700 como leitor RAIN RFID comercial e capacidades gerais declaradas pelo fabricante.",
+            "does_not_support": "Não comprova que AGES III adquiriu ou integrou esse modelo específico.",
+            "bibliographic_status": "VERIFICADO_COM_ANO_DE_CITACAO_CONVENCIONADO",
+            "bibliographic_status_note": "O título e a entidade corporativa são observados; a página não informa data factual de publicação/atualização. O copyright não foi convertido em ano de publicação. O autor-data 2026 é convenção explícita do usuário baseada no acesso real.",
+            "unknown_fields": [
+              "data factual de publicação",
+              "data de atualização",
+              "autor individual",
+              "versão do produto usada pelo projeto"
+            ],
+            "limitations": [
+              "Página de produto atual pode descrever versão posterior à utilizada no projeto.",
+              "A página não prova adoção histórica pelo memorial."
+            ]
+          },
+          {
+            "url": "https://www.impinj.com/products/technology/key-features/iot-device-interface",
+            "observed_url": "https://www.impinj.com/products/technology/key-features/iot-device-interface",
+            "redirect_status": "Nenhum redirecionamento foi indicado pelo web__run open; URL observada igual à solicitada.",
+            "http_status": null,
+            "availability": "Página oficial Impinj aberta com conteúdo recuperável.",
+            "title": "Impinj IoT Device Interface",
+            "responsible_entity": "Impinj, Inc. (site oficial); autor individual não exibido.",
+            "factual_publication_date": null,
+            "factual_last_updated_date": null,
+            "copyright_notice": "© 2012–2026 Impinj, Inc. (copyright do site; não tratado como data factual de publicação).",
+            "version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A página declara que o Impinj IoT Device Interface está disponível em leitores R700/R720, fornece REST API para interface com sistemas operacionais e plataformas de hardware, configura/controla leitores, e permite acesso a eventos do leitor e tags por HTTP streams, MQTT, webhooks e Kafka.",
+            "evidence_locations": "web__run open linhas 18–43, 58–75 e 101–115.",
+            "supports": "Existência de REST API compatível com R700 para configurar/controlar o leitor e obter dados/eventos; capacidade geral de comunicação com aplicações externas.",
+            "does_not_support": "Não prova que o gateway AGES III utilizou essa interface ou que a chamada capturava eventos exatamente como narrado; não identifica versão/API concreta no projeto.",
+            "bibliographic_status": "VERIFICADO_COM_ANO_DE_CITACAO_CONVENCIONADO",
+            "bibliographic_status_note": "Título e entidade corporativa são observados; data factual de publicação/atualização e versão não são exibidas. O autor-data 2026 é convenção explícita do usuário baseada no acesso real, não metadado factual.",
+            "unknown_fields": [
+              "data factual de publicação",
+              "data de atualização",
+              "autor individual",
+              "versão da API/configuração AGES III"
+            ],
+            "limitations": [
+              "A documentação confirma capacidades do produto, não a configuração histórica concreta do projeto.",
+              "O site de suporte ligado no ODT continua sem conteúdo técnico recuperável; estas páginas de produto são evidência suplementar independente."
+            ]
+          }
+        ],
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is a user-assigned author-date/citation-year convention only. It is not a factual publication, creation, version, or update date.",
+          "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+          "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked."
+        },
+        "citation_recommendation": {
+          "status": "RECOMMENDED_FOR_PRODUCT_AND_API_CAPABILITIES_ONLY",
+          "recommend_for": "identificar o Impinj R700 como leitor RAIN RFID e documentar a capacidade oficial de sua REST API/IoT Device Interface para configuração, controle e eventos/dados",
+          "do_not_use_as_evidence_for": "prova de que a equipe AGES III usou ou configurou o R700, comprovação independente da ligação gateway-leitor no projeto, versão de firmware/API aplicada",
+          "original_link_status": "text-a-0137 permanece PENDING e deve manter a URL original literal."
+        },
+        "claim_support_status": "PARTIAL",
+        "dependent_units": [
+          "chapter-05-text-h-0075",
+          "chapter-05-text-h-0085"
+        ],
+        "unit_decision": "A fonte oficial confirma o produto e capacidades gerais da interface REST para leitores R700. O fato de uso específico por AGES III e sua configuração dependem de evidência do projeto. O href original de suporte continua PENDING, sem ser substituído."
+      },
+      {
+        "item_id": "ages-iii-supplement-rest-fielding",
+        "term_as_written": "API RESTful",
+        "source_record_ids": [
+          "text-p-1035"
+        ],
+        "source_unit": "chapter-05-text-h-0077",
+        "source_xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[810]",
+        "source_xml_sha256": "c12e9a2bfd650c15a511f78bfd6bf04d9c2f4e532615699ae7e1d90eaad7f092",
+        "exact_source_text": "Repositório responsável pela comunicação entre o leitor RFID físico e a aplicação em nuvem. Esse serviço opera no ambiente local onde o equipamento está instalado, utilizando uma API RESTful para comunicação com o backend, processando os eventos capturados e encaminhando as informações ao backend principal hospedado na nuvem.",
+        "term_specific_original_hyperlink_present": false,
+        "verification_status": "VERIFICADO_COM_LIMITACAO",
+        "official_sources": [
+          {
+            "source_kind": "dissertation_pdf",
+            "url": "https://ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf",
+            "observed_url": "https://ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf",
+            "redirect_status": "URL observada igual à solicitada; nenhum redirecionamento indicado.",
+            "http_status": null,
+            "availability": "PDF oficial da dissertação recuperado no host acadêmico da University of California, Irvine.",
+            "title": "Architectural Styles and the Design of Network-based Software Architectures",
+            "responsible_author_or_publisher": "Roy Thomas Fielding; University of California, Irvine (instituição da dissertação).",
+            "publication_type": "Doctoral dissertation in Information and Computer Science.",
+            "published_date": "2000",
+            "last_updated_date": null,
+            "product_or_document_version": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "A folha de rosto identifica a University of California, Irvine, o título, Roy Thomas Fielding e o ano 2000. O resumo da dissertação (p. xvi) apresenta Representational State Transfer (REST) como estilo arquitetural e afirma que ele orientou o projeto e desenvolvimento da arquitetura da Web moderna.",
+            "evidence_locations": "PDF, folha de rosto; resumo, p. xvi; capítulo 5, p. 77 em diante.",
+            "supports": "Origem e definição de REST como estilo arquitetural de sistemas de hipermídia distribuída e fundamento conceitual para a expressão RESTful.",
+            "does_not_support": "Não prova que a API do projeto AGES III siga as restrições arquiteturais REST.",
+            "bibliographic_status": "METADADOS_VERIFICADOS_PARA_DISSERTACAO",
+            "unknown_fields": [
+              "Mês e dia da publicação; a fonte consultada informa somente o ano 2000."
+            ],
+            "limitations": [
+              "A fonte descreve o conceito REST, não a implementação específica de AGES III."
+            ]
+          },
+          {
+            "source_kind": "author_abstract_page",
+            "url": "https://ics.uci.edu/~fielding/pubs/dissertation/abstract.htm",
+            "observed_url": "https://ics.uci.edu/~fielding/pubs/dissertation/abstract.htm",
+            "redirect_status": "URL observada igual à solicitada; nenhum redirecionamento indicado.",
+            "http_status": null,
+            "availability": "Página de resumo do trabalho recuperada no site de Roy Thomas Fielding hospedado em UCI.",
+            "title": "Abstract of the Dissertation",
+            "responsible_author_or_publisher": "Roy Thomas Fielding; University of California, Irvine indicada como instituição do trabalho.",
+            "page_publication_date": null,
+            "document_publication_year": "2000",
+            "access_date": "2026-10-16",
+            "direct_evidence": "O resumo identifica título, autor, programa, University of California, Irvine e ano 2000; declara que a dissertação introduz o estilo arquitetural REST e descreve seu uso para orientar a arquitetura moderna da Web.",
+            "supports": "Confirmação direta do assunto REST e dos metadados da dissertação.",
+            "does_not_support": "Não comprova a conformidade da API do projeto.",
+            "bibliographic_status": "METADADOS_CONFIRMADOS_NA_PAGINA_DO_AUTOR",
+            "unknown_fields": [
+              "Data de publicação da própria página HTML."
+            ],
+            "limitations": [
+              "A data 2000 é do trabalho descrito, não uma data de publicação comprovada para a página HTML."
+            ]
+          },
+          {
+            "source_kind": "author_citation_instructions",
+            "url": "https://ics.uci.edu/~fielding/pubs/dissertation/faq.htm",
+            "observed_url": "https://ics.uci.edu/~fielding/pubs/dissertation/faq.htm",
+            "redirect_status": "URL observada igual à solicitada; nenhum redirecionamento indicado.",
+            "http_status": null,
+            "availability": "Página de referência bibliográfica do autor recuperada no site de Roy Thomas Fielding hospedado em UCI.",
+            "title": "Frequently Asked Questions",
+            "responsible_author_or_publisher": "Roy Thomas Fielding.",
+            "page_publication_date": null,
+            "access_date": "2026-10-16",
+            "direct_evidence": "Na seção “How to reference this work”, o autor indica como referência: Fielding, Roy Thomas. Architectural Styles and the Design of Network-based Software Architectures. Doctoral dissertation, University of California, Irvine, 2000.",
+            "supports": "Forma bibliográfica autorizada pelo próprio autor para a dissertação.",
+            "does_not_support": "Não fornece data de publicação da página FAQ nem verifica a implementação AGES III.",
+            "bibliographic_status": "REFERENCIA_RECOMENDADA_PELO_AUTOR",
+            "unknown_fields": [
+              "Data de publicação da página HTML."
+            ],
+            "limitations": [
+              "A data 2000 refere-se à dissertação citada, não à página FAQ."
+            ]
+          }
+        ],
+        "claim_support_status": "PARTIAL",
+        "dependent_unit": "chapter-05-text-h-0077",
+        "unit_decision": "A dissertação primária fundamenta REST como estilo arquitetural e a terminologia RESTful. A afirmação específica de que a API implementada no projeto AGES III é RESTful permanece não verificada por esta fonte.",
+        "citation_recommendation": {
+          "status": "RECOMMENDED_WITH_LIMITATION",
+          "recommend_for": "fundamentar REST como estilo arquitetural e a terminologia RESTful, sem alterar a redação original",
+          "do_not_use_as_evidence_for": "conformidade da API do projeto AGES III com as restrições REST; isso exige evidência da implementação ou documentação específica do projeto",
+          "citation_year_does_not_clear_bibliography_pending": false
+        },
+        "user_assigned_citation_year": 2026,
+        "citation_year_provenance": {
+          "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+          "access_date_basis": "Actual source consultation date 2026-10-16.",
+          "meaning": "2026 is the user-authorized author-date/citation-year convention matching the actual access year. It is not a factual publication, creation, version, or update date; the dissertation publication year remains 2000.",
+          "factual_metadata_rule": "Preserve the source-reported publication year 2000. Do not infer a publication month/day, a project implementation, or compliance with the REST constraints.",
+          "scope": "The year 2026 is used only as the approved citation label based on actual access on 2026-10-16. It does not establish the project API’s architecture or implementation."
+        }
+      }
+    ],
+    "existing_hyperlink_coverage_notes": [
+      {
+        "terms": [
+          "PostgreSQL",
+          "Amazon RDS"
+        ],
+        "source_record_ids": [
+          "text-a-0143",
+          "text-a-0142"
+        ],
+        "source_units": [
+          "chapter-05-text-h-0085"
+        ],
+        "note": "O ODT já possui links originais para os produtos/tecnologias na lista de tecnologias. Estes registros são apontados apenas como cobertura existente, não como novos links para alterar os parágrafos 0078/0079."
+      },
+      {
+        "terms": [
+          ".NET"
+        ],
+        "source_record_ids": [
+          "text-a-0134"
+        ],
+        "source_units": [
+          "chapter-05-text-h-0085"
+        ],
+        "note": "Há link original para .NET na seção de tecnologias; esta evidência suplementar não altera o link."
+      },
+      {
+        "terms": [
+          "GitHub",
+          "GitHub Actions"
+        ],
+        "source_record_ids": [
+          "text-a-0145"
+        ],
+        "source_units": [
+          "chapter-05-text-h-0085"
+        ],
+        "note": "A fonte original é GitHub Actions. Ela não prova a configuração de pipeline ou a sincronização concreta mencionada em text-p-1049."
+      }
+    ],
+    "status_summary": {
+      "official_sources_retrieved": 13,
+      "source_pages_with_factual_publication_metadata": 3,
+      "items_with_bibliographic_pending_metadata": [
+        "ages-iii-supplement-aws-iot-core",
+        "ages-iii-supplement-gitlab",
+        "ages-iii-supplement-figma"
+      ],
+      "implementation_claims_not_proven_by_product_docs": [
+        "ages-iii-supplement-aws-iot-core",
+        "ages-iii-supplement-mqtt",
+        "ages-iii-supplement-gitlab",
+        "ages-iii-supplement-figma",
+        "ages-iii-supplement-rfid",
+        "ages-iii-supplement-rest-fielding"
+      ],
+      "do_not_create_bibliography_entries_for_pending_sources": true,
+      "do_not_infer_project_versions_or_configurations": true,
+      "citation_year_convention": 2026,
+      "citation_year_convention_provenance": "Explicit prior user decision Q3; actual access date 2026-10-16; convention year is not factual publication metadata.",
+      "pending_sources_preserved": {
+        "project_and_wiki_links": [
+          "text-a-0129",
+          "text-a-0130",
+          "text-a-0131",
+          "text-a-0132"
+        ],
+        "impinj": "text-a-0137",
+        "mqtt_project_version": "ages-iii-supplement-mqtt",
+        "note": "The convention year may be applied to independently eligible sources; it does not establish unavailable page content, source authorship, project configuration, or implementation version."
+      },
+      "supplementary_item_count": 9,
+      "verified_additional_language_source": "ages-iii-supplement-javascript"
+    },
+    "citation_year_policy": {
+      "decision": "Q3 — user explicitly instructed: “utilize o ano de acesso como o ano de publicação, assim como a Mariah fez”.",
+      "access_date_basis": "Actual source consultation date 2026-10-16.",
+      "meaning": "2026 is the user-authorized author-date/citation-year convention, matching the actual consultation/access year. It is not a factual publication, creation, version, or update date.",
+      "factual_metadata_rule": "Keep published_dates_or_versions and source-level factual dates unchanged. Unknown factual publication dates remain null; do not infer author, publisher, version, or URL. This field does not itself create a bibliographic entry or remove an existing PENDING status.",
+      "scope": "Apply to accessible and thematically eligible sources. For inaccessible, redirected-to-unrelated, or unverified sources, leave the assigned year null/PENDING until source identity and relevant content can be checked. The actual consultation date 2026-10-16 remains the factual access-date record and does not change that status."
+    }
+  },
+  "citation_author_review": {
+    "consultation_date": "2026-10-17",
+    "user_decision": "Use technology/company name as citation author when the primary source supports that attribution; otherwise preserve title-based citation.",
+    "method": "Opened the exact official documentation URLs. Assigned corporate/group authors only where the page title, first-party documentation identity, publisher/copyright notice, or source-recommended citation identifies responsibility. No author was inferred solely from a product name.",
+    "attributions_applied": [
+      {
+        "key": "ages-iii-csharp",
+        "author": "Microsoft",
+        "url": "https://learn.microsoft.com/dotnet/csharp/",
+        "evidence": "Official Microsoft Learn page; its title identifies the Microsoft documentation service and the C# language documentation."
+      },
+      {
+        "key": "ages-iii-dotnet",
+        "author": "Microsoft",
+        "url": "https://dotnet.microsoft.com/",
+        "evidence": "Official .NET site; its text explicitly names Microsoft as the organization behind .NET."
+      },
+      {
+        "key": "ages-iii-react",
+        "author": "Meta Platforms, Inc.",
+        "url": "https://react.dev/",
+        "evidence": "The official React page states “Copyright © Meta Platforms, Inc”."
+      },
+      {
+        "key": "ages-iii-entity-framework",
+        "author": "Microsoft",
+        "url": "https://learn.microsoft.com/ef/core/",
+        "evidence": "Official Microsoft Learn page for Entity Framework Core."
+      },
+      {
+        "key": "ages-iii-aws-lambda",
+        "author": "Amazon Web Services",
+        "url": "https://aws.amazon.com/lambda/",
+        "evidence": "Official AWS product page, titled “AWS Lambda - Amazon Web Services”."
+      },
+      {
+        "key": "ages-iii-s3",
+        "author": "Amazon Web Services",
+        "url": "https://aws.amazon.com/s3/",
+        "evidence": "Official AWS product page, titled “Amazon S3 - Amazon Web Services”."
+      },
+      {
+        "key": "ages-iii-cloudfront",
+        "author": "Amazon Web Services",
+        "url": "https://aws.amazon.com/cloudfront/",
+        "evidence": "Official AWS product page, titled “Amazon CloudFront - Amazon Web Services”."
+      },
+      {
+        "key": "ages-iii-rds",
+        "author": "Amazon Web Services",
+        "url": "https://aws.amazon.com/rds/",
+        "evidence": "Official AWS product page; page title identifies Amazon RDS and AWS."
+      },
+      {
+        "key": "ages-iii-aws-iot-core",
+        "author": "Amazon Web Services",
+        "url": "https://docs.aws.amazon.com/iot/",
+        "evidence": "First-party AWS documentation host and AWS IoT Core documentation page."
+      },
+      {
+        "key": "ages-iii-postgresql",
+        "author": "PostgreSQL Global Development Group",
+        "url": "https://www.postgresql.org/",
+        "evidence": "The official site states copyright © The PostgreSQL Global Development Group."
+      },
+      {
+        "key": "ages-iii-docker",
+        "author": "Docker, Inc.",
+        "url": "https://www.docker.com/",
+        "evidence": "The official page states “© 2026 Docker Inc.”."
+      },
+      {
+        "key": "ages-iii-github-actions",
+        "author": "GitHub",
+        "url": "https://github.com/features/actions",
+        "evidence": "First-party GitHub product page, branded and titled “GitHub Actions”."
+      },
+      {
+        "key": "ages-iii-mqtt",
+        "author": "OASIS Open",
+        "url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html",
+        "evidence": "The specification identifies itself as an OASIS Standard and states copyright © OASIS Open."
+      },
+      {
+        "key": "ages-iii-gitlab",
+        "author": "GitLab",
+        "url": "https://docs.gitlab.com/user/project/repository/mirror/",
+        "evidence": "First-party GitLab Docs page; the page identifies GitLab as its product/documentation publisher."
+      },
+      {
+        "key": "ages-iii-figma",
+        "author": "Figma",
+        "url": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma",
+        "evidence": "First-party Figma Learn Help Center page on the official help.figma.com host."
+      },
+      {
+        "key": "ages-iii-rfid-nist",
+        "author": "Scarfone, K.",
+        "url": "https://www.nist.gov/publications/securing-radio-frequency-identification-rfid-systems",
+        "evidence": "NIST page supplies a recommended citation naming Scarfone, K. as the author."
+      },
+      {
+        "key": "ages-iii-rfid-parking-use-cases",
+        "author": "TransCore",
+        "url": "https://transcore.com/rfid/parking-access-control",
+        "evidence": "The official page states copyright © TransCore."
+      },
+      {
+        "key": "ages-iii-impinj-r700",
+        "author": "Impinj, Inc.",
+        "url": "https://www.impinj.com/products/readers/impinj-r700",
+        "evidence": "The official page states copyright © Impinj, Inc."
+      },
+      {
+        "key": "ages-iii-impinj-iot-interface",
+        "author": "Impinj, Inc.",
+        "url": "https://www.impinj.com/products/technology/key-features/iot-device-interface",
+        "evidence": "The official page states copyright © Impinj, Inc."
+      }
+    ],
+    "title_based_citations_retained": [
+      {
+        "key": "ages-iii-typescript",
+        "url": "https://www.typescriptlang.org/",
+        "reason": "The official page identifies TypeScript as the subject but does not state a verified author/responsible organization; no corporate author added."
+      },
+      {
+        "key": "ages-iii-javascript",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction",
+        "reason": "The page credits individual mozilla.org contributors; it does not identify Mozilla as sole author. Retained title-based citation rather than inferring a corporate author."
+      }
+    ],
+    "biblatex_access_date": "The bibliography urldate remains 2026-10-16, the actual date recorded in the original reference-curation evidence. This focused authorship recheck occurred on 2026-10-17 and is recorded separately; it does not replace or backdate the original source consultation."
+  }
+}

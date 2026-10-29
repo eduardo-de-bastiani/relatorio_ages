@@ -1,0 +1,16 @@
+% Shared presentation macros for figures whose ODF frame is itself linked.
+% The visible caption and image share the supplied destination. Keep the
+% counter, label, and list-of-figures entry outside those external links so
+% normal internal references and the plain LoF caption remain intact.
+% The caller owns float barriers and the source-linked text that follows.
+% Arguments: intact asset, literal caption, unique label, source apparatus,
+% width as a fraction of linewidth, external URI.
+\newcommand{\memorialfigurelinked}[6]{%
+  \begin{figure}[htbp]
+    \refstepcounter{figure}%
+    \caption*{{\normalfont\upshape\href{#6}{#2}}}\label{#3}%
+    \addcontentsline{lof}{figure}{{\normalfont\upshape #2}}%
+    \noindent\makebox[\linewidth][c]{\href{#6}{\XeTeXpicfile "#1" width #5\linewidth\relax}}%
+    \par\begingroup\centering\small\SingleSpacing #4\par\endgroup
+  \end{figure}
+}

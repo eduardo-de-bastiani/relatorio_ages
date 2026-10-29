@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_frontmatter_scope",
+  "date": "2026-10-17",
+  "approval_status": "authorized_for_execution_pending_human_review",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "user_instruction": "Com a edição AGES IV aprovada, o usuário pediu copiar a capa do ODT; deixar somente os títulos de dedicatória, agradecimentos e epígrafe; usar um placeholder para o resumo em vez da instrução genérica do ODT; manter a lista de ilustrações; incluir a lista de siglas do ODT; ordenar resumo, ilustrações, siglas, sumário, trajetória e então os projetos já convertidos, sem modificá-los. O usuário também pediu seguir a estrutura da Mariah.",
+  "scope": {
+    "units": [
+      "pretext",
+      "resumo",
+      "chapter-01-text-h-0001"
+    ],
+    "layout_controls": {
+      "resumo": [
+        {
+          "command": "clearpage",
+          "after_source_id": "text-p-0097",
+          "before_command": "listoffigures",
+          "reason": "Manter o resumo em página própria como na estrutura de referência da Mariah e iniciar a lista de ilustrações na página seguinte."
+        },
+        {
+          "command": "clearpage",
+          "after_unit_input": "conteudo/migracao/lista-de-siglas.tex",
+          "before": "tableofcontents",
+          "reason": "Manter o sumário em página própria após a lista de siglas, como na estrutura de referência da Mariah e na ordem definida pelo usuário."
+        }
+      ]
+    },
+    "presentation_changes": {
+      "frontmatter_title": {
+        "text-p-0003": {
+          "target_text": "CURSO DE BACHARELADO EM ENGENHARIA DE SOFTWARE",
+          "reason": "Aplicar a transformação para maiúsculas definida pelo estilo ODF de curso.",
+          "source_text": "Curso de BACHARELADO EM ENGENHARIA DE SOFTWARE"
+        },
+        "text-p-0004": {
+          "target_text": "AGES - AGÊNCIA EXPERIMENTAL DE ENGENHARIA DE SOFTWARE",
+          "reason": "Aplicar a transformação para maiúsculas definida pelo estilo ODF de curso.",
+          "source_text": "AGES - agência experimental de engenharia de software"
+        },
+        "text-p-0017": {
+          "target_text": "MEMORIAL DE ATUAÇÃO NA AGÊNCIA EXPERIMENTAL DE ENGENHARIA DE SOFTWARE – PERÍODO 2024 A 2026",
+          "reason": "Aplicar a transformação para maiúsculas definida pelo estilo ODF do título.",
+          "source_text": "memorial de atuação na agência experimental de engenharia de software – período 2024 a 2026"
+        },
+        "text-p-0018": {
+          "target_text": "AGES I,II, III OU IV",
+          "reason": "Aplicar a transformação para maiúsculas definida pelo estilo ODF do título.",
+          "source_text": "AGES I,II, III ou IV"
+        },
+        "text-p-0034": {
+          "target_text": "Dedicatória",
+          "reason": "Manter somente o título solicitado, removendo o marcador de opcionalidade do modelo.",
+          "source_text": "Dedicatória (opcional)"
+        },
+        "text-p-0068": {
+          "target_text": "Epígrafe",
+          "reason": "Manter somente o título solicitado, removendo as instruções entre parênteses do modelo.",
+          "source_text": "Epígrafe (opcional e sem título)"
+        }
+      },
+      "frontmatter_placeholder": {
+        "text-p-0097": {
+          "target_text": "[Resumo pendente de redação]",
+          "reason": "Substituir a instrução genérica do modelo pelo marcador provisório pedido pelo usuário.",
+          "source_text": "No Resumo deve constar um texto breve sobre os conteúdos desse documento. O aluno pode apresentar os objetivos de cada ages, e uma contextualização. O Resumo dever ter um único parágrafo e suas palavras chaves."
+        }
+      },
+      "frontmatter_omission": {
+        "text-p-0062": {
+          "target_text": "",
+          "reason": "Omitir instrução genérica do modelo para dedicatória.",
+          "source_text": "Dedicatória: Texto no qual o autor do trabalho oferece homenagem ou dedica o seu trabalho a alguém."
+        },
+        "text-p-0064": {
+          "target_text": "",
+          "reason": "Omitir título alternativo duplicado; usar o cabeçalho AGRADECIMENTOS imediatamente seguinte.",
+          "source_text": "Agradecimentos (opcional)"
+        },
+        "text-p-0066": {
+          "target_text": "",
+          "reason": "Omitir instrução genérica do modelo para agradecimentos.",
+          "source_text": "Os agradecimentos devem ser dirigidos àqueles que contribuíram de maneira relevante à elaboração do trabalho, restringindo-se ao mínimo necessário, como instituições (CNPq, CAPES, PUCRS, empresas ou organizações que fizeram parte da pesquisa), ou pessoas (profissionais, pesquisadores, orientadores, etc.). "
+        },
+        "text-p-0067": {
+          "target_text": "",
+          "reason": "Omitir instrução genérica do modelo para agradecimentos.",
+          "source_text": "Os agradecimentos devem ser colocados de forma hierárquica de importância e para trabalhos financiados com recursos de instituições (CAPES, CNPq, FINEP, FAPERGS, etc.) os agradecimentos são obrigatórios a essas instituições."
+        },
+        "text-p-0091": {
+          "target_text": "",
+          "reason": "Omitir instrução genérica do modelo para epígrafe.",
+          "source_text": "Epígrafe: É um item onde o autor apresenta a citação de um texto que seja relacionado com o tema do trabalho, seguido da indicação de autoria do mesmo."
+        },
+        "text-p-0092": {
+          "target_text": "",
+          "reason": "Omitir orientação de posicionamento do modelo.",
+          "source_text": "(texto iniciando do meio da página alinhado a direita)"
+        },
+        "text-p-0094": {
+          "target_text": "",
+          "reason": "Omitir nome genérico de autor da epígrafe, pois não há epígrafe escrita.",
+          "source_text": "Nome do autor da epígrafe"
+        },
+        "text-p-0099": {
+          "target_text": "",
+          "reason": "Omitir exemplo genérico de palavras-chave do modelo; o resumo ainda será escrito.",
+          "source_text": "PALAVRAS CHAVES: AGES, Engenharia de Software. etc..  "
+        },
+        "text-p-0101": {
+          "target_text": "",
+          "reason": "A lista de ilustrações é gerada automaticamente no LaTeX no lugar da lista antiga do ODT.",
+          "source_text": "LIsta de ilustrações"
+        },
+        "text-p-0139": {
+          "target_text": "",
+          "reason": "O ODT não contém tabelas; não gerar uma lista vazia de tabelas.",
+          "source_text": "Lista de tabelas "
+        },
+        "text-p-0278": {
+          "target_text": "",
+          "reason": "Omitir instrução genérica do modelo para a apresentação da trajetória.",
+          "source_text": "Neste tópico o aluno deve fazer um paralelo da evolução dele ao longo do curso e sua trajetória pessoal prática (estágios, bolsas de pesquisa, voluntariado, hackatonas, emprego) ."
+        },
+        "text-p-0279": {
+          "target_text": "",
+          "reason": "Omitir instrução genérica do modelo sobre edições da AGES.",
+          "source_text": "Ages I,II e III podem apresentar seu momento atual."
+        }
+      }
+    }
+  },
+  "explicit_limits": [
+    "Não alterar RELATORIO_ATUAL.odt nem relatorio_mariah/.",
+    "Não alterar arquivos de conteúdo das edições AGES I–IV já migradas.",
+    "Não preencher AGES I,II, III ou IV nem Ano na capa; manter literalmente os campos do original até decisão do usuário.",
+    "O resumo, dedicatória, agradecimentos e epígrafe permanecem sem texto autoral nesta entrega.",
+    "A lista de siglas deve reproduzir as 39 entradas e sua ordem do ODT.",
+    "A conclusão da revisão desta entrega depende de aprovação humana; não iniciar outra edição."
+  ]
+}

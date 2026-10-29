@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "role": "content-auditor",
+  "scope": "AGES II chapter4 only;15 authorizedunits",
+  "status": "PASS",
+  "commit": "339bba68563f739e622246cb3167c8a2532176bf",
+  "dirty_worktree": true,
+  "identity": "HEAD is not sufficient to identify audited dirty bytes; use target_hashes and main/style/macro hashes + PDF hash.",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "counts": {
+    "blocks": 150,
+    "images": 7,
+    "urls": 13,
+    "reflection_boxes": 5
+  },
+  "reflection_paragraphs": 15,
+  "target_hashes": {
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex": "e75b0ad5c6932b4884573cf1130ceaa79887d3b9fd0360352c6815d74cc900f1",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0041.tex": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex": "ffd329883dcc66ae8790019d7b6290e67c56a232c58787e56e0fd2e178fd5aa4",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex": "ab44bc56be7f66996820c9dc795dc73d661fa6b8fc1a3aa89e3dfc4843f6d0ab",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex": "39c9968773503b12afb5a5dd934d02183ec0cad960c33f3f2ebb46108b5450b4",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex": "c2c97797f41308925f78a1d6ff13699dd57cb829bffbee928d0041c6f76192d5",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0047.tex": "15b40313c28bff9f372231e9b27ca5e3a69e2d27a5f4eb253eed7827a1338d8e",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex": "a7cf7188686faffdfb439b482c8b8f4169c663efea6057ef63a04b5acfe1c131",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex": "2cbd6ab9f4a7725d4bdad08b31a45ffec90c78a2b0d6f81d6ba1ceb01dad5ecb",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-3.tex": "f3e5e09517b23a27a13c7491d49ba8e5ac8b6c466690e89b2b6d0055b3d90db9",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex": "bee0d4f8b259ad5d8fd61051a474d5a16fc3eeb563c9456fca7a87ba42c41fb8",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
+  },
+  "main_sha256": "4c4affdedfbd456e699c0ce43ebe2c3795d569f3d2342c0e314da955318ea828",
+  "global_hashes": {
+    "relatorio_AGES_eduardo/util/macros.tex": "5162c5cc8c397bd665b499baf9acc9e774fdfbd35d60cf1d1764df3a5335cce8",
+    "relatorio_AGES_eduardo/util/style.tex": "439e53dea2ad80d8d9f7c608c41f47ddd2ddeefbeac679ea6b2b61b991db03da",
+    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib": "43b8db3d68925a7a5a5bb76831377cf85efcf1f2e7c55290c60b914f9b5ec478"
+  },
+  "pdf": {
+    "path": "build/document/main.pdf",
+    "sha256": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d",
+    "pages": 40,
+    "profile": "document-review",
+    "review_only": true,
+    "official_document_gate": "NOT_RUN: review-only build",
+    "snapshot_relationship": "Actual final PDF SHA-256 verified and build source_files hashes equal all15 current audited unit hashes plus main/global hashes; dirty review snapshot, no clean production or human approval implied.",
+    "source_files_match_audited_bytes": true
+  },
+  "checks": {
+    "source_integrity": "PASS",
+    "text_and_coverage": "PASS: 150/150 directly extracted blocks match actual target, applying only documented caption/repository/whitespace presentation projections",
+    "order": "PASS: independent logical inline order places descendant Figure15 caption p0962 before p0961 own stage text; raw parent-first XML traversal is not reading order",
+    "heading_hierarchy": "PASS: 15 real headings; h0068 is normal 12pt body-like paragraph despite text:h level2 XML and is preserved as paragraph; original literal section prefixes retained",
+    "urls": "PASS: 13 exact href values and approved anchors; Graph API exact URL occurs in actual PDF page24",
+    "media": "PASS: all7 original ZIP member SHA-256 equal target assets and matching occurrences",
+    "reflections": "PASS: 5 environments preserve15 original paragraphs in order",
+    "lists": "PASS: 23 authored nontechnology items; 7 technology groups become approved continuous paragraph, preserving text/order; Docker documentation remains unlinked",
+    "emphasis": "PASS: F01/F02 resolved; all source letter and visible underline-space states agree; p0998 italic space also corrected. Only approved glyphless source leading-tab font state differs.",
+    "placeholder": "PASS: one provisional database placeholder; no invented architecture diagram and not in LOF",
+    "main_scope": "PASS: main includes15 pre-existingAGESI + exactly15AGESII; noHoortech/III/IV unit. Other editions are not part of this content re-audit",
+    "float_source_and_pdf_context": "PASS: Figure9 precedes4.2 on PDFpage20; Figures10–14 precede technology heading on page24; FloatBlock barriers are outside Sprint entries",
+    "captions": "PASS: all7 correct approved Portuguese literal labels, only Figura N – prefix bold, caption text upright; Figure10 preserves source dash before AGESII",
+    "static_and_ledger": "PASS: 15 unit validators executed in prior round; all13 unchanged unit bytes identical; two changed units validated again exit0; own fresh audit-latex/verify-source exit0.",
+    "compilation": "PASS review-only build inspected; document official gate NOT_RUN per actual report",
+    "human_approval": "PENDING",
+    "normative": "PENDING: no blanket conformity claim",
+    "remote_graph_api": "PENDING: exact original URL preserved, availability and metadata unverified, no invented citation",
+    "remote_project_links": "PENDING",
+    "image_sources": "PENDING: 7 images retain pending attribution",
+    "visual": "PENDING: separate full visual audit; this reviewer inspected bytes/aux and PDF link/text context, not every rendered page"
+  },
+  "findings": [
+    {
+      "id": "AII-CONTENT-F01",
+      "status": "PASS",
+      "severity": "medium",
+      "unit": "chapter-04-text-h-0044",
+      "source_id": "text-p-0785",
+      "source_style_chain": "Strong_20_Emphasis (bold) > T226 (fo:font-weight normal; overrides outer bold, including Asian/complex variants)",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+      "target_spans": [
+        "\\textbf{Angular}",
+        "\\textbf{FastAPI}",
+        "\\textbf{PostgreSQL}"
+      ],
+      "evidence": "24 letter positions are normal in effective ODF styling and bold in actual target bytes. Literal words remain exact.",
+      "consequence": "Adds emphasis not present in effective original style.",
+      "correction": "Unit owner removes only those textbf wrappers, preserves all words/whitespace, refreshes ledger intervals/hash.",
+      "verification": "Recompare p0785 actual byte interval against direct ODT effective styles, validate affected unit and bind new PDF/source hashes.",
+      "previous_status": "FAIL",
+      "resolution": "RESOLVED: current actual target byte interval matches direct ODT effective emphasis after correction; changed unit independently revalidated exit0; final PDF bound by source_files hashes.",
+      "verification_pdf_sha256": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d"
+    },
+    {
+      "id": "AII-CONTENT-F02",
+      "status": "PASS",
+      "severity": "low",
+      "unit": "ages-ii-sprint-4",
+      "source_ids": [
+        "text-p-0961",
+        "text-p-0969"
+      ],
+      "source_style_chain": "Strong_20_Emphasis > T286: font-weight normal; text-underline-style solid, underline width auto, color font-color over each entire phrase.",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+      "target_spans": [
+        "\\underline{Primeira} \\underline{Etapa:} \\underline{Avaliação} \\underline{Geral} \\underline{da} \\underline{Presença} \\underline{Digital:}",
+        "\\underline{Segunda} \\underline{Etapa:} \\underline{Verificação} \\underline{de} \\underline{Relevância:}"
+      ],
+      "evidence": "6 and 4 source spaces belong to a solid-underlined whole phrase; target interword spaces are outside underline groups. All letter positions and literal characters match.",
+      "visible_change": "Target creates ten breaks in the underline at interword spaces. ODF spans underline the full phrases; no skip-white-space underline mode is declared in these effective chains.",
+      "consequence": "Underline geometry is fragmented relative to source span formatting.",
+      "correction": "Use one underline group for each complete phrase, keeping originalleadbreak outside, and refresh ledger.",
+      "verification": "Compare source and target underline state over spaces as well as letters; verify affected PDF phrases after rebuild.",
+      "previous_status": "FAIL",
+      "resolution": "RESOLVED: current actual target byte interval matches direct ODT effective emphasis after correction; changed unit independently revalidated exit0; final PDF bound by source_files hashes.",
+      "verification_pdf_sha256": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d"
+    }
+  ],
+  "observations": [
+    {
+      "id": "AII-CONTENT-O01",
+      "status": "PASS",
+      "source_id": "text-p-0998",
+      "evidence": "Source Strong_20_Emphasis > T43 spans literal memory leak, including italic interword space. Target has textit{memory} space textit{leak}. All letters/words and their italic state match; only glyphless space style differs.",
+      "consequence": "No narrative or letter emphasis loss; exact font state of a space differs. Prefer complete textit{memory leak} to eliminate representational difference.",
+      "verification": "Compare updated actual interval if unit owner changes it; do not call source space unstyled.",
+      "previous_status": "PENDING",
+      "resolution": "RESOLVED: current target groups textit{memory leak}; space and all letter states now match direct ODT T43."
+    },
+    {
+      "id": "AII-CONTENT-O02",
+      "status": "PASS",
+      "source_ids": [
+        "text-p-0765",
+        "text-p-0984"
+      ],
+      "evidence": "Two source leading tab tokens have bold state but no visible glyph; originaltab is approved presentation projection with zero visual width. Token counts preserved.",
+      "consequence": "Not treated as loss of visible emphasis."
+    }
+  ],
+  "initial_artifacts_preserved": {
+    "docs/ages-ii/TEXT_DIVERGENCES_INITIAL.json": "aba49973f9ad7917dd93d9ff19ebd9c5b5ebdc33c7b06c9bfd97d158519fb9be",
+    "docs/ages-ii/CONTENT_AUDIT_INITIAL.md": "1a0ff3b03f215f655b102bcd46a954719384ee7b4e718b6202b530b4315d0466",
+    "docs/ages-ii/CONTENT_AUDIT_INITIAL.json": "13f13f952883ab9309db9fe7aad745740fe4c63a575f924f7e5f21400e787247"
+  },
+  "commands": [
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0039.json --unit chapter-04-text-h-0039",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0040.json --unit chapter-04-text-h-0040",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0041.json --unit chapter-04-text-h-0041",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0042.json --unit chapter-04-text-h-0042",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0043.json --unit chapter-04-text-h-0043",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0044.json --unit chapter-04-text-h-0044",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0045.json --unit chapter-04-text-h-0045",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0046.json --unit chapter-04-text-h-0046",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0047.json --unit chapter-04-text-h-0047",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-ii-sprint-0.json --unit ages-ii-sprint-0",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-ii-sprint-1.json --unit ages-ii-sprint-1",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-ii-sprint-2.json --unit ages-ii-sprint-2",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-ii-sprint-3.json --unit ages-ii-sprint-3",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-ii-sprint-4.json --unit ages-ii-sprint-4",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0073.json --unit chapter-04-text-h-0073",
+      "exit_code": 0,
+      "evidence": "actual earlier completed subprocess in this audit run"
+    },
+    {
+      "command": "python3 build/ages-ii/audit-final/source.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-ii/audit-final/compare.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-ii/audit-final/structure.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py verify-source",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py audit-latex --root relatorio_AGES_eduardo --entry main.tex",
+      "exit_code": 0
+    },
+    {
+      "command": "Python pypdf actual PDF URI and section/figure context extraction",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-ii/audit-final/compare.py (fresh direct ODT + actual15unit reads; no converter report)",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/chapter-04-text-h-0044.json --unit chapter-04-text-h-0044",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py validate --ledger migration/ledgers/ages-ii-sprint-4.json --unit ages-ii-sprint-4",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 build/ages-ii/audit-final/structure.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py verify-source",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/migration.py audit-latex --root relatorio_AGES_eduardo --entry main.tex",
+      "exit_code": 0
+    },
+    {
+      "command": "Python pypdf final PDF URI/context + exact source_files/hash relationship + preservation INITIAL hashes",
+      "exit_code": 0
+    }
+  ],
+  "artifacts": {
+    "build/ages-ii/audit-final/source.py": "03ec2b029bb95376c14104bf5a37413c5979b753ddb121724c2c17f53627e283",
+    "build/ages-ii/audit-final/target_decode.py": "d3e50ac78b3eda118e6dfecf9d6bb32f85dfc7ed62c9f75e4ea987f2decf4174",
+    "build/ages-ii/audit-final/compare.py": "31404a1b0802058875de2398b5b3f1affc99d82a1a830ad1e2a680244ee1b22a",
+    "build/ages-ii/audit-final/source-independent.json": "431aabe31f469731451b19e8190a100e86da9ed64b648150f663c2593af17f36",
+    "build/ages-ii/audit-final/comparison.json": "0df03e461debe3013fa4ea18797611f149848d19726118c7ae2e2264ce2a98e5",
+    "build/ages-ii/audit-final/structure.json": "35d96be4d2191cbe8fcb1386dbe56020f53ea46f400fc5e1930160f616de4878",
+    "build/ages-ii/audit-final/pdf-links.json": "76069149862bad8a45e91947eba0837629cdad6968ccab19ce34bcc9fe57367f",
+    "build/ages-ii/audit-final/pdf-context.json": "b812c32618bd093111b713b2240ab2f84aff346142271e471f58ca0851344d79",
+    "build/ages-ii/audit-final/verify-source.json": "9ad503e6269ce80aeb24a9c8831a6d05cca2638f9527e27ef7c15e2ae29ee81a",
+    "build/ages-ii/audit-final/audit-latex.json": "fbedd90f021c9c3f5cb6df5f04bc7f4aa8d716e191959416b47d3418c53e5029",
+    "build/document/main.pdf": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d",
+    "build/document/main.aux": "498e58b33b0ec03742ee0ed00df92490304fae7132551bd667c3924a336f5f28",
+    "build/document/main.lof": "7d022431cec2e2d70ea236eff23b44ab3ddb790aa46e96173f9bb3eaf74487db",
+    "build/document/main.log": "b6659e02085f2f056c18cfc857a923dfb812c22cefbc6fbf70959eaf1f356171",
+    "build/document/report.json": "f26c332585db6a01e5cb554c9f62dc185eb1a2aa05f72fa427ce01d1d857bdf0",
+    "build/ages-ii/audit-final/resolve_report.py": "f3653160e4147698e9851843a7bb60d82d55529c372e935a8c85f8f924ff4015",
+    "build/ages-ii/audit-final/validate-chapter-04-text-h-0044.json": "ea8e01b80726d21a21fe4651fffc6429e5e7c67ca7aff3bc8a2f5663a36a3769",
+    "build/ages-ii/audit-final/validate-ages-ii-sprint-4.json": "36ff168badcda46e5b0f263c7da1c4e9ad2bd91f7393b34f67bd3a969ba06d99"
+  },
+  "limitations": [
+    "Initial compare driver completed15validators but needed corrected JSON variable naming before saving; rerun decoder reused own just-completed validation artifacts; did not rerun validators unnecessarily.",
+    "Independent conservative lexical decoder reconstructs documented whitespace tokens; it is not arbitrary TeX execution.",
+    "Effective ODF font inheritance, not Strong_Emphasis style name alone, determines emphasis.",
+    "Text equality is not a claim of identical ODT pagination.",
+    "Reference dates2024/2024-10-15 are user-attributed conventions; not recovered browsing history or verified historical publication facts.",
+    "No source/manifest/unit/ledger/global edits or commits performed.",
+    "No earlier converter/auditor report used as content proof; INITIAL files are only hashed for preservation."
+  ],
+  "human_approval": "PENDING",
+  "audit_history": [
+    {
+      "status": "FAIL",
+      "commit": "339bba68563f739e622246cb3167c8a2532176bf",
+      "pdf_sha256": "835cf3b35045f4ed2977bb84736dd2b259fd267be8c0362589fd625d6b5ef932",
+      "target_hashes": {
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0039.tex": "e75b0ad5c6932b4884573cf1130ceaa79887d3b9fd0360352c6815d74cc900f1",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex": "68ca1c5d1fa34a67bacbe1d0b8781cdfd90e4936f4b17e7c53f045361d1ec655",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0041.tex": "03ad384b90d272d2c6527a6b1dea2edd0e66ab86b6042f563a48bfa6c4ff53ec",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex": "6a3f496a9ca989c620f6e473e5d0d62aa4c8f75e98f9ebfce17381fef217e9ed",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex": "ffd329883dcc66ae8790019d7b6290e67c56a232c58787e56e0fd2e178fd5aa4",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex": "6f4cfd82bc40d372fad068dcc1aa011c4f29dbe4a9c54dea6e2d77c3f176b519",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex": "39c9968773503b12afb5a5dd934d02183ec0cad960c33f3f2ebb46108b5450b4",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex": "c2c97797f41308925f78a1d6ff13699dd57cb829bffbee928d0041c6f76192d5",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0047.tex": "15b40313c28bff9f372231e9b27ca5e3a69e2d27a5f4eb253eed7827a1338d8e",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-0.tex": "a7cf7188686faffdfb439b482c8b8f4169c663efea6057ef63a04b5acfe1c131",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex": "2cbd6ab9f4a7725d4bdad08b31a45ffec90c78a2b0d6f81d6ba1ceb01dad5ecb",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-2.tex": "c0f2ee31ed0ea7ede5c7bc8bbedd460daf92963e24eb3ecbf658cf68c647eca4",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-3.tex": "f3e5e09517b23a27a13c7491d49ba8e5ac8b6c466690e89b2b6d0055b3d90db9",
+        "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex": "e0f8971dc41f72695c99985227035e90a9bf32e936bd60627296102413acfdde",
+        "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0073.tex": "6840c678afef7cfadcad5a1b6b688f8fe7ce3b4c168112c97179bb4198999a21"
+      },
+      "findings": [
+        {
+          "id": "AII-CONTENT-F01",
+          "status": "PASS",
+          "severity": "medium",
+          "unit": "chapter-04-text-h-0044",
+          "source_id": "text-p-0785",
+          "source_style_chain": "Strong_20_Emphasis (bold) > T226 (fo:font-weight normal; overrides outer bold, including Asian/complex variants)",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+          "target_spans": [
+            "\\textbf{Angular}",
+            "\\textbf{FastAPI}",
+            "\\textbf{PostgreSQL}"
+          ],
+          "evidence": "24 letter positions are normal in effective ODF styling and bold in actual target bytes. Literal words remain exact.",
+          "consequence": "Adds emphasis not present in effective original style.",
+          "correction": "Unit owner removes only those textbf wrappers, preserves all words/whitespace, refreshes ledger intervals/hash.",
+          "verification": "Recompare p0785 actual byte interval against direct ODT effective styles, validate affected unit and bind new PDF/source hashes.",
+          "previous_status": "FAIL",
+          "resolution": "RESOLVED: current actual target byte interval matches direct ODT effective emphasis after correction; changed unit independently revalidated exit0; final PDF bound by source_files hashes.",
+          "verification_pdf_sha256": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d"
+        },
+        {
+          "id": "AII-CONTENT-F02",
+          "status": "PASS",
+          "severity": "low",
+          "unit": "ages-ii-sprint-4",
+          "source_ids": [
+            "text-p-0961",
+            "text-p-0969"
+          ],
+          "source_style_chain": "Strong_20_Emphasis > T286: font-weight normal; text-underline-style solid, underline width auto, color font-color over each entire phrase.",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "target_spans": [
+            "\\underline{Primeira} \\underline{Etapa:} \\underline{Avaliação} \\underline{Geral} \\underline{da} \\underline{Presença} \\underline{Digital:}",
+            "\\underline{Segunda} \\underline{Etapa:} \\underline{Verificação} \\underline{de} \\underline{Relevância:}"
+          ],
+          "evidence": "6 and 4 source spaces belong to a solid-underlined whole phrase; target interword spaces are outside underline groups. All letter positions and literal characters match.",
+          "visible_change": "Target creates ten breaks in the underline at interword spaces. ODF spans underline the full phrases; no skip-white-space underline mode is declared in these effective chains.",
+          "consequence": "Underline geometry is fragmented relative to source span formatting.",
+          "correction": "Use one underline group for each complete phrase, keeping originalleadbreak outside, and refresh ledger.",
+          "verification": "Compare source and target underline state over spaces as well as letters; verify affected PDF phrases after rebuild.",
+          "previous_status": "FAIL",
+          "resolution": "RESOLVED: current actual target byte interval matches direct ODT effective emphasis after correction; changed unit independently revalidated exit0; final PDF bound by source_files hashes.",
+          "verification_pdf_sha256": "c1ca761350f2ab8def3e458323f92c9717a9ca90e3eae2f362a80fc6e414648d"
+        }
+      ],
+      "observations": [
+        {
+          "id": "AII-CONTENT-O01",
+          "status": "PASS",
+          "source_id": "text-p-0998",
+          "evidence": "Source Strong_20_Emphasis > T43 spans literal memory leak, including italic interword space. Target has textit{memory} space textit{leak}. All letters/words and their italic state match; only glyphless space style differs.",
+          "consequence": "No narrative or letter emphasis loss; exact font state of a space differs. Prefer complete textit{memory leak} to eliminate representational difference.",
+          "verification": "Compare updated actual interval if unit owner changes it; do not call source space unstyled.",
+          "previous_status": "PENDING",
+          "resolution": "RESOLVED: current target groups textit{memory leak}; space and all letter states now match direct ODT T43."
+        },
+        {
+          "id": "AII-CONTENT-O02",
+          "status": "PASS",
+          "source_ids": [
+            "text-p-0765",
+            "text-p-0984"
+          ],
+          "evidence": "Two source leading tab tokens have bold state but no visible glyph; originaltab is approved presentation projection with zero visual width. Token counts preserved.",
+          "consequence": "Not treated as loss of visible emphasis."
+        }
+      ]
+    }
+  ],
+  "status_scope": "Content preservation and authorized presentation projection only; final delivery acceptance remains PENDING.",
+  "current_changed_units": [
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex"
+  ],
+  "pending_items": [
+    "Human approval of AGESII",
+    "Full independent visual acceptance",
+    "Normative confirmation",
+    "Graph API remote availability/metadata",
+    "Project repository/wiki availability",
+    "Seven image source/authorship identifications",
+    "Real database diagram"
+  ],
+  "overall_delivery": "PENDING"
+}

@@ -1,0 +1,15 @@
+% Conversão reorganizada de chapter-06-text-h-0113; origem RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4841_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{5.2.5 Tecnologias utilizadas}
+\label{ages-iv:text-h-0113}
+\addcontentsline{toc}{subsection}{5.2.5 Tecnologias utilizadas}
+
+No desenvolvimento do backend, a principal linguagem utilizada foi Python \cite{ages-iv-python}, escolhida por sua sintaxe expressiva, maturidade e suporte nativo a programação assíncrona. A API REST foi construída com FastAPI \cite{ages-iv-fastapi}, framework web moderno e de alta performance que fornece suporte nativo a operações assíncronas, injeção de dependências e documentação automática OpenAPI. No backend, Pydantic \cite{ages-iv-pydantic} foi utilizada como biblioteca para validação de tipos, serialização e estruturação dos contratos de dados (schemas) de entrada e saída das requisições HTTP.\par
+
+No desenvolvimento do aplicativo mobile, React Native \cite{ages-iv-react-native} foi utilizado para construir interfaces nativas com componentes reutilizáveis e performance consistente para iOS. O Expo \cite{ages-iv-expo} foi utilizado como plataforma e conjunto de ferramentas integradas ao React Native para gerenciar o ciclo de vida da aplicação, otimizar builds e fornecer acesso simplificado a módulos nativos de hardware (câmera, galeria de mídia e áudio). No frontend, TypeScript \cite{ages-iv-typescript} foi utilizada para adicionar tipagem estática estrita ao ecossistema JavaScript, prevenindo erros em tempo de compilação e aumentando a manutenibilidade do código.\par
+
+Supabase \cite{ages-iv-supabase} foi utilizada como plataforma Backend-as-a-Service, com infraestrutura de banco de dados relacional gerenciado (PostgreSQL), persistência dos dados da aplicação e armazenamento. PostgreSQL \cite{ages-iv-postgresql} foi o banco de dados relacional utilizado para o armazenamento estruturado das informações de usuários, postagens (Recordas), relações de seguidores e dados agregados de métricas musicais. Para o ambiente local do backend e de suas dependências via Docker Compose, Docker \cite{ages-iv-docker} foi utilizado como plataforma de conteinerização para isolamento e padronização do ambiente de execução.\par
+
+GitHub Actions \cite{ages-iv-github-actions} foi utilizada para automatizar as esteiras de CI/CD, executar linters, validar Pull Requests automaticamente e executar testes contínuos antes da integração em branch principal. SonarQube / SonarCloud \cite{ages-iv-sonar} foi utilizada como ferramenta de análise estática de código integrada ao pipeline de CI para monitoramento de cobertura de testes, detecção de vulnerabilidades e manutenção do padrão de qualidade de software. No backend, Pytest \cite{ages-iv-pytest} foi utilizado para execução automatizada de testes unitários e de integração cobrindo rotas, serviços e repositórios. No frontend, Jest \cite{ages-iv-jest} foi utilizado para testes unitários de lógica, hooks e renderização de componentes de interface do aplicativo.\par
+

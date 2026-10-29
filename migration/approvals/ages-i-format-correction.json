@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "kind": "user_format_correction_authorization",
+  "status": "proposed_for_review",
+  "quoted_instruction": "Você cometeu alguns erros de formatação. Precisamos corrigir esses erros, validar novamente e, depois que eu aprovar, registrar essas mudanças como algo permanente para os demais projetos da AGES",
+  "baseline_commit": "e5a367d438fe865223879ed4742d52379e563335",
+  "scope": [
+    "chapter-02-text-h-0002",
+    "chapter-02-text-h-0003",
+    "chapter-02-text-h-0007",
+    "chapter-02-text-h-0008",
+    "chapter-02-text-h-0009",
+    "chapter-02-text-h-0010",
+    "chapter-02-text-h-0011",
+    "chapter-02-text-h-0012",
+    "chapter-02-text-h-0014",
+    "ages-i-sprint-0",
+    "ages-i-sprint-1",
+    "ages-i-sprint-2",
+    "ages-i-sprint-3",
+    "ages-i-sprint-4",
+    "chapter-02-text-h-0022"
+  ],
+  "layout_source_ids": [
+    "text-p-0303",
+    "text-p-0314",
+    "text-p-0318"
+  ],
+  "execution_authorized": true,
+  "human_presentation_approval": null,
+  "future_projects_approved": false,
+  "promoted_to_reusable_policy": false,
+  "issues": [
+    "Sumário com colunas e tipografia inconsistentes entre numeração manual e automática",
+    "Espaços excessivos de tabs internos nos três parágrafos das imagens",
+    "Espaço após travessão perdido nos índices derivados"
+  ],
+  "candidate_layout": "Tabs internos representados por espaço normal; tokens de origem permanecem rastreados, não há alteração de redação. Recuos de início de parágrafo permanecem.",
+  "approval_required_for": "Aceite visual desta correção e promoção permanente aos demais projetos AGES."
+}

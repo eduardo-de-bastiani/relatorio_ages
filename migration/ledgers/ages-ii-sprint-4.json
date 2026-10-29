@@ -1,0 +1,2592 @@
+{
+  "schema_version": 1,
+  "compilation_root": "relatorio_AGES_eduardo",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "conversion_base_commit": "fdcb5d7d3f98533711df0b17ba7d0c1676dc3676",
+  "macro_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "figure_contract": {
+    "path": "relatorio_AGES_eduardo/util/macros.tex",
+    "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
+  },
+  "style_contract": {
+    "path": "relatorio_AGES_eduardo/util/style.tex",
+    "sha256": "4e83beb2677153244f8b281dc3bc7ad27a8a4498f735fe590507b61650325454"
+  },
+  "units": {
+    "ages-ii-sprint-4": {
+      "state": "converted",
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+      "element_map": [
+        {
+          "source_id": "text-h-0067",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 124,
+          "end_byte": 138,
+          "serializations": [
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-h-0068",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 243,
+          "end_byte": 869,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0950",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 897,
+          "end_byte": 1212,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0951",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 1254,
+          "end_byte": 1434,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0952",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 1455,
+          "end_byte": 1585,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0953",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 1606,
+          "end_byte": 1745,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0954",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 1766,
+          "end_byte": 1885,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0955",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 1923,
+          "end_byte": 2072,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0956",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 2100,
+          "end_byte": 2417,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0958",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 2445,
+          "end_byte": 2535,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0962",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 2687,
+          "end_byte": 2763,
+          "serializations": [
+            "abnt_figure_caption",
+            "document_reordering_numbering"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "draw-image-0015",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 2638,
+          "end_byte": 2846,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0961",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 2868,
+          "end_byte": 2955,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0963",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 2983,
+          "end_byte": 3073,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0964",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 3115,
+          "end_byte": 3299,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0965",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 3320,
+          "end_byte": 3476,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0966",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 3497,
+          "end_byte": 3680,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0967",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 3701,
+          "end_byte": 3844,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0968",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 3882,
+          "end_byte": 3936,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0969",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 3964,
+          "end_byte": 4040,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0971",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 4068,
+          "end_byte": 4537,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0973",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 4565,
+          "end_byte": 4883,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0974",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 4925,
+          "end_byte": 5159,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0975",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 5211,
+          "end_byte": 5452,
+          "serializations": [
+            "original_whitespace",
+            "inline_tab_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0976",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 5504,
+          "end_byte": 5691,
+          "serializations": [
+            "original_whitespace",
+            "inline_tab_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0977",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 5743,
+          "end_byte": 5964,
+          "serializations": [
+            "original_whitespace",
+            "inline_tab_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0979",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 6002,
+          "end_byte": 6261,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0980",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 6303,
+          "end_byte": 6434,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0981",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 6455,
+          "end_byte": 6638,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0982",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 6676,
+          "end_byte": 7063,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0983",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7091,
+          "end_byte": 7492,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0984",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7520,
+          "end_byte": 7556,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0985",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7598,
+          "end_byte": 7638,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0986",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7659,
+          "end_byte": 7701,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0987",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7722,
+          "end_byte": 7764,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0988",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7785,
+          "end_byte": 7828,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0989",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7849,
+          "end_byte": 7895,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0990",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7916,
+          "end_byte": 7961,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0991",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 7982,
+          "end_byte": 8016,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0993",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 8054,
+          "end_byte": 8578,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0995",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 8606,
+          "end_byte": 8994,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0996",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 9022,
+          "end_byte": 9503,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0997",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 9531,
+          "end_byte": 9695,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0998",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 9723,
+          "end_byte": 10344,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-0999",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 10372,
+          "end_byte": 10593,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-1000",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 10621,
+          "end_byte": 10882,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-1001",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 10910,
+          "end_byte": 11456,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-1002",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 11484,
+          "end_byte": 11766,
+          "serializations": [],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-1004",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 11813,
+          "end_byte": 12433,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-1005",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 12461,
+          "end_byte": 12875,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        },
+        {
+          "source_id": "text-p-1006",
+          "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+          "start_byte": 12903,
+          "end_byte": 13462,
+          "serializations": [
+            "original_whitespace",
+            "reference_paragraph_layout"
+          ],
+          "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+        }
+      ],
+      "asset_map": [
+        {
+          "source_id": "draw-image-0015",
+          "asset_id": "asset-0025",
+          "target_file": "relatorio_AGES_eduardo/imagens/original/asset-0025.png",
+          "sha256": "4c17f14fb04490efc3d6ba20df9e5dbe0cce9e200c247253b698b22de2fa3f42"
+        }
+      ],
+      "structural_dispositions": [
+        {
+          "source_id": "text-list-0140",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-item-0110",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-0141",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-item-0111",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-0142",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-item-0112",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-0143",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-item-0113",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-0144",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-item-0114",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-0145",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-header-0038",
+          "disposition": "flattened-odf-layout-wrapper",
+          "evidence": "Nested numbering/list wrappers contain text-h-0068, which the audited extraction classifies as a paragraph despite its source text:outline-level=2; the nonprinting wrappers do not create a heading or list in the target."
+        },
+        {
+          "source_id": "text-list-0146",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0115",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0116",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0117",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0118",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "draw-text-box-0025",
+          "disposition": "represented-as-inline-figure-structure",
+          "evidence": "ODF p0961 inline_segments places draw-frame-0039 before its text; nested text box contains caption p0962 and image frame draw-frame-0040. The figure macro is emitted at that source position and ledger maps caption/image separately."
+        },
+        {
+          "source_id": "draw-image-0015",
+          "disposition": "represented-as-figure-image",
+          "evidence": "Embedded PNG occurrence is mapped to asset-0025 and the shared memorialfigure macro; source bytes are copied unchanged and SHA-256 verified."
+        },
+        {
+          "source_id": "text-list-0147",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0119",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0120",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0121",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0122",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-0148",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0123",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-0149",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0124",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-0150",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0125",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-0151",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0126",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-0152",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0127",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0128",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-0153",
+          "disposition": "represented-as-unordered-list",
+          "evidence": "ODF list style has bullet list-levels and the enclosed authored paragraphs are represented by one itemize environment in source order."
+        },
+        {
+          "source_id": "text-list-item-0129",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0130",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0131",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0132",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0133",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0134",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "text-list-item-0135",
+          "disposition": "represented-as-list-item-boundary",
+          "evidence": "ODF list-item wrapper encloses one mapped authored paragraph; target preserves it as one item boundary in the matching itemize environment."
+        },
+        {
+          "source_id": "draw-text-box-0026",
+          "disposition": "represented-as-reflection",
+          "evidence": "ODF text box contains mapped introspective paragraphs text-p-1004 through text-p-1006 in source order; target wraps them in reflection."
+        },
+        {
+          "source_id": "text-list-0154",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-item-0136",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-0155",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-header-0039",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-0156",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-item-0137",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-0157",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        },
+        {
+          "source_id": "text-list-header-0040",
+          "disposition": "boundary-layout-only",
+          "evidence": "ODF continuation/list wrappers occur after the last Sprint 4 source paragraph and belong to the next unit chapter-04-text-h-0073; excluded from this Sprint."
+        }
+      ],
+      "source_structure": {
+        "heading_level": 3,
+        "body_paragraphs": 24,
+        "reflection_paragraphs": 3,
+        "figures": 1,
+        "captions": 1,
+        "tables": 0,
+        "hyperlinks": 0,
+        "notes": 0,
+        "visible_list_items": 21,
+        "actual_unordered_list_wrappers": 8,
+        "layout_wrappers": [
+          "text-list-0140",
+          "text-list-item-0110",
+          "text-list-0141",
+          "text-list-item-0111",
+          "text-list-0142",
+          "text-list-item-0112",
+          "text-list-0143",
+          "text-list-item-0113",
+          "text-list-0144",
+          "text-list-item-0114",
+          "text-list-0145",
+          "text-list-header-0038",
+          "text-list-0146",
+          "text-list-item-0115",
+          "text-list-item-0116",
+          "text-list-item-0117",
+          "text-list-item-0118",
+          "draw-text-box-0025",
+          "draw-image-0015",
+          "text-list-0147",
+          "text-list-item-0119",
+          "text-list-item-0120",
+          "text-list-item-0121",
+          "text-list-item-0122",
+          "text-list-0148",
+          "text-list-item-0123",
+          "text-list-0149",
+          "text-list-item-0124",
+          "text-list-0150",
+          "text-list-item-0125",
+          "text-list-0151",
+          "text-list-item-0126",
+          "text-list-0152",
+          "text-list-item-0127",
+          "text-list-item-0128",
+          "text-list-0153",
+          "text-list-item-0129",
+          "text-list-item-0130",
+          "text-list-item-0131",
+          "text-list-item-0132",
+          "text-list-item-0133",
+          "text-list-item-0134",
+          "text-list-item-0135",
+          "draw-text-box-0026",
+          "text-list-0154",
+          "text-list-item-0136",
+          "text-list-0155",
+          "text-list-header-0039",
+          "text-list-0156",
+          "text-list-item-0137",
+          "text-list-0157",
+          "text-list-header-0040"
+        ],
+        "misstyled_heading_records_reclassified_as_paragraphs": [
+          "text-h-0068"
+        ]
+      },
+      "source_semantic_audit": {
+        "source_id": "text-h-0068",
+        "source_odf_element": "text:h",
+        "source_outline_level": "2",
+        "semantic_type": "paragraph",
+        "classification_reason": "Audited paragraph incorrectly styled as level-2 heading",
+        "source_paragraph_style": "P270",
+        "effective_style_chain": [
+          {
+            "name": "Standard",
+            "part": "styles.xml",
+            "family": "paragraph",
+            "parent": null,
+            "properties": {
+              "font-name": "Arial",
+              "font-size": "12pt",
+              "font-size-asian": "12pt",
+              "font-size-complex": "12pt"
+            }
+          },
+          {
+            "name": "Heading_20_2",
+            "part": "styles.xml",
+            "family": "paragraph",
+            "parent": "Standard",
+            "properties": {
+              "color": "#000000",
+              "font-name": "Arial",
+              "font-size": "12pt",
+              "font-style": "italic",
+              "font-weight": "bold",
+              "font-size-asian": "10.5pt",
+              "font-style-asian": "italic",
+              "font-weight-asian": "bold",
+              "font-name-complex": "Arial1",
+              "font-size-complex": "12pt",
+              "font-style-complex": "italic",
+              "font-weight-complex": "bold"
+            }
+          },
+          {
+            "name": "P270",
+            "part": "content.xml",
+            "family": "paragraph",
+            "parent": "Heading_20_2",
+            "properties": {
+              "font-size": "12pt",
+              "font-style": "normal",
+              "font-weight": "normal",
+              "font-size-asian": "10.5pt",
+              "font-style-asian": "normal",
+              "font-weight-asian": "normal",
+              "font-size-complex": "12pt",
+              "font-style-complex": "normal",
+              "font-weight-complex": "normal"
+            }
+          }
+        ],
+        "effective_paragraph_properties": {
+          "font-name": "Arial",
+          "font-size": "12pt",
+          "font-size-asian": "10.5pt",
+          "font-size-complex": "12pt",
+          "color": "#000000",
+          "font-style": "normal",
+          "font-weight": "normal",
+          "font-style-asian": "normal",
+          "font-weight-asian": "normal",
+          "font-name-complex": "Arial1",
+          "font-style-complex": "normal",
+          "font-weight-complex": "normal"
+        },
+        "target_representation": "Ordinary body paragraph with approved four leading-space markers, body indentation, and paragraph termination; no section command, heading emphasis, label, or ToC entry.",
+        "evidence": "The manifest and direct deterministic extraction both classify this record as paragraph. P270 inherits Heading_20_2 but explicitly sets normal 12pt font style and weight, overriding the heading appearance; its long text remains continuous prose."
+      },
+      "pending": [
+        "Fonte/autoria da figura draw-image-0015 (asset-0025) aguarda identificação manual do usuário; o texto provisório da macro é “Fonte: pendente de identificação”.",
+        "A auditoria independente do conteúdo e a auditoria visual do PDF integrado permanecem PENDING.",
+        "A validação normativa e a aprovação humana da edição AGES II permanecem PENDING."
+      ],
+      "layout_disposition": "The Sprint subsection flows continuously with no forced page break. Source text-h-0068 is represented as a normal body paragraph because the audited manifest and direct extraction classify it as paragraph and P270 overrides the erroneous level-2 heading appearance with normal 12pt styling; its four approved leading-space markers remain in the source-text mapping. Eight authored unordered lists are rendered as separate itemize groups, including the original one-item groups. The figure is anchored at the beginning of p0961 according to ODF inline_segments; the floated PDF position must be checked visually. Reflection paragraphs p1004-p1006 use the shared divisible reflection environment and body family/size per approved presentation; their source 13pt run styling is normalized to the approved body size, while italic “Spikes” is preserved.",
+      "bookmark_map": [],
+      "reference_paragraph_layout": {
+        "authorization_evidence": "migration/approvals/ages-ii-presentation-reuse.json",
+        "source_ids": [
+          "text-h-0068",
+          "text-p-0961",
+          "text-p-0969",
+          "text-p-0971",
+          "text-p-0973",
+          "text-p-0979",
+          "text-p-0983",
+          "text-p-0984",
+          "text-p-0998",
+          "text-p-1004",
+          "text-p-1005",
+          "text-p-1006"
+        ]
+      },
+      "inline_tab_layout": {
+        "authorization_evidence": "migration/approvals/ages-ii-presentation-reuse.json",
+        "source_ids": [
+          "text-p-0975",
+          "text-p-0976",
+          "text-p-0977"
+        ]
+      },
+      "approved_presentation_overrides": {
+        "authorization_evidence": "migration/approvals/ages-ii-presentation-reuse.json",
+        "source_ids": [
+          "text-p-0962"
+        ]
+      },
+      "approved_apparatus": [],
+      "inline_style_evidence": {
+        "source": "RELATORIO_ATUAL.odt:content.xml and styles.xml; directly parsed XML after verified source SHA-256.",
+        "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+        "style_spans_are_not_authoritative_text_records": true,
+        "effective_emphasis_runs": [
+          {
+            "source_id": "text-p-0951",
+            "source_text": "name_similarity:",
+            "source_text_sha256": "ed597ceb05979bab3dae5ee9573208cd8b1744ece2c58be7fb75878f64ad758b",
+            "span_ids": [
+              "text-span-1143",
+              "text-span-1144",
+              "text-span-1145",
+              "text-span-1146"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1143",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[1]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1144",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "name_s",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1145",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[1]/text:p[1]/text:span[2]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1146",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[1]/text:p[1]/text:span[2]/text:span[1]",
+                "source_text_direct": "imilarity:",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "text-underline-style": "solid",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "underline",
+              "textit"
+            ],
+            "command_applied": "\\textit{\\underline{…}}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 1254,
+            "target_end_byte": 1292,
+            "target_fragment": "\\textit{\\underline{name\\_similarity:}}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0952",
+            "source_text": "similaridade_link:",
+            "source_text_sha256": "176df11fb25fdcb07eeb85be0be41efe4369fb3452074ebd21436e12f0f80b0a",
+            "span_ids": [
+              "text-span-1147",
+              "text-span-1148",
+              "text-span-1149",
+              "text-span-1150",
+              "text-span-1151",
+              "text-span-1152",
+              "text-span-1153",
+              "text-span-1154"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1147",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1148",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "s",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1149",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[2]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1150",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[2]/text:span[1]",
+                "source_text_direct": "imilaridade_",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1151",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[3]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1152",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[3]/text:span[1]",
+                "source_text_direct": "l",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1153",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[4]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1154",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[2]/text:p[1]/text:span[4]/text:span[1]",
+                "source_text_direct": "ink:",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "text-underline-style": "solid",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "underline",
+              "textit"
+            ],
+            "command_applied": "\\textit{\\underline{…}}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 1455,
+            "target_end_byte": 1495,
+            "target_fragment": "\\textit{\\underline{similaridade\\_link:}}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0953",
+            "source_text": "verify_snippet:",
+            "source_text_sha256": "1768f277ea371af6f2e6ae44add3d758698e90dbfe26e7e4e887da1089961325",
+            "span_ids": [
+              "text-span-1155",
+              "text-span-1156",
+              "text-span-1157",
+              "text-span-1158",
+              "text-span-1159",
+              "text-span-1160",
+              "text-span-1161",
+              "text-span-1162"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1155",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1156",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "v",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1157",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[2]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1158",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[2]/text:span[1]",
+                "source_text_direct": "erify_",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1159",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[3]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1160",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[3]/text:span[1]",
+                "source_text_direct": "s",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1161",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[4]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1162",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[3]/text:p[1]/text:span[4]/text:span[1]",
+                "source_text_direct": "nippet:",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "text-underline-style": "solid",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "underline",
+              "textit"
+            ],
+            "command_applied": "\\textit{\\underline{…}}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 1606,
+            "target_end_byte": 1643,
+            "target_fragment": "\\textit{\\underline{verify\\_snippet:}}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0954",
+            "source_text": "normalize_string:",
+            "source_text_sha256": "c80c50d496a86fa9fe165300471b5cd6cf0bdda6af92a280fda922d02e547565",
+            "span_ids": [
+              "text-span-1163",
+              "text-span-1164",
+              "text-span-1165",
+              "text-span-1166",
+              "text-span-1167",
+              "text-span-1168",
+              "text-span-1169",
+              "text-span-1170"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1163",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1164",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "n",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1165",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[2]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1166",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[2]/text:span[1]",
+                "source_text_direct": "ormalize_",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1167",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[3]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1168",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[3]/text:span[1]",
+                "source_text_direct": "s",
+                "text_style_name": "T290",
+                "inherited_style_chain": [
+                  {
+                    "name": "T290",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1169",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[4]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1170",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[57]/text:list-item[4]/text:p[1]/text:span[4]/text:span[1]",
+                "source_text_direct": "tring:",
+                "text_style_name": "T291",
+                "inherited_style_chain": [
+                  {
+                    "name": "T291",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "text-underline-style": "solid",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "underline",
+              "textit"
+            ],
+            "command_applied": "\\textit{\\underline{…}}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 1766,
+            "target_end_byte": 1805,
+            "target_fragment": "\\textit{\\underline{normalize\\_string:}}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0964",
+            "source_text": ":",
+            "source_text_sha256": "e7ac0786668e0ff0f02b62bd04f45ff636fd82db63b1104601c975dc005f3a67",
+            "span_ids": [
+              "text-span-1185"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1185",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[58]/text:list-item[1]/text:p[1]/text:span[2]",
+                "source_text_direct": ":",
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "bold",
+              "font-weight-asian": "bold",
+              "font-weight-complex": "bold"
+            },
+            "latex_commands": [
+              "textbf"
+            ],
+            "command_applied": "\\textbf{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 3131,
+            "target_end_byte": 3141,
+            "target_fragment": "\\textbf{:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0974",
+            "source_text": "Client:",
+            "source_text_sha256": "b886ce2230d7f1cf3f99d0c4c4b2e279bb439a23b0f8c3fcdc89e176646db9c4",
+            "span_ids": [
+              "text-span-1200",
+              "text-span-1201"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1200",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[59]/text:list-item[1]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1201",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[59]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "Client:",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 4925,
+            "target_end_byte": 4941,
+            "target_fragment": "\\textit{Client:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0975",
+            "source_text": "Service:",
+            "source_text_sha256": "65d157da69bf03420bcc1c425dae46838628740318155f675502fb5eaf3772ee",
+            "span_ids": [
+              "text-span-1202",
+              "text-span-1203"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1202",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[60]/text:list-item[1]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1203",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[60]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "Service:",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 5211,
+            "target_end_byte": 5228,
+            "target_fragment": "\\textit{Service:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0976",
+            "source_text": "Router:",
+            "source_text_sha256": "ffc68e8c9efb1429b1fa52686767f54abfacd177f2cd0ae975a1fa6bae94b24a",
+            "span_ids": [
+              "text-span-1204",
+              "text-span-1205"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1204",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[61]/text:list-item[1]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1205",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[61]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "Router:",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 5504,
+            "target_end_byte": 5520,
+            "target_fragment": "\\textit{Router:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0977",
+            "source_text": "DigitalPresence:",
+            "source_text_sha256": "1b7158a4b83c187895a803fba3d12199fb7b2fb0341a8bd74af48ee637c557d2",
+            "span_ids": [
+              "text-span-1206",
+              "text-span-1207"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1206",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[62]/text:list-item[1]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1207",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[62]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "DigitalPresence:",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 5743,
+            "target_end_byte": 5768,
+            "target_fragment": "\\textit{DigitalPresence:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0980",
+            "source_text": "Google:",
+            "source_text_sha256": "a0cc31761a4c99e516f4530c3ca8325a85789f83e35c8712f6ec04b205b528f1",
+            "span_ids": [
+              "text-span-1210",
+              "text-span-1211"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1210",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[63]/text:list-item[1]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1211",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[63]/text:list-item[1]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "Google:",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 6303,
+            "target_end_byte": 6319,
+            "target_fragment": "\\textit{Google:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0981",
+            "source_text": "Instagram",
+            "source_text_sha256": "bad57ef7837c8e6bf99c2a5935cc9d6fe5324a53d88744ad5551db0e46b03cd6",
+            "span_ids": [
+              "text-span-1213",
+              "text-span-1214"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1213",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[63]/text:list-item[2]/text:p[1]/text:span[1]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1214",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[63]/text:list-item[2]/text:p[1]/text:span[1]/text:span[1]",
+                "source_text_direct": "Instagram",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 6455,
+            "target_end_byte": 6473,
+            "target_fragment": "\\textit{Instagram}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0981",
+            "source_text": "LinkedIn:",
+            "source_text_sha256": "43502613113bf5b1c3ee3eb032242c6a48ea7f1aa46416d3ce2ffa77d266516a",
+            "span_ids": [
+              "text-span-1221",
+              "text-span-1222"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1221",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[63]/text:list-item[2]/text:p[1]/text:span[5]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1222",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:list[63]/text:list-item[2]/text:p[1]/text:span[5]/text:span[1]",
+                "source_text_direct": "LinkedIn:",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 6476,
+            "target_end_byte": 6494,
+            "target_fragment": "\\textit{LinkedIn:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0998",
+            "source_text": "deployados",
+            "source_text_sha256": "4ab8012d0f8ba1a225a099666654372d1fce065ea8cf8793f34fb1156625fb92",
+            "span_ids": [
+              "text-span-1237"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1237",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[777]/text:span[7]",
+                "source_text_direct": "deployados",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-style": "italic",
+              "font-weight": "normal",
+              "font-style-asian": "italic",
+              "font-weight-asian": "normal",
+              "font-style-complex": "italic",
+              "font-weight-complex": "normal"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 10145,
+            "target_end_byte": 10164,
+            "target_fragment": "\\textit{deployados}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-1006",
+            "source_text": "Spikes",
+            "source_text_sha256": "94b748109638be2d5b64f7e046d4cd1f4d53729b29a3908b4171ec9de8048384",
+            "span_ids": [
+              "text-span-1263"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1263",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[782]/draw:frame[1]/draw:text-box[1]/text:p[3]/text:span[3]",
+                "source_text_direct": "Spikes",
+                "text_style_name": "T122",
+                "inherited_style_chain": [
+                  {
+                    "name": "T122",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-size": "13pt",
+                      "font-style": "italic",
+                      "font-size-asian": "13pt",
+                      "font-style-asian": "italic",
+                      "font-size-complex": "13pt",
+                      "font-style-complex": "italic"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 13150,
+            "target_end_byte": 13165,
+            "target_fragment": "\\textit{Spikes}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0961",
+            "source_text": "Primeira Etapa: Avaliação Geral da Presença Digital:",
+            "source_text_sha256": "8138c08e1d2bfdfe790380a82586133df074be0ee3e6b8d1e325fb23595dc184",
+            "span_ids": [
+              "text-span-1181",
+              "text-span-1182"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1181",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[758]/text:span[2]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1182",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[758]/text:span[2]/text:span[1]",
+                "source_text_direct": "Primeira Etapa: Avaliação Geral da Presença Digital:",
+                "text_style_name": "T286",
+                "inherited_style_chain": [
+                  {
+                    "name": "T286",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-weight-asian": "normal",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "text-underline-style": "solid"
+            },
+            "latex_commands": [
+              "underline"
+            ],
+            "command_applied": "\\underline{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 2888,
+            "target_end_byte": 2955,
+            "target_fragment": "\\underline{Primeira Etapa: Avaliação Geral da Presença Digital:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0969",
+            "source_text": "Segunda Etapa: Verificação de Relevância:",
+            "source_text_sha256": "aaafbd429034bc59f3743bad93ec1058feaac31b2ceec0000b6bf5c61237c6c0",
+            "span_ids": [
+              "text-span-1193",
+              "text-span-1194"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1193",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[761]/text:span[2]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1194",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[761]/text:span[2]/text:span[1]",
+                "source_text_direct": "Segunda Etapa: Verificação de Relevância:",
+                "text_style_name": "T286",
+                "inherited_style_chain": [
+                  {
+                    "name": "T286",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "text-underline-style": "solid",
+                      "font-weight": "normal",
+                      "font-weight-asian": "normal",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "text-underline-style": "solid"
+            },
+            "latex_commands": [
+              "underline"
+            ],
+            "command_applied": "\\underline{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 3984,
+            "target_end_byte": 4040,
+            "target_fragment": "\\underline{Segunda Etapa: Verificação de Relevância:}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          },
+          {
+            "source_id": "text-p-0998",
+            "source_text": "memory leak",
+            "source_text_sha256": "7faa297fbbdcbca1346d98134da1b172ad92590dbd18e68be8cb5ac58096ce69",
+            "span_ids": [
+              "text-span-1239",
+              "text-span-1240"
+            ],
+            "span_records": [
+              {
+                "span_id": "text-span-1239",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[777]/text:span[9]",
+                "source_text_direct": null,
+                "text_style_name": "Strong_20_Emphasis",
+                "inherited_style_chain": [
+                  {
+                    "name": "Strong_20_Emphasis",
+                    "part": "styles.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-weight": "bold",
+                      "font-weight-asian": "bold",
+                      "font-weight-complex": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "span_id": "text-span-1240",
+                "xpath": "/office:document-content[1]/office:body[1]/office:text[1]/text:p[777]/text:span[9]/text:span[1]",
+                "source_text_direct": "memory leak",
+                "text_style_name": "T43",
+                "inherited_style_chain": [
+                  {
+                    "name": "T43",
+                    "part": "content.xml",
+                    "family": "text",
+                    "parent": null,
+                    "properties": {
+                      "font-style": "italic",
+                      "font-weight": "normal",
+                      "font-style-asian": "italic",
+                      "font-weight-asian": "normal",
+                      "font-style-complex": "italic",
+                      "font-weight-complex": "normal"
+                    }
+                  }
+                ]
+              }
+            ],
+            "effective_properties": {
+              "font-weight": "normal",
+              "font-weight-asian": "normal",
+              "font-weight-complex": "normal",
+              "font-style": "italic",
+              "font-style-asian": "italic",
+              "font-style-complex": "italic"
+            },
+            "latex_commands": [
+              "textit"
+            ],
+            "command_applied": "\\textit{…}",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+            "target_start_byte": 10224,
+            "target_end_byte": 10244,
+            "target_fragment": "\\textit{memory leak}",
+            "target_sha256": "a67bb29be2c0adea5ce70d50cbcf6065cf81d87f44bc1fb18f88bb96e4248e6c"
+          }
+        ],
+        "caption_style_override": {
+          "source_id": "text-p-0962",
+          "source_paragraph_style": "P95",
+          "source_style_effect": "caption style inherits italics",
+          "target_style": "upright caption through the shared memorialfigure macro, per the approved no-italic figure-description style",
+          "wording_mapping": "the approved localized caption is separately mapped and auditable"
+        },
+        "reflection_size_override": {
+          "source_ids": [
+            "text-p-1004",
+            "text-p-1005",
+            "text-p-1006"
+          ],
+          "source_style_name": "T121",
+          "source_property": "fo:font-size=13pt",
+          "approved_target_presentation": "reflection macro uses the approved body font family and size; this changes presentation only, not wording.",
+          "italic_exception": {
+            "source_id": "text-p-1006",
+            "span_id": "text-span-1263",
+            "text": "Spikes",
+            "style_name": "T122",
+            "effective": "italic",
+            "latex_command": "\\textit{Spikes}"
+          }
+        },
+        "normal_override_findings": [
+          {
+            "source_id": "text-p-0951",
+            "outer_span_ids": [
+              "text-span-1143",
+              "text-span-1145"
+            ],
+            "inner_span_ids": [
+              "text-span-1144",
+              "text-span-1146"
+            ],
+            "style_names": [
+              "Strong_20_Emphasis",
+              "T290",
+              "T291"
+            ],
+            "effective": "italic + solid underline; child T290/T291 explicit normal weight overrides Strong bold",
+            "latex_command": "\\textit{\\underline{…}}"
+          },
+          {
+            "source_id": "text-p-0952",
+            "style_names": [
+              "Strong_20_Emphasis",
+              "T290",
+              "T291"
+            ],
+            "effective": "italic + solid underline; child style explicit normal weight overrides Strong bold",
+            "latex_command": "\\textit{\\underline{…}}"
+          },
+          {
+            "source_id": "text-p-0953",
+            "style_names": [
+              "Strong_20_Emphasis",
+              "T290",
+              "T291"
+            ],
+            "effective": "italic + solid underline; child style explicit normal weight overrides Strong bold",
+            "latex_command": "\\textit{\\underline{…}}"
+          },
+          {
+            "source_id": "text-p-0954",
+            "style_names": [
+              "Strong_20_Emphasis",
+              "T290",
+              "T291"
+            ],
+            "effective": "italic + solid underline; child style explicit normal weight overrides Strong bold",
+            "latex_command": "\\textit{\\underline{…}}"
+          },
+          {
+            "source_id": "text-p-0961",
+            "style_names": [
+              "Strong_20_Emphasis",
+              "T286"
+            ],
+            "effective": "underline; T286 explicit normal weight overrides Strong bold",
+            "latex_command": "\\underline{…}"
+          },
+          {
+            "source_id": "text-p-0969",
+            "style_names": [
+              "Strong_20_Emphasis",
+              "T286"
+            ],
+            "effective": "underline; T286 explicit normal weight overrides Strong bold",
+            "latex_command": "\\underline{…}"
+          }
+        ]
+      },
+      "document_reordering_authorization": {
+        "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
+        "source_ids": [
+          "text-h-0067",
+          "text-p-0962"
+        ]
+      }
+    }
+  }
+}

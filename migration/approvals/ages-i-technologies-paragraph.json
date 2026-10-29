@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "user_authorized_technology_presentation_and_citation",
+  "status": "authorized_for_execution_pending_human_review",
+  "scope": "AGES I / Easy Choose / subseção Tecnologias utilizadas / text-h-0012",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "user_decisions": {
+    "single_paragraph": "Render all five technology entries and the closing integration paragraph as one continuous prose paragraph, following Mariah's structure.",
+    "author_date_year": "Use the access year as the publication/citation year, following Mariah's pattern.",
+    "access_windows": {
+      "ages_i": "2024-03 through 2024-06",
+      "ages_ii": "2024-08 through 2024-11",
+      "ages_iii": "2026-03 through 2026-06",
+      "ages_iv": "2026-08 through 2026-11"
+    },
+    "invented_days_authorized": true,
+    "access_date_provenance": "Exact day assigned under explicit user instruction within the AGES I window; not recovered from browser history or independently verified.",
+    "future_editions": "No presentation rule has been promoted for AGES II-IV; future-edition use awaits the user's review and separate decision."
+  },
+  "assigned_references": [
+    {
+      "source_id": "text-a-0111",
+      "citation_key": "typescript-docs",
+      "citation_author_label": "TypeScript",
+      "year": 2024,
+      "access_date": "2024-04-10",
+      "url": "https://www.typescriptlang.org/docs/"
+    },
+    {
+      "source_id": "text-a-0112",
+      "citation_key": "react-docs",
+      "citation_author_label": "React",
+      "year": 2024,
+      "access_date": "2024-04-10",
+      "url": "https://react.dev/"
+    },
+    {
+      "source_id": "text-a-0113",
+      "citation_key": "nodejs-docs",
+      "citation_author_label": "Node.js",
+      "year": 2024,
+      "access_date": "2024-04-10",
+      "url": "https://nodejs.org/docs/latest/api/"
+    },
+    {
+      "source_id": "text-a-0114",
+      "citation_key": "prisma-docs",
+      "citation_author_label": "Prisma",
+      "year": 2024,
+      "access_date": "2024-04-10",
+      "url": "https://www.prisma.io/docs"
+    },
+    {
+      "source_id": "text-a-0115",
+      "citation_key": "postgresql-docs",
+      "citation_author_label": "PostgreSQL",
+      "year": 2024,
+      "access_date": "2024-04-10",
+      "url": "https://www.postgresql.org/docs/"
+    }
+  ],
+  "human_approval_of_result": null,
+  "promoted_to_reusable_policy": false
+}

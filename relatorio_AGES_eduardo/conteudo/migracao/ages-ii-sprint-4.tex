@@ -1,0 +1,159 @@
+% Faithful conversion of ages-ii-sprint-4; source wording and XML order retained.
+
+\refstepcounter{subsection}
+\subsection*{3.3.5 Sprint 4}
+\label{unit:ages-ii-sprint-4}
+\addcontentsline{toc}{subsection}{3.3.5 Sprint 4}
+
+% text-h-0068
+\indent \originalleadingspace{}\originalleadingspace{}\originalleadingspace{}\originalleadingspace{}Na Sprint 4, o foco principal foi o desenvolvimento da API de serviços, responsável por realizar buscas de estabelecimentos em mecanismos como Google, Instagram e LinkedIn. Essa API processa os resultados utilizando algoritmos especializados que validam os dados encontrados, comparando-os com os registros existentes no banco de dados do projeto. O objetivo final desse processamento é atribuir uma nota de presença digital para cada estabelecimento, avaliando sua consistência e relevância no ambiente digital.\originalspace{}\par
+
+% text-p-0950
+\indent O fluxo de processamento para o cálculo de presença digital segue uma série de etapas baseadas em algoritmos avançados. Esses algoritmos analisam as informações retornadas pelos mecanismos de busca, determinando sua pertinência em relação aos estabelecimentos pesquisados. As etapas de avaliação incluem:\par
+
+\begin{itemize}
+% text-p-0951
+\item \textit{\underline{name\_similarity:}} Este algoritmo utiliza técnicas de n-gramas para medir a similaridade entre o nome do estabelecimento e os títulos das páginas retornadas.
+% text-p-0952
+\item \textit{\underline{similaridade\_link:}} Analisa a correspondência entre o nome do estabelecimento e os links obtidos nas buscas.
+% text-p-0953
+\item \textit{\underline{verify\_snippet:}} Extrai e verifica informações diretamente dos snippets das páginas, como CEP, Cidade e Logradouro.
+% text-p-0954
+\item \textit{\underline{normalize\_string:}} Padroniza as strings, removendo caracteres especiais e ajustando formatações.
+\end{itemize}
+
+% text-p-0955
+\indent Esses componentes do fluxo trabalham de forma integrada para fornecer uma avaliação robusta e confiável da presença digital dos estabelecimentos.\par
+
+% text-p-0956
+\indent O cálculo do Score de Presença Digital segue um processo dividido em duas etapas principais: a avaliação geral da presença digital dos estabelecimentos e a verificação da relevância dos links encontrados. Essa abordagem garante uma análise detalhada e confiável da presença digital de cada estabelecimento.\par
+
+% text-p-0958
+\indent A seguir, o Fluxo de Processamento de Estabelecimentos para Cálculo de Presença Digital:\par
+
+% embedded-block draw-frame-0039 precedes the text segment of text-p-0961 in ODF inline_segments
+\memorialfigure{imagens/original/asset-0025.png}{\textbf{Figura 12 –} Fluxo de Processamento de Presença Digital - AGES II}{fig:ages-ii-sprint-4-presenca-digital}{Fonte: pendente de identificação}{0.9}
+
+% text-p-0961
+\indent \originalleadbreak{}\underline{Primeira Etapa: Avaliação Geral da Presença Digital:}\par
+
+% text-p-0963
+\indent Nesta etapa, é utilizado um sistema de pontuação que considera critérios específicos:\par
+
+\begin{itemize}
+% text-p-0964
+\item Links Relevantes\textbf{:} Cada link com similaridade de nome acima de 0,1 contribui com 0,1 ponto. Se todos os links forem válidos, o máximo possível nesta categoria é de 1 ponto.
+% text-p-0965
+\item CEP: Um link que contenha o CEP correto no snippet soma 2 pontos. Cada link adicional com o CEP correto acrescenta 0,1 ponto, com um total de até 3 pontos.
+% text-p-0966
+\item Cidade: Se a cidade do estabelecimento for encontrada em um snippet, são adicionados 2 pontos. Links adicionais com essa informação somam 0,1 ponto cada, totalizando até 3 pontos.
+% text-p-0967
+\item Logradouro: Encontrar o logradouro no snippet adiciona 2 pontos. Cada ocorrência adicional soma 0,1 ponto, também com um máximo de 3 pontos.
+\end{itemize}
+
+% text-p-0968
+\indent O score máximo ideal para esta etapa é de 10 pontos.\par
+
+% text-p-0969
+\indent \originalleadbreak{}\underline{Segunda Etapa: Verificação de Relevância:}\par
+
+% text-p-0971
+\indent \originaltab{}Após a avaliação geral, o cálculo é replicado para outras plataformas, como LinkedIn e Instagram. Esse processo amplia a análise e beneficia estabelecimentos com presença consistente em múltiplos canais digitais. Assim, empresas com presença diversificada obtêm pontuações mais altas, enquanto aquelas limitadas a uma única plataforma não são penalizadas excessivamente. O objetivo é valorizar uma presença digital completa e equilibrada.\par
+
+% text-p-0973
+\indent \originaltab{}Também durante a Sprint 4, realizei uma série de refatorações significativas na estrutura da API de serviços com o objetivo de otimizar seu funcionamento e melhorar sua modularidade. As mudanças foram implementadas em diferentes camadas do projeto, trazendo melhorias em desempenho e organização.\par
+
+\begin{itemize}
+% text-p-0974
+\item \textit{Client:} Foram criados clientes dedicados para Google, Instagram e LinkedIn. Todas as funções foram transformadas em assíncronas, garantindo que as consultas às APIs externas ocorressem de forma independente e simultânea.
+\end{itemize}
+
+\begin{itemize}
+% text-p-0975
+\item \textit{Service:} A lógica central do arquivo DigitalPresenceService foi \originalinlinetab{}simplificada, centralizando tanto a busca quanto o cálculo da presença \originalinlinetab{}digital, o que tornou o fluxo mais direto e eficiente.
+\end{itemize}
+
+\begin{itemize}
+% text-p-0976
+\item \textit{Router:} O endpoint foi ajustado para ser mais conciso e direto, \originalinlinetab{}removendo redundâncias desnecessárias e melhorando a clareza do \originalinlinetab{}código.
+\end{itemize}
+
+\begin{itemize}
+% text-p-0977
+\item \textit{DigitalPresence:} Os algoritmos anteriormente descritos foram \originalinlinetab{}otimizados, aumentando a precisão na comparação de nomes e na \originalinlinetab{}análise dos snippets retornados pelas buscas.
+\end{itemize}
+
+% text-p-0979
+\indent \originaltab{}Ao longo da Sprint, o serviço passou por aprimoramentos importantes no fluxo de processamento para resultados obtidos em diferentes mecanismos de busca. Cada mecanismo agora conta com um pipeline específico que considera suas particularidades:\par
+
+\begin{itemize}
+% text-p-0980
+\item \textit{Google:} Verifica informações como CEP e logradouro nos snippets, dada a relevância desses dados nas buscas de websites.
+% text-p-0981
+\item \textit{Instagram} e \textit{LinkedIn:} Possuem fluxos ajustados, porém sem incluir verificações de CEP nos snippets, visto que esses dados não são relevantes nessas plataformas.
+\end{itemize}
+
+% text-p-0982
+\indent Embora os pipelines do Instagram e LinkedIn possuam pequenas diferenças, elas não foram suficientes para justificar a inclusão de fluxogramas separados. Por isso, apenas o fluxo principal (Google) foi representado no fluxograma inserido no memorial. Essas mudanças resultaram em um serviço mais modular, eficiente e adaptado às necessidades específicas de cada mecanismo de busca.\par
+
+% text-p-0983
+\indent \originaltab{}Para armazenar os dados processados pela API, foi criada uma nova tabela no banco de dados utilizando SQLAlchemy, o que facilitou a modificação do modelo objeto-relacional (ORM). A criação dessa tabela foi projetada para persistir as informações mais relevantes de cada estabelecimento, garantindo que os dados processados pelo serviço fossem organizados e facilmente acessíveis.\par
+
+% text-p-0984
+\indent \originaltab{}Campos da Nova Tabela:\par
+
+\begin{itemize}
+% text-p-0985
+\item Link mais relevante do Google (website).
+% text-p-0986
+\item Link mais relevante do Instagram (perfil).
+% text-p-0987
+\item Link mais relevante do LinkedIn (página).
+% text-p-0988
+\item Nível de confiança para o link do Google.
+% text-p-0989
+\item Nível de confiança para o link do Instagram.
+% text-p-0990
+\item Nível de confiança para o link do LinkedIn.
+% text-p-0991
+\item Nível de presença digital total.
+\end{itemize}
+
+% text-p-0993
+\indent Isso significa que, quando um usuário utiliza o front-end para filtrar um estabelecimento, a requisição é enviada ao back-end. Este aciona o serviço responsável por executar os três pipelines de busca (Google, Instagram e LinkedIn) para os estabelecimentos solicitados. O serviço retorna os links mais relevantes encontrados, os níveis de confiança de cada link e o nível de presença digital total do estabelecimento. Esses dados são então persistidos no banco de dados e imediatamente devolvidos ao front-end.\par
+
+% text-p-0995
+\indent Durante um dos períodos da AGES, tivemos uma aula ministrada pelo meu colega Gui AGES III., focada em DevOps e na infraestrutura utilizada em nosso projeto. Ele explicou como estamos utilizando o Docker Swarm para delegação e orquestração de tarefas, proporcionando uma visão prática e detalhada sobre como a infraestrutura suporta o desenvolvimento e operação do nosso serviço.\par
+
+% text-p-0996
+\indent No período seguinte, em uma aula de Fundamentos de Processamento Paralelo Distribuído, revisitei o mesmo conteúdo, mas agora pela perspectiva acadêmica. Foi uma experiência enriquecedora comparar o aprendizado prático com a abordagem teórica, além de compreender o tema através das palavras de um colega da AGES. Isso não só consolidou meu entendimento sobre Docker Swarm e infraestrutura, mas também me preparou melhor para desempenhar futuramente o papel de AGES III.\par
+
+% text-p-0997
+\indent Essas experiências destacaram a importância de integrar o aprendizado prático e teórico, permitindo uma aplicação mais eficaz dos conceitos em projetos reais.\par
+
+% text-p-0998
+\indent \originaltab{}Ao final da Sprint 4, tivemos nossa apresentação para o stakeholder, que, infelizmente, não foi bem-sucedida. Foi uma experiência frustrante, pois diversos problemas técnicos surgiram no último minuto. O primeiro desafio foi que o software estava rodando localmente devido a um problema com a EC2, que não estava funcionando propriamente por causa de versões diferentes dos repositórios que estavam \textit{deployados}, o que impediu a comunicação entre eles. Além disso, um \textit{memory leak} foi identificado um dia antes da apresentação, o que consumiu tempo e dificultou os preparativos.\par
+
+% text-p-0999
+\indent O desempenho da API de serviços também não foi o esperado. Ela estava lenta, a ponderação das notas estava imprecisa e não conseguiu encontrar os links das redes sociais de várias empresas durante a demonstração.\par
+
+% text-p-1000
+\indent Apesar da decepção inicial, essa entrega me motivou a organizar o time para atacar os problemas identificados e melhorar o produto para a apresentação final da AGES, que aconteceria na semana seguinte. Juntos, conseguimos corrigir diversos pontos críticos.\par
+
+% text-p-1001
+\indent Eu, juntamente dos meus colegas Eduardo Wolf (AGES II), Bruno Panizzi (AGES I) e Nicolas Navarro (AGES I), trabalhamos para corrigir alguns dos porblemas elencados, como a busca de latitude e longitude para os estabelecimentos, que não haviam sido corretamente persistidos no banco de dados, fazendo com que os pontos no mapa não aparecessem no front-end. Além disso, alteramos o endpoint no back-end para garantir que somente os estabelecimentos com situação cadastral ativa seriam processados, conforme recomendação do nosso stakeholder.\par
+
+% text-p-1002
+\indent Com o time focado, conseguimos corrigir as falhas e produzir uma versão mais robusta e refinada, que foi bem recebida na apresentação final. Esse período, embora desafiador, foi uma excelente oportunidade para aprender com os erros e aplicar melhorias significativas no projeto.\par
+
+\begin{reflection}
+% text-p-1004
+\indent \originaltab{}Percebi que uma das grandes dificuldades dessa Sprint foi a falta de atenção aos requisitos não funcionais, principalmente no que diz respeito à performance. Durante a entrega, ficou claro que não havíamos dado a devida importância a esses aspectos, que eram cruciais para o sucesso do projeto. Nosso sprojeto lidava com grandes volumes de dados e a performance deveria ter sido a chave desde o início. Foi frustrante perceber que, em vez de resolver esses problemas ao longo das Sprints, eles se tornaram evidentes justamente na reta final, o que impactou diretamente a entrega para o stakeholder.\par
+
+% text-p-1005
+\indent \originaltab{}A apresentação em ambiente local, em vez de remoto na nuvem, também foi um golpe. Embora a infraestrutura estivesse bem construída e documentada, os problemas técnicos impediram que a aplicação fosse executada corretamente na nuvem. Esse cenário foi frustrante, não só para mim, mas também para os nossos colegas AGES III, que se dedicaram bastante para configurar e estruturar o ambiente.\par
+
+% text-p-1006
+\indent \originaltab{}Outro ponto que ficou claro foi o erro de ter deixado a API de serviço de presença digital para o final, na última Sprint. Fomos apressados na definição dos fluxos, algoritmos e mecanismos de busca. Embora tivéssemos realizado \textit{Spikes} nas Sprints anteriores, subestimamos o tempo necessário para implementar essa parte crítica, que acabou sendo uma das mais complexas do projeto. Acredito que deveríamos ter dado mais foco nessa parte desde o início, e menos ao front-end, para garantir que a base do projeto estivesse sólida.\par
+
+\end{reflection}
