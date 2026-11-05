@@ -28,7 +28,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         },
         {
           "source_id": "text-p-0763",
@@ -39,7 +39,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         },
         {
           "source_id": "text-p-0764",
@@ -50,7 +50,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         },
         {
           "source_id": "text-p-0765",
@@ -61,7 +61,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         },
         {
           "source_id": "text-p-0767",
@@ -72,15 +72,15 @@
             "abnt_figure_caption",
             "document_reordering_numbering"
           ],
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         },
         {
           "source_id": "draw-image-0009",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex",
           "start_byte": 2359,
-          "end_byte": 2520,
+          "end_byte": 2562,
           "serializations": [],
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         }
       ],
       "asset_map": [
@@ -102,7 +102,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0036",
           "source_end_id": "text-bookmark-end-0036",
-          "target_sha256": "8f5690478cf8ca5de6022b6a2ff40b04c04e54408082fa38b6d1954b4c2bbf28"
+          "target_sha256": "1ca936542833087b64e590ca085519a0b120689718d47a04f538a375bb9eb57d"
         }
       ],
       "structural_dispositions": [

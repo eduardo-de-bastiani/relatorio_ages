@@ -40,9 +40,12 @@ def safe_relative(repo: Path, name: str, *, must_exist: bool = False) -> Path:
 
 
 def require_work_branch(repo: Path = REPO) -> str:
-    branch = git(repo, "symbolic-ref", "--short", "HEAD")
-    if branch in {"main", "master"}:
-        raise ValueError("Writes must run on a task branch, never main/master")
+    try:
+        branch = git(repo, "symbolic-ref", "--short", "HEAD")
+    except subprocess.CalledProcessError as error:
+        raise ValueError("Writes require an active named branch, not detached HEAD") from error
+    if branch in {"master"}:
+        raise ValueError("Writes must run on main or a task branch, never master")
     return branch
 
 

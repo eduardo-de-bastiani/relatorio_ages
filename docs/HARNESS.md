@@ -1,6 +1,8 @@
 # Operação do harness
 
-O harness controla a conversão e a validação do memorial. A apresentação da AGES I foi aprovada como padrão visual reutilizável; a única edição autorizada em execução é AGES II / Indústria Digital. Consulte [plano](MIGRATION_PLAN.md), [estilo](STYLE_GUIDE.md), [gates](QUALITY_GATES.md) e [pendências](PENDENCIAS.md).
+O harness controla a conversão e a validação do memorial. Para o estado atual e a continuação por Gemini/Antigravity, comece pelo [repasse](HANDOFF_GEMINI.md) e pelos [prompts de tarefa](PROMPTS_GEMINI.md). AGES I–III, parte de AGES IV até Sprint 3 e a participação Hoortech já estão integradas; a tarefa seguinte depende do pedido do autor. Consulte também [plano](MIGRATION_PLAN.md), [estilo](STYLE_GUIDE.md), [gates](QUALITY_GATES.md) e [pendências](PENDENCIAS.md).
+
+**Política de branch compatibilizada (30/10/2026):** em atendimento à decisão do usuário de consolidar o projeto em `main`, `common.require_work_branch` e `write_json` aceitam `main`, mantendo a rejeição de detached HEAD e da branch legada `master`. Comandos de escrita e compilação (`build`, `validate`, `visual`, `checkpoint`) operam normalmente em `main`, preservando as proteções de integridade, escopos e a exigência de commit limpo no perfil de produção.
 
 ## Organização do projeto
 

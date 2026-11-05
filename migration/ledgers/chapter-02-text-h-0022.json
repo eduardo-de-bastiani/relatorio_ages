@@ -20,7 +20,7 @@
           "serializations": [
             "abnt_section_numbering"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0637",
@@ -31,7 +31,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0638",
@@ -42,7 +42,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0639",
@@ -53,7 +53,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0640",
@@ -64,7 +64,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0641",
@@ -75,7 +75,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0642",
@@ -87,7 +87,7 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0643",
@@ -98,15 +98,15 @@
             "original_whitespace",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "draw-image-0005",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
           "start_byte": 4849,
-          "end_byte": 5027,
+          "end_byte": 5024,
           "serializations": [],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_id": "text-p-0650",
@@ -116,7 +116,7 @@
           "serializations": [
             "abnt_figure_caption"
           ],
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         }
       ],
       "asset_map": [
@@ -136,7 +136,7 @@
           "command": "hypertarget",
           "start_byte": 94,
           "end_byte": 122,
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         },
         {
           "source_heading_id": "text-h-0022",
@@ -148,7 +148,7 @@
           "command": "hypertarget",
           "start_byte": 123,
           "end_byte": 172,
-          "target_sha256": "84a913a9bfdeccd3749dfb2b5a7a603efe7957fa9c0686360be30140dd0fc55b"
+          "target_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f"
         }
       ],
       "structural_dispositions": [

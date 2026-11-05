@@ -24,7 +24,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
+          "target_sha256": "c16281185c130e48b28a2d6d2e9c5cee9bd5761c6ea5f7eadc0b4042e6c3d89b"
         },
         {
           "source_id": "text-p-0314",
@@ -37,7 +37,7 @@
             "reference_paragraph_layout",
             "technology_citation"
           ],
-          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
+          "target_sha256": "c16281185c130e48b28a2d6d2e9c5cee9bd5761c6ea5f7eadc0b4042e6c3d89b"
         },
         {
           "source_id": "text-p-0315",
@@ -49,7 +49,7 @@
             "reference_paragraph_layout",
             "wiki_reference_sentence"
           ],
-          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
+          "target_sha256": "c16281185c130e48b28a2d6d2e9c5cee9bd5761c6ea5f7eadc0b4042e6c3d89b"
         },
         {
           "source_id": "text-a-0108",
@@ -60,7 +60,7 @@
             "original_whitespace",
             "wiki_reference_sentence"
           ],
-          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
+          "target_sha256": "c16281185c130e48b28a2d6d2e9c5cee9bd5761c6ea5f7eadc0b4042e6c3d89b"
         }
       ],
       "asset_map": [],
@@ -75,7 +75,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0010",
           "source_end_id": "text-bookmark-end-0010",
-          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
+          "target_sha256": "c16281185c130e48b28a2d6d2e9c5cee9bd5761c6ea5f7eadc0b4042e6c3d89b"
         }
       ],
       "structural_dispositions": [
@@ -118,8 +118,8 @@
           "authorization_evidence": "migration/approvals/ages-i-authorization.json",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
           "start_byte": 843,
-          "end_byte": 956,
-          "target_sha256": "cdbabdb2a6733ca9aaa498ff010a66ad30c4cb5f11b9845011fa74c459045132"
+          "end_byte": 1020,
+          "target_sha256": "becd79e095214528cb15d35fdbd7fa79b645938718339b54aca91ceeb2f9803e"
         }
       ],
       "pending": [

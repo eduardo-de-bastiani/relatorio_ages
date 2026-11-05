@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-05",
+  "evidence": "URLs fornecidas diretamente pelo usuário, que pediu sua inserção e proibiu acesso remoto.",
+  "access_status": "NOT_CHECKED; URL não confirma autoria nem disponibilidade.",
+  "sources": {
+    "ages-i:draw-image-0001": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/home",
+    "fig:ages-i-database": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco-de-Dados",
+    "fig:ages-i-architecture": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+    "ages-i:draw-image-0002": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+    "ages-i:draw-image-0003": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+    "ages-i:draw-image-0004": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups"
+  },
+  "figure_7": "pendente de identificação"
+}

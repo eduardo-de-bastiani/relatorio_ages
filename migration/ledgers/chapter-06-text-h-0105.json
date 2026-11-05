@@ -12,13 +12,13 @@
           "source_id": "text-h-0105",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0105.tex",
           "start_byte": 203,
-          "end_byte": 247,
+          "end_byte": 246,
           "serializations": [
             "abnt_section_numbering",
             "original_whitespace",
             "document_reordering_numbering"
           ],
-          "target_sha256": "1ab55358358e194e2a8d656b50d7d1bab57d1e28dbbc1353ac72dd26a64b416d"
+          "target_sha256": "860c94bc1670c0a1115bde95ae3c1c3b8195506ea00b1d6d4511206a52d3fe82"
         }
       ],
       "asset_map": [],
@@ -33,7 +33,7 @@
           "end_byte": 138,
           "source_start_id": "text-bookmark-start-0066",
           "source_end_id": "text-bookmark-end-0067",
-          "target_sha256": "1ab55358358e194e2a8d656b50d7d1bab57d1e28dbbc1353ac72dd26a64b416d"
+          "target_sha256": "860c94bc1670c0a1115bde95ae3c1c3b8195506ea00b1d6d4511206a52d3fe82"
         },
         {
           "source_heading_id": "text-h-0105",
@@ -45,7 +45,7 @@
           "end_byte": 167,
           "source_start_id": "text-bookmark-start-0067",
           "source_end_id": "text-bookmark-end-0066",
-          "target_sha256": "1ab55358358e194e2a8d656b50d7d1bab57d1e28dbbc1353ac72dd26a64b416d"
+          "target_sha256": "860c94bc1670c0a1115bde95ae3c1c3b8195506ea00b1d6d4511206a52d3fe82"
         }
       ],
       "structural_dispositions": [
@@ -89,6 +89,10 @@
         "source_ids": [
           "text-h-0105"
         ]
+      },
+      "user_title_correction": {
+        "decision": "PROJETOS alterado para PROJETO no título do corpo, a pedido explícito do autor em 05/11/2026; sumário já estava no singular.",
+        "source_id": "text-h-0105"
       }
     }
   },

@@ -45,12 +45,17 @@ class HarnessTests(unittest.TestCase):
     def run_git(self, *args):
         return subprocess.run(["git", "-C", str(self.repo), *args], check=True, capture_output=True)
 
-    def test_path_escape_and_main_rejected(self):
+    def test_path_escape_and_branch_policy(self):
         with self.assertRaises(ValueError):
             safe_relative(self.repo, "../escape")
-        self.run_git("branch", "-m", "main")
+        self.run_git("branch", "-m", "master")
         with self.assertRaises(ValueError):
             require_work_branch(self.repo)
+        self.run_git("checkout", "--detach")
+        with self.assertRaises(ValueError):
+            require_work_branch(self.repo)
+        self.run_git("checkout", "-b", "main")
+        self.assertEqual(require_work_branch(self.repo), "main")
 
     def test_missing_manifest_is_a_structured_failure(self):
         self.config["toolchain_lock"] = "docs/TOOLCHAIN.lock.json"
@@ -139,6 +144,13 @@ class HarnessTests(unittest.TestCase):
         self.run_git("branch", "main")
         with self.assertRaises(ValueError):
             run_task("extractor", ["git", "switch", "-q", "main"], repo=self.repo)
+
+    def test_task_can_run_on_main_and_cannot_switch_branch(self):
+        self.run_git("checkout", "-b", "main")
+        self.assertEqual(run_task("extractor", [sys.executable, "-c", "pass"], repo=self.repo)["status"], "pass")
+        self.run_git("branch", "other")
+        with self.assertRaises(ValueError):
+            run_task("extractor", ["git", "switch", "-q", "other"], repo=self.repo)
 
     def test_production_build_requires_frozen_commit(self):
         source = self.repo / "relatorio_AGES_eduardo"

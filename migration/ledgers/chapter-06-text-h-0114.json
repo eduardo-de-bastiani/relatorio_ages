@@ -24,7 +24,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "text-p-1446",
@@ -32,7 +32,7 @@
           "start_byte": 444,
           "end_byte": 482,
           "serializations": [],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "text-p-1447",
@@ -42,7 +42,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "text-p-1450",
@@ -53,52 +53,52 @@
             "abnt_figure_caption",
             "document_reordering_numbering"
           ],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "draw-image-0031",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
           "start_byte": 1056,
-          "end_byte": 1243,
+          "end_byte": 1294,
           "serializations": [],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "text-p-1452",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
-          "start_byte": 1399,
-          "end_byte": 1411,
+          "start_byte": 1450,
+          "end_byte": 1462,
           "serializations": [],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "text-p-1453",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
-          "start_byte": 1449,
-          "end_byte": 2035,
+          "start_byte": 1500,
+          "end_byte": 2086,
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "text-p-1455",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
-          "start_byte": 2115,
-          "end_byte": 2159,
+          "start_byte": 2166,
+          "end_byte": 2210,
           "serializations": [
             "abnt_figure_caption",
             "document_reordering_numbering"
           ],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         },
         {
           "source_id": "draw-image-0032",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
-          "start_byte": 2066,
-          "end_byte": 2227,
+          "start_byte": 2117,
+          "end_byte": 2329,
           "serializations": [],
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         }
       ],
       "asset_map": [
@@ -126,7 +126,7 @@
           "command": "hypertarget",
           "start_byte": 78,
           "end_byte": 134,
-          "target_sha256": "11e3d24255e9bc18501833c19f6f34a756ebeb6cb39d94e311e0bd31cb8976c7"
+          "target_sha256": "424c4d2dcab84ac80ab84a28a82b961a523b0cdfeb51004e712b272f149c1ed9"
         }
       ],
       "structural_dispositions": [

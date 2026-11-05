@@ -146,6 +146,101 @@ def _valid_absolute_http_url(value: str) -> bool:
         return False
 
 
+def _authorized_hoortech_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
+    """Accept the three source statements supplied for the Hoortech figures."""
+    sources = {
+        ("chapter-03-text-h-0024.tex", "cliente-hoortech:draw-image-0006"): r"Fonte: \url{https://tools.ages.pucrs.br/hoortech/wiki/-/wikis/home}",
+        ("cliente-hoortech-sprint-4.tex", "cliente-hoortech:draw-image-0007"): "Fonte: Acervo pessoal do autor.",
+        ("chapter-03-text-h-0038.tex", "cliente-hoortech:draw-image-0008"): "Fonte: Acervo pessoal do autor.",
+    }
+    if relative.parent != Path("conteudo/migracao"):
+        return False
+    expected = sources.get((relative.name, args[2]))
+    if expected is None or args[3] != expected:
+        return False
+    try:
+        approval = json.loads((root.parent / "migration/approvals/hoortech-figure-sources-2026-11-05.json").read_text(encoding="utf-8"))
+        return approval.get("source_markup", {}).get(args[2]) == expected
+    except (OSError, UnicodeError, ValueError, TypeError, AttributeError):
+        return False
+
+
+def _authorized_ages_iii_iv_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
+    """Validate the exact figure-to-source associations supplied by the author."""
+    iii = "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/"
+    iv = "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/"
+    path_urls = {
+        ("chapter-05-text-h-0075.tex", "ages-iii:draw-image-0016"): iii + "home",
+        ("chapter-05-text-h-0078.tex", "ages-iii:draw-image-0017"): iii + "Banco%20de%20Dados",
+        ("chapter-05-text-h-0079.tex", "ages-iii:draw-image-0018"): iii + "arquitetura",
+        **{("chapter-05-text-h-0080.tex", f"ages-iii:draw-image-00{n}"): iii + "design" for n in range(19, 24)},
+        ("chapter-06-text-h-0106.tex", "ages-iv:draw-image-0024"): iv + "home",
+        ("chapter-06-text-h-0109.tex", "ages-iv:draw-image-0025"): iv + "Banco%20de%20Dados",
+        ("chapter-06-text-h-0110.tex", "ages-iv:draw-image-0026"): iv + "infraestrutura",
+        **{("chapter-06-text-h-0112.tex", f"ages-iv:draw-image-00{n}"): iv + "design_mockups" for n in range(27, 31)},
+        **{("chapter-06-text-h-0114.tex", f"ages-iv:draw-image-00{n}"): iv + "gerencia" for n in (31, 32)},
+    }
+    if relative.parent != Path("conteudo/migracao"):
+        return False
+    if (relative.name, args[2]) in {("ages-iv-sprint-0.tex", "ages-iv:draw-image-0033"), ("ages-iv-sprint-0.tex", "ages-iv:draw-image-0034"), ("ages-ii-sprint-4.tex", "fig:ages-ii-sprint-4-presenca-digital")}:
+        expected = "Fonte: elaboração própria."
+    else:
+        url = path_urls.get((relative.name, args[2]))
+        if url is None:
+            return False
+        expected = r"Fonte: \url{" + url.replace("%", r"\%") + "}"
+    if args[3] != expected:
+        return False
+    try:
+        approval = json.loads((root.parent / "migration/approvals/ages-iii-iv-figure-sources-2026-11-05.json").read_text(encoding="utf-8"))
+        return approval.get("source_markup", {}).get(args[2]) == expected
+    except (OSError, UnicodeError, ValueError, TypeError, AttributeError):
+        return False
+
+
+def _authorized_ages_ii_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
+    """Accept only the specific sources supplied for figures 7–15."""
+    base = "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/"
+    sources = {
+        ("chapter-02-text-h-0022.tex", "fig:ages-i-projeto-destaque"): "Fonte: Acervo pessoal do autor.",
+        ("chapter-04-text-h-0040.tex", "ages-ii:draw-image-0009"): r"Fonte: \url{" + base + "Home}",
+        ("chapter-04-text-h-0043.tex", "fig:ages-ii-database"): r"Fonte: \url{" + base + r"Banco\%20de\%20dados}",
+        ("chapter-04-text-h-0044.tex", "fig:ages-ii-architecture"): r"Fonte: \url{" + base + "Arquitetura}",
+        **{("chapter-04-text-h-0045.tex", f"ages-ii:draw-image-00{n}"): r"Fonte: \url{" + base + "Mockups}" for n in (11, 12, 13, 14)},
+        ("ages-ii-sprint-4.tex", "fig:ages-ii-sprint-4-presenca-digital"): "Fonte: Acervo pessoal do autor.",
+    }
+    if relative.parent != Path("conteudo/migracao"):
+        return False
+    expected = sources.get((relative.name, args[2]))
+    if expected is None or args[3] != expected:
+        return False
+    try:
+        approval = json.loads((root.parent / "migration/approvals/ages-ii-figure-sources-2026-11-05.json").read_text(encoding="utf-8"))
+        return approval.get("source_markup", {}).get(args[2]) == expected
+    except (OSError, UnicodeError, ValueError, TypeError, AttributeError):
+        return False
+
+
+def _authorized_ages_i_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
+    """Accept only the six figure URLs explicitly supplied by the author."""
+    sources = {
+        ("chapter-02-text-h-0003.tex", "ages-i:draw-image-0001"): "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/home",
+        ("chapter-02-text-h-0009.tex", "fig:ages-i-database"): "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco-de-Dados",
+        ("chapter-02-text-h-0010.tex", "fig:ages-i-architecture"): "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+        **{("chapter-02-text-h-0011.tex", f"ages-i:draw-image-000{n}"): "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups" for n in (2, 3, 4)},
+    }
+    if relative.parent != Path("conteudo/migracao"):
+        return False
+    url = sources.get((relative.name, args[2]))
+    if not url or args[3] != r"Fonte: \url{" + url + "}":
+        return False
+    try:
+        approval = json.loads((root.parent / "migration/approvals/ages-i-figure-sources-2026-11-05.json").read_text(encoding="utf-8"))
+        return approval.get("sources", {}).get(args[2]) == url
+    except (OSError, UnicodeError, ValueError, TypeError, AttributeError):
+        return False
+
+
 def _authorized_sprint3_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
     """Allow only the exact user-supplied Sprint 3 figure/source apparatus.
 
@@ -157,6 +252,15 @@ def _authorized_sprint3_figure_source(root: Path, relative: Path, args: tuple[st
     expected_path = Path("conteudo/migracao/ages-iv-sprint-3.tex")
     expected_asset = "imagens/user-supplied/ages-iv-sprint-3-gantt.png"
     expected_caption = r"\textbf{Figura 32 –} Planejamento de paralelização das tasks da squad durante a Sprint 3"
+    if args[1] == expected_caption.replace("Figura 32", "Figura 35"):
+        try:
+            supplemental = json.loads((root.parent / "migration/approvals/ages-i-ii-diagrams-2026-11-05.json").read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, ValueError, TypeError):
+            return False
+        if (supplemental.get("date") != "2026-11-05"
+                or supplemental.get("renumbering") != "Figura 1 inalterada; anteriores 2–6 somam 2; anteriores 7–35 somam 3. Figura anterior 7 substituída pela nova figura 10."):
+            return False
+        expected_caption = expected_caption.replace("Figura 32", "Figura 35")
     expected_args = (
         expected_asset,
         expected_caption,
@@ -326,7 +430,11 @@ def audit_latex(root: Path, entry: Path) -> dict:
                 target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))
                 if target is None or not target.is_file():
                     report("missing_or_dynamic_asset", relative, line, args[0])
-                source_is_authorized = _authorized_sprint3_figure_source(root, relative, args)
+                source_is_authorized = (_authorized_sprint3_figure_source(root, relative, args)
+                                        or _authorized_ages_i_figure_source(root, relative, args)
+                                        or _authorized_ages_ii_figure_source(root, relative, args)
+                                        or _authorized_ages_iii_iv_figure_source(root, relative, args)
+                                        or _authorized_hoortech_figure_source(root, relative, args))
                 if (args[3] != "Fonte: pendente de identificação" and not source_is_authorized) or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
                     report("invalid_figure_apparatus", relative, line, "Source must remain explicitly pending and width must be a fraction in (0,1]")
                 if not args[1].strip() or not re.fullmatch(r"[A-Za-z0-9:._-]+", args[2]):
@@ -348,7 +456,7 @@ def audit_latex(root: Path, entry: Path) -> dict:
                 target = resolve(args[0], (".pdf", ".png", ".jpg", ".jpeg", ".eps"))
                 if target is None or not target.is_file():
                     report("missing_or_dynamic_asset", relative, line, args[0])
-                if args[3] != "Fonte: pendente de identificação" or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
+                if (args[3] != "Fonte: pendente de identificação" and not _authorized_ages_iii_iv_figure_source(root, relative, args)) or not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", args[4]) or not 0 < float(args[4]) <= 1 or token.optionals or token.starred:
                     report("invalid_figure_apparatus", relative, line, "Source must remain explicitly pending and width must be a fraction in (0,1]")
                 if not args[1].strip() or not re.fullmatch(r"[A-Za-z0-9:._-]+", args[2]):
                     report("missing_figure_caption_or_label", relative, line, "Caption and label must be explicit")

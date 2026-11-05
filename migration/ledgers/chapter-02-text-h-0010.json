@@ -24,7 +24,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "5097e5f7238b26f78b1343110a34c799a46b34f6bd2026a31c0bfbfd01aa60a9"
+          "target_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52"
         },
         {
           "source_id": "text-p-0318",
@@ -36,7 +36,7 @@
             "inline_tab_layout",
             "reference_paragraph_layout"
           ],
-          "target_sha256": "5097e5f7238b26f78b1343110a34c799a46b34f6bd2026a31c0bfbfd01aa60a9"
+          "target_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52"
         },
         {
           "source_id": "text-p-0319",
@@ -48,7 +48,7 @@
             "reference_paragraph_layout",
             "wiki_reference_sentence"
           ],
-          "target_sha256": "5097e5f7238b26f78b1343110a34c799a46b34f6bd2026a31c0bfbfd01aa60a9"
+          "target_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52"
         },
         {
           "source_id": "text-a-0109",
@@ -59,7 +59,7 @@
             "original_whitespace",
             "wiki_reference_sentence"
           ],
-          "target_sha256": "5097e5f7238b26f78b1343110a34c799a46b34f6bd2026a31c0bfbfd01aa60a9"
+          "target_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52"
         }
       ],
       "asset_map": [],
@@ -74,7 +74,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0011",
           "source_end_id": "text-bookmark-end-0011",
-          "target_sha256": "5097e5f7238b26f78b1343110a34c799a46b34f6bd2026a31c0bfbfd01aa60a9"
+          "target_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52"
         }
       ],
       "structural_dispositions": [
@@ -117,8 +117,8 @@
           "authorization_evidence": "migration/approvals/ages-i-authorization.json",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
           "start_byte": 781,
-          "end_byte": 896,
-          "target_sha256": "5097e5f7238b26f78b1343110a34c799a46b34f6bd2026a31c0bfbfd01aa60a9"
+          "end_byte": 1009,
+          "target_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52"
         }
       ],
       "pending": [

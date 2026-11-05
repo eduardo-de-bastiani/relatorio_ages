@@ -1,5 +1,7 @@
 # Plano de execução e checkpoints
 
+> Estado global conferido em 29/10/2026: o PR #1 foi integrado em `main` (`52a2ca6`); Sprint 2/3 da AGES IV e Figura 32 estão presentes. O roteiro atual de conclusão e as limitações operacionais estão em [HANDOFF_GEMINI.md](HANDOFF_GEMINI.md). As fases e snapshots datados abaixo são histórico de execução, não autorização para repetir uma edição ou preencher os textos ainda ausentes.
+
 ## Estado e limite desta fase
 
 Atualização de 17/10/2026 (escopo vigente): além da entrega parcial AGES IV e dos pré-textuais/trajetória já integrados no checkpoint do usuário, foi autorizada a relocação da participação Hoortech para após AGES IV e antes do título final, com renumeração sequencial. A fonte da decisão é `migration/approvals/cliente-hoortech-and-document-order-authorization.json`; o manifesto contém overlay de rastreabilidade. Serão integradas dez unidades Hoortech, três imagens e somente os 86 IDs autorizados: 56 títulos, 29 legendas e `text-p-0679`. As mudanças afetam 56 unidades no total. A ordem final será trajetória 1, AGES I 2, AGES II 3, AGES III 4, AGES IV 5, Hoortech 6 e título final 7. Compilar `build/document/main.pdf`, auditar conteúdo/visual e aguardar aprovação humana; não iniciar outra edição.

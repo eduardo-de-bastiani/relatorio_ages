@@ -188,6 +188,76 @@ class LatexTests(unittest.TestCase):
         unit_path.write_text(invocation.replace("Figura 32", "Figura 31"), encoding="utf-8")
         self.assertIn("invalid_figure_apparatus", self.codes(audit_latex(latex_root, Path("main.tex"))))
 
+        unit_path.write_text(invocation.replace("Figura 32", "Figura 35"), encoding="utf-8")
+        self.assertIn("invalid_figure_apparatus", self.codes(audit_latex(latex_root, Path("main.tex"))))
+        supplemental_path = approval_path.parent / "ages-i-ii-diagrams-2026-11-05.json"
+        supplemental_path.write_text(json.dumps({
+            "date": "2026-11-05",
+            "renumbering": "Figura 1 inalterada; anteriores 2–6 somam 2; anteriores 7–35 somam 3. Figura anterior 7 substituída pela nova figura 10.",
+        }), encoding="utf-8")
+        self.assertEqual(audit_latex(latex_root, Path("main.tex"))["status"], "pass")
+
+    def test_ages_i_source_requires_exact_figure_and_user_supplied_url(self):
+        from scripts.migration_harness.latex import _authorized_ages_i_figure_source
+        latex_root = self.root / "relatorio_AGES_eduardo"
+        approval = self.root / "migration/approvals/ages-i-figure-sources-2026-11-05.json"
+        approval.parent.mkdir(parents=True)
+        label = "ages-i:draw-image-0001"
+        url = "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/home"
+        approval.write_text(json.dumps({"sources": {label: url}}), encoding="utf-8")
+        args = ("image.png", "Legenda", label, r"Fonte: \url{" + url + "}", "0.92")
+        unit = Path("conteudo/migracao/chapter-02-text-h-0003.tex")
+        self.assertTrue(_authorized_ages_i_figure_source(latex_root, unit, args))
+        self.assertFalse(_authorized_ages_i_figure_source(latex_root, unit, args[:3] + (r"Fonte: \url{https://example.org}", args[4])))
+        approval.unlink()
+        self.assertFalse(_authorized_ages_i_figure_source(latex_root, unit, args))
+
+    def test_ages_ii_sources_require_explicit_authorization_and_exact_url(self):
+        from scripts.migration_harness.latex import _authorized_ages_ii_figure_source
+        latex_root = self.root / "relatorio_AGES_eduardo"
+        approval = self.root / "migration/approvals/ages-ii-figure-sources-2026-11-05.json"
+        approval.parent.mkdir(parents=True)
+        label = "fig:ages-ii-database"
+        source = r"Fonte: \url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco\%20de\%20dados}"
+        approval.write_text(json.dumps({"source_markup": {label: source}}), encoding="utf-8")
+        args = ("image.png", "Legenda", label, source, "0.92")
+        unit = Path("conteudo/migracao/chapter-04-text-h-0043.tex")
+        self.assertTrue(_authorized_ages_ii_figure_source(latex_root, unit, args))
+        self.assertFalse(_authorized_ages_ii_figure_source(latex_root, unit, args[:3] + (source.replace("dados", "outro"), args[4])))
+        approval.unlink()
+        self.assertFalse(_authorized_ages_ii_figure_source(latex_root, unit, args))
+
+    def test_ages_iii_iv_sources_are_bound_to_figure_and_exact_url(self):
+        from scripts.migration_harness.latex import _authorized_ages_iii_iv_figure_source
+        latex_root = self.root / "relatorio_AGES_eduardo"
+        approval = self.root / "migration/approvals/ages-iii-iv-figure-sources-2026-11-05.json"
+        approval.parent.mkdir(parents=True)
+        label = "ages-iv:draw-image-0025"
+        url = r"https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco\%20de\%20Dados"
+        source = r"Fonte: \url{" + url + "}"
+        approval.write_text(json.dumps({"source_markup": {label: source}}), encoding="utf-8")
+        args = ("image.png", "Legenda", label, source, "0.92", url)
+        unit = Path("conteudo/migracao/chapter-06-text-h-0109.tex")
+        self.assertTrue(_authorized_ages_iii_iv_figure_source(latex_root, unit, args))
+        self.assertFalse(_authorized_ages_iii_iv_figure_source(latex_root, Path("conteudo/migracao/other.tex"), args))
+        approval.unlink()
+        self.assertFalse(_authorized_ages_iii_iv_figure_source(latex_root, unit, args))
+
+    def test_hoortech_sources_require_specific_user_authorization(self):
+        from scripts.migration_harness.latex import _authorized_hoortech_figure_source
+        latex_root = self.root / "relatorio_AGES_eduardo"
+        approval = self.root / "migration/approvals/hoortech-figure-sources-2026-11-05.json"
+        approval.parent.mkdir(parents=True)
+        label = "cliente-hoortech:draw-image-0007"
+        source = "Fonte: Acervo pessoal do autor."
+        approval.write_text(json.dumps({"source_markup": {label: source}}), encoding="utf-8")
+        args = ("image.jpg", "Legenda", label, source, "0.92")
+        unit = Path("conteudo/migracao/cliente-hoortech-sprint-4.tex")
+        self.assertTrue(_authorized_hoortech_figure_source(latex_root, unit, args))
+        self.assertFalse(_authorized_hoortech_figure_source(latex_root, unit, args[:3] + ("Fonte: elaboração própria.", args[4])))
+        approval.unlink()
+        self.assertFalse(_authorized_hoortech_figure_source(latex_root, unit, args))
+
     def test_linked_memorialfigure_checks_contract_destination_asset_and_label(self):
         body = r'''\begin{figure}[htbp]\refstepcounter{figure}\caption*{{\normalfont\upshape\href{#6}{#2}}}\label{#3}\addcontentsline{lof}{figure}{{\normalfont\upshape #2}}\noindent\makebox[\linewidth][c]{\href{#6}{\XeTeXpicfile "#1" width #5\linewidth\relax}}\par\begingroup\centering\small\SingleSpacing #4\par\endgroup\end{figure}'''
         definition = r"\newcommand{\memorialfigurelinked}[6]{" + body + "}"

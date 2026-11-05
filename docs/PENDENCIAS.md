@@ -1,5 +1,7 @@
 # Pendências e decisões humanas
 
+> Índice de continuidade em 29/10/2026: consultar [HANDOFF_GEMINI.md](HANDOFF_GEMINI.md) para o estado corrente no `main` e [AIV13](#aiv13--conteúdo-suplementar-e-revisão-da-figura-32-29102026) para o último suplemento. Os itens abaixo preservam snapshots históricos; “Sprint 2–3 vazias” se refere ao ODT ou a uma etapa anterior, pois ambas já têm conteúdo suplementar no LaTeX. Os campos autorais ainda vazios incluem Sprint 4, conclusão 5.4 e corpo do capítulo 7, além dos pré-textuais indicados no repasse. Fontes de imagens e pendências técnicas/factuais não foram resolvidas pelo merge.
+
 ## Acordos concluídos
 
 Texto rigorosamente preservado; revisão editorial posterior; Sprints sem início artificial de página; placeholders visuais para diagramas ausentes; aprovação após cada edição; reflexões com borda e mesma fonte do corpo, divisíveis. O usuário dispensou o modelo restrito da Biblioteca PUCRS e definiu Mariah como métrica visual. Em 16/10/2026, aprovou o padrão visual aplicado à prévia AGES I e autorizou reutilizá-lo; os parâmetros estão agora em [STYLE_GUIDE](STYLE_GUIDE.md), vinculados à aprovação em `migration/approvals/ages-i-presentation-accepted.json`. Essa aprovação da apresentação não comprova fontes de imagens nem certificação integral ABNT.
@@ -177,3 +179,38 @@ A validação `inventory --check` passou sem diferenças; SHA-256 do ODT permane
 | `ages-iv-sprint-3`; autorizações `ages-iv-sprint-3-content-authorization.json` e `ages-iv-sprint-3-figure-and-display-authorization.json`; ODT contém somente o título `6.3.4 Sprint 3` e wrappers vazios | Nove parágrafos de relato, dois de reflexão, legenda/fonte e PNG vieram diretamente do usuário, não do ODT; revisão humana do resultado continua necessária | Preservar proveniência; substituir o placeholder pelo PNG fornecido byte a byte; manter Figura 32 e fonte centralizada; remover somente o negrito de “14 tarefas do Épico 6”; manter texto/corpo dos títulos inalterados | Validação do ledger PASS; auditoria independente de conteúdo PASS; auditoria visual local PASS com legibilidade interna do gráfico PENDING; build compilou, mas gate global FAIL; aceite humano PENDING. Ver `docs/ages-iv/sprint-3/` |
 | Figuras Hoortech `text-p-0663`, `text-p-0749`, `text-p-0759` e entradas de sumário `text-h-0023`, `text-h-0074`, `text-h-0105` | A Figura 32 desloca as três figuras Hoortech em uma posição; erro numérico afetaria legendas/lista; alterações de apresentação afetam somente as entradas do sumário | Manter overlay separado 32→33, 33→34, 34→35 e três rótulos do sumário; verificar títulos do corpo sem mudança | Sete ledgers afetados passam na validação individual; a auditoria independente confirmou Figura 32 e Hoortech 33–35 na lista, e os três ajustes somente no sumário. Revisão humana e gate global de build permanecem pendentes/falhos |
 | Histórico do PDF anterior da Sprint 3, SHA-256 `f22af8ceddd02169e296543c00a2e195fd85983908c14aafa4dfd99fcf50508a` | Esse arquivo mostra o placeholder não numerado e não valida o gráfico recebido nem a nova ordem de figuras | Tratar os relatórios anteriores como históricos; executar nova compilação e emitir relatórios independentes ligados ao novo hash | Histórico, não serve como evidência para esta integração; aprovação humana PENDING |
+
+
+## Atualização — diagramas AGES I e II (05/11/2026)
+
+Os três placeholders de banco/arquitetura AGES I e banco AGES II foram preenchidos, e a figura de sistema AGES II foi substituída a pedido do autor. A autoria das quatro imagens permanece pendente; os registros antigos sobre ausência desses diagramas são históricos. A nova numeração, os hashes e a preservação da imagem retirada estão em `migration/approvals/ages-i-ii-diagrams-2026-11-05.json`. O validador de preservação ainda exige adequação aos novos números e à substituição; conferir `docs/DIAGRAMAS_AGES_I_II_2026-11-05.md`.
+
+
+## Fontes das Figuras 1–6 da AGES I (05/11/2026)
+
+Os endereços fornecidos pelo autor foram inseridos nas fontes das Figuras 1–6. Não foram acessados, conforme instrução expressa; disponibilidade e autoria permanecem não verificadas. A Figura 7 continua com fonte pendente de identificação. Decisões anteriores que indicam fonte pendente para as Figuras 1–6 são históricas. Ver `migration/approvals/ages-i-figure-sources-2026-11-05.json`.
+
+
+## Fontes das Figuras 7–15 (05/11/2026)
+
+O autor indicou “Acervo pessoal do autor.” para as Figuras 7 e 15 e forneceu os links das Figuras 8–14. Os endereços não foram acessados; disponibilidade e autoria não foram verificadas. A fonte da Figura 7, anteriormente pendente, foi definida pelo autor. A regra aprovada para fotos tiradas por fotógrafo e sem link consta em `docs/STYLE_GUIDE.md`; a indicação das fontes está em `migration/approvals/ages-ii-figure-sources-2026-11-05.json`.
+
+
+## Fontes das Figuras 15–35 (05/11/2026)
+
+O autor confirmou que elaborou a Figura 15 e solicitou “Fonte: elaboração própria.” para as Figuras 33–35; as indicações anteriores de acervo para a Figura 15 são históricas. Os links fornecidos para as Figuras 16–32 foram inseridos sem acesso remoto, portanto sua disponibilidade e autoria não foram verificadas. A Figura 35 já continha a fonte confirmada e foi mantida. Ver `migration/approvals/ages-iii-iv-figure-sources-2026-11-05.json`.
+
+
+## Fontes Hoortech e revisão bibliográfica (05/11/2026)
+
+As fontes das Figuras 36–38 foram fornecidas pelo autor e inseridas. O link não foi acessado. A revisão local das 55 referências e proposta de consolidação estão em `docs/REVISAO_REFERENCIAS_2026-11-05.md`; nenhuma entrada foi excluída. A escolha das consolidações e a verificação das evidências continuam pendentes.
+
+
+## Critério de referências refinado (05/11/2026)
+
+O autor definiu que páginas e serviços diferentes devem ser preservados quando contribuírem de modo distinto; consolidar candidatas à mesma página. A revisão atual em `docs/REVISAO_REFERENCIAS_2026-11-05.md` substitui a proposta anterior de reduzir indiscriminadamente por tecnologia: cinco grupos de URL igual admitem redução de até seis entradas, sujeita à reconciliação de metadados e chamadas. Nenhuma exclusão foi efetuada.
+
+
+## Data mais recente para referências consolidadas (05/11/2026)
+
+O usuário determinou usar o acesso mais recente entre registros da mesma página quando houver consolidação. As datas propostas e as seis chaves potencialmente removíveis estão na atualização de `docs/REVISAO_REFERENCIAS_2026-11-05.md`. Nenhuma data ou referência foi alterada.

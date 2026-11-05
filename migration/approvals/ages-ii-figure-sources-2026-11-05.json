@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-05",
+  "evidence": "Fontes e regra fornecidas pelo usuário; links não acessados conforme instrução anterior.",
+  "source_markup": {
+    "fig:ages-i-projeto-destaque": "Fonte: Acervo pessoal do autor.",
+    "ages-ii:draw-image-0009": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Home}",
+    "fig:ages-ii-database": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco\\%20de\\%20dados}",
+    "fig:ages-ii-architecture": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura}",
+    "ages-ii:draw-image-0011": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups}",
+    "ages-ii:draw-image-0012": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups}",
+    "ages-ii:draw-image-0013": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups}",
+    "ages-ii:draw-image-0014": "Fonte: \\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups}",
+    "fig:ages-ii-sprint-4-presenca-digital": "Fonte: Acervo pessoal do autor."
+  },
+  "actual_urls": {
+    "fig8": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Home",
+    "fig9": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados",
+    "fig10": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+    "fig11-14": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups"
+  },
+  "rule": "Para fotos feitas por fotógrafo e sem link, o usuário determinou a indicação Fonte: Acervo pessoal do autor. Aplicar quando a classificação da foto estiver confirmada. Figura 15 é explicitamente autorizada pelo usuário, embora seja diagrama.",
+  "link_availability": "NOT_CHECKED"
+}

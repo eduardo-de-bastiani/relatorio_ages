@@ -1,5 +1,11 @@
 # Regras do harness de migração
 
+## Ponto de entrada e repasse — 29/10/2026
+
+O usuário fez merge do PR #1 e decidiu consolidar o trabalho em `main`; o snapshot confirmado é `52a2ca6d4b5ec8e1c01ee7d9875766c6741f42c2`. A tarefa deste checkpoint é documentar a continuidade para Gemini/Antigravity, sem alterar conteúdo, estilo ou código do harness. Leia [HANDOFF_GEMINI](docs/HANDOFF_GEMINI.md) e [PROMPTS_GEMINI](docs/PROMPTS_GEMINI.md), além dos documentos abaixo. O repasse contém estado por unidade, decisões aprovadas, problemas abertos e procedimentos; não autoriza executar todas as tarefas futuras.
+
+As declarações de “fase vigente”, branch e ausência de commits nas seções históricas abaixo descrevem as autorizações quando foram registradas. Não retornar à branch antiga nem repetir migrações concluídas por causa desses nomes. O ODT e as regras de preservação continuam protegidos; novas tarefas exigem escopo identificável. Em 30/10/2026, o harness foi compatibilizado com a decisão do usuário de trabalhar em `main`: `common.require_work_branch` e `write_json` agora aceitam `main`, mantendo o bloqueio de detached HEAD e da branch legada `master`, e preservando as proteções de integridade do ODT, escopos, locks e a distinção entre build de revisão e produção.
+
 ## Escopo e autoridades
 
 **Fase vigente, autorizada pelo usuário em 17/10/2026:** integrar a participação como cliente Hoortech após a conclusão da AGES IV e antes do título final, renumerando capítulos e figuras em sequência. O escopo da tarefa suplementar é exatamente o autorizado em `migration/approvals/cliente-hoortech-and-document-order-authorization.json` e rastreado no overlay do `docs/CONTENT_MANIFEST.json`: dez unidades Hoortech, renumeração de 56 títulos e 29 legendas (86 IDs mapeados) em 56 unidades e a atualização exata de uma referência textual. AGES I, o conteúdo narrativo de AGES II–IV, a capa/pré-textuais e o texto da trajetória não recebem alterações nesta tarefa. A compilação e a aprovação humana de toda a ordem continuam pendentes.

@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-05",
+  "authorization": "Pedido explícito do autor nesta conversa para inserir quatro imagens, substituir a figura antiga de AGES II e renumerar legendas e lista de figuras.",
+  "source_pending": "As fontes/autorias das quatro imagens permanecem pendentes de identificação.",
+  "images": [
+    {
+      "received_filename": "db-agesi.png",
+      "destination": "relatorio_AGES_eduardo/imagens/user-supplied/ages-i-database.png",
+      "sha256": "402c13fd3f88003f2bebaaaa1b98b1df12b73ff43eeb2ee79c663b63a2b29178",
+      "unit": "chapter-02-text-h-0009",
+      "figure": 2,
+      "label": "fig:ages-i-database",
+      "caption": "Diagrama Banco de Dados - AGES I",
+      "source": "pendente de identificação"
+    },
+    {
+      "received_filename": "diagrama-deploy-agesi.png",
+      "destination": "relatorio_AGES_eduardo/imagens/user-supplied/ages-i-architecture.png",
+      "sha256": "4fe944a7ece31234688d0ed87b644f91ddefeaf51f6b528a6b089d11a423684a",
+      "unit": "chapter-02-text-h-0010",
+      "figure": 3,
+      "label": "fig:ages-i-architecture",
+      "caption": "Diagrama de Arquitetura - AGES I",
+      "source": "pendente de identificação"
+    },
+    {
+      "received_filename": "db-agesii.png",
+      "destination": "relatorio_AGES_eduardo/imagens/user-supplied/ages-ii-database.png",
+      "sha256": "9f54610fb20aa3c337d0c868cefe4b7d1e2c0c3cc8f36c7f7cff3385d7024046",
+      "unit": "chapter-04-text-h-0043",
+      "figure": 9,
+      "label": "fig:ages-ii-database",
+      "caption": "Diagrama Banco de Dados - AGES II",
+      "source": "pendente de identificação"
+    },
+    {
+      "received_filename": "diagrama-deploy-agesii.png",
+      "destination": "relatorio_AGES_eduardo/imagens/user-supplied/ages-ii-architecture.png",
+      "sha256": "2a22333db93c770eb359a706751b3c63404a2ac2c64cee596176d5a4b4e40c34",
+      "unit": "chapter-04-text-h-0044",
+      "figure": 10,
+      "label": "fig:ages-ii-architecture",
+      "caption": "Diagrama de Arquitetura - AGES II",
+      "source": "pendente de identificação"
+    }
+  ],
+  "renumbering": "Figura 1 inalterada; anteriores 2–6 somam 2; anteriores 7–35 somam 3. Figura anterior 7 substituída pela nova figura 10.",
+  "replaced_original": {
+    "source_id": "draw-image-0010",
+    "caption_id": "text-p-0788",
+    "asset": "relatorio_AGES_eduardo/imagens/original/asset-0008.png",
+    "disposition": "preservado no repositório, retirado do PDF a pedido do autor"
+  },
+  "changed_latex_files": [
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-0.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0024.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0038.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0040.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0075.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0078.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0079.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0080.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0106.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0114.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-4.tex"
+  ],
+  "automated_validation": "PENDING: contratos históricos não contemplam esta substituição e renumeração."
+}
