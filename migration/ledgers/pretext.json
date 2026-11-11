@@ -15,25 +15,25 @@
         {
           "source_id": "text-p-0001",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 133,
-          "end_byte": 188,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 132,
+          "end_byte": 187,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "1c65b0ffe39f2280f837a69004bc9cbd6dfcf80da29d2f33242becdedbaf0ae0"
         },
         {
           "source_id": "text-p-0002",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 216,
-          "end_byte": 235,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 215,
+          "end_byte": 234,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "7b574e8ad14dd3db88bd3ac5e34680a991019555877457d1edb6d964d48a11b6"
         },
         {
           "source_id": "text-p-0003",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 263,
-          "end_byte": 309,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 262,
+          "end_byte": 308,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "a89b5fed9e725b34a800ae6e382ff4ed717b4a22f8b15ff2756319fab6dc2d2e",
           "serializations": [
             "frontmatter_title"
@@ -42,9 +42,9 @@
         {
           "source_id": "text-p-0004",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 337,
-          "end_byte": 391,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 336,
+          "end_byte": 390,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "68d30223f531413d5f8d486b530b0526b9808c8c32d3a87b21c33a7f98f5c4f2",
           "serializations": [
             "frontmatter_title"
@@ -53,17 +53,17 @@
         {
           "source_id": "text-p-0010",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 454,
-          "end_byte": 479,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 453,
+          "end_byte": 478,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "63b47931fbce40a6596f1884b3b168b5eea5b67d8e3063daf8d0c3f74e7be339"
         },
         {
           "source_id": "text-p-0017",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 550,
-          "end_byte": 647,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 549,
+          "end_byte": 646,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "7b1b20bf118dfe686ef599227e45341d9cea332c9ff8d6d16d65f4bf1f5e68ca",
           "serializations": [
             "frontmatter_title"
@@ -72,29 +72,32 @@
         {
           "source_id": "text-p-0018",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 685,
-          "end_byte": 705,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 684,
+          "end_byte": 691,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "ecdd7b378b4746e69b812ee4be5a86a3eca9fa1674bbd5d9904cff4c68873b22",
           "serializations": [
-            "frontmatter_title"
+            "approved_cover_field"
           ]
         },
         {
           "source_id": "text-p-0032",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 762,
-          "end_byte": 774,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
+          "start_byte": 748,
+          "end_byte": 760,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
           "source_text_sha256": "0809d6007b71d13793f88434d84ae593e458006b841dc5ec9afcd9896718626c"
         },
         {
           "source_id": "text-p-0033",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/capa.tex",
-          "start_byte": 793,
-          "end_byte": 796,
-          "target_sha256": "63ec6cca49d160de7130b3edc70e1914dfd7932402a1d5bf40977200c2677183",
-          "source_text_sha256": "1c5b7004153d4a6bee2be0c45652a0e46c050db5e27cb41a5c92772f031e5d6b"
+          "start_byte": 779,
+          "end_byte": 783,
+          "target_sha256": "2f700ecbb1fb1c2e21cd39d3631d3627c72b832fa027cdba2d6081d56fea961a",
+          "source_text_sha256": "1c5b7004153d4a6bee2be0c45652a0e46c050db5e27cb41a5c92772f031e5d6b",
+          "serializations": [
+            "approved_cover_field"
+          ]
         },
         {
           "source_id": "text-p-0034",
@@ -260,12 +263,21 @@
       "pending": [
         {
           "id": "COVER_FIELDS",
-          "status": "PENDING",
+          "status": "RESOLVED_BY_SUPPLEMENT",
           "items": [
             "AGES I,II, III ou IV",
             "Ano"
           ],
-          "reason": "Campos genéricos reproduzidos literalmente conforme a instrução de copiar a capa; confirmar antes da versão final."
+          "reason": "Decisão específica registrada em migration/approvals/frontmatter-cover-fields-2026-11-10.json; aprovação humana da capa renderizada continua pendente.",
+          "authorization_evidence": "migration/approvals/frontmatter-cover-fields-2026-11-10.json",
+          "source_ids": [
+            "text-p-0018",
+            "text-p-0033"
+          ],
+          "targets": {
+            "text-p-0018": "AGES IV",
+            "text-p-0033": "2026"
+          }
         }
       ],
       "approved_presentation_overrides": {
@@ -284,6 +296,13 @@
           "text-p-0091",
           "text-p-0092",
           "text-p-0094"
+        ]
+      },
+      "approved_cover_field_supplement": {
+        "authorization_evidence": "migration/approvals/frontmatter-cover-fields-2026-11-10.json",
+        "source_ids": [
+          "text-p-0018",
+          "text-p-0033"
         ]
       }
     }

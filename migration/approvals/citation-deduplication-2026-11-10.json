@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_same_section_citation_deduplication",
+  "date": "2026-11-10",
+  "approval_status": "authorized_for_execution_pending_human_review",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "decision": "Na mesma seção, conservar a primeira chamada de cada chave e retirar as posteriores; preservar chamadas em outras seções e edições. Remover somente comandos de citação e seus espaçamentos adjacentes, sem reescrever frases ou editar referências bibliográficas.",
+  "inventory": "docs/MAPA_CITACOES_PROFESSORA_2026-11-10.md",
+  "units": {
+    "chapter-02-text-h-0012": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+      "before_sha256": "4e91a78dced2bd847278d0e1722e1738037fe0b07128f45b7dc18b24a185212b",
+      "after_sha256": "10e73be49976d61a6c8e61e5f0d04b8e676180ae1beaad374654d548f06fc9e1",
+      "removed_ids": ["R04"]
+    },
+    "chapter-04-text-h-0044": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+      "before_sha256": "2b74681fb175a9f77923569fbf6457c0f17d55d86ce03c1a510d254b5c52e1c7",
+      "after_sha256": "ea4510ae6a9c6d4f79124e724136d74c83707b5aea118cbb99c89f26adda5a4e",
+      "removed_ids": ["R01", "R02", "R03"]
+    },
+    "chapter-04-text-h-0046": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+      "before_sha256": "c69baa717d6769ef28abd2337daa23989b3f6c6c36838988cb558591c6d68ce0",
+      "after_sha256": "56009d9f7480c8813815511415ee46f1c290ad7faed4aa080c68cbfbbfb5eaf1",
+      "removed_ids": ["R05", "R06", "R07", "R08", "R09"]
+    },
+    "chapter-05-text-h-0079": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0079.tex",
+      "before_sha256": "a5f003f8e39a0091d09905e6b65f33676ffef3b023c7a96874502156aaac0ade",
+      "after_sha256": "78f8cb9e55e160183782add4694352aaf6c9b282ae7a5971e416e71925199082",
+      "removed_ids": ["R10", "R11"]
+    },
+    "chapter-05-text-h-0085": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0085.tex",
+      "before_sha256": "e03f503be0aa3d165b4e45028a6c025c56ab36da1dbcce988d6b91afb97cab0c",
+      "after_sha256": "b65cd89e64cf2b1654e229cc8653143ce76213ddd0a9fad8e8a6ea210c0bfaf9",
+      "removed_ids": ["R12", "R13"]
+    }
+  },
+  "limits": [
+    "Do not change RELATORIO_ATUAL.odt or relatorio_mariah/.",
+    "Do not change bibliographic metadata, citation years, or citations in other sections.",
+    "Do not infer that one citation substantively supports all distinct claims without independent review."
+  ]
+}

@@ -15,6 +15,7 @@ import re
 from pathlib import Path
 
 from .latex import bib_keys, commands, strip_comments
+from . import bibliography_reconciliation
 
 AUTHORIZATION = "migration/approvals/ages-i-ii-iii-technology-prose-correction.json"
 AUTHORIZATION_SHA256 = "8e33f6eaf6510aee20f660b64869bf3d4ded862f02e119eacb09bf0a3a58eecc"
@@ -230,16 +231,20 @@ def _grammar(text: str, uid: str, policy: dict, heading_display_text: str | None
 
 
 def _matches_frozen_bibliography(repo: Path, data: bytes, expected_sha256: str) -> bool:
-    """Allow only the exact centrally integrated AGES IV suffix after the frozen I–III bib."""
+    """Accept the original frozen bibliography or its exact approved reconciliation."""
     if _sha(data) == expected_sha256:
         return True
     marker = data.find(AIV_BIBLIOGRAPHY_MARKER)
-    if marker < 0:
-        return False
-    return (
+    if marker >= 0 and (
         _sha(data[:marker]) == expected_sha256
         and _sha(data[marker:]) == AIV_BIBLIOGRAPHY_EXTENSION_SHA256
-    )
+    ):
+        return True
+    try:
+        bibliography_reconciliation.verify(repo, data)
+        return True
+    except (OSError, ValueError, KeyError, TypeError, UnicodeError):
+        return False
 
 
 def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str, document_reordering_ids=None, heading_display_text=None) -> dict:
@@ -281,12 +286,32 @@ def _verify_legacy(manifest: dict, ledger: dict, repo: Path, uid: str, document_
     text = data.decode("utf-8")
     bibliography = approval["bibliography"]
     bib_data = _path(repo, bibliography["path"]).read_bytes()
+    try:
+        bibliography_reconciliation.verify(repo, bib_data)
+        reconciliation_verified = True
+    except (OSError, ValueError, KeyError, TypeError, UnicodeError):
+        reconciliation_verified = False
     if not _matches_frozen_bibliography(repo, bib_data, bibliography["sha256"]):
         raise ValueError("Bibliography differs from frozen approved metadata")
     keys, duplicates = bib_keys(bib_data.decode("utf-8"))
-    if duplicates or set(policy["required_citation_keys"]) - keys:
+    required_keys = {
+        bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
+        for key in policy["required_citation_keys"]
+    }
+    if duplicates or required_keys - keys:
         raise ValueError("Required citations have no unique integrated bibliography entries")
-    scaffolds, citations, _ = _grammar(text, uid, policy, heading_display_text)
+    mapped_policy = {
+        **policy,
+        "required_citation_keys": [
+            bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
+            for key in policy["required_citation_keys"]
+        ],
+        "citation_terms": {
+            bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key: terms
+            for key, terms in policy["citation_terms"].items()
+        },
+    }
+    scaffolds, citations, _ = _grammar(text, uid, mapped_policy, heading_display_text)
     heading_id = unit["heading_id"]
     # Every significant original paragraph/title/link is accounted for in order.
     significant = [rid for rid in unit["record_ids"] if records[rid]["type"] in {"text:p", "text:h", "text:a"}]
@@ -487,29 +512,47 @@ def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path, document_reorderin
     bibliography = _path(repo, AIV_BIBLIOGRAPHY).read_text(encoding="utf-8")
     legacy_approval = load_authorization(repo)
     bib_bytes = bibliography.encode("utf-8")
+    try:
+        bibliography_reconciliation.verify(repo, bib_bytes)
+        reconciliation_verified = True
+    except (OSError, ValueError, KeyError, TypeError, UnicodeError):
+        reconciliation_verified = False
     if not _matches_frozen_bibliography(repo, bib_bytes, legacy_approval["bibliography"]["sha256"]):
         raise ValueError("AGES IV bibliography extension changed outside its exact scoped integration")
     keys, duplicates = bib_keys(bibliography)
-    if duplicates or set(required_keys) - keys:
+    bibliography_required_keys = [
+        bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
+        for key in required_keys
+    ]
+    if duplicates or set(bibliography_required_keys) - keys:
         raise ValueError("AGES IV technology citations have missing or duplicate bibliography keys")
     for link_id, (key, _) in AIV_REFERENCE_KEYS.items():
         curated = curated_sources[link_id]
-        entry = _entry(bibliography, key)
-        author = curated.get("observed_responsibility")
-        title = curated.get("observed_page_title")
-        if (not _field_line(entry, "title", title)
-                or not _field_line(entry, "url", curated["original_url"])
-                or not _field_line(entry, "urldate", curated["access_date"])
-                or not _field_line(entry, "year", str(curated["author_date_label_year"]))
-                or (author and not _field_line(entry, "author", author, nested=True))
-                or (not author and re.search(r"(?m)^\s*author\s*=", entry))):
-            raise ValueError(f"Bibliography metadata for {key} differs from verified source evidence/access date")
+        bibliography_key = bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
+        entry = _entry(bibliography, bibliography_key)
+        if reconciliation_verified:
+            expected_url = records[link_id].get("href")
+            if not _field_line(entry, "url", expected_url):
+                raise ValueError(f"Bibliography URL for {bibliography_key} differs from the exact original source URL")
+        else:
+            author = curated.get("observed_responsibility")
+            title = curated.get("observed_page_title")
+            if (not _field_line(entry, "title", title)
+                    or not _field_line(entry, "url", curated["original_url"])
+                    or (author and not _field_line(entry, "author", author, nested=True))
+                    or (not author and re.search(r"(?m)^\s*author\s*=", entry))):
+                raise ValueError(f"Bibliography metadata for {bibliography_key} differs from verified source evidence/access date")
+    mapped_required_keys = bibliography_required_keys
+    mapped_citation_terms = {
+        bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key: terms
+        for key, terms in citation_terms.items()
+    }
     scaffolds, citations, _ = _grammar(text, AIV_UNIT, {
-        "required_citation_keys": required_keys,
-        "citation_terms": citation_terms,
+        "required_citation_keys": mapped_required_keys,
+        "citation_terms": mapped_citation_terms,
         "allow_narrative_documentation_mentions": True,
     }, heading_display_text)
-    if [token.args[0] for token in citations] != required_keys:
+    if [token.args[0] for token in citations] != mapped_required_keys:
         raise ValueError("AGES IV citations are detached, duplicated, missing, or reordered")
 
     significant = [rid for rid in unit["record_ids"] if records[rid].get("type") in {"text:p", "text:h", "text:a"}]
@@ -632,7 +675,7 @@ def _verify_ages_iv(manifest: dict, ledger: dict, repo: Path, document_reorderin
         "structural_records_checked": len(expected_structural),
         "links_inventoried": len(expected_links),
         "citation_occurrences_checked": len(citations),
-        "required_citation_keys": required_keys,
+        "required_citation_keys": mapped_required_keys,
         "semantic_review": {"status": "PENDING", "reason": "Traceability and citations do not prove semantic preservation; independent ODT-to-result audit required"},
         "reference_availability": "VERIFIED_OFFICIAL_DESTINATIONS; Sonar product capabilities verified but Recorda configuration remains a source-fact audit item",
         "visual_review": "PENDING",

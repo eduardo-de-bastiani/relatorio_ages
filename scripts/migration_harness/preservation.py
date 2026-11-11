@@ -41,7 +41,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from .latex import _group, commands, strip_comments, macro_definitions, canonical_macro_body, MEMORIAL_FIGURE_BODY, MEMORIAL_FIGURE_LINKED_BODY
-from . import technology_prose
+from . import technology_prose, bibliography_reconciliation, presentation_reconciliation, url_reconciliation
 
 
 INLINE_TAB_COUNTS = {"text-p-0303": 1, "text-p-0314": 4, "text-p-0318": 4}
@@ -214,6 +214,12 @@ AGES_IV_TITLE_ONLY_OMITTED_IDS = (
     "text-p-1547", "text-p-1549",
 )
 FRONTMATTER_AUTHORIZATION = "migration/approvals/ages-iv-frontmatter-authorization.json"
+FRONTMATTER_COVER_FIELDS_SUPPLEMENT = "migration/approvals/frontmatter-cover-fields-2026-11-10.json"
+FRONTMATTER_COVER_FIELD_IDS = {"text-p-0018", "text-p-0033"}
+FRONTMATTER_COVER_FIELD_SPECS = {
+    "text-p-0018": {"source_text": "AGES I,II, III ou IV", "target_text": "AGES IV"},
+    "text-p-0033": {"source_text": "Ano", "target_text": "2026"},
+}
 FRONTMATTER_UNITS = ("pretext", "resumo", "chapter-01-text-h-0001")
 DOCUMENT_ORDER_AUTHORIZATION = "migration/approvals/cliente-hoortech-and-document-order-authorization.json"
 HOORTECH_UNITS = (
@@ -676,6 +682,7 @@ PRESENTATION_SERIALIZATIONS = {
     # Validated against the exact per-record scope in the supplemental
     # document-order authorization, not a reusable generic serialization.
     "document_reordering_numbering": set(),
+    "approved_cover_field": FRONTMATTER_COVER_FIELD_IDS,
     **FRONTMATTER_TRANSFORM_IDS,
 }
 PRESENTATION_OVERRIDES_BY_UNIT = {
@@ -814,6 +821,55 @@ AGES_I_II_TECHNICAL_CITATION_KEYS = {
     key for per_unit in AGES_I_II_TECHNICAL_CITATIONS.values()
     for keys in per_unit.values() for key in keys
 }
+# The historical edition approvals above remain frozen. The teacher's later
+# same-section deduplication is a separate, hash-bound presentation supplement.
+CITATION_DEDUP_AUTHORIZATION = "migration/approvals/citation-deduplication-2026-11-10.json"
+CITATION_DEDUP_AUTHORIZATION_SHA256 = "59871d6cfe82dbf6fdd31243532b8b057ac881123a74f8fce9ff4a3830dd72c6"
+CITATION_DEDUP_EFFECTIVE_KEYS = {
+    "chapter-04-text-h-0044": {"text-p-0785": [
+        "ages-ii-angular", "ages-ii-http-rfc9110", "ages-ii-fastapi",
+        "ages-ii-postgresql", "ages-ii-json-rfc8259",
+    ]},
+    "chapter-05-text-h-0079": {
+        "text-p-1046": ["ages-iii-s3", "ages-iii-cloudfront", "ages-iii-dotnet", "ages-iii-aws-lambda"],
+        "text-p-1047": ["ages-iii-postgresql", "ages-iii-rds", "ages-iii-rfid-nist", "ages-iii-aws-iot-core", "ages-iii-mqtt"],
+        "text-p-1049": ["ages-iii-github-actions", "ages-iii-gitlab"],
+    },
+}
+CITATION_DEDUP_TARGET_UNITS = {
+    "chapter-02-text-h-0012", "chapter-04-text-h-0044", "chapter-04-text-h-0046",
+    "chapter-05-text-h-0079", "chapter-05-text-h-0085",
+}
+
+
+def _verify_citation_dedup_authorization(repo: Path, uid: str, unit_ledger: dict) -> bool:
+    """Require the exact later approval and bytes for each deduplicated unit."""
+    if uid not in CITATION_DEDUP_TARGET_UNITS:
+        return False
+    raw = (repo / CITATION_DEDUP_AUTHORIZATION).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != CITATION_DEDUP_AUTHORIZATION_SHA256:
+        raise ValueError("Same-section citation supplement is missing or changed")
+    approval = json.loads(raw)
+    if set(approval.get("units", {})) != CITATION_DEDUP_TARGET_UNITS:
+        raise ValueError("Same-section citation supplement has an unexpected unit scope")
+    if approval.get("source_odt_sha256") != hashlib.sha256((repo / "RELATORIO_ATUAL.odt").read_bytes()).hexdigest():
+        raise ValueError("Same-section citation supplement has a changed ODT source")
+    spec = approval["units"][uid]
+    if unit_ledger.get("tex_path") != spec["tex_path"]:
+        raise ValueError("Same-section citation supplement has a changed target path")
+    path = (repo / spec["tex_path"]).resolve()
+    if not path.is_relative_to(repo.resolve()):
+        raise ValueError("Same-section citation target escapes repository")
+    target = path.read_bytes()
+    if hashlib.sha256(target).hexdigest() != spec["after_sha256"]:
+        try:
+            target = url_reconciliation.previous_bytes(repo, uid, target)
+        except (OSError, ValueError, KeyError, UnicodeError) as exc:
+            raise ValueError("Same-section citation supplement has changed target bytes") from exc
+        if hashlib.sha256(target).hexdigest() != spec["after_sha256"]:
+            raise ValueError("Same-section citation predecessor bytes changed")
+    return True
+
 PRESENTATION_SERIALIZATIONS.update({
     "wiki_reference_sentence": (
         set(AGES_I_II_WIKI_SENTENCES)
@@ -830,6 +886,48 @@ PRESENTATION_SERIALIZATIONS.update({
     ),
     "technology_paragraph_join": set(AGES_III_TECHNOLOGY_INSERTED_SEPARATOR_SOURCE_IDS),
 })
+
+
+def _load_frontmatter_cover_fields_supplement(repo: Path) -> dict:
+    expected = {
+        "schema_version": 1,
+        "record_type": "user_authorized_frontmatter_cover_field_supplement",
+        "date": "2026-11-10",
+        "approval_status": "authorized_for_execution_pending_human_review",
+        "source": {
+            "path": "RELATORIO_ATUAL.odt",
+            "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+            "must_remain_unchanged": True,
+        },
+        "historical_authorization": {
+            "path": FRONTMATTER_AUTHORIZATION,
+            "sha256": "bd0f7ff85362a9db4c971330c8681b08099414cb23923ca69eb18f56c0bef845",
+            "unchanged": True,
+        },
+        "scope": {
+            "unit": "pretext",
+            "fields": {
+                "text-p-0018": {
+                    **FRONTMATTER_COVER_FIELD_SPECS["text-p-0018"],
+                    "reason": "Decisão da professora para identificar a edição AGES IV na capa.",
+                },
+                "text-p-0033": {
+                    **FRONTMATTER_COVER_FIELD_SPECS["text-p-0033"],
+                    "reason": "Decisão da professora para preencher o ano da capa como 2026.",
+                },
+            },
+        },
+        "user_decision": "Na capa, substituir exatamente ‘AGES I,II, III OU IV’ por ‘AGES IV’ e ‘Ano’ por ‘2026’. Esta decisão suplementa somente esses dois campos da autorização histórica; as demais decisões e limites continuam vigentes.",
+        "limits": [
+            "Não modificar RELATORIO_ATUAL.odt.",
+            "Não alterar os demais campos pré-textuais nem unidades de conteúdo.",
+            "A aprovação humana da capa renderizada continua pendente.",
+        ],
+    }
+    supplement = json.loads((repo / FRONTMATTER_COVER_FIELDS_SUPPLEMENT).read_text(encoding="utf-8"))
+    if supplement != expected:
+        raise ValueError("Cover-field supplement is missing, stale, or exceeds the exact user-authorized scope")
+    return supplement
 
 
 def _load_base_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
@@ -1503,6 +1601,9 @@ def _load_ages_iv_sprint3_figure_display_authorization(repo: Path) -> dict:
 
 def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> dict:
     authorization = _load_base_presentation_authorization(repo, unit_id)
+    authorization["repository_root"] = str(repo.resolve())
+    if unit_id == "pretext":
+        authorization["approved_cover_field_supplement"] = _load_frontmatter_cover_fields_supplement(repo)
     document_order_units = set(HOORTECH_UNITS) | set(AGES_II_UNITS) | set(AGES_III_UNITS) | set(AGES_IV_UNITS)
     if unit_id in document_order_units and (repo / DOCUMENT_ORDER_AUTHORIZATION).is_file():
         document_authorization = _load_document_order_authorization(repo)
@@ -1513,6 +1614,14 @@ def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> 
                 **document_authorization,
             },
         }
+    if unit_id in {"chapter-05-text-h-0074", "chapter-06-text-h-0105"}:
+        try:
+            authorization = {
+                **authorization,
+                "approved_body_title_correction": presentation_reconciliation.title_corrections(repo),
+            }
+        except (OSError, ValueError, KeyError, TypeError, UnicodeError):
+            pass
     if unit_id in AGES_IV_SPRINT3_FIGURE_DISPLAY_UNITS:
         adjustment = _load_ages_iv_sprint3_figure_display_authorization(repo)
         authorization = {
@@ -1694,7 +1803,7 @@ AGES_II_TECHNOLOGY_CITATIONS_AFTER = {
 }
 
 
-def _verify_technology_paragraph(source, bibliography, disposition, authorization):
+def _verify_technology_paragraph(source, bibliography, disposition, authorization, reconciliation_verified=False):
     """Verify the narrowly authorized AGES I technology paragraph and citations."""
     if (disposition.get("source_id") != "text-list-0025"
             or disposition.get("disposition") != "approved-single-paragraph-technology-list"
@@ -1737,11 +1846,17 @@ def _verify_technology_paragraph(source, bibliography, disposition, authorizatio
     if re.search(r"\\(?:begin\s*\{(?:itemize|enumerate)\}|item\b)", body):
         raise ValueError("The technology list still has visible list structure")
 
+    citation_keys = [
+        bibliography_reconciliation.CONSOLIDATIONS.get(item["citation_key"], item["citation_key"])
+        if reconciliation_verified else item["citation_key"]
+        for item in TECHNOLOGY_PARAGRAPH_RECORDS
+    ]
     citation_tokens = [token.args[0] for token in commands(body) if token.name == "cite" and token.args]
-    if citation_tokens != [item["citation_key"] for item in TECHNOLOGY_PARAGRAPH_RECORDS]:
+    if citation_tokens != citation_keys:
         raise ValueError("The five author-date citations are missing, duplicated, or out of order")
     for item in TECHNOLOGY_PARAGRAPH_RECORDS:
-        expected_prefix = f'{item["label"]}:\\space\\cite{{{item["citation_key"]}}}'
+        key = bibliography_reconciliation.CONSOLIDATIONS.get(item["citation_key"], item["citation_key"]) if reconciliation_verified else item["citation_key"]
+        expected_prefix = f'{item["label"]}:\\space\\cite{{{key}}}'
         if expected_prefix not in body:
             raise ValueError(f"The {item['label']} citation is detached from its technology label")
     hrefs = [token.args for token in commands(body) if token.name == "href" and len(token.args) == 2]
@@ -1757,26 +1872,27 @@ def _verify_technology_paragraph(source, bibliography, disposition, authorizatio
         raise ValueError("Technology group separators must be the four approved semicolons and final period")
 
     for item in TECHNOLOGY_PARAGRAPH_RECORDS:
+        key = bibliography_reconciliation.CONSOLIDATIONS.get(item["citation_key"], item["citation_key"]) if reconciliation_verified else item["citation_key"]
         match = re.search(
-            rf"(?ms)^@online\{{{re.escape(item['citation_key'])},(?P<entry>.*?)^\}}",
+            rf"(?ms)^@online\{{{re.escape(key)},(?P<entry>.*?)^\}}",
             bibliography,
         )
         if not match:
-            raise ValueError(f"Bibliography entry {item['citation_key']} is missing")
+            raise ValueError(f"Bibliography entry {key} is missing")
         entry = match["entry"]
         fields = {
             "author": "{{" + item["label"] + "}}",
-            "year": "{2024}",
-            "urldate": "{" + item["date"] + "}",
             "url": "{" + item["url"] + "}",
         }
+        if not reconciliation_verified:
+            fields.update({"year": "{2024}", "urldate": "{" + item["date"] + "}"})
         for field, value in fields.items():
             if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
-                raise ValueError(f"Bibliography field {field} for {item['citation_key']} differs from its approval")
+                raise ValueError(f"Bibliography field {field} for {key} differs from its approval")
     return True
 
 
-def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, authorization, unit_ledger, unit, records, reference_evidence):
+def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, authorization, unit_ledger, unit, records, reference_evidence, reconciliation_verified=False):
     """Verify AGES II's one-paragraph technology presentation from source-linked evidence."""
     auth_path = AGES_II_PRESENTATION_AUTHORIZATION
     technology_rule = authorization.get("approved_presentation_changes", {}).get("technology_paragraph")
@@ -1840,7 +1956,8 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
 
     citation_keys = [token.args[0] for token in commands(raw) if token.name == "cite" and token.args]
     expected_citation_keys = [
-        key for source_id in AGES_II_TECHNOLOGY_TEXT_IDS
+        bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
+        for source_id in AGES_II_TECHNOLOGY_TEXT_IDS
         for key in AGES_I_II_TECHNICAL_CITATIONS.get("chapter-04-text-h-0046", {}).get(source_id, [])
     ]
     if citation_keys != expected_citation_keys:
@@ -1864,9 +1981,9 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         fields = {
             "title": "{" + evidence["metadata"]["title"] + "}",
             "url": "{" + evidence["original_url"] + "}",
-            "year": "{" + str(assigned_year) + "}",
-            "urldate": "{" + assigned_date + "}",
         }
+        if not reconciliation_verified:
+            fields.update({"year": "{" + str(assigned_year) + "}", "urldate": "{" + assigned_date + "}"})
         for field, value in fields.items():
             if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
                 raise ValueError(f"Bibliography field {field} for {key} differs from verified/assigned metadata")
@@ -1885,8 +2002,9 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         entry = match["entry"]
         fields = {
             "title": "{" + expected["title"] + "}", "url": "{" + expected["url"] + "}",
-            "year": "{2024}", "urldate": "{" + assigned_date + "}",
         }
+        if not reconciliation_verified:
+            fields.update({"year": "{2024}", "urldate": "{" + assigned_date + "}"})
         for field, value in fields.items():
             if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(value)}\s*,?\s*$", entry):
                 raise ValueError(f"Bibliography field {field} for {key} differs from the original ODT or assigned date convention")
@@ -1902,10 +2020,11 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
         if not match:
             raise ValueError(f"Verified official RFC entry {key} is missing")
         entry = match["entry"]
-        for field, value in expected.items():
+        fields = {name: value for name, value in expected.items() if name not in {"date"} or not reconciliation_verified}
+        for field, value in fields.items():
             if not re.search(rf"(?m)^\s*{field}\s*=\s*\{{{re.escape(value)}\}}\s*,?\s*$", entry):
                 raise ValueError(f"Verified RFC field {field} for {key} differs from its curation evidence")
-        if not re.search(rf"(?m)^\s*urldate\s*=\s*\{{{re.escape(assigned_date)}\}}\s*,?\s*$", entry):
+        if not reconciliation_verified and not re.search(rf"(?m)^\s*urldate\s*=\s*\{{{re.escape(assigned_date)}\}}\s*,?\s*$", entry):
             raise ValueError(f"Assigned AGES II access date for {key} differs from user instruction")
 
     pending = curated.get("text-a-0126", {})
@@ -1927,7 +2046,7 @@ def _verify_ages_ii_technology_paragraph(source, bibliography, disposition, auth
     return True
 
 
-def _verify_ages_iii_bibliography_entries(bibliography, reference_evidence, records):
+def _verify_ages_iii_bibliography_entries(bibliography, reference_evidence, records, reconciliation_verified=False, repo=None):
     """Tie each AGES III citation key to the curator's exact verified source."""
     cited = {item.get("source_record_id"): item for item in reference_evidence.get("references", [])}
     supplements = {
@@ -1940,7 +2059,12 @@ def _verify_ages_iii_bibliography_entries(bibliography, reference_evidence, reco
     actual_consultation_date = reference_evidence.get("consultation_date")
     if actual_consultation_date != "2026-10-16":
         raise ValueError("AGES III bibliography must use the actual reference-curation date")
+    author_values = (
+        bibliography_reconciliation._validate_author_contract(repo)["author_informed_values"]
+        if reconciliation_verified and repo is not None else None
+    )
     for key in AGES_III_TECHNICAL_CITATION_KEYS:
+        effective_key = bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
         source_record_id, supplement_id = AGES_III_CITATION_EVIDENCE[key]
         if source_record_id is not None:
             evidence = cited.get(source_record_id)
@@ -1978,24 +2102,48 @@ def _verify_ages_iii_bibliography_entries(bibliography, reference_evidence, reco
         if actual_source_date != actual_consultation_date:
             raise ValueError(f"The actual AGES III source consultation date for {key} is not preserved in curator evidence")
         entry_type = AGES_III_CITATION_TYPES.get(key, "online")
-        match = re.search(rf"(?ms)^@{re.escape(entry_type)}\{{{re.escape(key)},(?P<entry>.*?)^\}}", bibliography)
+        match = re.search(rf"(?ms)^@{re.escape(entry_type)}\{{{re.escape(effective_key)},(?P<entry>.*?)^\}}", bibliography)
         if not match:
-            raise ValueError(f"Bibliography entry {key} is missing")
+            raise ValueError(f"Bibliography entry {effective_key} is missing")
         entry = match["entry"]
         fields = {
-            "title": title,
-            "url": url,
             "urldate": actual_consultation_date,
             **AGES_III_BIBLIOGRAPHY_REQUIRED_FIELDS.get(key, {}),
         }
-        if factual_publication_date:
+        if author_values is not None:
+            fields.update({
+                "date": author_values["confirmed_years_by_author"].get(
+                    effective_key, author_values["preserved_documented_dates"].get(effective_key)
+                ),
+                "urldate": author_values["estimated_access_dates_by_author"][effective_key],
+                "note": author_values["estimated_access_note"],
+            })
+        if reconciliation_verified:
+            author_values = bibliography_reconciliation._validate_author_contract(repo)["author_informed_values"]
+            varied_access = json.loads(
+                (repo / bibliography_reconciliation.ESTIMATED_ACCESS_EVIDENCE_PATH).read_text(encoding="utf-8")
+            )["access_dates"]
+            fields.update({
+                "date": author_values["confirmed_years_by_author"].get(
+                    effective_key, author_values["preserved_documented_dates"].get(effective_key)
+                ),
+                "urldate": varied_access[effective_key],
+            })
+            fields.pop("note", None)
+        if not (reconciliation_verified and effective_key != key):
+            fields.update({"title": title, "url": url})
+        if factual_publication_date and not reconciliation_verified:
             fields["date"] = factual_publication_date
         for field, value in fields.items():
             field_match = re.search(rf"(?m)^\s*{field}\s*=\s*\{{(.*?)\}}\s*,?\s*$", entry)
             observed_value = re.sub(r"\\([#$%&_{}])", r"\1", field_match[1]) if field_match else None
             if not field_match or observed_value != value:
                 raise ValueError(f"Bibliography field {field} for {key} differs from curator evidence/user citation-year convention")
-        forbidden_date_fields = {"year"} if factual_publication_date else {"date", "year"}
+        forbidden_date_fields = (
+            set() if reconciliation_verified
+            else {"year"} if factual_publication_date
+            else {"date", "year"}
+        )
         for field in forbidden_date_fields:
             if re.search(rf"(?m)^\s*{field}\s*=", entry):
                 if factual_publication_date:
@@ -2182,7 +2330,7 @@ def _verify_citation_alignment(source_id, fragment_value, keys, terms, serializa
         previous_end = token.end
 
 
-def _verify_ages_iv_bibliography_entries(bibliography, reference_evidence, records, supplemental_authorization):
+def _verify_ages_iv_bibliography_entries(bibliography, reference_evidence, records, supplemental_authorization, reconciliation_verified=False, repo=None):
     """Tie AGES IV's newly inserted technology citations to curated sources and real access dates."""
     sources = {item.get("id"): item for item in reference_evidence.get("sources", [])}
     bib_keys = re.findall(r"(?m)^@\w+\{([^,]+),", bibliography)
@@ -2192,6 +2340,15 @@ def _verify_ages_iv_bibliography_entries(bibliography, reference_evidence, recor
     if access_date != "2026-10-17":
         raise ValueError("AGES IV author-date labels must retain the evidenced actual curation/access date")
     supplemental_records = supplemental_authorization.get("citations", {}) if isinstance(supplemental_authorization, dict) else {}
+    approved_author_normalizations = {}
+    if reconciliation_verified:
+        contract_root = Path(repo) if repo is not None else Path(__file__).resolve().parents[2]
+        try:
+            supplemental_contract = bibliography_reconciliation._validate_supplement_contract(contract_root)
+            approved_author_normalizations = supplemental_contract["authorized_changes"]["normalized_authors"]
+        except (OSError, ValueError, KeyError, TypeError, UnicodeError):
+            # Historical reconciliations keep their source-observed authors.
+            approved_author_normalizations = {}
     expected_supplemental_records = {
         key: {
             "unit_id": rule["unit_id"],
@@ -2210,6 +2367,7 @@ def _verify_ages_iv_bibliography_entries(bibliography, reference_evidence, recor
             or supplemental_records != expected_supplemental_records):
         raise ValueError("AGES IV supplemental technology citations lack the exact scoped user authorization")
     for key, source_id in AGES_IV_CITATION_EVIDENCE.items():
+        effective_key = bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
         source = sources.get(source_id)
         if (source is None
                 or source.get("retrieval") != "RETRIEVED_BY_WEB_TOOL; HTTP status not exposed"
@@ -2239,26 +2397,47 @@ def _verify_ages_iv_bibliography_entries(bibliography, reference_evidence, recor
                     or original.get("source_text") not in source.get("original_anchor_text", [])):
                 raise ValueError(f"AGES IV source link {original_id} for {key} no longer matches the curator record")
             reference_url = source.get("original_url")
-        match = re.search(rf"(?ms)^@online\{{{re.escape(key)},(?P<entry>.*?)^\}}", bibliography)
+        match = re.search(rf"(?ms)^@online\{{{re.escape(effective_key)},(?P<entry>.*?)^\}}", bibliography)
         if not match:
-            raise ValueError(f"AGES IV bibliography entry {key} is missing")
+            if reconciliation_verified and key in bibliography_reconciliation.CONSOLIDATIONS:
+                continue
+            raise ValueError(f"AGES IV bibliography entry {effective_key} is missing")
         entry = match["entry"]
         expected_fields = {
             "title": "{" + source["observed_page_title"] + "}",
             "url": "{" + reference_url + "}",
-            "year": "{2026}",
-            "urldate": "{" + access_date + "}",
         }
+        if not reconciliation_verified:
+            expected_fields.update({"year": "{2026}", "urldate": "{" + access_date + "}"})
         for field, expected in expected_fields.items():
             if not re.search(rf"(?m)^\s*{field}\s*=\s*{re.escape(expected)}\s*,?\s*$", entry):
                 raise ValueError(f"AGES IV bibliography field {field} for {key} differs from its evidence")
         author = source.get("observed_responsibility")
         author_line = re.search(r"(?m)^\s*author\s*=\s*(.*?)\s*,?\s*$", entry)
         if author:
-            if author_line is None or author_line[1] != "{{" + author + "}}":
+            accepted_authors = {"{{" + author + "}}"}
+            normalized = approved_author_normalizations.get(key)
+            if normalized is not None:
+                accepted_authors.add("{" + normalized["to"] + "}")
+            if author_line is None or author_line[1] not in accepted_authors:
                 raise ValueError(f"AGES IV bibliography author for {key} differs from the explicitly observed responsibility")
         elif author_line is not None:
             raise ValueError(f"AGES IV bibliography invents an author for title-as-author source {key}")
+
+
+def _verify_optional_bibliography_reconciliation(repo, bibliography):
+    """Verify the latest available exact bibliography contract in its full chain."""
+    if not (repo / bibliography_reconciliation.CONTRACT).is_file():
+        return False
+    if ((repo / bibliography_reconciliation.ESTIMATED_ACCESS_CONTRACT).is_file()
+            and (repo / bibliography_reconciliation.ESTIMATED_ACCESS_RESULT_PATH).is_file()):
+        bibliography_reconciliation.verify(repo, bibliography.encode("utf-8"))
+    elif ((repo / bibliography_reconciliation.SUPPLEMENT_CONTRACT).is_file()
+            and (repo / bibliography_reconciliation.SUPPLEMENT_RESULT_PATH).is_file()):
+        bibliography_reconciliation.verify(repo, bibliography.encode("utf-8"))
+    else:
+        bibliography_reconciliation.verify_historical(repo, bibliography.encode("utf-8"))
+    return True
 
 
 def _verify_document_order_unit(uid, unit_ledger, records, authorization, read_fragment):
@@ -2279,15 +2458,27 @@ def _verify_document_order_unit(uid, unit_ledger, records, authorization, read_f
         if "document_reordering_numbering" in item.get("serializations", [])
     }
     expected_ids = sorted(specs)
+    omitted_replacement_ids = set()
+    repo_root = (authorization or {}).get("repository_root")
+    if repo_root and (Path(repo_root) / presentation_reconciliation.DIAGRAM_AUTHORIZATION).is_file():
+        for figure in presentation_reconciliation.figure_specs(Path(repo_root)):
+            if figure.get("unit") == uid and figure.get("source_caption_id"):
+                omitted_replacement_ids.add(figure["source_caption_id"])
+    mapped_expected_ids = sorted(set(expected_ids) - omitted_replacement_ids)
     expected_policy = {
         "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
         "source_ids": expected_ids,
     }
+    replacement_policy = {
+        "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+        "source_ids": mapped_expected_ids,
+    }
+    observed_policy = unit_ledger.get("document_reordering_authorization")
     if (not expected_ids
-            or unit_ledger.get("document_reordering_authorization") != expected_policy
-            or sorted(mapped) != expected_ids):
+            or observed_policy not in (expected_policy, replacement_policy)
+            or sorted(mapped) != mapped_expected_ids):
         raise ValueError("Document-order ledger must cover exactly the authorized source IDs in this unit")
-    for source_id in expected_ids:
+    for source_id in mapped_expected_ids:
         mapping = mapped[source_id]
         spec = specs[source_id]
         serializations = mapping.get("serializations", [])
@@ -2301,12 +2492,22 @@ def _verify_document_order_unit(uid, unit_ledger, records, authorization, read_f
             for item in (authorization or {}).get("approved_ages_iv_sprint3_figure_and_display", {}).get("following_figure_renumbering", [])
         }
         expected_display = supplemental_figures.get(source_id, {}).get("target", spec.get("target_text"))
+        allowed_displays = {expected_display}
+        if (source_id in scope.get("figure_caption_numbering", {})
+                and isinstance(expected_display, str) and repo_root):
+            try:
+                reconciled, _ = presentation_reconciliation.projected_caption(
+                    Path(repo_root), spec.get("source_text"), expected_display,
+                )
+                allowed_displays = {reconciled}
+            except (KeyError, OSError, ValueError):
+                pass
         if (projected != spec.get("source_text")
                 or evidence is None
-                or evidence.get("displayed") != expected_display
+                or evidence.get("displayed") not in allowed_displays
                 or source_id not in records):
             raise ValueError(f"Document-order projection differs from its exact authorized source mapping: {source_id}")
-    return expected_ids
+    return mapped_expected_ids
 
 
 def _reference_suffix(value: str) -> str:
@@ -2363,6 +2564,7 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             for table in ("heading_numbering", "figure_caption_numbering", "inline_reference_adjustments")
         ]
         spec = next((item for item in candidates if isinstance(item, dict)), None)
+        is_caption_spec = source_id in scope.get("figure_caption_numbering", {})
         allowed_companions = {
             "document_reordering_numbering", "abnt_figure_caption", "abnt_section_numbering",
             "original_whitespace", "inline_tab_layout", "reference_paragraph_layout",
@@ -2374,10 +2576,42 @@ def _project_approved_presentation(source_id, expected, observed, serializations
         }
         supplemental_figure = supplemental_figures.get(source_id)
         expected_display = supplemental_figure.get("target") if supplemental_figure else (spec or {}).get("target_text")
+        allowed_displays = {expected_display} if isinstance(expected_display, str) else set()
+        projected_caption = None
+        if (spec is not None and is_caption_spec
+                and isinstance(expected_display, str)):
+            try:
+                projected_caption, _ = presentation_reconciliation.projected_caption(
+                    Path(authorization["repository_root"]), expected, expected_display,
+                )
+                allowed_displays = {projected_caption}
+            except (KeyError, OSError, ValueError):
+                pass
+        elif supplemental_figure and isinstance(expected_display, str):
+            try:
+                projected_caption, _ = presentation_reconciliation.projected_caption(
+                    Path(authorization["repository_root"]), expected, expected_display,
+                )
+                allowed_displays = {projected_caption}
+            except (KeyError, OSError, ValueError):
+                pass
+        title_contract = (authorization or {}).get("approved_body_title_correction", {})
+        title_spec = title_contract.get("scope", {}).get(source_id)
+        singular_heading = (
+            title_spec.get("target_text")
+            if title_contract and title_contract == presentation_reconciliation.title_corrections(
+                Path(authorization["repository_root"]),
+            ) and isinstance(title_spec, dict)
+            and expected == title_spec.get("source_text")
+            and expected_display == title_spec.get("document_order_text")
+            else None
+        )
+        if singular_heading and isinstance(expected_display, str):
+            allowed_displays = {singular_heading}
         if (spec is None
                 or set(serializations) - allowed_companions
                 or expected != spec.get("source_text")
-                or observed != expected_display):
+                or observed not in allowed_displays):
             raise UnsupportedSerialization("Document-order target differs from the exact source-bound approved numbering map")
         evidence = {
             "source_id": source_id,
@@ -2386,6 +2620,24 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             "displayed": observed,
             "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
         }
+        if projected_caption and observed == projected_caption:
+            number = int(re.match(r"^[ \t\r\n]*Figura\s+(\d+)", observed)[1])
+            evidence["figure_number_reconciliation"] = {
+                "authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                "figure_number": number,
+                "source_status": presentation_reconciliation.SOURCE_STATUS,
+            }
+        if singular_heading and observed == singular_heading:
+            evidence["title_wording_reconciliation"] = {
+                "authorization_evidence": presentation_reconciliation.TITLE_CORRECTION_AUTHORIZATION,
+                "source_status": "user_authorized_body_title_correction",
+            }
+        if is_caption_spec and projected_caption and observed == projected_caption:
+            evidence["figure_number_reconciliation"] = {
+                "authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                "figure_number": int(re.match(r"^[ \t\r\n]*Figura\s+(\d+)", observed)[1]),
+                "source_status": presentation_reconciliation.SOURCE_STATUS,
+            }
         if supplemental_figure:
             evidence["supplemental_authorization_evidence"] = AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION
             evidence["previous_displayed"] = supplemental_figure["previous_target"]
@@ -2431,6 +2683,23 @@ def _project_approved_presentation(source_id, expected, observed, serializations
         return observed, None
     if authorization is None:
         raise UnsupportedSerialization("Presentation override requires the explicit current user authorization")
+    if "approved_cover_field" in used:
+        supplement = authorization.get("approved_cover_field_supplement")
+        spec = (supplement or {}).get("scope", {}).get("fields", {}).get(source_id)
+        if (used != {"approved_cover_field"}
+                or source_id not in FRONTMATTER_COVER_FIELD_IDS
+                or not isinstance(spec, dict)
+                or expected != spec.get("source_text")
+                or observed != spec.get("target_text")):
+            raise UnsupportedSerialization("Cover-field target differs from the exact supplemental user authorization")
+        return expected, {
+            "source_id": source_id,
+            "kind": "user_authorized_cover_field",
+            "source": expected,
+            "displayed": observed,
+            "reason": spec.get("reason"),
+            "authorization_evidence": FRONTMATTER_COVER_FIELDS_SUPPLEMENT,
+        }
     for kind in used:
         if source_id not in PRESENTATION_SERIALIZATIONS[kind]:
             raise UnsupportedSerialization(f"{kind} is not authorized for {source_id}")
@@ -2551,9 +2820,27 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             target = expected_target
         else:
             target = authorization["approved_presentation_changes"]["figure_caption_labels"][source_id]
-        if target != expected_target or observed != expected_target:
+        allowed_targets = {expected_target}
+        reconciled_target = None
+        if isinstance(authorization, dict) and authorization.get("repository_root"):
+            try:
+                reconciled_target, _ = presentation_reconciliation.projected_caption(
+                    Path(authorization["repository_root"]), expected, expected_target,
+                )
+                allowed_targets = {reconciled_target}
+            except (KeyError, OSError, ValueError):
+                pass
+        if target != expected_target or observed not in allowed_targets:
             raise UnsupportedSerialization("Figure caption changes exceed the authorized Portuguese label and ABNT dash")
-        return expected, {"source_id": source_id, "kind": "abnt_figure_caption_label", "source": expected, "displayed": expected_target}
+        evidence = {"source_id": source_id, "kind": "abnt_figure_caption_label", "source": expected, "displayed": observed}
+        if reconciled_target is not None and observed == reconciled_target:
+            evidence.update({
+                "kind": "user_authorized_figure_number_reconciliation",
+                "authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                "figure_number": int(re.match(r"^[ \t\r\n]*Figura\s+(\d+)", observed)[1]),
+                "source_status": presentation_reconciliation.SOURCE_STATUS,
+            })
+        return expected, evidence
     if "abnt_section_numbering" in used:
         source, target = PRESENTATION_HEADINGS[source_id]
         if source_id in AGES_IV_HEADING_IDS:
@@ -2603,6 +2890,29 @@ def _project_approved_toc_entry(source_id, expected, observed, serializations, a
     update = updates.get(source_id)
     if update is None:
         return _project_approved_presentation(source_id, expected, observed, serializations, authorization)
+    title_contract = (authorization or {}).get("approved_body_title_correction", {})
+    title_spec = title_contract.get("scope", {}).get(source_id)
+    if (title_contract and title_contract == presentation_reconciliation.title_corrections(
+            Path(authorization["repository_root"]),
+        ) and isinstance(title_spec, dict)):
+        if (expected != title_spec["source_text"]
+                or update.get("document_order_text") != title_spec["document_order_text"]
+                or update.get("target") != title_spec["target_text"]
+                or observed != title_spec["target_text"]):
+            raise UnsupportedSerialization("Body-title and TOC title corrections do not match their separate exact authorizations")
+        projected, evidence = _project_approved_presentation(
+            source_id, expected, observed, serializations, authorization,
+        )
+        if projected != expected or evidence is None:
+            raise UnsupportedSerialization("TOC body-title correction is not layered on the source-bound chapter order")
+        return expected, {
+            "source_id": source_id,
+            "kind": "user_authorized_toc_and_body_title_correction",
+            "source": expected,
+            "displayed": observed,
+            "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
+            "body_title_authorization_evidence": presentation_reconciliation.TITLE_CORRECTION_AUTHORIZATION,
+        }
     if observed != update["target"] or update.get("body_heading_unchanged") is not True:
         raise UnsupportedSerialization("TOC title differs from the exact authorized display-only adjustment")
     projected, evidence = _project_approved_presentation(
@@ -2691,7 +3001,7 @@ def _display_tokens(source: str, serializations, macro_contract_verified, inline
     Accents, punctuation, case, numbers and symbols compare exactly.
     No macro expansion, citation expansion or counter-generated text is guessed.
     """
-    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation", "technology_paragraph_join", "approved_group_label_removal", "approved_technology_narrative", "technology_documentation_link_prose", "approved_internal_tab_removal", "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission", "document_reordering_numbering"}
+    allowed = {"tex_quotes", "tex_dashes", "canonical_unicode", "original_whitespace", "inline_tab_layout", "reference_paragraph_layout", "abnt_figure_caption", "abnt_section_numbering", "approved_figure_cross_reference", "repository_link_sentence", "wiki_reference_sentence", "technology_citation", "technology_paragraph_join", "approved_group_label_removal", "approved_technology_narrative", "technology_documentation_link_prose", "approved_internal_tab_removal", "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission", "approved_cover_field", "document_reordering_numbering"}
     if set(serializations) - allowed:
         raise UnsupportedSerialization("Unrecognized serialization policy")
     if "original_whitespace" in serializations and not macro_contract_verified:
@@ -3131,6 +3441,9 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
     presentation_authorization = None
     presentation_authorization_error = None
 
+    url_projection = {}
+    superseded_url_ids = set()
+
     def fragment(mapping):
         path = safe_path(mapping.get("target_file"))
         if path not in target_cache:
@@ -3143,7 +3456,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         if type(start) is not int or type(end) is not int or not 0 <= start <= end <= len(data):
             raise ValueError("Invalid half-open byte interval")
         data[:start].decode("utf-8")  # Reject offsets inside a UTF-8 code point.
-        return path, start, end, data[start:end].decode("utf-8")
+        value = data[start:end].decode("utf-8")
+        return path, start, end, url_reconciliation.project(mapping, value, url_projection)
 
     figure_labels = set()
     for uid in selected:
@@ -3170,6 +3484,32 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         )
         state = ledger_units.get(uid, {}).get("state", "unconverted")
         unit_ledger = ledger_units.get(uid, {})
+        url_projection = {}
+        # Historical fixtures may use a different target path for the same ID.
+        if unit_ledger.get("tex_path") == f"relatorio_AGES_eduardo/conteudo/migracao/{uid}.tex" or unit_ledger.get("url_presentation_authorization"):
+            try:
+                url_projection = url_reconciliation.load_unit(repo, uid, unit_ledger, records)
+                superseded_url_ids.update(url_projection)
+                for source_id, replacements in url_projection.items():
+                    if _kind(records.get(source_id, {})) == "a":
+                        facts.setdefault("url_presentation_changes", []).append({
+                            "source_id": source_id,
+                            "destination": records[source_id]["href"],
+                            "before_markup": replacements[0][1],
+                            "after_markup": replacements[0][0],
+                            "authorization_evidence": url_reconciliation.CONTRACT,
+                            "human_review": "PENDING",
+                        })
+            except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
+                report("invalid_url_presentation", uid, str(exc))
+        dedup_verified = False
+        if uid in CITATION_DEDUP_TARGET_UNITS and unit_ledger.get("tex_path") == (
+            f"relatorio_AGES_eduardo/conteudo/migracao/{uid}.tex"
+        ):
+            try:
+                dedup_verified = _verify_citation_dedup_authorization(repo, uid, unit_ledger)
+            except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
+                report("invalid_citation_deduplication", uid, str(exc))
         technology_paragraph_verified = False
         differences[uid] = []
         source_ids = unit.get("source_record_ids")
@@ -3177,6 +3517,27 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             source_ids = [rid for rid in unit.get("record_ids", []) if rid in records and _kind(records[rid]) in {"p", "h"} and records[rid].get("text") is not None]
         source_ids = [rid for rid in source_ids if rid in records and records[rid].get("text") is not None]
         full_source_ids = source_ids
+        try:
+            reconciliation_path = repo / presentation_reconciliation.DIAGRAM_AUTHORIZATION
+            if uid not in {
+                "chapter-02-text-h-0009", "chapter-02-text-h-0010",
+                "chapter-04-text-h-0043", "chapter-04-text-h-0044",
+            } or not reconciliation_path.is_file():
+                raise StopIteration
+            user_diagram_specs = [
+                spec for spec in presentation_reconciliation.figure_specs(repo)
+                if spec["unit"] == uid
+            ]
+            replaced_source_ids = {
+                source_id for spec in user_diagram_specs
+                for source_id in (spec.get("source_record_id"), spec.get("source_caption_id"))
+                if source_id
+            }
+        except StopIteration:
+            user_diagram_specs, replaced_source_ids = [], set()
+        except (ValueError, OSError, KeyError, TypeError, UnicodeError) as exc:
+            user_diagram_specs, replaced_source_ids = [], set()
+            report("invalid_user_figure_authorization", uid, str(exc))
         if state == "partial":
             try:
                 partial_policy = _verify_ages_iv_partial_source_scope(
@@ -3289,9 +3650,10 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 )
                 if disposition.get("disposition") == "approved-single-paragraph-technology-list":
                     bibliography = safe_path("relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+                    reconciliation_verified = _verify_optional_bibliography_reconciliation(repo, bibliography)
                     if uid == "chapter-02-text-h-0012":
                         technology_approval = json.loads(safe_path(TECHNOLOGY_PARAGRAPH_AUTHORIZATION).read_text(encoding="utf-8"))
-                        _verify_technology_paragraph(source_text, bibliography, disposition, technology_approval)
+                        _verify_technology_paragraph(source_text, bibliography, disposition, technology_approval, reconciliation_verified=reconciliation_verified)
                     else:
                         if presentation_authorization is None:
                             raise ValueError(presentation_authorization_error or "Missing AGES II presentation authorization")
@@ -3299,6 +3661,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         _verify_ages_ii_technology_paragraph(
                             source_text, bibliography, disposition, presentation_authorization,
                             unit_ledger, unit, records, reference_evidence,
+                            reconciliation_verified=reconciliation_verified,
                         )
                     technology_paragraph_verified = True
                     if uid == "chapter-02-text-h-0012":
@@ -3341,6 +3704,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             expected_citations = AGES_IV_TECHNICAL_CITATIONS.get(uid, {})
         else:
             expected_citations = AGES_I_II_TECHNICAL_CITATIONS.get(uid, {}) if formatting_scope_present else {}
+        if dedup_verified and uid in CITATION_DEDUP_EFFECTIVE_KEYS:
+            expected_citations = CITATION_DEDUP_EFFECTIVE_KEYS[uid]
         citation_policy = unit_ledger.get("technology_citations")
         if expected_citations:
             expected_policy = {
@@ -3361,18 +3726,27 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 if citation_policy != expected_policy:
                     raise ValueError("Citation ledger must exactly match the approved source ID/key map")
                 bibliography = safe_path("relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+                reconciliation_verified = _verify_optional_bibliography_reconciliation(repo, bibliography)
                 bibliography_keys = set(re.findall(r"(?m)^@\w+\{([^,]+),", bibliography))
                 for rid, expected_keys in expected_citations.items():
                     mapping = by_id.get(rid)
                     if mapping is None or "technology_citation" not in mapping.get("serializations", []):
                         raise ValueError(f"{rid} requires the technology_citation serialization")
-                    if _citation_keys_in_fragment(fragment(mapping)[3]) != expected_keys:
+                    effective_keys = [
+                        bibliography_reconciliation.CONSOLIDATIONS.get(key, key) if reconciliation_verified else key
+                        for key in expected_keys
+                    ]
+                    if _citation_keys_in_fragment(fragment(mapping)[3]) != effective_keys:
                         raise ValueError(f"Citations on {rid} differ from the approved ordered keys")
-                    if any(key not in bibliography_keys for key in expected_keys):
+                    if any(key not in bibliography_keys for key in effective_keys):
                         raise ValueError(f"A verified citation on {rid} has no integrated bibliography entry")
                 if uid in AGES_III_UNITS:
                     evidence = json.loads(safe_path("migration/evidence/references/ages-iii.json").read_text(encoding="utf-8"))
-                    _verify_ages_iii_bibliography_entries(bibliography, evidence, records)
+                    _verify_ages_iii_bibliography_entries(
+                        bibliography, evidence, records,
+                        reconciliation_verified=reconciliation_verified,
+                        repo=repo,
+                    )
                 elif uid in AGES_IV_UNITS:
                     evidence = json.loads(safe_path("migration/evidence/references/ages-iv.json").read_text(encoding="utf-8"))
                     supplemental_authorization = json.loads(
@@ -3380,6 +3754,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     )
                     _verify_ages_iv_bibliography_entries(
                         bibliography, evidence, records, supplemental_authorization,
+                        reconciliation_verified=reconciliation_verified,
+                        repo=repo,
                     )
                 for rid, mapping in by_id.items():
                     if "technology_citation" in mapping.get("serializations", []) and rid not in expected_citations:
@@ -3448,7 +3824,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             "repository_link_sentence", "wiki_reference_sentence",
             "approved_group_label_removal", "approved_technology_narrative",
             "technology_documentation_link_prose", "approved_internal_tab_removal",
-            "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission",
+            "frontmatter_title", "frontmatter_placeholder", "frontmatter_omission", "approved_cover_field",
             "technology_citation", "technology_paragraph_join", "document_reordering_numbering",
         }
         presentation_override_kinds = set(PRESENTATION_SERIALIZATIONS) - dedicated_presentation_kinds
@@ -3473,6 +3849,20 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         expected_override_ids = (
             PRESENTATION_OVERRIDES_BY_UNIT.get(uid, set()) & set(unit.get("record_ids", []))
         )
+        if uid == "pretext":
+            expected_cover_field_policy = {
+                "authorization_evidence": FRONTMATTER_COVER_FIELDS_SUPPLEMENT,
+                "source_ids": sorted(FRONTMATTER_COVER_FIELD_IDS),
+            }
+            cover_field_mappings = {
+                rid for rid, mapping in by_id.items()
+                if "approved_cover_field" in mapping.get("serializations", [])
+            }
+            if (unit_ledger.get("approved_cover_field_supplement") != expected_cover_field_policy
+                    or cover_field_mappings != FRONTMATTER_COVER_FIELD_IDS
+                    or (presentation_authorization or {}).get("approved_cover_field_supplement", {}).get("scope", {}).get("unit") != "pretext"):
+                report("invalid_cover_field_supplement", uid,
+                       "Cover-field ledger must map exactly the two source IDs in the validated supplement")
         document_order_scope = (presentation_authorization or {}).get("approved_document_reordering", {}).get("scope", {})
         scoped_document_order_ids = {
             source_id
@@ -3492,14 +3882,19 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         if expected_document_order_ids or document_order_ids or "document_reordering_authorization" in unit_ledger:
             try:
                 policy = unit_ledger.get("document_reordering_authorization")
+                mapped_order_ids = expected_document_order_ids - replaced_source_ids
                 expected_policy = {
                     "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
                     "source_ids": sorted(expected_document_order_ids),
                 }
+                replacement_policy = {
+                    "authorization_evidence": DOCUMENT_ORDER_AUTHORIZATION,
+                    "source_ids": sorted(mapped_order_ids),
+                }
                 if (presentation_authorization is None
                         or "approved_document_reordering" not in presentation_authorization
-                        or policy != expected_policy
-                        or document_order_ids != expected_document_order_ids):
+                        or policy not in (expected_policy, replacement_policy)
+                        or document_order_ids != mapped_order_ids):
                     raise ValueError("Document-order ledger must cover exactly the authorized source IDs in this unit")
                 report("approved_document_order_review_required", uid,
                        "Heading/caption renumbering is source-bound to user approval; final document-order review remains pending",
@@ -3852,6 +4247,14 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         text_spans = []
         for rid in source_ids:
             if rid not in by_id:
+                if rid in replaced_source_ids:
+                    facts["authorized_omitted_source_records"] += 1
+                    facts.setdefault("authorized_source_omissions", []).append({
+                        "source_id": rid,
+                        "authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                        "reason": "user-authorized replacement figure; source record remains in immutable ODT and is not represented as extracted content",
+                    })
+                    continue
                 report("missing_element", uid, "Source textual element has no target mapping", rid)
                 continue
             if rid not in actual:
@@ -3984,6 +4387,14 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                     facts["inline_tab_layout_records_matched"] += 1
                 if "reference_paragraph_layout" in serializations:
                     facts["reference_paragraph_layout_records_matched"] += 1
+        for omitted_id in sorted(replaced_source_ids - set(source_ids)):
+            if omitted_id in records:
+                facts["authorized_omitted_source_records"] += 1
+                facts.setdefault("authorized_source_omissions", []).append({
+                    "source_id": omitted_id,
+                    "authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                    "reason": "user-authorized replacement figure; source record remains in immutable ODT and is not represented as extracted content",
+                })
         projected_source_order, source_order_error = _project_source_text_order(uid, source_ids, records)
         if source_order_error:
             report("unverified_embedded_source_order", uid, source_order_error, "text-p-0961")
@@ -4114,7 +4525,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             if count != 1:
                 report("duplicate_asset_mapping", uid, "Asset occurrence mapped more than once", rid)
         asset_by_occurrence = {item.get("source_id"): item for item in asset_maps}
-        expected_images = {occurrence: asset for asset in assets.values() for occurrence in asset.get("occurrence_ids", []) if occurrence in allowed_ids}
+        expected_images = {
+            occurrence: asset for asset in assets.values()
+            for occurrence in asset.get("occurrence_ids", [])
+            if occurrence in allowed_ids and occurrence not in replaced_source_ids
+        }
         for rid, asset in expected_images.items():
             mapping = asset_by_occurrence.get(rid)
             if mapping is None or rid not in actual:
@@ -4124,7 +4539,13 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                 image_path = safe_path(mapping.get("target_file"))
                 digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
                 if digest != asset["sha256"]:
-                    report("image_hash_changed", uid, "Actual image differs from embedded original", rid)
+                    replacement = None
+                    if (repo / presentation_reconciliation.DIAGRAM_AUTHORIZATION).is_file():
+                        replacement = presentation_reconciliation.authorized_asset(
+                            repo, uid, str(image_path.relative_to(repo)), digest,
+                        )
+                    if replacement is None:
+                        report("image_hash_changed", uid, "Actual image differs from embedded original and has no exact user-authorized replacement hash", rid)
                 tokens = [token for token in commands(actual[rid][3]) if token.name in {"includegraphics", "memorialfigure", "memorialfigurelinked"} and token.args]
                 if len(tokens) != 1:
                     raise ValueError("Image interval must contain exactly one includegraphics")
@@ -4141,7 +4562,11 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         if (uid, rid) == (AGES_IV_LINKED_FIGURE["unit_id"], AGES_IV_LINKED_FIGURE["image_id"]):
                             raise ValueError("ODF links this figure itself; use the linked-figure macro to preserve that association")
                     if token.args[3] != "Fonte: pendente de identificação":
-                        raise ValueError("Unknown image source must remain explicitly pending")
+                        source_authorization = presentation_reconciliation.authorized_source(
+                            repo, token.args[2], token.args[3],
+                        )
+                        if source_authorization is None:
+                            raise ValueError("Unknown image source must remain explicitly pending or match an exact 2026-11-05 source authorization")
                     if not re.fullmatch(r"(?:0?\.\d+|1(?:\.0+)?)", token.args[4]) or not 0 < float(token.args[4]) <= 1:
                         raise ValueError("Invalid figure width fraction")
                     if not re.fullmatch(r"[A-Za-z0-9:._-]+", token.args[2]) or token.args[2] in figure_labels:
@@ -4280,14 +4705,26 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                                 or inline_adjustment.get("visible_text_unchanged") is not True):
                             raise ValueError("Supplemental inline emphasis adjustment differs from its exact source-bound approval")
                         target_markup = inline_adjustment["target_markup"]
+                    if content_id == "user-ages-iv-sprint-3-gantt-source" and (repo / presentation_reconciliation.FIGURE_SOURCE_SUPPLEMENT).exists():
+                        target_markup = "Fonte: Eduardo Colla De Bastiani, 2026."
+                        if presentation_reconciliation.authorized_source(repo, "ages-iv:sprint3:gantt", target_markup) is None:
+                            raise ValueError("Gantt source supplement is invalid")
+                        expected_text, _ = _parse_user_supplied_markup(target_markup)
                     expected_target_text, expected_formatting = _parse_user_supplied_markup(target_markup)
                     figure_caption_adjustment = None
                     figure_spec = followup.get("figure_insertion", {})
                     if content_id == figure_spec.get("caption_content_id"):
                         figure_caption_adjustment = figure_spec
                         target_markup = figure_caption_adjustment["caption_target_markup"]
+                        # The 29/10 Sprint 3 approval records the supplied figure
+                        # as Figure 32. The separately pinned 05/11 global
+                        # renumbering is applied after that presentation overlay.
+                        final_gantt_number = presentation_reconciliation.sprint3_gantt_number(repo)
+                        target_markup = target_markup.replace("Figura X", f"Figura {final_gantt_number}", 1)
+                        target_markup = target_markup.replace("Figura 32", f"Figura {final_gantt_number}", 1)
                         expected_target_text, expected_formatting = _parse_user_supplied_markup(target_markup)
                         expected_text = expected_text.replace("Figura X", "Figura 32", 1)
+                        expected_text = expected_text.replace("Figura 32", f"Figura {final_gantt_number}", 1)
                     if expected_text != expected_target_text:
                         raise ValueError(f"Approved target styling changes visible text for {content_id}")
                     if set(mapping) != {"content_id", "target_file", "start_byte", "end_byte", "target_sha256"} or mapping.get("content_id") != content_id:
@@ -4331,7 +4768,9 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                             "kind": "user_authorized_figure_placeholder_numbering",
                             "content_id": content_id,
                             "source_text": "Figura X",
-                            "displayed_text": "Figura 32",
+                            "displayed_text": f"Figura {final_gantt_number}",
+                            "prior_displayed_text": "Figura 32",
+                            "numbering_authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION if final_gantt_number != 32 else None,
                             "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
                         })
                     derived_spans.setdefault(path, []).append((start, end))
@@ -4357,14 +4796,64 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             "chapter-02-text-h-0010": ("text-h-0010", "ages-i-architecture", "Arquitetura utilizada ", "Diagrama de arquitetura não incorporado ao ODT; preenchimento posterior."),
             "chapter-04-text-h-0043": ("text-h-0043", "ages-ii-database", "4.2.2 Banco de dados utilizado", "Diagrama do banco de dados ausente no ODT; preenchimento posterior."),
         }
+        for figure_spec in user_diagram_specs:
+            try:
+                image_path = safe_path(figure_spec["destination"])
+                if hashlib.sha256(image_path.read_bytes()).hexdigest() != figure_spec["sha256"]:
+                    raise ValueError("User diagram bytes differ from the pinned authorization hash")
+                target_path = safe_path(unit_ledger.get("tex_path"))
+                if target_path.relative_to(repo).as_posix() != figure_spec["target_file"]:
+                    raise ValueError("User diagram is outside its exact authorized unit file")
+                target_text = target_path.read_text(encoding="utf-8")
+                macros = [token for token in commands(strip_comments(target_text)) if token.name == "memorialfigure"]
+                if len(macros) != 1:
+                    raise ValueError("Authorized diagram must use exactly one memorialfigure macro")
+                token = macros[0]
+                if (token.starred or token.optionals or len(token.args) != 5
+                        or token.args[2] != figure_spec["label"]
+                        or displayed_text(token.args[1]) != f"Figura {figure_spec['figure']} – {figure_spec['caption']}"
+                        or token.args[4] != "0.92"):
+                    raise ValueError("User diagram label, caption, number, or width differs from the exact authorization")
+                target_asset = (compilation_root / token.args[0]).resolve()
+                if target_asset != image_path:
+                    raise ValueError("User diagram TeX path differs from its authorized asset path")
+                if presentation_reconciliation.authorized_source(repo, token.args[2], token.args[3]) is None:
+                    raise ValueError("User diagram source markup differs from the effective figure-source authorization")
+                if figure_spec.get("source_record_id"):
+                    original_asset = next((item for item in assets.values()
+                                           if figure_spec["source_record_id"] in item.get("occurrence_ids", [])), None)
+                    if original_asset is None:
+                        raise ValueError("Replaced ODT image is not retained at its authorized original path")
+                    original_path = safe_path(figure_spec["source_asset"])
+                    if hashlib.sha256(original_path.read_bytes()).hexdigest() != original_asset.get("sha256"):
+                        raise ValueError("Replaced ODT image bytes have changed")
+                start = len(target_text[:token.start].encode("utf-8"))
+                end = len(target_text[:token.end].encode("utf-8"))
+                derived_spans.setdefault(target_path, []).append((start, end))
+                facts["images_checked"] += 1
+                facts["user_supplied_content_checked"].append({
+                    "unit_id": uid,
+                    "authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                    "asset_path": figure_spec["destination"],
+                    "asset_sha256": figure_spec["sha256"],
+                    "figure": figure_spec["figure"],
+                    "source_is_odt": False,
+                    "source_status": presentation_reconciliation.SOURCE_STATUS,
+                })
+            except (ValueError, OSError, KeyError, TypeError, UnicodeError, StopIteration) as exc:
+                report("invalid_user_figure", uid, str(exc), path=figure_spec.get("target_file"))
         apparatus_items = unit_ledger.get("approved_apparatus", [])
         expected_apparatus_count = 1 if uid == "ages-iv-sprint-3" else 1
-        if uid in placeholder_specs and len(apparatus_items) != expected_apparatus_count:
+        if uid in placeholder_specs and not user_diagram_specs and len(apparatus_items) != expected_apparatus_count:
             report("missing_authorized_placeholder", uid, "Missing-material unit requires its exact explicitly authorized provisional apparatus")
         centered_source_sides = []
         figure_nopagebreak_anchors = []
         real_user_figure_count = 0
         for apparatus in apparatus_items:
+            if apparatus.get("kind") == "diagram_placeholder" and user_diagram_specs:
+                # A hash/path/caption/source-checked user diagram supersedes this
+                # now-stale placeholder interval; it adds no ODT source record.
+                continue
             if apparatus.get("kind") == "user_supplied_figure":
                 try:
                     expected_fields = {
@@ -4392,7 +4881,21 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         raise ValueError("Gantt image must use exactly one standardized memorialfigure command")
                     asset_spec = figure_spec["asset"]
                     expected_source_markup = figure_spec["source_target_markup"]
+                    if (repo / presentation_reconciliation.FIGURE_SOURCE_SUPPLEMENT).exists():
+                        expected_source_markup = "Fonte: Eduardo Colla De Bastiani, 2026."
+                        if presentation_reconciliation.authorized_source(repo, figure_spec["label"], expected_source_markup) is None:
+                            raise ValueError("Gantt source supplement is invalid")
                     expected_caption_text, expected_caption_formatting = _parse_user_supplied_markup(figure_spec["caption_target_markup"])
+                    final_gantt_number = presentation_reconciliation.sprint3_gantt_number(repo)
+                    expected_caption_text = expected_caption_text.replace("Figura X", f"Figura {final_gantt_number}", 1).replace(
+                        "Figura 32", f"Figura {final_gantt_number}", 1,
+                    )
+                    expected_caption_formatting = [
+                        (kind, text.replace("Figura X", f"Figura {final_gantt_number}", 1).replace(
+                            "Figura 32", f"Figura {final_gantt_number}", 1,
+                        ))
+                        for kind, text in expected_caption_formatting
+                    ]
                     caption_arg = tokens[0].args[1]
                     caption_text = displayed_text(caption_arg)
                     caption_formatting = []
@@ -4410,7 +4913,7 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                             or caption_text != expected_arguments[1]
                             or caption_formatting != expected_caption_formatting
                             or tokens[0].args[2:] != expected_arguments[2:]):
-                        raise ValueError("Gantt image, Figure 32 caption, source line, label or scale differs from the exact approved display")
+                        raise ValueError(f"Gantt image, Figure {final_gantt_number} caption, source line, label or scale differs from the exact approved display")
                     if hashlib.sha256((repo / asset_spec["target_path"]).read_bytes()).hexdigest() != asset_spec["sha256"]:
                         raise ValueError("Gantt PNG bytes no longer match the directly supplied asset hash")
                     expected_asset_map = [{
@@ -4444,7 +4947,9 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                         "sha256": asset_spec["sha256"], "format": "PNG",
                         "dimensions_px": [asset_spec["width_px"], asset_spec["height_px"]],
                         "authorization_evidence": AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION,
-                        "figure_number": 32,
+                        "figure_number": final_gantt_number,
+                        "source_approved_figure_number": 32,
+                        "numbering_authorization_evidence": presentation_reconciliation.DIAGRAM_AUTHORIZATION if final_gantt_number != 32 else None,
                     })
                 except (ValueError, OSError, KeyError, TypeError, UnicodeError, UnsupportedSerialization) as exc:
                     report("invalid_user_supplied_figure", uid, str(exc))
@@ -4583,13 +5088,13 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
                 report("invalid_approved_apparatus", uid, str(exc))
         if uid == "ages-iv-sprint-3" and real_user_figure_count == 1 and (centered_source_sides or figure_nopagebreak_anchors):
-            report("invalid_approved_apparatus", uid, "Real Figure 32 must replace the provisional centered-source and keep-with-next apparatus")
+            report("invalid_approved_apparatus", uid, "Real Sprint 3 Gantt figure must replace the provisional centered-source and keep-with-next apparatus")
         if uid == "ages-iv-sprint-3" and real_user_figure_count == 0 and sorted(centered_source_sides) != ["after", "before"]:
             report("invalid_approved_apparatus", uid, "Sprint 3 placeholder source line must have exactly one approved centered wrapper before and after")
         if uid == "ages-iv-sprint-3" and real_user_figure_count == 0 and sorted(figure_nopagebreak_anchors) != ["ages-iv-sprint-3-gantt", "user-ages-iv-sprint-3-gantt-caption"]:
             report("invalid_approved_apparatus", uid, "Sprint 3 caption and placeholder must each have one approved keep-with-next control")
         if uid == "ages-iv-sprint-3" and real_user_figure_count != 1:
-            report("missing_authorized_user_figure", uid, "Sprint 3 must contain exactly one hash-verified user-supplied Figure 32")
+            report("missing_authorized_user_figure", uid, "Sprint 3 must contain exactly one hash-verified user-supplied Gantt figure")
         for path in file_order:
             target_text = path.read_text(encoding="utf-8")
             target_tokens = list(commands(target_text))
@@ -4736,6 +5241,12 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
                            "The two frontmatter page breaks must match the exact positions authorized after the summary placeholder and after the siglas input.",
                            path=str(path.relative_to(repo)))
             data = bytearray(path.read_bytes())
+            if url_projection and path == safe_path(unit_ledger.get("tex_path")):
+                try:
+                    for start, end in url_reconciliation.layout_group_spans(repo, uid, bytes(data)):
+                        data[start:end] = b" " * (end - start)
+                except (OSError, ValueError, KeyError, UnicodeError) as exc:
+                    report("invalid_url_layout", uid, str(exc))
             for rid in printable_ids:
                 if rid in actual and actual[rid][0] == path:
                     _, start, end, _ = actual[rid]
@@ -4798,4 +5309,8 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
         status = "partial"
     else:
         status = "pass"
+    for item in facts["approved_presentation_transformations"]:
+        if item.get("source_id") in superseded_url_ids and "displayed" in item:
+            item["previous_displayed"] = item.pop("displayed")
+            item["status"] = "historical_projection_superseded_by_url_presentation"
     return {"status": status, "findings": findings, "facts": facts, "differences": differences}

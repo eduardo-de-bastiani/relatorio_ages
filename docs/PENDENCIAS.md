@@ -140,13 +140,13 @@ A validação `inventory --check` passou sem diferenças; SHA-256 do ODT permane
 
 | ID | Localização/evidência | Consequência/gravidade | Ação | Estado/verificação |
 |---|---|---|---|---|
-| FM01 | Capa, campos de edição e ano (`text-p-0018`, `text-p-0033`) | A capa ainda contém “AGES I,II, III ou IV” e “Ano”; média | Preservados como no modelo, sem escolher edição ou inventar ano; usuário decide o texto final | PENDING humano; visível na capa de `build/document/main.pdf` |
+| FM01 | Capa, campos de edição e ano (`text-p-0018`, `text-p-0033`) | Campos preenchidos por decisão suplementar da professora; revisão visual humana ainda pendente | `AGES IV` e `2026`, rastreados em `migration/approvals/frontmatter-cover-fields-2026-11-10.json`; aprovação histórica de 17/10 permanece intacta | Transformação lexical validada; PENDING inspeção/aprovação humana da capa renderizada |
 | FM02 | Dedicatória, Agradecimentos, Epígrafe e Resumo | Conteúdo autoral ainda não redigido; média | Manter somente títulos e `[Resumo pendente de redação]`, como autorizado; preencher em etapa posterior | PENDING de redação do autor; não impede revisão estrutural |
-| FM03 | `build/document/main.log` linhas 1167 e 1171: dois avisos `hyperref` “Suppressing empty link on input line 12” ao incluir `chapter-06-text-h-0109.tex` e `chapter-06-text-h-0110.tex`, ambos preservados sem alteração | Gate de build de revisão falha mesmo com retorno do compilador 0; média | Investigar os bookmarks vazios dos títulos de origem sem alterar os arquivos de conteúdo AGES autorizados; manter o aviso visível no relatório | PENDING; build atual é somente para revisão; `build/document/report.json` registra `status: fail`, retorno 0 e dois avisos |
+| FM03 | Dois `\href` sem texto de AGES IV (`text-a-0148`, `text-a-0150`) geravam avisos `hyperref` | Destinos/IDs agora preservados em comentários e ledgers; links visíveis continuam no PDF | Correção autorizada e rastreada em `migration/approvals/url-presentation-2026-11-11.json`; ver diagnóstico atualizado | RESOLVED técnico em 11/11/2026: zero avisos no build final; aprovação humana global PENDING |
 | FM04 | Páginas pré-textuais e início da trajetória | Ainda falta revisão humana da composição, hierarquia e aceitação da ordem | Conferir o PDF renderizado e a transição entre sumário, trajetória e capítulo AGES I | PENDING visual e aprovação humana |
 | FM05 | Lista de siglas, IDs `text-p-0143`–`text-p-0181` | A transcrição inclui 39 entradas; siglas sem uso no escopo atual ainda podem permanecer | Manter ordem e conteúdo do ODT; eventual revisão de pertinência fica para fase editorial | Cobertura lexical automatizada PASS; pertinência não revisada |
 | FM06 | `build/document/compiler.txt:25–26`: perfil ICC v4.3 declarado não suportado e não incorporado | A reprodução de cor em outro leitor ou impressão pode divergir; baixa | Manter assets originais e registrar aviso; se necessário, avaliar leitor/impressão com o autor | PENDING técnico; relatório do build não mostra este item entre os dois avisos Hyperref, mas a saída do compilador o registra |
-| FM07 | `build/document/compiler.txt:17–24`: oito avisos `Overfull \hbox` agregados; `build/document/main.log` final não contém `Overfull`/`Underfull` | A saída agregada registra problemas de composição em arquivos de edições já integradas; a auditoria visual anterior usa um PDF mais antigo | Conferir páginas do PDF corrente se o usuário detectar transbordamentos; não alterar o conteúdo desta ampliação | PENDING para revisão visual global; inspeção desta etapa cobriu páginas 1–14 |
+| FM07 | 17 excessos históricos de 1,41573 pt nos campos de números de página de três dígitos de sumário/lista de figuras | Campo ampliado para `2em`, mantendo borda direita; auditor confirmou alinhamento nas páginas 7 e 12 | Correção em `util/style.tex`; ver `docs/DIAGNOSTICO_BUILD_2026-11-11.md` | RESOLVED técnico em 11/11/2026: build de revisão PASS, sem `OVERFULL`/`UNDERFULL`; aprovação humana global PENDING |
 | FM08 | Capa do ODT; inspeção anterior não conseguiu renderizar diretamente o arquivo pelo LibreOffice | A transcrição dos textos e a aplicação dos estilos foram verificadas estruturalmente, mas a equivalência visual exata com a página ODT não foi comparada | Autor revisar a capa lado a lado com o ODT original e apontar diferenças de alinhamento/composição, se houver | PENDING de comparação visual humana; o ODT original permanece intacto |
 | FM09 | PDF atual, página 7: a Lista de Ilustrações termina com apenas “Figura 34 – Quadro Gerencial...” no alto da página | A última entrada isolada deixa grande área vazia; gravidade baixa, apenas apresentação | Avaliar se o usuário aceita essa quebra ou autoriza ajuste localizado no espaçamento da lista, sem alterar captions nem conteúdo | PENDING de preferência visual humana; a lista segue a configuração global e mantém o conteúdo integral |
 
@@ -198,7 +198,7 @@ O autor indicou “Acervo pessoal do autor.” para as Figuras 7 e 15 e forneceu
 
 ## Fontes das Figuras 15–35 (05/11/2026)
 
-O autor confirmou que elaborou a Figura 15 e solicitou “Fonte: elaboração própria.” para as Figuras 33–35; as indicações anteriores de acervo para a Figura 15 são históricas. Os links fornecidos para as Figuras 16–32 foram inseridos sem acesso remoto, portanto sua disponibilidade e autoria não foram verificadas. A Figura 35 já continha a fonte confirmada e foi mantida. Ver `migration/approvals/ages-iii-iv-figure-sources-2026-11-05.json`.
+O autor confirmou que elaborou a Figura 15 e solicitou originalmente “Fonte: elaboração própria.” para as Figuras 33–35; as indicações anteriores de acervo para a Figura 15 são históricas. Em 11/11/2026, determinou as fontes completas com nome e ano: Figura 15, “Fonte: Eduardo Colla De Bastiani, 2024.”; Figuras 33–35, “Fonte: Eduardo Colla De Bastiani, 2026.”. Essa substituição está em `migration/approvals/figure-source-identification-2026-11-11.json` e foi conferida no PDF de revisão; aprovação humana final ainda PENDING. Os links fornecidos para as Figuras 16–32 foram inseridos sem acesso remoto, portanto sua disponibilidade e autoria não foram verificadas. Ver também `migration/approvals/ages-iii-iv-figure-sources-2026-11-05.json` como registro histórico.
 
 
 ## Fontes Hoortech e revisão bibliográfica (05/11/2026)
@@ -214,3 +214,31 @@ O autor definiu que páginas e serviços diferentes devem ser preservados quando
 ## Data mais recente para referências consolidadas (05/11/2026)
 
 O usuário determinou usar o acesso mais recente entre registros da mesma página quando houver consolidação. As datas propostas e as seis chaves potencialmente removíveis estão na atualização de `docs/REVISAO_REFERENCIAS_2026-11-05.md`. Nenhuma data ou referência foi alterada.
+
+
+## Correção bibliográfica aplicada (05/11/2026)
+
+As duplicatas de URL autorizadas foram consolidadas e a regra anterior de usar ano de acesso como ano da fonte foi revogada. Há 44 entradas sem ano comprovado e quatro sem acesso comprovado; `[data pendente]` é provisório. O estilo ainda não representa adequadamente anos estimados e os testes/contratos históricos exigem reconciliação. Detalhes, limites e resultados em `docs/CORRECAO_BIBLIOGRAFICA_2026-11-05.md`.
+
+
+## Pesquisa de datas e diagnóstico do harness (06/11/2026)
+
+O usuário autorizou acesso às fontes para pesquisa dos anos documentais. Dez agentes pesquisaram as 44 entradas sem ano; relatório consolidado e dez lotes em `docs/PESQUISA_DATAS_2026-11-06.md`. As datas de atualização, copyright e versão encontradas não foram automaticamente convertidas em publicação; o `.bib` permanece sem alteração adicional. O diagnóstico comparativo dos 35/10 resultados, inclusive oito falhas reproduzidas no commit anterior, está em `docs/DIAGNOSTICO_TESTES_2026-11-06.md`. Não há nova aprovação dos testes ou de conformidade ABNT.
+
+
+## Preenchimento aproximado e testes corrigidos (06/11/2026)
+
+O usuário autorizou 44 anos aproximados, registrados em `migration/evidence/references/estimated-years-2026-11-06.json`; a prévia tem zero `[data pendente]`. A suíte completa passou com 213 testes e os resultados anteriores 35/10 foram superados. Permanecem quatro acessos sem comprovação, evidência de publicação original insuficiente para as estimativas, 19 avisos de compilação e evidência de revisão visual da Sprint3 desatualizada. Detalhes na atualização final de `docs/CORRECAO_BIBLIOGRAFICA_2026-11-05.md`.
+
+## Revisão bibliográfica posterior — 06/11/2026
+
+- PENDING: 44 anos sem evidência adequada; `[data pendente]` no PDF é provisório e precisa de tratamento fundamentado antes da entrega final.
+- PENDING: consultas legíveis às páginas Excalidraw e Graph API; a Graph API geral e o endereço original Explorer não foram equiparados.
+- PENDING: conferir pertinência das fontes por afirmação, versões históricas, autoria e necessidade das citações, sem remover fontes que sustentem conceitos ou fatos.
+- Ver `docs/REVISAO_BIBLIOGRAFICA_2026-11-06.md` para acesso confirmado à RFC 9110 e à página inicial do Figma.
+
+### Estado após confirmação do autor em 06/11/2026
+
+Os 44 anos provisoriamente ausentes foram preenchidos conforme a confirmação do autor; as 49 datas de acesso histórico estão marcadas como estimativas. Permanece PENDING a validação independente das datas e versões de páginas móveis e a pertinência da Graph API geral em relação à página Explorer do original. A confirmação não constitui prova da existência da versão de 2026 em 2024. As cinco publicações datadas independentemente mantêm seus anos próprios.
+
+Atualização posterior: por decisão do autor, as 49 estimativas foram redistribuídas sem repetição e sua indicação foi removida do PDF. Elas continuam sem comprovação de dia exato, com rastreabilidade em `migration/evidence/references/estimated-access-varied-2026-11-06.json`.

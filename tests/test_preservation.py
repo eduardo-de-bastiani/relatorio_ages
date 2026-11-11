@@ -64,6 +64,8 @@ from scripts.migration_harness.preservation import (
     AGES_I_II_TECHNICAL_CITATIONS,
     AGES_I_II_TECHNICAL_CITATION_KEYS,
     _load_ages_i_ii_formatting_authorization,
+    _verify_citation_dedup_authorization,
+    CITATION_DEDUP_AUTHORIZATION,
     _citation_keys_in_fragment,
     _verify_ages_iii_bibliography_entries,
     _verify_ages_iv_bibliography_entries,
@@ -75,6 +77,8 @@ from scripts.migration_harness.preservation import (
     _project_source_text_order,
     _verify_linked_figure_source,
 )
+from scripts.migration_harness import bibliography_reconciliation
+from scripts.migration_harness import presentation_reconciliation
 
 
 class PreservationTests(unittest.TestCase):
@@ -104,6 +108,31 @@ class PreservationTests(unittest.TestCase):
     def codes(self, report):
         return {item["code"] for item in report["findings"]}
 
+    def test_same_section_citation_deduplication_is_exact_and_source_bound(self):
+        repo = Path(__file__).resolve().parents[1]
+        approval = json.loads((repo / CITATION_DEDUP_AUTHORIZATION).read_text(encoding="utf-8"))
+        for relative in (CITATION_DEDUP_AUTHORIZATION, "RELATORIO_ATUAL.odt", "migration/approvals/url-presentation-2026-11-11.json"):
+            target = self.root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((repo / relative).read_bytes())
+        for uid, spec in approval["units"].items():
+            target = self.root / spec["tex_path"]
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((repo / spec["tex_path"]).read_bytes())
+            self.assertTrue(_verify_citation_dedup_authorization(
+                self.root, uid, {"tex_path": spec["tex_path"]}
+            ))
+        first_uid, first_spec = next(iter(approval["units"].items()))
+        target = self.root / first_spec["tex_path"]
+        target.write_bytes(target.read_bytes() + b" ")
+        with self.assertRaises(ValueError):
+            _verify_citation_dedup_authorization(self.root, first_uid, {"tex_path": first_spec["tex_path"]})
+        target.write_bytes((repo / first_spec["tex_path"]).read_bytes())
+        contract = self.root / CITATION_DEDUP_AUTHORIZATION
+        contract.write_bytes(contract.read_bytes() + b" ")
+        with self.assertRaises(ValueError):
+            _verify_citation_dedup_authorization(self.root, first_uid, {"tex_path": first_spec["tex_path"]})
+
     def test_frontmatter_changes_are_source_bound_and_exactly_authorized(self):
         repo = Path(__file__).resolve().parents[1]
         authorization = _load_presentation_authorization(repo, "pretext")
@@ -122,6 +151,55 @@ class PreservationTests(unittest.TestCase):
                         source_id, spec["source_text"], spec["target_text"] + " altered", [kind], authorization,
                     )
 
+    def test_cover_field_supplement_supersedes_only_the_two_historical_placeholders(self):
+        repo = Path(__file__).resolve().parents[1]
+        historical_path = repo / "migration/approvals/ages-iv-frontmatter-authorization.json"
+        historical_hash = hashlib.sha256(historical_path.read_bytes()).hexdigest()
+        authorization = _load_presentation_authorization(repo, "pretext")
+        self.assertEqual(
+            authorization["approved_cover_field_supplement"]["historical_authorization"]["sha256"],
+            historical_hash,
+        )
+        fields = authorization["approved_cover_field_supplement"]["scope"]["fields"]
+        self.assertEqual(set(fields), {"text-p-0018", "text-p-0033"})
+        for source_id, spec in fields.items():
+            with self.subTest(source_id=source_id):
+                projected, evidence = _project_approved_presentation(
+                    source_id, spec["source_text"], spec["target_text"],
+                    ["approved_cover_field"], authorization,
+                )
+                self.assertEqual(projected, spec["source_text"])
+                self.assertEqual(evidence["authorization_evidence"], "migration/approvals/frontmatter-cover-fields-2026-11-10.json")
+                with self.assertRaisesRegex(UnsupportedSerialization, "Cover-field target"):
+                    _project_approved_presentation(
+                        source_id, spec["source_text"], spec["target_text"] + " forged",
+                        ["approved_cover_field"], authorization,
+                    )
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-p-0004", "AGES", "AGES IV",
+                ["approved_cover_field"], authorization,
+            )
+
+    def test_cover_field_supplement_fails_closed_when_changed_or_missing(self):
+        source_repo = Path(__file__).resolve().parents[1]
+        approvals = self.root / "migration/approvals"
+        approvals.mkdir(parents=True)
+        for name in (
+            "ages-iv-frontmatter-authorization.json",
+            "frontmatter-cover-fields-2026-11-10.json",
+        ):
+            (approvals / name).write_bytes((source_repo / "migration/approvals" / name).read_bytes())
+        path = approvals / "frontmatter-cover-fields-2026-11-10.json"
+        approval = json.loads(path.read_text(encoding="utf-8"))
+        approval["scope"]["fields"]["text-p-0033"]["target_text"] = "2025"
+        path.write_text(json.dumps(approval), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Cover-field supplement"):
+            _load_presentation_authorization(self.root, "pretext")
+        path.unlink()
+        with self.assertRaises(FileNotFoundError):
+            _load_presentation_authorization(self.root, "pretext")
+
     def test_document_reordering_uses_exact_source_bound_heading_caption_and_reference_targets(self):
         repo = Path(__file__).resolve().parents[1]
         authorization = _load_presentation_authorization(repo, "chapter-03-text-h-0023")
@@ -136,16 +214,24 @@ class PreservationTests(unittest.TestCase):
         ):
             with self.subTest(source_id=source_id):
                 entry = scope[table_name][source_id]
+                expected_display = entry["target_text"]
+                if table_name == "figure_caption_numbering":
+                    expected_display, _ = presentation_reconciliation.projected_caption(
+                        repo, entry["source_text"], entry["target_text"],
+                    )
                 projected, evidence = _project_approved_presentation(
-                    source_id, entry["source_text"], entry["target_text"],
+                    source_id, entry["source_text"], expected_display,
                     ["document_reordering_numbering"], authorization,
                 )
                 self.assertEqual(projected, entry["source_text"])
-                self.assertEqual(evidence["displayed"], entry["target_text"])
-                self.assertEqual(evidence["authorization_evidence"], DOCUMENT_ORDER_AUTHORIZATION)
+                self.assertEqual(evidence["displayed"], expected_display)
+                if table_name == "figure_caption_numbering":
+                    self.assertEqual(evidence["figure_number_reconciliation"]["authorization_evidence"], presentation_reconciliation.DIAGRAM_AUTHORIZATION)
+                else:
+                    self.assertEqual(evidence["authorization_evidence"], DOCUMENT_ORDER_AUTHORIZATION)
                 with self.assertRaises(UnsupportedSerialization):
                     _project_approved_presentation(
-                        source_id, entry["source_text"], entry["target_text"] + " alterado",
+                        source_id, entry["source_text"], expected_display + " alterado",
                         ["document_reordering_numbering"], authorization,
                     )
 
@@ -193,17 +279,20 @@ class PreservationTests(unittest.TestCase):
             with self.subTest(source_id=update["source_id"]):
                 unit_auth = _load_presentation_authorization(repo, update["unit_id"])
                 spec = unit_auth["approved_document_reordering"]["scope"]["figure_caption_numbering"][update["source_id"]]
+                final_target, _ = presentation_reconciliation.projected_caption(
+                    repo, spec["source_text"], update["target"],
+                )
                 projected, evidence = _project_approved_presentation(
-                    update["source_id"], spec["source_text"], update["target"],
+                    update["source_id"], spec["source_text"], final_target,
                     ["document_reordering_numbering"], unit_auth,
                 )
                 self.assertEqual(projected, spec["source_text"])
-                self.assertEqual(evidence["displayed"], update["target"])
+                self.assertEqual(evidence["displayed"], final_target)
                 self.assertEqual(evidence["previous_displayed"], update["previous_target"])
                 self.assertEqual(evidence["supplemental_authorization_evidence"], AGES_IV_SPRINT3_FIGURE_DISPLAY_AUTHORIZATION)
                 with self.assertRaises(UnsupportedSerialization):
                     _project_approved_presentation(
-                        update["source_id"], spec["source_text"], update["previous_target"],
+                        update["source_id"], spec["source_text"], update["target"],
                         ["document_reordering_numbering"], unit_auth,
                     )
 
@@ -220,7 +309,13 @@ class PreservationTests(unittest.TestCase):
                 )
                 self.assertEqual(projected, spec["source_text"])
                 self.assertEqual(evidence["displayed"], update["target"])
-                self.assertTrue(evidence["body_heading_unchanged"])
+                if update["source_id"] in presentation_reconciliation.TITLE_CORRECTIONS:
+                    self.assertEqual(
+                        evidence["body_title_authorization_evidence"],
+                        presentation_reconciliation.TITLE_CORRECTION_AUTHORIZATION,
+                    )
+                else:
+                    self.assertTrue(evidence["body_heading_unchanged"])
                 with self.assertRaises(UnsupportedSerialization):
                     _project_approved_toc_entry(
                         update["source_id"], spec["source_text"], update["target"] + " alterado",
@@ -260,15 +355,19 @@ class PreservationTests(unittest.TestCase):
         self.assertTrue(_is_authorized_ages_iv_presentation(authorization, "text-p-1450"))
         self.assertFalse(_is_authorized_ages_iv_presentation(authorization, "text-p-1475"))
         caption = "Figure 31: Estrutura Analítica do Projeto (EAP) - AGES IV"
+        final_caption, _ = presentation_reconciliation.projected_caption(
+            repo, caption, "Figura 31 – Estrutura Analítica do Projeto (EAP) - AGES IV",
+        )
         projected, evidence = _project_approved_presentation(
-            "text-p-1450", caption, "Figura 31 – Estrutura Analítica do Projeto (EAP) - AGES IV",
+            "text-p-1450", caption, final_caption,
             ["abnt_figure_caption"], authorization,
         )
         self.assertEqual(projected, caption)
-        self.assertEqual(evidence["kind"], "abnt_figure_caption_label")
+        self.assertEqual(evidence["kind"], "user_authorized_figure_number_reconciliation")
+        self.assertEqual(evidence["figure_number"], 34)
         with self.assertRaises(UnsupportedSerialization):
             _project_approved_presentation(
-                "text-p-1450", caption, "Figura 31 – Estrutura alterada - AGES IV",
+                "text-p-1450", caption, "Figura 34 – Estrutura alterada - AGES IV",
                 ["abnt_figure_caption"], authorization,
             )
         chapter7_authorization = _load_presentation_authorization(repo, AGES_IV_TITLE_ONLY_UNIT)
@@ -335,9 +434,12 @@ class PreservationTests(unittest.TestCase):
     def test_ages_ii_authorized_citation_keys_exist_in_integrated_bibliography(self):
         repo = Path(__file__).resolve().parents[1]
         bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
+        reconciliation = bibliography_reconciliation.verify(repo, bibliography.encode("utf-8"))
+        self.assertEqual(reconciliation["result_entries"], 49)
         for key in AGES_II_TECHNOLOGY_REFERENCE_KEYS.values():
             with self.subTest(key=key):
-                self.assertIn(f"@online{{{key},", bibliography)
+                effective_key = bibliography_reconciliation.CONSOLIDATIONS.get(key, key)
+                self.assertIn(f"@online{{{effective_key},", bibliography)
 
     def test_ages_iii_bibliography_matches_curator_after_tex_literal_unescaping(self):
         repo = Path(__file__).resolve().parents[1]
@@ -349,18 +451,20 @@ class PreservationTests(unittest.TestCase):
         self.assertIn(r"Parking \& Access Control", bibliography)
         self.assertEqual(evidence["consultation_date"], "2026-10-16")
         self.assertNotIn("user_assigned_bibliographic_access_date_convention", evidence["policy"])
-        _verify_ages_iii_bibliography_entries(bibliography, evidence, records)
+        bibliography_reconciliation.verify(repo, bibliography.encode("utf-8"))
+        _verify_ages_iii_bibliography_entries(bibliography, evidence, records, reconciliation_verified=True, repo=repo)
         thesis_entry = bibliography.split("@thesis{ages-iii-fielding-rest,", 1)[1].split("\n}", 1)[0]
         self.assertIn("date = {2000}", thesis_entry)
-        self.assertIn("urldate = {2026-10-16}", thesis_entry)
+        self.assertIn("urldate = {2026-05-22}", thesis_entry)
+        self.assertNotIn("note =", thesis_entry)
         self.assertNotIn("year =", thesis_entry)
         style = (repo / "relatorio_AGES_eduardo/util/style.tex").read_text(encoding="utf-8")
         self.assertIn(
-            r"\DeclareLabeldate[thesis]{\field{urldate}\field{date}\field{year}}",
+            r"\DeclareLabeldate[thesis]{\field{date}\field{year}\literal{nodate}}",
             style,
         )
 
-    def test_ages_iii_unknown_publication_date_must_not_become_citation_year(self):
+    def test_ages_iii_author_confirmed_year_remains_distinct_from_estimated_access_date(self):
         repo = Path(__file__).resolve().parents[1]
         evidence = json.loads((repo / "migration/evidence/references/ages-iii.json").read_text(encoding="utf-8"))
         manifest = json.loads((repo / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
@@ -371,11 +475,15 @@ class PreservationTests(unittest.TestCase):
         entry_end = bibliography.index("\n}", entry_start)
         entry = bibliography[entry_start:entry_end]
         self.assertNotRegex(entry, r"(?m)^\s*year\s*=")
-        self.assertNotRegex(entry, r"(?m)^\s*date\s*=")
+        self.assertRegex(entry, r"(?m)^\s*date\s*=\s*\{2026\}")
+        self.assertRegex(entry, r"(?m)^\s*urldate\s*=\s*\{2026-06-08\}")
+        self.assertNotRegex(entry, r"(?m)^\s*note\s*=")
+        historical = (repo / bibliography_reconciliation.RESULT_PATH).read_text(encoding="utf-8")
+        historical_entry = historical.split("@online{ages-iii-cloudfront,", 1)[1].split("\n}", 1)[0]
+        self.assertRegex(historical_entry, r"(?m)^\s*date\s*=\s*\{\d{4}\?\}")
         fabricated_publication_year = bibliography[:entry_end] + "\n  year = {2026}," + bibliography[entry_end:]
-        with patch("scripts.migration_harness.preservation.AGES_III_TECHNICAL_CITATION_KEYS", {"ages-iii-cloudfront"}):
-            with self.assertRaises(ValueError):
-                _verify_ages_iii_bibliography_entries(fabricated_publication_year, evidence, records)
+        with self.assertRaisesRegex(ValueError, "exact approved bibliography state"):
+            bibliography_reconciliation.verify(repo, fabricated_publication_year.encode("utf-8"))
 
     def test_legacy_ages_iii_technology_verifier_does_not_accept_prose_v2_ledger(self):
         # The latest scoped approval revokes the old single-paragraph/link
@@ -469,7 +577,7 @@ class PreservationTests(unittest.TestCase):
         bibliography = (repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib").read_text(encoding="utf-8")
         style = (repo / "relatorio_AGES_eduardo/util/style.tex").read_text(encoding="utf-8")
         self.assertIn("author = {{Figma}}", bibliography)
-        self.assertIn("author = {{Docker}}", bibliography)
+        self.assertIn("author = {{Docker, Inc.}}", bibliography)
         self.assertNotIn("author = {{FIGMA}}", bibliography)
         self.assertNotIn("author = {{DOCKER}}", bibliography)
         self.assertIn(r"style=abnt,repeatfields=true", style)
@@ -536,6 +644,7 @@ class PreservationTests(unittest.TestCase):
         rid = "text-p-0767"
         source = records[rid]["text"]
         target = authorization["approved_presentation_changes"]["figure_caption_labels"][rid]
+        target, _ = presentation_reconciliation.projected_caption(repo, source, target)
         projected, evidence = _project_approved_presentation(rid, source, target, ["abnt_figure_caption"], authorization)
         self.assertEqual(projected, source)
         self.assertEqual(evidence["displayed"], target)
@@ -729,7 +838,9 @@ class PreservationTests(unittest.TestCase):
         repo = Path(__file__).resolve().parents[1]
         authorization = _load_presentation_authorization(repo, "chapter-05-text-h-0075")
         source = "\tFigure 16: Foto do Time - AGES III"
-        displayed = "\tFigura 16 – Foto do Time - AGES III"
+        displayed, _ = presentation_reconciliation.projected_caption(
+            repo, source, "\tFigura 16 – Foto do Time - AGES III",
+        )
         projected, evidence = _project_approved_presentation(
             "text-p-1027", source, displayed, ["abnt_figure_caption"], authorization,
         )
@@ -887,13 +998,17 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(set(AGES_IV_CITATION_EVIDENCE), {
             key for unit in AGES_IV_TECHNICAL_CITATIONS.values() for keys in unit.values() for key in keys
         })
-        _verify_ages_iv_bibliography_entries(bibliography, evidence, records, supplemental_authorization)
+        bibliography_reconciliation.verify(repo, bibliography.encode("utf-8"))
+        _verify_ages_iv_bibliography_entries(
+            bibliography, evidence, records, supplemental_authorization,
+            reconciliation_verified=True, repo=repo,
+        )
         tampered_authorization = json.loads(json.dumps(supplemental_authorization))
         tampered_authorization["citations"]["ages-iv-app-store"]["verified_url"] = "https://example.invalid/"
         with self.assertRaises(ValueError):
-            _verify_ages_iv_bibliography_entries(bibliography, evidence, records, tampered_authorization)
+            _verify_ages_iv_bibliography_entries(bibliography, evidence, records, tampered_authorization, repo=repo)
         with self.assertRaises(ValueError):
-            _verify_ages_iv_bibliography_entries(bibliography, evidence, records, {})
+            _verify_ages_iv_bibliography_entries(bibliography, evidence, records, {}, repo=repo)
         for unit_map in AGES_IV_TECHNICAL_CITATIONS.values():
             for source_id, keys in unit_map.items():
                 terms = AGES_IV_CITATION_TERMS[source_id]
@@ -918,6 +1033,7 @@ class PreservationTests(unittest.TestCase):
         source_id = "text-p-1339"
         record = next(item for item in manifest["records"] if item["id"] == source_id)
         keys = AGES_IV_TECHNICAL_CITATIONS[unit_id][source_id]
+        keys = [bibliography_reconciliation.CONSOLIDATIONS.get(key, key) for key in keys]
         terms = AGES_IV_CITATION_TERMS[source_id]
         projected = record["text"]
         for term, key in reversed(list(zip(terms, keys))):
@@ -930,6 +1046,18 @@ class PreservationTests(unittest.TestCase):
                 "migration/approvals/ages-iv-supplemental-citations-authorization.json",
                 "migration/evidence/references/ages-iv.json",
                 "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+                bibliography_reconciliation.CONTRACT,
+                bibliography_reconciliation.SOURCE_PATH,
+                bibliography_reconciliation.RESULT_PATH,
+                bibliography_reconciliation.EVIDENCE_PATH,
+                bibliography_reconciliation.SUPPLEMENT_CONTRACT,
+                bibliography_reconciliation.SUPPLEMENT_RESULT_PATH,
+                bibliography_reconciliation.AUTHOR_CONTRACT,
+                bibliography_reconciliation.AUTHOR_RESULT_PATH,
+                bibliography_reconciliation.ESTIMATED_ACCESS_CONTRACT,
+                bibliography_reconciliation.ESTIMATED_ACCESS_RESULT_PATH,
+                bibliography_reconciliation.ESTIMATED_ACCESS_EVIDENCE_PATH,
+                "RELATORIO_ATUAL.odt",
             ):
                 destination = temp_root / relative
                 destination.parent.mkdir(parents=True, exist_ok=True)

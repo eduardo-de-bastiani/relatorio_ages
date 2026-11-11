@@ -1,5 +1,7 @@
 # Revisão de referências por documento — 05/11/2026
 
+**Estado posterior — 06/11/2026:** a consolidação das seis duplicatas foi aplicada. O usuário autorizou também 44 anos aproximados, que são escolhas editoriais sinalizadas por `?`, não datas de publicação comprovadas. Consulte o registro `migration/evidence/references/estimated-years-2026-11-06.json` e a atualização em `docs/CORRECAO_BIBLIOGRAFICA_2026-11-05.md`; as análises e propostas abaixo são históricas.
+
 Revisão local do arquivo `relatorio_AGES_eduardo/bibliografia/bibliografia.bib` e dos usos nos arquivos LaTeX, sem acessar os links. O critério pedido pelo autor é consolidar referências à mesma página e preservar fontes que apontam para páginas ou serviços diferentes e contribuam para afirmações diferentes. As 55 entradas existentes são citadas ou incluídas por `\nocite`.
 
 ## Candidatas por URL igual

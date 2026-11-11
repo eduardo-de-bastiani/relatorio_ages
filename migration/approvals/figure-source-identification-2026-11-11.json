@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_figure_source_identification",
+  "date": "2026-11-11",
+  "evidence": "Instrução explícita do usuário transmitida ao mantenedor pelo orquestrador nesta sessão.",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "scope": [
+    {
+      "unit_id": "ages-ii-sprint-4",
+      "figure": 15,
+      "source_id": "text-p-0962",
+      "label": "fig:ages-ii-sprint-4-presenca-digital",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex",
+      "before_markup": "Fonte: elaboração própria.",
+      "after_markup": "Fonte: Eduardo Colla De Bastiani, 2024.",
+      "before_markup_sha256": "24073d2cbb4a66b2b8c19acbb02621b2be02fa65ac66728ee8c2e3fb084bec61",
+      "after_markup_sha256": "50cf0fecd95df57622811fda2d3ab3d13b5ee8783a38c5bce69874d348458caf",
+      "before_file_sha256": "3ba0d2666a457241120db8d291dd4fa4da82cd80249043b0d42c73467a9b504c",
+      "after_file_sha256": "0e0b7cc810ee0228e7c96218234415bc6682b1aaef6ddf328084e1400ea87fe0"
+    },
+    {
+      "unit_id": "ages-iv-sprint-0",
+      "figure": 33,
+      "source_id": "draw-image-0033",
+      "label": "ages-iv:draw-image-0033",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-0.tex",
+      "before_markup": "Fonte: elaboração própria.",
+      "after_markup": "Fonte: Eduardo Colla De Bastiani, 2026.",
+      "before_markup_sha256": "24073d2cbb4a66b2b8c19acbb02621b2be02fa65ac66728ee8c2e3fb084bec61",
+      "after_markup_sha256": "09531df599865c1cd6ff33d423312175acbaf03cd922f17d0989c5f15056fca6",
+      "before_file_sha256": "d79eab48b3a5d828cba6ab546676713d0565ac6d04d8bf7f4328677a7c001f1e",
+      "after_file_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+    },
+    {
+      "unit_id": "ages-iv-sprint-0",
+      "figure": 34,
+      "source_id": "draw-image-0034",
+      "label": "ages-iv:draw-image-0034",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-0.tex",
+      "before_markup": "Fonte: elaboração própria.",
+      "after_markup": "Fonte: Eduardo Colla De Bastiani, 2026.",
+      "before_markup_sha256": "24073d2cbb4a66b2b8c19acbb02621b2be02fa65ac66728ee8c2e3fb084bec61",
+      "after_markup_sha256": "09531df599865c1cd6ff33d423312175acbaf03cd922f17d0989c5f15056fca6",
+      "before_file_sha256": "d79eab48b3a5d828cba6ab546676713d0565ac6d04d8bf7f4328677a7c001f1e",
+      "after_file_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+    },
+    {
+      "unit_id": "ages-iv-sprint-3",
+      "figure": 35,
+      "source_id": "user-ages-iv-sprint-3-gantt-source",
+      "label": "ages-iv:sprint3:gantt",
+      "target_file": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex",
+      "before_markup": "Fonte: elaboração própria.",
+      "after_markup": "Fonte: Eduardo Colla De Bastiani, 2026.",
+      "before_markup_sha256": "24073d2cbb4a66b2b8c19acbb02621b2be02fa65ac66728ee8c2e3fb084bec61",
+      "after_markup_sha256": "09531df599865c1cd6ff33d423312175acbaf03cd922f17d0989c5f15056fca6",
+      "before_file_sha256": "65125cb8bf27140023bfc169becbd92ee5f2cc63299c76b0f217f66f3a1e496c",
+      "after_file_sha256": "eb755c9deba98f0c83744078338418b398f4b603ed7fda1d9c918cd36c9ac64f"
+    }
+  ],
+  "human_review": "pending"
+}

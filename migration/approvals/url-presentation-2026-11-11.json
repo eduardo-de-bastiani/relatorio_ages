@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "authorization": "Instrução direta do usuário em 11/11/2026; revisão humana pendente",
+  "source_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "units": {
+    "chapter-02-text-h-0008": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex",
+      "before_sha256": "60452d4651e78d1fb1f1ad47bbdd7407c8020c68d5364795cdfe3b1ac487997b",
+      "after_sha256": "3e496968f1b15e0c43427a1e68f431b15cef49fd3ec34c22c37baa9e03ae4593",
+      "changes": [
+        {
+          "source_id": "text-a-0105",
+          "destination": "https://tools.ages.pucrs.br/easy-choose/easychooseadmin",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/easy-choose/easychooseadmin}{Easy Choose Admin}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/easy-choose/easychooseadmin}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0304"
+        },
+        {
+          "source_id": "text-a-0106",
+          "destination": "https://tools.ages.pucrs.br/easy-choose/easychoosevarejista",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/easy-choose/easychoosevarejista}{Easy Choose Store}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/easy-choose/easychoosevarejista}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0307"
+        },
+        {
+          "source_id": "text-a-0107",
+          "destination": "https://tools.ages.pucrs.br/easy-choose/easychooseapi",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/easy-choose/easychooseapi}{Easy Choose API}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/easy-choose/easychooseapi}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0310"
+        }
+      ]
+    },
+    "chapter-02-text-h-0009": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+      "before_sha256": "7b860dcd97ce14324a580562f98fc6c4d078fa9b615d2cb17db57502912adfb3",
+      "after_sha256": "9a1ec775accf1aafe75455383bb1777ccbc140b18d0e4ef66d81d2c5db812bb8",
+      "changes": [
+        {
+          "source_id": "text-a-0108",
+          "destination": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados",
+          "before": "\\href{https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco\\%20de\\%20Dados}{Banco de Dados}",
+          "after": "\\url{https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/Banco%20de%20Dados}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0315"
+        }
+      ]
+    },
+    "chapter-02-text-h-0010": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0010.tex",
+      "before_sha256": "c7250ef402c7d1c7a0e11078a2cee85ec81c95a5a7b3aff9832066896ec54c52",
+      "after_sha256": "ec22c056a781d8a8d99f996643aadce05d624f11a416c1568877b483c7d6fa5e",
+      "changes": [
+        {
+          "source_id": "text-a-0109",
+          "destination": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura",
+          "before": "\\href{https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura}{Arquitetura}",
+          "after": "\\url{https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/arquitetura}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0319"
+        }
+      ]
+    },
+    "chapter-02-text-h-0011": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0011.tex",
+      "before_sha256": "c590e30bd3fe8a0b9fa98bc053ac7ef57f08c50c952577e5e684acaf9bbe5f35",
+      "after_sha256": "c50dd803b0340a360121b9ab1953df2f4d2a9889cc128c40e09631b892ad5543",
+      "changes": [
+        {
+          "source_id": "text-a-0110",
+          "destination": "https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups",
+          "before": "\\href{https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design\\_mockups}{Protótipo das Telas}",
+          "after": "\\url{https://tools.ages.pucrs.br/easy-choose/wiki/-/wikis/design_mockups}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0323"
+        }
+      ]
+    },
+    "chapter-04-text-h-0042": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
+      "before_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6",
+      "after_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e",
+      "changes": [
+        {
+          "source_id": "text-a-0116",
+          "destination": "https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend}{Indústria Digital Frontend}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/industria-digital/industria-digital-frontend}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0775"
+        },
+        {
+          "source_id": "text-a-0117",
+          "destination": "https://tools.ages.pucrs.br/industria-digital/industria-digital-backend",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/industria-digital/industria-digital-backend}{Indústria Digital Backend}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/industria-digital/industria-digital-backend}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0778"
+        }
+      ]
+    },
+    "chapter-04-text-h-0043": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex",
+      "before_sha256": "273be8b70bc1ea72ddd5b85aef5c4f7dde0c0dd0bec78fe0e82ae0e0944f04ac",
+      "after_sha256": "1926caf9c1c578155a44191ad86e455811a38f856a6ced146bccf3dd852b4b07",
+      "changes": [
+        {
+          "source_id": "text-a-0118",
+          "destination": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados",
+          "before": "\\href{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco\\%20de\\%20dados}{Banco de Dados}",
+          "after": "\\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Banco%20de%20dados}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0782"
+        }
+      ]
+    },
+    "chapter-04-text-h-0044": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+      "before_sha256": "ea4510ae6a9c6d4f79124e724136d74c83707b5aea118cbb99c89f26adda5a4e",
+      "after_sha256": "4a0e8ed6b377b847994dfe0d0a332a602ca426b2df72a81df313cc1add19ae48",
+      "changes": [
+        {
+          "source_id": "text-a-0120",
+          "destination": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura",
+          "before": "\\href{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura}{Arquitetura}",
+          "after": "\\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Arquitetura}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0789"
+        }
+      ]
+    },
+    "chapter-04-text-h-0045": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex",
+      "before_sha256": "c6ee120d0d6be1349ce7f86f34c0f6d71236a33474dee254621ea4f4dbaadaf9",
+      "after_sha256": "b1a7e604df23d055c9d9222fcd5fec0370b130fc76f1ac9e838995c6af33e647",
+      "changes": [
+        {
+          "source_id": "text-a-0121",
+          "destination": "https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups",
+          "before": "\\href{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups}{Protótipo das Telas}",
+          "after": "\\url{https://tools.ages.pucrs.br/industria-digital/wiki/-/wikis/Mockups}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-0793"
+        }
+      ]
+    },
+    "chapter-05-text-h-0077": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0077.tex",
+      "before_sha256": "1e3422ef3daaf0eaa4528342e84af202b7284bc5ebf11fe3a3f4cb5666fe29f9",
+      "after_sha256": "b01c1e42649892d78b7e04a4a25933ccb06f2f02cf8df7a5bcbc04d0ebccb3f5",
+      "changes": [
+        {
+          "source_id": "text-a-0129",
+          "destination": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend}{RFID Frontend}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/frontend}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1030"
+        },
+        {
+          "source_id": "text-a-0130",
+          "destination": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend}{RFID Backend}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/backend}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1033"
+        },
+        {
+          "source_id": "text-a-0131",
+          "destination": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway}{RFID Gateway}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/gateway}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1036"
+        }
+      ]
+    },
+    "chapter-05-text-h-0078": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0078.tex",
+      "before_sha256": "1fed7818ddb8513276f4d741e0e3511882e4083686ed254a9b253af1e51ece78",
+      "after_sha256": "36cc61e94a323c73780ee06229890b38ddf18f9e45755c91bcc2a6b091e46716",
+      "changes": [
+        {
+          "source_id": "text-a-0132",
+          "destination": "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados",
+          "before": "\\href{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco\\%20de\\%20Dados}{Banco de Dados}",
+          "after": "\\url{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1043"
+        }
+      ],
+      "local_layout": {
+        "before": "\\indent Mais detalhes podem ser encontrados aqui: \\url{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados}\\par",
+        "after": "\\begingroup\\raggedright \\indent Mais detalhes podem ser encontrados aqui: \\url{https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/Banco%20de%20Dados}\\par\\endgroup",
+        "reason": "Alinhamento local à esquerda para evitar underfull da URL longa; texto e destino preservados."
+      }
+    },
+    "chapter-06-text-h-0108": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0108.tex",
+      "before_sha256": "cbecefbb9f7eb388491b97a453b40541e229256156ab0b4f204b7551158572b7",
+      "after_sha256": "8c4f065de8ac28526701633d3c9b591360607efa97f2afcbeb99777ff967f6f6",
+      "changes": [
+        {
+          "source_id": "text-a-0146",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend}{Recorda Frontend}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/frontend}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1333"
+        },
+        {
+          "source_id": "text-a-0147",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend",
+          "before": "Mais informações podem ser encontradas no repositório \\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend}{Recorda Backend}.",
+          "after": "Mais informações podem ser encontradas em: \\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/backend}.",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1336"
+        }
+      ]
+    },
+    "chapter-06-text-h-0109": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex",
+      "before_sha256": "ba52839e85ae90362a471224a188cae4c818b11a1afde35ace2de9d78eba9fc4",
+      "after_sha256": "f9258caa275ae7ec3daf323fe97c5eaed0e6c2a2f862fa287744e66cf7c6d22b",
+      "changes": [
+        {
+          "source_id": "text-a-0148",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+          "before": "\\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco\\%20de\\%20Dados}{}",
+          "after": "% Origem text-a-0148: https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+          "kind": "empty_link_comment",
+          "paragraph_id": null
+        },
+        {
+          "source_id": "text-a-0149",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados",
+          "before": "\\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco\\%20de\\%20Dados}{Banco de Dados}",
+          "after": "\\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/Banco%20de%20Dados}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1343"
+        }
+      ]
+    },
+    "chapter-06-text-h-0110": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+      "before_sha256": "3aec5fa0fc0f0abbf154d9541487e35ccb0b22af8b3d29165e94d21a34b0bbd5",
+      "after_sha256": "71317f17b7213ac8e6a8bc0b0cb2ab003de72f407c53c5c45cd915c6a5319aec",
+      "changes": [
+        {
+          "source_id": "text-a-0150",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+          "before": "\\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}{}",
+          "after": "% Origem text-a-0150: https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+          "kind": "empty_link_comment",
+          "paragraph_id": null
+        },
+        {
+          "source_id": "text-a-0151",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+          "before": "\\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}{Arquitetura}",
+          "after": "\\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1362"
+        }
+      ]
+    },
+    "chapter-06-text-h-0112": {
+      "tex_path": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0112.tex",
+      "before_sha256": "b14822d97a07a823cec301405aa7f44a42341fe21f4967a09182eccaa732bdf9",
+      "after_sha256": "02c4427d5405d157ab38ec04ac51b89a48d57e4e176425db055f89573f0119c6",
+      "changes": [
+        {
+          "source_id": "text-a-0152",
+          "destination": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups",
+          "before": "\\href{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design\\_mockups}{Protótipo das Telas}",
+          "after": "\\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/design_mockups}",
+          "kind": "visible_url",
+          "paragraph_id": "text-p-1393"
+        }
+      ]
+    }
+  }
+}

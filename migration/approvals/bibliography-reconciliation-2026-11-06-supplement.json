@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "record_type": "authorized_bibliography_reconciliation_supplement",
+  "date": "2026-11-06",
+  "status": "supplemental exact state contract; descriptive metadata and references without sufficient evidence remain pending",
+  "source": {
+    "path": "tests/fixtures/bibliography/consolidated-49-entries-44-estimates.bib",
+    "sha256": "cdcab53b070ad7735b77ec27d0d02ec84d8180d89369baa0e82f1dfcbf7b763d",
+    "entry_count": 49,
+    "contract": "migration/approvals/bibliography-reconciliation-2026-11-06.json",
+    "contract_sha256": "c4cec5a8ff924f45980c277294096bb7ba7b5adbc09c85ec23bc01e6cb6c253b"
+  },
+  "result": {
+    "path": "tests/fixtures/bibliography/reconciled-49-entries-current.bib",
+    "bibliography_path": "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "sha256": "97711d58f81c947fc3c91961de3a9ad2cb546a5a0771b1dc457abaa484d491a5",
+    "entry_count": 49
+  },
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "authorized_changes": {
+    "removed_estimated_date_fields": {
+      "typescript-docs": "2026?",
+      "nodejs-docs": "2026?",
+      "prisma-docs": "2026?",
+      "ages-i-excalidraw": "2026?",
+      "ages-i-figma": "2026?",
+      "ages-ii-angular": "2026?",
+      "ages-ii-typescript": "2026?",
+      "ages-ii-python": "2026?",
+      "ages-ii-fastapi": "2026?",
+      "ages-ii-sqlalchemy": "2026?",
+      "ages-ii-graph-api": "2026?",
+      "ages-iii-csharp": "2026?",
+      "ages-iii-dotnet": "2026?",
+      "ages-iii-react": "2026?",
+      "ages-iii-typescript": "2026?",
+      "ages-iii-entity-framework": "2024?",
+      "ages-iii-aws-lambda": "2026?",
+      "ages-iii-s3": "2026?",
+      "ages-iii-cloudfront": "2026?",
+      "ages-iii-rds": "2026?",
+      "ages-iii-postgresql": "2026?",
+      "ages-iii-docker": "2026?",
+      "ages-iii-github-actions": "2026?",
+      "ages-iii-aws-iot-core": "2026?",
+      "ages-iii-gitlab": "2026?",
+      "ages-iii-figma": "2026?",
+      "ages-iii-javascript": "2026?",
+      "ages-iii-rfid-parking-use-cases": "2026?",
+      "ages-iii-impinj-r700": "2026?",
+      "ages-iii-impinj-iot-interface": "2026?",
+      "ages-iv-python": "2026?",
+      "ages-iv-fastapi": "2026?",
+      "ages-iv-pydantic": "2026?",
+      "ages-iv-react-native": "2026?",
+      "ages-iv-expo": "2026?",
+      "ages-iv-supabase": "2026?",
+      "ages-iv-postgresql": "2026?",
+      "ages-iv-docker": "2026?",
+      "ages-iv-github-actions": "2026?",
+      "ages-iv-sonar": "2026?",
+      "ages-iv-pytest": "2026?",
+      "ages-iv-jest": "2026?",
+      "ages-iv-app-store": "2026?",
+      "ages-iv-tanstack-query": "2026?"
+    },
+    "updated_titles": {
+      "ages-i-figma": {
+        "from": "Figma: the collaborative interface design tool",
+        "to": "Figma: The collaborative canvas for design, code, and AI"
+      },
+      "ages-ii-python": {
+        "from": "Documentação Python 3.15.0",
+        "to": "Documentação Python 3"
+      }
+    },
+    "normalized_authors": {
+      "ages-iv-postgresql": {
+        "from": "{The PostgreSQL Global Development Group}",
+        "to": "{PostgreSQL Global Development Group}"
+      },
+      "ages-iv-docker": {
+        "from": "{Docker Inc.}",
+        "to": "{Docker, Inc.}"
+      },
+      "ages-iv-github-actions": {
+        "from": "{GitHub Inc.}",
+        "to": "{GitHub}"
+      }
+    },
+    "added_verified_access_dates": {
+      "ages-i-figma": {
+        "from": null,
+        "to": "2026-11-06"
+      },
+      "ages-ii-http-rfc9110": {
+        "from": null,
+        "to": "2026-11-06"
+      }
+    }
+  },
+  "invariants": [
+    "Entry keys and entry types remain unchanged from the pinned source fixture.",
+    "No unlisted fields or bibliography bytes may change.",
+    "The two access dates are consultation dates, not publication dates.",
+    "The five factual publication dates from the historical contract remain unchanged.",
+    "The immutable source ODT hash is unchanged."
+  ],
+  "limitations": [
+    "This contract attests to exact scoped serialization and provenance, not reference-standard compliance.",
+    "Publication metadata without sufficient evidence remains PENDING."
+  ]
+}

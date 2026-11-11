@@ -1,0 +1,24 @@
+% Conversão reorganizada de chapter-05-text-h-0085; origem RELATORIO_ATUAL.odt.
+\hypertarget{__RefHeading___Toc4811_3118176633}{}
+\refstepcounter{subsection}
+\subsection*{4.2.5 Tecnologias utilizadas}
+\label{ages-iii:text-h-0085}
+\addcontentsline{toc}{subsection}{4.2.5 Tecnologias utilizadas}
+
+No backend e no gateway do projeto, utilizamos a linguagem C\# \cite{ages-iii-csharp}, escolhida por sua maturidade, produtividade e integração nativa com o ecossistema .NET \cite{ages-iii-dotnet}.
+O .NET foi o framework principal utilizado no desenvolvimento do backend e também no gateway RFID \cite{ages-iii-rfid-nist}, oferecendo robustez, performance e boa integração com serviços em nuvem.
+
+Para desenvolver a interface web do sistema, utilizamos a biblioteca React \cite{ages-iii-react}, responsável pela construção das telas administrativas e de clientes por meio de componentes reutilizáveis.
+No frontend, utilizamos TypeScript \cite{ages-iii-typescript} para adicionar tipagem estática ao JavaScript \cite{ages-iii-javascript}, aumentando a segurança do código e facilitando a manutenção do projeto.
+
+A Impinj R700 REST API \cite{ages-iii-impinj-iot-interface} foi utilizada para comunicação entre o gateway e o leitor RFID \cite{ages-iii-rfid-nist} físico, permitindo configuração e captura de eventos do equipamento.
+O Entity Framework Core \cite{ages-iii-entity-framework} é o framework ORM utilizado no backend em .NET \cite{ages-iii-dotnet} para mapear entidades da aplicação para tabelas relacionais no banco de dados. Foi empregado na criação de models, migrations, relacionamentos, constraints e consultas tipadas, acelerando o desenvolvimento e padronizando o acesso aos dados.
+
+Para hospedagem e execução do backend, utilizamos o serviço serverless AWS Lambda \cite{ages-iii-aws-lambda}, permitindo escalabilidade sob demanda e menor custo operacional.
+O Amazon S3 \cite{ages-iii-s3} foi utilizado para hospedagem dos arquivos estáticos do frontend da aplicação web.
+O Amazon CloudFront \cite{ages-iii-cloudfront} ficou responsável pela distribuição de conteúdo do frontend com melhor desempenho e menor latência de acesso.
+Já o Amazon RDS \cite{ages-iii-rds} é o serviço gerenciado utilizado para hospedagem do banco de dados PostgreSQL \cite{ages-iii-postgresql} da aplicação.
+O PostgreSQL é o banco de dados relacional utilizado para armazenamento estruturado das informações do sistema.
+
+Para padronização de ambientes locais de desenvolvimento, execução de dependências e apoio em testes automatizados, utilizamos Docker \cite{ages-iii-docker}.
+O GitHub Actions \cite{ages-iii-github-actions} foi utilizado para automação de pipelines de CI/CD, validação de qualidade do código e sincronização entre repositórios GitHub e GitLab \cite{ages-iii-gitlab}.\par

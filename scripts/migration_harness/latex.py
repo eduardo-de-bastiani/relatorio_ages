@@ -182,6 +182,17 @@ def _authorized_ages_iii_iv_figure_source(root: Path, relative: Path, args: tupl
     }
     if relative.parent != Path("conteudo/migracao"):
         return False
+    exact_sources = {
+        ("ages-ii-sprint-4.tex", "fig:ages-ii-sprint-4-presenca-digital"),
+        ("ages-iv-sprint-0.tex", "ages-iv:draw-image-0033"),
+        ("ages-iv-sprint-0.tex", "ages-iv:draw-image-0034"),
+    }
+    if (relative.name, args[2]) in exact_sources:
+        try:
+            from . import presentation_reconciliation
+            return presentation_reconciliation.authorized_source(root.parent, args[2], args[3]) is not None
+        except (OSError, ValueError, KeyError, TypeError):
+            return False
     if (relative.name, args[2]) in {("ages-iv-sprint-0.tex", "ages-iv:draw-image-0033"), ("ages-iv-sprint-0.tex", "ages-iv:draw-image-0034"), ("ages-ii-sprint-4.tex", "fig:ages-ii-sprint-4-presenca-digital")}:
         expected = "Fonte: elaboração própria."
     else:
@@ -265,10 +276,18 @@ def _authorized_sprint3_figure_source(root: Path, relative: Path, args: tuple[st
         expected_asset,
         expected_caption,
         "ages-iv:sprint3:gantt",
-        "Fonte: elaboração própria.",
+        args[3],
         "0.99",
     )
-    if relative != expected_path or args != expected_args:
+    try:
+        from . import presentation_reconciliation
+        if (root.parent / presentation_reconciliation.FIGURE_SOURCE_SUPPLEMENT).exists():
+            source_authorized = presentation_reconciliation.authorized_source(root.parent, args[2], args[3]) is not None
+        else:
+            source_authorized = args[3] == "Fonte: elaboração própria."
+    except (OSError, ValueError, KeyError, TypeError):
+        source_authorized = False
+    if relative != expected_path or args != expected_args or not source_authorized:
         return False
 
     approval_path = root.parent / "migration/approvals/ages-iv-sprint-3-figure-and-display-authorization.json"

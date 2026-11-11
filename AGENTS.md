@@ -1,5 +1,21 @@
 # Regras do harness de migração
 
+## URLs visíveis e índices — decisão de 11/11/2026
+
+Os 20 links finais de repositório/wiki mapeados em `docs/MAPA_LINKS_URL_2026-11-11.md` exibem URLs completas clicáveis, preservando os destinos; as chamadas autor-data continuam no padrão próprio. As duas âncoras ODF vazias `text-a-0148` e `text-a-0150` são preservadas em comentário/ledger, sem `\href` vazio. O suplemento exato é `migration/approvals/url-presentation-2026-11-11.json`. A largura dos números de página do sumário/lista de figuras é `2em`; URLs podem quebrar após hífens existentes, e somente a chamada longa de banco de dados de AGES III tem alinhamento local à esquerda. Não restaurar rótulos descritivos históricos nesses links nem ocultar avisos para aprovar o build. Verificar destinos e composição no PDF; não acessar URLs remotamente sem autorização.
+
+## Chamadas bibliográficas — decisão de 10/11/2026
+
+Após revisão da professora, o usuário autorizou retirar `[...]` das chamadas por título sem autoria e reduzir a uma chamada por chave dentro da mesma seção. A primeira chamada fica próxima da primeira menção substantiva; chamadas em outras seções ou edições são preservadas. Os 19 alvos originais (18 ainda renderizados, um retirado por redundância) e as 13 remoções individuais estão em `docs/MAPA_CITACOES_PROFESSORA_2026-11-10.md`, com autorização suplementar em `migration/approvals/citation-deduplication-2026-11-10.json`. Não inventar autoria ou alterar `.bib` para produzir o rótulo desejado. `docs/STYLE_GUIDE.md` define a apresentação; o gate normativo G4b permanece PENDING para títulos de várias palavras sem supressão. As regras históricas abaixo continuam como registro de decisões anteriores, não como permissão para restaurar `[...]` ou citações redundantes.
+
+## Aproximações bibliográficas autorizadas — 06/11/2026
+
+O usuário autorizou preencher os marcadores de ano pendente com anos aproximados e corrigir os testes. As estimativas devem permanecer visualmente identificadas por colchetes e sinal de dúvida, com proveniência por referência; uma escolha editorial autorizada não passa a ser data de publicação comprovada. As cinco datas documentais comprovadas e as datas reais de acesso permanecem preservadas. A autorização abrange os contratos suplementares e fixtures necessários para reconhecer as transformações aprovadas, sem enfraquecer a proteção do ODT nem desativar testes adversariais.
+
+## Atualização de referências — 05/11/2026
+
+O usuário autorizou corrigir as citações segundo NBR 10520:2023 e NBR 6023:2025: ano da fonte e data de acesso são dados distintos; não usar automaticamente o acesso como data de publicação nem apresentar datas de acesso atribuídas como consultas comprovadas. Entradas da mesma página podem ser consolidadas com a consulta comprovada mais recente, preservando páginas e serviços distintos e o histórico. Sem evidência suficiente, metadados permanecem pendentes. As instruções históricas abaixo sobre substituir ano de publicação pelo ano de acesso foram superadas. Não acessar os links tecnológicos sem nova autorização do usuário.
+
 ## Ponto de entrada e repasse — 29/10/2026
 
 O usuário fez merge do PR #1 e decidiu consolidar o trabalho em `main`; o snapshot confirmado é `52a2ca6d4b5ec8e1c01ee7d9875766c6741f42c2`. A tarefa deste checkpoint é documentar a continuidade para Gemini/Antigravity, sem alterar conteúdo, estilo ou código do harness. Leia [HANDOFF_GEMINI](docs/HANDOFF_GEMINI.md) e [PROMPTS_GEMINI](docs/PROMPTS_GEMINI.md), além dos documentos abaixo. O repasse contém estado por unidade, decisões aprovadas, problemas abertos e procedimentos; não autoriza executar todas as tarefas futuras.

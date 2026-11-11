@@ -21,8 +21,9 @@ class TechnologyProseTests(unittest.TestCase):
         cls.repo = Path(__file__).resolve().parents[1]
         cls.approval = prose.load_authorization(cls.repo)
         complete = json.loads((cls.repo / "docs/CONTENT_MANIFEST.json").read_text())
-        unit_ids = set(prose.UNITS)
+        unit_ids = set(prose.UNITS) | {prose.AIV_UNIT}
         record_ids = {rid for policy in cls.approval["units"].values() for rid in policy["source_record_ids"]}
+        record_ids.update(next(unit for unit in complete["units"] if unit["id"] == prose.AIV_UNIT)["record_ids"])
         cls.manifest_template = {
             "source": complete["source"], "assets": [],
             "units": [unit for unit in complete["units"] if unit["id"] in unit_ids],
@@ -35,7 +36,30 @@ class TechnologyProseTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.uid = "chapter-05-text-h-0085"
         self.manifest = copy.deepcopy(self.manifest_template)
-        paths = [prose.AUTHORIZATION, self.approval["bibliography"]["path"]]
+        paths = [
+            prose.AUTHORIZATION,
+            self.approval["bibliography"]["path"],
+            prose.bibliography_reconciliation.CONTRACT,
+            prose.AIV_TEX_PATH,
+            "migration/ledgers/chapter-06-text-h-0113.json",
+            prose.AIV_CURATION,
+            "tests/fixtures/bibliography/pre-reconciliation-55-entries.bib",
+            "tests/fixtures/bibliography/consolidated-49-entries-44-estimates.bib",
+            prose.bibliography_reconciliation.SUPPLEMENT_RESULT_PATH,
+            prose.bibliography_reconciliation.AUTHOR_CONTRACT,
+            prose.bibliography_reconciliation.AUTHOR_RESULT_PATH,
+            prose.bibliography_reconciliation.ESTIMATED_ACCESS_CONTRACT,
+            prose.bibliography_reconciliation.ESTIMATED_ACCESS_RESULT_PATH,
+            prose.bibliography_reconciliation.ESTIMATED_ACCESS_EVIDENCE_PATH,
+            *[
+                f"tests/fixtures/historical-technology/{name}{suffix}"
+                for name in (
+                    "chapter-02-text-h-0012", "chapter-04-text-h-0046", "chapter-05-text-h-0085",
+                    "chapter-06-text-h-0113",
+                ) for suffix in (".tex", ".json")
+            ],
+            "migration/evidence/references/estimated-years-2026-11-06.json",
+        ]
         for policy in self.approval["units"].values():
             paths.extend((policy["tex_path"], policy["ledger_path"]))
         paths.extend(["docs/CONTENT_MANIFEST.json", "RELATORIO_ATUAL.odt"])
@@ -104,6 +128,49 @@ class TechnologyProseTests(unittest.TestCase):
                 self.assertEqual(report["status"], "pass", report["findings"])
                 self.assertEqual(report["facts"]["text_records_matched"], 0)
                 self.assertTrue(any(item["code"] == "technology_prose_independent_review_required" for item in report["findings"]))
+
+    def test_actual_ages_iv_unit_accepts_only_the_pinned_consolidated_bibliography(self):
+        manifest = json.loads((self.root / "docs/CONTENT_MANIFEST.json").read_text(encoding="utf-8"))
+        ledger = json.loads((self.root / "migration/ledgers/chapter-06-text-h-0113.json").read_text(encoding="utf-8"))
+        unit = next(item for item in manifest["units"] if item["id"] == prose.AIV_UNIT)
+        document_ids = ledger["units"][prose.AIV_UNIT].get("document_reordering_authorization", {}).get("source_ids")
+        heading_display = None
+        if document_ids is not None:
+            authorization = _load_presentation_authorization(self.root, prose.AIV_UNIT)
+            heading_display = authorization["approved_document_reordering"]["scope"]["heading_numbering"][unit["heading_id"]]["target_text"]
+        facts = prose.verify(
+            manifest, ledger, self.root, prose.AIV_UNIT,
+            document_reordering_ids=document_ids,
+            heading_display_text=heading_display,
+        )
+        self.assertEqual(facts["semantic_review"]["status"], "PENDING")
+        self.assertFalse(facts["lexical_equality_claimed"])
+
+    def test_supplemental_contract_is_required_for_current_bibliography_hash(self):
+        supplemental = self.root / prose.bibliography_reconciliation.SUPPLEMENT_CONTRACT
+        supplemental.unlink()
+        self.select("chapter-02-text-h-0012")
+        with self.assertRaisesRegex(ValueError, "Bibliography differs from frozen approved metadata"):
+            self.verify()
+
+    def test_historical_ages_iv_snapshot_keeps_original_bibliography_keys(self):
+        historical_bib = (self.root / "tests/fixtures/bibliography/pre-reconciliation-55-entries.bib").read_bytes()
+        (self.root / prose.AIV_BIBLIOGRAPHY).write_bytes(historical_bib)
+        fixture_root = self.root / "tests/fixtures/historical-technology"
+        (self.root / prose.AIV_TEX_PATH).write_bytes((fixture_root / "chapter-06-text-h-0113.tex").read_bytes())
+        ledger_path = self.root / "migration/ledgers/chapter-06-text-h-0113.json"
+        ledger_path.write_bytes((fixture_root / "chapter-06-text-h-0113.json").read_bytes())
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        unit = next(item for item in self.manifest["units"] if item["id"] == prose.AIV_UNIT)
+        document_ids = ledger["units"][prose.AIV_UNIT].get("document_reordering_authorization", {}).get("source_ids")
+        authorization = _load_presentation_authorization(self.root, prose.AIV_UNIT)
+        heading_display = authorization["approved_document_reordering"]["scope"]["heading_numbering"][unit["heading_id"]]["target_text"]
+        facts = prose.verify(
+            self.manifest, ledger, self.root, prose.AIV_UNIT,
+            document_reordering_ids=document_ids,
+            heading_display_text=heading_display,
+        )
+        self.assertIn("ages-iv-typescript", facts["required_citation_keys"])
 
     def test_document_order_extension_is_explicit_and_unit_scoped(self):
         unit = next(item for item in self.manifest["units"] if item["id"] == self.uid)
@@ -292,11 +359,14 @@ class TechnologyProseTests(unittest.TestCase):
         original_data = self.target.read_bytes()
         for old, new in variants:
             with self.subTest(new=new):
-                self.select(self.uid)
-                self.replace(old, new)
-                with self.assertRaisesRegex(ValueError, "citation"):
-                    self.verify()
-                self.target.write_bytes(original_data)
+                try:
+                    self.select(self.uid)
+                    self.target.write_bytes(original_data)
+                    self.replace(old, new)
+                    with self.assertRaisesRegex(ValueError, "citation"):
+                        self.verify()
+                finally:
+                    self.target.write_bytes(original_data)
 
     def test_missing_required_citation_rejected(self):
         self.replace(r"\cite{ages-iii-csharp}", "")
@@ -322,11 +392,14 @@ class TechnologyProseTests(unittest.TestCase):
         original_data = self.target.read_bytes()
         for command in (r"\phantom{forged}", r"\input{forged}", r"\newcommand{\hack}{x}", r"\begin{itemize}\item", r"\pagebreak", r"\vspace{10cm}", r"\color{white}"):
             with self.subTest(command=command):
-                self.select(self.uid)
-                self.replace("No backend", command + " No backend")
-                with self.assertRaises(ValueError):
-                    self.verify()
-                self.target.write_bytes(original_data)
+                try:
+                    self.select(self.uid)
+                    self.target.write_bytes(original_data)
+                    self.replace("No backend", command + " No backend")
+                    with self.assertRaises(ValueError):
+                        self.verify()
+                finally:
+                    self.target.write_bytes(original_data)
 
     def test_extra_visible_target_text_outside_spans_rejected(self):
         data = self.target.read_bytes() + b"\nInvented untracked content.\n"
@@ -344,8 +417,34 @@ class TechnologyProseTests(unittest.TestCase):
     def test_stale_bibliography_rejected(self):
         path = self.root / self.approval["bibliography"]["path"]
         path.write_bytes(path.read_bytes() + b"\n@online{invented, title={Forged}}\n")
-        with self.assertRaisesRegex(ValueError, "Bibliography differs"):
+        with self.assertRaisesRegex(ValueError, "(?i)bibliography"):
             self.verify()
+
+    def test_historical_bibliography_with_ages_iv_suffix_remains_accepted(self):
+        historical = (self.root / "tests/fixtures/bibliography/pre-reconciliation-55-entries.bib").read_bytes()
+        self.assertTrue(prose._matches_frozen_bibliography(
+            self.root, historical, self.approval["bibliography"]["sha256"],
+        ))
+        historical_keys, duplicates = prose.bib_keys(historical.decode("utf-8"))
+        self.assertFalse(duplicates)
+        self.assertIn("react-docs", historical_keys)
+        self.assertIn("ages-ii-postgresql", historical_keys)
+
+    def test_historical_three_unit_snapshot_keeps_its_original_bibliography_contract(self):
+        historical_bib = (self.root / "tests/fixtures/bibliography/pre-reconciliation-55-entries.bib").read_bytes()
+        (self.root / self.approval["bibliography"]["path"]).write_bytes(historical_bib)
+        fixture_root = self.root / "tests/fixtures/historical-technology"
+        for uid in prose.UNITS:
+            with self.subTest(unit=uid):
+                policy = self.approval["units"][uid]
+                name = Path(policy["tex_path"]).name
+                historical_tex = fixture_root / name
+                historical_ledger = fixture_root / (Path(policy["ledger_path"]).stem + ".json")
+                (self.root / policy["tex_path"]).write_bytes(historical_tex.read_bytes())
+                (self.root / policy["ledger_path"]).write_bytes(historical_ledger.read_bytes())
+                self.select(uid)
+                facts = self.verify()
+                self.assertEqual(facts["semantic_review"]["status"], "PENDING")
 
     def test_missing_and_stale_authorization_fail_closed(self):
         path = self.root / prose.AUTHORIZATION

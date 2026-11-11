@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "scope": "Estimativas editoriais de ano para as 44 fontes que permaneciam sem ano documental comprovado após pesquisa local dos dez lotes.",
+  "authorization": "Autorização explícita do usuário transmitida pelo coordenador desta tarefa: preencher todos os 112 marcadores [data pendente], atribuindo estimativas editoriais aos 44 registros sem ano, usando date={YYYY?} EDTF; preservar as cinco datas factuais; não apresentar estimativas como dados comprovados nem como conformidade ABNT.",
+  "method": "Preferir ano de atualização específica ou estado de versão documental quando indicado no lote de pesquisa; onde não há evidência suficiente, usar 2026? como estimativa editorial do estado observado em 2026-11-06. Nenhuma data exata de acesso, autoria ou URL foi criada ou alterada.",
+  "factual_dates_preserved": {
+    "ages-ii-http-rfc9110": "2022-06",
+    "ages-ii-json-rfc8259": "2017-12",
+    "ages-iii-mqtt": "2019-03-07",
+    "ages-iii-rfid-nist": "2007-05-17",
+    "ages-iii-fielding-rest": "2000"
+  },
+  "estimated_entries": {
+    "typescript-docs": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-01.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "nodejs-docs": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-01.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "prisma-docs": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-01.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-i-excalidraw": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-01.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-i-figma": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-01.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-ii-angular": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-02.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-ii-typescript": {
+      "ano": "2026?",
+      "base": "Atualização explícita da página em 2026-11-05; ano usado apenas como aproximação do estado documental.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-02.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-ii-python": {
+      "ano": "2026?",
+      "base": "Rodapé da documentação Python 3 consultada informa atualização em 2026-11-06; aproxima o ano dessa versão documental.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-02.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-ii-fastapi": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-02.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-ii-sqlalchemy": {
+      "ano": "2026?",
+      "base": "A documentação da série 2.0 declara geração em 2026-11-03 e release 2.0.57 em 2026; usado como aproximação da versão documental.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-02.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-ii-graph-api": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-03.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-csharp": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-03.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-dotnet": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-03.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-react": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-03.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-typescript": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-03.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-entity-framework": {
+      "ano": "2024?",
+      "base": "Página Microsoft Learn declara “Last updated on 2024-11-12”; o ano aproxima a versão atualizada, não a publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-04.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-aws-lambda": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-04.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-s3": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-04.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-cloudfront": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-04.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-rds": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-04.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-postgresql": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-05.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-docker": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-05.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-github-actions": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-05.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-aws-iot-core": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-05.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-gitlab": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-05.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-figma": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-06.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-javascript": {
+      "ano": "2026?",
+      "base": "Página MDN declara última modificação em 2026-07-08; o ano aproxima a versão documental.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-06.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-rfid-parking-use-cases": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-06.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-impinj-r700": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-06.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iii-impinj-iot-interface": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-06.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-python": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-07.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-fastapi": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-07.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-pydantic": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-07.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-react-native": {
+      "ano": "2026?",
+      "base": "Página React Native declara última atualização em 2026-10-27; o ano aproxima a versão documental.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-07.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-expo": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-08.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-supabase": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-08.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-postgresql": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-08.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-docker": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-08.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-github-actions": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-09.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-sonar": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-09.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-pytest": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-09.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-jest": {
+      "ano": "2026?",
+      "base": "Página Jest declara última atualização em 2026-08-28; o ano aproxima a versão documental.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-10.md",
+      "confianca": "moderada",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-app-store": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-10.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    },
+    "ages-iv-tanstack-query": {
+      "ano": "2026?",
+      "base": "Estimativa editorial autorizada para o estado da página/versão documental observado na pesquisa de 2026-11-06; sem evidência documental suficiente para inferir publicação original.",
+      "tipo_estimativa": "ESTIMATIVA EDITORIAL AUTORIZADA; EDTF aproximado; não é data comprovada nem declaração de conformidade ABNT",
+      "fonte_local": "docs/research/fontes-2026-11-06/lote-10.md",
+      "confianca": "baixa",
+      "distincao_publicacao_original": "Ano de publicação original não comprovado; a estimativa aproxima a versão/estado documental pesquisado e não substitui nem afirma publicação."
+    }
+  },
+  "limitations": [
+    "As estimativas são escolhas editoriais autorizadas e não comprovam a data original de publicação.",
+    "Amostra/estado pesquisado em páginas mutáveis; as datas de atualização explícitas indicam versão ou atualização, nunca publicação inicial, salvo prova separada que não foi encontrada.",
+    "Este registro não declara conformidade com a NBR 6023:2025."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_body_title_corrections",
+  "date": "2026-11-05",
+  "approval_status": "authorized_for_exact_body_title_corrections_pending_human_review",
+  "authorization_basis": "Direct user instruction on 2026-11-05 for the chapter-body titles on pages 51 and 73; the summary entries were already singular.",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "scope": [
+    {
+      "unit_id": "chapter-05-text-h-0074",
+      "source_id": "text-h-0074",
+      "source_text": "5 - PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "document_order_text": "4 PROJETOS AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "target_text": "4 PROJETO AGES III – SISTEMA DE CONTROLE INTELIGENTE DE ESTACIONAMENTO COM RFID",
+      "change": "Only the displayed chapter-body title wording changes from PROJETOS to PROJETO after the approved chapter-order renumbering. The ODT source record remains unchanged."
+    },
+    {
+      "unit_id": "chapter-06-text-h-0105",
+      "source_id": "text-h-0105",
+      "source_text": "6 - PROJETOS AGES IV - RECORDA ",
+      "document_order_text": "5 PROJETOS AGES IV - RECORDA ",
+      "target_text": "5 PROJETO AGES IV - RECORDA ",
+      "change": "Only the displayed chapter-body title wording changes from PROJETOS to PROJETO after the approved chapter-order renumbering. The ODT source record remains unchanged."
+    }
+  ],
+  "review_status": {
+    "odt_source_unchanged": true,
+    "human_review": "pending"
+  }
+}

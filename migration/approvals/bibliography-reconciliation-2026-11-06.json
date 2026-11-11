@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "record_type": "authorized_bibliography_reconciliation_contract",
+  "date": "2026-11-06",
+  "status": "authorized scoped transformation; publication and reference compliance remain pending where evidence is absent",
+  "source": {
+    "path": "tests/fixtures/bibliography/pre-reconciliation-55-entries.bib",
+    "git_commit": "4a703f33d329770e733aef036c107930c68b2f50",
+    "sha256": "b20d34f1c754e8b9396b28e6db02f74d79fd896691de3e2e7281313bec681fe9",
+    "entry_count": 55
+  },
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "intermediate": {
+    "sha256": "6be2693c464927ace22c8d3f99250a877de1256455abfc7673396e0578e4aaf6",
+    "entry_count": 49,
+    "meaning": "The reconciled bibliography before adding the 44 authorized approximate date fields."
+  },
+  "result": {
+    "path": "tests/fixtures/bibliography/consolidated-49-entries-44-estimates.bib",
+    "bibliography_path": "relatorio_AGES_eduardo/bibliografia/bibliografia.bib",
+    "sha256": "cdcab53b070ad7735b77ec27d0d02ec84d8180d89369baa0e82f1dfcbf7b763d",
+    "entry_count": 49
+  },
+  "consolidations": {
+    "ages-iv-typescript": "typescript-docs",
+    "react-docs": "ages-iii-react",
+    "postgresql-docs": "ages-iv-postgresql",
+    "ages-ii-postgresql": "ages-iv-postgresql",
+    "ages-ii-figma": "ages-i-figma",
+    "ages-ii-docker": "ages-iii-docker"
+  },
+  "metadata_policy": {
+    "date_field": "Preserve the five factual dates and add exactly the 44 EDTF approximate dates listed in the evidence file.",
+    "publication_year": "A date estimate is not a verified original publication year. Do not turn it into a year field or a factual date.",
+    "access_date": "Keep only independently evidenced consultation dates. Do not infer a urldate from the date estimate.",
+    "estimated_years_evidence": "migration/evidence/references/estimated-years-2026-11-06.json",
+    "estimated_years_evidence_sha256": "5e0bfd3b2d1cf3d952fe91b4a72cc1be45d579153eae309a54392e5048a46da7",
+    "estimated_entries": 44,
+    "factual_dates": 5
+  },
+  "authorization_basis": [
+    "docs/CORRECAO_BIBLIOGRAFICA_2026-11-05.md",
+    "migration/evidence/references/bibliography-reconciliation-2026-11-05.json",
+    "migration/evidence/references/estimated-years-2026-11-06.json"
+  ],
+  "limitations": [
+    "This contract attests to exact scoped serialization and provenance, not reference-standard compliance.",
+    "References lacking sufficient publication or access evidence remain PENDING."
+  ]
+}

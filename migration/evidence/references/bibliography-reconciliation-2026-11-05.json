@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "scope": "Correção de anos atribuídos e datas de acesso fictícias; consolidação de páginas iguais expressamente aprovada.",
+  "method": "Análise dos campos BibTeX, comentários originais e arquivos migration/evidence/references; nenhum link acessado. Datas de curadoria III/IV mantidas somente como registros existentes; ano documental sem evidência fica pendente.",
+  "source_original_sha256": "b20d34f1c754e8b9396b28e6db02f74d79fd896691de3e2e7281313bec681fe9",
+  "result_sha256": "6be2693c464927ace22c8d3f99250a877de1256455abfc7673396e0578e4aaf6",
+  "source_entries": 55,
+  "retained_entries": 49,
+  "remap": {
+    "ages-iv-typescript": "typescript-docs",
+    "react-docs": "ages-iii-react",
+    "postgresql-docs": "ages-iv-postgresql",
+    "ages-ii-postgresql": "ages-iv-postgresql",
+    "ages-ii-figma": "ages-i-figma",
+    "ages-ii-docker": "ages-iii-docker"
+  },
+  "entries": {
+    "typescript-docs": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso 2026-10-17 apoiado pela mesma URL na curadoria AGES IV"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{typescript-docs,\n  author = {{TypeScript}},\n  title = {Documentação TypeScript},\n  url = {https://www.typescriptlang.org/docs/},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "react-docs": {
+      "status": "consolidated",
+      "replacement": "ages-iii-react",
+      "original_bibtex": "@online{react-docs,\n  author = {{React}},\n  title = {Documentação React},\n  url = {https://react.dev/},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "nodejs-docs": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-i.json para URL exata: 2026-10-14"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-14"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{nodejs-docs,\n  author = {{Node.js}},\n  title = {Documentação Node.js},\n  url = {https://nodejs.org/docs/latest/api/},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "prisma-docs": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-i.json para URL exata: 2026-10-14"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-14"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{prisma-docs,\n  author = {{Prisma}},\n  title = {Documentação Prisma},\n  url = {https://www.prisma.io/docs},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "postgresql-docs": {
+      "status": "consolidated",
+      "replacement": "ages-iv-postgresql",
+      "original_bibtex": "@online{postgresql-docs,\n  author = {{PostgreSQL}},\n  title = {Documentação PostgreSQL},\n  url = {https://www.postgresql.org/docs/},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "ages-i-excalidraw": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; consulta real pendente",
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {},
+      "publication_status": "PENDING",
+      "access_status": "PENDING",
+      "original_bibtex": "@online{ages-i-excalidraw,\n  title = {Excalidraw},\n  url = {https://excalidraw.com/},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "ages-i-figma": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; consulta real pendente",
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {},
+      "publication_status": "PENDING",
+      "access_status": "PENDING",
+      "original_bibtex": "@online{ages-i-figma,\n  author = {{Figma}},\n  title = {Figma: the collaborative interface design tool},\n  url = {https://www.figma.com},\n  year = {2024},\n  urldate = {2024-04-10},\n}"
+    },
+    "ages-ii-angular": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-ii.json para URL exata: 2026-10-16"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{ages-ii-angular,\n  title = {Angular},\n  url = {https://v17.angular.io/docs},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-typescript": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-ii.json para URL exata: 2026-10-16"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{ages-ii-typescript,\n  title = {TypeScript para programadores JavaScript},\n  url = {https://www.typescriptlang.org/pt/docs/handbook/typescript-in-5-minutes.html},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-python": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-ii.json para URL exata: 2026-10-16"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{ages-ii-python,\n  title = {Documentação Python 3.15.0},\n  url = {https://docs.python.org/pt-br/3/},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-fastapi": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-ii.json para URL exata: 2026-10-16"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{ages-ii-fastapi,\n  title = {FastAPI},\n  url = {https://fastapi.tiangolo.com/},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-sqlalchemy": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Ano atribuído removido; ano documental pendente",
+        "Acesso real confirmado em migration/evidence/references/ages-ii.json para URL exata: 2026-10-16"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{ages-ii-sqlalchemy,\n  title = {SQLAlchemy 2.0 Documentation},\n  url = {https://docs.sqlalchemy.org/en/20/},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-postgresql": {
+      "status": "consolidated",
+      "replacement": "ages-iv-postgresql",
+      "original_bibtex": "@online{ages-ii-postgresql,\n  title = {PostgreSQL: Documentation},\n  url = {https://www.postgresql.org/docs/},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-figma": {
+      "status": "consolidated",
+      "replacement": "ages-i-figma",
+      "original_bibtex": "@online{ages-ii-figma,\n  author = {{Figma}},\n  title = {Figma: the collaborative interface design tool},\n  url = {https://www.figma.com},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-docker": {
+      "status": "consolidated",
+      "replacement": "ages-iii-docker",
+      "original_bibtex": "@online{ages-ii-docker,\n  author = {{Docker}},\n  title = {Enterprise Application Container Platform | Docker},\n  url = {https://www.docker.com/},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-graph-api": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; consulta real pendente",
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {},
+      "publication_status": "PENDING",
+      "access_status": "PENDING",
+      "original_bibtex": "@online{ages-ii-graph-api,\n  title = {Graph API - Documentation},\n  url = {https://developers.facebook.com/docs/graph-api/},\n  year = {2024},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-http-rfc9110": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; consulta real pendente"
+      ],
+      "remaining_dates": {
+        "date": "2022-06"
+      },
+      "publication_status": "documented_field_preserved_review",
+      "access_status": "PENDING",
+      "original_bibtex": "@online{ages-ii-http-rfc9110,\n  editor = {Roy T. Fielding and Mark Nottingham and Julian Reschke},\n  title = {RFC 9110: HTTP Semantics},\n  date = {2022-06},\n  organization = {Internet Engineering Task Force},\n  number = {9110},\n  url = {https://www.rfc-editor.org/info/rfc9110/},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-ii-json-rfc8259": {
+      "status": "retained",
+      "actions": [
+        "Acesso atribuído removido; mantida consulta real posterior quando comprovada",
+        "Acesso real 2026-10-16 para URL exata registrado em migration/evidence/references/ages-i-ii-formatting.json, evidência ages-ii-json-rfc8259, retrieval_status PASS."
+      ],
+      "remaining_dates": {
+        "date": "2017-12",
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "documented_field_preserved_review",
+      "access_status": "VERIFIED_LOCAL_CURATOR_RECORD",
+      "original_bibtex": "@online{ages-ii-json-rfc8259,\n  editor = {Tim Bray},\n  title = {RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format},\n  date = {2017-12},\n  organization = {Internet Engineering Task Force},\n  number = {8259},\n  url = {https://www.rfc-editor.org/info/rfc8259/},\n  urldate = {2024-10-15},\n}"
+    },
+    "ages-iii-csharp": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-csharp,\n  author = {{Microsoft}},\n  title = {C\\# Guide - .NET managed language - C\\# | Microsoft Learn},\n  url = {https://learn.microsoft.com/dotnet/csharp/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-dotnet": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-dotnet,\n  author = {{Microsoft}},\n  title = {.NET - Build modern apps and powerful cloud services},\n  url = {https://dotnet.microsoft.com/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-react": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-react,\n  author = {{Meta Platforms, Inc.}},\n  title = {React},\n  url = {https://react.dev/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-typescript": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-typescript,\n  title = {TypeScript: JavaScript With Syntax For Types.},\n  url = {https://www.typescriptlang.org/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-entity-framework": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-entity-framework,\n  author = {{Microsoft}},\n  title = {Overview of Entity Framework Core - EF Core | Microsoft Learn},\n  url = {https://learn.microsoft.com/ef/core/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-aws-lambda": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-aws-lambda,\n  author = {{Amazon Web Services}},\n  title = {Serverless Computing - AWS Lambda - Amazon Web Services},\n  url = {https://aws.amazon.com/lambda/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-s3": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-s3,\n  author = {{Amazon Web Services}},\n  title = {Cloud Object Storage – Amazon S3 – Amazon Web Services},\n  url = {https://aws.amazon.com/s3/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-cloudfront": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-cloudfront,\n  author = {{Amazon Web Services}},\n  title = {Low-Latency Content Delivery Network (CDN) - Amazon CloudFront - Amazon Web Services},\n  url = {https://aws.amazon.com/cloudfront/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-rds": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-rds,\n  author = {{Amazon Web Services}},\n  title = {Fully Managed Relational Database – Amazon RDS – AWS},\n  url = {https://aws.amazon.com/rds/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-postgresql": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-postgresql,\n  author = {{PostgreSQL Global Development Group}},\n  title = {PostgreSQL: The World's Most Advanced Open Source Relational Database},\n  url = {https://www.postgresql.org/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-docker": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-docker,\n  author = {{Docker, Inc.}},\n  title = {Docker | Secure Sandboxes for AI Agents},\n  url = {https://www.docker.com/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-github-actions": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-github-actions,\n  author = {{GitHub}},\n  title = {GitHub Actions · CI/CD and automations · Agentic Workflows · Workflows · GitHub},\n  url = {https://github.com/features/actions},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-aws-iot-core": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-aws-iot-core,\n  author = {{Amazon Web Services}},\n  title = {AWS IoT Core Documentation},\n  url = {https://docs.aws.amazon.com/iot/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-mqtt": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "date": "2019-03-07",
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "documented_field_preserved_review",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-mqtt,\n  author = {{OASIS Open}},\n  title = {MQTT Version 5.0},\n  date = {2019-03-07},\n  url = {https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-gitlab": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-gitlab,\n  author = {{GitLab}},\n  title = {Repository mirroring},\n  url = {https://docs.gitlab.com/user/project/repository/mirror/},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-figma": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-figma,\n  author = {{Figma}},\n  title = {Guide to prototyping in Figma},\n  url = {https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-javascript": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-javascript,\n  title = {Introduction - JavaScript | MDN},\n  url = {https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-rfid-nist": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "date": "2007-05-17",
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "documented_field_preserved_review",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-rfid-nist,\n  author = {Scarfone, K.},\n  title = {Securing Radio Frequency Identification (RFID) Systems},\n  date = {2007-05-17},\n  url = {https://www.nist.gov/publications/securing-radio-frequency-identification-rfid-systems},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-rfid-parking-use-cases": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-rfid-parking-use-cases,\n  author = {{TransCore}},\n  title = {Parking \\& Access Control},\n  url = {https://transcore.com/rfid/parking-access-control},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-impinj-r700": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-impinj-r700,\n  author = {{Impinj, Inc.}},\n  title = {Impinj R700 Series RAIN RFID Readers},\n  url = {https://www.impinj.com/products/readers/impinj-r700},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-impinj-iot-interface": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iii-impinj-iot-interface,\n  author = {{Impinj, Inc.}},\n  title = {Impinj IoT Device Interface},\n  url = {https://www.impinj.com/products/technology/key-features/iot-device-interface},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iii-fielding-rest": {
+      "status": "retained",
+      "actions": [],
+      "remaining_dates": {
+        "date": "2000",
+        "urldate": "2026-10-16"
+      },
+      "publication_status": "documented_field_preserved_review",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@thesis{ages-iii-fielding-rest,\n  author = {Fielding, Roy Thomas},\n  title = {Architectural Styles and the Design of Network-based Software Architectures},\n  type = {Doctoral dissertation in Information and Computer Science},\n  institution = {University of California, Irvine},\n  date = {2000},\n  url = {https://ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf},\n  urldate = {2026-10-16},\n}"
+    },
+    "ages-iv-python": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-python,\n  author = {{Python Software Foundation}},\n  title = {Our Documentation},\n  url = {https://www.python.org/doc/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-fastapi": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-fastapi,\n  title = {Tutorial - User Guide},\n  url = {https://fastapi.tiangolo.com/tutorial/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-pydantic": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-pydantic,\n  title = {Pydantic Validation},\n  url = {https://pydantic.dev/docs/validation/latest/get-started/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-react-native": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-react-native,\n  author = {{Meta Platforms, Inc.}},\n  title = {Introduction},\n  url = {https://reactnative.dev/docs/getting-started},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-expo": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-expo,\n  title = {Expo documentation},\n  url = {https://docs.expo.dev/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-typescript": {
+      "status": "consolidated",
+      "replacement": "typescript-docs",
+      "original_bibtex": "@online{ages-iv-typescript,\n  title = {The starting point for learning TypeScript},\n  url = {https://www.typescriptlang.org/docs/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-supabase": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-supabase,\n  title = {Supabase Docs},\n  url = {https://supabase.com/docs},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-postgresql": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-postgresql,\n  author = {{The PostgreSQL Global Development Group}},\n  title = {Documentation},\n  url = {https://www.postgresql.org/docs/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-docker": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-docker,\n  author = {{Docker Inc.}},\n  title = {Docker Docs},\n  url = {https://docs.docker.com/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-github-actions": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-github-actions,\n  author = {{GitHub Inc.}},\n  title = {GitHub Actions documentation},\n  url = {https://docs.github.com/en/actions},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-sonar": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-sonar,\n  author = {{SonarSource Sàrl}},\n  title = {Home},\n  url = {https://docs.sonarsource.com/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-pytest": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-pytest,\n  author = {{holger krekel and pytest-dev team}},\n  title = {pytest documentation},\n  url = {https://docs.pytest.org/en/stable/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-jest": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-jest,\n  title = {Getting Started},\n  url = {https://jestjs.io/docs/getting-started},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-app-store": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-app-store,\n  author = {{Apple Inc.}},\n  title = {Reach a global audience on the App Store},\n  url = {https://developer.apple.com/app-store/},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    },
+    "ages-iv-tanstack-query": {
+      "status": "retained",
+      "actions": [
+        "Ano atribuído removido; ano documental pendente"
+      ],
+      "remaining_dates": {
+        "urldate": "2026-10-17"
+      },
+      "publication_status": "PENDING",
+      "access_status": "recorded_access_needs_source_review",
+      "original_bibtex": "@online{ages-iv-tanstack-query,\n  author = {{TanStack LLC}},\n  title = {Does TanStack Query replace Redux, MobX or other global state managers?},\n  url = {https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state},\n  year = {2026},\n  urldate = {2026-10-17},\n}"
+    }
+  },
+  "changed_tex_files": [
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0044.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0045.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0046.tex",
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex"
+  ],
+  "changed_ledgers": [
+    "migration/ledgers/chapter-04-text-h-0044.json",
+    "migration/ledgers/chapter-04-text-h-0043.json",
+    "migration/ledgers/chapter-02-text-h-0009.json",
+    "migration/ledgers/chapter-02-text-h-0012.json",
+    "migration/ledgers/chapter-06-text-h-0113.json",
+    "migration/ledgers/chapter-04-text-h-0046.json",
+    "migration/ledgers/chapter-04-text-h-0045.json"
+  ],
+  "stale_ledger_records": [
+    {
+      "ledger": "migration/ledgers/chapter-02-text-h-0009.json",
+      "target": "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex",
+      "kind": "diagram_placeholder"
+    }
+  ],
+  "limitations": [
+    "As verificações de conteúdo da época e suporte factual são distintas dos dados de citação; página sem data de publicação comprovada continua pendente.",
+    "Autores/títulos anteriores não foram verificados novamente e ficam sujeitos à evidência por referência.",
+    "Datas registradas como reais na curadoria III/IV requerem reconciliação por URL e status, em especial sources com redirecionamento.",
+    "O Figma não dispõe de acesso verificado para a página inicial: campo omitido até consulta real.",
+    "Datas de AGES I/II em 2026 são consultas reais posteriores por curador, não afirmam acesso histórico do autor durante o projeto."
+  ],
+  "completed_follow_up": [
+    "As chaves removidas em main.tex foram remapeadas; verificação local das citações e nocite não encontrou chave sem entrada."
+  ]
+}

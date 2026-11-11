@@ -28,7 +28,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         },
         {
           "source_id": "text-p-0774",
@@ -38,57 +38,57 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         },
         {
           "source_id": "text-p-0775",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
           "start_byte": 595,
-          "end_byte": 761,
+          "end_byte": 719,
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         },
         {
           "source_id": "text-p-0777",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
-          "start_byte": 823,
-          "end_byte": 1150,
+          "start_byte": 781,
+          "end_byte": 1108,
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         },
         {
           "source_id": "text-p-0778",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
-          "start_byte": 1257,
-          "end_byte": 1421,
+          "start_byte": 1215,
+          "end_byte": 1338,
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         },
         {
           "source_id": "text-a-0116",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
           "start_byte": 595,
-          "end_byte": 761,
+          "end_byte": 719,
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         },
         {
           "source_id": "text-a-0117",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0042.tex",
-          "start_byte": 1257,
-          "end_byte": 1421,
+          "start_byte": 1215,
+          "end_byte": 1338,
           "serializations": [
             "repository_link_sentence"
           ],
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         }
       ],
       "asset_map": [],
@@ -103,7 +103,7 @@
           "end_byte": 122,
           "source_start_id": "text-bookmark-start-0039",
           "source_end_id": "text-bookmark-end-0039",
-          "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6"
+          "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e"
         }
       ],
       "structural_dispositions": [
@@ -210,7 +210,7 @@
             "target_start_byte": 418,
             "target_end_byte": 436,
             "target_fragment": "\\textit{landing, }",
-            "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6",
+            "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e",
             "paragraph_style_chain": [
               {
                 "name": "P216",
@@ -315,7 +315,7 @@
             "target_start_byte": 436,
             "target_end_byte": 455,
             "target_fragment": "\\textit{dashboard,}",
-            "target_sha256": "2440fdae33144979ca0ada7c317ffa61b2ed3c9e07bfc243de5c7d79c1346df6",
+            "target_sha256": "8f671d2a3843b4d67e7b1e33c767b5ed46db8ac44d6b9a14dc10e84c97aeb58e",
             "paragraph_style_chain": [
               {
                 "name": "P216",
@@ -373,6 +373,13 @@
         "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
         "source_ids": [
           "text-h-0042"
+        ]
+      },
+      "url_presentation_authorization": {
+        "evidence": "migration/approvals/url-presentation-2026-11-11.json",
+        "source_ids": [
+          "text-a-0116",
+          "text-a-0117"
         ]
       }
     }

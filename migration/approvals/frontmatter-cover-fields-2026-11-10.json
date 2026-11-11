@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "record_type": "user_authorized_frontmatter_cover_field_supplement",
+  "date": "2026-11-10",
+  "approval_status": "authorized_for_execution_pending_human_review",
+  "source": {
+    "path": "RELATORIO_ATUAL.odt",
+    "sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "must_remain_unchanged": true
+  },
+  "historical_authorization": {
+    "path": "migration/approvals/ages-iv-frontmatter-authorization.json",
+    "sha256": "bd0f7ff85362a9db4c971330c8681b08099414cb23923ca69eb18f56c0bef845",
+    "unchanged": true
+  },
+  "scope": {
+    "unit": "pretext",
+    "fields": {
+      "text-p-0018": {
+        "source_text": "AGES I,II, III ou IV",
+        "target_text": "AGES IV",
+        "reason": "Decisão da professora para identificar a edição AGES IV na capa."
+      },
+      "text-p-0033": {
+        "source_text": "Ano",
+        "target_text": "2026",
+        "reason": "Decisão da professora para preencher o ano da capa como 2026."
+      }
+    }
+  },
+  "user_decision": "Na capa, substituir exatamente ‘AGES I,II, III OU IV’ por ‘AGES IV’ e ‘Ano’ por ‘2026’. Esta decisão suplementa somente esses dois campos da autorização histórica; as demais decisões e limites continuam vigentes.",
+  "limits": [
+    "Não modificar RELATORIO_ATUAL.odt.",
+    "Não alterar os demais campos pré-textuais nem unidades de conteúdo.",
+    "A aprovação humana da capa renderizada continua pendente."
+  ]
+}

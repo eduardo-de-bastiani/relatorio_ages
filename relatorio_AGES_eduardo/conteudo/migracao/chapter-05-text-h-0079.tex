@@ -12,7 +12,7 @@
 O banco de dados relacional utiliza PostgreSQL\space\cite{ages-iii-postgresql} em Amazon RDS\space\cite{ages-iii-rds}, responsável pelo armazenamento centralizado das informações do sistema. Para comunicação assíncrona de eventos relacionados ao hardware RFID\space\cite{ages-iii-rfid-nist}, a arquitetura também utiliza Amazon IoT Core\space\cite{ages-iii-aws-iot-core} com protocolo MQTT\space\cite{ages-iii-mqtt}, permitindo troca eficiente de mensagens entre os componentes conectados.\par
 
 % SOURCE text-p-1048
-No ambiente local onde o leitor RFID\space\cite{ages-iii-rfid-nist} está instalado, foi desenvolvido um Gateway em .NET\space\cite{ages-iii-dotnet} responsável por se comunicar diretamente com o equipamento físico, capturar eventos de leitura e encaminhar essas informações à infraestrutura em nuvem. Esse componente atua como ponte entre o dispositivo e os serviços centrais da aplicação, isolando particularidades do hardware e facilitando futuras evoluções.\par
+No ambiente local onde o leitor RFID está instalado, foi desenvolvido um Gateway em .NET responsável por se comunicar diretamente com o equipamento físico, capturar eventos de leitura e encaminhar essas informações à infraestrutura em nuvem. Esse componente atua como ponte entre o dispositivo e os serviços centrais da aplicação, isolando particularidades do hardware e facilitando futuras evoluções.\par
 
 % SOURCE text-p-1049
 Complementando a solução, o projeto também contou com pipelines automatizadas de integração contínua e sincronização entre os repositórios GitHub\space\cite{ages-iii-github-actions} e GitLab\space\cite{ages-iii-gitlab}, garantindo padronização do desenvolvimento, validação de qualidade e maior segurança no fluxo de entregas.\par
