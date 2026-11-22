@@ -1,4 +1,4 @@
-# Runtime output. Existing tracked PDFs and Mariah artifacts remain untouched.
+# Generated output. The protected Mariah reference remains tracked.
 /build/
 /.worktrees/
 __pycache__/
@@ -17,4 +17,6 @@ __pycache__/
 *.synctex.gz
 *.toc
 # Future PDFs are reproducible outputs, not documentary sources.
+/main.pdf
+/Template_AGES___Guvidaletti/**/*.pdf
 /relatorio_AGES_eduardo/**/*.pdf

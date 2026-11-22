@@ -7,6 +7,8 @@ import tempfile
 import unittest
 
 from scripts.migration_harness import presentation_reconciliation as reconciliation
+from scripts.migration_harness import recorda_deployment
+from scripts.migration_harness.latex import _authorized_ages_iii_iv_figure_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +19,7 @@ class PresentationReconciliationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(prefix="ages-presentation-contract-")
         self.addCleanup(self.temp.cleanup)
         self.repo = Path(self.temp.name)
-        paths = list(reconciliation.PINNED_AUTHORIZATION_SHA256)
+        paths = list(reconciliation.PINNED_AUTHORIZATION_SHA256.keys() - {reconciliation.FIGURE_REMOVAL_AUTHORIZATION})
         paths.extend(f"migration/ledgers/{unit}.json" for unit in (
             "chapter-05-text-h-0074", "chapter-06-text-h-0105"))
         for relative in paths:
@@ -63,6 +65,20 @@ class PresentationReconciliationTests(unittest.TestCase):
             reconciliation.sprint3_gantt_number(self.repo)
         path.unlink()
         self.assertEqual(reconciliation.sprint3_gantt_number(self.repo), 32)
+
+    def test_figure_removal_shifts_only_following_numbers(self):
+        relative = reconciliation.FIGURE_REMOVAL_AUTHORIZATION
+        shutil.copyfile(ROOT / relative, self.repo / relative)
+        for previous, final in ((16, 19), (18, 20), (19, 21), (20, 22), (35, 37)):
+            base = f"Figura {previous} – Legenda"
+            caption, _ = reconciliation.projected_caption(self.repo, base)
+            self.assertEqual(caption, f"Figura {final} – Legenda")
+        with self.assertRaisesRegex(ValueError, "Removed figure"):
+            reconciliation.projected_caption(self.repo, "Figura 17 – Legenda")
+        self.assertEqual(reconciliation.sprint3_gantt_number(self.repo), 34)
+        (self.repo / relative).write_text("{}")
+        with self.assertRaisesRegex(ValueError, "hash mismatch"):
+            reconciliation.sprint3_gantt_number(self.repo)
 
     def test_latest_figure_15_source_supersedes_old_personal_collection(self):
         label = "fig:ages-ii-sprint-4-presenca-digital"
@@ -121,6 +137,22 @@ class PresentationReconciliationTests(unittest.TestCase):
         path.write_text(json.dumps(data))
         with self.assertRaisesRegex(ValueError, "hash mismatch"):
             reconciliation.title_corrections(self.repo)
+
+    def test_recorda_deployment_requires_the_exact_supplied_png_and_caption(self):
+        approval = recorda_deployment.load(ROOT)
+        figure = approval["figure_25"]
+        for relative in (recorda_deployment.APPROVAL, figure["asset_path"]):
+            target = self.repo / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ROOT / relative, target)
+        root = self.repo / "relatorio_AGES_eduardo"
+        local_unit = (self.repo / figure["target_file"]).relative_to(root)
+        args = tuple(figure["figure_args"])
+        self.assertTrue(_authorized_ages_iii_iv_figure_source(root, local_unit, args))
+        self.assertFalse(_authorized_ages_iii_iv_figure_source(root, local_unit, args[:4] + ("0.92",)))
+        asset = self.repo / figure["asset_path"]
+        asset.write_bytes(asset.read_bytes() + b"changed")
+        self.assertFalse(_authorized_ages_iii_iv_figure_source(root, local_unit, args))
 
     def test_title_approval_cannot_cover_missing_user_decision(self):
         path = self.repo / "migration/ledgers/chapter-06-text-h-0105.json"

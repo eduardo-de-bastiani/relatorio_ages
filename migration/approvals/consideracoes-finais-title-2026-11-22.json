@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "unit_id": "chapter-07-text-h-0123",
+  "source_id": "text-h-0123",
+  "authorization": "Mensagem do autor de 22/11/2026. A expressão “(Somente AGES IV)” é uma instrução editorial e deve sair do título e do sumário.",
+  "previous_displayed": "7 CONSIDERAÇÕES FINAIS (Somente AGES IV)",
+  "displayed": "7 CONSIDERAÇÕES FINAIS",
+  "scope": "Título no corpo e no sumário. A omissão dos 18 registros do corpo continua vigente.",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+}

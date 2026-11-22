@@ -1,6 +1,6 @@
 # Auditoria independente de conteúdo — AGES IV parcial
 
-> **Escopo do artefato:** esta auditoria confronta as 17 unidades Recorda com o PDF de 85 páginas identificado abaixo. As conclusões sobre conteúdo continuam delimitadas a essas unidades; números de página e hash são históricos após a inclusão dos pré-textuais e da trajetória. Para o PDF integrado atual, consulte `docs/ages-iv/FRONTMATTER_INTEGRATION.md`.
+> **Escopo do artefato:** esta auditoria confronta as 17 unidades Recorda com o PDF de 85 páginas identificado abaixo. As conclusões sobre conteúdo continuam delimitadas a essas unidades; números de página e hash são históricos após a inclusão dos pré-textuais e da trajetória. Para o PDF integrado atual, consulte `git show 1d1d525:docs/ages-iv/FRONTMATTER_INTEGRATION.md`.
 
 **Resultado:** a cobertura de conteúdo até Sprint 1 está aprovada nos limites desta auditoria. A edição permanece **PARCIAL**, pois o corpo do capítulo 7 foi omitido por decisão do usuário; os títulos vazios e a aprovação humana final também continuam pendentes de conclusão/revisão. Esta auditoria não substitui a auditoria visual.
 

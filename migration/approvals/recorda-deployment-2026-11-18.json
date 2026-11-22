@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-18",
+  "authorization": "O autor confirmou na conversa de 18/11/2026 que a arquitetura anexada foi implantada pelos AGES III e pediu a retirada integral das menções ao Supabase do texto e da bibliografia. A correção modifica somente o memorial, a partir da configuração confirmada pelo autor.",
+  "source_records": [
+    "text-p-1339",
+    "text-p-1347",
+    "chapter-06-text-h-0113",
+    "user-ages-iv-sprint-3-report-p08",
+    "ages-iv-supabase",
+    "draw-image-0026",
+    "text-p-1350"
+  ],
+  "files": {
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-3.tex": {
+      "before_sha256": "8443ade814cb5fa161e46d262a23352b5eaab30b798b998f1cab7c1757c97e8e",
+      "after_sha256": "a56d7be9c5858632977d154add39e566239128317cbea3d8442936508d2306a1",
+      "edits": [
+        {
+          "offset": 1269,
+          "before": "\\memorialfigure{imagens/user-supplied/ages-iv-sprint-3-gantt.png}{\\textbf{Figura 34 –} Planejamento de paralelização das tasks da squad durante a Sprint 3}{ages-iv:sprint3:gantt}{Fonte: Eduardo Colla De Bastiani, 2026.}{0.99}\n",
+          "after": "\\memorialfigure{imagens/user-supplied/ages-iv-sprint-3-gantt.png}{\\textbf{Figura 34 –} Paralelização de tasks da squad - AGES IV}{ages-iv:sprint3:gantt}{Fonte: Eduardo Colla De Bastiani, 2026.}{0.99}\n"
+        },
+        {
+          "offset": 5249,
+          "before": "\\indent Também iniciei conversas com os AGES III para auxiliá-los na implantação do backend. Embora inicialmente tivéssemos considerado utilizar o Supabase, as limitações de sua modalidade gratuita nos levaram a avaliar alternativas. Recomendei a utilização dos serviços da AWS, considerando as cotas disponíveis para o projeto e a possibilidade de atender às necessidades de infraestrutura da aplicação.\\par\n",
+          "after": "\\indent Também iniciei conversas com os AGES III para auxiliá-los na implantação do backend. Recomendei a utilização dos serviços da AWS, considerando as cotas disponíveis para o projeto e a possibilidade de atender às necessidades de infraestrutura da aplicação.\\par\n"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex": {
+      "before_sha256": "c7fcbce25baade5b1b5889db371a65070dc0d9c4ac5a8f105906b1f9b4f24c60",
+      "after_sha256": "590a839ebb58f8ad9478060a9fc26d5b257d6df5eb22a61a8195684c5f2a0ccc",
+      "edits": [
+        {
+          "offset": 307,
+          "before": "O sistema utiliza o banco de dados relacional PostgreSQL\\space\\cite{ages-iv-postgresql}, hospedado em ambiente gerenciado por meio da plataforma Supabase\\space\\cite{ages-iv-supabase}. A modelagem foi estruturada para contemplar as entidades centrais do projeto, como usuários, publicações (Recordas), relações de seguidores, preferências musicais e registros de moderação, garantindo integridade referencial, consistência transacional e segurança no controle de acesso aos dados. Além do armazenamento operacional do feed e das interações sociais, a estrutura foi projetada para viabilizar consultas analíticas de histórico e agregações de métricas musicais dos usuários, bem como rotinas de moderação e auditoria do painel administrativo.\\par\n",
+          "after": "O sistema utiliza o banco de dados relacional PostgreSQL\\space\\cite{ages-iv-postgresql}, hospedado no Amazon RDS\\space\\cite{ages-iii-rds} em uma instância privada acessada pelo backend. A modelagem foi estruturada para contemplar as entidades centrais do projeto, como usuários, publicações (Recordas), relações de seguidores, preferências musicais e registros de moderação, garantindo integridade referencial, consistência transacional e segurança no controle de acesso aos dados. Além do armazenamento operacional do feed e das interações sociais, a estrutura foi projetada para viabilizar consultas analíticas de histórico e agregações de métricas musicais dos usuários, bem como rotinas de moderação e auditoria do painel administrativo.\\par\n"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex": {
+      "before_sha256": "92fcf155df44458412acb45da888e5cf6496f2e7663019ee3a2cff5a5194cd78",
+      "after_sha256": "0cbee3cecf1486bfb820d69a9d5a4fde359bf930cbe09b41561525828c06531a",
+      "edits": [
+        {
+          "offset": 301,
+          "before": "A arquitetura da solução foi projetada com foco em desacoplamento, modularidade e manutenibilidade entre as camadas mobile e backend. O frontend consiste em um aplicativo mobile desenvolvido em React Native\\space\\cite{ages-iv-react-native} com Expo\\space\\cite{ages-iv-expo}, estruturado em uma arquitetura orientada a módulos funcionais com gerenciamento de estado de servidor via TanStack Query\\space\\cite{ages-iv-tanstack-query} e preparado para distribuição em ambiente iOS e Android. O backend, construído em Python\\space\\cite{ages-iv-python} com FastAPI\\space\\cite{ages-iv-fastapi} e conteinerizado via Docker\\space\\cite{ages-iv-docker}, expõe uma API REST assíncrona organizada em camadas, centralizando as regras operacionais da plataforma, validação estrita de contratos de dados com Pydantic\\space\\cite{ages-iv-pydantic} e integração com APIs externas de busca musical. A camada de persistência relacional e armazenamento de arquivos de mídia é sustentada pelo Supabase\\space\\cite{ages-iv-supabase}. Complementando a infraestrutura, o ecossistema utiliza esteiras automatizadas de CI/CD via GitHub Actions\\space\\cite{ages-iv-github-actions}, integradas a análises estáticas de qualidade de código (SonarCloud\\space\\cite{ages-iv-sonar}) e execução de testes automatizados com Pytest\\space\\cite{ages-iv-pytest} e Jest\\space\\cite{ages-iv-jest}.\\par\n",
+          "after": "A arquitetura da solução foi projetada com foco em desacoplamento, modularidade e manutenibilidade entre as camadas mobile e backend. O frontend consiste em um aplicativo mobile desenvolvido em React Native\\space\\cite{ages-iv-react-native} com Expo\\space\\cite{ages-iv-expo}, estruturado em uma arquitetura orientada a módulos funcionais com gerenciamento de estado de servidor via TanStack Query\\space\\cite{ages-iv-tanstack-query} e preparado para distribuição em ambiente iOS e Android. O backend, construído em Python\\space\\cite{ages-iv-python} com FastAPI\\space\\cite{ages-iv-fastapi} e conteinerizado via Docker\\space\\cite{ages-iv-docker}, expõe uma API REST assíncrona organizada em camadas, centralizando as regras operacionais da plataforma, validação estrita de contratos de dados com Pydantic\\space\\cite{ages-iv-pydantic} e integração com APIs externas de busca musical.\\par\n\nA equipe de AGES III implantou a API em uma instância Amazon EC2, com o Caddy recebendo as conexões HTTPS e encaminhando as requisições ao FastAPI. O Amazon Route 53 resolve o domínio da API. A API acessa o PostgreSQL 16 hospedado em uma instância privada do Amazon RDS\\space\\cite{ages-iii-rds}. As fotos e os vídeos são armazenados em um bucket privado do Amazon S3\\space\\cite{ages-iii-s3}. A API gera URLs pré-assinadas para que o aplicativo envie os arquivos diretamente ao bucket, e o Amazon CloudFront\\space\\cite{ages-iii-cloudfront} distribui as mídias a partir desse bucket.\\par\n\nComplementando a infraestrutura, o ecossistema utiliza esteiras automatizadas de CI/CD via GitHub Actions\\space\\cite{ages-iv-github-actions}, integradas a análises estáticas de qualidade de código (SonarCloud\\space\\cite{ages-iv-sonar}) e execução de testes automatizados com Pytest\\space\\cite{ages-iv-pytest} e Jest\\space\\cite{ages-iv-jest}. A esteira de implantação gera a imagem Docker para ARM64 e a publica no GitHub Container Registry. A EC2 baixa a imagem e executa o backend com Docker Compose.\\par\n"
+        },
+        {
+          "offset": 2534,
+          "before": "\\memorialfigure{imagens/original/asset-0001.png}{\\textbf{Figura 25 –} Diagrama de Arquitetura - AGES IV}{ages-iv:draw-image-0026}{Fonte: \\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/infraestrutura}}{0.92}\n",
+          "after": "\\memorialfigure{imagens/user-supplied/recorda-arquitetura.png}{\\textbf{Figura 25 –} Diagrama de Arquitetura - AGES IV}{ages-iv:draw-image-0026}{Fonte: \\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}}{0.98}\n"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex": {
+      "before_sha256": "8f313f8986c55ea956878e4cbfbafe292567643a135939fd3120ba7c325b2236",
+      "after_sha256": "1fe7d7c89ef8af7c306b4c6c444124f001618d22491d6c64142b2511001f55b2",
+      "edits": [
+        {
+          "offset": 295,
+          "before": "No desenvolvimento do backend, a principal linguagem utilizada foi Python \\cite{ages-iv-python}, escolhida por sua sintaxe expressiva, maturidade e suporte nativo a programação assíncrona. A API REST foi construída com FastAPI \\cite{ages-iv-fastapi}, framework web moderno e de alta performance que fornece suporte nativo a operações assíncronas, injeção de dependências e documentação automática OpenAPI. No backend, Pydantic \\cite{ages-iv-pydantic} foi utilizada como biblioteca para validação de tipos, serialização e estruturação dos contratos de dados (schemas) de entrada e saída das requisições HTTP.\\par\n",
+          "after": "No desenvolvimento do backend, a principal linguagem utilizada foi Python \\cite{ages-iv-python}, escolhida por sua sintaxe expressiva, maturidade e suporte nativo a programação assíncrona. A API REST foi construída com FastAPI \\cite{ages-iv-fastapi}, framework web moderno e de alta performance que fornece suporte nativo a operações assíncronas, injeção de dependências e documentação automática OpenAPI. No backend, Pydantic \\cite{ages-iv-pydantic} foi utilizada como biblioteca para validação de tipos, serialização e estruturação dos contratos de dados (schemas) de entrada e saída das requisições HTTP. O backend integrou a API do Deezer \\cite{ages-iv-deezer} para consultar o catálogo musical.\\par\n"
+        },
+        {
+          "offset": 1714,
+          "before": "Supabase \\cite{ages-iv-supabase} foi utilizada como plataforma Backend-as-a-Service, com infraestrutura de banco de dados relacional gerenciado (PostgreSQL), persistência dos dados da aplicação e armazenamento. PostgreSQL \\cite{ages-iv-postgresql} foi o banco de dados relacional utilizado para o armazenamento estruturado das informações de usuários, postagens (Recordas), relações de seguidores e dados agregados de métricas musicais. Para o ambiente local do backend e de suas dependências via Docker Compose, Docker \\cite{ages-iv-docker} foi utilizado como plataforma de conteinerização para isolamento e padronização do ambiente de execução.\\par\n",
+          "after": "O PostgreSQL \\cite{ages-iv-postgresql}, hospedado no Amazon RDS \\cite{ages-iii-rds}, armazenava as informações de usuários, postagens (Recordas), relações de seguidores e dados agregados de métricas musicais. O Amazon S3 \\cite{ages-iii-s3} armazenava as fotos e os vídeos distribuídos pelo Amazon CloudFront \\cite{ages-iii-cloudfront}. Para o ambiente local do backend e de suas dependências via Docker Compose, Docker \\cite{ages-iv-docker} foi utilizado como plataforma de conteinerização para isolamento e padronização do ambiente de execução.\\par\n"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib": {
+      "before_sha256": "e2fe256debf6ee648e741fa2d9f036de9654c51d7892dcb8f832a463fdbeffb4",
+      "after_sha256": "940ef52ac2807959b6a19fd2715e92199d693a0029f58933543d39b5f6a075a9",
+      "edits": [
+        {
+          "offset": 9310,
+          "before": "@online{ages-iv-supabase,\n  date = {2026},\n  title = {Supabase Docs},\n  url = {https://supabase.com/docs},\n  urldate = {2026-08-24},\n",
+          "after": "@online{ages-iv-deezer,\n  author = {{Deezer}},\n  title = {Deezer for Developers: API},\n  date = {2026?},\n  url = {https://developers.deezer.com/api},\n  urldate = {2026-11-18},\n"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/main.tex": {
+      "before_sha256": "87d3474957103636f7cf29e4ad062c55b89892a5fbc14b99e2f87128ed9d07a2",
+      "after_sha256": "9b5fdabef3c4ad503468b816551110d4212e0b1ae24a5fec7c3055b2e45267da",
+      "edits": [
+        {
+          "offset": 4213,
+          "before": "",
+          "after": "% Keep the deployment diagram within the architecture subsection.\n\\FloatBlock\n"
+        }
+      ]
+    }
+  },
+  "figure_25": {
+    "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex",
+    "source": "Diagrama redesenhado a partir da imagem fornecida pelo autor. A substituição no memorial e a atribuição à wiki de arquitetura do Recorda foram confirmadas pelo autor em 18/11/2026.",
+    "asset_path": "relatorio_AGES_eduardo/imagens/user-supplied/recorda-arquitetura.png",
+    "asset_sha256": "cc3ed37e52051e783e56e9e887f84116e941e6b104a7e168e16469b3420f3f2d",
+    "figure_args": [
+      "imagens/user-supplied/recorda-arquitetura.png",
+      "\\textbf{Figura 25 –} Diagrama de Arquitetura - AGES IV",
+      "ages-iv:draw-image-0026",
+      "Fonte: \\url{https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura}",
+      "0.98"
+    ],
+    "superseded_odt_asset": "relatorio_AGES_eduardo/imagens/original/asset-0001.png",
+    "source_url": "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/arquitetura",
+    "previous_asset": "relatorio_AGES_eduardo/imagens/user-supplied/recorda-deploy.png"
+  },
+  "figure_34_caption": "\\textbf{Figura 34 –} Paralelização de tasks da squad - AGES IV",
+  "figure_update_authorization": "Na conversa de 18/11/2026, o autor aprovou o novo diagrama da Figura 25, manteve a fonte da wiki e forneceu expressamente as legendas finais das Figuras 25 e 34.",
+  "deezer": {
+    "authorization": "O autor confirmou o uso da API do Deezer na AGES IV e solicitou a inclusão em 18/11/2026.",
+    "unit_id": "chapter-06-text-h-0113",
+    "citation_key": "ages-iv-deezer",
+    "source": "https://developers.deezer.com/api",
+    "accessed": "2026-11-18",
+    "publication_date": "2026? — ano estimado por indicação do autor em 18/11/2026.",
+    "reference_scope": "A página é o destino indicado pelo autor. Os termos oficiais corroboram a existência da API de busca no catálogo; o uso no Recorda foi confirmado pelo autor.",
+    "corroborating_source": "https://cdn-content.dzcdn.net/pdf/CGU-developers.pdf",
+    "source_authorization": "O autor indicou este endereço como a documentação oficial em 18/11/2026.",
+    "previous_source": "https://github.com/deezer/javascript-samples/blob/551b5f7ed5e370595ef17e33c7339759afc2a37e/README.md",
+    "access_attempt": {
+      "date": "2026-11-18",
+      "result": "Redireciona ao login; conteúdo da documentação indisponível na consulta."
+    },
+    "access_date_basis": "Data indicada pelo autor. O redirecionamento para login na tentativa de consulta está registrado separadamente."
+  }
+}

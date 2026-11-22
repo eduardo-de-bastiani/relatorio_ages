@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "record_type": "user_supplied_content_authorization",
+  "date": "2026-11-22",
+  "approval_status": "authorized_for_inclusion_pending_human_review",
+  "unit_id": "chapter-07-text-h-0123",
+  "user_instruction": "Acredito que com isso você já pode escrever a conclusão",
+  "source": {
+    "type": "user_directed_editorial_draft",
+    "source_odt_path": "RELATORIO_ATUAL.odt",
+    "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+    "odt_relationship": "The ODF heading is preserved. The template instructions remain intentionally omitted; the four paragraphs are an editorial draft from the author’s account and interview responses."
+  },
+  "content": [
+    {
+      "content_id": "editorial-consideracoes-finais-p01",
+      "kind": "conclusion_paragraph",
+      "source_markup": "O que mais valorizo na minha trajetória na Agência Experimental de Engenharia de Software (AGES) foi a oportunidade de acompanhar projetos de software de ponta a ponta ainda na universidade. Em outras disciplinas, eu aprendia os conceitos e os exercitava em trabalhos. Na AGES, pude aplicar o que acabara de estudar em situações que exigiam decisões, colaboração e entregas a clientes. Para mim, trabalhar nessas condições foi o que mais se aproximou, durante a graduação, do dia a dia de uma *software house*.",
+      "sha256": "1d3ce989a64c0211bb4accaeb6be66aad97d681f1ba41267eaaa03fca9edcd39"
+    },
+    {
+      "content_id": "editorial-consideracoes-finais-p02",
+      "kind": "conclusion_paragraph",
+      "source_markup": "A progressão das responsabilidades é um dos aspectos do formato da AGES que mais contribuíram para minha formação. Comecei como desenvolvedor iniciante e, a cada edição, passei a entender melhor o trabalho que acontecia por trás das funcionalidades. Assumi responsabilidades sobre o banco de dados e a infraestrutura até chegar à coordenação de um projeto. Ganhei independência para tomar decisões ao mesmo tempo que passei a responder por uma parte maior do resultado. Considero valioso poder experimentar essas funções na universidade e descobrir, na prática, com quais caminhos da engenharia de software mais me identifico.",
+      "sha256": "f582ceb329e71a055f6e996b5ab0a87c4fe20993547ac1624ee4d97e3c024364"
+    },
+    {
+      "content_id": "editorial-consideracoes-finais-p03",
+      "kind": "conclusion_paragraph",
+      "source_markup": "Minha participação como cliente do Hoortech me deu outra perspectiva sobre esse trabalho. Do outro lado da mesa, aprendi que saber o que pedir começa por compreender bem o problema e definir o resultado que espero. Isso mudou a forma como eu explicava à equipe o que precisava ser feito. Esse aprendizado também pode ser importante na minha carreira se eu voltar a atuar do lado de quem solicita um projeto de software. Fico satisfeito por ter aproveitado tanto os papéis que assumi em cada edição quanto essa oportunidade que busquei por iniciativa própria.",
+      "sha256": "89d5bc810800186a6dab2745d3690fb45b6d2b754c1f2083a8bb61b3bd8845e5"
+    },
+    {
+      "content_id": "editorial-consideracoes-finais-p04",
+      "kind": "conclusion_paragraph",
+      "source_markup": "A AGES também me deu espaço para errar, rever minhas decisões e tentar novamente em um ambiente de aprendizagem. Quando encontrei situações semelhantes no trabalho, pude recorrer ao que havia aprendido e conduzi-las melhor. Levo dessa trajetória uma compreensão mais ampla de como um projeto de software é construído, de como as responsabilidades se complementam e de como posso contribuir em diferentes etapas. Essa experiência serviu de base para a minha atuação profissional e continua fazendo diferença na maneira como trabalho.",
+      "sha256": "80982664a7f9e90fa72bf55fc4527c78aee0c57aac2d1b2edc5648a176a7afdf"
+    }
+  ],
+  "limits": [
+    "Chapter 7 only. Draft from the author’s account and responses dated 22/11/2026. Include client work in Hoortech and respect the author’s choice to omit a specific corporate example. Human review remains pending."
+  ]
+}

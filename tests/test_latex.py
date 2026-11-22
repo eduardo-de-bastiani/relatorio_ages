@@ -1,10 +1,12 @@
 import hashlib
 import json
+import shutil
 import struct
 import tempfile
 import unittest
 from pathlib import Path
 
+from scripts.migration_harness import presentation_reconciliation
 from scripts.migration_harness.latex import audit_latex, bib_keys, commands, strip_comments, MEMORIAL_FIGURE_BODY
 
 
@@ -190,11 +192,15 @@ class LatexTests(unittest.TestCase):
 
         unit_path.write_text(invocation.replace("Figura 32", "Figura 35"), encoding="utf-8")
         self.assertIn("invalid_figure_apparatus", self.codes(audit_latex(latex_root, Path("main.tex"))))
-        supplemental_path = approval_path.parent / "ages-i-ii-diagrams-2026-11-05.json"
-        supplemental_path.write_text(json.dumps({
-            "date": "2026-11-05",
-            "renumbering": "Figura 1 inalterada; anteriores 2–6 somam 2; anteriores 7–35 somam 3. Figura anterior 7 substituída pela nova figura 10.",
-        }), encoding="utf-8")
+        repo = Path(__file__).resolve().parents[1]
+        for relative in (presentation_reconciliation.DIAGRAM_AUTHORIZATION,
+                         *presentation_reconciliation.SOURCE_AUTHORIZATIONS.values()):
+            shutil.copyfile(repo / relative, self.root / relative)
+        self.assertEqual(audit_latex(latex_root, Path("main.tex"))["status"], "pass")
+        removal = presentation_reconciliation.FIGURE_REMOVAL_AUTHORIZATION
+        shutil.copyfile(repo / removal, self.root / removal)
+        self.assertIn("invalid_figure_apparatus", self.codes(audit_latex(latex_root, Path("main.tex"))))
+        unit_path.write_text(invocation.replace("Figura 32", "Figura 34"), encoding="utf-8")
         self.assertEqual(audit_latex(latex_root, Path("main.tex"))["status"], "pass")
 
     def test_ages_i_source_requires_exact_figure_and_user_supplied_url(self):

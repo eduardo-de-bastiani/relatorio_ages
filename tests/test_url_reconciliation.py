@@ -6,6 +6,7 @@ import tempfile
 import unittest
 
 from scripts.migration_harness import url_reconciliation as urls
+from scripts.migration_harness import recorda_deployment
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,7 +22,11 @@ class UrlReconciliationTests(unittest.TestCase):
         for relative in (urls.CONTRACT, self.spec['tex_path']):
             path = self.root / relative
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_bytes((ROOT / relative).read_bytes())
+            data = (ROOT / relative).read_bytes()
+            if relative == self.spec['tex_path']:
+                approval = recorda_deployment.load(ROOT)
+                data = recorda_deployment.previous_bytes(data, approval['files'][relative])
+            path.write_bytes(data)
         ledger = json.loads((ROOT / 'migration/ledgers' / (self.uid + '.json')).read_text())
         self.unit = ledger['units'][self.uid]
         self.records = {c['source_id']: {'href': c['destination']} for c in self.spec['changes']}
@@ -65,6 +70,9 @@ class UrlReconciliationTests(unittest.TestCase):
 
     def test_prior_whole_file_requires_exact_successor(self):
         data = (self.root / self.spec['tex_path']).read_bytes()
+        # Reconstruct the 11/11 successor before the separately approved
+        # 18/11 caption shift. Its whole-file hash is still checked by the contract.
+        data = data.replace(b"\\textbf{Figura 24 ", b"\\textbf{Figura 25 ", 1)
         old = urls.previous_bytes(self.root, self.uid, data)
         self.assertEqual(hashlib.sha256(old).hexdigest(), self.spec['before_sha256'])
         with self.assertRaises(ValueError):

@@ -24,7 +24,7 @@
           "serializations": [
             "document_reordering_numbering"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1469",
@@ -34,7 +34,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1470",
@@ -42,7 +42,7 @@
           "start_byte": 1092,
           "end_byte": 1779,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1471",
@@ -50,7 +50,7 @@
           "start_byte": 1807,
           "end_byte": 2721,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1472",
@@ -58,7 +58,7 @@
           "start_byte": 2749,
           "end_byte": 3360,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1473",
@@ -68,7 +68,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1475",
@@ -79,7 +79,7 @@
             "abnt_figure_caption",
             "document_reordering_numbering"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "draw-image-0033",
@@ -87,7 +87,7 @@
           "start_byte": 4250,
           "end_byte": 4443,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1476",
@@ -97,7 +97,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1478",
@@ -109,7 +109,7 @@
             "original_whitespace",
             "document_reordering_numbering"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "draw-image-0034",
@@ -117,7 +117,7 @@
           "start_byte": 5308,
           "end_byte": 5545,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1479",
@@ -125,7 +125,7 @@
           "start_byte": 5608,
           "end_byte": 6382,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1480",
@@ -135,7 +135,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1481",
@@ -145,7 +145,7 @@
           "serializations": [
             "original_whitespace"
           ],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1482",
@@ -153,7 +153,7 @@
           "start_byte": 7732,
           "end_byte": 8268,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1484",
@@ -161,7 +161,7 @@
           "start_byte": 8338,
           "end_byte": 8933,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         },
         {
           "source_id": "text-p-1485",
@@ -169,7 +169,7 @@
           "start_byte": 8963,
           "end_byte": 9413,
           "serializations": [],
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         }
       ],
       "asset_map": [
@@ -197,7 +197,7 @@
           "command": "hypertarget",
           "start_byte": 72,
           "end_byte": 121,
-          "target_sha256": "3b0fcce16f49c90cdb72c3d9053738a56a3e5d39013f7fd7d5415c64d3163aac"
+          "target_sha256": "a06d0c6e5c1ea8e25d6b9b5193d821f806d859f08355ea79f63cbb320b30596a"
         }
       ],
       "structural_dispositions": [

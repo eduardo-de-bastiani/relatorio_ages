@@ -1,10 +1,12 @@
-# Revisão atual do PDF — AGES I / Easy Choose
+# Revisão histórica aceita — AGES I / Easy Choose (16/10/2026)
 
-**Resultado técnico: PASS. Apresentação visual aceita pelo usuário; avanço para AGES II autorizado.** Em 16/10/2026, o usuário avaliou positivamente o resultado e condicionou a próxima edição ao registro permanente do padrão, agora documentado em [STYLE_GUIDE](../STYLE_GUIDE.md) e `migration/approvals/ages-i-presentation-accepted.json`. Esta revisão corresponde ao PDF posterior à configuração do parágrafo de tecnologias em uma unidade contínua com citações autor-data e links. Ela substitui avaliações de PDFs anteriores no [índice da edição](README.md).
+Este parecer foi preservado porque fundamenta uma aprovação humana. Seus números de páginas, fontes pendentes e hashes descrevem aquele checkpoint; a versão atual do memorial está indicada no [README](../../README.md).
+
+**Resultado técnico: PASS. Apresentação visual aceita pelo usuário; avanço para AGES II autorizado.** Em 16/10/2026, o usuário avaliou positivamente o resultado e condicionou a próxima edição ao registro permanente do padrão, agora documentado em [STYLE_GUIDE](../STYLE_GUIDE.md) e `migration/approvals/ages-i-presentation-accepted.json`. Esta revisão corresponde ao PDF posterior à configuração do parágrafo de tecnologias em uma unidade contínua com citações autor-data e links. Ela substitui avaliações de PDFs anteriores no índice da edição (histórico: `git show 1d1d525:docs/ages-i/README.md`).
 
 Revisão executada em 16/10/2026.
 
-O PDF revisado foi [main.pdf](/home/eduardo/facul/relatorio_ages/build/document/main.pdf), com 18 páginas A4 e SHA-256 `e4822c8d8056433af08104b0a9e8edd0f21828350cc9fcb9d2f335ec4a1d0a98`. O build usou o perfil `document-review`; `review_only: true` e `official_document_gate: NOT_RUN` continuam descrevendo corretamente aquele artefato. O aceite humano autoriza reutilizar a apresentação e avançar para AGES II; não transforma retrospectivamente o build de revisão em build oficial nem resolve as pendências factuais/normativas abaixo.
+O PDF revisado tinha 18 páginas A4 e SHA-256 `e4822c8d8056433af08104b0a9e8edd0f21828350cc9fcb9d2f335ec4a1d0a98`. O build usou o perfil `document-review`; `review_only: true` e `official_document_gate: NOT_RUN` continuam descrevendo corretamente aquele artefato. O aceite humano autoriza reutilizar a apresentação e avançar para AGES II; não transforma retrospectivamente o build de revisão em build oficial nem resolve as pendências factuais/normativas abaixo.
 
 ## Verificações executadas
 
@@ -19,7 +21,7 @@ O PDF revisado foi [main.pdf](/home/eduardo/facul/relatorio_ages/build/document/
 | Inspeção visual desta revisão | PASS_WITH_NOTE | Páginas 1–18 abertas e examinadas. Não encontrei corte, página vazia, legenda deslocada ou quebra artificial antes de Sprint. Há a observação de baixa gravidade abaixo. |
 | Conformidade ABNT integral | PENDING | A apresentação observada foi comparada às regras e fontes registradas no [guia de estilo](../STYLE_GUIDE.md). A confirmação integral das normas cruzadas/vigência e de eventual requisito específico da professora/AGES continua pendente; este relatório não certifica conformidade total. |
 
-Os arquivos de evidência são [relatório de compilação](../../build/document/report.json), [log TeX](../../build/document/main.log), [log do Biber](../../build/document/main.blg), [saída do compilador](../../build/document/compiler.txt), [relatório de renderização](../../build/visual/e4822c8d8056433a/report.json) e as imagens `page-01.png` a `page-18.png` no mesmo diretório de renderização.
+Os logs e renders temporários dessa compilação foram removidos na limpeza autorizada. Este parecer e o [aceite humano](../../migration/approvals/ages-i-presentation-accepted.json) conservam o resultado, o escopo e a identidade do PDF histórico; os arquivos atuais de `build/document/` pertencem à revisão atual, não a este checkpoint.
 
 O resumo automatizado dos gates e das 15 unidades está em `build/ages-i/final-checks/current-document-review.json`; os relatórios de origem, inventário, estrutura LaTeX e a saída dos testes também estão em `build/ages-i/final-checks/`.
 

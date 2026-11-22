@@ -32,7 +32,7 @@ A comparação da extração de texto do PDF desconsiderou apenas ligaturas tipo
 
 - Esta auditoria cobre a Sprint 2 e seu trecho no PDF; não certifica todo o memorial.
 - A auditoria textual não aprova a apresentação visual; ver `VISUAL_AUDIT.md`.
-- O compilador retornou código 0, mas o gate global do perfil `document-review` está FAIL por avisos fora desta unidade e em índices; ver `BUILD_REPORT.md`.
+- O compilador retornou código 0, mas o gate global do perfil `document-review` está FAIL por avisos fora desta unidade e em índices; ver `git show 1d1d525:docs/ages-iv/sprint-2/BUILD_REPORT.md`.
 - Revisão e aprovação humana do conteúdo/PDF permanecem PENDING. Não iniciar outra Sprint.
 
 **Auditoria independente:** agente auditor de conteúdo, leitura direta da origem ODF, da autorização, do LaTeX e do PDF; conclusão recebida em 25/10/2026.

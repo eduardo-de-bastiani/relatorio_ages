@@ -1,4 +1,4 @@
-"""Pinned 2026-11-05 figure/source reconciliation contract.
+"""Pinned figure and source reconciliation contracts.
 
 This module recognizes only the user's approved diagram replacements and
 figure-number offsets. It does not verify that URLs resolve or prove image
@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 DIAGRAM_AUTHORIZATION = "migration/approvals/ages-i-ii-diagrams-2026-11-05.json"
+FIGURE_REMOVAL_AUTHORIZATION = "migration/approvals/ages-iii-figure-20-removal-2026-11-18.json"
 SOURCE_AUTHORIZATIONS = {
     "ages-i": "migration/approvals/ages-i-figure-sources-2026-11-05.json",
     "ages-ii": "migration/approvals/ages-ii-figure-sources-2026-11-05.json",
@@ -25,6 +26,7 @@ TITLE_CORRECTION_AUTHORIZATION = "migration/approvals/body-chapter-title-correct
 TITLE_CORRECTION_SHA256 = "84d0d7560ff3cbe82dbfc9e69716a9265d4d882fd659d820fa26e17b17d2006f"
 TITLE_CORRECTION_RECORD_TYPE = "user_authorized_body_title_corrections"
 PINNED_AUTHORIZATION_SHA256 = {
+    FIGURE_REMOVAL_AUTHORIZATION: "7d22728c7927024be30b7e38ef93eb62e1e7d7205fb333100e9501baead42f23",
     FIGURE_SOURCE_SUPPLEMENT: FIGURE_SOURCE_SUPPLEMENT_SHA256,
     DIAGRAM_AUTHORIZATION: "36e0b181dd61ec381978a1c58c7c153e02799440d7bbe28293c7c4a14c8c6c32",
     SOURCE_AUTHORIZATIONS["ages-i"]: "7c779878bf004ddb4f4fc8da35cf38d1d2b1e3303fbbe1cb30990c8c97852691",
@@ -129,6 +131,25 @@ def figure_number(old_number: int) -> int:
     raise ValueError(f"Original figure number outside authorized range: {old_number}")
 
 
+def figure_removal(repo: Path) -> dict:
+    """Load the exact removal decision when present, retaining historical roots."""
+    if (repo / FIGURE_REMOVAL_AUTHORIZATION).exists():
+        return _load_pinned(repo, FIGURE_REMOVAL_AUTHORIZATION)
+    return {}
+
+
+def _after_removal(repo: Path, number: int) -> int:
+    removal = figure_removal(repo)
+    if not removal:
+        return number
+    if number == removal["removed"]["previous_figure_number"]:
+        raise ValueError("Removed figure has no displayed number")
+    shift = removal["renumbering"]
+    if shift["first_previous_number"] <= number <= shift["last_previous_number"]:
+        return number + shift["offset"]
+    return number
+
+
 def sprint3_gantt_number(repo: Path) -> int:
     """Return the approved Gantt display number, retaining Figure 32 for legacy roots.
 
@@ -138,7 +159,7 @@ def sprint3_gantt_number(repo: Path) -> int:
     if not (repo / DIAGRAM_AUTHORIZATION).exists():
         return 32
     load(repo)
-    return figure_number(32)
+    return _after_removal(repo, figure_number(32))
 
 
 def projected_caption(repo: Path, source_text: str, post_order_target: str | None = None) -> tuple[str, dict]:
@@ -156,7 +177,8 @@ def projected_caption(repo: Path, source_text: str, post_order_target: str | Non
     if not base_match:
         raise ValueError("Prior presentation target is outside the pinned figure reconciliation contract")
     old_number = int(base_match.group(2))
-    new_number = figure_number(old_number)
+    previous_display_number = figure_number(old_number)
+    new_number = _after_removal(repo, previous_display_number)
     body = base_match.group(4)
     displayed = source_leading + f"Figura {new_number} – {body}"
     return displayed, {
@@ -166,7 +188,9 @@ def projected_caption(repo: Path, source_text: str, post_order_target: str | Non
         "displayed": displayed,
         "previous_figure_number": old_number,
         "figure_number": new_number,
-        "authorization_evidence": DIAGRAM_AUTHORIZATION,
+        "authorization_evidence": (
+            FIGURE_REMOVAL_AUTHORIZATION if new_number != previous_display_number else DIAGRAM_AUTHORIZATION
+        ),
         "source_status": SOURCE_STATUS,
     }
 

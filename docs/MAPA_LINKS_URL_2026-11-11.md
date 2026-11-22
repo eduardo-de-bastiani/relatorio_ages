@@ -6,7 +6,7 @@ Os **20 links desta tabela foram convertidos para URLs completas visíveis e cli
 
 Os caminhos da tabela são relativos a `relatorio_AGES_eduardo/conteudo/migracao/`; as linhas e os rótulos registram o **inventário anterior à aplicação**. A implementação usa `\url{destino}`, sem aninhar links. `%` e `_` dentro desses novos comandos são preservados pelo leitor de URL do LaTeX. A configuração permite quebra após hífens existentes; somente a chamada longa do banco de dados da AGES III usa alinhamento local à esquerda para evitar justificação inadequada. O corpo narrativo continua com sua composição anterior.
 
-PDF final de revisão: `build/document/main.pdf`, SHA-256 `3a71ba163dfd72c03b8cc928e255a36e81c6bdc71e0f649386b8883e97d3adf4`. `./build.sh --profile document-review` retornou zero com `status: pass` e `findings: []`; ver também `docs/DIAGNOSTICO_BUILD_2026-11-11.md`. A aprovação humana do resultado continua pendente.
+PDF final de revisão: `build/document/main.pdf`, SHA-256 `3a71ba163dfd72c03b8cc928e255a36e81c6bdc71e0f649386b8883e97d3adf4`. `./build.sh --profile document-review` retornou zero com `status: pass` e `findings: []`; ver também `docs/HARNESS.md`. A aprovação humana do resultado continua pendente.
 
 | ID ODT / parágrafo | Edição e tópico | Arquivo:linha anterior | Rótulo substituído | URL exibida |
 |---|---|---|---|---|

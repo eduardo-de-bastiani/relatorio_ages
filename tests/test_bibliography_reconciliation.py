@@ -76,6 +76,10 @@ class BibliographyReconciliationTests(unittest.TestCase):
 
     def test_supplemental_contract_accepts_current_integrated_bibliography(self):
         facts = reconciliation.verify(self.repo)
+        bibliography = self.repo / "relatorio_AGES_eduardo/bibliografia/bibliografia.bib"
+        keys = reconciliation._entries(bibliography.read_bytes())
+        self.assertIn("ages-iv-deezer", keys)
+        self.assertNotIn("ages-iv-supabase", keys)
         self.assertEqual(facts, {
             "source_entries": 55,
             "result_entries": 49,

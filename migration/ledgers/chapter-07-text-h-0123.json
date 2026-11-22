@@ -20,11 +20,11 @@
           "source_id": "text-h-0123",
           "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
           "start_byte": 192,
-          "end_byte": 234,
+          "end_byte": 216,
           "serializations": [
             "abnt_section_numbering"
           ],
-          "target_sha256": "550453d9eaea6f9a9d51933c2ff5bdd83214abcaf7174e79421aaeafdd87d7e4"
+          "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
         }
       ],
       "asset_map": [],
@@ -39,7 +39,7 @@
           "command": "hypertarget",
           "start_byte": 78,
           "end_byte": 127,
-          "target_sha256": "550453d9eaea6f9a9d51933c2ff5bdd83214abcaf7174e79421aaeafdd87d7e4"
+          "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
         },
         {
           "source_heading_id": "text-h-0123",
@@ -51,7 +51,7 @@
           "command": "hypertarget",
           "start_byte": 128,
           "end_byte": 156,
-          "target_sha256": "550453d9eaea6f9a9d51933c2ff5bdd83214abcaf7174e79421aaeafdd87d7e4"
+          "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
         }
       ],
       "structural_dispositions": [],
@@ -130,7 +130,7 @@
           "detail": "User explicitly authorized inclusion of only text-h-0123; 18 associated body/list records are omitted and this unit remains partial."
         }
       ],
-      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "layout_disposition": "The ODF heading is followed by four new editorial paragraphs based on the author’s account and interview. The 18 original template records remain intentionally omitted.",
       "macro_contract": {
         "path": "relatorio_AGES_eduardo/util/macros.tex",
         "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
@@ -174,6 +174,41 @@
         "authorization_evidence": "migration/approvals/ages-iv-partial-authorization.json",
         "source_ids": [
           "text-h-0123"
+        ]
+      },
+      "approved_title_display": "migration/approvals/consideracoes-finais-title-2026-11-22.json",
+      "user_supplied_content": {
+        "authorization_evidence": "migration/approvals/consideracoes-finais-content-2026-11-22.json",
+        "authorization_sha256": "efa798423e851600acc90586468fe0a90f51dd5a059a0f590f332e551a9f23ad",
+        "content_map": [
+          {
+            "content_id": "editorial-consideracoes-finais-p01",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+            "start_byte": 349,
+            "end_byte": 877,
+            "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
+          },
+          {
+            "content_id": "editorial-consideracoes-finais-p02",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+            "start_byte": 928,
+            "end_byte": 1571,
+            "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
+          },
+          {
+            "content_id": "editorial-consideracoes-finais-p03",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+            "start_byte": 1622,
+            "end_byte": 2189,
+            "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
+          },
+          {
+            "content_id": "editorial-consideracoes-finais-p04",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-07-text-h-0123.tex",
+            "start_byte": 2240,
+            "end_byte": 2785,
+            "target_sha256": "c7514a75e1ca4f11f69c2efb5c2d4195bc3b55d9f5b5545dc68e21bfcc9eb396"
+          }
         ]
       }
     }

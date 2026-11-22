@@ -282,7 +282,18 @@ def _validate_supplement_diff(repo: Path, source: bytes, result: bytes, contract
 
 def verify(repo: Path, data: bytes | None = None) -> dict:
     """Verify every pinned bibliography state through the current exact final state."""
+    from . import recorda_deployment
+
     repo = repo.resolve()
+    current = data
+    if (repo / recorda_deployment.APPROVAL).is_file():
+        approval = recorda_deployment.load(repo)
+        if current is None:
+            current = _safe_path(repo, recorda_deployment.BIBLIOGRAPHY).read_bytes()
+        try:
+            data = recorda_deployment.previous_bytes(current, approval["files"][recorda_deployment.BIBLIOGRAPHY])
+        except ValueError as error:
+            raise ValueError("Integrated bibliography differs from the exact approved bibliography state") from error
     historical_fixture = _safe_path(repo, RESULT_PATH).read_bytes()
     historical_facts = verify_historical(repo, data=historical_fixture)
     contract = _validate_supplement_contract(repo)
@@ -300,7 +311,7 @@ def verify(repo: Path, data: bytes | None = None) -> dict:
     final_facts = verify_estimated_access_varied(repo, data=data)
     return {
         **historical_facts, **changes, **author_facts, **final_facts,
-        "current_entries": len(_entries(fixture)),
+        "current_entries": len(_entries(current if current is not None else fixture)),
     }
 
 

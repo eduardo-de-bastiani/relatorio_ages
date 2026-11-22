@@ -364,10 +364,10 @@ class PreservationTests(unittest.TestCase):
         )
         self.assertEqual(projected, caption)
         self.assertEqual(evidence["kind"], "user_authorized_figure_number_reconciliation")
-        self.assertEqual(evidence["figure_number"], 34)
+        self.assertEqual(evidence["figure_number"], 33)
         with self.assertRaises(UnsupportedSerialization):
             _project_approved_presentation(
-                "text-p-1450", caption, "Figura 34 – Estrutura alterada - AGES IV",
+                "text-p-1450", caption, "Figura 33 – Estrutura alterada - AGES IV",
                 ["abnt_figure_caption"], authorization,
             )
         chapter7_authorization = _load_presentation_authorization(repo, AGES_IV_TITLE_ONLY_UNIT)
@@ -375,11 +375,16 @@ class PreservationTests(unittest.TestCase):
         target = "7 CONSIDERAÇÕES FINAIS (Somente AGES IV)"
         self.assertEqual(PRESENTATION_HEADINGS["text-h-0123"], (source, target))
         projected, evidence = _project_approved_presentation(
-            "text-h-0123", source, target,
+            "text-h-0123", source, "7 CONSIDERAÇÕES FINAIS",
             ["abnt_section_numbering"], chapter7_authorization,
         )
         self.assertEqual(projected, source)
         self.assertEqual(evidence["kind"], "abnt_section_numbering")
+        with self.assertRaises(UnsupportedSerialization):
+            _project_approved_presentation(
+                "text-h-0123", source, target,
+                ["abnt_section_numbering"], chapter7_authorization,
+            )
         with self.assertRaises(UnsupportedSerialization):
             _project_approved_presentation(
                 "text-h-0123", source, "7: CONSIDERAÇÕES FINAIS (Somente AGES IV)",
@@ -1061,7 +1066,10 @@ class PreservationTests(unittest.TestCase):
             ):
                 destination = temp_root / relative
                 destination.parent.mkdir(parents=True, exist_ok=True)
-                destination.write_bytes((repo / relative).read_bytes())
+                source_path = repo / relative
+                if relative == "relatorio_AGES_eduardo/bibliografia/bibliografia.bib":
+                    source_path = repo / bibliography_reconciliation.ESTIMATED_ACCESS_RESULT_PATH
+                destination.write_bytes(source_path.read_bytes())
 
             target_path = "relatorio_AGES_eduardo/conteudo/migracao/citation-fixture.tex"
             target = temp_root / target_path

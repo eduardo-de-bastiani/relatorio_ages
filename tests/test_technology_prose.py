@@ -12,6 +12,7 @@ import unittest
 from pathlib import Path
 
 from scripts.migration_harness import technology_prose as prose
+from scripts.migration_harness import recorda_deployment
 from scripts.migration_harness.preservation import audit_conversion, _load_presentation_authorization
 
 
@@ -67,10 +68,16 @@ class TechnologyProseTests(unittest.TestCase):
             str(path.relative_to(self.repo))
             for path in (self.repo / "migration/approvals").glob("*.json")
         )
+        deployment = recorda_deployment.load(self.repo)
         for raw in paths:
+            if raw == recorda_deployment.APPROVAL:
+                continue
             target = self.root / raw
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(self.repo / raw, target)
+            data = (self.repo / raw).read_bytes()
+            if raw in deployment["files"]:
+                data = recorda_deployment.previous_bytes(data, deployment["files"][raw])
+            target.write_bytes(data)
         shutil.copyfile(self.repo / self.approval["source"]["path"], self.root / self.approval["source"]["path"])
         self.select(self.uid)
 

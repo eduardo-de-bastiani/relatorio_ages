@@ -167,6 +167,18 @@ def _authorized_hoortech_figure_source(root: Path, relative: Path, args: tuple[s
 
 def _authorized_ages_iii_iv_figure_source(root: Path, relative: Path, args: tuple[str, ...]) -> bool:
     """Validate the exact figure-to-source associations supplied by the author."""
+    from . import recorda_deployment
+
+    repo = root.parent
+    if (relative == Path("conteudo/migracao/chapter-06-text-h-0110.tex")
+            and args[2] == "ages-iv:draw-image-0026"
+            and (repo / recorda_deployment.APPROVAL).is_file()):
+        try:
+            figure = recorda_deployment.load(repo)["figure_25"]
+            recorda_deployment.verify_figure_asset(repo, figure)
+            return str((root / relative).relative_to(repo)) == figure["target_file"] and args == tuple(figure["figure_args"])
+        except (OSError, ValueError, KeyError, TypeError):
+            return False
     iii = "https://tools.ages.pucrs.br/sistema-de-controle-inteligente-de-estacionamento-com-rfid/impinj-rfid-wiki/-/wikis/"
     iv = "https://tools.ages.pucrs.br/2026-2/2jk-4jk/recorda/wiki/-/wikis/"
     path_urls = {
@@ -262,16 +274,16 @@ def _authorized_sprint3_figure_source(root: Path, relative: Path, args: tuple[st
     """
     expected_path = Path("conteudo/migracao/ages-iv-sprint-3.tex")
     expected_asset = "imagens/user-supplied/ages-iv-sprint-3-gantt.png"
-    expected_caption = r"\textbf{Figura 32 –} Planejamento de paralelização das tasks da squad durante a Sprint 3"
-    if args[1] == expected_caption.replace("Figura 32", "Figura 35"):
-        try:
-            supplemental = json.loads((root.parent / "migration/approvals/ages-i-ii-diagrams-2026-11-05.json").read_text(encoding="utf-8"))
-        except (OSError, UnicodeError, ValueError, TypeError):
-            return False
-        if (supplemental.get("date") != "2026-11-05"
-                or supplemental.get("renumbering") != "Figura 1 inalterada; anteriores 2–6 somam 2; anteriores 7–35 somam 3. Figura anterior 7 substituída pela nova figura 10."):
-            return False
-        expected_caption = expected_caption.replace("Figura 32", "Figura 35")
+    from . import presentation_reconciliation, recorda_deployment
+    expected_body = "Planejamento de paralelização das tasks da squad durante a Sprint 3"
+    try:
+        number = presentation_reconciliation.sprint3_gantt_number(root.parent)
+        if (root.parent / recorda_deployment.APPROVAL).is_file():
+            expected_caption = recorda_deployment.load(root.parent)["figure_34_caption"]
+        else:
+            expected_caption = rf"\textbf{{Figura {number} –}} {expected_body}"
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
     expected_args = (
         expected_asset,
         expected_caption,
@@ -280,7 +292,6 @@ def _authorized_sprint3_figure_source(root: Path, relative: Path, args: tuple[st
         "0.99",
     )
     try:
-        from . import presentation_reconciliation
         if (root.parent / presentation_reconciliation.FIGURE_SOURCE_SUPPLEMENT).exists():
             source_authorized = presentation_reconciliation.authorized_source(root.parent, args[2], args[3]) is not None
         else:

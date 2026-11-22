@@ -25,7 +25,7 @@
             "abnt_section_numbering",
             "document_reordering_numbering"
           ],
-          "target_sha256": "457a703cf6123d62928d3516c35d0665b6604262e18fc3aa7afb8227a2e01fae"
+          "target_sha256": "1759fd3d815ddabbe7c85275ad7da84a022496d1205cd42c099c4a67c22af74a"
         }
       ],
       "asset_map": [],
@@ -40,7 +40,7 @@
           "command": "hypertarget",
           "start_byte": 78,
           "end_byte": 127,
-          "target_sha256": "457a703cf6123d62928d3516c35d0665b6604262e18fc3aa7afb8227a2e01fae"
+          "target_sha256": "1759fd3d815ddabbe7c85275ad7da84a022496d1205cd42c099c4a67c22af74a"
         }
       ],
       "structural_dispositions": [],
@@ -62,7 +62,7 @@
           "detail": "Unit requires independent source-to-LaTeX comparison, integrated PDF inspection, and human review."
         }
       ],
-      "layout_disposition": "Headings follow the original section hierarchy. Sprint headings are subsection inputs with no forced page break; empty sprint/conclusion units contain only their source heading. Figures retain source order and use flexible [htbp] placement; image sources remain pending. Reflections retain the source text in the shared bordered, divisible environment and body font.",
+      "layout_disposition": "The source heading is followed by four editorial paragraphs based on the author’s spoken account. The prose supplements the ODF heading.",
       "macro_contract": {
         "path": "relatorio_AGES_eduardo/util/macros.tex",
         "sha256": "cab6b4432e6ffe47e0e91623514a0ab70727678ac50f9003a61f5a0d961ec2ba"
@@ -81,6 +81,40 @@
         "authorization_evidence": "migration/approvals/cliente-hoortech-and-document-order-authorization.json",
         "source_ids": [
           "text-h-0122"
+        ]
+      },
+      "user_supplied_content": {
+        "authorization_evidence": "migration/approvals/ages-iv-recorda-conclusion-2026-11-22.json",
+        "authorization_sha256": "6aba315168c02fcd8f9799718a6d806d0ea16871cf8efadd10ad2304c28c977f",
+        "content_map": [
+          {
+            "content_id": "editorial-recorda-conclusion-p01",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+            "start_byte": 298,
+            "end_byte": 797,
+            "target_sha256": "1759fd3d815ddabbe7c85275ad7da84a022496d1205cd42c099c4a67c22af74a"
+          },
+          {
+            "content_id": "editorial-recorda-conclusion-p02",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+            "start_byte": 846,
+            "end_byte": 1370,
+            "target_sha256": "1759fd3d815ddabbe7c85275ad7da84a022496d1205cd42c099c4a67c22af74a"
+          },
+          {
+            "content_id": "editorial-recorda-conclusion-p03",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+            "start_byte": 1419,
+            "end_byte": 2004,
+            "target_sha256": "1759fd3d815ddabbe7c85275ad7da84a022496d1205cd42c099c4a67c22af74a"
+          },
+          {
+            "content_id": "editorial-recorda-conclusion-p04",
+            "target_file": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0122.tex",
+            "start_byte": 2053,
+            "end_byte": 2401,
+            "target_sha256": "1759fd3d815ddabbe7c85275ad7da84a022496d1205cd42c099c4a67c22af74a"
+          }
         ]
       }
     }

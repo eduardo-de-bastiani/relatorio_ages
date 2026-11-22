@@ -1,6 +1,6 @@
 # Operação do harness
 
-O harness controla a conversão e a validação do memorial. Para o estado atual e a continuação por Gemini/Antigravity, comece pelo [repasse](HANDOFF_GEMINI.md) e pelos [prompts de tarefa](PROMPTS_GEMINI.md). AGES I–III, parte de AGES IV até Sprint 3 e a participação Hoortech já estão integradas; a tarefa seguinte depende do pedido do autor. Consulte também [plano](MIGRATION_PLAN.md), [estilo](STYLE_GUIDE.md), [gates](QUALITY_GATES.md) e [pendências](PENDENCIAS.md).
+O harness controla a conversão e a validação do memorial. Comece pelo [README do projeto](../README.md) para localizar a versão atual e a documentação de trabalho, inclusive em outro agente ou IDE. AGES I–III, AGES IV até a Sprint 3 e a participação Hoortech já estão integradas; a tarefa seguinte depende do pedido do autor. Consulte também [plano](MIGRATION_PLAN.md), [estilo](STYLE_GUIDE.md), [gates](QUALITY_GATES.md) e [pendências](PENDENCIAS.md).
 
 **Política de branch compatibilizada (30/10/2026):** em atendimento à decisão do usuário de consolidar o projeto em `main`, `common.require_work_branch` e `write_json` aceitam `main`, mantendo a rejeição de detached HEAD e da branch legada `master`. Comandos de escrita e compilação (`build`, `validate`, `visual`, `checkpoint`) operam normalmente em `main`, preservando as proteções de integridade, escopos e a exigência de commit limpo no perfil de produção.
 
@@ -11,9 +11,9 @@ O harness controla a conversão e a validação do memorial. Para o estado atual
 - `relatorio_mariah/` é referência visual somente para leitura; não recebe conteúdo do memorial atual.
 - `relatorio_AGES_eduardo/` contém o destino: `conteudo/migracao/` para unidades LaTeX, `imagens/original/` para mídia preservada, `bibliografia/` para referências e `util/` para estilo e macros compartilhadas.
 - `migration/` guarda autorizações, ledgers e evidências; `docs/` guarda governança e relatórios revisáveis; `scripts/migration_harness/` centraliza extração, validação, compilação e inspeção visual; `tests/` contém testes do harness.
-- `build/` é ignorado pelo Git e contém apenas resultados reproduzíveis. A saída atual fica em `build/document/`; experimentos e evidências históricas estão separados por etapa em `build/ages-i/`, `build/pilot/`, `build/validation/` e `build/visual/`. Não mover fontes para `build/` nem integrar artefatos gerados.
+- `build/` é ignorado pelo Git. A saída atual fica em `build/document/`; extrações, renders e resultados temporários de tentativas anteriores podem ser regenerados e foram limpos. A pasta local `build/resumo-defesa/` contém texto e script de preparação da defesa e foi preservada. Não mover novas fontes autorais para `build/` nem integrar artefatos gerados.
 
-Os `main.pdf` rastreados na raiz e no template são arquivos de referência históricos. A prévia atual é `build/document/main.pdf`; o `report.json` informa se ela veio de compilação de revisão ou de produção.
+Os PDFs antigos da raiz e do template foram removidos por não serem a prévia atual. A versão para revisar é `build/document/main.pdf`; o `report.json` informa se ela veio de compilação de revisão ou de produção.
 
 ## Entradas e rastreabilidade
 
@@ -22,6 +22,8 @@ Os `main.pdf` rastreados na raiz e no template são arquivos de referência hist
 Cada registro tem ID, parte, XPath, ordem, pai, tipo, atributos, hash XML canônico e contexto. Parágrafos/títulos incluem texto sem duplicar conteúdo de caixas descendentes, texto original e segmentos que preservam âncoras. Mídia tem hash, dimensão e ocorrências; imagens e legendas têm vínculos bidirecionais. O destino é **previsto**, não prova de arquivo criado. Registros de layout e índices derivados não serão convertidos como texto autoral independente.
 
 `inventory --check` reextrai a fonte e compara integralmente a estrutura. É o procedimento de leitura recomendado em revisão. `inventory` escreve o manifesto determinístico com lock exclusivo e exige branch de trabalho. O hash do manifesto não substitui a verificação do pacote original.
+
+A correção da implantação do Recorda de 18/11/2026 está em `migration/approvals/recorda-deployment-2026-11-18.json`. O suplemento registra a retirada do Supabase, os trechos revisados e o PNG fornecido para a Figura 25. O validador confere os bytes atuais e reconstitui a versão anterior em um diretório temporário para verificar os ledgers históricos. A compilação usa a versão atual e a revisão humana continua pendente.
 
 ## Ledger futuro, schema 1
 
@@ -56,6 +58,8 @@ Intervalos UTF-8 são `[start_byte,end_byte)`. O auditor lê bytes reais e verif
 Somente políticas opcionais `tex_quotes`, `tex_dashes` e `canonical_unicode` estão reconhecidas, com testes específicos. Não servem para corrigir redação. Tabs, quebras explícitas e espaços repetidos/em bordas do original bloqueiam aprovação automática e exigem procedimento adicional comprovado. Contadores, citações expandidas, macros de reflexões/placeholders e outros comandos não reconhecidos também precisam de verificação renderizada e extensão testada do auditor; não serão ignorados para produzir PASS.
 
 ## Compilação e reprodução
+
+O build de revisão de 11/11/2026 passou com retorno zero e nenhum finding. A reserva de `2em` para números de página resolveu os 17 excessos dos índices; duas âncoras ODF vazias passaram a comentários/ledger; URLs longas usam pontos de quebra após hífens existentes, com alinhamento local à esquerda na chamada do banco de dados de AGES III. A autorização e a conferência estão em [MAPA_LINKS_URL_2026-11-11.md](MAPA_LINKS_URL_2026-11-11.md) e `migration/approvals/url-presentation-2026-11-11.json`. O resultado técnico não substitui aprovação humana ou auditoria normativa integral.
 
 `./build.sh --profile fixture` testa material sintético com `memoir`, Helvetica, `biblatex-abnt` e Biber. O perfil isola o processamento bibliográfico dos defaults de idioma do `abntex2`; não representa aprovação ABNT de um memorial. `--profile template` compila o template original, incluindo `abntex2`, e expõe seus defeitos atuais.
 
