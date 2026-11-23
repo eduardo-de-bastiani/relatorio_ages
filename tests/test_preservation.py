@@ -140,15 +140,22 @@ class PreservationTests(unittest.TestCase):
         for kind, records in authorization["scope"]["presentation_changes"].items():
             self.assertEqual(set(records), FRONTMATTER_TRANSFORM_IDS[kind])
             for source_id, spec in records.items():
+                target = spec["target_text"]
+                if source_id == "text-p-0068" and kind == "frontmatter_title":
+                    with self.assertRaises(UnsupportedSerialization):
+                        _project_approved_presentation(
+                            source_id, spec["source_text"], target, [kind], authorization,
+                        )
+                    target = ""
                 projected, evidence = _project_approved_presentation(
-                    source_id, spec["source_text"], spec["target_text"], [kind], authorization,
+                    source_id, spec["source_text"], target, [kind], authorization,
                 )
                 self.assertEqual(projected, spec["source_text"])
                 self.assertEqual(evidence["kind"], kind)
-                self.assertEqual(evidence["displayed"], spec["target_text"])
+                self.assertEqual(evidence["displayed"], target)
                 with self.assertRaises(UnsupportedSerialization):
                     _project_approved_presentation(
-                        source_id, spec["source_text"], spec["target_text"] + " altered", [kind], authorization,
+                        source_id, spec["source_text"], target + " altered", [kind], authorization,
                     )
 
     def test_cover_field_supplement_supersedes_only_the_two_historical_placeholders(self):
@@ -164,15 +171,25 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(set(fields), {"text-p-0018", "text-p-0033"})
         for source_id, spec in fields.items():
             with self.subTest(source_id=source_id):
+                target = spec["target_text"]
+                authorized_path = "migration/approvals/frontmatter-cover-fields-2026-11-10.json"
+                if source_id == "text-p-0018":
+                    target = "AGES I, II, III e IV"
+                    authorized_path = "migration/approvals/frontmatter-dedication-and-cover-editions-2026-11-23.json"
+                    with self.assertRaisesRegex(UnsupportedSerialization, "Cover-field target"):
+                        _project_approved_presentation(
+                            source_id, spec["source_text"], spec["target_text"],
+                            ["approved_cover_field"], authorization,
+                        )
                 projected, evidence = _project_approved_presentation(
-                    source_id, spec["source_text"], spec["target_text"],
+                    source_id, spec["source_text"], target,
                     ["approved_cover_field"], authorization,
                 )
                 self.assertEqual(projected, spec["source_text"])
-                self.assertEqual(evidence["authorization_evidence"], "migration/approvals/frontmatter-cover-fields-2026-11-10.json")
+                self.assertEqual(evidence["authorization_evidence"], authorized_path)
                 with self.assertRaisesRegex(UnsupportedSerialization, "Cover-field target"):
                     _project_approved_presentation(
-                        source_id, spec["source_text"], spec["target_text"] + " forged",
+                        source_id, spec["source_text"], target + " forged",
                         ["approved_cover_field"], authorization,
                     )
         with self.assertRaises(UnsupportedSerialization):

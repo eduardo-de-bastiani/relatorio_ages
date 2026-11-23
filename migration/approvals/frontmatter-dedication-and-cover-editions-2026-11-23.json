@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "unit_id": "pretext",
+  "authorization": "Mensagem direta do autor de 23/11/2026. Identificar as quatro edições na capa e incluir a dedicatória fornecida, com título à esquerda e texto no canto inferior direito.",
+  "cover": {
+    "source_id": "text-p-0018",
+    "previous_displayed": "AGES IV",
+    "displayed": "AGES I, II, III e IV"
+  },
+  "dedication": {
+    "source_heading_id": "text-p-0034",
+    "body": "Aos meus pais, Janete e Cláudio, que me deram todo o amor, carinho e suporte para me tornar a pessoa e profissional que sou hoje e que serei amanhã.",
+    "layout_tex": "\\clearpage\n\\noindent\\textbf{Dedicatória}\\par\n\\vfill\n\\noindent\\hfill\\begin{minipage}{.36\\textwidth}\n\\raggedleft\nAos meus pais, Janete e Cláudio, que me deram todo o amor, carinho e suporte para me tornar a pessoa e profissional que sou hoje e que serei amanhã.\\par\n\\end{minipage}\\par\n"
+  },
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+}

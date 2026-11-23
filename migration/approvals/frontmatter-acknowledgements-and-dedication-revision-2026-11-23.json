@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "unit_id": "pretext",
+  "authorization": "Mensagem direta do autor solicitando retirar os nomes dos pais da dedicatória e redigir os agradecimentos com base em seu relato.",
+  "dedication": {
+    "previous_body": "Aos meus pais, Janete e Cláudio, que me deram todo o amor, carinho e suporte para me tornar a pessoa e profissional que sou hoje e que serei amanhã.",
+    "body": "Aos meus pais, que me deram todo o amor, carinho e suporte para me tornar a pessoa e profissional que sou hoje e que serei amanhã."
+  },
+  "acknowledgements": {
+    "source_heading_id": "text-p-0065",
+    "paragraphs": [
+      "Agradeço, antes de tudo, aos meus pais, Janete de Fátima Colla e Cláudio José Souza De Bastiani. Sei quanto do tempo, da energia e dos recursos de vocês foi dedicado à minha formação. Sou grato por tudo o que me ensinaram e pela liberdade que me deram para aprender também por conta própria. Foi com vocês que aprendi a assumir responsabilidades e a encarar com confiança os desafios que encontro na vida e na profissão.",
+      "Agradeço aos amigos que fiz na graduação e que estiveram comigo desde o primeiro semestre. Passamos juntos pelas disciplinas mais tranquilas e por aquelas que nos exigiram mais. Quando penso nesses anos, lembro com carinho de como foi bom vivê-los ao lado de vocês.",
+      "Por fim, agradeço aos meus professores, em especial à professora doutora Alessandra Costa Smolenaars Dutra. Sou muito grato pelo cuidado com que me orientou e pela seriedade com que se dedicou à minha formação. Espero levar para a minha vida profissional o mesmo zelo que encontrei no seu trabalho."
+    ],
+    "origin": "Redação editorial orientada pelo relato do autor, fornecido separadamente do ODT."
+  }
+}

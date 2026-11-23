@@ -216,6 +216,11 @@ AGES_IV_TITLE_ONLY_OMITTED_IDS = (
 )
 FRONTMATTER_AUTHORIZATION = "migration/approvals/ages-iv-frontmatter-authorization.json"
 FRONTMATTER_COVER_FIELDS_SUPPLEMENT = "migration/approvals/frontmatter-cover-fields-2026-11-10.json"
+FRONTMATTER_DEDICATION_SUPPLEMENT = "migration/approvals/frontmatter-dedication-and-cover-editions-2026-11-23.json"
+FRONTMATTER_ACKNOWLEDGEMENTS_REVISION = "migration/approvals/frontmatter-acknowledgements-and-dedication-revision-2026-11-23.json"
+FRONTMATTER_EPIGRAPH_SUPPLEMENT = "migration/approvals/frontmatter-epigraph-2026-11-23.json"
+FRONTMATTER_SUMMARY_SUPPLEMENT = "migration/approvals/frontmatter-summary-2026-11-23.json"
+FRONTMATTER_ACRONYM_LIST_SUPPLEMENT = "migration/approvals/acronym-list-completion-2026-11-23.json"
 FRONTMATTER_COVER_FIELD_IDS = {"text-p-0018", "text-p-0033"}
 FRONTMATTER_COVER_FIELD_SPECS = {
     "text-p-0018": {"source_text": "AGES I,II, III ou IV", "target_text": "AGES IV"},
@@ -1605,6 +1610,37 @@ def _load_presentation_authorization(repo: Path, unit_id: str | None = None) -> 
     authorization["repository_root"] = str(repo.resolve())
     if unit_id == "pretext":
         authorization["approved_cover_field_supplement"] = _load_frontmatter_cover_fields_supplement(repo)
+        supplement_path = repo / FRONTMATTER_DEDICATION_SUPPLEMENT
+        if supplement_path.is_file():
+            supplement_bytes = supplement_path.read_bytes()
+            if hashlib.sha256(supplement_bytes).hexdigest() != "d98a4813ede56130cdedc38afe03b40139457115ce70c925522e1dc601c4d94d":
+                raise ValueError("Cover edition and dedication supplement hash is stale")
+            authorization["approved_cover_and_dedication"] = json.loads(supplement_bytes)
+        revision_path = repo / FRONTMATTER_ACKNOWLEDGEMENTS_REVISION
+        if revision_path.is_file():
+            revision_bytes = revision_path.read_bytes()
+            if hashlib.sha256(revision_bytes).hexdigest() != "687740399fa9f738952c5d1f41dbeff65cb2d5273f9c9ab7ef84071e8cf9198f":
+                raise ValueError("Acknowledgements and dedication revision hash is stale")
+            authorization["approved_acknowledgements_and_dedication_revision"] = json.loads(revision_bytes)
+        epigraph_path = repo / FRONTMATTER_EPIGRAPH_SUPPLEMENT
+        if epigraph_path.is_file():
+            epigraph_bytes = epigraph_path.read_bytes()
+            if hashlib.sha256(epigraph_bytes).hexdigest() != "26eb84c296f6290a7c42397c9455db42285e6ef718e84061a32aee2789402f76":
+                raise ValueError("Epigraph supplement hash is stale")
+            authorization["approved_epigraph"] = json.loads(epigraph_bytes)
+    if unit_id == "resumo":
+        summary_path = repo / FRONTMATTER_SUMMARY_SUPPLEMENT
+        if summary_path.is_file():
+            summary_bytes = summary_path.read_bytes()
+            if hashlib.sha256(summary_bytes).hexdigest() != "3ba358ecc879f24bbca88bd62b2c0a28f351d57568966db1863ba14ad0c83fa0":
+                raise ValueError("Summary supplement hash is stale")
+            authorization["approved_summary"] = json.loads(summary_bytes)
+        acronym_list_path = repo / FRONTMATTER_ACRONYM_LIST_SUPPLEMENT
+        if acronym_list_path.is_file():
+            acronym_list_bytes = acronym_list_path.read_bytes()
+            if hashlib.sha256(acronym_list_bytes).hexdigest() != "2607f325119bd70d11d453b5645704fef3f7d73254f322018b7913c4b3f7091d":
+                raise ValueError("Acronym list supplement hash is stale")
+            authorization["approved_acronym_list"] = json.loads(acronym_list_bytes)
     document_order_units = set(HOORTECH_UNITS) | set(AGES_II_UNITS) | set(AGES_III_UNITS) | set(AGES_IV_UNITS)
     if unit_id in document_order_units and (repo / DOCUMENT_ORDER_AUTHORIZATION).is_file():
         document_authorization = _load_document_order_authorization(repo)
@@ -2675,6 +2711,11 @@ def _project_approved_presentation(source_id, expected, observed, serializations
     if "approved_cover_field" in used:
         supplement = authorization.get("approved_cover_field_supplement")
         spec = (supplement or {}).get("scope", {}).get("fields", {}).get(source_id)
+        evidence = FRONTMATTER_COVER_FIELDS_SUPPLEMENT
+        edition = authorization.get("approved_cover_and_dedication", {}).get("cover", {})
+        if spec and source_id == edition.get("source_id") and spec.get("target_text") == edition["previous_displayed"]:
+            spec = {**spec, "target_text": edition["displayed"], "reason": "Identify the four AGES editions on the cover"}
+            evidence = FRONTMATTER_DEDICATION_SUPPLEMENT
         if (used != {"approved_cover_field"}
                 or source_id not in FRONTMATTER_COVER_FIELD_IDS
                 or not isinstance(spec, dict)
@@ -2687,7 +2728,7 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             "source": expected,
             "displayed": observed,
             "reason": spec.get("reason"),
-            "authorization_evidence": FRONTMATTER_COVER_FIELDS_SUPPLEMENT,
+            "authorization_evidence": evidence,
         }
     for kind in used:
         if source_id not in PRESENTATION_SERIALIZATIONS[kind]:
@@ -2703,6 +2744,19 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             raise UnsupportedSerialization("Frontmatter presentation change is outside the exact supplemental user authorization")
         kind = next(iter(frontmatter_used))
         spec = authorization["scope"]["presentation_changes"].get(kind, {}).get(source_id)
+        evidence = FRONTMATTER_AUTHORIZATION
+        epigraph_title = authorization.get("approved_epigraph", {}).get("title", {})
+        if (kind == "frontmatter_title" and spec
+                and source_id == epigraph_title.get("source_id")
+                and spec.get("target_text") == epigraph_title["previous_displayed"]):
+            spec = {**spec, "target_text": epigraph_title["displayed"], "reason": "Present the epigraph without a title"}
+            evidence = FRONTMATTER_EPIGRAPH_SUPPLEMENT
+        summary = authorization.get("approved_summary", {}).get("summary", {})
+        if (kind == "frontmatter_placeholder" and spec
+                and source_id == summary.get("source_id")
+                and spec.get("target_text") == summary["previous_displayed"]):
+            spec = {**spec, "target_text": summary["displayed"], "reason": "Replace the placeholder with the author-directed summary"}
+            evidence = FRONTMATTER_SUMMARY_SUPPLEMENT
         if (not isinstance(spec, dict)
                 or expected != spec.get("source_text")
                 or observed != spec.get("target_text")):
@@ -2713,7 +2767,7 @@ def _project_approved_presentation(source_id, expected, observed, serializations
             "source": expected,
             "displayed": observed,
             "reason": spec.get("reason"),
-            "authorization_evidence": FRONTMATTER_AUTHORIZATION,
+            "authorization_evidence": evidence,
         }
     if "approved_group_label_removal" in used:
         if (used != {"approved_group_label_removal"}
@@ -3472,6 +3526,7 @@ def _audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | N
 
     url_projection = {}
     superseded_url_ids = set()
+    trajectory_edits = {}
 
     def fragment(mapping):
         path = safe_path(mapping.get("target_file"))
@@ -3486,6 +3541,11 @@ def _audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | N
             raise ValueError("Invalid half-open byte interval")
         data[:start].decode("utf-8")  # Reject offsets inside a UTF-8 code point.
         value = data[start:end].decode("utf-8")
+        edit = trajectory_edits.get(mapping.get("source_id"))
+        if edit is not None:
+            if value != edit["after"]:
+                raise ValueError("Trajectory paragraph differs from the authorized editorial update")
+            value = edit["before"]
         return path, start, end, url_reconciliation.project(mapping, value, url_projection)
 
     figure_labels = set()
@@ -3513,6 +3573,35 @@ def _audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | N
         )
         state = ledger_units.get(uid, {}).get("state", "unconverted")
         unit_ledger = ledger_units.get(uid, {})
+        trajectory_edits = {}
+        if uid == "chapter-01-text-h-0001" and state == "converted":
+            approval_path = "migration/approvals/trajectory-professional-update-2026-11-23.json"
+            if (repo / approval_path).is_file() or unit_ledger.get("trajectory_update_authorization"):
+                try:
+                    raw = (repo / approval_path).read_bytes()
+                    if hashlib.sha256(raw).hexdigest() != "0c8eddf3609bbc768e974f6ab93a9a6340c7579123d2ee1eb1e7a7b4c7f63d07":
+                        raise ValueError("Trajectory update approval hash mismatch")
+                    update = json.loads(raw)
+                    ids = {"text-p-0270", "text-p-0271"}
+                    mappings = {
+                        m["source_id"]: m for m in unit_ledger["element_map"] if m.get("source_id") in ids
+                    }
+                    if (unit_ledger.get("trajectory_update_authorization") != approval_path
+                            or unit_ledger.get("tex_path") != update["target_file"]
+                            or set(mappings) != ids
+                            or any(m.get("target_file") != update["target_file"] for m in mappings.values())):
+                        raise ValueError("Trajectory update must match the authorized paragraph mappings")
+                    trajectory_edits = {edit["source_id"]: edit for edit in update["edits"]}
+                    for mapping in mappings.values():
+                        fragment(mapping)
+                    facts["trajectory_editorial_update"] = {
+                        "authorization_evidence": approval_path,
+                        "source_ids": sorted(trajectory_edits),
+                        "new_biographical_information": "direct_user_message",
+                        "human_review": "PENDING",
+                    }
+                except (OSError, ValueError, KeyError, TypeError, UnicodeError) as exc:
+                    report("invalid_trajectory_update", uid, str(exc))
         url_projection = {}
         # Historical fixtures may use a different target path for the same ID.
         if unit_ledger.get("tex_path") == f"relatorio_AGES_eduardo/conteudo/migracao/{uid}.tex" or unit_ledger.get("url_presentation_authorization"):
@@ -4662,6 +4751,129 @@ def _audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | N
         for rid in set(asset_ids) - set(expected_images):
             report("unexpected_asset_mapping", uid, "Image occurrence does not belong to the unit", rid)
         derived_spans = {}
+        frontmatter_approval = presentation_authorization or {}
+        revision = frontmatter_approval.get("approved_acknowledgements_and_dedication_revision")
+        revision_evidence = unit_ledger.get("acknowledgements_and_dedication_revision")
+        dedication = frontmatter_approval.get("approved_cover_and_dedication", {}).get("dedication")
+        dedication_evidence = unit_ledger.get("cover_and_dedication_authorization")
+        if dedication is not None or dedication_evidence is not None:
+            try:
+                if uid != "pretext" or dedication is None or dedication_evidence != FRONTMATTER_DEDICATION_SUPPLEMENT:
+                    raise ValueError("Dedication requires its exact frontmatter authorization")
+                path = safe_path(unit_ledger["tex_path"])
+                data = path.read_bytes()
+                layout = dedication["layout_tex"]
+                if revision is not None:
+                    revised_text = revision["dedication"]
+                    previous_body = revised_text["previous_body"]
+                    if dedication["body"] != previous_body or layout.count(previous_body) != 1:
+                        raise ValueError("Dedication revision does not match the previously approved text")
+                    layout = layout.replace(previous_body, revised_text["body"], 1)
+                layout = layout.encode()
+                heading_id = dedication["source_heading_id"]
+                heading_path, heading_start, heading_end, _ = actual[heading_id]
+                if data.count(layout) != 1:
+                    raise ValueError("Dedication must occur once with its exact authorized text and layout")
+                start = data.index(layout)
+                end = start + len(layout)
+                if (path != heading_path or not start <= heading_start < heading_end <= end
+                        or not data[:start].endswith(f"% {heading_id}\n".encode())):
+                    raise ValueError("Dedication must enclose and follow its mapped source heading marker")
+                derived_spans.setdefault(path, []).append((start, end))
+                facts["user_supplied_dedication"] = {
+                    "authorization_evidence": FRONTMATTER_ACKNOWLEDGEMENTS_REVISION if revision is not None else dedication_evidence,
+                    "source_is_odt": False,
+                }
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                report("invalid_dedication", uid, str(exc))
+        if revision is not None or revision_evidence is not None:
+            try:
+                if uid != "pretext" or revision is None or dedication is None or revision_evidence != FRONTMATTER_ACKNOWLEDGEMENTS_REVISION:
+                    raise ValueError("Acknowledgements and dedication revision require the exact frontmatter authorization")
+                path = safe_path(unit_ledger["tex_path"])
+                data = path.read_bytes()
+                acknowledgement = revision["acknowledgements"]
+                heading_path, _, heading_end, _ = actual[acknowledgement["source_heading_id"]]
+                heading_close = b"}\n\n"
+                body = ("\n\n".join(acknowledgement["paragraphs"]) + "\n").encode()
+                start = heading_end + len(heading_close)
+                end = start + len(body)
+                if path != heading_path or data[heading_end:end] != heading_close + body or data.count(body) != 1:
+                    raise ValueError("The authorized acknowledgements must follow their mapped heading exactly once")
+                derived_spans.setdefault(path, []).append((start, end))
+                facts["editorial_acknowledgements"] = {"authorization_evidence": revision_evidence, "source_is_odt": False}
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                report("invalid_acknowledgements", uid, str(exc))
+        epigraph = frontmatter_approval.get("approved_epigraph")
+        epigraph_evidence = unit_ledger.get("epigraph_authorization")
+        if epigraph is not None or epigraph_evidence is not None:
+            try:
+                if uid != "pretext" or epigraph is None or epigraph_evidence != FRONTMATTER_EPIGRAPH_SUPPLEMENT:
+                    raise ValueError("Epigraph requires its exact frontmatter authorization")
+                path = safe_path(unit_ledger["tex_path"])
+                data = path.read_bytes()
+                title_id = epigraph["title"]["source_id"]
+                title_path, start, title_end, _ = actual[title_id]
+                layout = epigraph["layout_tex"].encode()
+                end = start + len(layout)
+                if (path != title_path or start != title_end or data[start:end] != layout
+                        or data.count(layout) != 1 or not data[:start].endswith(f"% {title_id}\n".encode())):
+                    raise ValueError("The authorized epigraph must replace its mapped title exactly once")
+                derived_spans.setdefault(path, []).append((start, end))
+                facts["user_supplied_epigraph"] = {"authorization_evidence": epigraph_evidence, "source_is_odt": False}
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                report("invalid_epigraph", uid, str(exc))
+        summary = frontmatter_approval.get("approved_summary")
+        summary_evidence = unit_ledger.get("summary_authorization")
+        if summary is not None or summary_evidence is not None:
+            try:
+                if uid != "resumo" or summary is None or summary_evidence != FRONTMATTER_SUMMARY_SUPPLEMENT:
+                    raise ValueError("Summary requires its exact frontmatter authorization")
+                path = safe_path(unit_ledger["tex_path"])
+                data = path.read_bytes()
+                summary_id = summary["summary"]["source_id"]
+                summary_path, summary_start, summary_end, _ = actual[summary_id]
+                keywords = ("\n" + summary["keywords_tex"]).encode()
+                end = summary_end + len(keywords)
+                if (path != summary_path or not data[:summary_start].endswith(f"% {summary_id}\n".encode())
+                        or data[summary_end:end] != keywords or data.count(keywords) != 1
+                        or not data[end:].startswith(b"\\clearpage\n")):
+                    raise ValueError("The authorized keywords must follow the summary exactly once, before the page break")
+                derived_spans.setdefault(path, []).append((summary_end, end))
+                facts["editorial_summary"] = {"authorization_evidence": summary_evidence, "source_is_odt": False}
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                report("invalid_summary", uid, str(exc))
+        acronym_list = frontmatter_approval.get("approved_acronym_list")
+        acronym_list_evidence = unit_ledger.get("acronym_list_authorization")
+        if acronym_list is not None or acronym_list_evidence is not None:
+            try:
+                if uid != "resumo" or acronym_list is None or acronym_list_evidence != FRONTMATTER_ACRONYM_LIST_SUPPLEMENT:
+                    raise ValueError("Acronym additions require their exact frontmatter authorization")
+                path = safe_path(acronym_list["target_file"])
+                if path != compilation_root / "conteudo/migracao/lista-de-siglas.tex" or path not in file_order:
+                    raise ValueError("Authorized acronym additions must be in the included list of acronyms")
+                data = path.read_bytes()
+                if hashlib.sha256(data).hexdigest() != acronym_list["target_sha256_after"]:
+                    raise ValueError("The updated acronym list differs from the approved file")
+                positions = {}
+                offset = 0
+                for line in data.splitlines(keepends=True):
+                    positions.setdefault(line, []).append(offset)
+                    offset += len(line)
+                for entry in acronym_list["entradas"]:
+                    rendered = f"\\noindent {entry['sigla']} - {entry['expansao']}\\par\n".encode()
+                    matches = positions.get(rendered, [])
+                    if len(matches) != 1:
+                        raise ValueError(f"Authorized acronym {entry['sigla']} must appear exactly once with its approved expansion")
+                    start = matches[0]
+                    derived_spans.setdefault(path, []).append((start, start + len(rendered)))
+                facts["acronym_list_additions"] = {
+                    "authorization_evidence": acronym_list_evidence,
+                    "entries": len(acronym_list["entradas"]),
+                    "source_is_odt": False,
+                }
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                report("invalid_acronym_list_additions", uid, str(exc))
         supplemental_content = unit_ledger.get("user_supplied_content")
         user_content_specs = {
             "ages-iv-sprint-2": {

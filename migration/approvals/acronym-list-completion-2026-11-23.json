@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "unit_id": "resumo",
+  "authorization": "Mensagem direta do autor autorizando inserir as siglas faltantes no memorial.",
+  "target_file": "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef",
+  "target_sha256_before": "0cd45561e084cda133b85fbbc9ba8418596bd2faa12817d1e4dd6fb280d1fe2f",
+  "target_sha256_after": "0b91c4e6dc3d64434ec55859b93dfc3a9eca659dfc302be6c8afb15c0c4f9e9c",
+  "entradas": [
+    {
+      "sigla": "ADR",
+      "expansao": "Architecture Decision Record",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-2.tex:15"
+    },
+    {
+      "sigla": "CLI",
+      "expansao": "Command Line Interface (Interface de Linha de Comando)",
+      "evidencia": "Figura 3: relatorio_AGES_eduardo/imagens/user-supplied/ages-i-architecture.png; inclusão em chapter-02-text-h-0010.tex:10"
+    },
+    {
+      "sigla": "CPF",
+      "expansao": "Cadastro de Pessoas Físicas",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-3.tex:10"
+    },
+    {
+      "sigla": "HTTPS",
+      "expansao": "Hypertext Transfer Protocol Secure (Protocolo de Transferência de Hipertexto Seguro)",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex:11"
+    },
+    {
+      "sigla": "MCP",
+      "expansao": "Model Context Protocol",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-1.tex:21"
+    },
+    {
+      "sigla": "MoSCoW",
+      "expansao": "Must Have, Should Have, Could Have, Won’t Have this time",
+      "evidencia": "Figura 30, Estrutura Analítica do Projeto – AGES IV. Expansão confirmada pelo Agile Business Consortium: https://www.agilebusiness.org/resource/what-is-moscow-prioritization/."
+    },
+    {
+      "sigla": "S3",
+      "expansao": "Simple Storage Service",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex:11"
+    },
+    {
+      "sigla": "UK",
+      "expansao": "Unique Key (Chave Única)",
+      "evidencia": "Figura 24: relatorio_AGES_eduardo/imagens/original/asset-0019.png; inclusão em chapter-06-text-h-0109.tex:15"
+    },
+    {
+      "sigla": "URL",
+      "expansao": "Uniform Resource Locator (Localizador Uniforme de Recursos)",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0110.tex:11"
+    },
+    {
+      "sigla": "US",
+      "expansao": "User Story (História de Usuário)",
+      "evidencia": "Figura 33: relatorio_AGES_eduardo/imagens/original/asset-0034.png; legenda e inclusão em ages-iv-sprint-0.tex:30"
+    },
+    {
+      "sigla": "UX",
+      "expansao": "User Experience (Experiência do Usuário)",
+      "evidencia": "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-4.tex:21"
+    }
+  ]
+}

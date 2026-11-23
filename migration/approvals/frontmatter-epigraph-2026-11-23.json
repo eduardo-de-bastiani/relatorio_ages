@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "unit_id": "pretext",
+  "authorization": "Mensagem direta do autor pedindo epígrafe sem título, com a frase fornecida e a autoria indicada, no canto inferior direito, conforme imagem de referência.",
+  "title": {
+    "source_id": "text-p-0068",
+    "previous_displayed": "Epígrafe",
+    "displayed": ""
+  },
+  "quote": "Não tenho nenhum talento especial. Apenas sou apaixonadamente curioso.",
+  "attribution": "Albert Einstein",
+  "layout_tex": "\\clearpage\n\\vspace*{\\fill}\n\\noindent\\hfill\\begin{minipage}{.36\\textwidth}\n\\raggedleft\n\\textit{“Não tenho nenhum talento especial. Apenas sou apaixonadamente curioso.”}\\par\n\\medskip\n\\textbf{Albert Einstein}\\par\n\\end{minipage}\\par\n",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+}

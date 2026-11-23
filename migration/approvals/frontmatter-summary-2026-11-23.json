@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "unit_id": "resumo",
+  "authorization": "Mensagem direta do autor pedindo a redação de um resumo simples e direto, inspirado na estrutura dos exemplos fornecidos.",
+  "summary": {
+    "source_id": "text-p-0097",
+    "previous_displayed": "[Resumo pendente de redação]",
+    "displayed": "Este memorial apresenta a trajetória de Eduardo Colla De Bastiani na Agência Experimental de Engenharia de Software (AGES), entre 2024 e 2026, durante o Bacharelado em Engenharia de Software da Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS). Ao reunir estudantes de diferentes semestres em projetos reais, a AGES permite vivenciar etapas do desenvolvimento de software e assumir responsabilidades crescentes a cada edição. O relato descreve a implementação de funcionalidades no Easy Choose (AGES I), o trabalho com o banco de dados no projeto Indústria Digital (AGES II), a atuação em arquitetura e infraestrutura no sistema de controle de estacionamento com RFID (AGES III) e a coordenação compartilhada da equipe do Recorda (AGES IV). O memorial também aborda a participação como cliente do Hoortech, experiência que evidenciou a importância de compreender o problema e comunicar à equipe o resultado esperado. Essas vivências permitiram aplicar os conhecimentos da graduação, desenvolver autonomia e aprofundar a compreensão de como diferentes papéis contribuem para a entrega de um projeto de software."
+  },
+  "keywords": [
+    "AGES",
+    "engenharia de software",
+    "desenvolvimento de software",
+    "arquitetura de software",
+    "gestão de projetos"
+  ],
+  "keywords_tex": "\\par\n\\medskip\n\\noindent\\textbf{Palavras-chave:} AGES; engenharia de software; desenvolvimento de software; arquitetura de software; gestão de projetos.\\par\n",
+  "source_odt_sha256": "e8647819c353f68c0862869f205974a475dcec944eefaa1cf0fa462fb8bd67ef"
+}
