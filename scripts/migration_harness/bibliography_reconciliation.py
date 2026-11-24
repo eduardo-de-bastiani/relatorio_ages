@@ -282,18 +282,27 @@ def _validate_supplement_diff(repo: Path, source: bytes, result: bytes, contract
 
 def verify(repo: Path, data: bytes | None = None) -> dict:
     """Verify every pinned bibliography state through the current exact final state."""
-    from . import recorda_deployment
+    from . import editorial_corrections, recorda_deployment
 
     repo = repo.resolve()
     current = data
-    if (repo / recorda_deployment.APPROVAL).is_file():
-        approval = recorda_deployment.load(repo)
-        if current is None:
-            current = _safe_path(repo, recorda_deployment.BIBLIOGRAPHY).read_bytes()
-        try:
-            data = recorda_deployment.previous_bytes(current, approval["files"][recorda_deployment.BIBLIOGRAPHY])
-        except ValueError as error:
-            raise ValueError("Integrated bibliography differs from the exact approved bibliography state") from error
+    try:
+        if (repo / editorial_corrections.APPROVAL).is_file():
+            correction = editorial_corrections.load(repo)
+            if current is None:
+                current = _safe_path(repo, recorda_deployment.BIBLIOGRAPHY).read_bytes()
+            data = recorda_deployment.previous_bytes(
+                current, correction["files"][recorda_deployment.BIBLIOGRAPHY], "Editorial corrections",
+            )
+        if (repo / recorda_deployment.APPROVAL).is_file():
+            approval = recorda_deployment.load(repo)
+            if current is None:
+                current = _safe_path(repo, recorda_deployment.BIBLIOGRAPHY).read_bytes()
+            data = recorda_deployment.previous_bytes(
+                current if data is None else data, approval["files"][recorda_deployment.BIBLIOGRAPHY],
+            )
+    except ValueError as error:
+        raise ValueError("Integrated bibliography differs from the exact approved bibliography state") from error
     historical_fixture = _safe_path(repo, RESULT_PATH).read_bytes()
     historical_facts = verify_historical(repo, data=historical_fixture)
     contract = _validate_supplement_contract(repo)

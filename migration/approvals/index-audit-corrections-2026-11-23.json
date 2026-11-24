@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "authorization": "Mensagem direta do autor autorizando aplicar as correções apontadas na auditoria do sumário e da lista de ilustrações.",
+  "figures": [
+    2,
+    9,
+    17,
+    24
+  ],
+  "sections": [
+    "4.3",
+    "5.3"
+  ],
+  "files": {
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex": {
+      "before_sha256": "9a1ec775accf1aafe75455383bb1777ccbc140b18d0e4ef66d81d2c5db812bb8",
+      "after_sha256": "365cb9b85497afecf677585ac6f5b03caca1a6833357b60643da1c74e061c954",
+      "edits": [
+        {
+          "offset": 908,
+          "before": "Diagrama Banco de Dados",
+          "after": "Diagrama de Banco de Dados"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-04-text-h-0043.tex": {
+      "before_sha256": "1926caf9c1c578155a44191ad86e455811a38f856a6ced146bccf3dd852b4b07",
+      "after_sha256": "2cec5a32a015c6d6caca9ea7f24f0f33bcb502fd61d6d0a7fa5e873a4fb53dc3",
+      "edits": [
+        {
+          "offset": 879,
+          "before": "Diagrama Banco de Dados",
+          "after": "Diagrama de Banco de Dados"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0078.tex": {
+      "before_sha256": "36cc61e94a323c73780ee06229890b38ddf18f9e45755c91bcc2a6b091e46716",
+      "after_sha256": "848256ccc387d9dbd59cf003dd61ef1fe5f47f5225228dfc91f1876eb6e6026f",
+      "edits": [
+        {
+          "offset": 1116,
+          "before": "Diagrama Banco de Dados",
+          "after": "Diagrama de Banco de Dados"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0109.tex": {
+      "before_sha256": "590a839ebb58f8ad9478060a9fc26d5b257d6df5eb22a61a8195684c5f2a0ccc",
+      "after_sha256": "ee335cc822bbea4d50cf3a87bd8d5540bb97c550606a299b0664b1fa18318228",
+      "edits": [
+        {
+          "offset": 1430,
+          "before": "Diagrama Banco de Dados",
+          "after": "Diagrama de Banco de Dados"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-05-text-h-0086.tex": {
+      "before_sha256": "a135e3f723bb528946cc0d8b692dd736c5d9ad282897dd72899c1d75040d47c0",
+      "after_sha256": "48eb322bec194089445a70c8bdd24238aeb61307ef83e233127bf174351c4817",
+      "edits": [
+        {
+          "offset": 197,
+          "before": "no projetos",
+          "after": "no projeto"
+        },
+        {
+          "offset": 309,
+          "before": "no projetos",
+          "after": "no projeto"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0115.tex": {
+      "before_sha256": "3901028b05bb0ebcbebf48dd1c6ec55300ab3837df69264ca16358be0c45ef8d",
+      "after_sha256": "26a30503353e4df006ae76a0505c1e9b57ccf6ea4ddc0a377f94c28381dba2b2",
+      "edits": [
+        {
+          "offset": 203,
+          "before": "no projetos",
+          "after": "no projeto"
+        },
+        {
+          "offset": 314,
+          "before": "no projetos",
+          "after": "no projeto"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-iv-sprint-1.tex": {
+      "before_sha256": "c8b20023a81f06319a66dffbf5e886292a0c1c3d3017c0f1c05e17200681158a",
+      "after_sha256": "91e31a089a02afd2f2c55d813e8cecf64a2bd6c32112c666fe7acc520c5e0a9f",
+      "edits": [
+        {
+          "offset": 5325,
+          "before": "\\subsection*{Retrospectiva da Sprint 1}\n",
+          "after": ""
+        }
+      ]
+    }
+  },
+  "removed_heading": {
+    "source_id": "text-h-0118",
+    "text": "Retrospectiva da Sprint 1",
+    "authorization": "O autor revisou a decisão anterior e solicitou retirar o subtítulo do corpo e sua entrada do sumário."
+  }
+}

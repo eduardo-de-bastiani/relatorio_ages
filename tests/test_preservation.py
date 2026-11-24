@@ -6,6 +6,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from scripts.migration_harness import editorial_corrections, recorda_deployment
+
 from scripts.migration_harness.preservation import (
     audit_conversion,
     displayed_text,
@@ -111,6 +113,7 @@ class PreservationTests(unittest.TestCase):
     def test_same_section_citation_deduplication_is_exact_and_source_bound(self):
         repo = Path(__file__).resolve().parents[1]
         approval = json.loads((repo / CITATION_DEDUP_AUTHORIZATION).read_text(encoding="utf-8"))
+        editorial_files = editorial_corrections.load(repo)["files"]
         for relative in (CITATION_DEDUP_AUTHORIZATION, "RELATORIO_ATUAL.odt", "migration/approvals/url-presentation-2026-11-11.json"):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -118,16 +121,20 @@ class PreservationTests(unittest.TestCase):
         for uid, spec in approval["units"].items():
             target = self.root / spec["tex_path"]
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes((repo / spec["tex_path"]).read_bytes())
+            data = (repo / spec["tex_path"]).read_bytes()
+            if spec["tex_path"] in editorial_files:
+                data = recorda_deployment.previous_bytes(data, editorial_files[spec["tex_path"]], "Editorial corrections")
+            target.write_bytes(data)
             self.assertTrue(_verify_citation_dedup_authorization(
                 self.root, uid, {"tex_path": spec["tex_path"]}
             ))
         first_uid, first_spec = next(iter(approval["units"].items()))
         target = self.root / first_spec["tex_path"]
-        target.write_bytes(target.read_bytes() + b" ")
+        baseline = target.read_bytes()
+        target.write_bytes(baseline + b" ")
         with self.assertRaises(ValueError):
             _verify_citation_dedup_authorization(self.root, first_uid, {"tex_path": first_spec["tex_path"]})
-        target.write_bytes((repo / first_spec["tex_path"]).read_bytes())
+        target.write_bytes(baseline)
         contract = self.root / CITATION_DEDUP_AUTHORIZATION
         contract.write_bytes(contract.read_bytes() + b" ")
         with self.assertRaises(ValueError):

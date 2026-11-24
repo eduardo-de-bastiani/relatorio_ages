@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "authorization": "O autor solicitou usar o ano 2026 para Deezer, retirar a afirmação incorreta sobre o banco no repositório do back-end do Easy Choose e aplicar as correções de redação da auditoria completa.",
+  "bibliography_year_basis": "Ano definido pelo autor na mensagem. URL e data de acesso de 18/11/2026 preservadas.",
+  "review_evidence": "build/revisao-completa/achados.md",
+  "files": {
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-01-text-h-0001.tex": {
+      "before_sha256": "70120fbc40b601d217b44f642308745466d766c4454090d84a09746b7f1f3c6c",
+      "after_sha256": "a34ac5b776ff1533e6b62817eb3bbb8bf549c724f1afba06296b2def1cd423f7",
+      "edits": [
+        {
+          "page_in_audit": 13,
+          "offset": 1086,
+          "before": "organizada pela PUC-RS, um evento que tive conhecimento",
+          "after": "organizada pela PUCRS, um evento do qual tive conhecimento"
+        },
+        {
+          "page_in_audit": 13,
+          "offset": 1236,
+          "before": "“Desenvolvimento de uma Inteligência Artificial para um Bem Social\"",
+          "after": "“Desenvolvimento de uma Inteligência Artificial para um Bem Social”"
+        },
+        {
+          "offset": 284,
+          "before": "\\addcontentsline{toc}{chapter}{1 - APRESENTAÇÃO DA TRAJETÓRIA DO ALUNO}",
+          "after": "\\addcontentsline{toc}{chapter}{1 APRESENTAÇÃO DA TRAJETÓRIA DO ALUNO}",
+          "authorization": "O autor solicitou remover o traço ao lado do item 1 no sumário."
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0008.tex": {
+      "before_sha256": "3e496968f1b15e0c43427a1e68f431b15cef49fd3ec34c22c37baa9e03ae4593",
+      "after_sha256": "5ff99a7201fa0acb1fb90352dcd199509d3b8ef704ea7fac726b01f4868b65ec",
+      "edits": [
+        {
+          "page_in_audit": 16,
+          "offset": 743,
+          "before": "Repositório referente ao Back-end, onde encontra-se o banco de dados e as operações de comunicação com o Front-end.",
+          "after": "O repositório reúne o código do back-end do Easy Choose, incluindo as operações de comunicação com o front-end."
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0009.tex": {
+      "before_sha256": "365cb9b85497afecf677585ac6f5b03caca1a6833357b60643da1c74e061c954",
+      "after_sha256": "bb4321ae48f618705b4af2c6188db7dd4b7426baad4c99f697c15b3da0dd8204",
+      "edits": [
+        {
+          "page_in_audit": 16,
+          "offset": 321,
+          "before": "Postgresql",
+          "after": "PostgreSQL"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0012.tex": {
+      "before_sha256": "10e73be49976d61a6c8e61e5f0d04b8e676180ae1beaad374654d548f06fc9e1",
+      "after_sha256": "78b5d8be4c6499d6409f28f4ed6d97741d6289c819dd9dc9272485868d0fdea3",
+      "edits": [
+        {
+          "page_in_audit": 21,
+          "offset": 1295,
+          "before": "operações de banco da dados",
+          "after": "operações de banco de dados"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-1.tex": {
+      "before_sha256": "90384da584aa4d2c6f6fe1f72c25f9a6ac39f8cbfbac5960812053ab2d1893c2",
+      "after_sha256": "7de6adb0abba4b770a60669653a34d55b62d2c6300b8693757714c8465e01c9f",
+      "edits": [
+        {
+          "page_in_audit": 23,
+          "offset": 2332,
+          "before": "estabelecidadas",
+          "after": "estabelecidas"
+        },
+        {
+          "page_in_audit": 23,
+          "offset": 2545,
+          "before": "por cria o componente",
+          "after": "por criar o componente"
+        },
+        {
+          "page_in_audit": 23,
+          "offset": 2648,
+          "before": "Haviam três etapas",
+          "after": "Havia três etapas"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-2.tex": {
+      "before_sha256": "209162e7d6be9ff828cc5692d4c68a7a7ffa7f74e59f551e89200b82ba9fbc79",
+      "after_sha256": "730f56509c54cdbaf6a71b625c5b888a24eb08989cab7e249d1799ca10801383",
+      "edits": [
+        {
+          "page_in_audit": 25,
+          "offset": 1378,
+          "before": "enpoints",
+          "after": "endpoints"
+        },
+        {
+          "page_in_audit": 25,
+          "offset": 1617,
+          "before": "consiso",
+          "after": "conciso"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-i-sprint-3.tex": {
+      "before_sha256": "0e2b276d80904773be064fd1071e091ded5f89cd8cd023736073c76b5eda7467",
+      "after_sha256": "8e24d9c01e9072bb5b9a617ace3ea161c6a2957f423944b6976838bb550baac9",
+      "edits": [
+        {
+          "page_in_audit": 26,
+          "offset": 582,
+          "before": "conseguimos entregar apresentar",
+          "after": "conseguimos apresentar"
+        },
+        {
+          "page_in_audit": 26,
+          "offset": 1275,
+          "before": "Haviam alguns erros",
+          "after": "Havia alguns erros"
+        },
+        {
+          "page_in_audit": 27,
+          "offset": 2356,
+          "before": "endopoints",
+          "after": "endpoints"
+        },
+        {
+          "page_in_audit": 27,
+          "offset": 2952,
+          "before": "stakehoders",
+          "after": "stakeholders"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-02-text-h-0022.tex": {
+      "before_sha256": "29d013f8e76f99de403e239725556c6ed76ec386849ed4fc73e00cd94774a10f",
+      "after_sha256": "29115559c1773ddf7742b275a7edc1f606e8d83e3b39873969ed6160954f0e83",
+      "edits": [
+        {
+          "page_in_audit": 30,
+          "offset": 2675,
+          "before": "os AGES IV, responsável pela coordenação",
+          "after": "os AGES IV, responsáveis pela coordenação"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-1.tex": {
+      "before_sha256": "7b4c02f3d9d08ed219dad2e8cc2fa2557b9fd230d2e3865d98a42d72064b78f5",
+      "after_sha256": "7c48303ff905356fb51b06b33176fc839fade0f53799d6e33283cd917c938331",
+      "edits": [
+        {
+          "page_in_audit": 42,
+          "offset": 4651,
+          "before": "à medida em que",
+          "after": "à medida que"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-ii-sprint-4.tex": {
+      "before_sha256": "0e0b7cc810ee0228e7c96218234415bc6682b1aaef6ddf328084e1400ea87fe0",
+      "after_sha256": "4fe14351ecc9b8f3f1e281c5bacc8308e65f3355e3728434ea28f87a061e4e87",
+      "edits": [
+        {
+          "page_in_audit": 50,
+          "offset": 8689,
+          "before": "Gui AGES III.,",
+          "after": "Gui (AGES III),"
+        },
+        {
+          "page_in_audit": 51,
+          "offset": 11060,
+          "before": "porblemas",
+          "after": "problemas"
+        },
+        {
+          "page_in_audit": 51,
+          "offset": 12135,
+          "before": "Nosso sprojeto",
+          "after": "Nosso projeto"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/ages-iii-sprint-0.tex": {
+      "before_sha256": "6c42537cfafd21e133dcdd0fe3bacae5b2fb214c3d46074bc05fe5b7cd1bb9d5",
+      "after_sha256": "7336867e69d6f181188efbb30cc4215461a948f4711af6e6b596a82d4f921302",
+      "edits": [
+        {
+          "page_in_audit": 65,
+          "offset": 8051,
+          "before": "as atividades de AGES III, como participar das decisões estruturais, como definição de tecnologias, organização de repositórios e construção de pipelines, foi uma experiência",
+          "after": "realizar as atividades de AGES III, como participar de decisões estruturais sobre a definição de tecnologias, a organização de repositórios e a construção de pipelines, foi uma experiência"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-06-text-h-0113.tex": {
+      "before_sha256": "1fe7d7c89ef8af7c306b4c6c444124f001618d22491d6c64142b2511001f55b2",
+      "after_sha256": "98c0620299887d8ec795687d078e94204f5d3e9c822a693350dc502c09ceac54",
+      "edits": [
+        {
+          "page_in_audit": 83,
+          "offset": 443,
+          "before": "suporte nativo a programação assíncrona",
+          "after": "suporte nativo à programação assíncrona"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/chapter-03-text-h-0026.tex": {
+      "before_sha256": "8c3dae8406551d3cb33bf42338912470241d1c63e7f0c2f8b3a4f746b4cc1687",
+      "after_sha256": "d65c2e996007265ac9f8a4429866fd86b2780075ff1bb78ae5da7dbbb6e92283",
+      "edits": [
+        {
+          "page_in_audit": 104,
+          "offset": 2580,
+          "before": "diversos questionamos e críticas",
+          "after": "diversos questionamentos e críticas"
+        },
+        {
+          "page_in_audit": 104,
+          "offset": 2958,
+          "before": "\\item Os participantes da reunião estão cientes",
+          "after": "\\item “Os participantes da reunião estão cientes"
+        },
+        {
+          "page_in_audit": 105,
+          "offset": 5551,
+          "before": "realimente desejávamos",
+          "after": "realmente desejávamos"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-1.tex": {
+      "before_sha256": "1c57540ae1b853bb936d0e3b941f3d3ebf19d7dcddab093b4eb0ae97f11e85a4",
+      "after_sha256": "1644bb81899f3e5df96e284f3ed6679f1b2c1ee45f1055190b9c31c039f8dd05",
+      "edits": [
+        {
+          "page_in_audit": 107,
+          "offset": 1187,
+          "before": "linguagem de sinais brasileiras (Libras)",
+          "after": "Língua Brasileira de Sinais (Libras)"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/cliente-hoortech-sprint-4.tex": {
+      "before_sha256": "8e796739f01ba8959cb2217db3c0dfb0e2c577587d62c2f05ece12372a019f90",
+      "after_sha256": "baca582769e0199a36b6e0108a55f4939a9ade5208c08c6ed28a73eb501f6e90",
+      "edits": [
+        {
+          "page_in_audit": 109,
+          "offset": 403,
+          "before": "projeto desenvolvido pelo aluno ao longo",
+          "after": "projeto desenvolvido pelos alunos ao longo"
+        },
+        {
+          "page_in_audit": 109,
+          "offset": 484,
+          "before": "apresentada a nós, stakeholder,",
+          "after": "apresentada a nós, stakeholders,"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/bibliografia/bibliografia.bib": {
+      "before_sha256": "940ef52ac2807959b6a19fd2715e92199d693a0029f58933543d39b5f6a075a9",
+      "after_sha256": "1813bb1e68aced620ad1f1032323e31dc4bbf35d4a7fcd439cc0ab4753e114a3",
+      "edits": [
+        {
+          "page_in_audit": 114,
+          "offset": 9359,
+          "before": "title = {Deezer for Developers: API},\n  date = {2026?},",
+          "after": "title = {Deezer for Developers: API},\n  date = {2026},"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/resumo.tex": {
+      "before_sha256": "e3388603179bf622bd358deb09c6d202cc907af3ce9fa3c9523a4a99e69b2c23",
+      "after_sha256": "ef35cc8d361c55b59e16efe80a5deed53eacee9f3dc0277b190a799f1eaeea90",
+      "edits": [
+        {
+          "offset": 1293,
+          "before": "\\textbf{Palavras-chave:}",
+          "after": "\\textbf{PALAVRAS-CHAVE:}"
+        }
+      ]
+    },
+    "relatorio_AGES_eduardo/conteudo/migracao/lista-de-siglas.tex": {
+      "before_sha256": "0b91c4e6dc3d64434ec55859b93dfc3a9eca659dfc302be6c8afb15c0c4f9e9c",
+      "after_sha256": "925e4f3fee0bb38b3a52f967c709b0b0bd1ed7f8b4de7972fdb9beb3ca991e3c",
+      "edits": [
+        {
+          "offset": 55,
+          "before": "\\noindent ABNT",
+          "after": "\\noindent \\textbf{ABNT}"
+        },
+        {
+          "offset": 129,
+          "before": "\\noindent ADR",
+          "after": "\\noindent \\textbf{ADR}"
+        },
+        {
+          "offset": 201,
+          "before": "\\noindent AGES",
+          "after": "\\noindent \\textbf{AGES}"
+        },
+        {
+          "offset": 293,
+          "before": "\\noindent API",
+          "after": "\\noindent \\textbf{API}"
+        },
+        {
+          "offset": 415,
+          "before": "\\noindent AWS",
+          "after": "\\noindent \\textbf{AWS}"
+        },
+        {
+          "offset": 478,
+          "before": "\\noindent CAPES",
+          "after": "\\noindent \\textbf{CAPES}"
+        },
+        {
+          "offset": 587,
+          "before": "\\noindent CEP",
+          "after": "\\noindent \\textbf{CEP}"
+        },
+        {
+          "offset": 663,
+          "before": "\\noindent CI/CD",
+          "after": "\\noindent \\textbf{CI/CD}"
+        },
+        {
+          "offset": 786,
+          "before": "\\noindent CLI",
+          "after": "\\noindent \\textbf{CLI}"
+        },
+        {
+          "offset": 884,
+          "before": "\\noindent CNAE",
+          "after": "\\noindent \\textbf{CNAE}"
+        },
+        {
+          "offset": 979,
+          "before": "\\noindent CNPJ",
+          "after": "\\noindent \\textbf{CNPJ}"
+        },
+        {
+          "offset": 1047,
+          "before": "\\noindent CPF",
+          "after": "\\noindent \\textbf{CPF}"
+        },
+        {
+          "offset": 1119,
+          "before": "\\noindent CRUD",
+          "after": "\\noindent \\textbf{CRUD}"
+        },
+        {
+          "offset": 1192,
+          "before": "\\noindent DTO",
+          "after": "\\noindent \\textbf{DTO}"
+        },
+        {
+          "offset": 1256,
+          "before": "\\noindent DV",
+          "after": "\\noindent \\textbf{DV}"
+        },
+        {
+          "offset": 1318,
+          "before": "\\noindent EAP",
+          "after": "\\noindent \\textbf{EAP}"
+        },
+        {
+          "offset": 1395,
+          "before": "\\noindent EC2",
+          "after": "\\noindent \\textbf{EC2}"
+        },
+        {
+          "offset": 1460,
+          "before": "\\noindent FK",
+          "after": "\\noindent \\textbf{FK}"
+        },
+        {
+          "offset": 1534,
+          "before": "\\noindent HTTP",
+          "after": "\\noindent \\textbf{HTTP}"
+        },
+        {
+          "offset": 1636,
+          "before": "\\noindent HTTPS",
+          "after": "\\noindent \\textbf{HTTPS}"
+        },
+        {
+          "offset": 1767,
+          "before": "\\noindent IA",
+          "after": "\\noindent \\textbf{IA}"
+        },
+        {
+          "offset": 1834,
+          "before": "\\noindent ID",
+          "after": "\\noindent \\textbf{ID}"
+        },
+        {
+          "offset": 1892,
+          "before": "\\noindent JSON",
+          "after": "\\noindent \\textbf{JSON}"
+        },
+        {
+          "offset": 1963,
+          "before": "\\noindent LGPD",
+          "after": "\\noindent \\textbf{LGPD}"
+        },
+        {
+          "offset": 2040,
+          "before": "\\noindent LIBRAS",
+          "after": "\\noindent \\textbf{LIBRAS}"
+        },
+        {
+          "offset": 2101,
+          "before": "\\noindent MCP",
+          "after": "\\noindent \\textbf{MCP}"
+        },
+        {
+          "offset": 2153,
+          "before": "\\noindent MoSCoW",
+          "after": "\\noindent \\textbf{MoSCoW}"
+        },
+        {
+          "offset": 2258,
+          "before": "\\noindent MQTT",
+          "after": "\\noindent \\textbf{MQTT}"
+        },
+        {
+          "offset": 2338,
+          "before": "\\noindent MVC",
+          "after": "\\noindent \\textbf{MVC}"
+        },
+        {
+          "offset": 2405,
+          "before": "\\noindent MVP",
+          "after": "\\noindent \\textbf{MVP}"
+        },
+        {
+          "offset": 2499,
+          "before": "\\noindent ORM",
+          "after": "\\noindent \\textbf{ORM}"
+        },
+        {
+          "offset": 2599,
+          "before": "\\noindent PK",
+          "after": "\\noindent \\textbf{PK}"
+        },
+        {
+          "offset": 2671,
+          "before": "\\noindent POC",
+          "after": "\\noindent \\textbf{POC}"
+        },
+        {
+          "offset": 2751,
+          "before": "\\noindent PR",
+          "after": "\\noindent \\textbf{PR}"
+        },
+        {
+          "offset": 2806,
+          "before": "\\noindent PUCRS",
+          "after": "\\noindent \\textbf{PUCRS}"
+        },
+        {
+          "offset": 2907,
+          "before": "\\noindent PWA",
+          "after": "\\noindent \\textbf{PWA}"
+        },
+        {
+          "offset": 2970,
+          "before": "\\noindent RACI",
+          "after": "\\noindent \\textbf{RACI}"
+        },
+        {
+          "offset": 3112,
+          "before": "\\noindent RDS",
+          "after": "\\noindent \\textbf{RDS}"
+        },
+        {
+          "offset": 3183,
+          "before": "\\noindent REST",
+          "after": "\\noindent \\textbf{REST}"
+        },
+        {
+          "offset": 3261,
+          "before": "\\noindent RFID",
+          "after": "\\noindent \\textbf{RFID}"
+        },
+        {
+          "offset": 3361,
+          "before": "\\noindent S3",
+          "after": "\\noindent \\textbf{S3}"
+        },
+        {
+          "offset": 3426,
+          "before": "\\noindent SDK",
+          "after": "\\noindent \\textbf{SDK}"
+        },
+        {
+          "offset": 3494,
+          "before": "\\noindent SQL",
+          "after": "\\noindent \\textbf{SQL}"
+        },
+        {
+          "offset": 3563,
+          "before": "\\noindent UF",
+          "after": "\\noindent \\textbf{UF}"
+        },
+        {
+          "offset": 3624,
+          "before": "\\noindent UI",
+          "after": "\\noindent \\textbf{UI}"
+        },
+        {
+          "offset": 3691,
+          "before": "\\noindent UK",
+          "after": "\\noindent \\textbf{UK}"
+        },
+        {
+          "offset": 3745,
+          "before": "\\noindent URL",
+          "after": "\\noindent \\textbf{URL}"
+        },
+        {
+          "offset": 3834,
+          "before": "\\noindent US",
+          "after": "\\noindent \\textbf{US}"
+        },
+        {
+          "offset": 3911,
+          "before": "\\noindent UUID",
+          "after": "\\noindent \\textbf{UUID}"
+        },
+        {
+          "offset": 3971,
+          "before": "\\noindent UX",
+          "after": "\\noindent \\textbf{UX}"
+        }
+      ]
+    }
+  },
+  "frontmatter_formatting_authorization": "O autor solicitou negrito nas siglas da lista e a grafia PALAVRAS-CHAVE, mantendo o negrito do rótulo."
+}

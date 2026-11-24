@@ -42,7 +42,7 @@ from urllib.parse import urlsplit
 
 from .latex import _group, commands, strip_comments, macro_definitions, canonical_macro_body, MEMORIAL_FIGURE_BODY, MEMORIAL_FIGURE_LINKED_BODY
 from . import technology_prose, bibliography_reconciliation, presentation_reconciliation, url_reconciliation
-from . import recorda_deployment
+from . import editorial_corrections, recorda_deployment
 
 
 INLINE_TAB_COUNTS = {"text-p-0303": 1, "text-p-0314": 4, "text-p-0318": 4}
@@ -221,6 +221,7 @@ FRONTMATTER_ACKNOWLEDGEMENTS_REVISION = "migration/approvals/frontmatter-acknowl
 FRONTMATTER_EPIGRAPH_SUPPLEMENT = "migration/approvals/frontmatter-epigraph-2026-11-23.json"
 FRONTMATTER_SUMMARY_SUPPLEMENT = "migration/approvals/frontmatter-summary-2026-11-23.json"
 FRONTMATTER_ACRONYM_LIST_SUPPLEMENT = "migration/approvals/acronym-list-completion-2026-11-23.json"
+INDEX_AUDIT_CORRECTIONS = "migration/approvals/index-audit-corrections-2026-11-23.json"
 FRONTMATTER_COVER_FIELD_IDS = {"text-p-0018", "text-p-0033"}
 FRONTMATTER_COVER_FIELD_SPECS = {
     "text-p-0018": {"source_text": "AGES I,II, III ou IV", "target_text": "AGES IV"},
@@ -3465,11 +3466,46 @@ def _verify_linked_figure_source(unit_id, image_id, token, records, preserved_li
 
 
 def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | None = None) -> dict:
-    if not (repo / recorda_deployment.APPROVAL).is_file():
+    index_path = repo / INDEX_AUDIT_CORRECTIONS
+    has_editorial_approval = (repo / editorial_corrections.APPROVAL).is_file()
+    has_recorda_approval = (repo / recorda_deployment.APPROVAL).is_file()
+    if not (index_path.is_file() or has_recorda_approval or has_editorial_approval):
         return _audit_conversion(manifest, ledger, repo, unit_id)
+    index_approval = None
+    editorial_approval = None
+    projected_files = {}
+    if has_editorial_approval:
+        try:
+            editorial_approval = editorial_corrections.load(repo)
+            projected_files = recorda_deployment.previous_files(
+                repo.resolve(), editorial_approval["files"], "Editorial corrections",
+            )
+        except (OSError, ValueError, KeyError, TypeError, UnicodeError) as error:
+            return {
+                "status": "fail",
+                "findings": [{"severity": "error", "code": "invalid_editorial_corrections", "message": str(error)}],
+                "facts": {}, "differences": {},
+            }
+    if index_path.is_file():
+        try:
+            raw = index_path.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != "131b654623fe630de8b496e62d5fe9caf4ef327168fe29a9d86442b74682d520":
+                raise ValueError("Index audit corrections approval hash mismatch")
+            index_approval = json.loads(raw)
+            projected_files = recorda_deployment.previous_files(
+                repo.resolve(), index_approval["files"], "Index audit corrections", projected_files,
+            )
+        except (OSError, ValueError, KeyError, TypeError, UnicodeError) as error:
+            return {
+                "status": "fail",
+                "findings": [{"severity": "error", "code": "invalid_index_audit_corrections", "message": str(error)}],
+                "facts": {}, "differences": {},
+            }
     try:
-        approval = recorda_deployment.load(repo)
-        with recorda_deployment.predecessor(repo.resolve(), approval) as snapshot:
+        approval = recorda_deployment.load(repo) if has_recorda_approval else None
+        with recorda_deployment.predecessor(repo.resolve(), approval, projected_files) as snapshot:
+            if has_editorial_approval:
+                (snapshot / editorial_corrections.APPROVAL).unlink()
             report = _audit_conversion(manifest, ledger, snapshot, unit_id)
     except (OSError, ValueError, KeyError, TypeError, UnicodeError) as error:
         return {
@@ -3477,14 +3513,30 @@ def audit_conversion(manifest: dict, ledger: dict, repo: Path, unit_id: str | No
             "findings": [{"severity": "error", "code": "invalid_recorda_deployment", "message": str(error)}],
             "facts": {}, "differences": {},
         }
-    report["facts"]["recorda_deployment_correction"] = {
-        "authorization_evidence": recorda_deployment.APPROVAL,
-        "exact_live_bytes_verified": sorted(approval["files"]),
-        "source_records": approval["source_records"],
-        "legacy_mappings_verified_on_predecessor": True,
-        "figure_25": approval["figure_25"],
-        "human_review": "PENDING",
-    }
+    if approval is not None:
+        report["facts"]["recorda_deployment_correction"] = {
+            "authorization_evidence": recorda_deployment.APPROVAL,
+            "exact_live_bytes_verified": sorted(approval["files"]),
+            "source_records": approval["source_records"],
+            "legacy_mappings_verified_on_predecessor": True,
+            "figure_25": approval["figure_25"],
+            "human_review": "PENDING",
+        }
+    if index_approval is not None:
+        report["facts"]["index_audit_corrections"] = {
+            "authorization_evidence": INDEX_AUDIT_CORRECTIONS,
+            "exact_live_bytes_verified": sorted(index_approval["files"]),
+            "figures": index_approval["figures"],
+            "sections": index_approval["sections"],
+            "removed_heading": index_approval["removed_heading"],
+            "human_review": "PENDING",
+        }
+    if editorial_approval is not None:
+        report["facts"]["editorial_audit_corrections"] = {
+            "authorization_evidence": editorial_corrections.APPROVAL,
+            "exact_live_bytes_verified": sorted(editorial_approval["files"]),
+            "human_review": "PENDING",
+        }
     return report
 
 

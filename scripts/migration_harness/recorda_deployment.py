@@ -23,18 +23,18 @@ def load(repo: Path) -> dict:
     return json.loads(raw)
 
 
-def previous_bytes(data: bytes, spec: dict) -> bytes:
+def previous_bytes(data: bytes, spec: dict, label: str = "Recorda deployment") -> bytes:
     if hashlib.sha256(data).hexdigest() != spec["after_sha256"]:
-        raise ValueError("Recorda deployment target differs from the exact approved bytes")
+        raise ValueError(f"{label} target differs from the exact approved bytes")
     for edit in reversed(spec["edits"]):
         offset = edit["offset"]
         after = edit["after"].encode("utf-8")
         end = offset + len(after)
         if data[offset:end] != after:
-            raise ValueError("Recorda deployment edit no longer matches its approved interval")
+            raise ValueError(f"{label} edit no longer matches its approved interval")
         data = data[:offset] + edit["before"].encode("utf-8") + data[end:]
     if hashlib.sha256(data).hexdigest() != spec["before_sha256"]:
-        raise ValueError("Recorda deployment predecessor hash mismatch")
+        raise ValueError(f"{label} predecessor hash mismatch")
     return data
 
 
@@ -46,26 +46,35 @@ def verify_figure_asset(repo: Path, figure: dict) -> None:
         raise ValueError("Recorda deployment image does not match the supplied PNG")
 
 
-@contextmanager
-def predecessor(repo: Path, approval: dict):
-    """Replay the preservation ledger against the audited predecessor in isolation."""
-    verify_figure_asset(repo, approval["figure_25"])
-    originals = {}
-    for relative, spec in approval["files"].items():
+def previous_files(repo: Path, files: dict, label: str, projected_files: dict | None = None) -> dict:
+    originals = dict(projected_files or {})
+    for relative, spec in files.items():
         path = (repo / relative).resolve()
         if not path.is_relative_to(repo):
-            raise ValueError("Recorda deployment target escapes the repository")
+            raise ValueError(f"{label} target escapes the repository")
         try:
-            originals[relative] = previous_bytes(path.read_bytes(), spec)
+            data = originals[relative] if relative in originals else path.read_bytes()
+            originals[relative] = previous_bytes(data, spec, label)
         except ValueError as error:
             raise ValueError(f"{relative}: {error}") from error
+    return originals
+
+
+@contextmanager
+def predecessor(repo: Path, approval: dict | None, projected_files: dict | None = None):
+    """Replay the preservation ledger against the audited predecessor in isolation."""
+    originals = projected_files or {}
+    if approval is not None:
+        verify_figure_asset(repo, approval["figure_25"])
+        originals = previous_files(repo, approval["files"], "Recorda deployment", originals)
 
     with tempfile.TemporaryDirectory(prefix="ages-recorda-predecessor-") as temporary:
         snapshot = Path(temporary)
         shutil.copyfile(repo / "RELATORIO_ATUAL.odt", snapshot / "RELATORIO_ATUAL.odt")
         for relative in ("relatorio_AGES_eduardo", "migration", "docs", "tests/fixtures"):
             shutil.copytree(repo / relative, snapshot / relative)
-        (snapshot / APPROVAL).unlink()
+        if approval is not None:
+            (snapshot / APPROVAL).unlink()
         for relative, data in originals.items():
             (snapshot / relative).write_bytes(data)
         yield snapshot
